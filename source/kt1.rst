@@ -1,6 +1,6 @@
 *Kontrolltöö, 19.-23. september*
 ================================
-
+ 
 Kontrolltöös on 2 ülesannet, mis nõuavad I-III arvutipraktikumi teemade valdamist.
 
 Seda kontrolltööd ei ole võimalik hiljem järgi teha. Kui te ei saa enda praktikumi ajal kohale tulla, siis uurige eelnevalt, kas saate teha kontrolltöö koos mõne teise rühmaga.
