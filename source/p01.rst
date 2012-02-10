@@ -1,6 +1,5 @@
 I. Sissejuhatus
 ===============
-Nullis rida sss
 Esimese praktikumi peaeesmärgiks on õppida kasutama Python keele põhilisi töövahendeid -- käsurida ning keskkonda "IDLE". Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
 
 .. index::
