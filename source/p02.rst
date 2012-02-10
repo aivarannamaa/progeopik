@@ -1,0 +1,684 @@
+II. Väärtused. Sisend ja väljund
+================================
+
+Selles praktikumis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses praktikumis juba kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. Lisaks vaatame põgusalt, kuidas saab Pythonis väljendada tahvlipraktikumi plokkskeemidest tuttavat *hargnemist*.
+
+.. topic:: Soovitus:
+
+    Näited lugege kõigepealt hoolikalt läbi, mõeldes, milline võiks olla tulemus ja alles seejärel katsetage. Soovitav on teha ka väikeseid muudatusi ning ennustada, kuidas need tulemust mõjutavad. 
+
+Terminoloogia
+-------------
+.. note::
+
+    NB! Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist väga lihtsate mõistetega -- neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada.
+
+.. index::
+    single: väärtus
+    
+**Väärtused** (ing.k. `values`) on andmed, mida programm kasutab või loob. Mõned näited väärtustest:
+
+* arv *2*
+* arv *2,3*
+* tekst *Tartu*
+
+Keeles Python pannakse need väärtused kirja järgmiselt:
+
+* ``2``
+* ``2.3`` NB! koma asemel kasutatakse punkti
+* ``'Tartu'``
+
+.. index::
+    single: andmetüüp; tüüp
+    single: tüüp
+    
+Kõikidel väärtustel on kindel **andmetüüp**, või lihtsalt **tüüp**. Meie näiteväärtuste tüübid on vastavalt *täisarv*, *ujukomaarv* ja *sõne*. Edaspidi vaatame ka Pythoni keerulisemaid andmetüüpe (*järjend*, *sõnastik* jt.)
+
+.. index::
+    single: tehe; operatsioon
+    single: operatsioon
+    
+Andmetüübi mõiste on oluline, kuna eri tüüpi väärtustega saab kasutada erinevaid **operatsioone** (e. *tehteid*) -- nt. arve saab omavahel liita, sõnesid (e. teksti) saab teisendada suurtähtedesse jne.
+
+Analüüsime järgmist näidet:
+
+.. sourcecode:: py3
+
+    >>> 2 + 3
+    5
+
+Antud juhul teostas Python liitmisoperatsiooni väärtustega ``2`` ja ``3``, mille tulemusena konstrueeriti uus väärtus ``5``. Programmeerimise terminoloogiat kasutades saame seda näidet kirjeldada järgnevalt:
+
+.. index::
+    single: operaator
+    single: argumendid; operaatori argumendid
+    single: operaator; operaatori argumendid
+    single: avaldis; avaldise väärtustamine
+    single: avaldis
+    single: literaalid
+    
+    
+*  ``+`` on **operaator**
+* ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`)
+* ``2 + 3`` on **avaldis** (ing.k. `expression`)
+* `5` on antud **avaldise väärtus**
+* toiming, mille käigus ``2 + 3``-st saadakse `5`, on **avaldise väärtustamine** (ing.k. *evaluation*)
+* väärtuseid, mis on programmi "sisse kirjutatud" (antud näite puhul ``2`` ja ``3``), nimetatakse **literaalideks**
+
+Järgnevalt uurime lähemalt, milliseid operatsioone saab teha arvude ja sõnedega. 
+
+Arvud
+-----
+Pythonis (nagu ka enamikes teistes programmeerimiskeeltes) on eraldi andmetüübid täis- ja reaalarvude esitamiseks.
+
+.. index::
+    single: täisarvud
+
+Täisarvud
+~~~~~~~~~
+Pythoni **täisarvu** tüübi nimeks on `int` (lühend sõnast *integer*). Erinevalt paljudest teistest keeltest, ei ole Python 3-s piiratud, kui suuri (või väikseid) täisarve saab selle andmetüübiga esitada.
+
+.. index::
+    single: ujukomaarvud
+    
+Ujukomaarvud
+~~~~~~~~~~~~
+Reaalarvudele vastavad Pythonis (ja paljudes teistes keeltes) **ujukomaarvud** (ing. k. `floating point number`, lühemalt `float`). 
+
+.. note::
+    Nimetus `ujukomaarvud` tuleb nende esitusviisist arvuti mälus -- lihtsustatult võib öelda, et kõigepealt on toodud välja arvu numbrite jada (ing.k `significant digits`) ning eraldi on öeldud, millisele positsioonile käib koma (seega koma on numbrijadast sõltumatu, "ujuv").
+
+Ujukomaarvude literaalid võivad esineda järgmistel kujudel:
+
+* ``3.0``, ``1.165``, ``-4.25`` tavapärane kirjapilt. NB! koma asemel kasutatakse punkti
+* ``6.1529e+18``, ``1.253e-12`` nn. `teaduslik notatsioon`
+
+.. note::
+
+    Viimast kirjapilti kasutatakse väga suurte või nullilähedaste arvude esitamiseks. Tavapärases matemaatilises notatsioonis võiks viimased näited kirjutada vastavalt 6.1529×10\ :sup:`18` ja 1.253×10\ :sup:`-12`.
+    
+.. topic:: Ujukomaarvude ligikaudsus
+
+    Proovige läbi järgnev lihtne näide:
+
+    .. sourcecode:: py3
+        
+        >>> 0.1 * 3.0
+        0.30000000000000004
+
+    Ootuspärane vastus oleks `0.3`, kuid Python tagastas midagi muud.
+
+    Asi on selles, et arvutis esitatakse ujukomaarvud kahendkujul, kasutades piiratud arvu bitte ja seetõttu polegi võimalik teatud kümnendmurde (nende hulgas `0.1`) täpselt esitada (analoogiliselt pole kümnendmurruna võimalik täpselt esitada näiteks `10 / 3`). Taolistel juhtudel ümardatakse sisestatud arv lihtsalt lähima kahendmurruni ja see ongi põhjus, miks antud näites oli tulemus ebatäpne. 
+
+    Kui ujukomaarvu on tarvis esitada kümnendmurruna (nt. ekraanile kuvamisel), siis toimub jälle ümardamine -- see on põhjus, miks sisestades käsureale ``0.1`` antakse vastuseks tagasi ``0.1``, kuigi Python sisimas ei suuda seda arvu täpselt esitada. Kui korrutasime ``0.1`` 3-ga, siis muutus viga juba piisavalt suureks, et saadud tulemusele lähim kümnendmurd oli ``0.30000000000000004``, mitte ``0.3``
+
+    Tegelikult tekitab ujukomaarvude ligikaudsus probleeme vaid siis, kui me eeldame reaalarvude absoluutselt täpset esitamist (nt. kümnendmurruna esitatud rahasummad, kus murdosa tähistatab sente). Ujukomaarve kasutatakse peamiselt kõikvõimalike mõõtmistulemuste esitamiseks ja selle jaoks on Pythoni `float` tüübi ulatus ning täpsus enam kui piisav.
+
+    
+Operatsioonid arvudega
+~~~~~~~~~~~~~~~~~~~~~~
++--------------------+----------+---------------------------------------------------------+
+| Avaldis            | Väärtus  | Kommentaar                                              |
++====================+==========+=========================================================+
+| ``6 / 3``          | ``2.0``  | Tavalise jagamise tulemus on alati ujukomaarv           |
++--------------------+----------+---------------------------------------------------------+
+| ``5 // 3``         | ``1``    | Täisarvuline jagamine                                   |
++--------------------+----------+---------------------------------------------------------+
+| ``5 % 3``          | ``2``    | Jagamise jäägi leidmine                                 |
++--------------------+----------+---------------------------------------------------------+
+| ``5 ** 3``         | ``125``  | Astendamine                                             |
++--------------------+----------+---------------------------------------------------------+
+| ``4 ** 0.5``       | ``2.0``  | Juurimine astendamise kaudu                             |
++--------------------+----------+---------------------------------------------------------+
+|``round(2.6375, 2)``| ``2.64`` | Ümardamine nõutud täpsusega                             |
++--------------------+----------+---------------------------------------------------------+
+|``round(2.6375)``   | ``3``    | Ümardamine lähima täisarvuni                            |
++--------------------+----------+---------------------------------------------------------+
+|``int(2.6375)``     | ``2``    | Täisarvuks teisendades ei ümardata                      |
++--------------------+----------+---------------------------------------------------------+
+| ``3 + 5 * 2``      | ``13``   |                                                         |
++--------------------+----------+ Python arvestab tehete järjekorda                       |
+| ``(3 + 5) * 2``    | ``16``   |                                                         |
++--------------------+----------+---------------------------------------------------------+
+| ``6 - 3 - 1``      | ``2``    |                                                         |
++--------------------+----------+ Sama prioriteediga tehted tehakse vasakult paremale ... |
+| ``6 - (3 - 1)``    | ``4``    |                                                         |
++--------------------+----------+---------------------------------------------------------+
+| ``2 ** 3 ** 2``    | ``512``  |                                                         |
++--------------------+----------+ ... va. astendamised, mis tehakse paremalt vasakule     |
+| ``(2 ** 3) ** 2``  | ``64``   |                                                         |
++--------------------+----------+---------------------------------------------------------+
+
+.. note::
+      Kui avaldis on keeruline, siis võiks kaaluda sulgude kasutamist ka seal, kus Python neid ei nõua, et teha lugemist lihtsamaks.
+
+.. topic:: Operatsioonid negatiivsete arvudega
+
+    Mitmed operaatorid ja funksioonid annavad esmapilgul üllatava tulemuse, kui neid kasutada negatiivsete argumentidega. Proovige järgi, kuidas toimivad sel puhul ``//``, ``%``, ``int`` ja ``round``.
+
+Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, kui need importida moodulist nimega ``math``:
+
+.. sourcecode:: py3
+
+    >>> from math import *
+    >>> cos(pi * 1.5)
+    -1.8369701987210297e-16
+    >>> atan(0.5)   
+    0.4636476090008061
+    >>> log(10.0)
+    2.302585092994046
+    >>> log(e)      
+    1.0
+    >>> log(100,10)
+    2.0
+    >>> sqrt(9)     
+    3.0
+    
+.. note::
+    Kõikide mooduli ``math`` võimalustega saate tutvuda vastaval Pythoni dokumentatsiooni leheküljel: http://docs.python.org/py3k/library/math.html.
+
+Ülesanne 1. Matemaatilised avaldised
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Väärtustage järgnevad aritmeetilised avaldised Pythoni käsureal:
+
+.. centered::
+    :math:`(2^{89} + 5^{70})^2`
+    
+.. centered::
+    :math:`6 + \sqrt[4]{6 \times 5 + 12}`
+
+.. centered::
+    :math:`\ln(e^{27} + 2^{30}) + \sin(\arccos(\frac{3\pi}{4}))`
+
+.. note::
+    Teise ülesande vastus peaks olema ``8.54572989502183``.
+
+    Kui viimase avaldisega tekib probleeme, siis mõelge, milliste argumentide korral on arkuskoosinus üldse defineeritud. Veateade ``math domain error`` tähendab, et funktsiooni kasutati ebasobiva argumendiga. Muutke avaldist nii, et ``acos`` saab sobiva argumendi ja proovige uuesti.
+      
+.. index::
+    single: sõne
+    single: string; sõne
+    
+Sõned
+--------
+**Sõne** (ing.k `string`, lühend `str`) on andmetüüp teksti esitamiseks. Enamasti piisab Pythonis sõne kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``.
+
+.. topic:: Mõned näited keerulisematest sõneliteraalidest:
+
+    .. sourcecode:: py3
+
+        # kui tekstis on ülakomasid, siis kasuta piiritlejaks jutumärke ja vastupidi
+        "Rock 'n' roll"  
+        'Jim ütles vaid: "Siin see on."'
+        
+        # piiritlejateks võivad olla ka 3-kordsed ülakomad või jutumärgid
+        # sel juhul saab teksti sees vabalt jutmärke, ülakomasid ja reavahetusi kasutada
+        """Jack vastas: "Rock 'n' roll"."""
+        '''Jack vastas: "Rock 'n' roll".'''
+        
+        """Seda kuupaistet!
+        Oh muutuksin sündides
+        männiks mäetipul!
+        --Ryota"""
+
+        # piiritlejaid saab tekstis kasutada, kui panna nende ette langkriips
+        "Jack vastas: \"Rock 'n' roll\"."
+        'Jack vastas: "Rock \'n\' roll".'
+        
+        # reavahetusi võib esitada ka kombinatsiooniga \n
+        "Seda kuupaistet!\nOh muutuksin sündides\nmänniks mäetipul!\n--Ryota"
+        
+        # kui soovid esitada langkriipse endid, siis tuleb need kirjutada topelt
+        "C:\\kaustanimi\\failinimi.txt"
+        
+
+    On oluline mõista, et piiritlejad ning langkriipsud on vaid selleks, et Python suudaks teksti õigesti sisse lugeda -- peale sisselugemist muutub ``'Rock\'n\'roll'`` tekstiks `Rock'n'roll`.
+
+    Neid näiteid Pythoni käsureale sisestades saate piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt. Kui kasutada ``print`` käsku (nt. ``print('Rock \'n\' roll')``), siis on näha, et Python sai tekstist siiski õigesti aru.
+
+NB! Kui unustate sõneliteraali kirjutades piiritlejaid kasutada, siis peab Python vastavat tekstijuppi muutuja nimeks (või kui tekstis oli tühik, siis ei oska ta sellest midagi arvata). Proovige järgi, millised veateated neil juhtudel antakse -- siis on edaspidi taolisi näpuvigu kergem tuvastada.
+
+Operatsioonid sõnedega
+~~~~~~~~~~~~~~~~~~~~~~
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| Avaldis                             | Väärtus      | Kommentaar                                                          |
++=====================================+==============+=====================================================================+
+| ``'Lao' + ' ' + 'Tzu'``             |``'Lao Tzu'`` | ``+`` loob kahe sõne põhjal uue sõne                                |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``'nr.' + 1``                       | Viga!!!      | Sõnet ja arvu ei saa niisama ühendada                               |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``'nr.' + str(1)``                  | ``'nr.1'``   | ``str`` annab arvule vastava sõne                                   |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``'5' + '3'``                       | ``'53'``     | Sõnena esitatud arve ei käsitleta arvudena                          |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``int('5')``                        | ``5``        | Annab sõnele vastava täisarvu                                       |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``float('5.3')``                    | ``5.3``      | Annab sõnele vastava ujukomaarvu                                    |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``'xo' * 3``                        | ``'xoxoxo'`` | Sõne dubleerimine                                                   |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``len('tere')``                     | ``4``        | Sõne pikkuse (`length`) küsimine                                    |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``'tere'.upper()``                  | ``'TERE'``   | Mõnede käskude korral kirjutatakse sõne käsu ette.                  |
++-------------------------------------+--------------+ Taolisi käske nimetatakse *meetoditeks*                             |
+| ``'jäääär'.count('ä')``             | ``4``        |                                                                     |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``' tere '.strip()``                | ``'tere'``   | Annab sõne ilma alguses ja lõpus olevate tühikute ja reavahetusteta |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+| ``'tere'.replace('e','ö').upper()`` | ``'TÖRÖ'``   | Käske saab kombineerida                                             |
++-------------------------------------+--------------+---------------------------------------------------------------------+
+
+
+.. note::
+    Kõikide sõnemeetoditega saab tutvuda aadressil http://docs.python.org/py3k/library/stdtypes.html#string-methods
+
+.. index::
+    single: muutujad
+    
+.. _muutujad:    
+
+Muutujad
+--------
+Kõik levinud programmeerimiskeeled võimaldavad kindlatele väärtustele või arvutuste tulemustele anda nime. Teisiti väljendudes: väärtusi saab salvestada **muutujatesse**. Järgnev käsurea näide demonstreerib muutuja (nimega `x`) defineerimist ja kasutamist:
+
+.. sourcecode:: py3
+    
+    >>> x = 2 + 3
+    >>> x
+    5
+    >>> 2 * x
+    10
+    >>> x * x
+    25
+
+Esimesel real teeb Python kaks erinevat toimingut: kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise väärtus. Peale seda on võimalik muutuja väärtust kasutada vastava väärtuse asemel. 
+
+Programmi loetavuse huvides peaks muutuja nimi kirjeldama vastava väärtuse tähendust antud kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``.
+
+.. topic :: Etteruttavalt:
+
+    Pythonis saab vajadusel muutuja väärtust ka uue väärtusega üle kirjutada -- selleks tuleb lihtsalt teha uus omistamine samale muutujale. Muutuja ülekirjutamist meil praegu siiski veel tarvis ei lähe.
+
+
+
+.. _milleks-muutujad:
+    
+Milleks muutujad?
+~~~~~~~~~~~~~~~~~
+Vaatame ühte näiteprogrammi, mis väljastab 60.25cm raadiusega ringi diameetri, ümbermõõdu ja pindala. Esimese versiooni kirjutame ilma muutujaid kasutamata:
+
+.. sourcecode:: py3
+
+    from math import *
+    
+    print('Ringi diameeter on ' + str(2 * 60.25) + ' cm')
+    print('Ümbermõõt on ' + str(pi * 2 * 60.25) + ' cm')
+    print('Pindala on ' + str(pi * (60.25 ** 2)) + ' cm2')
+    
+.. topic:: Meeldetuletus: 
+    
+    Käsku ``str`` kasutame selleks, et arvutuse tulemust teisendada sõneks.
+
+See programm arvutab, mida me soovisime, kuid kui me hiljem tahame selle programmiga arvutada mõne teise raadiusega ringi infot, siis peaksime tegema vastava muudatuse kolmes kohas. Sellise kompaktse programmi puhul ei ole see küll probleemiks, kuid reaalsetes programmides on taolisel juhul suur oht, et mõnes kohas ununeb muudatus tegemata. 
+
+Kirjutame nüüd sama programmi ümber kasutades raadiuse hoidmiseks muutujat:
+
+.. sourcecode:: py3
+
+    from math import *
+    
+    raadius = 60.25
+    print('Ringi diameeter on ' + str(2 * raadius) + ' cm')
+    print('Ümbermõõt on ' + str(pi * 2 * raadius) + ' cm')
+    print('Pindala on ' + str(pi * (raadius ** 2)) + ' cm2')
+
+Siin on konkreetset raadiust mainitud vaid ühes kohas -- muutuja ``raadius`` defineerimisel. Edaspidi on valemites kasutatud muutuja nime. Programmi jooksutamisel asendab Python muutuja nimed muutuja väärtusega ja seetõttu annab see versioon sama tulemuse, mis eelminegi. Samas, kui meil on vaja programmi edaspidi kohandada mõne muu ringi jaoks, siis on vaja muudatus teha vaid ühes kohas. Seega, muutuja kasutamine aitas meil teha programmis olevad arvutused *üldisemaks*, konkreetsest väärtusest sõltumatuks.
+
+.. topic :: Analoogia:
+
+    Mõelge Eesti Vabariigi põhiseadusele -- kui seal räägitakse presidendi rollist, siis ei nimetata ühegi konkreetse presidendi nime vaid kasutatakse väljendit *Vabariigi President*. Seevastu seaduse rakendamisel tõlgendatakse seda väljendit vastavalt sellele, kes on antud hetkel presidendiks. Selline lähenemine teeb seaduse teksti üldisemaks, konkreetsetest isikutest sõltumatuks.
+
+.. _operatsioonid-muutujatega:
+    
+Operatsioonid muutujatega
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kõiki arvu- ja sõneoperatsioone, mida demonstreerisime eelnevalt kasutades literaale, saab kasutada ka vastavalt arv- ja sõnemuutujatega:
+
+.. sourcecode:: py3
+
+    >>> tervitus = 'Tere'
+    >>> len(tervitus)
+    4
+    >>> tervitus.upper()
+    'TERE'
+    >>> n = 3
+    >>> n * n
+    9
+    >>> n * tervitus
+    'TereTereTere'
+
+.. topic:: Tähtis!!!
+
+    Kui arvu- või sõneoperatsioonides (e. tehetes) kasutada muutujaid (nt. ``n + 1`` või ``tekst.upper()``), siis võib avaldise kujust jääda mulje, et operatsiooni käigus muudetakse muutuja väärtust. Tegelikult genereeritakse tehte tulemusena hoopis *uus väärtus* ja kasutatud muutujaga midagi ei juhtu.
+    
+    Selles veendumiseks uurige järgmisi käsurea näiteid, kus kõigepealt omistatakse muutujale mingi väärtus, seejärel kasutatakse muutujat mingis tehtes (mis konstrueerib uue väärtuse), ning lõpuks demonstreeritakse, et see ei mõjutanud muutuja väärtust:
+    
+    .. sourcecode:: py3
+    
+        >>> n = 3
+        >>> n + 2
+        5
+        >>> n
+        3
+        
+    .. sourcecode:: py3
+    
+        >>> tervitus = '  tere  '
+        >>> tervitus.strip()
+        'tere'
+        >>> tervitus
+        '  tere  '
+        
+    .. sourcecode:: py3
+    
+        >>> tekst = '3'
+        >>> int(tekst)
+        3
+        >>> tekst
+        '3'
+
+
+Sisend ja väljund
+-----------------
+Pythoni käsureal toimub avaldiste sisestamine ning tulemuste väljastamine ilma, et sellele peaks eriti mõtlema. Kui soovime aga programmi käivitada skriptina, siis tuleb sisendi ja väljundiga eraldi tegeleda. 
+
+.. index::
+    single: väljund
+    single: print
+    
+Käsk ``print``
+~~~~~~~~~~~~~~
+Skriptina esitatud programmis saab väärtusi kuvada ekraanile käsuga **print**. Salvesta järgnev näide faili ning käivita. (Vajadusel vaadake sellekohast juhendit eelmise praktikumi materjalist.)
+
+.. sourcecode:: py3
+
+    print(32 * 57)
+
+Sulgudes olevat avaldist ``32 * 57`` nimetatakse siinkohal käsu ``print`` **argumendiks**. Kui kõik läheb ilusti, siis programm kuvab ekraanile ``1824`` ja lõpetab töö.
+
+.. note:: 
+    
+    Kui skripti kirjutada lihtsalt ``32 * 57``, siis midagi ekraanile ei ilmu. Sel juhul Python küll arvutab antud avaldise väärtuse, aga saadud tulemusega midagi ette ei võta.
+
+.. topic:: Lisainfo
+
+    Vaikimisi lisab ``print`` väljundi lõppu alati ka reavahetuse. Kui te seda ei soovi, siis tuleks seda näidata lisaargumendiga ``end``:
+
+    .. sourcecode:: py3
+
+        print('Vastus on: ', end='')    
+        print(32 * 57)                  
+        
+
+    ``end`` on "peidetud" argument, mis määrab, mida kuvatakse väljundi lõppu. Vaikimisi on selle argumendi väärtuseks reavahetus (``'\n'``), aga meie seadsime selle väärtuseks *tühja sõne*, seetõttu kuvatakse antud näite väljund ühel real (mis lõpeb siiski reavahetusega, sest teine ``print`` käsk toimib ikka tavapäraselt).
+    
+    Tegelikult oleks saanud sama tulemuse ka lihtsamalt:
+    
+    .. sourcecode:: py3
+
+        print('Vastus on: ' + str(32 * 57))    
+
+.. index::
+    single: sisend
+    single: input
+    
+Käsk ``input``
+~~~~~~~~~~~~~~
+Meie "ringi" programmi viimases versioonis mainisime konkreetset raadiust vaid ühes kohas, kuid me peame ikkagi programmi muutma, kui soovime arvutada mõne teise ringi näitajaid. Alternatiivina võiks programm küsida ringi raadiuse kasutajalt.
+
+Kasutajalt andmete küsimiseks on kõige lihtsam viis käsk **input**, mis kõigepealt kuvab ekraanile teksti selle kohta, milliseid andmeid programm ootab ning seejärel võimaldab kasutajal sisestada vastavad andmed klaviatuurilt. Kolmas versioon ringi arvutuste programmist kasutabki käsku ``input`` raadiuse küsimiseks:
+
+.. sourcecode:: py3
+
+    from math import *
+    
+    raadius_tekstina = input('Sisesta ringi raadius: ')
+    raadius = float(raadius_tekstina)
+    
+    print('Ringi diameeter on ' + str(2 * raadius) + ' cm')
+    print('Ümbermõõt on ' + str(pi * 2 * raadius) + ' cm')
+    print('Pindala on ' + str(pi * (raadius ** 2)) + ' cm2')
+
+See versioon on väga sarnane eelmisele versioonile -- viimasel kolmel real ei pidanud me midagi muutma. Erinevus on vaid selles, kuidas saab muutuja ``raadius`` oma väärtuse. Abimuutuja ``raadius_tekstina`` viitab sellele, et ``input`` annab sisestatud info alati teksti kujul. Enne kui me saame sisestatud andmeid kasutada numbrilistes arvutustes, tuleb sisestatud tekst teisendada arvuks (antud juhul ujukomaarvuks, kasutades käsku ``float``).
+
+Teema kinnistamiseks uurige veel ühte näidet muutujate, ``input``-i ja teksti teisendamise kohta. Selles näites soovime arvutustes kasutada täisarve, seetõttu kasutame teisendamiseks käsku ``int``:
+
+.. sourcecode:: py3
+
+    tekst1 = input('Palun sisesta esimene täisarv: ')
+    arv1 = int(tekst1)
+    
+    tekst2 = input('Palun sisesta teine täisarv: ')
+    arv2 = int(tekst2)
+    
+    summa = arv1 + arv2
+    print('Nende arvude summa on: ' + str(summa))
+
+.. topic:: Meeldetuletus:
+
+    Ärge unustage, et avaldis ``int(tekst1)`` mitte ei muuda muutujat ``tekst1`` arvuks, vaid genereerib vastava *uue* arvulise väärtuse.
+
+
+Ülesanne 2. Kasutaja tervitamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib kasutaja eesnime ja perekonnanime, ning tervitab teda tema täisnimega.
+
+
+Ülesanne 3. Celsius-Fahrenheit teisendus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vastavate kraadide arvu Fahrenheiti skaalas.
+
+
+.. index::
+    single: failid; failist lugemine
+    single: sisend; failist lugemine
+
+.. _sisendi-lugemine-failist:
+
+Sisendi lugemine failist
+~~~~~~~~~~~~~~~~~~~~~~~~
+Siinkohal õpime ära ka kõige lihtsama viisi tekstifailidest sisendi lugemiseks.  Alustuseks koostage ja salvestage tekstifail nimega `andmed.txt`, mis sisaldab suvalisi sõnu eraldi ridadel (lihtsuse mõttes ärge praegu täpitähti kasutage). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvestage *samasse kausta* järgnev skript, ning käivitage see. NB! tühikud ``print`` käskude ees on olulised!
+
+.. sourcecode:: py3
+
+    f = open('andmed.txt')
+    
+    for rida in f:
+        print('Lugesin järgneva rea: ' + rida)
+    
+    f.close()
+
+Põgusaks selgituseks: 
+
+* Käsk ``open`` otsib failisüsteemist üles soovitud faili ja tagastab viite sellele (antud näites salvestasime selle viite muutujasse ``f``). NB! kui on antud ainult failinimi, ilma teeta, siis otsitakse seda ainult sellest kaustast, kus asub skript.
+* Programmi osa, mis algab ``for rida in f``, nimetatakse ``for``-tsükliks. Antud näites loetakse siin failist ükshaaval ridu ning töödeldakse neid. (NB! rea sisu loetakse sisse koos reavahetuse sümboliga sõne lõpus). Iga rea juures salvestatakse rea sisu kõigepealt muutujasse ``rida`` ja seejärel käivitatakse ``for``-tsükli "all" olevad laused (st. need mis on 4 tühikuga paremale nihutatud).
+* ``f.close()`` ütleb failisüsteemile, et me oleme selle faili kasutamise lõpetanud.
+
+Täpsemad selgitused jätame tsüklite praktikumi, kuid sinnamaani kasutame mõnedes harjutustes just sellist programmi struktuuri. Konkreetsetes ülesannetes muudame vaid seda osa, mis käivitatakse iga rea puhul.
+
+.. note::
+    Kui seda programmi katsetate, siis märkate, et väljundis jääb iga rea vahele üks tühi rida. Põhjus on just selles, et failist lugedes jäetakse iga rea lõppu ka reavahetus alles. Kui rida uuesti ekraanile ``print``-ida, siis kuvatakse kõigepealt rea sisu koos reavahetusega, ja sellele lisab ``print`` käsk omaltpoolt veel ühe reavahetuse.
+
+.. note::
+    Kui Python ütleb teile (Windowsi arvutis), et ta ei leia faili, aga te olete veendunud, et fail on õiges kaustas olemas, siis tuleks kontrollida, ega failinimele pole saanud eksikombel kaks faililaiendit. Segadust võib tekitada asjaolu, et Windows Explorer vaikimisi varjab teatud faililaiendid.
+    
+    Kõige kindlam on muuta Windowsi seadeid nii, et alati näidataks kõik faililaiendid. Selleks tuleks Windows Exploreris valida menüüribalt `Tools -> Folder options...` (kui menüüriba pole näha, siis vajutada korraks klahvi `Alt`). Avanenud dialoogis valige lehekülg `View`, ning eemaldage linnuke valiku `Hide extensions for known file types` eest.
+
+.. note::
+    Kui proovite lugeda sisse täpitähtedega teksti, siis võib juhtuda, et saate veateate ``UnicodeDecodeError``. Sel juhul tuleks ``open`` käsu rakendamisel öelda, millises kodeeringus on teie tekst, nt. ``open('andmed.txt', encoding='UTF-8')``. ``'UTF-8'`` asemel võite proovida ka ``'cp1257'``.
+
+Ülesanne 4. Temperatuuride lugemine failist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
+
+.. hint:: 
+    Justnagu ``input`` käsu puhul, saame ka tekstifailist lugedes sisendi alati tekstina, seetõttu tuleb antud ülesandes teisendada algandmed enne kasutamist arvudeks.
+
+.. index::
+    single: kommentaarid
+    
+Kommentaarid
+------------
+Lisaks Pythoni jaoks mõeldud käskudele, saab programmi kirjutada `kommentaare`, mis on mõeldud vaid programmi lugemise hõlbustamiseks:
+
+.. sourcecode:: py3
+    
+    # Küsin kasutaja nime
+    nimi = input('Kuidas on sinu nimi? ')
+    
+    # Tervitan kasutajat
+    print('No tere ' + nimi)
+    print('Kuidas läheb?')
+    
+Kommentaar esitatakse ``#`` sümboliga -- Python ignoreerib kogu teksti, mis kirjutatakse sellest sümbolist kuni rea lõpuni.
+
+Kommenteerida tuleks neid kohti programmis, mis võivad jääda lugejale segaseks. 
+
+.. note ::
+    Programmi loetavuse seisukohast on tegelikult kõige olulisemad hästi valitud muutuja- ja funktsiooninimed. Kommentaaride põhiprobleem on see, et kuna Python nende vastu huvi ei tunne, siis võivad nad programmi arenedes "vananeda", st. programmeerija muudab programmi sisu aga unustab vastava kommentaari uuendada.
+
+Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu.
+
+
+.. index::
+    single: tingimuslaused
+    single: tingimuslaused; if-lause
+    
+Tingimuslaused
+--------------
+Väga tihti tuleb programmi käitumist kohandada vastavalt sisendandmetele -- teatud väärtuste puhul tuleb täita ühed käsud ja muudel juhtudel teised käsud. Taolised alternatiivid saab koondada **tingimuslause** e. ``if``-lause e. hargnemislause alla. Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
+
+.. sourcecode:: py3
+
+    arv_tekstina = input('Palun sisesta mingi arv: ')
+    arv = float(arv_tekstina)
+    
+    if arv < 0:
+        abs_vaartus = -arv
+    else:
+        abs_vaartus = arv
+    
+    print('Selle arvu absoluutväärtus on ' + str(abs_vaartus))
+
+Justkui eespool mainitud ``for``-tsükli puhul, on ka siin vaja pöörata tähelepanu tühikutele -- tühikutega joondamine e. *treppimine* määrab, millised käsud kuuluvad tingimuslause alla ja millised mitte. Antud näites on mõlemas tingimuslause *harus* vaid üks käsk, aga neid võib seal olla ka rohkem.
+
+Tingimuslause *päises* (st. ``if``-iga algaval real) saab tingimusi moodustada järgmiste operaatoritega: 
+
+* ``<``, ``>``, ``<=``, ``>=`` sobivad arvude võrdlemiseks
+* Topeltvõrdusmärk (``==``) tähistab võrdsust nii arvude kui sõnede puhul
+* ``!=`` tähistab mittevõrdsust nii arvude kui sõnede puhul
+
+.. note::
+    
+    Ärge unustage, et üksikut võrdusmärki (``=``) kasutatakse Pythonis muutujale väärtuse omistamiseks, mitte võrdsuse kontrollimiseks.
+
+
+Ülesanne 5. Eristav kasutaja tervitamine 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Muutke ülesandes 2 kirjeldatud kasutaja tervitamise programmi selliselt, et kasutajat nimega `Margus` tervitatakse familiaarselt aga kõiki ülejäänuid tervitatakse formaalselt.
+
+
+Tsükli ja tingimuslause kombineerimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seejärel katsetage järgmist programmi:
+
+.. sourcecode:: py3
+
+    f = open('nimed.txt')
+    
+    for nimi in f:
+        if nimi.strip() == 'Margus':  # strip eemaldab reavahetuse
+            print('Hommik!')
+            print('Kuis kulgeb?')
+        else:
+            print('Tervist, lugupeetud ' + nimi.strip() + '!')
+    
+    f.close()
+
+.. note::
+
+    Proovige järgi, kuidas Python käitub, kui unustate ``for`` või ``if`` lauses kasutada koolonit või jätate ära mõne taandrea. Sellega saate end taoliseks situatsiooniks juba ette valmistada.
+
+.. index::
+    single: veaotsing
+    
+.. topic:: Veaotsingust
+
+    Selle näite tingimuses kasutasime ``strip`` meetodit seepärast, et failist ridade lugemisel jäetakse rea lõppu ka reavahetuse sümbol. Selline nüanss aga ei pruugi alati meelde tulla ja sel juhul programm lihtsalt ei tööta õieti.
+    
+    Kui tekib selline situatsioon, kus programm, ei tööta nii nagu te soovite, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu te arvasite. Antud programmis võiks ``for``-tsüklis esimese asjana (enne tingimuslauset) kuvada ekraanile loetud nime. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
+
+.. topic:: Etteruttavalt:
+
+    Tingimuslause sisse võib panna veel teisi tingimuslauseid või tsükleid (mille sees võib omakorda olla tingimuslauseid ja tsükleid jne.) Lisaks on võimalik tingimusi omavahel kombineerida kasutades operaatoreid ``and`` ja ``or``. Nende teemadega tegeleme põhjalikult 4. praktikumis.
+ 
+
+
+Koduülesanded
+-------------
+.. note::
+    Kuigi mõned järgnevad ülesanded nõuavad programmi vormistamist koos kasutajalt sisendi küsimisega, on soovitav esialgu kirjutada ``input`` käskude asemele mingid konkreetsed väärtused -- sedasi läheb võimalike arvutusvalemite katsetamine kiiremini. Kui olete saanud kätte õige valemi, siis asendage need ajutised algandmed ``input`` käskudega.
+
+
+1. Pythoni dokumentatsioon
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tutvuge põgusalt Pythoni dokumentatsioonis ``math`` mooduli kohta käiva infoga (http://docs.python.org/py3k/library/math.html). Uurige muuhulgas välja käskude ``floor`` ja ``ceil`` tähendus -- neid võib edaspidi ülesannete lahendamisel tarvis minna.
+
+
+2. Paaris või paaritu
+~~~~~~~~~~~~~~~~~~~~~
+Koostage tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjutage programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
+
+3. Pere sissetulek
+~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 20€ kuus.) 
+
+Esialgu võite eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum.
+
+Lõpuks korraldage nii, et programm töötab õigesti ka siis, kui ühel (või mõlemal) vanemal on brutopalk maksuvabast miinimumist väiksem.
+
+4. Pangaarve intress
+~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib kasutajalt tema pangaarvel olevat summat ning intressi protsenti, mida pank talle igal aastal maksab. Vastuseks peab programm väljastama pangaarvel oleva summa 5 aasta pärast.
+
+**Testige** oma programmi erinevate summa ja intressi kombinatsioonidega.
+
+.. topic:: Vabatahtlik lisaülesanne
+
+    Kui olete saanud õige valemi paika, siis modifitseerige oma programmi nii, et kasutajalt küsitakse vaid intressi protsent ja erinevad algsummad loetakse tekstifailist. Programm peaks arvutama tulemuse iga algsumma jaoks.
+
+5. Busside logistika
+~~~~~~~~~~~~~~~~~~~~~
+Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjutage programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
+
+.. note::
+    Võib tunduda, et selle ülesande jaoks läheb tarvis tingimuslauset, aga tegelikult on võimalik see lahendada ka lihtsamalt. Vihje: abiks võivad olla ``//``, ``%``, ``floor`` või ``ceil``, valige neist selle ülesande jaoks sobivad.
+    
+**Testige** oma programmi muuhulgas järgmiste algandmetega:
+
+* inimeste arv: 60, kohtade arv: 40
+* inimeste arv: 80, kohtade arv: 40
+* inimeste arv: 20, kohtade arv: 40
+* inimeste arv: 40, kohtade arv: 40
+
+Üritage mõista, miks valiti taolised testiandmed.
+
+
+Soovituslik lisaülesanne: Küpsisetort
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Küpsisetordi tegemisel laotakse küpsised ristkülikukujulisele kandikule ja seda mitmes kihis, nii, et igas kihis on sama palju küpsiseid. Küsida kasutajalt, mitu küpsist mahub kandikule laiuses ja mitu pikkuses ning kui mitme kihilist torti ta teha soovib. Seejärel küsida, kui mitu küpsist on ühes pakis.
+
+Lõpuks väljastada, mitu küpsisepakki tuleb sellise tordi tegemiseks osta. NB! Eeldame, et poolikut küpsisepakki osta ei saa.
+
+**Testige** oma programmi, valides algandmed sama skeemi järgi nagu eelmises ülesandes.
+

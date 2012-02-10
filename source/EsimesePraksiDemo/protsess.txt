@@ -1,0 +1,113 @@
+Soovin kirjutada programmi, mis otsib ja loetleb etteantud kaustas kõik *.mp3 failid
+
+* alustan guugeldamisega "python directory listing"
+* leian viite os-mooduli dokumentatsioonile
+* sirvin seda lehekülge
+    - listdir tundub relevantne
+    
+* ma pole kindel, kas dokumentatsioonis mainitud "path", mida listdir
+  argumendiks võtab, tuleb anda sõnena, või mingi objektina
+* katsetan seda järgi Python'i käsureal mingi suvalise olemasoleva kaustaga
+* esimesel korral saan vea, kuna unustan langkriipsu escape'imata
+* katsetamine õnnestub, [võimalus mainida järjendeid]
+
+* alustan skripti kirjutamist, kirjutan esialgu kausta nime skripti sisse 
+    (muutujasse)
+* katsetan igaks juhuks, kas saan sama tulemuse ka skriptis ja muutujat kasutades
+  lihtsalt prindin saadud listi
+
+* nüüd käin listi for-iga läbi, prindin iga nime eraldi reale ning loendan failid.
+  Katsetan. [võimalus mainida listi läbimist ja muutujate uuendamist]
+
+* järgmisena filtreerin sisu: loetlen ja näitan ainult mp3 lõpuga failid. 
+  Siinkohal ei kontrollin igaks juhuks käsureal, kas ma mäletan
+  sõne slice'imist õieti.
+
+* lisan input käsu, mis küsib kausta nime kasutajalt.
+  Katsetan sama kaustanimega, mis oli enne sisse kirjutatud
+
+--- Vahetulemus --------------------------------
+import os
+
+kaust = input("Sisesta kausta nimi: ")
+
+failinimed = os.listdir(kaust)
+
+failide_arv = 0
+for failinimi in failinimed:
+    if failinimi[-4:] == ".mp3":
+        print(failinimi)
+        failide_arv = failide_arv + 1
+
+print("Kokku oli " + str(failide_arv) + " faili")
+-------------------------------------------------
+
+* otsustan teha programmi universaalsemaks, teen nii et ka laiendit küsitakse kasutaja käest.
+    alguses asi ei tööta (ei leia ühtegi faili) prindin välja failide massiivi -- seal on failid olemas.
+    unustan suffiksi võrdlemisel ära punkti
+    
+
+* Katsetan laiendiga "html" ning asi jälle ei tööta, 
+  Tuleb välja, et suffiksi võrdlemisel olin arvestanud ainult 3-täheliste laienditega
+
+* parandan
+
+-- vahetulemus ---------------------------------------
+import os
+
+kaust= input("Sisesta kausta nimi: ")
+laiend = input("Sisesta laiend: ")
+
+failinimed = os.listdir(kaust)
+# print(len(failinimed))
+
+failide_arv = 0
+for failinimi in failinimed:
+    if failinimi[-(len(laiend)+1):] == "." + laiend:
+        print(failinimi)
+        failide_arv = failide_arv + 1
+
+print("Kokku oli " + str(failide_arv) + " faili")
+------------------------------------------------------
+
+* Kui aega, jääb, siis lisan võimaluse näidata (ja summeerida) failide suurused:
+* surfin jälle 'os' mooduli lehel ja leian 'stat' funktsiooni
+* katsetan esialgu käsureal mingi teada failiga
+* lisan skripti, katsetan
+* konverdin failisuurused baitidest megabaitideks
+* ümardan
+
+-- lõpptulemus -----------------------------------------
+import os
+
+kaust= input("Sisesta kausta nimi: ")
+laiend = input("Sisesta laiend: ")
+
+failinimed = os.listdir(kaust)
+print(len(failinimed))
+
+failide_arv = 0
+kogumaht = 0
+
+for failinimi in failinimed:
+    if failinimi[-(len(laiend)+1):] == "." + laiend:
+
+        täisnimi = kaust + "\\"+ failinimi
+        
+        suurus = os.stat(täisnimi).st_size
+        suurus_mb = round(suurus / 1024 / 1024, 1)
+        
+        print(failinimi + ", " + str(suurus_mb) + "MB")
+        
+        failide_arv = failide_arv + 1
+        kogumaht = kogumaht + suurus
+
+kogu_mb = round(kogumaht / 1024 / 1024, 1)
+print("Kokku oli " + str(failide_arv) + " faili, kogumahuga " + str(kogu_mb) + "MB")
+---------------------------------------------------
+
+* kui jääb veel aega, siis loon ja rakendan funktsiooni "B_to_MB" (baidid megabaitideks)
+
+* kui töö käigus naturaalselt veateateid ei tule, siis võiks teha meelega, nt. mingi nimi valesti kirjutada,
+"os." ära unustada vms.
+

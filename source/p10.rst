@@ -1,0 +1,183 @@
+X. Miniprojekt
+==============
+
+Selle nädala praktikum on mõeldud miniprojekti arendamiseks ja juhendajalt nõu küsimiseks.
+(Miniprojekti olemust on kirjeldatud eelmise praktikumi koduülesannete osas.)
+
+.. todo::
+
+    http://tkinter.unpythonic.net/wiki/CanvasConundrums
+
+Mõned lisanipid
+-----------------
+Paljude objektide genereerimine tsüklis ning hiirekliki seostamine konkreetse objektiga
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole "ligi pääseda", salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvestage samasse kausta :download:`juku.gif <_static/juku.gif>`.
+
+.. sourcecode:: py3
+
+    from tkinter import *
+
+    # see funktsioon käivitatakse piltidele klikkimisel
+    def hiireklikk(event):
+        # Küsin selle objekti id, millele parasjagu klõpsati.
+        # tahvel.find_withtag(CURRENT) annab loetelu kõigi "aktiivsete" objektide id-dega, 
+        # antud juhul tähendab aktiivsus seda, et selle objekti peale klikiti.
+        # Praegu võime eeldada, et selles loetelus on vaid 1 element,
+        # seetõttu võtamegi sealt elemendi indeksiga 0
+        pildi_id = tahvel.find_withtag(CURRENT)[0]
+
+        # vaatan id_tabeli läbi, et saada teada,
+        # millisel positsioonil sellise id-ga pilt asub
+        for i in range(3):
+            for j in range(3):
+                if pildi_id == id_tabel[i][j]:
+                    teade = "Klikiti pildil, mis asub positsioonil " + str(i) + "," + str(j)  
+                    # näitan selle teate tekstiobjekti abil
+                    tahvel.itemconfigure(teksti_id, text=teade)
+                    
+                    # sama hästi võin teate ka lihtsalt konsooli printida
+                    print(teade)
+
+
+    # raami ja tahvli loomine
+    raam = Tk()
+    raam.title("Tahvel")
+    tahvel = Canvas(raam, width=500, height=500, background="white")
+    tahvel.grid()
+
+    # pildi sisu laadimine
+    pilt = PhotoImage(file="juku.gif")
+
+    # järgnevas tsüklis loon 9 pilti ja paigutan nad tahvlil 3x3 asetusse
+    # lisaks salvestan piltide id-d 3x3 tabelisse (st. 2-mõõtmelisse järjendisse)
+    id_tabel = []
+    for i in range (3):
+        id_rida = []
+        for j in range(3):
+
+            # arvutan pildi koordinaadid vastavalt veeru ja rea numbritele
+            x = 170 + (j * 70)
+            y = 130 + (i * 70)
+            pildi_id = tahvel.create_image(x, y, image=pilt)
+            
+            # seon sellel pildil toimuvad klõpsud funktsiooniga "hiireklikk"
+            tahvel.tag_bind(pildi_id, '<1>', hiireklikk)
+
+            # salvestan pildi sobivale kohale järjendis
+            id_rida.append(pildi_id)
+
+        # üks rida sai valmis, lisan selle tabelisse    
+        id_tabel.append(id_rida)
+        
+
+    # lõpuks loon ka ühe tekstiobjekti, mille abil saan kasutajale tekstilist infot näidata
+    teksti_id = tahvel.create_text(250, 350, text="Kliki mingil pildil!")
+
+
+    raam.mainloop()
+
+Tsüklis genereerimist võib kasutada ka siis kui on vaja palju nuppe või tekstikaste vms.
+
+Pildi vahetamine
+~~~~~~~~~~~~~~~~~~~~
+Eelmise praktikumi materjalis oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvestage samasse kausta :download:`avatud.gif <_static/avatud.gif>` ja  :download:`suletud.gif <_static/suletud.gif>`.
+
+.. sourcecode:: py3
+
+    from tkinter import *
+
+    def vaheta_pilt(event):
+        # global deklaratsioon võimaldab muuta funktsioonist väljaspool
+        # defineeritud muutujat
+        global näidatav_pilt
+
+        # vahetan pildi viite
+        if näidatav_pilt == suletud:
+            näidatav_pilt = avatud
+        else:
+            näidatav_pilt = suletud
+
+        # ... ja uuendan selle viite põhjal tahvlil oleva pildi sisu
+        tahvel.itemconfigure(pildi_id, image=näidatav_pilt)
+
+
+    raam = Tk()
+    raam.title("Tahvel")
+    tahvel = Canvas(raam, width=600, height=600, background="white")
+    tahvel.grid()
+
+
+    suletud = PhotoImage(file="suletud.gif")
+    avatud = PhotoImage(file="avatud.gif")
+    näidatav_pilt = suletud
+
+    pildi_id = tahvel.create_image(200, 200, image=näidatav_pilt, anchor=NW)
+    tahvel.tag_bind(pildi_id, '<1>', vaheta_pilt)
+
+    raam.mainloop()
+    
+Hiirerullile reageerimine ja objektide *zoom*-imine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutamist ning kuidas muuta tahvli objektide suurust.
+
+.. sourcecode:: py3
+
+    from tkinter import *
+
+    def zoom(event):
+        # Linuxis toimib event.num  aga windowsis delta
+        if event.num == 5 or event.delta < 0:
+            # allapoole rullimine
+            faktor = 0.9
+        else:
+            # ülespoole rullimine
+            faktor = 1.1
+
+        # event.x ja event.y annavad hiirekursori asukoha
+        # skaleerin kõiki objekte selle punkti suhtes
+        # (kui soovid skaleerida üksikut objekti, siis kasuta ALL asemel selle objekti id-d)
+        tahvel.scale(ALL, event.x, event.y, faktor, faktor)
+
+    raam = Tk()
+    raam.title("Tahvel")
+    tahvel = Canvas(raam, width=600, height=600, background="white")
+    tahvel.grid()
+
+    tahvel.create_oval(100, 100, 200, 150, fill="wheat")
+    tahvel.create_oval(300, 300, 340, 340)
+
+    juku = PhotoImage(file="juku.gif")
+    tahvel.create_image(70, 70, image=juku)
+    tahvel.create_image(420, 420, image=juku)
+
+    # Windowsis tähistab hiirerullimist <MouseWheel>
+    tahvel.bind_all("<MouseWheel>", zoom)
+    # Linuxis toimivad "<4>" ja "<5>"
+    tahvel.bind_all("<4>", zoom)
+    tahvel.bind_all("<5>", zoom)
+
+    raam.mainloop()
+
+Kahjuks ei toimu automaatselt piltide suuruse muutmine -- täieliku *zoom* efekti saamiseks tuleks ka piltide sisu vahetada suuremate vastu.
+
+Hindamine
+--------------------
+Lihtsama miniprojekti eest antakse kuni 3 punkti koduülesannete reale (üks punkt teema valimise ja töö alustamise eest ning kaks punkti töö lõpuleviimise eest).
+
+Mahukamate projektide puhul võib praktikumi juhendaja anda lisaks veel 2 punkti tärnülesannete reale. Arutage kindlasti oma teemat juhendajaga!
+
+Näited
+~~~~~~~~~~
+Mõned umbkaudsed näited, kuidas võiks hinnata töö mahukust:
+
+    * Ussimäng = 5p
+    * Lihtne trips-traps-trull = 3-4p
+    * Noolemäng (ülesanne 74 "Programmeerimise eksamiülesannete kogu 2007") = 2-3p
+
+Programmeerimise eksamiülesannete kogu on kättesaadav aadressilt http://dspace.utlib.ee/dspace/handle/10062/17046
+
+
+Koduülesanded
+---------------
+Koduülesandeks on seekord miniprojekti lõpuleviimine.
