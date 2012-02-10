@@ -1,5 +1,6 @@
 I. Sissejuhatus
 ===============
+Nullis rida
 Esimese praktikumi peaeesmärgiks on õppida kasutama Python keele põhilisi töövahendeid -- käsurida ning keskkonda "IDLE". Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
 
 .. index::
@@ -213,3 +214,4 @@ Python koduarvutis
 Selleks, et Pythonit oma koduarvutisse installeerida, laadige alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/. Valige sealt versioon `3.2`.
 
 Pythoni keskkonna enda arvutisse installeerimine on väga soovitav, sest siis saate arvutiklassis proovitud asju ka seal teha. Programmeerima pole võimalik õppida vaid loenguid kuulates – tegemist on praktilise oskusega, mis nõuab eelkõige harjutamist. Reeglina ei piisa vaid praktikumides tehtud ülesannetest ning harjutada tuleks kindlasti ka kodus.
+hg clone https://code.google.com/p/atipython/ 
