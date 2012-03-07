@@ -1,6 +1,6 @@
 IX. Graafilised programmid
 =================================
-Selles praktikumis vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Praktikumi teises osas uurime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
+Selles peatükis vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Praktikumi teises osas uurime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
 
 .. topic:: Tähelepanu!
 
