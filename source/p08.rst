@@ -102,7 +102,7 @@ Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunu
 
 Ülesanne 3. Spiraali joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta rekursiivne funktsioon, mis joonistaks kilpkonna abil kandilise spiraali, alustades etteantud küljepikkusest ning vähendades küljepikkust igal ringil mingi väärtuse võrra, kuni see jõuab nulli. (Analoogse ülesande lahendasime ühes varasemas praktikumis tsükliga.)
+Kirjuta rekursiivne funktsioon, mis joonistaks kilpkonna abil kandilise spiraali, alustades etteantud küljepikkusest ning vähendades küljepikkust igal ringil mingi väärtuse võrra, kuni see jõuab nulli.  (Analoogse ülesande lahendasime ühes varasemas peatükis tsükliga.)
 
 
 Ülesanne 4. Eukleidese algoritm
