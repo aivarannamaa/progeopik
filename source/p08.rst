@@ -191,7 +191,7 @@ Enamasti käib rekursioon muutuja järgi, mida edastatakse funktsiooni argumendi
 
 Rekursiivsed andmestruktuurid
 -------------------------------
-Eelmises praktikumis vaatasime, kuidas järjendeid üksteise sisse pannes luua keerulisemaid andmestruktuure. Selle juures me aga alati arvestasime, mitu taset meie andmestruktuurides on. 
+Eelmises peatükis vaatasime, kuidas järjendeid üksteise sisse pannes luua keerulisemaid andmestruktuure. Selle juures me aga alati arvestasime, mitu taset meie andmestruktuurides on. 
 
 Alati pole tasemete arvu võimalik ette teada -- näiteks failisüsteemi puhul pole kaustade sügavus süsteemi poolt (otseselt) piiratud. Ilmneb, et rekursioon sobib ideaalselt taoliste andmestruktuuride töötlemiseks.
 
