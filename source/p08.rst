@@ -4,7 +4,7 @@ Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse üles
 
 Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- so. funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad, kui tsüklitega kirjutatud lahendused.
 
-Tehniliselt võttes ei õpi te selles praktikumis Pythoni kui programmeerimiskeele kohta midagi uut, kuna Pythoni seisukohast ei erine rekursiivsed funktsioonid "tavalistest" funktsioonidest. Samas, rekursiivsetest algoritmidest arusaamiseks on vaja vaadata asju pisut teise nurga alt -- seetõttu on antud praktikumis ülesandeid, mis aitavad rekursiivse mõtteviisiga harjuda. 
+Tehniliselt võttes ei õpi te selles peatükis Pythoni kui programmeerimiskeele kohta midagi uut, kuna Pythoni seisukohast ei erine rekursiivsed funktsioonid "tavalistest" funktsioonidest. Samas, rekursiivsetest algoritmidest arusaamiseks on vaja vaadata asju pisut teise nurga alt -- seetõttu on antud praktikumis ülesandeid, mis aitavad rekursiivse mõtteviisiga harjuda. 
 
 
 Rekursiivsed funktsioonid
