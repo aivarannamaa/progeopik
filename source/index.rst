@@ -12,6 +12,8 @@ Sisukord
    p01
    p02
    p03
+   l04
+   l05
    kt1
    p04
    p05
