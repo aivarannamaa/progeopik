@@ -471,3 +471,26 @@ p {
     margin-left: auto;
     margin-right: auto
 }
+
+/* HINT MANAGEMENT */
+.admonition.hint .admonition-title {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.admonition.hint .last {
+    display: none;
+}
+
+.admonition.hint  p.admonition-title:after {
+    content: " ...";
+}
+
+.admonition.hint.exposed .last {
+    display: block;
+}
+
+.admonition.hint.exposed  p.admonition-title:after {
+    content: "";
+}
+
