@@ -15,8 +15,10 @@
 
 <script type="text/javascript">
 $(function() {
+    $(".admonition.hint").addClass("hidden");
+
     $(".admonition.hint .admonition-title").click(function(e){
-        $(e.target.parentNode).toggleClass("exposed");
+        $(e.target.parentNode).toggleClass("hidden");
     });
 });
 </script>

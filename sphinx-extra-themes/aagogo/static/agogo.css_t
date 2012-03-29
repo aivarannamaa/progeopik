@@ -478,19 +478,11 @@ p {
     text-decoration: underline;
 }
 
-.admonition.hint .last {
+.admonition.hint.hidden .last {
     display: none;
 }
 
-.admonition.hint  p.admonition-title:after {
+.admonition.hint.hidden  p.admonition-title:after {
     content: " ...";
-}
-
-.admonition.hint.exposed .last {
-    display: block;
-}
-
-.admonition.hint.exposed  p.admonition-title:after {
-    content: "";
 }
 
