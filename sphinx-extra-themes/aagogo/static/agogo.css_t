@@ -106,7 +106,7 @@ img {
   border: 0;
 }
 
-div.admonition, div.topic {
+div.admonition, div.topic, div.sidebar {
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 2px 7px 1px 7px;
@@ -116,10 +116,19 @@ div.admonition, div.topic {
   background-color: #f3f3f3
 }
 
-p.admonition-title,  p.topic-title {
+p.admonition-title,  p.topic-title, p.sidebar-title {
   margin: 0px 10px 5px 0px;
   font-weight: bold;
   color: gray;
+}
+
+.admonition.attention .admonition-title:after {
+    content: "!";
+}
+
+div.sidebar {
+    float: right;
+    margin-left: 8px;
 }
 
 dt:target, .highlighted {
@@ -244,34 +253,34 @@ div.document ol {
 }
 
 
-/* Sidebar */
+/* TOC */
 
-div.sidebar {
+div.side_toc {
   width: {{ theme_sidebarwidth }};
   float: right;
   font-size: .9em;
 }
 
-div.sidebar a, div.header a {
+div.side_toc a, div.header a {
   text-decoration: none;
 }
 
-div.sidebar a:hover, div.header a:hover {
+div.side_toc a:hover, div.header a:hover {
   text-decoration: underline;
 }
 
-div.sidebar h3 {
+div.side_toc h3 {
   color: #2e3436;
   text-transform: uppercase;
   font-size: 130%;
   letter-spacing: .1em;
 }
 
-div.sidebar ul {
+div.side_toc ul {
   list-style-type: none;
 }
 
-div.sidebar li.toctree-l1 a {
+div.side_toc li.toctree-l1 a {
   display: block;
   padding: 1px;
   border: 1px solid #dddddd;
@@ -281,29 +290,29 @@ div.sidebar li.toctree-l1 a {
   color: #2e3436;
 }
 
-div.sidebar li.toctree-l2 a {
+div.side_toc li.toctree-l2 a {
   background-color: transparent;
   border: none;
   margin-left: 1em;
   border-bottom: 1px solid #dddddd;
 }
 
-div.sidebar li.toctree-l3 a {
+div.side_toc li.toctree-l3 a {
   background-color: transparent;
   border: none;
   margin-left: 2em;
   border-bottom: 1px solid #dddddd;
 }
 
-div.sidebar li.toctree-l2:last-child a {
+div.side_toc li.toctree-l2:last-child a {
   border-bottom: none;
 }
 
-div.sidebar li.toctree-l1.current a {
+div.side_toc li.toctree-l1.current a {
   border-right: 5px solid {{ theme_headerlinkcolor }};
 }
 
-div.sidebar li.toctree-l1.current li.toctree-l2 a {
+div.side_toc li.toctree-l1.current li.toctree-l2 a {
   border-right: none;
 }
 
