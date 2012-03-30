@@ -8,7 +8,8 @@ Sisukord
   
 .. toctree::
    :maxdepth: 2
-
+    
+   principles
    p01
    p02
    p03
