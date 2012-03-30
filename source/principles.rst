@@ -45,7 +45,9 @@ TODO
 
 Märkused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Märkused käivad põhiteksti sisse ja nende põhiline eesmärk on teksti visuaalselt liigendada ja teksti voos stiililist vaheldust pakkuda. Nad on esitatud peenemas kirjas ja esinevad seega boonuse või lisana. Kas märkuste selline staatus teeb nad lugeja jaoks huvitavamaks või vastupidi?
+Märkused käivad põhiteksti sisse ja nende põhiline eesmärk on teksti visuaalselt ja verbaalselt liigendada ja teksti voos stiililist vaheldust pakkuda. Nad on esitatud peenemas kirjas ja esinevad seega boonuse või lisana. Kas märkuste selline staatus teeb nad lugeja jaoks huvitavamaks või vastupidi?
+
+Kuna märkusel on erinev visuaalne ja verbaalne stiil, siis tuleb järgida, et nad ei killustaks ühte terviklikku põhiteksti mõtet. Tavaliselt sobivad nad kõige paremini lõigu lõppu.
 
 reStructuredText'is on palju erinevate semantiliste nüanssidega direktiive märkuste kirjutamiseks aga selle õpiku jaoks tunduvad kõige sobivamad järgnevad (visuaalselt näidatakse kõik sama (suhteliselt neutraalse) stiiliga, erinevus on vaid kastikese pealkirjas):
 
