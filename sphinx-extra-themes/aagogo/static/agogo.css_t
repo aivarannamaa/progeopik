@@ -476,9 +476,17 @@ p {
 .admonition.hint .admonition-title {
     cursor: pointer;
     text-decoration: underline;
+    display: block !important;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.admonition.hint.hidden .last {
+.admonition.hint.hidden * {
     display: none;
 }
 
