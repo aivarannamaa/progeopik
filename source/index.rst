@@ -5,6 +5,7 @@ Sisukord
    :maxdepth: 2
     
    principles
+   interaction
    p01
    p02
    p03

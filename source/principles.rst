@@ -1,4 +1,4 @@
-Õpiku stiil, peatüki ülesehitus, formaat jne.
+*Õpiku stiil, peatüki ülesehitus, formaat jne.*
 ===================================================
 
 [Praegu on siin Aivari nägemus asjast. Palun kommenteerige / muutke / täiendage! ]
@@ -28,7 +28,6 @@ Soovitavad õpiku omadused
     * lihtsam analoogne ülesanne või küsimus
     * Kokkuvõte (üldistus) ja reference (nt. meetodite või näiteavaldiste tabel, süntaksiskeem), lingid lisainfole. 
     * tiba raskemad ülesanded (vihjetega)
-    * Tekstikast, kuhu lugeja saab kirjutada oma sõnadega kokkuvõtte või mingid muud märkused selle osa kohta. See sisu on nähtav ainult tudengile endale ja õppejõududele. Üleskutse lugejale: milliste ülesannete juures läheks seda konstruktsiooni veel tarvis? Pane sellele teemale pealkiri oma sõnadega. Või paku välja parem selgitus. (Selle jaoks on tekstisisestuskast).
 
 
 * teema 2
@@ -196,39 +195,6 @@ Vihjed
 ~~~~~~~~~~~~~~
 Süntaksiskeemid, funktsioonide tabelid jms. tuleks visuaalselt teha ülejäänud materjalist eristuvaks, et õpikut saaks kasutada asjade kiireks meeldetuletamiseks.
 
-Automaatne tagasiside programmidele
---------------------------------------
-* TODO uuri Viopet
-* tehniliselt poleks eriti keeruline teha
-
-Kas arvestada tulemusi hindamisel?
-
-
-Teksti märgendamine ja kommenteerimine
------------------------------------------
-Tudeng võiks saada teha teksti "enda omaks":
-
-* sõnade high-light'imisega (nähtav talle ja õppejõududele)
-* oma kokkuvõtte ja kommentaaride kirjutamisega iga teema lõpus olevasse blokki.
-
-Vaevatasuks võiks genereerida talle lehekülje, kus on tema märkused kokku võetud(?).
-
-Lisaks võiks olla võimalus kirjutada teksti kohta avalikke kommentaare:
-
-* parandused 
-* selgitused kaastudengitele
-* ...
-
-Heaks näiteks on O'Reilly Open Feedback Publishing System, http://ofps.oreilly.com/, nt. http://ofps.oreilly.com/titles/9781449398583/chap1_id35940135.html või Scala parendamise ettepanekud Google Docs'is, nt https://docs.google.com/document/d/1NdxNxZYodPA-c4MLr33KzwzKFkzm9iW9POexT9PkJsU/edit?hl=en_US (märkused on dokumendi teises pooles).
-
-Autentimine
-~~~~~~~~~~~~~~
-Isiklike täienduste tegemiseks/nägemiseks on vaja kasutaja autentida. Mõned võimalikud variandid:
-
-* UT konto põhjal
-* Google'i konto põhjal
-* Facebook'i konto põhjal
-
 
 Teksti stiil/toon
 ----------------------
@@ -240,8 +206,3 @@ Failide kodeering
 UTF-8
 
 
-Kuidas teha õppimist huvitavamaks?
---------------------------------------
-* Tudengi ülesannete lahendamiste logi
-* Ülesannete lahendamise statistika üle kogu kursuse
-* Pseudo-punktide kogumine harjutusülesannetega
