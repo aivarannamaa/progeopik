@@ -1,8 +1,3 @@
-.. Programmeerimine (MTAT.03.100) documentation master file, created by
-   sphinx-quickstart on Fri Aug 19 00:43:32 2011.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive. 
-
 Sisukord
 ===========================================================
   

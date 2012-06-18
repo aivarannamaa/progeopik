@@ -11,6 +11,9 @@ Peale antud teema läbimist üliõpilane oskab
 
 * esitada lihtsamate ülesannete lahendust plokkskeemina (nt. lihtsamate kilpkonnaülesannete korral).
 
+
+TODO probleem vs ülesanne
+
 Sissejuhatus
 ------------
 
@@ -29,6 +32,8 @@ Selliseid küsimusi saab esitada veel ja lahendust pole võimalik üheselt mää
 
 **Ülesanne 2.** Ruut ja ring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO: vead valemites
+
 Ringi sisse on joonistatud ruut, mille külje pikkus on 2a. Leida ringi pindala. 
 
 .. image:: _static/l04_fig1.gif
@@ -158,11 +163,11 @@ Lahendame nüüd selle ülesande arvutil, tehes läbi ka ülesande lahendamise t
 
 .. sourcecode:: py3
 
-	from math import *
+    from math import *
 
-	a = int(input("Sisesta külje pikkus a: "))
-	S = pi*a*a/2
-	print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
+    a = int(input("Sisesta külje pikkus a: "))
+    S = pi*a*a/2
+    print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
 
 3. Enamasti me teostame sammud 2 ja 3 korraga, st programmi koostamise käigus sisestame selle ka arvutisse.
 
@@ -215,25 +220,23 @@ Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv e
 Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Kilpkonnal on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on. Koostada plokkskeem.  
 
 .. hint:: 
-	Antud ülesande korral võib olla olukord, kus takistus asub roboti ees
+    Antud ülesande korral võib olla olukord, kus takistus asub roboti ees
 
-.. image:: _static/l04_fig18.gif  
+    .. image:: _static/l04_fig18.gif  
 
-.. hint:: 
-	või siis ei asu
+    või siis ei asu
 
-.. image:: _static/l04_fig19.gif  
+    .. image:: _static/l04_fig19.gif  
 
 .. note:: 
 
-	Laadides alla väikese programmi, on võimalik kilpkonna liikumist modelleerivate plokkskeemide koostamist testida ka arvuti abil  
-http://www.physicsbox.com/indexrobotprogen.html
+    Laadides alla väikese programmi, on võimalik kilpkonna liikumist modelleerivate plokkskeemide koostamist testida ka arvuti abil: http://www.physicsbox.com/indexrobotprogen.html
 
 
 Lisalugemist
 ------------
 
-Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on ülesannete lahendusprotsessi uuritud ka süstemaatiliselt. Üheks selle ala klassikuks võib lugeda Hungari matemaatikut George Pólyat, kes uuris ülesande lahendamise protsessi lähemalt ja avaldas oma kuulsa raamatu "Kuidas seda lahendada?". Oma raamatus toob ta välja neli etappi, millega ülesande lahendajal tuleb kokku puutuda. Esitame siinkohal tema kuulsa tsitaadi:
+Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on ülesannete lahendusprotsessi uuritud ka süstemaatiliselt. Üheks selle ala klassikuks võib lugeda Ungari matemaatikut George Pólyat, kes uuris ülesande lahendamise protsessi lähemalt ja avaldas oma kuulsa raamatu "Kuidas seda lahendada?". Oma raamatus toob ta välja neli etappi, millega ülesande lahendajal tuleb kokku puutuda. Esitame siinkohal tema kuulsa tsitaadi:
 
 .. index::
     single: Pólya

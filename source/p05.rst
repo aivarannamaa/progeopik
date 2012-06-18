@@ -14,7 +14,9 @@ Järjend (ing.k. *list*) on andmetüüp loetelude esitamiseks. Järjendi loomise
     linnad = ['Tartu', 'Tallinn', 'Põltsamaa']
     
 Me salvestasime muutujasse ``pikad_kuud`` ühe arvujärjendi (31-päevaliste kuude numbrid) ning muutujasse ``linnad`` ühe sõnejärjendi 3 sõnega.
-    
+
+TODO: skeem, kus järjendi elemendid on nummerdatud kastikesed
+
 Operatsioonid järjenditega
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kui me oleme järjendi kirja pannud, siis tekib loomulikult küsimus, mida sellega teha saab? Mõningaid põhioperatsioone demonstreerib järgnev programm:

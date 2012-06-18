@@ -1,7 +1,9 @@
 III. Alamprogrammid e. funktsioonid
 ===================================
 
-Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises aga selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
+Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
+
+TODO: uute käskude defineerimine, kui ports koodiridu moodustavad loogilise terviku
 
 .. topic:: Terminoloogiast
 
@@ -180,9 +182,11 @@ Lisage funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta
     
 Väärtusega funktsioonid
 -----------------------
-Funktsioonide ``ruut`` ja ``print`` puhul huvitas meid see **tegevus**, mida see funktsioon tegi (kilpkonna liigutamine või ekraanile kirjutamine). Seevastu, kui meenutate eelmist praktikumi, siis funktsioonide ``sin`` ning ``sqrt`` puhul huvitas meid vastava funktsiooni rakendamisel saadav **väärtus**.
+Funktsioone ``ruut`` ja ``print`` kasutasime käskudena -- meid huvitas see **tegevus**, mida see funktsioon tegi (kilpkonna liigutamine või ekraanile kirjutamine). Seevastu, eelmises praktikumis kasutasime muuhulgas ka funktsioone ``sin`` ning ``sqrt``, aga nende kasutusviis oli hoopis erinev -- meid huvitas hoopis vastava funktsiooni rakendamisel saadav **väärtus**.
 
-Nii ``sin`` kui ``sqrt`` teevad argumentidega mingi arvutuse, ning **tagastavad** saadud väärtuse, mida võime nt. kasutada avaldises, salvestada muutujasse või vaadata käsureal. Taolisi funktsioone nimetame **väärtusega funktsioonideks** (õpikus kasutatakse väljendit `fruitful function`).
+TODO: selgita, et sqrt ei prindi vastust ekraanile, seda teeb IDLE! Too siin uuesti(!) välja näide, kus sqrt'd kasutatakse alamaavaldisena.
+
+Nii ``sin`` kui ``sqrt`` teevad argumentidega mingi arvutuse, ning **tagastavad** saadud väärtuse, mida võime nt. kasutada avaldises, salvestada muutujasse või vaadata käsureal. Taolisi funktsioone nimetame **väärtusega funktsioonideks**.
 
 .. note ::
 
@@ -207,7 +211,7 @@ Väärtusega funktsioonide puhul on oluline *võtmesõna* ``return`` -- sellele 
 
 .. note:: 
 
-    Kui päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``ruut``. Need funktsioonid, mille eesmärk on vaid mingi tegevus, tagastavad alati suhteliselt ebahuvitava väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata ning seepärast Python'i käsurida ka ei näita seda automaatselt. Mainitud nüanss on oluline vaid spetsiifilistel juhtudel -- käesolevas kursuses võib seda vabalt ignoreerida.
+    Kui päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``ruut``. Need funktsioonid, mille eesmärk on vaid mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata ning seepärast Python'i käsurida ka ei näita seda automaatselt.
 
 .. _return-vs-print:
 
