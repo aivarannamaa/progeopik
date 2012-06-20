@@ -17,7 +17,7 @@ Teksti märgendamine ja kommenteerimine
 Tudeng võiks saada teha teksti "enda omaks":
 
 * sõnade highlight'imisega (nähtav talle ja õppejõududele)
-* oma kokkuvõtte ja kommentaaride kirjutamisega iga teema lõpus olevasse tekstikasti.
+* oma kokkuvõtte ja kommentaaride kirjutamisega iga teema lõpus olevasse tekstikasti. Väga huvitav oleks näha, mida tudengid sinna kirjutaksid.
 
 Vaevatasuks võiks genereerida talle lehekülje, kus on tema märkused kokku võetud(?).
 
@@ -41,7 +41,7 @@ Isiklike täienduste tegemiseks/nägemiseks on vaja kasutaja autentida. Mõned v
 * Google'i konto põhjal
 * Facebook'i konto põhjal
 
-"Tehtud"-linnukeste süsteem
+"Tehtud!"-süsteem
 ------------------------------
 Tudeng saab märkida iga ülesande juures, kas ta sai sellega hakkama või mitte (kui kasutada automaattestimist, siis ilmub see lahenduse esitamisega). See on mõeldud enesemotivatsiooni tõstimiseks, mitte hindamiseks. Materjali avalehel näeb tudeng kokkuvõtet, kui palju ülesandeid on tal lahendatud (rohelise märgiga) ja kui palju jäänud lahendamata (punase märgiga). Loodetavasti tekitab see paljudel tudengitel tungi muuta kõik punased märgid roheliseks. Igatahes paljud professionaalsed arendajad on automaattestide jooksutamisel sellist tungi enda juures täheldanud. 
 
