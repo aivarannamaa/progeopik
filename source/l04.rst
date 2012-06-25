@@ -32,9 +32,9 @@ Selliseid küsimusi saab esitada veel ja lahendust pole võimalik üheselt mää
 
 **Ülesanne 2.** Ruut ja ring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO: vead valemites
 
-Ringi sisse on joonistatud ruut, mille külje pikkus on 2a. Leida ringi pindala. 
+
+Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala. 
 
 .. image:: _static/l04_fig1.gif
 
@@ -44,7 +44,9 @@ Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest 
 
 ja esitame lahenduse kahe sammuna:
 
-.. image:: _static/l04_fig3.gif
+.. centered::
+    :math:`d=\sqrt{a^2+a^2}=\sqrt{2}a`
+    :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
 
 **Ülesanne 3.** Hundi, kitse ja kapsa üle jõe viimine 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,16 +65,20 @@ Joonisel on esitatud Pascal'i arvude kolmnurk
 
 Äärmistel kohtadel on arv 1. Ülejäänute korral on väärtuseks kahe lähima arvu summa arvule vahetult ülemisel real. Kuidas arvutada kombinatsioonide arvu *n* elemendist *k* kaupa
 
-.. image:: _static/l04_fig5.gif 
+.. centered::
+    :math:`C_{k}^n=\frac {n!(n - k)!}{k!}`
+    
 
 kus 
 
-.. image:: _static/l04_fig7.gif 
+.. centered::
+    :math:`n!=1\cdot 2 \cdot 3 \cdot \ldots \cdot n`
 
 kasutades Pascali kolmnurka?
 Kuidas on Pascali kolmnurga arvud seotud kordajatega valemis  
 
-.. image:: _static/l04_fig6.gif 
+.. centered::
+    :math:`(x + y)^n`
 
 peale valemi lahtikirjutamist? 
 Toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. 
