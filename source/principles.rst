@@ -16,10 +16,12 @@ Soovitavad õpiku omadused
 
 Ühe peatüki sisuline ülesehitus
 --------------------------------
-[vastab enam-vähem Gagne'le: http://edutechwiki.unige.ch/en/Nine_events_of_instruction]
+[ vastab enam-vähem Gagne'le: http://edutechwiki.unige.ch/en/Nine_events_of_instruction ]
+
+[ vt ka http://edutechwiki.unige.ch/en/Textbook_writing_tutorial#Overview_of_textbook_chapter_element ]
 
 * (mingi asjakohane tsitaat, lihtsalt ilu pärast või selleks, et tekitada lugejas positiivne meelestatus)
-* Motiveeriv sissejuhatus: eelneva peatüki mainimine ja sellega seoses uue probleemi sissetoomine. Uue konstruktsiooni või teema tutvustamine ("thesis statement"). "Mida" ja "miks" küsimustele vastamine. See osa peaks tudengit veenma, et seda peatükki on mõtet õppida.
+* Motiveeriv sissejuhatus: eelneva peatüki mainimine ja sellega seoses uue probleemi sissetoomine. Uue konstruktsiooni või teema tutvustamine ("thesis statement"). "Mida" ja "miks" küsimustele vastamine. See osa peaks tudengit veenma, et seda peatükki on mõtet õppida. Võiks ka ühe lausega ära mainida, mis siin peatükis juhtuma hakkab (preview/outline).
 * (õpiväljundid (Kas on vajalik? Minu arvates jätavad kuidagi liiga formaalse mulje))
 * teema 1
 
@@ -34,9 +36,10 @@ Soovitavad õpiku omadused
 * (mingi arutlev vahetekst, mis ei mahu ühe teemaploki sisse, ja mida ei saa pidada ka valikuliseks lisainfoks, nt. "Milleks funktsioonid?")
 * ...
 * teema n
-* Kokkuvõte: Sõnastik + peatüki kokkuvõte/tagasivaade/analüüs + analüüsi nõudev ülesanne. See osa peaks panema tudengit sammu tagasi astuma, kogu peatükki mõttes läbi käima ning uut infot süstematiseerima.
+* Kokkuvõte: Sõnastik + peatüki kokkuvõte/tagasivaade/analüüs + analüüsi nõudev ülesanne. See osa peaks panema tudengit sammu tagasi astuma, kogu peatükki mõttes läbi käima ning uut infot süstematiseerima. Kokkuvõte võib kasutada muuhulgas jutustavat teksti, loetelupunkte vms. Siin võib olla ka sisestuskast, kuhu lugeja saab kirjutada kõige tähtsamad õpitud ideed tema arvates.
 * Ülesannete blokk (millest valitakse kodu- ja praksiülesanded). Sisaldab ka mõtlemapanevad/arutlust vajavad küsimused (ei pruugi olla praeguste teadmistega lahendatavad). Nt. küsimused stiilis "Kas if-lauset on programmeerimisel kindlasti vaja või saab ka ilma?".
 * Lisalugemine koos sellega seotud ülesannetega. Võiks näidata läbitud teemat laiemas kontekstis (nt. seostamine matemaatikaga või mingi muu valdkonnaga).
+* projekti ideed
 
 Peatükkide ülesed asjad
 ---------------------------
@@ -67,9 +70,11 @@ Peatükkide ülesed asjad
     * mingite konstruktsioonide asendamine teistega
     * segamini aetud koodiridade järjestamine
     * kommenteerimine
+* Hägusalt püstitatud ülesanded, kus lahendaja peab ise fikseerima (ja ära mainima) mingid täpsustavad eeldused.
 * Analüüs, ilma õige vastuseta küsimused, arutelu teemad, jms., nt:
     * milliste ülesannete juures saaks veel seda konstruktsiooni kasutada?
     * ...
+* (Ajurünnaku ülesanne, kus pakutud ideed on näha kõigile kursusel osalejatele. Nt. projekti ideede väljapakkumiseks)
     
 
 Ülesannete liigid raskusastme järgi
@@ -95,13 +100,15 @@ Neile, kes soovivad kogu teksti mõttega läbi lugeda, pakub taoline liigendamin
 
 Põhitekst
 ~~~~~~~~~~~~~~
-Põhitekst selgitab programmeerimise põhimõtteid, ütleb mis on mis ja kuidas asjad käivad (st. klassikalise õpiku stiil). Toon võiks olla enamasti asjalik ja enesekindel. Mõeldud eelkõige algajatele esmakordse lugemise jaoks, mingi teema meeldetuletamiseks peaks piisama koodinäidetest ja "reference"-tabelitest.
+Põhitekst selgitab programmeerimise põhimõtteid, ütleb mis on mis ja kuidas asjad käivad (st. klassikalise õpiku stiil). Toon võiks olla enamasti asjalik ja enesekindel. Sisaldab põhiliselt uut infot, aga vajadusel ka meeldetuletusi. Mõeldud eelkõige algajatele esmakordse lugemise jaoks, mingi teema meeldetuletamiseks peaks piisama koodinäidetest ja "reference"-tabelitest.
 
 Märkused, täpsustused, kõrvalepõiked
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Märkused on esitatud peenemas kirjas ja esinevad seega boonuse või lisana. Kas märkuste selline staatus teeb nad lugeja jaoks huvitavamaks või vastupidi? Ühelt poolt annab see laisematele lugejatele signaali, et siit võib üle lasta, aga samas võiks arvata, et  eristaatusega tekst tundub põnevam. Taolise ploki toon ja sisu peaks seega ka vastama sellele põnevuse ootusele. Sihtgrupp on peamiselt esimesel lugemisringil olevad entusiastid.
 
-Kuna märkusel on erinev visuaalne ja verbaalne stiil, siis tuleb järgida, et nad ei killustaks ühte terviklikku põhiteksti mõtet. Sobivad kõige paremini teema, alamteema või lõigu lõppu.
+Kuna märkusel on erinev visuaalne ja verbaalne stiil, siis tuleb järgida, et nad ei killustaks ühte terviklikku põhiteksti mõtet. Seega sobivad nad kõige paremini teema, alamteema või lõigu lõppu.
+
+[vt. Interior feature strands: http://edutechwiki.unige.ch/en/Textbook_writing_tutorial ]
 
 Koodinäited
 ~~~~~~~~~~~~~~~~
@@ -111,6 +118,10 @@ Sihtgrupp: kõik, nii algajad kui edasijõudnud, peaks sobima esmakordsel lugemi
 "Reference"
 ~~~~~~~~~~~~~~
 Süntaksiskeemid, funktsioonide tabelid jms.
+
+Joonised ja skeemid
+~~~~~~~~~~~~~~~~~~~~
+TODO
 
 Ülesanded
 ~~~~~~~~~~~~~~
@@ -206,7 +217,7 @@ Python 2.0 was released on 16 October 2000, with many major new features includi
     
 Teksti stiil/toon
 ----------------------
-* Vaba? Formaalne?
+* Vaba? Formaalne? Lihtsa konstruktsiooniga laused?
 * Sina-vormis? Teie-vormis? Umbisikuline, kaudne?
 
 Failide kodeering

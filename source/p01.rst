@@ -5,7 +5,22 @@ Esimese praktikumi peaeesmärgiks on õppida kasutama Python keele põhilisi tö
 .. index::
     single: käsurida
     single: shell; käsurida
-    
+
+MÕTTED:
+
+    * algul näidatakse mõned asjad ilma põhjaliku selgituseda aga hiljem võetakse need uuesti läbi
+    * ...
+
+
+
+Programmeerimine ja Python
+----------------------------
+TODO
+
+Pythoni installeerimine
+--------------------------
+TODO
+
 Pythoni käsurida
 ----------------
 .. note:: 

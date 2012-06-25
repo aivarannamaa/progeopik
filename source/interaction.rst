@@ -32,7 +32,6 @@ Avalehel võiks olla viimaste kommentaaride logi. See teeks õpiku "sotsiaalsema
 Heaks näiteks on O'Reilly Open Feedback Publishing System, http://ofps.oreilly.com/, nt. http://ofps.oreilly.com/titles/9781449398583/chap1_id35940135.html või Scala parendamise ettepanekud Google Docs'is, nt https://docs.google.com/document/d/1NdxNxZYodPA-c4MLr33KzwzKFkzm9iW9POexT9PkJsU/edit?hl=en_US (märkused on dokumendi teises pooles).
 
 
-
 Autentimine
 ~~~~~~~~~~~~~~
 Isiklike täienduste tegemiseks/nägemiseks on vaja kasutaja autentida. Mõned võimalikud variandid:
@@ -51,3 +50,7 @@ Võimalikud edasiarendused:
     * "Aumärkide" andmine (vt. stackoverflow badges), nt. kui tudengil läks peatüki ülesannete lahendamiseks vaja vähem, kui 3 vihjet või uuesti proovimist, siis näeb ta selle peatüki saavutuste juures mingit lisamärki. Teine aumärk võiks olla ülesannete õigeks ajaks (nt. enne loengut) lahendamise eest.
     * Kui logida lahenduste esitamise ajad ning kõik kordusesitused, siis saaks hea ülevaate sellest, millised teemad on raskemad ja millised kergemad.
 
+
+Õppimise õpetamine
+-----------------------
+Milliseid õppimise organiseerimise viise võiks antud õpik propageerida / soodustada?
