@@ -6,6 +6,7 @@ Sisukord
     
    principles
    interaction
+   p00
    p01
    p02
    p03

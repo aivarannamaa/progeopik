@@ -1,6 +1,11 @@
 II. Väärtused. Sisend ja väljund
 ================================
 
+TODO
+    
+    * "lineaarsed" asjad
+    * Too sisse analoogia LEGO-ga
+
 Selles praktikumis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses praktikumis juba kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. Lisaks vaatame põgusalt, kuidas saab Pythonis väljendada tahvlipraktikumi plokkskeemidest tuttavat *hargnemist*.
 
 .. topic:: Soovitus:
@@ -549,11 +554,6 @@ Kommenteerida tuleks neid kohti programmis, mis võivad jääda lugejale segasek
 
 Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu.
 
-
-.. index::
-    single: tingimuslaused
-    single: tingimuslaused; if-lause
-    
 Tingimuslaused
 --------------
 Väga tihti tuleb programmi käitumist kohandada vastavalt sisendandmetele -- teatud väärtuste puhul tuleb täita ühed käsud ja muudel juhtudel teised käsud. Taolised alternatiivid saab koondada **tingimuslause** e. ``if``-lause e. hargnemislause alla. Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
@@ -622,6 +622,21 @@ Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seej�
 
     Tingimuslause sisse võib panna veel teisi tingimuslauseid või tsükleid (mille sees võib omakorda olla tingimuslauseid ja tsükleid jne.) Lisaks on võimalik tingimusi omavahel kombineerida kasutades operaatoreid ``and`` ja ``or``. Nende teemadega tegeleme põhjalikult 4. praktikumis.
  
+
+
+Kokkuvõte
+---------------
+TODO
+    
+    * Selgita, et siiani *keskendusime* "lineaarsetele asjadele, aga järgmises peatükis läheb asi huvitavamaks.
+
+.. index::
+    single: tingimuslaused
+    single: tingimuslaused; if-lause
+    
+
+
+
 
 
 Koduülesanded

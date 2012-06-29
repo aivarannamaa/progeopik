@@ -1,9 +1,12 @@
-III. Alamprogrammid e. funktsioonid
-===================================
+III. Tingimuslaused, tsüklid, funktsioonid
+===============================================
 
 Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
 
-TODO: uute käskude defineerimine, kui ports koodiridu moodustavad loogilise terviku
+TODO: 
+    * Siiani oli tegu "lihtlausetega", nüüd tulevad keerulisemad konstruktsioonid
+    * uute käskude defineerimine, kui ports koodiridu moodustavad loogilise terviku
+    * siin on koht selgitada blokkide olemust
 
 .. topic:: Terminoloogiast
 
@@ -11,7 +14,8 @@ TODO: uute käskude defineerimine, kui ports koodiridu moodustavad loogilise ter
 
 .. index::
     single: funktsioon; defineerimine
-    
+
+
 Funktsiooni defineerimine ja kasutamine
 ---------------------------------------
 Järgnevas näiteprogrammis **defineeritakse** funktsioon nimega ``tere``:

@@ -1,34 +1,42 @@
 I. Sissejuhatus
 ===============
-Esimese praktikumi peaeesmärgiks on õppida kasutama Python keele põhilisi töövahendeid -- käsurida ning keskkonda "IDLE". Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
+Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning Python keele põhilisi töövahendeid -- käsurida ning keskkonda "IDLE". Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
 
 .. index::
     single: käsurida
     single: shell; käsurida
-
-MÕTTED:
-
-    * algul näidatakse mõned asjad ilma põhjaliku selgituseda aga hiljem võetakse need uuesti läbi
-    * ...
-
 
 
 Programmeerimine ja Python
 ----------------------------
 TODO
 
+    * Miks Python?
+    * Selles kursuses programmeerimise universaalsed põhimõtted
+    * keskendume sellele osale programmeerimisest, mis jääb inputi ja outputi vahele
+    * Põhiülesanne: näidata lahedaid asju, mida on võimalik programmeerida ja veenda, et need on varsti jõukohased ka lugejale.
+    * liiguta osa Kilpkonna asju siit järgmisesse peatükki ja too siia lihtsad if/while/for näited
+
 Pythoni installeerimine
 --------------------------
-TODO
+Pythoni enda arvutisse installeerimiseks laadige alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/. Valige sealt versioon `3.2`.
+
+TODO: kas 32b või 64b?
+
+Pythoni keskkonna enda arvutisse installeerimine on väga soovitav, sest siis saate arvutiklassis proovitud asju ka seal teha. Programmeerima pole võimalik õppida vaid loenguid kuulates – tegemist on praktilise oskusega, mis nõuab eelkõige harjutamist. Reeglina ei piisa vaid praktikumides tehtud ülesannetest ning harjutada tuleks kindlasti ka kodus.
+
+
 
 Pythoni käsurida
 ----------------
 .. note:: 
 
-    Antud kursusel on oluline kasutada Pythoni versiooni, mis algab 3-ga, olgu see `3.2`, `3.1` vms. Versioonid, mis algavad 2-ga, ei sobi meile, kuna seal töötavad mõned asjad pisut teisiti, kui on kirjeldatud praktikumimaterjalides ja õpikus.
+    Antud kursusel on oluline kasutada Pythoni versiooni, mis algab 3-ga, olgu see `3.2`, `3.1` vms. Versioonid, mis algavad 2-ga, ei sobi meile, kuna seal töötavad mõned asjad pisut teisiti, kui on kirjeldatud selles õpikus.
     
     Kuna arvutiklassides on installeeritud nii Python 2, kui Python 3, tuleks vajadusel kontrollida, et kasutate õiget versiooni. Käsurea avamisel näidatakse Pythoni versioon esimesel real. IDLE versiooni saab kontrollida menüüst `Help -> About IDLE`
-    
+
+TODO: äkki piisab ainult IDLE-st?
+
 Kõigepealt võtame ette Pythoni **interaktiivse käsurea** (ing.k. *shell*), mis sobib hästi väiksemate ülesanne lahendamiseks ning Pythoni võimaluste katsetamiseks. Windowsi arvutis avage `Start -> All Programs -> Python 3.1 -> Python (command line)`. Linuxis või Macis tuleks avada terminal, ning seal sisestada käsk ``python`` (kui sellega avaneb Python 2, siis proovige käsku ``python3``).
 
 
@@ -218,14 +226,34 @@ Edaspidistes praktikumides kohtate ka keerulisemaid olukordi, kus vea põhjust o
 http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/app_a.html.
 Sellele võiks ka edaspidi pilgu peale visata, kui nt. mõne kodutööga hätta jääte.
 
+Mis edasi?
+--------------
+TODO
 
 .. index::
     single: installeerimine
-    
 
-Python koduarvutis
-------------------
-Selleks, et Pythonit oma koduarvutisse installeerida, laadige alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/. Valige sealt versioon `3.2`.
+(Kodu?)Ülesanded
+-----------------
+Pythoni installimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO
 
-Pythoni keskkonna enda arvutisse installeerimine on väga soovitav, sest siis saate arvutiklassis proovitud asju ka seal teha. Programmeerima pole võimalik õppida vaid loenguid kuulates – tegemist on praktilise oskusega, mis nõuab eelkõige harjutamist. Reeglina ei piisa vaid praktikumides tehtud ülesannetest ning harjutada tuleks kindlasti ka kodus.
-hg clone https://code.google.com/p/atipython/ 
+Mingi kilpkonna joonistus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO
+
+Projekti teema osas mõtisklemine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO
+
+(Lisa?)lugemine: [Programmeerimise võimalused, ajalugu, filosoofia vms.]
+------------------------------------------------------------------------
+TODO
+
+    * Näited, mida kõike on võimalik programmeerida
+    * programmeerimine ja juhtimine
+    * Head näited progammeerimise olemusest: http://www.nrg.tartu.ee/algkursus/Teema1.htm
+    * Korda seda, et sellel kursuse fookus on inputi ja outputi vahel oleval alal
+    * Too programeerimise näiteks Ruby Goldbergi masin vms!!
+    * teleka programmeerimine

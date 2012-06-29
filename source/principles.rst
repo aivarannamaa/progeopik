@@ -37,9 +37,22 @@ Soovitavad õpiku omadused
 * ...
 * teema n
 * Kokkuvõte: Sõnastik + peatüki kokkuvõte/tagasivaade/analüüs + analüüsi nõudev ülesanne. See osa peaks panema tudengit sammu tagasi astuma, kogu peatükki mõttes läbi käima ning uut infot süstematiseerima. Kokkuvõte võib kasutada muuhulgas jutustavat teksti, loetelupunkte vms. Siin võib olla ka sisestuskast, kuhu lugeja saab kirjutada kõige tähtsamad õpitud ideed tema arvates.
-* Ülesannete blokk (millest valitakse kodu- ja praksiülesanded). Sisaldab ka mõtlemapanevad/arutlust vajavad küsimused (ei pruugi olla praeguste teadmistega lahendatavad). Nt. küsimused stiilis "Kas if-lauset on programmeerimisel kindlasti vaja või saab ka ilma?".
+* Praksiülesannete blokk (millest tuleb mingi hulk lahendada punkti saamiseks). Sisaldab ka mõtlemapanevad/arutlust vajavad küsimused (ei pruugi olla praeguste teadmistega lahendatavad). Nt. küsimused stiilis "Kas if-lauset on programmeerimisel kindlasti vaja või saab ka ilma?".
 * Lisalugemine koos sellega seotud ülesannetega. Võiks näidata läbitud teemat laiemas kontekstis (nt. seostamine matemaatikaga või mingi muu valdkonnaga).
 * projekti ideed
+
+Peatüki esimene osa (st. tekst koos ülesannetega) on mõeldud kodus lugemiseks ja lahendamiseks enne vastavat loengut. Ülesannete osa on mõeldud praksis lahendamiseks ja lisalugemine + tärnülesanded on mõeldud hiljem kodus lugemiseks/lahendamiseks.
+
+Loodetav tudengi tööplaan:
+
+    * nädala alguses kodus:
+        * loenguks valmistumine
+    * loeng
+    * praktikum
+    * nädalavahetus (või järgmise nädala algus) kodus:
+        * tärnülesannete lahendamine
+        * projektiga tegelemine
+
 
 Peatükkide ülesed asjad
 ---------------------------
