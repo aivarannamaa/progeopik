@@ -3,7 +3,8 @@ Sisukord
   
 .. toctree::
    :maxdepth: 2
-    
+   
+   todo 
    principles
    interaction
    p00
