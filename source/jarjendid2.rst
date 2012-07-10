@@ -1,4 +1,4 @@
-VI. Järjendid, 2. osa
+VIII. Järjendid, 2. osa
 =======================================
 
 Selle praktikumi põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.

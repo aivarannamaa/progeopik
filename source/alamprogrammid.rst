@@ -1,5 +1,11 @@
-III. Tingimuslaused, tsüklid, funktsioonid
+VI. Alamprogrammid
 ===============================================
+
+.. todo::
+    Siin on praegu koos vastavate teemade Pythoni ja tahvlipraksi (teoreetilisem) osa.
+    Pythoni konstruktsioonide tutvustus ja lihtsamad ülesanded tuleks (osaliselt) liigutada peatükki "liitlaused". Ülejäänud materjalis võiks äkki plokkskeemide ja teooria osa põimida Pythoni harjutustega?
+
+
 
 Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
 
@@ -421,6 +427,228 @@ Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite pu
 
 .. note::
     Meetodeid ei ole vaja kunagi ``import``-ida.
+
+
+Ülesande jagamine mooduliteks
+---------------------------------------
+
+Peale antud teema läbimist üliõpilane oskab
+
+    * jaotada lihtsamaid ülesandeid alamülesanneteks ja esitada lahendust plokkskeemina;
+    * lihtsamate ülesannete korral tuua välja võimalikud erijuhud ja kontrollima neid   olemasoleva algoritmi korral;
+    * parandada algoritmi efektiivsust (konkreetsete näidete abil).
+
+
+Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
+
+.. image:: _static/l05_fig1.gif
+
+Üksi salatit valmistades on meil võimalik lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
+
+.. image:: _static/l05_fig2.gif
+
+
+Korraldame loendamist pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
+
+.. image:: _static/l05_fig3.gif
+
+Arvutis me kasutamine loendamiseks muutujaid, hoides nendes näiteks loendamise jooksvat seisu. Loendamise algul peame loenduri seisu nullima.  
+
+
+.. image:: _static/l05_fig4.gif
+
+OLetame, et meil on juba olemas käsklused (funktsioonid), mis rakendamisel annavad meile vajaliku asja või toiduaine:
+
+* ``tühiKauss()`` annab tühja kausi, 
+* ``uusHapukurk()`` annab uue hapukurgi, 
+* ``uusKartul()`` annab uue kartuli, 
+* ``splKoort()`` annab supilusikatäie hapukoort,
+* ``noaotsagaSoola()`` annab noa otsatäie soola, 
+* ``maitseSisu()`` annab tagasi soolasuse maitse *m*, mille parajust saab hiljem kontrollida. 
+
+Samuti oletame, et me saame kasutada olemasolevaid protseduure, millele asju ette andes tehakse ära mingi töö:
+
+* ``lisaTükeldatult(a, k)`` lisab  aine *a* tükeldatult kaussi *k*, 
+* ``segaSisu(k)`` segab kausis *k* olevad ained kokku.
+
+Kasutades neid käsklusi, saame kartulisalati tegemise esitada järgmisel kujul:
+ 
+.. image:: _static/l05_fig5.gif
+
+Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilusikatäie hapukoore ja noaotsatäie soola võtmise otse lisamise käsklustele, sest meil ei ole neid eraldi muutujates vaja rohkem kasutada:
+
+
+.. image:: _static/l05_fig6.gif
+
+Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
+Kartulite lisamine: 
+
+.. image:: _static/l05_fig7.gif
+
+Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
+Järgmiseks protseduuriks on hapukurkide lisamine:
+
+.. image:: _static/l05_fig8.gif
+
+Hapukoore lisamine:
+
+.. image:: _static/l05_fig9.gif
+
+Soola lisamine:
+
+.. image:: _static/l05_fig10.gif
+
+Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
+
+.. image:: _static/l05_fig11.gif
+
+Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
+
+.. image:: _static/l05_fig12.gif
+
+Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
+
+
+.. image:: _static/l05_fig23.gif
+ 
+Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed.
+
+Robotkilpkonn
+~~~~~~~~~~~~~
+
+Nägime, et alamülesandeid on kahte liiki: funktsioonid ja protseduurid. Toome nüüd näite protseduuride kasutamisest robotkilpkonna korral.
+Võtame robotkilpkonna korral samuti kasutusele funktsioonid ja protseduurid. Paneme kirja kilpkonna poolt sooritatavad tegevused protseduuride või funktsioonidena:
+
+``edasi()`` - kilpkonn liigub ühe sammu edasi;
+
+``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
+
+``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
+
+Kui rakendada robotkilpkonnale funktsiooni 
+
+``kasSein()``, siis kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
+
+**Ülesanne 1.** Värvi triibuliseks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Koostada plokkskeem algoritmile, millega kilpkonn värvib ruudustiku põranda põhjast lõunasse triibuliseks. Kilpkonn asub ruudustiku ülemises vasakus (s.t. loode-) nurgas, näoga lõunasse. 
+
+
+.. image:: _static/l05_fig16.gif
+
+Ülesande lahendamiseks valime kõigepealt strateegia, kuidas robotkilpkonn liigub ruudustikul. Üheks võimaluseks on variant, kus kilpkonn värvib ühe triibu ja liigub tuldud teed tagasi. Ta kordab värvimist järgmisel värvitaval veerul (üks veerg tuleb jätta vahele, et tulemus oleks triibuline). Koostame plokkskeemid järgmiste alamülesannete jaoks:
+
+* Ühe triibu värvimine robotkilpkonna liikumisel kuni seinani.
+* Robotkilpkonna tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
+
+Alamprotseduur ``triip()``
+
+Tegevus: Robotkilpkonn värvib triibu kuni seinani.
+
+.. image:: _static/l05_fig13.gif
+
+
+Alamprotseduur ``tagasi()``
+
+Tegevus: Robotkilpkonn pöörab ümber, liigub seinani ja lõpuks pöörab paremale.
+
+.. image:: _static/l05_fig14.gif
+
+Koostame nüüd plokkskeemi kogu mänguväljaku värvimiseks triibuliseks, kasutades juba koostatud protseduure:
+
+.. image:: _static/l05_fig15.gif
+
+Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus kilpkonn ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame veel ühe protseduuri, mille abil kilpkonn pöörab vasakule:
+
+Alamprotseduur ``vasakule()``
+
+Tegevus: Robotkilpkonn pöörab vasakule.
+
+.. image:: _static/l05_fig17.gif
+
+Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
+
+
+.. image:: _static/l05_fig18.gif
+
+Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
+
+**Ülesanne 2.** Liigu nurka
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda nurka (pole oluline, millisesse). Koostada plokkskeem, milles kasutatakse uut alamprotseduuri. 
+
+
+**Ülesanne 3.** Ring ümber mänguväljaku
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  Kasutada eelmise ülesande alamprotseduuri. 
+ 
+**Ülesanne 4.** Seinani ja tagasi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda seinani, pöörata ümber ja liikuda tagasi samasse kohta algasendisse. Koostada plokkskeem.  
+
+
+**Ülesanne 5.** Liigu ettenähtud kohta
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub seinaga ümbritsetud ja ilmakaarte järgi orienteeritud ruudustiku mingil ruudul, ninaga itta. Kirjutada plokkskeemi kujul protseduurid, millega kilpkonn
+a) liigub ruudustiku kirdenurka ja jääb seal pidama;
+b) liigub ruudustiku edelanurka ja jääb seal pidama;
+c) liigub ruudustiku äärele ja hakkab äärt pidi päripäeva ringiratast liikuma.
+
+
+
+**Ülesanne 6.** Loe tumedad laigud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul funktsioon, mis loendab ruudustikul asuvad tumedad laigud. Ruudustiku mõõtmed pole teada. Kilpkonna juhtimiseks on lisaks veel operatsioon
+
+``KasTumeLaik()`` - Kilpkonn kontrollib, kas ruut, millel asub kilpkonn, on tume.
+
+.. image:: _static/l05_fig19.gif
+
+Koostada abistavaid alamprotseduure.
+
+
+**Ülesanne 7.** Istuta lilli
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis istutab ruudustikule lilli. Ruudustiku mõõtmed pole teada. Lill ei kasva äärel ega kontaktis teise lillega. Kilpkonna juhtimiseks on lisaks lille istutamise operatsioon:
+
+``Istuta()`` - Kilpkonn istutab lille samale ruudule, kus ta parajasti asub, kusjuures kilpkonna orientatsioon pole oluline. 
+
+.. image:: _static/l05_fig20.gif
+
+Koostada abistavaid alamprotseduure.
+
+**Ülesanne 8.** Malelaud
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
+
+.. image:: _static/l05_fig21.gif
+
+**Ülesanne 9.** Bankett
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt paigutatud pika banketilaua ääres on iga koha juures tool. Kilpkonn seisab banketilaua põhjapoolses otsas. Laua pikkus on talle teadmata. Toolid peavad olema iga ruudu juures, ka laua põhja ja lõunaotsas. Kilpkonna juhtimiseks on lisaks järgmised operatsioonid: 
+
+``KasLaud()`` - Kilpkonn kontrollib, kas kilpkonna nina ees on laud.
+
+``KasTool()`` - Kilpkonn kontrollib, kas sellel ruudul, kus kilpkonn seisab, on tool.
+
+
+.. image:: _static/l05_fig22.gif
+
+Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
+
+
+
+
+
+
+
+
+
 
 
 Koduülesanded

@@ -1,5 +1,5 @@
-*Kontrolltöö, 19.-23. september*
-================================
+*IV. Kontrolltöö, 19.-23. september*
+====================================
  
 Kontrolltöös on 2 ülesannet, mis nõuavad I-III arvutipraktikumi teemade valdamist.
 

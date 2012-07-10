@@ -4,26 +4,27 @@ Sisukord
 .. toctree::
    :maxdepth: 2
    
-   todo 
-   principles
-   interaction
-   p00
-   p01
-   p02
-   p03
-   l04
-   l05
+   _todo 
+   _principles
+   _interaction
+   sissejuhatus
+   lihtlaused
+   liitlaused
    kt1
-   p04
-   p05
-   p06
+   kontrollvoog
+   alamprogrammid
+   jarjendid1
+   jarjendid2
+   pohimotted
    kt2
-   p07
-   p08
-   p09
-   p10
+   andmestruktuurid
+   rekursioon
+   oop
+   keerukus
+   suunad
    kt3
-
+   tkinter
+   python2
 
 * :ref:`search`
 
