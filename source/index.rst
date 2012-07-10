@@ -21,7 +21,7 @@ Sisukord
    rekursioon
    oop
    keerukus
-   suunad
+   kokkuvote
    kt3
    tkinter
    python2
