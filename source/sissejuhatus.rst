@@ -35,14 +35,18 @@ Pythoni käsurida
     
     Kuna arvutiklassides on installeeritud nii Python 2, kui Python 3, tuleks vajadusel kontrollida, et kasutate õiget versiooni. Käsurea avamisel näidatakse Pythoni versioon esimesel real. IDLE versiooni saab kontrollida menüüst `Help -> About IDLE`
 
-TODO: äkki piisab ainult IDLE-st?
+.. todo:: 
 
-Kõigepealt võtame ette Pythoni **interaktiivse käsurea** (ing.k. *shell*), mis sobib hästi väiksemate ülesanne lahendamiseks ning Pythoni võimaluste katsetamiseks. Windowsi arvutis avage `Start -> All Programs -> Python 3.1 -> Python (command line)`. Linuxis või Macis tuleks avada terminal, ning seal sisestada käsk ``python`` (kui sellega avaneb Python 2, siis proovige käsku ``python3``).
+    * äkki piisab ainult IDLE-st?
+    * äkki peaks käsurida tutvustama hiljem?
+    * selgita, et Pythoni käsurida ongi (enamvähem) Pythoni interpretaator
+
+Enne "päris" programmide kirjutamist võtame ette Pythoni **interaktiivse käsurea** (ing.k. *shell*), mis sobib hästi väiksemate ülesanne lahendamiseks ning Pythoni võimaluste katsetamiseks. Windowsi arvutis avage `Start -> All Programs -> Python 3.1 -> Python (command line)`. Linuxis või Macis tuleks avada terminal, ning seal sisestada käsk ``python`` (kui sellega avaneb Python 2, siis proovige käsku ``python3``).
 
 
 Python kui kalkulaator
 ~~~~~~~~~~~~~~~~~~~~~~
-Pythonit saab kasutada võimsa kalkulaatorina. Selleks tuleb lihtsalt peale Pythoni käsuviipa (``>>>``) sisestada avaldis ja vajutada reavahetuse klahvi (Enter). Tulemusena peaks ekraanile ilmuma avaldise väärtus, nt:
+Pythonit saab kasutada võimsa kalkulaatorina. Selleks tuleb lihtsalt peale Pythoni käsuviipa (``>>>``) sisestada avaldis ja vajutada reavahetuse klahvi (Enter). Tulemusena peaks ekraanil järgmisele reale ilmuma avaldise väärtus, nt:
 
 .. sourcecode:: py3  
     
@@ -63,16 +67,16 @@ Pythonit saab kasutada võimsa kalkulaatorina. Selleks tuleb lihtsalt peale Pyth
     
 .. note::
     
-    Tehtemärkide ümber ei pea tingimata tühikuid panema.
+    Siin ja edaspidistes näidetes on parema loetavuse huvides tehtemärkide ümber pandud tühikud, aga need võib ka ära jätta.
     
 Samamoodi nagu mõnede taskukalkulaatorite puhul, saab ka Pythonis arve "mällu" salvestada:
 
 .. sourcecode:: py3
 
-    >>> a = 2 * 0.9
-    >>> b = 66
-    >>> a + b
-    67.8
+    >>> a = 2 * 3
+    >>> b = 1
+    >>> a + b + 2
+    9
 
 Kui soovite kasutada trigonomeetrilisi funktsioone või matemaatilisi konstante, siis tuleb kõigepealt öelda Pythonile ``from math import *``, nt:
 
@@ -113,9 +117,9 @@ Sisukamate programmide loomine on käsureal küll võimalik, kuid tülikas. Peal
 
     Praktikumides käivitame oma skriptid alati läbi IDLE aga reaalsete Pythoni programmide kasutamiseks pole see kõige mugavam. Kõige levinum viis on anda arvuti käsurealt (terminal või `cmd.exe`) käsk kujul ``python minuskript.py``. See peaks Linuxis ja Macis kohe peale Pythoni installimist töötama, kuid Windowsi puhul on vaja veel natuke nokitsemist: vaata täpsemalt aadressilt http://docs.python.org/py3k/using/windows.html#configuring-python. (Samas, Windowsis saab tavaliselt Pythoni skripte käivitada ka nagu tavalisi programme, nt. topeltklõpsuga `Windows Exploreris`.)
 
-Pythoni skripte võiks vabalt salvestada näiteks Notepad'i või mõne muu levinud tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
+Pythoni skripte võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
 
-**IDLE käivitamiseks** Windowsis vali `Start -> All Programs -> Python 3.2 -> IDLE (Python GUI)`. Linuxis tuleb sisestada terminali käsk ``idle`` (kui sellega avaneb IDLE 2, siis proovi ``idle3``). Tõenäoliselt ilmub kõigepealt IDLE käsurida (pealkirjaga "Python shell"), mis töötab enamvähem samamoodi, kui eespool kasutatud konsoolipõhine käsurida.
+**IDLE käivitamiseks** Windowsis vali `Start -> All Programs -> Python 3.2 -> IDLE (Python GUI)`. Linuxis tuleb sisestada terminali käsk ``idle`` (kui sellega avaneb IDLE 2, siis proovi käsku ``idle3``). Tõenäoliselt ilmub kõigepealt IDLE käsurea aken (pealkirjaga "Python shell"), mis töötab enamvähem samamoodi, kui eespool kasutatud konsoolipõhine käsurida.
 
 **Uue programmi kirjutamiseks** valige `File` menüüst `New window`. Ilmub uus aken pealkirjaga "Untitled", kuhu saab hakata kirjutama Python programmi. Esimeseks katsetuseks kopeerige redaktorisse järgnev kaherealine programmitekst, ning salvestage fail (`Ctrl+S`) kasutades failinime lõpus laiendit `py` (nt. `esimene.py`). *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
 

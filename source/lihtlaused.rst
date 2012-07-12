@@ -1,4 +1,4 @@
-II. Väärtused. Sisend ja väljund
+II. Avaldised ja lihtlaused
 ================================
 
 TODO
@@ -554,75 +554,6 @@ Kommenteerida tuleks neid kohti programmis, mis võivad jääda lugejale segasek
 
 Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu.
 
-Tingimuslaused
---------------
-Väga tihti tuleb programmi käitumist kohandada vastavalt sisendandmetele -- teatud väärtuste puhul tuleb täita ühed käsud ja muudel juhtudel teised käsud. Taolised alternatiivid saab koondada **tingimuslause** e. ``if``-lause e. hargnemislause alla. Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
-
-.. sourcecode:: py3
-
-    arv_tekstina = input('Palun sisesta mingi arv: ')
-    arv = float(arv_tekstina)
-    
-    if arv < 0:
-        abs_vaartus = -arv
-    else:
-        abs_vaartus = arv
-    
-    print('Selle arvu absoluutväärtus on ' + str(abs_vaartus))
-
-Justkui eespool mainitud ``for``-tsükli puhul, on ka siin vaja pöörata tähelepanu tühikutele -- tühikutega joondamine e. *treppimine* määrab, millised käsud kuuluvad tingimuslause alla ja millised mitte. Antud näites on mõlemas tingimuslause *harus* vaid üks käsk, aga neid võib seal olla ka rohkem.
-
-Tingimuslause *päises* (st. ``if``-iga algaval real) saab tingimusi moodustada järgmiste operaatoritega: 
-
-* ``<``, ``>``, ``<=``, ``>=`` sobivad arvude võrdlemiseks
-* Topeltvõrdusmärk (``==``) tähistab võrdsust nii arvude kui sõnede puhul
-* ``!=`` tähistab mittevõrdsust nii arvude kui sõnede puhul
-
-.. note::
-    
-    Ärge unustage, et üksikut võrdusmärki (``=``) kasutatakse Pythonis muutujale väärtuse omistamiseks, mitte võrdsuse kontrollimiseks.
-
-
-Ülesanne 5. Eristav kasutaja tervitamine 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Muutke ülesandes 2 kirjeldatud kasutaja tervitamise programmi selliselt, et kasutajat nimega `Margus` tervitatakse familiaarselt aga kõiki ülejäänuid tervitatakse formaalselt.
-
-
-Tsükli ja tingimuslause kombineerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seejärel katsetage järgmist programmi:
-
-.. sourcecode:: py3
-
-    f = open('nimed.txt')
-    
-    for nimi in f:
-        if nimi.strip() == 'Margus':  # strip eemaldab reavahetuse
-            print('Hommik!')
-            print('Kuis kulgeb?')
-        else:
-            print('Tervist, lugupeetud ' + nimi.strip() + '!')
-    
-    f.close()
-
-.. note::
-
-    Proovige järgi, kuidas Python käitub, kui unustate ``for`` või ``if`` lauses kasutada koolonit või jätate ära mõne taandrea. Sellega saate end taoliseks situatsiooniks juba ette valmistada.
-
-.. index::
-    single: veaotsing
-    
-.. topic:: Veaotsingust
-
-    Selle näite tingimuses kasutasime ``strip`` meetodit seepärast, et failist ridade lugemisel jäetakse rea lõppu ka reavahetuse sümbol. Selline nüanss aga ei pruugi alati meelde tulla ja sel juhul programm lihtsalt ei tööta õieti.
-    
-    Kui tekib selline situatsioon, kus programm, ei tööta nii nagu te soovite, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu te arvasite. Antud programmis võiks ``for``-tsüklis esimese asjana (enne tingimuslauset) kuvada ekraanile loetud nime. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
-
-.. topic:: Etteruttavalt:
-
-    Tingimuslause sisse võib panna veel teisi tingimuslauseid või tsükleid (mille sees võib omakorda olla tingimuslauseid ja tsükleid jne.) Lisaks on võimalik tingimusi omavahel kombineerida kasutades operaatoreid ``and`` ja ``or``. Nende teemadega tegeleme põhjalikult 4. praktikumis.
- 
-
 
 Kokkuvõte
 ---------------
@@ -630,9 +561,6 @@ TODO
     
     * Selgita, et siiani *keskendusime* "lineaarsetele asjadele, aga järgmises peatükis läheb asi huvitavamaks.
 
-.. index::
-    single: tingimuslaused
-    single: tingimuslaused; if-lause
     
 
 

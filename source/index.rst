@@ -13,9 +13,9 @@ Sisukord
    kt1
    kontrollvoog
    alamprogrammid
+   pohimotted
    jarjendid1
    jarjendid2
-   pohimotted
    kt2
    andmestruktuurid
    rekursioon

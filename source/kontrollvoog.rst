@@ -18,7 +18,7 @@ Selles praktikumis käsitleme kahte teemat. Kõigepealt uurime põhjalikumalt ti
 
 Tõeväärtustüüp ``bool``
 -----------------------
-Lisaks sõnedele ja arvudele on Pythonis üks oluline andmetüüp nimega ``bool`` (lühend sõnast ``boolean``), milles on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks**.
+Lisaks sõnedele ja arvudele on Pythonis üks oluline andmetüüp nimega ``bool`` (lühend sõnast *boolean*), milles on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks**.
 
 Tõeväärtustüübiga olete tegelikult juba kokku puutunud -- ``if``-lause tingimuseks olev avaldis on justnimelt tõeväärtustüüpi. Samas, tõeväärtustüübi kasutusvõimalused pole piiratud vaid ``if``-lausega -- nagu kõiki väärtusi, saab ka tõeväärtusi muutujasse salvestada või funktsiooni argumendina kasutada. Selles veendumiseks mängime läbi järgneva lihtsa näite:
 
@@ -262,66 +262,6 @@ Kirjutage funktsioon ``kuu_nimi``, mis võtab argumendiks kuu numbri ning tagast
 
 Testige oma funktsiooni!
 
-.. index:: 
-    single: while tsükkel
-    single: tsükkel; while tsükkel
-    
-``while``-tsükkel
------------------
-Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et programmi tuleb lihtsalt kirjutada laused lihtsalt mitmekordselt, nagu järgmises programmis, mis joonistab kilpkonnaga ruudu:
-
-.. sourcecode:: py3
-    
-    from turtle import *
-    
-    küljepikkus = 100
-    forward(küljepikkus)
-    left(90)
-    forward(küljepikkus)
-    left(90)
-    forward(küljepikkus)
-    left(90)
-    forward(küljepikkus)
-    left(90)
-    
-    exitonclick()
-    
-
-Selline lahendus muutub väga kohmakaks, kui korduste arv läheb suureks. Pealegi, kui sooviksime kirjutada üldisema programmi, mis joonistab *n* küljega hulknurga vastavalt kasutaja poolt sisestatud *n* väärtusele, siis jääksime hätta, kuna me ei tea, mitu korda tuleks ühe külje joonistamise ja pööramise käske kirjutada.
-
-Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstruktsioonid käskude kordamiseks. Selles praktikumis vaatame **while-tsüklit**, mis kordab etteantud lauseid niikaua, kuni etteantud tingimus kehtib. 
-
-Loenduriga tsükkel
-~~~~~~~~~~~~~~~~~~
-``while``-tsükliga saaksime ruudu joonistamise funktsiooni panna kirja järgnevalt:
-
-.. sourcecode:: py3
-    
-    from turtle import *
-    
-    i = 0               # i näitab, mitu külge on juba joonistatud
-    while i < 4:
-        forward(100)
-        left(90)
-        i = i + 1       # suurendame i väärtust
-
-    exitonclick()
-
-
-``while``-lause keha täidetakse vaid siis kui päises antud tingimus kehtib. Kui kehas olevad laused on täidetud, siis minnakse uuesti päises näidatud tingimust kontrollima -- kui tingimus kehtib ikka veel, siis täidetakse kehas olevad laused uuesti jne. 
-
-Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas olema mingi lause, mis mõjutab tingimuse kehtivust -- antud näites on selleks lause, mis muudab muutuja ``i`` väärtust 1 võrra suuremaks. Muutujaid, mille väärtust suurendatakse igal tsükli sammul, nimetatakse *loenduriteks* ja nende nimeks pannakse tavaliselt ``i``. Selliseid tsükleid, kus korduste arv on tsükli alustamise hetkel teada, nimetatakse *määratud tsükliteks*.
-
-.. topic:: Muutuja muutmine
-
-    Nagu 2. praktikumis mainitud, on võimalik Pythonis muutuja väärtust uue väärtusega üle kirjutada. Tsüklid ongi see koht, kus seda võimalust kõige sagedamini tarvis läheb.
-    
-    Muutuja väärtuse suurendamiseks kirjutasime eelnevas näites ``i = i + 1``, st. ``i`` uueks väärtuseks sai ``i`` hetkeväärtus + 1. Sellist suurendamist mingi arvu võrra saab Pythonis ka lühemalt kirjutada: ``i += 1``. Muutuja väärtuse vähendamiseks võib analoogselt kirjutada ``i -= 1``.
-
-
-.. note::
-
-    Tegelikult on Pythonis olemas ka teine, natuke spetsiifilisem tsüklitüüp, mida nimetatakse ``for``-tsükliks ja mis sobib *n*-korduse tegemiseks isegi paremini, kui ``while``. ``for``-tsüklit vaatame järgmises praktikumis.
 
 Ülesanne 6. Funktsioon *n*-nurga joonistamiseks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -357,7 +297,7 @@ Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui j
 
 Ülesanne 7. Algandmete kontrollimine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
+Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sisetatud infoga rahul.
 
 Modifitseerige 1. ülesande lahendust -- kui kasutaja poolt sisestatud tekst polnud numbriline, siis peaks programm kordama küsimist ja andmete sisselugemist niikaua, kuni kasutaja sisestab numbrilise teksti.
 
@@ -433,171 +373,6 @@ Peale antud teema läbimist üliõpilane oskab
     * leida antud ülesande lahendamiseks kohased põhitegevused ja esitada nende täitmise järjekorra;
     * esitada lihtsamate ülesannete lahendust plokkskeemina (nt. lihtsamate kilpkonnaülesannete korral).
 
-
-
-**Ülesanne 1.** Dokumentideta võõras linnas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde avastad, et ühiselamu võti, ID-kaart ja mobiiltelefon on kadunud. Kuidas lahendada olukord?
-
-Meie igapäevaelus tuleb meil ette suuri ja väikesi ülesandeid. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (arst avastab sinu lähedasel üliharva esineva ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte.  
-Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (Mis on elu mõte?). Arvutiteaduses me tegeleme probleemidega, mille lahendust saab esitada algoritmina. 
-
-*Algoritmiks* nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida on võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja  mida täidab arvuti. 
-
-Pöördume tagasi ülesande 1 juurde. Siin on ülesande püstitus puudulik. Tekib palju küsimusi, millele pole vastuseid: Kuhu need asjad kadusid? Kas need kadusid korraga? Kas need kadusid teel koju? Kas nad jäid ülikooli mõnda auditooriumi? 
-
-Selliseid küsimusi saab esitada veel ja lahendust pole võimalik üheselt määrata.    
-
-**Ülesanne 2.** Ruut ja ring
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala. 
-
-.. image:: _static/l04_fig1.gif
-
-Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg) ja väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist 
-
-.. image:: _static/l04_fig2.gif
-
-ja esitame lahenduse kahe sammuna:
-
-.. centered::
-    :math:`d=\sqrt{a^2+a^2}=\sqrt{2}a`
-    :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
-
-**Ülesanne 3.** Hundi, kitse ja kapsa üle jõe viimine 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal, kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
-
-Seda tüüpi ülesanne sisaldab loogikat. Tulemuseks ei ole arvutatav väärtus nagu ülesandes 2, vaid rida käike, mis esitavad üleminekut algseisundist (kõik tegelased on ühel pool jõge) lõppseisundisse (kõik tegelased on teisel pool jõge). 
-
-.. note::
-   Leida ülesandele vähemalt üks lahendus.
-
-**Ülesanne 4.** 
-~~~~~~~~~~~~~~~
-Joonisel on esitatud Pascal'i arvude kolmnurk
-
-.. image:: _static/l04_fig4.gif
-
-Äärmistel kohtadel on arv 1. Ülejäänute korral on väärtuseks kahe lähima arvu summa arvule vahetult ülemisel real. Kuidas arvutada kombinatsioonide arvu *n* elemendist *k* kaupa
-
-.. centered::
-    :math:`C_{k}^n=\frac {n!(n - k)!}{k!}`
-    
-
-kus 
-
-.. centered::
-    :math:`n!=1\cdot 2 \cdot 3 \cdot \ldots \cdot n`
-
-kasutades Pascali kolmnurka?
-Kuidas on Pascali kolmnurga arvud seotud kordajatega valemis  
-
-.. centered::
-    :math:`(x + y)^n`
-
-peale valemi lahtikirjutamist? 
-Toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. 
-
-
-Ülesande lahendamise protsess (problem solving)  
------------------------------------------------
-Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
-
-1. Algoritmi koostamine ja esitamine.
-2. Programmi koostamine mingis konkreetses programmeerimiskeeles.
-3. Programmi sisestamine arvutisse.
-4. Programmi testimine ja silumine.
-5. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
-
-
-.. index::
-    single: algoritm
-    
-.. _algoritm:    
-
-Algoritm
---------
-
-Mõiste *‘algoritm’* on tuletatud 9. sajandi Pärsia matemaatiku Mohammed al-Khowarizmi nimest. Al-Khowarizmi on Algorismus (ladina keeles) - algorithm.
-
-Esitame nüüd algoritmile täpsema definitsiooni.
-
-**Algoritm**  on  täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, mis saab sisendina ette mingi väärtuse või väärtuste hulga ja leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.
-
-.. image:: _static/l04_fig8.gif 
-
-Kokkuvõtvalt, algoritm on arvutispetsialistide kõnepruugis lihtsalt protseduur. Erinevate elukutsete inimestel on erinev vorm oma töövoost ja nad nimetavad seda erinevalt. Näiteks kokk järgib protseduuri, mida nimetatakse  retseptiks. Retsept kirjeldab algoritmi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). Algoritm hõlmab lahenduse kogu loogikat. Seega ülesande lahendamine jaotub kaheks etapiks:
-
-* algoritmi koostamine, mis lahendaks ülesande,
-* algoritmi teisendamine programmiks.
-
-Viimast protsessi nimetatakse programmeerimiseks ja see protsess on suhteliselt lihtsam, sest kogu loogika on juba olemas ja tuleb lihtsalt järgida kasutatava programmeerimiskeele süntaksit. Esimene etapp võib olla komistuskiviks paljudele ja seda kahel põhjusel:
-
-* esitatakse väljakutse vaimsetele võimetele (mõtlemisele), et leida õige lahendus.
-* see nõuab võimet selgesti väljendada lahenduskäik täpselt samm-sammuliste isntruktsioonidena.
-
-Teist oskust omandatakse ja täiustatakse pidevalt läbi praktika. 
-   
-.. index::
-    single: algoritmi omadused
-
-
-Algoritmi omadused
-------------------
-Algoritmil on neli olulist omadust:
-
-1. Algoritmi iga samm peab olema *täpne*, st olema ühetähenduslik.
-2. Algoritm peab olema *lõplik*. Vastasel juhul me ei saa probleemile lahendust.
-3. Algoritm peab olema *efektiivne*, st ta peab andma probleemile korrektse vastuse.
-4. Algoritm peab olema *üldine*, st ta peab lahendama ülesande iga eksemplari. Näiteks programm, mis leiab ringi pindala, peab töötama kõigi võimalike algandmete korral antud programmeerimiskeele ja arvuti korral. 
-
-.. index::
-    single: algoritmi esitus plokkskeemina
-    
-.. _algoritmi esitus plokkskeemina:    
-
-Algoritmi esitus plokkskeemina
-------------------------------
-
-Algoritmi tavaliseks esitusviisiks on nn pseudokood, mis on segu loomuliku keele sõnadest, matemaatilistest märkidest ja programmeerimiskeele võtmesõnadest. 
-Algoritmi saab esitada ka graafiliselt, nt plokkskeemina. Vaatleme järgnevalt plokkskeemis kasutatavaid kujundeid:
-
-.. index::
-    single: plokkskeem
-    
-.. _plokkskeem:    
-
-
-.. image:: _static/l04_fig9.gif 
-
-Ringi pindala
-~~~~~~~~~~~~~
-1. Esitame ülesande 2 lahenduse plokkskeemina:
-
- .. image:: _static/l04_fig20.gif 
-
-Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
-Lahendame nüüd selle ülesande arvutil, tehes läbi ka ülesande lahendamise teised etapid. 
-
-
-2. Koostame programmi, kasutades programmeerimiskeelt Python:
-
-.. sourcecode:: py3
-
-    from math import *
-
-    a = int(input("Sisesta külje pikkus a: "))
-    S = pi*a*a/2
-    print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
-
-3. Enamasti me teostame sammud 2 ja 3 korraga, st programmi koostamise käigus sisestame selle ka arvutisse.
-
-4. Selgub, et meie programm jääb hätta siis kui kasutaja ei sisesta midagi või sisestab külje pikkuse asemel midagi muud, nt "kuus". Seega saab öelda, et antud programm töötab vaid korrektse arvulise sisendi korral, vigase sisendi korral programmi töö lõpeb veaga.   
-
-5. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
 
 Robotkilpkonn
 ~~~~~~~~~~~~~

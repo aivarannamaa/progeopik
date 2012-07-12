@@ -10,7 +10,6 @@ VI. Alamprogrammid
 Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
 
 TODO: 
-    * Siiani oli tegu "lihtlausetega", nüüd tulevad keerulisemad konstruktsioonid
     * uute käskude defineerimine, kui ports koodiridu moodustavad loogilise terviku
     * siin on koht selgitada blokkide olemust
 
@@ -22,95 +21,11 @@ TODO:
     single: funktsioon; defineerimine
 
 
-Funktsiooni defineerimine ja kasutamine
----------------------------------------
-Järgnevas näiteprogrammis **defineeritakse** funktsioon nimega ``tere``:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-
-Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
-
-.. note::
     
-    Tühikute kasutamisel tuleb olla täpne. Soovitav on kasutada funktsiooni keha joondamiseks alati 4 tühikut, aga põhitingimuseks on praegu see, et iga rida funktsiooni kehas on joondatud sama kaugele.
-    
-Proovige seda käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid ühe tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
-
-Sisuliselt me defineerisime uue käsu ``tere``, mille saamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil defineeritud alamprogrammide e. funktsioonidena. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
-
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega (antud juhul on sulud tühjad, kuna see funktsioon ei võta argumente). Programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-    
-    tere() # funktsiooni väljakutse e. rakendamine e. aplikatsioon
-
-.. note::
-
-    Selle praktikumi põhiosas kirjutame funktsiooni definitsiooni koos väljakutse(te)ga samasse faili.
-    
-Tavaliselt pannakse alamprogrammidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
-
-.. note:: 
-
-    Nagu eespool mainitud, funktsiooni kehas on ridade ees olevad tühikud olulised, selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada.
-
-Ülesanne 1. Ruudu joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Ka selles praktikumis kasutame meile juba varem tuttavat kilpkonna. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 100).  Kasutage seda funktsiooni mitu korda, joonistades mitu ruutu erinevatesse kohtadesse.
-
-.. hint:: 
-
-    Tuletage meelde, mida tegid kilpkonna käsud ``up()`` ja ``down()``
-    
-.. hint::
-
-    Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
-
-.. index::
-    single: parameetrid; funktsiooni parameetrid
-    single: funktsioon; parameetrid
-    
-Parameetrid
------------
-Täpselt sama tegevuse kordamist on tegelikult vaja siiski üpris harva. Pigem on tarvis teha midagi sarnast, kuid mitte päris identset. Näiteks võib olla vaja anda isikustatud tervitus, mis sisaldab ka tervitatava nime, mis on aga iga kord erinev. Seda saab teha, kasutades alamprogrammi **parameetreid**:
-
-.. sourcecode:: python
-
-    def tere(nimi):
-        print("Tere " + nimi)
-        print("Kuidas läheb?")
-        
-    tere("Kalle")
-    tere("Malle")
-    
-Selles näites on funktsioonil ``tere`` parameeter nimega "nimi". Parameetri näol on sisuliselt tegu *muutujaga*, mille väärtus antakse ette funktsiooni väljakutsel. Konkreetsed väärtused kirjutatakse väljakutsel funktsiooni nime järel olevatesse sulgudesse. Antud juhul on parameetri väärtuseks esimesel väljakutsel "Kalle" ning teisel väljakutsel "Malle". Funktsioon töötab aga mõlemal juhul samamoodi – ta võtab parameetri väärtuse ning lisab selle tervitusele. Kuna aga väärtused on kahel juhul erinevad, on ka tulemus erinev.
-
-
-.. index::
-    single: funktsioon; argumendid
-    single: argumendid; funktsiooni argumendid
-
-Terminoloogia: Parameetrid vs. argumendid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Koos parameetritega räägitakse enamasti ka **argumentidest**. Argumendiks nimetakse funktsiooni väljakutses sulgudes antud avaldise väärtust, millest saab vastava parameetri väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
-
-.. note::
-    
-    `Parameetri` vs. `argumendi` asemel võite mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
-
-
 .. _param-vs-input:
 
 Parameetrid vs. ``input``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``input`` käsku -- mõlemal juhul on konkreetsed sisendandmed teadmata. Erinevus on selles, et kui ``input`` puhul on teada, et sisendandmed küsitakse kasutajalt, siis parameetrite kasutamisel jäetakse ka sisendi saamise viis lahtiseks. Eelnevas näites andsime funktsiooni väljakutsel parameetri väärtuseks sõneliteraalid, kuid seal oleks võinud kasutada ka muutujat:
 
 .. sourcecode:: py3
@@ -140,50 +55,6 @@ See näide demonstreerib parameetritega funktsioonide universaalsust -- vastaval
     See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab teid ennast segadusse, siis võite kasutada alati erinevaid muutujanimesid.
 
 
-Ülesanne 2. Parameetriseeritud ``ruut``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Täiustage eespool mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasutage loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
-    
-
-Mitu parameetrit
-~~~~~~~~~~~~~~~~
-Parameetreid (ja vastavaid argumente) võib olla ka rohkem kui üks. Proovige näiteks järgmist programmi:
-
-.. sourcecode:: python
-
-    def tere(nimi, aeg):
-        print("Tere, " + nimi)
-        print("Pole sind juba " + str(aeg) + " päeva näinud")
-	
-    tere("Kalle", 3)
-
-Nagu näete, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras nagu on vastavad  parameetrid funktsiooni definitsioonis. Teisisõnu, argumendi *positsioon* määrab, millisele parameetrile tema väärtus omistatakse.
-
-.. note::
-
-    Mõnede funktsioonide puhul on ühe parameetri väärtus tavaliselt sama ja seda on vaja vaid harvadel juhtudel muuta. Sellisel juhul on võimalik see "tavaline" väärtus funktsiooni definitsioonis ära mainida. Kui funktsiooni väljakutsel sellele parameetrile väärtust ei anta, kasutatakse lihtsalt seda vaikeväärtust. Seda võimalust demonstreerime eelmise näite modifikatsiooniga:
-
-    .. sourcecode:: python
-
-        def tere(nimi, aeg = "mitu"):
-            print("Tere, " + nimi)
-            print("Pole sind juba " + str(aeg) + " päeva näinud")
-        
-        tere("Kalle", 3)
-        tere("Malle")
-    
-    Eelmises praktikumis juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (so. reavahetus). See on põhjus, miks ``print`` vaikimisi kuvab teksti koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st. seda ei saa anda positsiooniliselt.
-
-Ülesanne 3. Värviline ruut
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele argumendiks sõne ingliskeelse värvinimega, nt. ``color('red')``. Peale seda teeb kilpkonn järgmised jooned nõutud värviga. 
-
-.. note::
-
-    Soovi korral vaadake täpsemat infot siit:
-    http://docs.python.org/py3k/library/turtle.html#turtle.color
-
-Lisage funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katsetage.
 
 .. index::
     single: funktsioon; väärtusega funktsioon
