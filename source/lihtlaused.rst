@@ -602,6 +602,8 @@ Kirjutage programm, mis küsib kasutajalt tema pangaarvel olevat summat ning int
 
 5. Busside logistika
 ~~~~~~~~~~~~~~~~~~~~~
+TODO: see vajab praegu tingimuslauset
+
 Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjutage programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
 
 .. note::

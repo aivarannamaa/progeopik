@@ -3,7 +3,7 @@ III. Liitlaused
 
 .. todo::
 
-    Siia tuleks peatükkidest "kontrollvoog" ja "alamprogrammid" ümber tõsta Pythoni vastavate konstruktsioonide tutvustus ja lihtsamad ülesanded.
+    osa ülesandeid kanda siia üle peatükist "hargnemine"
     
 
 .. index::
@@ -132,6 +132,106 @@ Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas ol
     Tegelikult on Pythonis olemas ka teine, natuke spetsiifilisem tsüklitüüp, mida nimetatakse ``for``-tsükliks ja mis sobib *n*-korduse tegemiseks isegi paremini, kui ``while``. ``for``-tsüklit vaatame järgmises praktikumis.
 
 
+Ülesanne 6. Funktsioon *n*-nurga joonistamiseks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage eelmise näite põhjal funktsioon, mis joonistab *n*-küljega hulknurga. Funktsioonil peavad olema parameetrid nurkade arvu ning küljepikkuse määramiseks.
+
+.. hint::
+    Iga nurga juures peab kilpkonn pöörama 360/n kraadi.
+    
+Testige loodud funktsiooni joonistades üksteise kõrvale kolmnurga, ruudu ja viisnurga.
+
+
+Määramata tsükkel
+~~~~~~~~~~~~~~~~~
+Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui jõutakse soovitud tulemuseni. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:
+
+.. sourcecode:: py3
+
+    from random import randint 
+    
+    arv = randint(1,999) # randint annab juhusliku täisarvu näidatud vahemikust
+    arvamus = int(input("Arva, millist tuhandest väiksemat arvu ma mõtlen: "))
+
+    # Kuni pakutud arv erineb arvuti valitust
+    while arvamus != arv :
+        if arv > arvamus:
+            print("Minu arv on suurem!")
+        else:   
+            print("Minu arv on väiksem!")
+            
+        arvamus = int(input("Arva veelkord: "))
+        
+    print("Ära arvasid! Tubli!")
+
+Ülesanne 7. Algandmete kontrollimine tsükliga
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
+
+Modifitseerige 1. ülesande lahendust -- kui kasutaja poolt sisestatud tekst polnud numbriline, siis peaks programm kordama küsimist ja andmete sisselugemist niikaua, kuni kasutaja sisestab numbrilise teksti.
+
+Alles siis, kui korrektne sisend on käes, tuleks väljastada sisestatud arvu ruut.
+
+Ülesanne 8. Täiendatud arvamismäng
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+Täiendage arvamismängu selliselt, et tsükli töö lõpeb ka sel juhul, kui kasutaja pole 10 arvamisega suutnud õiget arvu ära arvata. (Vihje: tarvis on võtta kasutusele loendur ning täiendada kordamise tingimust).
+
+
+Käsk ``break``
+~~~~~~~~~~~~~~
+Tsükli lõpetamise määrab tavaliselt tsükli päises olev tingimus. Sellele lisaks on Pythonis veel üks võimalus tsükli töö lõpetamiseks -- selleks tuleb tsükli kehas anda sobival hetkel käsk ``break``.
+
+Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõpetamise tingimust (arvu ära arvamine) kontrollitakse tsükli päises ning teist tingimust (10 ebaõnnestunud arvamist) kontrollitakse tsükli kehas:
+
+.. sourcecode:: py3
+
+    from random import randint 
+    
+    arv = randint(1,999) # randint annab juhusliku täisarvu näidatud vahemikust
+    arvamus = int(input("Arva, millist tuhandest väiksemat arvu ma mõtlen: "))
+    arvamise_kordi = 1
+    
+    while arvamus != arv :
+        if arv > arvamus:
+            print("Minu arv on suurem!")
+        else:
+            print("Minu arv on väiksem!")
+            
+        if arvamise_kordi == 10:
+            break # lõpetab tsükli töö
+        
+        arvamus = int(input("Arva veelkord: "))
+        arvamise_kordi += 1 # lühem kirjapilt muutuja väärtuse suurendamiseks
+    
+    # kuna tsükkel võis lõppeda ka ebaedukalt, siis peame enne kiitmist kontrollima...
+    if arv == arvamus:
+        print("Ära arvasid! Tubli!")
+    else:
+        print("Kümnest arvamisest ei piisanud, äkki peaksid taktikat muutma?")
+    
+
+``break`` kasutamise asemel saab tsükli alati ümber kirjutada nii, et kõiki lõpetamise tingimusi kontrollitakse tsükli päises.
+
+Mõnikord on kasulik tsükli lõpetamise tingimust kontrollida ainult tsükli kehas, sel juhul pannakse tsükli päisesse alati kehtiv tingimus ``True``. Järgnev programm küsib kasutajalt arve ja näitab nende ruute niikaua, kuni kasutaja sisestab *tühisõne* (st. vajutab ENTER ilma midagi tegelikult sisestamata):
+
+.. sourcecode:: py3
+
+    while True:
+        tekst = input("Sisesta arv ja vajuta ENTER (lõpetamiseks vajuta ainult ENTER): ")
+        
+        if tekst.isnumeric():
+            arv = int(tekst)
+            print("Arvu ruut on: " + str(arv * arv))
+        elif tekst == "":  
+            print("OK, lõpetan")
+            break
+        else: # ei olnud ei arv ega tühisõne
+            print("Vigane sisend, proovi uuesti!")
+
+Ülesanne 9. Juhuslikud arvud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis väljastab iga ENTER vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
+
 
 Tsükli ja tingimuslause kombineerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -235,112 +335,3 @@ Ka selles praktikumis kasutame meile juba varem tuttavat kilpkonna. Kirjutage fu
 
 
 
-
-
-Parameetritega funktsioonid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. todo::
-
-   selgita, miks olid eelmise näites tühjad sulud
-
-Täpselt sama tegevuse kordamist on tegelikult vaja siiski üpris harva. Pigem on tarvis teha midagi sarnast, kuid mitte päris identset. Näiteks võib olla vaja anda isikustatud tervitus, mis sisaldab ka tervitatava nime, mis on aga iga kord erinev. Seda saab teha, kasutades alamprogrammi **parameetreid**:
-
-.. sourcecode:: python
-
-    def tere(nimi):
-        print("Tere " + nimi)
-        print("Kuidas läheb?")
-        
-    tere("Kalle")
-    tere("Malle")
-    
-Selles näites on funktsioonil ``tere`` parameeter nimega "nimi". Parameetri näol on sisuliselt tegu *muutujaga*, mille väärtus antakse ette funktsiooni väljakutsel. Konkreetsed väärtused kirjutatakse väljakutsel funktsiooni nime järel olevatesse sulgudesse. Antud juhul on parameetri väärtuseks esimesel väljakutsel "Kalle" ning teisel väljakutsel "Malle". Funktsioon töötab aga mõlemal juhul samamoodi – ta võtab parameetri väärtuse ning lisab selle tervitusele. Kuna aga väärtused on kahel juhul erinevad, on ka tulemus erinev.
-
-
-.. index::
-    single: funktsioon; argumendid
-    single: argumendid; funktsiooni argumendid
-
-.. topic:: Terminoloogia: Parameetrid vs. argumendid
-
-    Koos parameetritega räägitakse enamasti ka **argumentidest**. Argumendiks nimetakse funktsiooni väljakutses sulgudes antud avaldise väärtust, millest saab vastava parameetri väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
-
-    `Parameetri` vs. `argumendi` asemel võite mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
-
-
-
-Ülesanne 2. Parameetriseeritud ``ruut``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Täiustage eespool mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasutage loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
-    
-    
-Mitu parameetrit
-~~~~~~~~~~~~~~~~
-Parameetreid (ja vastavaid argumente) võib olla ka rohkem kui üks. Proovige näiteks järgmist programmi:
-
-.. sourcecode:: python
-
-    def tere(nimi, aeg):
-        print("Tere, " + nimi)
-        print("Pole sind juba " + str(aeg) + " päeva näinud")
-	
-    tere("Kalle", 3)
-
-Nagu näete, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras nagu on vastavad  parameetrid funktsiooni definitsioonis. Teisisõnu, argumendi *positsioon* määrab, millisele parameetrile tema väärtus omistatakse.
-
-.. note::
-
-    Mõnede funktsioonide puhul on ühe parameetri väärtus tavaliselt sama ja seda on vaja vaid harvadel juhtudel muuta. Sellisel juhul on võimalik see "tavaline" väärtus funktsiooni definitsioonis ära mainida. Kui funktsiooni väljakutsel sellele parameetrile väärtust ei anta, kasutatakse lihtsalt seda vaikeväärtust. Seda võimalust demonstreerime eelmise näite modifikatsiooniga:
-
-    .. sourcecode:: python
-
-        def tere(nimi, aeg = "mitu"):
-            print("Tere, " + nimi)
-            print("Pole sind juba " + str(aeg) + " päeva näinud")
-        
-        tere("Kalle", 3)
-        tere("Malle")
-    
-    Eelmises praktikumis juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (so. reavahetus). See on põhjus, miks ``print`` vaikimisi kuvab teksti koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st. seda ei saa anda positsiooniliselt.
-
-Ülesanne 3. Värviline ruut
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele argumendiks sõne ingliskeelse värvinimega, nt. ``color('red')``. Peale seda teeb kilpkonn järgmised jooned nõutud värviga. 
-
-.. note::
-
-    Soovi korral vaadake täpsemat infot siit:
-    http://docs.python.org/py3k/library/turtle.html#turtle.color
-
-Lisage funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katsetage.
-
-
-Väärtusega funktsioonid
---------------------------
-Pere sissetuleku ülesandes kordasite tõenäoliselt netopalga arvutamise valemit kahes kohas -- ema ja isa netopalga arvutamisel. (Kui teil jäi see ülesanne tegemata, siis on väga soovitav see praegu, enne edasi lugemist ära teha). Edasise arutelu illustreerimiseks toome siin ära mainitud ülesande ühe võimaliku lahenduse:
-
-.. sourcecode:: py3
-
-    # TODO
-
-Siin polnud õnneks tegemist eriti keerulise valemiga ning copy-paste'ga oli võimalik topelt tippimise vaeva vältida. Aga kui netopalga arvutamise valem peaks muutuma, siis peab olema meeles programmi muuta kõigis kohtades, kus seda valemit on kasutatud. 
-
-Ilmselt juba aimate, et taolise kordamise vältimiseks on jälle abiks funktsioonid -- netopalga arvutamiseks tuleb defineerida uus funktsioon (nt. nimega ``neto``), valem tuleb kirja panna selle funktsiooni kehas, ning edaspidi tuleb netopalga arvutamiseks kasutada uut funktsiooni. Kuidas aga saada funktsiooni käest vastust kätte? Võib proovida muutujatega, aga kuna antud programmi puhul tuleb ühel juhul salvestatakse tulemus muutujasse ``isa_sissetulek`` ja teisel juhul muutujasse ``ema_sissetulek``, siis pole selge, millist muutujat kasutada. Mis teha siis, kui mõnikord on tarvis tulemus kohe ekraanile näidata ja muutujat polegi tarvis?
-
-Taolisel juhul tuleb appi ``return`` käsk, mis on mõeldud justnimelt funktsioonist vastuse välja andmiseks, ilma, et programmeerija peaks funktsiooni defineerimisel täpsustama, kuhu see vastus peab jõudma:
-
-.. sourcecode:: py3
-
-    # TODO
-
-Kogu real nr. X tehtavat toimingut nimetame *tagastamiseks* ja ``return`` järel oleva avaldise väärtust nimetame *tagastusväärtuseks*. Tagastusväärtusega funktsiooni võib nimetada ka lihtsalt *väärtusega funktsiooniks*. Kui funktsiooni tagastusväärtus on arvutüüpi, siis saab seda funktsiooni kasutada igal pool, kus läheb vaja arvu (nt. matemaatilises avaldises), kui tagastusväärtus on sõnetüüpi, siis võib seda funktsiooni kasutada igal pool, kus läheb vaja sõne jne. Seda demonstreerib veidi muudetud versioon vaadeldavast programmist:
-
-.. sourcecode:: py3
-
-    # TODO
-
-
-
-.. topic:: Protseduurid vs funktsioonid 
-
-    Võibolla juba märkasite, et ülalpool defineeritud funktsioon ``ruut`` on oma olemuselt ja otstarbelt üpriski erinev nendest funktsioonidest, millest räägitakse matemaatikas. ``ruut`` ja ``tere`` kirjeldavad mingit *tegevust* (vastavalt ekraanile ruudu joonistamine või kasutajaga suhtlemine), seevastu näiteks matemaatiline siinusfunktsioon (või ``sin``, nagu teda Pythonis nimetatakse) meenutab pigem mingit aritmeetilist tehet, mis genereerib *vastuse* vastavalt etteantud argumendile.

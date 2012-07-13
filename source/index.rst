@@ -10,19 +10,18 @@ Sisukord
    sissejuhatus
    lihtlaused
    liitlaused
-   kt1
-   kontrollvoog
+   algoritmid
    alamprogrammid
-   pohimotted
+   hargnemine
    jarjendid1
    jarjendid2
-   kt2
    andmestruktuurid
+   oop1
+   oop2
    rekursioon
-   oop
    keerukus
+   varia
    kokkuvote
-   kt3
    tkinter
    python2
 

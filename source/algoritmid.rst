@@ -1,10 +1,21 @@
-IX. Abstraktsem kokkuvõte senisest
-==================================
-* üldpõhimõtted
-* süntaksidiagrammid
-* ...
+IV. Algoritm ja plokkskeem
+==========================
+
+Peale antud teema läbimist üliõpilane oskab
+
+* selgitada algoritmi mõistet;
+
+* lihtsamate ülesannete korral esitada probleemi täpse püstituse, st välja selgitada algandmed ja nõutava tulemuse;
+
+* leida antud ülesande lahendamiseks kohased põhitegevused ja esitada nende täitmise järjekorra;
+
+* esitada lihtsamate ülesannete lahendust plokkskeemina (nt. lihtsamate kilpkonnaülesannete korral).
 
 
+TODO probleem vs ülesanne
+
+Sissejuhatus
+------------
 
 **Ülesanne 1.** Dokumentideta võõras linnas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,3 +180,106 @@ Lahendame nüüd selle ülesande arvutil, tehes läbi ka ülesande lahendamise t
 4. Selgub, et meie programm jääb hätta siis kui kasutaja ei sisesta midagi või sisestab külje pikkuse asemel midagi muud, nt "kuus". Seega saab öelda, et antud programm töötab vaid korrektse arvulise sisendi korral, vigase sisendi korral programmi töö lõpeb veaga.   
 
 5. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
+
+Robotkilpkonn
+~~~~~~~~~~~~~
+
+.. image:: _static/l04_fig10.gif 
+
+Tuleme tagasi eelmistest paragrahvidest tuttava robotkilpkonna juurde. Oletame, et robotkilpkonn 
+liigub ristkülikukujulisel mänguväljakul, mille mõõtmed pole teada:
+
+ .. image:: _static/l04_fig11.gif 
+ 
+Kilpkonn oskab sooritada järgmiseid tegevusi:
+
+ .. image:: _static/l04_fig12.gif  
+ 
+**Ülesanne 5.** Kolm sammu edasi ja ümberpöörd
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Robotkilpkonn asub näoga seina poole selliselt, et seinani on vähemalt 3 sammu. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber).   
+
+.. image:: _static/l04_fig13.gif  
+
+Lahenduse võib esitada järgmise plokkskeemina:
+
+.. image:: _static/l04_fig14.gif  
+
+**Ülesanne 6.** Kui võimalik, kolm sammu  edasi ja ümberpöörd 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Robotkilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber). Kui seinani on vähem kui kolm sammu, siis liikuda seinani ja pöörata ümber. 
+
+.. image:: _static/l04_fig15.gif  
+
+Nüüd on lahendus juba veidi keerulisem:  
+
+.. image:: _static/l04_fig16.gif  
+
+**Ülesanne 7.** Ring ümber mänguväljaku 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  
+
+.. image:: _static/l04_fig17.gif  
+
+**Ülesanne 8.** Liikumine takistusest mööda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Kilpkonnal on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on. Koostada plokkskeem.  
+
+.. hint:: 
+    Antud ülesande korral võib olla olukord, kus takistus asub roboti ees
+
+    .. image:: _static/l04_fig18.gif  
+
+    või siis ei asu
+
+    .. image:: _static/l04_fig19.gif  
+
+.. note:: 
+
+    Laadides alla väikese programmi, on võimalik kilpkonna liikumist modelleerivate plokkskeemide koostamist testida ka arvuti abil: http://www.physicsbox.com/indexrobotprogen.html
+
+
+Lisalugemist
+------------
+
+Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on ülesannete lahendusprotsessi uuritud ka süstemaatiliselt. Üheks selle ala klassikuks võib lugeda Ungari matemaatikut George Pólyat, kes uuris ülesande lahendamise protsessi lähemalt ja avaldas oma kuulsa raamatu "Kuidas seda lahendada?". Oma raamatus toob ta välja neli etappi, millega ülesande lahendajal tuleb kokku puutuda. Esitame siinkohal tema kuulsa tsitaadi:
+
+.. index::
+    single: Pólya
+    
+.. _Pólya:    
+
+George Pólya:
+
+*Suur avastus lahendab suure probleemi, kuid väike avastus on olemas iga probleemi lahenduses. Sinu probleem võib olla tagasihoidlik, kuid kui see esitab väljakutse sinu uudishimule ja toob mängu sinu leiutaja omadused. Kui sa seda lahendad omaenda vahenditega, võid kogeda pingutust ja nautida avastuse triumfi. Sellised kogemused võivad vastuvõtlikus eas tekitada vajaduse vaimse töö järele ja jätta jälje terveks eluks.*
+
+George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soovitame ka antud kursuse ülesannete korral hoolikalt järgida. 
+
+1. Ülesandest arusaamine
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Mis on otsitavaks? Mis on antud? Milles seisnevad ülesande tingimused?
+* Kas tingimusi on võimalik üldse rahuldada? Kas tingimused on otsitava tulemi määramiseks piisavad? Kas nende hulgas on ülearuseid? Kas tingimused on vastuolulised?
+* Valmista joonis. Võta kasutusele sobiv tähistus.
+
+2. Lahendamise idee ja sellele vastava plaani koostamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Kas tead mõnd teist antud ülesandega seonduvat ülesannet?
+* Vaatle otsitavat! Püüa meenutada mõnda tuntud ülesannet, milles on sama või sarnane otsitav.
+* Kas on võimalik seda ülesannet ära kasutada? Kas peab sisse tooma mingi abielemendi, mis võimaldaks varem lahendatud ülesannet ära kasutada?
+* Kas saab ülesannet teisiti sõnastada? Veel teisiti? Pöördu tagasi definitsiooni juurde.
+* Kui sa ei suuda antud ülesannet lahendada, siis proovi lahendada kõigepealt mõni temaga seonduv ja võib-olla lihtsam ülesanne. Või üldisem ülesanne? Või erijuht? Või sarnane ülesanne? Jättes osa tingimustest kõrvale, kuivõrd on otsitav siis määratud?
+* Kas kasutasid kõiki andmeid? Kas kasutasid kõiki tingimusi? Kas arvestasid kõiki ülesandes sisalduvaid mõisteid?
+
+3. Lahendusplaani täitmine
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Veendu iga sammu õigsuses.
+
+4. Tagasivaade
+~~~~~~~~~~~~~~
+* Kas saad kontrollida tulemust? Kas saad kontrollida lahenduskäiku?
+* Kas saad tulemust teisiti leida?
+* Kas tulemus või lahenduskäik on kasutatav mõne teise ülesande korral?
+
+
+
+

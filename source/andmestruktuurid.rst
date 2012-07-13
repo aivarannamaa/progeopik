@@ -1,4 +1,4 @@
-XI. Sõnastikud. Mitmemõõtmelised järjendid
+IX. Andmestruktuurid
 =============================================
 
 Selles praktikumis õpite kasutama tavalistest järjenditest veidi keerulisemaid (ja võimsamaid) andmestruktuure -- sõnastikke ja mitmemõõtmelisi järjendeid. Mitmemõõtmeliste järjenditega tuleb kaasa ka mitmekordsete tsüklite teema.

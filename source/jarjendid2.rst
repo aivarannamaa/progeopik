@@ -1,4 +1,4 @@
-VIII. Järjendid, 2. osa
+VIII. Järjendite muteerimine
 =======================================
 
 Selle praktikumi põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.
