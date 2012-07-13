@@ -1,4 +1,4 @@
-VI. ``bool`` ja hargnemine
+VI. ``bool`` ja tingimuslaused
 =======================================
 
 Selles praktikumis käsitleme kahte teemat. Kõigepealt uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi
