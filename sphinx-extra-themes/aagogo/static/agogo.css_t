@@ -503,3 +503,7 @@ p {
     content: " ...";
 }
 
+.admonition-tegemata, .admonition-todo,
+.admonition-tegemata *, .admonition-todo * {
+    background-color:pink ! important;
+}
