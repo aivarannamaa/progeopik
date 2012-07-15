@@ -230,6 +230,10 @@ Edaspidistes praktikumides kohtate ka keerulisemaid olukordi, kus vea põhjust o
 http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/app_a.html.
 Sellele võiks ka edaspidi pilgu peale visata, kui nt. mõne kodutööga hätta jääte.
 
+Maagia?
+----------
+.. todo:: selgita Cargo cult-i ja et siitmaalt edasi vaja on saada oma programmide igast detailist aru
+
 Mis edasi?
 --------------
 TODO
