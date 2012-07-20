@@ -1,10 +1,14 @@
 II. Avaldised ja lihtlaused
 ================================
 
-TODO
+.. todo::
+    * Millest koosnevad programmid? ...
+    * Meeldetuletuseks üks lihtlausetega programm eelmisest peatükist
+    * IPO? (Zelle Ch2)
+    * kas tutvustada input / output enne ja avaldised (data) pärast?
+    * tee (plokk?)skeem, mis näitab, et suurtes programmides on input/output'i osakaal palju väiksem (siin on see IPO mõiste suht sobilik)
+    * see, et avaldist saab käsureal kasutada ilma prindita, võiks mainida avaldiste osa juures?
     
-    * "lineaarsed" asjad
-    * Too sisse analoogia LEGO-ga
 
 Selles praktikumis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses praktikumis juba kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. Lisaks vaatame põgusalt, kuidas saab Pythonis väljendada tahvlipraktikumi plokkskeemidest tuttavat *hargnemist*.
 
@@ -206,7 +210,10 @@ Väärtustage järgnevad aritmeetilised avaldised Pythoni käsureal:
     
 Sõned
 --------
-**Sõne** (ing.k `string`, lühend `str`) on andmetüüp teksti esitamiseks. Enamasti piisab Pythonis sõne kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``.
+**Sõne** (ing.k `string`, lühend `str`) on andmetüüp teksti esitamiseks. Enamasti piisab Pythonis sõne kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``. Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei 
+
+Asi läheb veidi keerulisemaks, kui sõne sees kasutada jutumärke, ülakomasid või muid erisümboleid
+.. todo:: näita järgnevate stringide tegelikku sisu ``print``-i abil
 
 .. topic:: Mõned näited keerulisematest sõneliteraalidest:
 
@@ -304,6 +311,9 @@ Programmi loetavuse huvides peaks muutuja nimi kirjeldama vastava väärtuse tä
 
     Pythonis saab vajadusel muutuja väärtust ka uue väärtusega üle kirjutada -- selleks tuleb lihtsalt teha uus omistamine samale muutujale. Muutuja ülekirjutamist meil praegu siiski veel tarvis ei lähe.
 
+.. todo::
+    muutuja *nime* reeglid
+    mooduli nimed, funktsiooni nimed samade reeglite järgi
 
 
 .. _milleks-muutujad:
