@@ -3,7 +3,7 @@ III. Liitlaused
 
 .. todo::
 
-    osa ülesandeid kanda siia üle peatükist "hargnemine"
+    osa ülesandeid kanda siia üle peatükist "tingimuslaused"
     
 
 .. index::

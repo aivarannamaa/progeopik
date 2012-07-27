@@ -155,6 +155,51 @@ Algoritmi saab esitada ka graafiliselt, nt plokkskeemina. Vaatleme järgnevalt p
 
 .. image:: _static/l04_fig9.gif 
 
+
+Kartulisalati tegemise plokkskeem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
+
+.. image:: _static/l05_fig1.gif
+
+Üksi salatit valmistades on meil võimalik lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
+
+.. image:: _static/l05_fig2.gif
+
+
+Korraldame loendamist pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
+
+.. image:: _static/l05_fig3.gif
+
+Arvutis me kasutamine loendamiseks muutujaid, hoides nendes näiteks loendamise jooksvat seisu. Loendamise algul peame loenduri seisu nullima.  
+
+
+.. image:: _static/l05_fig4.gif
+
+OLetame, et meil on juba olemas käsklused (funktsioonid), mis rakendamisel annavad meile vajaliku asja või toiduaine:
+
+* ``tühiKauss()`` annab tühja kausi, 
+* ``uusHapukurk()`` annab uue hapukurgi, 
+* ``uusKartul()`` annab uue kartuli, 
+* ``splKoort()`` annab supilusikatäie hapukoort,
+* ``noaotsagaSoola()`` annab noa otsatäie soola, 
+* ``maitseSisu()`` annab tagasi soolasuse maitse *m*, mille parajust saab hiljem kontrollida. 
+
+Samuti oletame, et me saame kasutada olemasolevaid protseduure, millele asju ette andes tehakse ära mingi töö:
+
+* ``lisaTükeldatult(a, k)`` lisab  aine *a* tükeldatult kaussi *k*, 
+* ``segaSisu(k)`` segab kausis *k* olevad ained kokku.
+
+Kasutades neid käsklusi, saame kartulisalati tegemise esitada järgmisel kujul:
+ 
+.. image:: _static/l05_fig5.gif
+
+Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilusikatäie hapukoore ja noaotsatäie soola võtmise otse lisamise käsklustele, sest meil ei ole neid eraldi muutujates vaja rohkem kasutada:
+
+
+.. image:: _static/l05_fig6.gif
+
+
 Ringi pindala
 ~~~~~~~~~~~~~
 1. Esitame ülesande 2 lahenduse plokkskeemina:

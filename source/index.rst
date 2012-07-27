@@ -12,7 +12,7 @@ Sisukord
    liitlaused
    algoritmid
    alamprogrammid
-   hargnemine
+   tingimuslaused
    jarjendid1
    jarjendid2
    andmestruktuurid

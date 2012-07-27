@@ -328,6 +328,116 @@ Nagu näha, annab ``for``-tsükkel koos ``range``-ga sama tulemuse palju lihtsam
 Samas, mõnede probleemide lahendamisel ei piisa ``for``-tsüklist. Näiteks eelmises praktikumis kirjeldatud arvamismängu ei saa ``for``-tsükliga kirja panna. Seetõttu ongi Pythonis kaks erinevat korduslauset -- paindlik, aga pisut tülikas ``while``-lause ning mugav, aga teatud juhtudel ebasobiv ``for``-lause.
 
 
+Veel järjendioperatsioone
+-------------------------
+    
+
+Sõne kui järjend
+~~~~~~~~~~~~~~~~
+Nagu eelmises praktikumis juba mainitud, saab sõnet käsitleda justkui sümbolite järjendit:
+
+.. sourcecode:: py3
+
+    sõne = 'Tere'
+    print(sõne[0])
+    
+    for täht in sõne:
+        print(täht)
+
+Selleks, et sõnet muuta päris järjendiks, saab kasutada funktsiooni ``list``:
+    
+.. sourcecode:: py3
+
+    >>> list('Tere')
+    ['T', 'e', 'r', 'e']
+
+Meetodid ``split`` ja ``join``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tihti on tarvis teha mingi sõne pisut suuremateks juppideks kui üksikud tähed -- näiteks võib olla vaja jagada sõnena esitatud lause eraldi sõnadeks. Selle jaoks saab kasutada sõnemeetodit ``split``:
+
+.. sourcecode:: py3
+
+    >>> 'Tere hommikust'.split()
+    ['Tere', 'hommikust']
+    >>> 'CY2X44;3;66;T'.split(';')
+    ['CY2X44', '3', '66', 'T']
+
+Kui ``split``-i kasutada ilma argumentideta, siis tehakse "lõikamine" tühikute, tabulaatorite ja reavahetuste kohalt. Kui anda ette mingi muu sümbol, siis lõigatakse sõne juppideks just selle sümboli kohalt. 
+
+Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
+
+.. sourcecode:: py3
+
+    >>> ' '.join(['Tere', 'hommikust'])
+    'Tere hommikust'
+    >>> ';'.join(['CY2X44', '3', '66', 'T'])
+    'CY2X44;3;66;T'
+
+Ülesanne 1. Kuupäeva "lahtiharutamine"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage funktsioon ``kuu``, mis võtab argumendiks sõne kujul *<päev>. <kuu> <aasta>* (nt. ``'24. veebruar 1918'`` ning tagastab vastava kuu nime.
+
+Negatiivsed indeksid
+~~~~~~~~~~~~~~~~~~~~
+Järjendeid (ja sõnesid) saab indekseerida ka negatiivsete indeksitega, sel juhul hakatakse lugema järjendi lõpust:
+
+.. sourcecode:: py3
+
+    >>> sõne = 'Tere'
+    >>> sõne[-1]
+    'e'
+    >>> sõne[-2]
+    'r'
+    >>> sõne[-3]
+    'e'
+    >>> sõne[-4]
+    'T'
+
+Avaldis ``järjend[-0]`` tähistab siiski esimest elementi, sest *-0 = 0*.
+
+Järjendite "viilutamine"
+~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutades nurksulgudesse indeksi asemel *indeksivahemiku* on järjendist (ja sõnedest) võimalik võtta alamjärjendeid (alamsõnesid):
+
+.. sourcecode:: py3
+
+    >>> a = ['a', 'b', 'c', 'd', 'e', 'f']
+    
+    >>> a[0:2]
+    ['a', 'b']
+    >>> a[:2]
+    ['a', 'b']
+    
+    >>> a[2:6]
+    ['c', 'd', 'e', 'f']
+    >>> a[2:]
+    ['c', 'd', 'e', 'f']
+
+    >>> a[-2:]
+    ['e', 'f']
+    >>> a[:]
+    ['a', 'b', 'c', 'd', 'e', 'f']
+    
+    >>> s = "Tere"
+    >>> s[0:3]
+    'Ter'
+
+Koolonist vasakule tuleb kirjutada see indeks, millest alates tuleb elemente tulemusse kopeerida, ning koolonist paremale see indeks, mille juures tuleb kopeerimine lõpetada (st. selle indeksiga element jääb tulemusest välja). Kui vasak indeks jätta kirjutamata, siis alustatakse esimesest elemendist ja kui parem indeks jätta kirjutamata, siis kopeeritakse kuni järjendi lõpuni (viimane element kaasaarvatud).
+
+Valed indeksid
+~~~~~~~~~~~~~~~~~~
+Proovige läbi järgnev näide, et te tunneksite saadud veateate edaspidi ära:
+
+.. sourcecode:: py3
+
+    a = ['a', 'b', 'c']
+    print(a[66])
+
+
+Ülesanne 2. Sõne viilutamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle sõne 3 viimast tähte. Kui sõnes on vähem kui 3 tähte, siis tagastada terve sõne.
+
 
 
 Koduülesanded

@@ -1,10 +1,11 @@
-V. Alamprogrammid. Ülesande jagamine mooduliteks
-========================================================
-
+V. Alamprogrammid
+==================
 .. todo::
 
     Siin on praegu copy-pastega pandud kokku Helle kirjutatud plokkskeemi keskne käsitlus ja eelmise aasta 3.praksi (Funktsioonid) tekst. Need tuleks kuidagi põimida. Arvesta, et väike sissejuhatus funktsioonidesse on juba peatükis "liitlaused".
-    
+
+TODO probleem
+
 Peale antud teema läbimist üliõpilane oskab
 
 * jaotada lihtsamaid ülesandeid alamülesanneteks ja esitada lahendust plokkskeemina;
@@ -14,80 +15,96 @@ Peale antud teema läbimist üliõpilane oskab
 * parandada algoritmi efektiivsust (konkreetsete näidete abil).
 
 
-Sissejuhatus
-------------
-
-Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
-
-.. image:: _static/l05_fig1.gif
-
-Üksi salatit valmistades on meil võimalik lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
-
-.. image:: _static/l05_fig2.gif
 
 
-Korraldame loendamist pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
 
-.. image:: _static/l05_fig3.gif
+Uute käskude defineerimine
+-------------------------------
+Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
 
-Arvutis me kasutamine loendamiseks muutujaid, hoides nendes näiteks loendamise jooksvat seisu. Loendamise algul peame loenduri seisu nullima.  
+TODO: 
+    * uute käskude defineerimine, kui ports koodiridu moodustavad loogilise terviku
+    * siin on koht selgitada plokkide olemust
 
+.. topic:: Terminoloogiast
 
-.. image:: _static/l05_fig4.gif
+    `Alamprogramm` on veidi üldisem nimetus, kuna `funktsioon` võib mõnes programmeerimiskeeles tähistada vaid teatud omadustega alamprogrammi. Samas, Pythonist rääkides võime kasutada neid sõnu siiski sünonüümidena.
 
-OLetame, et meil on juba olemas käsklused (funktsioonid), mis rakendamisel annavad meile vajaliku asja või toiduaine:
-
-* ``tühiKauss()`` annab tühja kausi, 
-* ``uusHapukurk()`` annab uue hapukurgi, 
-* ``uusKartul()`` annab uue kartuli, 
-* ``splKoort()`` annab supilusikatäie hapukoort,
-* ``noaotsagaSoola()`` annab noa otsatäie soola, 
-* ``maitseSisu()`` annab tagasi soolasuse maitse *m*, mille parajust saab hiljem kontrollida. 
-
-Samuti oletame, et me saame kasutada olemasolevaid protseduure, millele asju ette andes tehakse ära mingi töö:
-
-* ``lisaTükeldatult(a, k)`` lisab  aine *a* tükeldatult kaussi *k*, 
-* ``segaSisu(k)`` segab kausis *k* olevad ained kokku.
-
-Kasutades neid käsklusi, saame kartulisalati tegemise esitada järgmisel kujul:
- 
-.. image:: _static/l05_fig5.gif
-
-Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilusikatäie hapukoore ja noaotsatäie soola võtmise otse lisamise käsklustele, sest meil ei ole neid eraldi muutujates vaja rohkem kasutada:
+.. index::
+    single: funktsioon; defineerimine
 
 
-.. image:: _static/l05_fig6.gif
+Näide: Roboti pööramine vasakule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nagu juba varem mainitud (?), oskab meie robot pöörata vaid paremale. Selleks, et muuta suunda 90° võrra vasakule, tuleb meil anda järjest 3 paremale pööramise käsklust. Siin ongi paras koht defineerida uus roboti juhtimise käsk ``vasakule``:
 
-Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
-Kartulite lisamine: 
+.. todo:: näide pythonis ja plokkskeemis
 
-.. image:: _static/l05_fig7.gif
+Näide: TODO
+~~~~~~~~~~~~~~
+veel üks näide pythonis ja plokkskeemis
 
-Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
-Järgmiseks protseduuriks on hapukurkide lisamine:
 
-.. image:: _static/l05_fig8.gif
+Funktsiooni defineerimine ja kasutamine
+---------------------------------------
+Järgnevas näiteprogrammis **defineeritakse** funktsioon nimega ``tere``:
 
-Hapukoore lisamine:
+.. sourcecode:: python
 
-.. image:: _static/l05_fig9.gif
+    def tere():
+        print("Tere")
+        print("Kuidas läheb?")
 
-Soola lisamine:
+Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
 
-.. image:: _static/l05_fig10.gif
+.. note::
+    
+    Tühikute kasutamisel tuleb olla täpne. Soovitav on kasutada funktsiooni keha joondamiseks alati 4 tühikut, aga põhitingimuseks on praegu see, et iga rida funktsiooni kehas on joondatud sama kaugele.
+    
+Proovige seda käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid ühe tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
 
-Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
+Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil defineeritud alamprogrammide e. funktsioonidena. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
 
-.. image:: _static/l05_fig11.gif
+Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega (antud juhul on sulud tühjad, kuna see funktsioon ei võta argumente). Programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
 
-Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
+.. sourcecode:: python
 
-.. image:: _static/l05_fig12.gif
+    def tere():
+        print("Tere")
+        print("Kuidas läheb?")
+    
+    tere() # funktsiooni väljakutse e. rakendamine e. aplikatsioon
+
+.. note::
+
+    Selle praktikumi põhiosas kirjutame funktsiooni definitsiooni koos väljakutse(te)ga samasse faili.
+    
+Tavaliselt pannakse alamprogrammidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
+
+.. note:: 
+
+    Nagu eespool mainitud, funktsiooni kehas on ridade ees olevad tühikud olulised, selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada.
+
+Ülesanne 1. Ruudu joonistamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ka selles praktikumis kasutame meile juba varem tuttavat kilpkonna. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 100).  Kasutage seda funktsiooni mitu korda, joonistades mitu ruutu erinevatesse kohtadesse.
+
+.. hint:: 
+
+    Tuletage meelde, mida tegid kilpkonna käsud ``up()`` ja ``down()``
+    
+.. hint::
+
+    Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
+
+.. index::
+    single: parameetrid; funktsiooni parameetrid
+    single: funktsioon; parameetrid
+
 
 Robotkilpkonn
 ~~~~~~~~~~~~~
-
-Nägime, et alamülesandeid on kahte liiki: funktsioonid ja protseduurid. Toome nüüd näite protseduuride kasutamisest robotkilpkonna korral.
+Toome nüüd näite protseduuride kasutamisest robotkilpkonna korral.
 Võtame robotkilpkonna korral samuti kasutusele funktsioonid ja protseduurid. Paneme kirja kilpkonna poolt sooritatavad tegevused protseduuride või funktsioonidena:
 
 ``edasi()`` - kilpkonn liigub ühe sammu edasi;
@@ -213,78 +230,6 @@ Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt pai
 Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
 
 
-Pythoni funktsioonid
--------------------------------------------------
-Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
-
-TODO: 
-    * Siiani oli tegu "lihtlausetega", nüüd tulevad keerulisemad konstruktsioonid
-    * uute käskude defineerimine, kui ports koodiridu moodustavad loogilise terviku
-    * siin on koht selgitada blokkide olemust
-
-.. topic:: Terminoloogiast
-
-    `Alamprogramm` on veidi üldisem nimetus, kuna `funktsioon` võib mõnes programmeerimiskeeles tähistada vaid teatud omadustega alamprogrammi. Samas, Pythonist rääkides võime kasutada neid sõnu siiski sünonüümidena.
-
-.. index::
-    single: funktsioon; defineerimine
-
-
-Funktsiooni defineerimine ja kasutamine
----------------------------------------
-Järgnevas näiteprogrammis **defineeritakse** funktsioon nimega ``tere``:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-
-Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
-
-.. note::
-    
-    Tühikute kasutamisel tuleb olla täpne. Soovitav on kasutada funktsiooni keha joondamiseks alati 4 tühikut, aga põhitingimuseks on praegu see, et iga rida funktsiooni kehas on joondatud sama kaugele.
-    
-Proovige seda käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid ühe tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
-
-Sisuliselt me defineerisime uue käsu ``tere``, mille saamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil defineeritud alamprogrammide e. funktsioonidena. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
-
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega (antud juhul on sulud tühjad, kuna see funktsioon ei võta argumente). Programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-    
-    tere() # funktsiooni väljakutse e. rakendamine e. aplikatsioon
-
-.. note::
-
-    Selle praktikumi põhiosas kirjutame funktsiooni definitsiooni koos väljakutse(te)ga samasse faili.
-    
-Tavaliselt pannakse alamprogrammidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
-
-.. note:: 
-
-    Nagu eespool mainitud, funktsiooni kehas on ridade ees olevad tühikud olulised, selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada.
-
-Ülesanne 1. Ruudu joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Ka selles praktikumis kasutame meile juba varem tuttavat kilpkonna. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 100).  Kasutage seda funktsiooni mitu korda, joonistades mitu ruutu erinevatesse kohtadesse.
-
-.. hint:: 
-
-    Tuletage meelde, mida tegid kilpkonna käsud ``up()`` ja ``down()``
-    
-.. hint::
-
-    Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
-
-.. index::
-    single: parameetrid; funktsiooni parameetrid
-    single: funktsioon; parameetrid
     
 Parameetrid
 -----------
@@ -351,6 +296,39 @@ See näide demonstreerib parameetritega funktsioonide universaalsust -- vastaval
 Ülesanne 2. Parameetriseeritud ``ruut``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Täiustage eespool mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasutage loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
+
+Parameetrid plokkskeemis
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. todo:: Java stiilis parameetrite deklareerimine tuleks ära muuta (või siis selgitada)
+
+Tuleme tagasi eelmises peatükis alustatud kartulisalati teema juurde.
+
+Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
+Kartulite lisamine: 
+
+.. image:: _static/l05_fig7.gif
+
+Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
+Järgmiseks protseduuriks on hapukurkide lisamine:
+
+.. image:: _static/l05_fig8.gif
+
+Hapukoore lisamine:
+
+.. image:: _static/l05_fig9.gif
+
+Soola lisamine:
+
+.. image:: _static/l05_fig10.gif
+
+Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
+
+.. image:: _static/l05_fig11.gif
+
+Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
+
+.. image:: _static/l05_fig12.gif
+
     
 
 Mitu parameetrit
