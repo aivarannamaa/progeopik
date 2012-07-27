@@ -84,13 +84,6 @@ Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks s
 
 .. image:: _static/l05_fig12.gif
 
-Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
-
-
-.. image:: _static/l05_fig23.gif
- 
-Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed.
-
 Robotkilpkonn
 ~~~~~~~~~~~~~
 
@@ -472,6 +465,8 @@ Väärtusega funktsioonide puhul on oluline *võtmesõna* ``return`` -- sellele 
 
     Kui päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``ruut``. Need funktsioonid, mille eesmärk on vaid mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata ning seepärast Python'i käsurida ka ei näita seda automaatselt.
 
+
+
 .. _return-vs-print:
 
 ``return`` vs. ``print``
@@ -515,6 +510,23 @@ Kirjutage funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab s
 .. hint::
 
     Abiks on funktsioon ``len`` ja operaator ``*``
+
+
+Väärtusega alamprogrammid plokkskeemis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. todo:: Äkki oleks kasulikum mingi keerulisem arvutus, nt. netopalga arvutamine. Ühe plokiga plokkskeemid ei ole minu arust eriti veenvad.
+
+Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
+
+
+.. image:: _static/l05_fig23.gif
+ 
+Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
+
+.. todo:: Näide, kus seda funktsiooni on kasutatud avaldises
+
+
+
 
 "Mugavusfunktsioonid"
 ~~~~~~~~~~~~~~~~~~~~~
