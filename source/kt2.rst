@@ -1,4 +1,4 @@
-*X. Kontrolltöö, 17.-21. oktoober*
+*2. Kontrolltöö, 8.-9. november*
 ==================================
 
 Kontrolltöös on (esialgse plaani järgi) 3 ülesannet, mis nõuavad I-VI arvutipraktikumi teemade valdamist. Maksimaalselt on võimalik saada 10 punkti.

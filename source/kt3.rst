@@ -1,4 +1,4 @@
-*XIV. Kontrolltöö, 5.-9. detsember*
+*3. Kontrolltöö, 20.-21. detsember*
 ===================================
 
 Kontrolltöös on ülesanded, mis nõuavad I-IX arvutipraktikumi teemade valdamist. Maksimaalselt on võimalik saada 10 punkti.
