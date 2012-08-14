@@ -403,6 +403,10 @@ Kõiki arvu- ja sõneoperatsioone, mida demonstreerisime eelnevalt kasutades lit
         '3'
 
 
+Funktsioonid
+---------------
+.. todo:: ...
+
 Sisend ja väljund
 -----------------
 Pythoni käsureal toimub avaldiste sisestamine ning tulemuste väljastamine ilma, et sellele peaks eriti mõtlema. Kui soovime aga programmi käivitada skriptina, siis tuleb sisendi ja väljundiga eraldi tegeleda. 
@@ -502,6 +506,8 @@ Kirjutage programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vasta
 
 Sisendi lugemine failist
 ~~~~~~~~~~~~~~~~~~~~~~~~
+.. todo:: siin peaks olema ilma tsüklita
+
 Siinkohal õpime ära ka kõige lihtsama viisi tekstifailidest sisendi lugemiseks.  Alustuseks koostage ja salvestage tekstifail nimega `andmed.txt`, mis sisaldab suvalisi sõnu eraldi ridadel (lihtsuse mõttes ärge praegu täpitähti kasutage). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvestage *samasse kausta* järgnev skript, ning käivitage see. NB! tühikud ``print`` käskude ees on olulised!
 
 .. sourcecode:: py3
@@ -567,9 +573,9 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
 
 Kokkuvõte
 ---------------
-TODO
+.. todo::
     
-    * Selgita, et siiani *keskendusime* "lineaarsetele asjadele, aga järgmises peatükis läheb asi huvitavamaks.
+    * Selgita, et siiani keskendusime "lineaarsetele" asjadele, aga järgmises peatükis läheb asi huvitavamaks.
 
     
 
@@ -612,7 +618,7 @@ Kirjutage programm, mis küsib kasutajalt tema pangaarvel olevat summat ning int
 
 5. Busside logistika
 ~~~~~~~~~~~~~~~~~~~~~
-TODO: see vajab praegu tingimuslauset
+.. todo:: Viimase bussi inimeste arvu osa vajab praegu siiski tingimuslauset
 
 Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjutage programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
 

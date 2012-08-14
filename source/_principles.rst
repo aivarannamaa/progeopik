@@ -21,9 +21,9 @@ Soovitavad õpiku omadused
 [ vt ka http://edutechwiki.unige.ch/en/Textbook_writing_tutorial#Overview_of_textbook_chapter_element ]
 
 * (mingi asjakohane tsitaat, lihtsalt ilu pärast või selleks, et tekitada lugejas positiivne meelestatus)
-* Motiveeriv sissejuhatus: eelneva peatüki mainimine ja sellega seoses uue probleemi sissetoomine. Uue konstruktsiooni või teema tutvustamine ("thesis statement"). "Mida" ja "miks" küsimustele vastamine. See osa peaks tudengit veenma, et seda peatükki on mõtet õppida. Võiks ka ühe lausega ära mainida, mis siin peatükis juhtuma hakkab (preview/outline).
+* Motiveeriv **sissejuhatus**: eelneva peatüki mainimine ja sellega seoses uue probleemi sissetoomine. Uue konstruktsiooni või teema tutvustamine ("thesis statement"). "Mida" ja "miks" küsimustele vastamine. See osa peaks tudengit veenma, et seda peatükki on mõtet õppida. Võiks ka ühe lausega ära mainida, mis siin peatükis juhtuma hakkab (preview/outline).
 * (õpiväljundid (Kas on vajalik? Minu arvates jätavad kuidagi liiga formaalse mulje))
-* teema 1
+* **teema 1**
 
     * paar lauset konstruktsiooni või mõiste esmaseks tutvustamiseks ja motivatsiooniks
     * selgitavad näited koos märkustega ja täpsustustega
@@ -32,15 +32,15 @@ Soovitavad õpiku omadused
     * tiba raskemad ülesanded (koos vihjetega, vajadusel ka ülesandega seotud kõrvalepõiked ja lisatäpsustused)
     * (analüüsi nõudev ülesanne (nt. üleskutse võtta see teema oma sõnadega kokku, või mingi küsimus, millele vastamine nõuab antud teema olemusse süüvimist). Eesmärgiks see, et tudeng käiks mõttes läbi, mida ta just luges/tegi.)
 
-* teema 2
-* (mingi arutlev vahetekst, mis ei mahu ühe teemaploki sisse, ja mida ei saa pidada ka valikuliseks lisainfoks, nt. "Milleks funktsioonid?")
+* **teema 2**
+* (mingi arutlev **vahetekst**, mis ei mahu ühe teemaploki sisse, ja mida ei saa pidada ka valikuliseks lisainfoks, nt. "Milleks funktsioonid?")
 * ...
-* teema n
-* Kokkuvõte: Sõnastik + peatüki kokkuvõte/tagasivaade/analüüs + analüüsi nõudev ülesanne. See osa peaks panema tudengit sammu tagasi astuma, kogu peatükki mõttes läbi käima ning uut infot süstematiseerima. Kokkuvõte võib kasutada muuhulgas jutustavat teksti, loetelupunkte vms. Siin võib olla ka sisestuskast, kuhu lugeja saab kirjutada kõige tähtsamad õpitud ideed tema arvates.
+* **teema n**
+* **Kokkuvõte**: Sõnastik + peatüki kokkuvõte/tagasivaade/analüüs + analüüsi nõudev ülesanne. See osa peaks panema tudengit sammu tagasi astuma, kogu peatükki mõttes läbi käima ning uut infot süstematiseerima. Kokkuvõte võib kasutada muuhulgas jutustavat teksti, loetelupunkte vms. Siin võib olla ka sisestuskast, kuhu lugeja saab kirjutada kõige tähtsamad õpitud ideed tema arvates.
 * (Loengu põhiidee graafiline esitus)
-* Praksiülesannete blokk (millest tuleb mingi hulk lahendada punkti saamiseks). Sisaldab ka mõtlemapanevad/arutlust vajavad küsimused (ei pruugi olla praeguste teadmistega lahendatavad). Nt. küsimused stiilis "Kas if-lauset on programmeerimisel kindlasti vaja või saab ka ilma?".
-* Lisalugemine koos sellega seotud ülesannetega. Võiks näidata läbitud teemat laiemas kontekstis (nt. seostamine matemaatikaga või mingi muu valdkonnaga).
-* projekti ideed
+* **Ülesanded** (millest tuleb mingi hulk lahendada punkti saamiseks ?). Sisaldab ka mõtlemapanevad/arutlust vajavad küsimused (ei pruugi olla praeguste teadmistega lahendatavad). Nt. küsimused stiilis "Kas if-lauset on programmeerimisel kindlasti vaja või saab ka ilma?".
+* **Projekti ideed**. 
+* **Lisalugemine** (koos sellega seotud ülesannetega). Võiks näidata läbitud teemat laiemas kontekstis (nt. seostamine matemaatikaga või mingi muu valdkonnaga).
 
 Peatüki esimene osa (st. tekst koos ülesannetega) on mõeldud kodus lugemiseks ja lahendamiseks enne vastavat loengut. Ülesannete osa on mõeldud praksis lahendamiseks ja lisalugemine + tärnülesanded on mõeldud hiljem kodus lugemiseks/lahendamiseks.
 

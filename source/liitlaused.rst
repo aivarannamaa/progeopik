@@ -13,8 +13,8 @@ III. Liitlaused
 Kui eelmise peatüki teemad liigitasime "lihtlausete" kategooriatesse, siis nüüd vaatame, milliseid on Pythoni olulisimad "liitlaused", mille abil saab lihtlauseid erinevatesse seostesse paigutada.
 
 
-Tingimuslause
---------------
+Tingimuslause e. ``if``-lause
+-------------------------------
 Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva käsuga, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul -- enamasti tuleb programmil mingil hetkel teha situatsioonist sõltuvalt valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad koos soovitud valikukriteeriumidega panna kirja **tingimuslause** e. ``if``-lause abil.
 
 Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
@@ -36,14 +36,9 @@ Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arv
 
 Selles programmis ei täida Python enam kõiki käske -- see, kas täidetakse käsk ``vastus = -arv`` või ``vastus = arv``, sõltub konkreetsest kasutaja poolt sisestatud arvust.
 
-``if``-lause kasutamisel on vaja pöörata tähelepanu tühikutele -- tühikutega joondamine e. *treppimine* määrab, millised käsud kuuluvad tingimuslause alla ja millised mitte. Antud näites on mõlemas tingimuslause *harus* vaid üks käsk, aga neid võib seal olla ka rohkem. Samuti tuleb jälgida, et nii tingimuse rida, kui ka ``else`` rida lõpeks kooloniga.
+Tingimuslause komponendid on *päis* (so. ``if``-i ja tingimusega rida), ``then``-haru (so. päisele järgnevad paremale nihutatud read), võtmesõna ``else``, ning ``else``-haru (jällegi paremale nihutatud).
 
-.. note::
-
-    Kuigi Pythoni on treppimise osas võrdlemisi paindlik, tuleks segaduste vältimiseks alati kasutada joondamiseks 4 tühikut. IDLE-s kirjutades võib treppimiseks vajutada ka TAB klahvi -- IDLE genereerib sellepeale TAB sümboli asemel 4 tühikut.
-    Tegelikult pole enamasti vaja IDLE-s isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
-
-Tingimuslause *päises* (st. ``if``-iga algaval real) saab tingimusi moodustada järgmiste operaatoritega: 
+Tingimusi saab moodustada järgmiste operaatoritega: 
 
 * ``<``, ``>``, ``<=``, ``>=`` sobivad arvude võrdlemiseks
 * Topeltvõrdusmärk (``==``) tähistab võrdsust nii arvude kui sõnede puhul
@@ -54,6 +49,28 @@ Tingimuslause *päises* (st. ``if``-iga algaval real) saab tingimusi moodustada 
     Ärge unustage, et üksikut võrdusmärki (``=``) kasutatakse Pythonis muutujale väärtuse omistamiseks, seetõttu on võrdsuse kontrollimiseks ette nähtud topeltvõrdusmärk (``==``).
 
 
+
+Treppimine
+~~~~~~~~~~~~~~~~
+``if``-lause kasutamisel on vaja pöörata tähelepanu tühikutele -- tühikutega joondamine e. *treppimine* määrab, millised käsud kuuluvad tingimuslause alla ja millised mitte. Antud näites on mõlemas tingimuslause *harus* vaid üks käsk, aga neid võib seal olla ka rohkem:
+
+.. todo:: näide
+
+Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides ning põhimõte on alati selles, et sama kaugele joondatud read moodustavad mingi terviku. 
+
+.. admonition:: NB!
+
+    Trepitud plokile eelnev rida lõpeb alati kooloniga (see on Pythonile lisakinnituseks, et programmeerija soovib järgmisel real alustada trepitud plokki).
+
+.. note::
+    See, miks treppimist nimetatakse treppimiseks, selgub allpool, siis kui hakkame trepitud plokke üksteise sisse paigutama.
+
+.. note::
+
+    Kuigi Pythoni on treppimise osas võrdlemisi paindlik, tuleks segaduste vältimiseks alati kasutada joondamiseks 4 tühikut. IDLE-s kirjutades võib treppimiseks vajutada ka TAB klahvi -- IDLE genereerib sellepeale TAB sümboli asemel 4 tühikut.
+    Tegelikult pole enamasti vaja IDLE-s isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
+
+
 Ülesanne 5. Eristav kasutaja tervitamine 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muutke ülesandes 2 kirjeldatud kasutaja tervitamise programmi selliselt, et kasutajat nimega `Margus` tervitatakse familiaarselt aga kõiki ülejäänuid tervitatakse formaalselt.
@@ -62,8 +79,8 @@ Muutke ülesandes 2 kirjeldatud kasutaja tervitamise programmi selliselt, et kas
 .. index:: 
     single: tsükkel
 
-Tsüklid
------------
+Korduslaused e. tsüklid
+--------------------------
 
 Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et programmi tuleb lihtsalt kirjutada laused lihtsalt mitmekordselt, nagu järgmises programmis, mis joonistab kilpkonnaga ruudu:
 
@@ -86,7 +103,7 @@ Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et
 
 Selline lahendus muutub väga kohmakaks, kui korduste arv läheb suureks. Pealegi, kui sooviksime kirjutada üldisema programmi, mis joonistab *n* küljega hulknurga vastavalt kasutaja poolt sisestatud *n* väärtusele, siis jääksime hätta, kuna me ei tea, mitu korda tuleks ühe külje joonistamise ja pööramise käske kirjutada.
 
-Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstruktsioonid käskude kordamiseks. Selles praktikumis vaatame **while-tsüklit**, mis kordab etteantud lauseid niikaua, kuni etteantud tingimus kehtib. 
+Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstruktsioonid käskude kordamiseks. Selles peatükis vaatame **while-tsüklit**, mis kordab etteantud lauseid niikaua, kuni teatud tingimus kehtib. 
 
 
 .. index:: 
@@ -95,7 +112,7 @@ Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstrukt
     
 
 ``while``-tsükkel
------------------
+~~~~~~~~~~~~~~~~~~~
 
 ``while``-tsükliga saaksime ruudu joonistamise funktsiooni panna kirja järgnevalt:
 
@@ -123,13 +140,9 @@ Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas ol
     Muutuja väärtuse suurendamiseks kirjutasime eelnevas näites ``i = i + 1``, st. ``i`` uueks väärtuseks sai ``i`` hetkeväärtus + 1. Sellist suurendamist mingi arvu võrra saab Pythonis ka lühemalt kirjutada: ``i += 1``. Muutuja väärtuse vähendamiseks võib analoogselt kirjutada ``i -= 1``.
 
 
-.. todo::
-
-    Programm, mis kordab "Ütle 'Palun!'", kuni kasutaja selle lõpuks sisestab
-
 .. note::
 
-    Tegelikult on Pythonis olemas ka teine, natuke spetsiifilisem tsüklitüüp, mida nimetatakse ``for``-tsükliks ja mis sobib *n*-korduse tegemiseks isegi paremini, kui ``while``. ``for``-tsüklit vaatame järgmises praktikumis.
+    Tegelikult on Pythonis olemas ka teine, natuke spetsiifilisem tsüklitüüp, mida nimetatakse ``for``-tsükliks ja mis sobib *n*-korduse tegemiseks isegi paremini, kui ``while``. ``for``-tsüklit vaatame järjendite peatükis.
 
 
 Ülesanne 6. Funktsioon *n*-nurga joonistamiseks
@@ -144,13 +157,13 @@ Testige loodud funktsiooni joonistades üksteise kõrvale kolmnurga, ruudu ja vi
 
 Määramata tsükkel
 ~~~~~~~~~~~~~~~~~
-Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui jõutakse soovitud tulemuseni. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:
+Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui jõutakse soovitud tulemuseni. ``while`` lause sobib ka neil juhtudel, sest tsükli päises võime kasutada suvalist tingimust. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:
 
 .. sourcecode:: py3
 
     from random import randint 
     
-    arv = randint(1,999) # randint annab juhusliku täisarvu näidatud vahemikust
+    arv = randint(1, 999) # randint annab juhusliku täisarvu näidatud vahemikust
     arvamus = int(input("Arva, millist tuhandest väiksemat arvu ma mõtlen: "))
 
     # Kuni pakutud arv erineb arvuti valitust
@@ -164,8 +177,16 @@ Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui j
         
     print("Ära arvasid! Tubli!")
 
+
+.. todo::
+
+    Programm, mis kordab "Ütle 'Palun!'", kuni kasutaja selle lõpuks sisestab
+
+
 Ülesanne 7. Algandmete kontrollimine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. todo:: Kontrolli viidatud ülesannet
+
 Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
 
 Modifitseerige 1. ülesande lahendust -- kui kasutaja poolt sisestatud tekst polnud numbriline, siis peaks programm kordama küsimist ja andmete sisselugemist niikaua, kuni kasutaja sisestab numbrilise teksti.
@@ -174,7 +195,11 @@ Alles siis, kui korrektne sisend on käes, tuleks väljastada sisestatud arvu ru
 
 Ülesanne 8. Täiendatud arvamismäng
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
-Täiendage arvamismängu selliselt, et tsükli töö lõpeb ka sel juhul, kui kasutaja pole 10 arvamisega suutnud õiget arvu ära arvata. (Vihje: tarvis on võtta kasutusele loendur ning täiendada kordamise tingimust).
+Täiendage arvamismängu selliselt, et programm ütleb õige vastuse ära, kui kasutaja pole 10 arvamisega suutnud õiget pakkumist teha.
+
+.. hint:: 
+    
+    Siin tuleks kombineerida loenduri kasutamine ning kasutaja pakkumise kontrollimine.
 
 
 Käsk ``break``
@@ -210,9 +235,9 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
         print("Kümnest arvamisest ei piisanud, äkki peaksid taktikat muutma?")
     
 
-``break`` kasutamise asemel saab tsükli alati ümber kirjutada nii, et kõiki lõpetamise tingimusi kontrollitakse tsükli päises.
+Tegelikult pole ``break`` lause hädavajalik - tsükli saab alati ümber kirjutada nii, et kõiki jätkamise/lõpetamise tingimusi kontrollitakse tsükli päises, aga vahel on ``break``-iga lahendus lihtsam.
 
-Mõnikord on kasulik tsükli lõpetamise tingimust kontrollida ainult tsükli kehas, sel juhul pannakse tsükli päisesse alati kehtiv tingimus ``True``. Järgnev programm küsib kasutajalt arve ja näitab nende ruute niikaua, kuni kasutaja sisestab *tühisõne* (st. vajutab ENTER ilma midagi tegelikult sisestamata):
+Mõnikord on vaja tsükli lõpetamise tingimust kontrollida *ainult* tsükli kehas, sel juhul pannakse tsükli päisesse alati kehtiv tingimus ``True``. Järgnev programm küsib kasutajalt arve ja näitab nende ruute niikaua, kuni kasutaja sisestab *tühisõne* (st. vajutab ENTER ilma midagi tegelikult sisestamata):
 
 .. sourcecode:: py3
 
@@ -232,9 +257,12 @@ Mõnikord on kasulik tsükli lõpetamise tingimust kontrollida ainult tsükli ke
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis väljastab iga ENTER vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
 
+Ülesanne. Algandmete kontrollimine ja ``break``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage algandmete kontrollimise ülesande lahendus ümber nii, et ``input`` käsku on programmis kasutatud vaid ühes kohas.
 
-Tsükli ja tingimuslause kombineerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Lausete kombineerimine
+----------------------------------------
 Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seejärel katsetage järgmist programmi:
 
 .. sourcecode:: py3
@@ -242,7 +270,7 @@ Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seej�
     f = open('nimed.txt')
     
     for nimi in f:
-        if nimi.strip() == 'Margus':  # strip eemaldab reavahetuse
+        if nimi.strip() == 'Margus':  # strip eemaldab reavahetuse sümboli
             print('Hommik!')
             print('Kuis kulgeb?')
         else:
@@ -275,11 +303,11 @@ Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis kolm idents
 
 .. todo:: näide
 
-.. todo:: tee ruudu ülesanne näiteks ja tere näide ülesandeks
+Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi käsk. ``turtle`` moodulis sellist käsku küll pole, aga õnneks võimaldab Python programmeerijal uusi käske ise *defineerida*.
 
 Funktsiooni defineerimine ja kasutamine
----------------------------------------
-Järgnevas näiteprogrammis **defineeritakse** funktsioon nimega ``tere``:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jätame hetkeks kilpkonna kõrvale ja vaatleme ühte väga lihtsat näidet funktsioonide defineerimisest. Järgnevas näiteprogrammis defineeritakse funktsioon nimega ``tere``:
 
 .. sourcecode:: python
 
@@ -289,15 +317,11 @@ Järgnevas näiteprogrammis **defineeritakse** funktsioon nimega ``tere``:
 
 Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
 
-.. note::
-    
-    Tühikute kasutamisel tuleb olla täpne. Soovitav on kasutada funktsiooni keha joondamiseks alati 4 tühikut, aga põhitingimuseks on praegu see, et iga rida funktsiooni kehas on joondatud sama kaugele.
-    
-Proovige seda käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid ühe tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
+Proovige seda programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
 
-Sisuliselt me defineerisime uue käsu ``tere``, mille saamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil defineeritud alamprogrammide e. funktsioonidena. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
+Sisuliselt me defineerisime uue käsu ``tere``, mille saamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
 
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega (antud juhul on sulud tühjad, kuna see funktsioon ei võta argumente). Programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
+Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega (antud juhul on sulud tühjad, kuna see funktsioon ei võta *argumente*). Programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
 
 .. sourcecode:: python
 
@@ -305,21 +329,21 @@ Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulg
         print("Tere")
         print("Kuidas läheb?")
     
-    tere() # funktsiooni väljakutse e. rakendamine e. aplikatsioon
+    tere() # funktsiooni väljakutse e. rakendamine
 
 .. note::
 
-    Selle praktikumi põhiosas kirjutame funktsiooni definitsiooni koos väljakutse(te)ga samasse faili.
+    Selles peatükis kirjutame funktsiooni definitsiooni koos väljakutse(te)ga samasse faili. Edaspidi vaatame ka varianti, kus funktsioonide definitsioonide jaoks luuakse eraldi fail.
     
-Tavaliselt pannakse alamprogrammidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
+Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
 
 .. note:: 
 
-    Nagu eespool mainitud, funktsiooni kehas on ridade ees olevad tühikud olulised, selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada.
+    Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
 
-Ülesanne 1. Ruudu joonistamine
+Ülesanne ?. Ruudu joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Ka selles praktikumis kasutame meile juba varem tuttavat kilpkonna. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 100).  Kasutage seda funktsiooni mitu korda, joonistades mitu ruutu erinevatesse kohtadesse.
+Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
 
 .. hint:: 
 
@@ -329,9 +353,19 @@ Ka selles praktikumis kasutame meile juba varem tuttavat kilpkonna. Kirjutage fu
 
     Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
 
-.. index::
-    single: parameetrid; funktsiooni parameetrid
-    single: funktsioon; parameetrid
+
+Ülesanne ?. Tingimuslause kasutamine funktsioonis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Funktsiooni kehas saab kasutada suvalist tüüpi lauseid, st. ka tingimuslauset ja korduslauset (või ka nende kombinatsiooni, ükskõik kui keerulist). 
+
+.. todo:: ülesanne
+
+Ülesanne ?. Korduslause kasutamine funktsioonis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage mingi funktsioon, mille kehas oleks kasutatud korduslauset. 
 
 
+Koduülesanded
+==================
+TODO:
 

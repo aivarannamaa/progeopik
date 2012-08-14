@@ -45,62 +45,6 @@ Näide: TODO
 veel üks näide pythonis ja plokkskeemis
 
 
-Funktsiooni defineerimine ja kasutamine
----------------------------------------
-Järgnevas näiteprogrammis **defineeritakse** funktsioon nimega ``tere``:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-
-Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
-
-.. note::
-    
-    Tühikute kasutamisel tuleb olla täpne. Soovitav on kasutada funktsiooni keha joondamiseks alati 4 tühikut, aga põhitingimuseks on praegu see, et iga rida funktsiooni kehas on joondatud sama kaugele.
-    
-Proovige seda käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid ühe tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
-
-Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil defineeritud alamprogrammide e. funktsioonidena. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
-
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega (antud juhul on sulud tühjad, kuna see funktsioon ei võta argumente). Programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-    
-    tere() # funktsiooni väljakutse e. rakendamine e. aplikatsioon
-
-.. note::
-
-    Selle praktikumi põhiosas kirjutame funktsiooni definitsiooni koos väljakutse(te)ga samasse faili.
-    
-Tavaliselt pannakse alamprogrammidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
-
-.. note:: 
-
-    Nagu eespool mainitud, funktsiooni kehas on ridade ees olevad tühikud olulised, selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada.
-
-Ülesanne 1. Ruudu joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Ka selles praktikumis kasutame meile juba varem tuttavat kilpkonna. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 100).  Kasutage seda funktsiooni mitu korda, joonistades mitu ruutu erinevatesse kohtadesse.
-
-.. hint:: 
-
-    Tuletage meelde, mida tegid kilpkonna käsud ``up()`` ja ``down()``
-    
-.. hint::
-
-    Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
-
-.. index::
-    single: parameetrid; funktsiooni parameetrid
-    single: funktsioon; parameetrid
-
 
 Robotkilpkonn
 ~~~~~~~~~~~~~
