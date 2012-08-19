@@ -263,6 +263,8 @@ Kirjutage algandmete kontrollimise ülesande lahendus ümber nii, et ``input`` k
 
 Lausete kombineerimine
 ----------------------------------------
+.. todo:: for!
+
 Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seejärel katsetage järgmist programmi:
 
 .. sourcecode:: py3
@@ -303,7 +305,7 @@ Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis kolm idents
 
 .. todo:: näide
 
-Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi käsk. ``turtle`` moodulis sellist käsku küll pole, aga õnneks võimaldab Python programmeerijal uusi käske ise *defineerida*.
+Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi käsk. ``turtle`` moodulis sellist käsku küll pole, aga õnneks võimaldab Python programmeerijal uusi käske e. *funktsioone* ise *defineerida*.
 
 Funktsiooni defineerimine ja kasutamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -317,11 +319,11 @@ Jätame hetkeks kilpkonna kõrvale ja vaatleme ühte väga lihtsat näidet funkt
 
 Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
 
-Proovige seda programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
+Proovige seda kolmerealist programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
 
-Sisuliselt me defineerisime uue käsu ``tere``, mille saamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
+Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
 
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega (antud juhul on sulud tühjad, kuna see funktsioon ei võta *argumente*). Programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
+Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega e. programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
 
 .. sourcecode:: python
 
@@ -330,6 +332,10 @@ Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulg
         print("Kuidas läheb?")
     
     tere() # funktsiooni väljakutse e. rakendamine
+
+.. note::
+
+    Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud tühjad sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
 
 .. note::
 
@@ -365,7 +371,15 @@ Funktsiooni kehas saab kasutada suvalist tüüpi lauseid, st. ka tingimuslauset 
 Kirjutage mingi funktsioon, mille kehas oleks kasutatud korduslauset. 
 
 
+
 Koduülesanded
-==================
+-------------------
 TODO:
 
+Lisalugemine
+-----------------
+Veaotsingust
+~~~~~~~~~~~~~~
+.. todo:: 
+    selgita
+    http://openbookproject.net/thinkcs/python/english3e/app_a.html

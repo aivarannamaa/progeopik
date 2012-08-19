@@ -16,135 +16,77 @@ TODO
     * keskendume sellele osale programmeerimisest, mis jääb inputi ja outputi vahele
     * Põhiülesanne: näidata lahedaid asju, mida on võimalik programmeerida ja veenda, et need on varsti jõukohased ka lugejale.
     * liiguta osa Kilpkonna asju siit järgmisesse peatükki ja too siia lihtsad if/while/for näited
+    * maini, et programmeerimine peab olema täpne
+
+.. todo::
+    skeem: python, programm, klaver, hiir jms.
+
+
+.. index::
+    single: installeerimine
 
 Pythoni installeerimine
 --------------------------
 Pythoni enda arvutisse installeerimiseks laadige alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/. Valige sealt versioon `3.2`.
 
-TODO: kas 32b või 64b?
-
-Pythoni keskkonna enda arvutisse installeerimine on väga soovitav, sest siis saate arvutiklassis proovitud asju ka seal teha. Programmeerima pole võimalik õppida vaid loenguid kuulates – tegemist on praktilise oskusega, mis nõuab eelkõige harjutamist. Reeglina ei piisa vaid praktikumides tehtud ülesannetest ning harjutada tuleks kindlasti ka kodus.
-
-
-
-Pythoni käsurida
-----------------
-.. note:: 
-
     Antud kursusel on oluline kasutada Pythoni versiooni, mis algab 3-ga, olgu see `3.2`, `3.1` vms. Versioonid, mis algavad 2-ga, ei sobi meile, kuna seal töötavad mõned asjad pisut teisiti, kui on kirjeldatud selles õpikus.
     
     Kuna arvutiklassides on installeeritud nii Python 2, kui Python 3, tuleks vajadusel kontrollida, et kasutate õiget versiooni. Käsurea avamisel näidatakse Pythoni versioon esimesel real. IDLE versiooni saab kontrollida menüüst `Help -> About IDLE`
 
-.. todo:: 
 
-    * äkki piisab ainult IDLE-st?
-    * äkki peaks käsurida tutvustama hiljem?
-    * selgita, et Pythoni käsurida ongi (enamvähem) Pythoni interpretaator
-
-Enne "päris" programmide kirjutamist võtame ette Pythoni **interaktiivse käsurea** (ing.k. *shell*), mis sobib hästi väiksemate ülesanne lahendamiseks ning Pythoni võimaluste katsetamiseks. Windowsi arvutis avage `Start -> All Programs -> Python 3.1 -> Python (command line)`. Linuxis või Macis tuleks avada terminal, ning seal sisestada käsk ``python`` (kui sellega avaneb Python 2, siis proovige käsku ``python3``).
-
-
-Python kui kalkulaator
-~~~~~~~~~~~~~~~~~~~~~~
-Pythonit saab kasutada võimsa kalkulaatorina. Selleks tuleb lihtsalt peale Pythoni käsuviipa (``>>>``) sisestada avaldis ja vajutada reavahetuse klahvi (Enter). Tulemusena peaks ekraanil järgmisele reale ilmuma avaldise väärtus, nt:
-
-.. sourcecode:: py3  
-    
-    >>> 3 / 2
-    1.5
-    >>> 5 * 5
-    25
-    >>> 4 + 9 - 1
-    12
-    >>> 10 / 3
-    3.3333333333333335
-    >>> round(10 / 3)
-    3
-
-.. note::
-    
-    Siin ja edaspidi on käsurea näidete juures soovitav ise järgi katsetada mõned sarnased, aga mitte samad näiteid (kui proovite täpselt samu näiteid, siis uskuge, te saate ka samad tulemused.) Üritage Pythonit (või iseennast) üllatada!
-    
-.. note::
-    
-    Siin ja edaspidistes näidetes on parema loetavuse huvides tehtemärkide ümber pandud tühikud, aga need võib ka ära jätta.
-    
-Samamoodi nagu mõnede taskukalkulaatorite puhul, saab ka Pythonis arve "mällu" salvestada:
-
-.. sourcecode:: py3
-
-    >>> a = 2 * 3
-    >>> b = 1
-    >>> a + b + 2
-    9
-
-Kui soovite kasutada trigonomeetrilisi funktsioone või matemaatilisi konstante, siis tuleb kõigepealt öelda Pythonile ``from math import *``, nt:
-
-.. sourcecode:: py3
-
-    >>> from math import *
-    >>> sin(1)
-    0.8414709848078965
-    >>> pi
-    3.141592653589793
-
-.. hint::
-
-    Varem antud käsu saab uuesti ette, vajutades klaviatuuril `üles` ja `alla` nooleklahve.
-    
-
-Ülesanne 1. Puu läbimõõt
-~~~~~~~~~~~~~~~~~~~~~~~~
-Arvutage Pythonis, kui suur on puu läbimõõt, kui ümbermõõt on 75cm.
-
-Harjutus
-~~~~~~~~
-Proovige sisestada ka keerulisemaid avaldisi. Soovi korral saab tehete järjekorda muuta sulgudega. Katsetage ka "mälu" kasutamist.
-
-.. note:: 
-
-    Ärge kartke teha vigu! Kui Python annab mingi veateate, siis kontrollige kõigepealt oma viimast sisestust -- võibolla on puudu lõpetav sulg vms. Veateadetest arusaamine on tavaliselt algajate jaoks küll raske, kuid sellega tuleb ennast harjutada -- vigadeta ei suuda töötada ükski programmeerija.
-
+TODO: kas 32b või 64b?
 
 .. index::
     single: IDLE
     
-Skriptid ja IDLE
-----------------
-Sisukamate programmide loomine on käsureal küll võimalik, kuid tülikas. Pealegi, kui programm on piisavalt väärt, et seda ka edaspidi kasutada, siis on mõttekas ta kuidagimoodi salvestada. Pythoni programmid salvestatakse tekstifailidena, mille nime laiendiks on `py`. Taolist faili nimetakse **skriptiks** ja seda on võimalik käivitada peaaegu nagu iga teist programmi (täpne viis sõltub arvuti seadetest).
 
-.. topic:: Lisainfo neile, kes armastavad kasutada süsteemi käsurida:
 
-    Praktikumides käivitame oma skriptid alati läbi IDLE aga reaalsete Pythoni programmide kasutamiseks pole see kõige mugavam. Kõige levinum viis on anda arvuti käsurealt (terminal või `cmd.exe`) käsk kujul ``python minuskript.py``. See peaks Linuxis ja Macis kohe peale Pythoni installimist töötama, kuid Windowsi puhul on vaja veel natuke nokitsemist: vaata täpsemalt aadressilt http://docs.python.org/py3k/using/windows.html#configuring-python. (Samas, Windowsis saab tavaliselt Pythoni skripte käivitada ka nagu tavalisi programme, nt. topeltklõpsuga `Windows Exploreris`.)
+IDLE ja esimene programm
+----------------------------
+Alustuseks kirjutame ühe väga lihtsa programmi, mis ei tee muud, kui kirjutab ekraanile ``Tere maailm!`` (vt. ka http://en.wikipedia.org/wiki/Hello_world_program). 
 
-Pythoni skripte võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
+Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam. (Alternatiivse lähenemise kohta lugege selle peatüki lõpust.)
 
-**IDLE käivitamiseks** Windowsis vali `Start -> All Programs -> Python 3.2 -> IDLE (Python GUI)`. Linuxis tuleb sisestada terminali käsk ``idle`` (kui sellega avaneb IDLE 2, siis proovi käsku ``idle3``). Tõenäoliselt ilmub kõigepealt IDLE käsurea aken (pealkirjaga "Python shell"), mis töötab enamvähem samamoodi, kui eespool kasutatud konsoolipõhine käsurida.
+**IDLE käivitamiseks** Windowsis vali `Start -> All Programs -> Python 3.2 -> IDLE (Python GUI)`. Linuxis tuleb sisestada terminalis käsk ``idle3``. Tõenäoliselt ilmub kõigepealt IDLE *käsurea* aken (pealkirjaga "Python shell"), mida kasutatakse juba käivitatud programmidega (või Pythoni endaga) suhtlemiseks.
 
-**Uue programmi kirjutamiseks** valige `File` menüüst `New window`. Ilmub uus aken pealkirjaga "Untitled", kuhu saab hakata kirjutama Python programmi. Esimeseks katsetuseks kopeerige redaktorisse järgnev kaherealine programmitekst, ning salvestage fail (`Ctrl+S`) kasutades failinime lõpus laiendit `py` (nt. `esimene.py`). *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
+**Uue programmi kirjutamiseks** valige `File` menüüst `New window`. Ilmub uus aken pealkirjaga "Untitled", kuhu saab hakata kirjutama Python programmi. Esimeseks katsetuseks kirjutage või kopeerige redaktorisse järgnev üherealine programmitekst:
 
-.. sourcecode:: python
+.. sourcecode:: py3
+
+    print("Tere maailm!")
+    
+Salvestage fail (`Ctrl+S`) kasutades failinime lõpus laiendit `py`, nt. `teremaailm.py`. (NB! soovitav on juba praegu teha enda programmeerimisharjutuste jaoks eraldi kaust.) Faili salvestatud Pythoni programmi nimetame edaspidi enamasti *skirptiks*.
+
+**Programmi käivitamiseks** vajutage klaviatuuril `F5`. Ilmub uuesti IDLE käsurea aken, kuhu tekib uus rida tekstiga ``Tere maailm!``. Nagu võite järeldada, tähendab ``print`` Pythoni jaoks teksti ekraanile kuvamist, mitte printerisse saatmist.
+
+
+Interaktiivsed programmid
+-----------------------------
+Meie esimene program polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb dialoogi, mitte monoloogi vormis. Tekitage `File -> New window` abil uus programmiaken, kopeerige sinna järgnev programm. *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
+
+.. sourcecode:: py3
 
     nimi = input("Palun sisesta oma nimi ja vajuta ENTER: ")
-    print("Tere " + nimi)
+    print("Tere " + nimi + "!")
 
-**Programmi käivitamiseks** vajutage klaviatuuril `F5`. Ilmub uuesti IDLE käsurida, kus saate sisestada programmi poolt soovitud andmed ning näha programmi reaktsiooni.
+Salvestage ja käivitage programm. Ilmub taas käsurea aken, palvega sisestada oma nimi. Enne oma nime kirjutamist kooloni järele proovige ennustada, milline tekst ilmub ekraanile, kui te olete nime sisestanud. Katsetage!
+
+Ülesanne ... Programmi muutmine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tehke programmis mingeid muudatusi, salvestage ja käivitage. Katsetage ka selliseid muudatusi, mis võiksid teie arvates Pythoni segadusse ajada.
+
+Näide. Kalkulaator
+~~~~~~~~~~~~~~~~~~~~~~
+Järgmine näiteprogramm demonstreerib, et Python tunneb aritmeetikat:
+
+TODO
 
 .. note::
-    Nagu näha, ei kasutata skriptis käsu ees ``>>>`` märki. Käsureal kasutatakse seda vaid selleks, et oleks kergem eristada, millistel ridadel on käsud ja millistel on vastused. Skriptis on situatsioon teine, kuna sinna kirjutame vaid käsud.
-
-    Edaspidi tuleb meil nii käsurea, kui skriptinäiteid. Kui näide algab käsuviibaga (``>>>``), siis on see mõeldud käsureal katsetamiseks. Vastasel juhul on tegemist skriptiga.
-
-
-.. note::
-
-    Üks mugav viis, kuidas Windowsis avada Pythoni faile IDLE-ga, on teha paremklõps soovitud failil (nt. `Windows Explorer`-is) ning valida `Edit with IDLE`.
     
-    Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
+    Siin ja edaspidistes näidetes on parema loetavuse huvides tehtemärkide ümber pandud tühikud, aga need võib ka ära jätta.
+    
 
-.. note::
 
-    IDLE käsureal saab varasema käsu uuesti ette, kui liigute nooleklahvidega soovitud käsuni ja vajutate ENTER.
 
 
 
@@ -217,35 +159,156 @@ Kirjutage skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks üm
 
 .. index::
     single: veaotsing
+
+
+
+IDLE'i käsurida
+----------------
+Võibolla imestasite, miks tuleb IDLE käivitamisel kõigepelt ette käsurea aken. Põhjus on selles, et programmeerida saab ka käsureal, ilma, et programmi peaks skriptina salvestamata. Selline programmeerimise viis sobib väiksemate ülesanne lahendamiseks ning Pythoni võimaluste katsetamiseks. Kuna käske antakse ühekaupa ja tulemus näidatakse kohe järgmisel real, nimetatakse seda ka *interaktiivseks programmeerimiseks*. 
+
+Kui teil on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saate avada menüüvalikuga `Windows -> Python shell`. Käsuviip (``>>>``) näitab kohta, kuhu saab kirjutada Pythoni käsu, vajutades ENTER, see käsk täidetakse. Järgnev näide on kopeeritud IDLE'i käsurealt, kuhu sisestati 2 käsku ``print("Tere maailm!")`` ja ``print(23*454)``:
+
+.. sourcecode:: py3
+
+    >>> print("Tere maailm!")
+    Tere maailm!
+    >>> print(23*454)
+    10442
+
+.. note::
+
+    Edaspidi tuleb meil näiteid nii käsurea, kui skriptide (st. faili salvestatud programmide) kohta. Kui näide algab käsuviibaga (``>>>``), siis on see mõeldud käsureal katsetamiseks. Vastasel juhul on tegemist skriptiga.
     
+    NB! Käsureal kasutatakse märki ``>>>`` vaid selleks, et oleks kergem eristada, millistel ridadel on käsud ja millistel on vastused. Seda ei ole vaja kunagi ise kirjutada. Skiptis ei kasutata seda märki kunagi.
+
+Ülesanne. Interaktiivne programmeerimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Katsetage erinevaid siiani nähtud käske ka käsureal. Proovige muuhulgas ka Pythoni mälu kasutamist. (Kilpkonna juhtimine käsurealt võib ebaõnnestuda, see sõltub IDLE'i seadetest.)
+
+Python kui kalkulaator
+~~~~~~~~~~~~~~~~~~~~~~
+Nagu nägite, oskab Python arvutada, seega saaks Pythoni käsurida kasutada võimsa kalkulaatorina. Kuna ``print``-i kirjutamine iga arvutuse juures on liiga tüütu, näidatakse käsureal tulemust ka siis, kui avaldis kirjutada ilma ``print`` käsuta: 
+
+.. sourcecode:: py3  
+    
+    >>> 3 / 2
+    1.5
+    >>> 5 * 5
+    25
+    >>> 4 + 9 - 1
+    12
+    >>> 10 / 3
+    3.3333333333333335
+    >>> round(10 / 3)
+    3
+
+.. note::
+    
+    Siin ja edaspidi on käsurea näidete juures soovitav ise järgi katsetada mõned sarnased, aga mitte samad näiteid (kui proovite täpselt samu näiteid, siis uskuge, te saate ka samad tulemused.) Üritage Pythonit (või iseennast) üllatada!
+
+.. note::
+    
+    Selline trikk toimib ainult käsureal. Kui soovite skriptis midagi ekraanil näidata, tuleb kasutada ikkagi ``print`` käsku.
+
+Samamoodi nagu mõnede taskukalkulaatorite puhul, saab ka Pythonis arve "mällu" salvestada:
+
+.. sourcecode:: py3
+
+    >>> a = 2 * 3
+    >>> b = 1
+    >>> a + b + 2
+    9
+
+Kui soovite kasutada trigonomeetrilisi funktsioone või matemaatilisi konstante, siis tuleb kõigepealt öelda Pythonile ``from math import *``, nt:
+
+.. sourcecode:: py3
+
+    >>> from math import *
+    >>> sin(1)
+    0.8414709848078965
+    >>> pi
+    3.141592653589793
+
+.. hint::
+
+    Varem antud käsu saab uuesti ette, vajutades klaviatuuril `üles` ja `alla` nooleklahve.
+    
+
+Ülesanne 1. Puu läbimõõt
+~~~~~~~~~~~~~~~~~~~~~~~~
+Arvutage Pythonis, kui suur on puu läbimõõt, kui ümbermõõt on 75cm.
+
+Harjutus
+~~~~~~~~
+Proovige sisestada ka keerulisemaid avaldisi. Soovi korral saab tehete järjekorda muuta sulgudega. Katsetage ka "mälu" kasutamist.
+
+.. note:: 
+
+    Ärge kartke teha vigu! Kui Python annab mingi veateate, siis kontrollige kõigepealt oma viimast sisestust -- võibolla on puudu lõpetav sulg vms. Veateadetest arusaamine on tavaliselt algajate jaoks küll raske, kuid sellega tuleb ennast harjutada -- vigadeta ei suuda töötada ükski programmeerija.
+
+
+
+
+.. note::
+
+    Üks mugav viis, kuidas Windowsis avada Pythoni faile IDLE-ga, on teha paremklõps soovitud failil (nt. `Windows Explorer`-is) ning valida `Edit with IDLE`.
+    
+    Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
+
+.. note::
+
+    IDLE käsureal saab varasema käsu uuesti ette, kui liigute nooleklahvidega soovitud käsuni ja vajutate ENTER. Veidi kiirem variant on klahvikombinatsioon Alt+P (*P* nagu *previous*).
+
+
+
+
 Vigadest
---------
-Nagu ehk eelnevaid ülesandeid lahendades märkasite, annab Pythoni märku, kui te tema arvates midagi valesti olete teinud. 
+--------------------------------
+Nagu ehk eelnevaid ülesandeid lahendades märkasite, annab Pythoni märku, kui te tema arvates midagi valesti olete teinud. Veateateid võiks kõige üldisemalt jaotada kahte liiki:
 
-Alati ei ole need veateated siiski kuigi informatiivsed -- hea näide on see, kui teile öeldakse käsu ``cos(pi)`` peale ``error: "cos" not defined``. Sisuline põhjus pole siin mitte see, et käsk ``cos`` vale oleks, vaid see, et unustasite eelnevalt sisestada käsu ``from math import *``. 
+**Süntaksivea** (ing. k *syntax error*) korral ei saa Python programmi tekstist aru ja seetõttu ei hakka ta programmi üldse käivitama. Veateate ütleb Python selle rea kohta, kus ta enam edasi lugeda ei osanud, tegelik vea põhjus on tihti hoopis eelneval real. Üks tüüpilisemaid süntaksivigu on puuduv lõpetav sulg -- kuigi iga programmeerija saab aru, mida on mõeldud lausega ``x = 3 + (4 * 5``, on see Pythoni jaoks täiesti mõttetu tekst, sest see ei vasta Pythoni reeglitele. Teisiti öeldes, Python on suur tähenärija ning sellega tuleb arvestada -- programmi kirjutamisel tuleb olla täpne!
 
-Süntaksivea korral (nt. puuduv lõpetav sulg vms.) ütleb Python veateate selle rea kohta, kus ta enam edasi lugeda ei osanud, tegelik vea põhjus on tihti hoopis eelneval real.
+**Täitmisaegse vea** (ing. k *runtime error*) puhul programm küll käivitati, aga mingi konkreetse käsu täitmine ebaõnnestus. Vigaseks käsuks võis olla näiteks nulliga jagamine, valesti kirjutatud funktsiooninime kasutamine, olematu faili lugemine vms. Kui te pole siiani ühtki täitmisaegset veateadet näinud, siis sisestage käsureal käsk ``prin("Tere!")``.
 
-Edaspidistes praktikumides kohtate ka keerulisemaid olukordi, kus vea põhjust on palju raskem leida. Et selleks ennast veidi ette valmistada, on väga soovitav lugeda läbi õpikust lisa veaotsingu (ing.k `debugging`) kohta: 
-http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/app_a.html.
-Sellele võiks ka edaspidi pilgu peale visata, kui nt. mõne kodutööga hätta jääte.
+.. note::
 
-Maagia?
-----------
+    Täitmisaegses veateates on tavaliselt mitme rea jagu infot, mis on abiks kogenud programmeerijale, aga võivad algajal silme eest kirjuks võtta. Sellest ei tasu lasta ennest heidutada -- enamasti piisab vaid veateate viimase rea lugemisest. Lisaks probleemi kirjeldusele on veateates alati ka reanumber, mis viitab vea tekitanud reale programmi tekstis. (Käsureal töötades on aktiivse käsu reanumber alati 1).
+
+    Paraku tuleb algajatel vahel ka veateate viimase rea üle pead murda -- hea näide on see, kui teile öeldakse käsu ``cos(pi)`` peale ``NameError: name "cos" not defined``. Sisuline põhjus pole siin mitte see, et käsk ``cos`` vale oleks, vaid see, et unustasite eelnevalt ``cos`` funktsiooni importida. (Ei, Python ei soovi segaste teadetega algajaid kiusata -- kui õpite ära Pythoni peamised tööpõhimõtted, siis paistab ka teile antud veateate sõnastus täiesti loomulik).
+
+Veateateid näete te oma programeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtuge sellest, et iga veateade on mõeldud programmeerija abistamiseks -- lugege teate tekst alati hoolikalt läbi ja mõelge, milles võis probleem olla. Nii märkate varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks informatsiooniks.
+
+Programmeerimises on veel üks liik vigasid, mis on kõige ohtlikumad ja mida nimetatakse **semantilisteks vigadeks** või ka lihtsalt **loogikavigadeks**. Nende vigade puhul võib kõik olla Pythoni seisukohast korrektne (st. mingit veateadet ei tule), aga programm ei tee seda, mis programmeerija silmas pidas. Proovige leida järgnevast näiteprogrammist semantiline viga:
+
+.. sourcecode:: py3
+
+    aeg = float(input("Mitu tundi kulus sõiduks? "))
+    teepikkus = float(input("Mitu kilomeetrit sõitsid? "))
+    kiirus = aeg / teepikkus
+    
+    print("Sinu kiirus oli " + str(kiirus) + " km/h")
+
+Programmeerimine ja maagia
+-----------------------------------
 .. todo:: selgita Cargo cult-i ja et siitmaalt edasi vaja on saada oma programmide igast detailist aru
+
+
+Efektiivne õppimine
+--------------------
+.. todo:: selgita ülesannete lahendamise olulisust. Miks on kasulik mõelda välja oma projekt.
+
+kirjuta natuke ja katseta, paranda vead ja kirjuta järgmine asi
+
+Programmeerima pole võimalik õppida vaid loenguid kuulates – tegemist on praktilise oskusega, mis nõuab eelkõige harjutamist. Reeglina ei piisa vaid praktikumides tehtud ülesannetest ning harjutada tuleks kindlasti ka kodus.
+
+
 
 Mis edasi?
 --------------
 TODO
 
-.. index::
-    single: installeerimine
-
 (Kodu?)Ülesanded
 -----------------
-Pythoni installimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO
 
 Mingi kilpkonna joonistus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -265,3 +328,54 @@ TODO
     * Korda seda, et sellel kursuse fookus on inputi ja outputi vahel oleval alal
     * Too programeerimise näiteks Ruby Goldbergi masin vms!!
     * teleka programmeerimine
+
+Pythoni kasutamine süsteemi käsureal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nagu eespool mainitud, on Pythoni programmid tavalised tekstifailid ja nende käivitamiseks läheb vaja vaid Pythoni interpretaatorit. Selle demonstreerimiseks kirjutame oma esimese "Tere maailm!" programmi nüüd Notepad'is (Linuxi ja Mac-i puhul kasutage mõnd suvalist tekstiredaktorit) ning käivitame selle *süsteemi käsureal*.
+
+.. note:: 
+    Neile, kes pole arvutiga veel päris sinasõbrad, võib alljärgnev protseduur tunduda keeruline. Nagu eespool nägite, saab edukalt programmeerida ka ilma süsteemi käsurida puutumata (tõepoolest, selles kursuses me seda rohkem ei puutugi), aga kuna arvutispetsialistide jaoks on käsurea kasutamise oskus väga oluline, siis näitame siinkohal kiirelt ära, kuidas Python toimib OP-süsteemi "kapoti all".
+
+Avage Notepad (või mõni muu tekstiredaktor, mis salvestab *plain text*-i). Kopeerige sinna meie esimese programmi tekst (``print("Tere maailm!")``) ja salvestage, nagu ikka, laiendiga ``.py``.
+    
+.. note::
+
+    Notepad on laiendite osas kangekaelne -- kui te panete laiendiks ``.py``, siis lisatakse tõenäoliselt salvestamisel sinna otsa veel ``.txt``. Selle vältimiseks pange salvestusdialoogis failinime ümber veel jutumärgid, nt. ``"teremaailm.py"``. See annab Notepad'ile märku, et te tõesti soovite sellist failinime ja ei midagi muud.
+
+Programmi käivitamiseks avame kõigepealt süsteemi käsurea ja liigume sellesse kausta, kus meie programm asub. Windows Vista ja Windows 7 puhul avage *Start-menüü*, sisestage otsingulahtrisse *cmd.exe* ja vajutage ENTER. Windows XP's tuleb Start-menüüst kõigepealt valida *Run* ja seejärel sisestada *cmd.exe* ja ENTER. Mac OS X's ja Linuxis tuleb avada *Terminal*.
+
+Õigesse kausta liikumiseks sisestage ``cd``, tühik ja täielik kausta nimi. Näiteks, kui teie programmeerimise kaust asub teie kodukaustas, siis võiks kausta vahetamise käsk näha välja midagi sellist:
+
+    * ``cd c:\Users\Peeter\Documents\progemine`` (Windows 7 ja Vista)
+    * ``cd "c:\Documents and Settings\Peeter\My Documents\progemine"`` (Windows XP)
+    * ``cd ~/progemine`` (Mac ja Linux)
+
+Programmi käivitamiseks tuleb pöörduda Pythoni interpretaatori poole, öeldes talle jooksutatava programmi nime: 
+
+    * ``c:\python32\python teremaailm.py`` (Windowsis, eeldades, et teil on Python 3.2 ja see on paigaldatud vaikimisi määratud kausta)
+    * ``python3 teremaailm.py`` (Mac ja Linux)
+
+Kui kõik läks kenasti, siis ilmus ekraanile uus rida ``Tere maailm!`` ja selle järel uuesti süsteemi käsuviip. 
+
+Mis selle käsu peale tegelikult toimus:
+
+    * OP-süsteem käivitas Pythoni interpretaatori, andes talle *argumendiks* programmi failinime (*teremaailm.py*)
+    * Pythoni interpretaator luges etteantud faili sisu mällu, vaatas teksti üle (kontrollides muuhulgas, et seal poleks süntaksivigu) ning hakkas käske ükshaaval täitma e. *interpreteerima*. 
+    * Esimene käsk ütles, et ekraanile tuleb kirjutada tekst *Tere maailm!*. Seda interpretaator ka tegi
+    * Kuna selles programmis rohkem käske polnud, siis interpretaator lõpetas töö ning käsurida läks tagasi OP-süsteemi kätte.
+    
+Kui käivitate Pythoni interpretaatori ilma programmi argumendita, siis avaneb Pythoni käsurida, mis on peaaegu identne IDLE'i käsureaga.
+
+.. note::
+
+    Kui soovite ka Windowsis käivitada Pythoni interpretaatorit ilma tema asukohta mainimata (olgu interaktiivselt või skripti jooksutamiseks), siis lugege edasisi juhiseid siit: http://docs.python.org/py3k/using/windows.html#configuring-python.
+    
+    Windowsis saab Pythoni skripte käivitada ka nagu tavalisi programme, nt. topeltklõpsuga `Windows Exploreris`.
+
+Pythoni programmi pakendamine *exe-failiks*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nõue, et Pythoni programmide käivitamiseks peab süsteemi olema paigaldatud Pythoni interpretaator, võib olla mõnikord tülikas, näiteks, kui soovite oma programmi jagada mõne sõbraga, kes arvutitest palju ei taipa.
+
+Õnneks on loodud vahendeid, mis pakendavad Pythoni programmi koos selle käivitamiseks vajaliku infrastruktuuriga ühte *jooksutatavasse* (ing. k. *executable*) faili. (Kuna Windowsis on nende failide laiendiks *.exe*, siis nimetatakse neid tihti *exe-failideks*.) Taolist faili saab topeltklõpsuga käivitada ka süsteemides, kus Pythonit pole paigaldatud. Tuleb vaid arvestada, et saadud exe fail on mõne megabaidi suurune ka siis, kui programmiks on "Tere maailm!".
+
+Taolistest pakendajatest tundub hetkel kõige parem *cx_Freeze*. Selle allalaadimiseks ja kasutamisjuhiste lugemiseks mingi aadressile http://cx-freeze.sourceforge.net/.

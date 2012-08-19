@@ -1,77 +1,64 @@
-V. Alamprogrammid
-==================
-.. todo::
+V. Alamprogrammid e. funktsioonid
+====================================
+Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli teil tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks teilt praegu, millise eesmärgiga on teie programmis mingi konkreetne rida või plokk, siis ilmselt peaksite enne vastamist omajagu süvenema.
 
-    Siin on praegu copy-pastega pandud kokku Helle kirjutatud plokkskeemi keskne käsitlus ja eelmise aasta 3.praksi (Funktsioonid) tekst. Need tuleks kuidagi põimida. Arvesta, et väike sissejuhatus funktsioonidesse on juba peatükis "liitlaused".
+Kuna enamus praktikas kasutatavaid programme on üüratult keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
 
-TODO probleem
+Peale antud teema läbimist üliõpilane oskab:
 
-Peale antud teema läbimist üliõpilane oskab
-
-* jaotada lihtsamaid ülesandeid alamülesanneteks ja esitada lahendust plokkskeemina;
-
-* lihtsamate ülesannete korral tuua välja võimalikud erijuhud ja kontrollima neid olemasoleva algoritmi korral;
-
-* parandada algoritmi efektiivsust (konkreetsete näidete abil).
+    * jaotada lihtsamaid ülesandeid alamülesanneteks ja esitada lahendust plokkskeemina;
+    * lihtsamate ülesannete korral tuua välja võimalikud erijuhud ja kontrollima neid olemasoleva algoritmi korral;
+    * parandada algoritmi efektiivsust (konkreetsete näidete abil).
 
 
 
+Alamülesannete tuvastamine ja alamprogrammide loomine
+---------------------------------------------------------
+Tuleb välja, et programmeerimises kasutatakse keeruliste ülesannete lahendamisel sama nippi nagu "päris elus" -- esmalt jaotatakse ülesanne parajateks osadeks e. alamülesanneteks, seejärel lahendatakse alamülesanded (keskendudes korraga vaid ühele) ning lõpuks kombineeritakse alamülesannete lahendused. Seejuures juhtub küllalt tihti (nii programmeerimises, kui päris elus), et mõni alamülesanne on juba mingi teise probleemi kontekstis varem lahendatud, sel juhul saab vastavat lahendust taaskasutada.
+
+Programmeerimises nimetatakse alamülesande lahendust **alamprogrammiks** (see on üldisem nimetus) või ka **funktsiooniks** (Pythoni programmeerijad eelistavad seda nimetust). Pythoni funktsioonide defineerimist sai tegelikult juba liitlausete peatükis veidi tutvustatud (vt. Uute käskude loomine), aga selles peatükis käsitleme funktsioonide kasutusvõimalusi palju sügavamalt ja laiemalt.
+
+.. note::
+
+    Erinevalt teistest siiani tutvustatud Pythoni põhikonstruktsioonidest (hargnemine ja tsükkel), ei ole alamprogrammid tehniliselt võttes programmeerimisel hädavajalikud -- kõik programmid on teoreetiliselt võimalik kirjutada kasutades vaid väikest hulka sisseehitatud käske. Taoliselt kirjutatud praktilised programmid aga läheksid peagi nii suureks ja keeruliseks, et ka parimad programmeerijad ei suudaks neid enam hallata.
+
+Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. [TODO link siia]. Kui teil on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha).
+
+Toome siinkohal ära ühe võimaliku lahenduse, kus pole alamprogramme kasutatud:
+
+.. todo:: Pythoni versioon
 
 
-Uute käskude defineerimine
--------------------------------
-Vahel juhtub, et sarnast tegevust tuleb korrata programmi mitmes eri kohas. Kuna tegevus ise on praktiliselt sama, saab probleemi muidugi lahendada vastavaid koodiridu kopeerides. Tegelikult on programmeerimises selleks ka teine, palju mugavam võimalus – nimelt alamprogrammid e. funktsioonid.
+Nagu juba varem mainitud (?), oskab meie robot pöörata vaid paremale. Seetõttu on näitekoodis koht, kus 90° võrra vasakule pööramise saavutamiseks on antud 3 korda järjest käsklus ``paremale()``. See on üks koht, mis võib programmi lugejale esmapilgul segadust tekitada. Kasutame võimalust ja defineerime uue alamprogrammi vasakule pööramiseks. Selleks lisame esialgse programmi algusse uue *funktsiooni definitsiooni*:
 
-TODO: 
-    * uute käskude defineerimine, kui ports koodiridu moodustavad loogilise terviku
-    * siin on koht selgitada plokkide olemust
+.. todo:: näide pythonis
 
-.. topic:: Terminoloogiast
+Sisuliselt defineerisime ühe uue roboti juhtimise käsu ja me võime algses programmis kolmekordse paremale pööramise asendada käsuga ``vasakule()``. Nii ei jäta me koodi lugejale enam kahtlust, mida me soovime real nr ... saavutada.
 
-    `Alamprogramm` on veidi üldisem nimetus, kuna `funktsioon` võib mõnes programmeerimiskeeles tähistada vaid teatud omadustega alamprogrammi. Samas, Pythonist rääkides võime kasutada neid sõnu siiski sünonüümidena.
-
-.. index::
-    single: funktsioon; defineerimine
-
-
-Näide: Roboti pööramine vasakule
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Nagu juba varem mainitud (?), oskab meie robot pöörata vaid paremale. Selleks, et muuta suunda 90° võrra vasakule, tuleb meil anda järjest 3 paremale pööramise käsklust. Siin ongi paras koht defineerida uus roboti juhtimise käsk ``vasakule``:
-
-.. todo:: näide pythonis ja plokkskeemis
-
-Näide: TODO
-~~~~~~~~~~~~~~
-veel üks näide pythonis ja plokkskeemis
-
-
-
-Robotkilpkonn
-~~~~~~~~~~~~~
-Toome nüüd näite protseduuride kasutamisest robotkilpkonna korral.
-Võtame robotkilpkonna korral samuti kasutusele funktsioonid ja protseduurid. Paneme kirja kilpkonna poolt sooritatavad tegevused protseduuride või funktsioonidena:
-
-``edasi()`` - kilpkonn liigub ühe sammu edasi;
-
-``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
-
-``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
-
-Kui rakendada robotkilpkonnale funktsiooni 
-
-``kasSein()``, siis kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
-
-**Ülesanne 1.** Värvi triibuliseks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Koostada plokkskeem algoritmile, millega kilpkonn värvib ruudustiku põranda põhjast lõunasse triibuliseks. Kilpkonn asub ruudustiku ülemises vasakus (s.t. loode-) nurgas, näoga lõunasse. 
-
-
-.. image:: _static/l05_fig16.gif
-
-Ülesande lahendamiseks valime kõigepealt strateegia, kuidas robotkilpkonn liigub ruudustikul. Üheks võimaluseks on variant, kus kilpkonn värvib ühe triibu ja liigub tuldud teed tagasi. Ta kordab värvimist järgmisel värvitaval veerul (üks veerg tuleb jätta vahele, et tulemus oleks triibuline). Koostame plokkskeemid järgmiste alamülesannete jaoks:
+Koostame plokkskeemid järgmiste alamülesannete jaoks:
 
 * Ühe triibu värvimine robotkilpkonna liikumisel kuni seinani.
 * Robotkilpkonna tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
+
+
+.. todo:: järgmised alamprogrammid
+
+.. todo:: uuendatud näide
+
+Nende muudatustega programmiteksti üldpikkus küll pisut suurenes, aga programmi põhiosa muutus lühemaks ja selgemaks. Kuna valisime alamprogrammidele sellised nimed, mis kirjeldavad nende sisu väga hästi, siis on võimalik programmi põhiosast aru saada isegi ilma alamprogrammide definitsioone uurimata.
+
+Alamprogrammid plokkskeemis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alamprogramme kasutatakse ka plokkskeemides. 
+
+.. todo:: süntaksi selgitus 
+
+Meeldetultuseks käsud, mida kasutasime roboti juhtimiseks plokkskeemis:
+
+    * ``edasi()`` - kilpkonn liigub ühe sammu edasi;
+    * ``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
+    * ``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
+    * ``kasSein()``, kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
 
 Alamprotseduur ``triip()``
 
@@ -105,73 +92,9 @@ Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule j
 
 Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
 
-**Ülesanne 2.** Liigu nurka
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda nurka (pole oluline, millisesse). Koostada plokkskeem, milles kasutatakse uut alamprotseduuri. 
-
-
-**Ülesanne 3.** Ring ümber mänguväljaku
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  Kasutada eelmise ülesande alamprotseduuri. 
- 
-**Ülesanne 4.** Seinani ja tagasi
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda seinani, pöörata ümber ja liikuda tagasi samasse kohta algasendisse. Koostada plokkskeem.  
-
-
-**Ülesanne 5.** Liigu ettenähtud kohta
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Kilpkonn asub seinaga ümbritsetud ja ilmakaarte järgi orienteeritud ruudustiku mingil ruudul, ninaga itta. Kirjutada plokkskeemi kujul protseduurid, millega kilpkonn
-a) liigub ruudustiku kirdenurka ja jääb seal pidama;
-b) liigub ruudustiku edelanurka ja jääb seal pidama;
-c) liigub ruudustiku äärele ja hakkab äärt pidi päripäeva ringiratast liikuma.
-
-
-
-**Ülesanne 6.** Loe tumedad laigud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul funktsioon, mis loendab ruudustikul asuvad tumedad laigud. Ruudustiku mõõtmed pole teada. Kilpkonna juhtimiseks on lisaks veel operatsioon
-
-``KasTumeLaik()`` - Kilpkonn kontrollib, kas ruut, millel asub kilpkonn, on tume.
-
-.. image:: _static/l05_fig19.gif
-
-Koostada abistavaid alamprotseduure.
-
-
-**Ülesanne 7.** Istuta lilli
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis istutab ruudustikule lilli. Ruudustiku mõõtmed pole teada. Lill ei kasva äärel ega kontaktis teise lillega. Kilpkonna juhtimiseks on lisaks lille istutamise operatsioon:
-
-``Istuta()`` - Kilpkonn istutab lille samale ruudule, kus ta parajasti asub, kusjuures kilpkonna orientatsioon pole oluline. 
-
-.. image:: _static/l05_fig20.gif
-
-Koostada abistavaid alamprotseduure.
-
-**Ülesanne 8.** Malelaud
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
-
-.. image:: _static/l05_fig21.gif
-
-**Ülesanne 9.** Bankett
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt paigutatud pika banketilaua ääres on iga koha juures tool. Kilpkonn seisab banketilaua põhjapoolses otsas. Laua pikkus on talle teadmata. Toolid peavad olema iga ruudu juures, ka laua põhja ja lõunaotsas. Kilpkonna juhtimiseks on lisaks järgmised operatsioonid: 
-
-``KasLaud()`` - Kilpkonn kontrollib, kas kilpkonna nina ees on laud.
-
-``KasTool()`` - Kilpkonn kontrollib, kas sellel ruudul, kus kilpkonn seisab, on tool.
-
-
-.. image:: _static/l05_fig22.gif
-
-Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
+.. todo::
+    
+    vali altpoolt siia üks paraja keerukusega harjutusülesanne
 
 
     
@@ -611,6 +534,9 @@ Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite pu
 .. note::
     Meetodeid ei ole vaja kunagi ``import``-ida.
 
+Veateted ja funktsioonid
+---------------------------
+.. todo:: selgita stack-trace'i tähendust
 
 Koduülesanded
 -------------
@@ -698,6 +624,78 @@ Viimaks täiendage funktsiooni selliselt, et kui nimi siiski sisaldab sidekriips
 .. index::
     single: kolmanda osapoole moodulid
     single: moodulid; kolmanda osapoole moodulid
+
+
+**Ülesanne 2.** Liigu nurka
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda nurka (pole oluline, millisesse). Koostada plokkskeem, milles kasutatakse uut alamprotseduuri. 
+
+
+**Ülesanne 3.** Ring ümber mänguväljaku
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  Kasutada eelmise ülesande alamprotseduuri. 
+ 
+**Ülesanne 4.** Seinani ja tagasi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda seinani, pöörata ümber ja liikuda tagasi samasse kohta algasendisse. Koostada plokkskeem.  
+
+
+**Ülesanne 5.** Liigu ettenähtud kohta
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub seinaga ümbritsetud ja ilmakaarte järgi orienteeritud ruudustiku mingil ruudul, ninaga itta. Kirjutada plokkskeemi kujul protseduurid, millega kilpkonn
+a) liigub ruudustiku kirdenurka ja jääb seal pidama;
+b) liigub ruudustiku edelanurka ja jääb seal pidama;
+c) liigub ruudustiku äärele ja hakkab äärt pidi päripäeva ringiratast liikuma.
+
+
+
+**Ülesanne 6.** Loe tumedad laigud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul funktsioon, mis loendab ruudustikul asuvad tumedad laigud. Ruudustiku mõõtmed pole teada. Kilpkonna juhtimiseks on lisaks veel operatsioon
+
+``KasTumeLaik()`` - Kilpkonn kontrollib, kas ruut, millel asub kilpkonn, on tume.
+
+.. image:: _static/l05_fig19.gif
+
+Koostada abistavaid alamprotseduure.
+
+
+**Ülesanne 7.** Istuta lilli
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis istutab ruudustikule lilli. Ruudustiku mõõtmed pole teada. Lill ei kasva äärel ega kontaktis teise lillega. Kilpkonna juhtimiseks on lisaks lille istutamise operatsioon:
+
+``Istuta()`` - Kilpkonn istutab lille samale ruudule, kus ta parajasti asub, kusjuures kilpkonna orientatsioon pole oluline. 
+
+.. image:: _static/l05_fig20.gif
+
+Koostada abistavaid alamprotseduure.
+
+**Ülesanne 8.** Malelaud
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
+
+.. image:: _static/l05_fig21.gif
+
+**Ülesanne 9.** Bankett
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt paigutatud pika banketilaua ääres on iga koha juures tool. Kilpkonn seisab banketilaua põhjapoolses otsas. Laua pikkus on talle teadmata. Toolid peavad olema iga ruudu juures, ka laua põhja ja lõunaotsas. Kilpkonna juhtimiseks on lisaks järgmised operatsioonid: 
+
+``KasLaud()`` - Kilpkonn kontrollib, kas kilpkonna nina ees on laud.
+
+``KasTool()`` - Kilpkonn kontrollib, kas sellel ruudul, kus kilpkonn seisab, on tool.
+
+
+.. image:: _static/l05_fig22.gif
+
+Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
+
+
+
     
 
 Soovituslik lisaülesanne: Kolmandate osapoolte moodulid

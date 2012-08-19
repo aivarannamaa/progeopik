@@ -12,8 +12,6 @@ Peale antud teema läbimist üliõpilane oskab
 * esitada lihtsamate ülesannete lahendust plokkskeemina (nt. lihtsamate kilpkonnaülesannete korral).
 
 
-TODO probleem vs ülesanne
-
 Sissejuhatus
 ------------
 
@@ -26,7 +24,7 @@ Meie igapäevaelus tuleb meil ette suuri ja väikesi ülesandeid. Mõned on liht
 
 *Algoritmiks* nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida on võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja  mida täidab arvuti. 
 
-Pöördume tagasi ülesande 1 juurde. Siin on ülesande püstitus puudulik. Tekib palju küsimusi, millele pole vastuseid: Kuhu need asjad kadusid? Kas need kadusid korraga? Kas need kadusid teel koju? Kas nad jäid ülikooli mõnda auditooriumi? 
+Pöördume tagasi ülesande 1 juurde. Siin on ülesande püstitus puudulik. Tekib palju küsimusi, millele pole vastuseid antud: Kuhu need asjad kadusid? Kas need kadusid korraga? Kas need kadusid teel koju? Kas nad jäid ülikooli mõnda auditooriumi? 
 
 Selliseid küsimusi saab esitada veel ja lahendust pole võimalik üheselt määrata.    
 
@@ -227,12 +225,11 @@ Lahendame nüüd selle ülesande arvutil, tehes läbi ka ülesande lahendamise t
 5. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
 
 Robotkilpkonn
-~~~~~~~~~~~~~
+--------------
 
 .. image:: _static/l04_fig10.gif 
 
-Tuleme tagasi eelmistest paragrahvidest tuttava robotkilpkonna juurde. Oletame, et robotkilpkonn 
-liigub ristkülikukujulisel mänguväljakul, mille mõõtmed pole teada:
+Edasiseks harjutamiseks võtame appi ühe virtuaalse robotkilpkonna, mis suudab etteantud keskkonnas liikuda ja reageerida veel mõnedele lihtsatele käskudele. Oletame, et robotkilpkonn liigub ristkülikukujulisel mänguväljakul, mille mõõtmed pole teada:
 
  .. image:: _static/l04_fig11.gif 
  
@@ -282,6 +279,28 @@ Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul
 .. note:: 
 
     Laadides alla väikese programmi, on võimalik kilpkonna liikumist modelleerivate plokkskeemide koostamist testida ka arvuti abil: http://www.physicsbox.com/indexrobotprogen.html
+
+
+**Ülesanne 9.** Põrandaa värvimine triibuliseks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Oletame, et kilpkonnal on lisaks veel käsk ``värvi()``, mille saamisel värvib ta selle ruudu, kus ta parasjagu asub, tumedaks. Programmi alguses asub kilpkonn juhuslikul ruudul näoga põhja suunas. Ruudustik on ristkülikukujuline, ilma takistusteta. Ruudustiku täpne suurus pole teada.
+
+Koostage plokkskeem, mis paneb kilpkonna värvima põrandat põhja-lõuna suunas triibuliseks -- alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne.
+
+Olge valmis, et see plokkskeem tuleb eelmistest omajagu suurem.
+
+.. hint::
+
+    Ülesande lahendamiseks tuleks valida kõigepealt strateegia, kuidas robotkilpkonn liigub ruudustikul. Üheks võimaluseks on variant, kus kilpkonn värvib ühe triibu ja liigub tuldud teed tagasi. Ta kordab värvimist järgmisel värvitaval veerul (üks veerg tuleb jätta vahele, et tulemus oleks triibuline). 
+    
+
+Plokkskeem vs. Python
+-----------------------
+.. todo:: selgita erinevusi ja sarnasusi
+
+Pykkar
+~~~~~~~~~~~~
+.. todo:: tutvusta Pykkarit, too näitena mõni eelneva ülesande lahendus ja anna ülesandeks triibutamine.
 
 
 Lisalugemist
