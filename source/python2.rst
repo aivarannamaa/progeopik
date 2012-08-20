@@ -8,4 +8,4 @@ Kuigi antud kursuses kasutame ainult Python 3-e, on paljud tuntud Pythoni progra
 
 * Python 2-s võib ``print`` käsu argumendi anda ilma sulgudeta, nt. ``print "tere"``
 
-* Python 2-s üritab ``input`` käsk sisestatud teksti tõlgendada avaldisena (nt. arvu või muutujana). Sõnede sisestamiseks on seal eraldi käsk ``raw_input``.
+* Python 2-s üritab ``input`` käsk sisestatud teksti tõlgendada avaldisena (nt. arvu või muutujana). Teksti sisestamiseks on seal eraldi käsk ``raw_input``.
