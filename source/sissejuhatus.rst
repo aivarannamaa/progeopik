@@ -1,14 +1,13 @@
 I. Sissejuhatus
 ===============
-Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning keele Python põhilisi töövahendeid. Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
 
-.. index::
-    single: käsurida
-    single: shell; käsurida
+
+Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning keele Python põhilisi töövahendeid. Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
 
 
 Programmeerimine ja Python
 ----------------------------
+Selle õpiku põhieesmärk on õpetada programmeerimise universaalseid põhimõtteid, mis kehtivad kõigi populaarsete programmerimiskeelte puhul. Konkreetne keel, mille abil seda tehakse, on *Python*. 
 TODO
 
     * Miks Python?
@@ -31,7 +30,7 @@ Pythoni enda arvutisse installeerimiseks laadige alla vajalikud failid Pythoni a
 
 Mac'is on tavaliselt Python küll olemas aga see on Python 2. Python 3 installimiseks Intel Mac'i jaoks valige Pythoni lehelt `Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
 
-Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketihalduri abil. Vajaminevad paketid on populaarsemates distrotes nimedega `python3`, `python3-tk` ja `idle3`.
+Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketihalduri abil. Vajaminevad paketid on populaarsemates distrote puhul nimedega `python3`, `python3-tk` ja `idle3`.
 
 .. note::
 
@@ -63,15 +62,16 @@ Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üld
     
 Salvestage fail (`Ctrl+S`) kasutades failinime lõpus laiendit `py`, nt. `teremaailm.py`. (NB! soovitav on juba praegu teha enda programmeerimisharjutuste jaoks eraldi kaust.) Taolist Pythoni programmi sisaldavat tekstifaili nimetame edaspidi *skriptiks*.
 
-**Programmi käivitamiseks** vajutage klaviatuuril `F5`. Ilmub uuesti IDLE käsurea aken, kuhu tekib uus rida tekstiga ``Tere maailm!``. (Nagu võite järeldada, tähendab ``print`` Pythoni jaoks teksti ekraanile kuvamist, mitte printerisse saatmist.)
+**Programmi käivitamiseks** vajutage klaviatuuril `F5`. Ilmub uuesti IDLE käsurea aken, kuhu tekib uus rida tekstiga ``Tere maailm!``.
+
+Selgitused:
+
+    * nagu võite järeldada, tähendab ``print`` Pythoni jaoks teksti ekraanile kuvamist, mitte printerisse saatmist
+    * selleks, et Python suudaks teha vahet käskudel ja tavalisel tekstil, kirjutatakse tekst jutumärkide vahele
 
 .. note::
 
-    Üks mugav viis, kuidas Windowsis avada olemasolevaid Pythoni faile IDLE-s, on teha `Windows Explorer`-is soovitud failil paremklõps ning valida `Edit with IDLE`.
-    
-    Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
-
-
+    Selles peatükis anname programmidele väga põgusad selgitused. Kõikide konstruktsioonide täpsed tähendused ja kasutusjuhised toome välja järgnevates peatükkides.
 
 Interaktiivsed programmid
 -----------------------------
@@ -84,6 +84,12 @@ Meie esimene program polnud just kõige põnevam. Proovime nüüd programmi, mis
 
 Salvestage ja käivitage programm. Ilmub taas käsurea aken, palvega sisestada oma nimi. Enne oma nime kirjutamist kooloni järele proovige ennustada, milline tekst ilmub ekraanile, kui te olete nime sisestanud. Katsetage!
 
+Selgitused:
+
+    * käsk ``input`` võimaldab kasutajal midagi sisestada ning edastab saadud teksti Pythonile
+    * konstruktsioon ``nimi = ...`` salvestab selle teksti mällu, edaspidi saab seda teksti kasutada kirjutades lihtsalt ``nimi``
+    * konstruktsioon ``Tere " + nimi + "!"`` kombineerib etteantud tekstijupid ja kasutaja nime uueks tekstiks
+
 Ülesanne 1. Programmi muutmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tehke programmis mingeid muudatusi, salvestage ja käivitage. Katsetage ka selliseid muudatusi, mis võiksid teie arvates Pythoni segadusse ajada.
@@ -94,21 +100,38 @@ Tehke programmis mingeid muudatusi, salvestage ja käivitage. Katsetage ka selli
 
 
 
-Näide. Kalkulaator
+Näide. Arvutamine
 ~~~~~~~~~~~~~~~~~~~~~~
-Järgmine näiteprogramm demonstreerib, et Python tunneb aritmeetikat:
+Järgmine näiteprogramm demonstreerib, et Python tunneb aritmeetikat. Enne katsetamist uurige programmi hoolikalt ning mõelge, milline tähendus võiks igal programmikomponendil olla:
 
-.. todo:: math, import
+.. sourcecode:: py3
 
-.. note::
+    a = float(input("Palun sisesta esimene arv: "))
+    b = float(input("sisesta teine arv: "))
     
-    Siin ja edaspidistes näidetes on parema loetavuse huvides tehtemärkide ümber pandud tühikud, aga need võib ka ära jätta.
+    print("Arvude summa:", a + b)
+    print("Arvude korrutis:", a * b)
+    print("Esimese ja teise jagatis:", a / b)
+    print("25% esimesest arvust:", a * 0.25)
     
+    if a == b:
+        print("Arvud on võrdsed")
+    else:
+        print("Arvud on erinevad")
+        if a > b:
+            print("Esimene arv on suurem")
+        else:
+            print("Teine arv on suurem")
+    
+Selgitused: 
 
-
-
-
-
+    * ``input``-i abil saab Python kätte kasutaja poolt sisestatud teksti (justnagu eelmises näites)
+    * ``float`` teisendab saadud teksti arvuks
+    * konstruktsioon ``a = ...`` salvestab saadud arvu mällu, edaspidi saab selle arvu kätte kirjutades lihtsalt ``a``
+    * ``print`` käsule võib ette anda nii teksti, kui arve, kui ka mõlemat korraga
+    * konstruktsioon ``if-else`` valib täitmisele minevad käsud vastavalt etteantud tingimustele 
+      
+    
 .. index::
     single: turtle
     single: kilpkonn; turtle
@@ -174,6 +197,10 @@ Kirjutage skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks üm
     single: veaotsing
 
 
+
+.. index::
+    single: käsurida
+    single: shell; käsurida
 
 IDLE'i käsurida
 ----------------
@@ -302,9 +329,15 @@ Programmeerimine ja maagia
 .. todo:: selgita Cargo cult-i ja et siitmaalt edasi vaja on saada oma programmide igast detailist aru
 
 
-Efektiivne õppimine
---------------------
-.. todo:: selgita ülesannete lahendamise olulisust. Miks on kasulik mõelda välja oma projekt.
+Programmeerimise õppimine
+------------------------------
+Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks mahutada ühele A4-le, ei piisa nende meeldejätmisest, sest võimalusi nende reeglite kombineerimiseks on lõputult. Lisaks reeglite teadmisele tuleb osata vaadata ülesande sisse, märgata selle üldist struktuuri ja nüansse, kujutleda otsitavat lahendust erinevas detailsuses ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab loovust, täpsust ja konkreetsust.
+
+Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) ülesannete puhul, on vaja palju harjutada, ainult teooria lugemisest ja näiteülesannete läbiproovimisest ei piisa. Seetõttu on õpikus hulgaliselt ülesandeid, mis nõuavad äsja loetud materjali loomingulist kasutamist.
+
+Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range, kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
+
+.. todo:: Miks on kasulik mõelda välja oma projekt.
 
 kirjuta natuke ja katseta, paranda vead ja kirjuta järgmine asi
 

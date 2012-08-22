@@ -8,6 +8,14 @@ II. Avaldised ja lihtlaused
     * kas tutvustada input / output enne ja avaldised (data) pärast?
     * tee (plokk?)skeem, mis näitab, et suurtes programmides on input/output'i osakaal palju väiksem (siin on see IPO mõiste suht sobilik)
     * see, et avaldist saab käsureal kasutada ilma prindita, võiks mainida avaldiste osa juures?
+
+
+.. note::
+
+    Üks mugav viis, kuidas Windowsis avada olemasolevaid Pythoni faile IDLE-s, on teha `Windows Explorer`-is soovitud failil paremklõps ning valida `Edit with IDLE`.
+    
+    Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
+
     
 
 Selles praktikumis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses praktikumis juba kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. Lisaks vaatame põgusalt, kuidas saab Pythonis väljendada tahvlipraktikumi plokkskeemidest tuttavat *hargnemist*.
@@ -160,6 +168,12 @@ Operatsioonid arvudega
 
 .. note::
       Kui avaldis on keeruline, siis võiks kaaluda sulgude kasutamist ka seal, kus Python neid ei nõua, et teha lugemist lihtsamaks.
+
+.. note::
+    
+    Siin ja edaspidistes näidetes on parema loetavuse huvides tehtemärkide ümber pandud tühikud, aga need võib ka ära jätta.
+    
+
 
 .. topic:: Operatsioonid negatiivsete arvudega
 
