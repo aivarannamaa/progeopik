@@ -1,5 +1,6 @@
 I. Sissejuhatus
 ===============
+    * Põhiülesanne: näidata lahedaid asju, mida on võimalik programmeerida ja veenda, et need on varsti jõukohased ka lugejale.
 
 
 Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning keele Python põhilisi töövahendeid. Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
@@ -7,18 +8,38 @@ Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi
 
 Programmeerimine ja Python
 ----------------------------
-Selle õpiku põhieesmärk on õpetada programmeerimise universaalseid põhimõtteid, mis kehtivad kõigi populaarsete programmerimiskeelte puhul. Konkreetne keel, mille abil seda tehakse, on *Python*. 
+Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
+
+Mis on programm?
+~~~~~~~~~~~~~~~~~~~~~~~~
+`Programm`, nii nagu me seda selles õpikus mõistame, on mingi tegevuse kirjeldus. Selle poolest on programmi mõiste väga sarnane teatris ja kinos kasutatavale `käsikirja` e. `stsenaariumi` mõistele (inglise keeles saab kasutada mõlema mõiste kohta lausa sama sõna -- `script`).
+
+.. todo:: script vs script
+
+Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest) ning seetõttu on võimalik programmeerimiskeeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil:
+
+.. todo:: skeem ilma hiire ja klaverita
+
+Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist:
+
+.. todo:: skeem koos IO seadmetega
+
+
+Mis on programmeerimine?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tuleb ka inimlik aspekt -- programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse programmeerimise
+
+    * Programmeerimine, kui protsess
+    * Programmeerimise õppimine, kui protsess
+
+Miks Python?
+~~~~~~~~~~~~~~
+
 TODO
 
-    * Miks Python?
-    * Selles kursuses programmeerimise universaalsed põhimõtted
+    * Meie kirjutatud programmid on samavõrd programmid nagu Microsoft Word või Google Chrome või Crysis.
     * keskendume sellele osale programmeerimisest, mis jääb inputi ja outputi vahele
-    * Põhiülesanne: näidata lahedaid asju, mida on võimalik programmeerida ja veenda, et need on varsti jõukohased ka lugejale.
     * liiguta osa Kilpkonna asju siit järgmisesse peatükki ja too siia lihtsad if/while/for näited
-    * maini, et programmeerimine peab olema täpne
-
-.. todo::
-    skeem: python, programm, klaver, hiir jms.
 
 
 .. index::
@@ -73,7 +94,7 @@ Selgitused:
 
     Selles peatükis anname programmidele väga põgusad selgitused. Kõikide konstruktsioonide täpsed tähendused ja kasutusjuhised toome välja järgnevates peatükkides.
 
-Interaktiivsed programmid
+Kasutajaga suhtlemine
 -----------------------------
 Meie esimene program polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb dialoogi, mitte monoloogi vormis. Tekitage `File -> New window` abil uus programmiaken ja kopeerige sinna järgnev programm. *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
 
@@ -276,10 +297,6 @@ Kui soovite kasutada trigonomeetrilisi funktsioone või matemaatilisi konstante,
     >>> pi
     3.141592653589793
 
-.. hint::
-
-    Varem antud käsu saab uuesti ette, vajutades klaviatuuril `üles` ja `alla` nooleklahve.
-    
 
 Ülesanne 1. Puu läbimõõt
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -306,7 +323,11 @@ Nagu ehk eelnevaid ülesandeid lahendades juba märkasite, annab Pythoni märku,
 
     Täitmisaegses veateates on tavaliselt mitme rea jagu infot, mis on abiks kogenud programmeerijale, aga võivad algajal silme eest kirjuks võtta. Sellest ei tasu lasta ennest heidutada -- enamasti piisab vaid veateate viimase rea lugemisest. Lisaks probleemi kirjeldusele on veateates alati ka reanumber, mis viitab vea tekitanud reale programmi tekstis. (Käsureal töötades on aktiivse käsu reanumber alati 1).
 
-    Paraku tuleb algajatel vahel ka veateate viimase rea üle pead murda -- hea näide on see, kui teile öeldakse käsu ``cos(pi)`` peale ``NameError: name "cos" not defined``. Sisuline põhjus pole siin mitte see, et käsk ``cos`` vale oleks, vaid see, et unustasite eelnevalt ``cos`` funktsiooni importida. (Ei, Python ei soovi segaste teadetega algajaid kiusata -- kui õpite ära Pythoni peamised tööpõhimõtted, siis paistab ka teile antud veateate sõnastus täiesti loomulik).
+    Paraku tuleb algajatel vahel ka veateate viimase rea üle pead murda -- hea näide on see, kui teile öeldakse käsu ``cos(pi)`` peale ``NameError: name "cos" not defined``. Sisuline põhjus pole siin mitte see, et käsk ``cos`` vale oleks, vaid see, et unustasite eelnevalt ``cos`` funktsiooni importida. (Ei, Python ei soovi segaste teadetega algajaid kiusata -- kui õpite tundma Pythoni peamiseid tööpõhimõtteid, siis paistab ka teile antud veateate sõnastus täiesti loomulik).
+
+.. note::
+
+    Veateate põhjust on kergem leida, kui te kirjutate programmi järk-järgult ja katsetate poolikut lahendust iga täienduse järel. Kui programm töötas korralikult enne viimase rea lisamist, siis tõenäoliselt on viga viimases reas ja te ei pea tervet programmi läbi vaatama.
 
 Veateateid näete te oma programeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtuge sellest, et iga veateade on mõeldud programmeerija abistamiseks -- lugege teate tekst alati hoolikalt läbi ja mõelge, milles võis probleem olla. Nii märkate varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks informatsiooniks.
 
@@ -324,24 +345,32 @@ Leidke järgnevast näiteprogrammist semantiline viga:
     
     print("Sinu kiirus oli " + str(kiirus) + " km/h")
 
-Programmeerimine ja maagia
------------------------------------
-.. todo:: selgita Cargo cult-i ja et siitmaalt edasi vaja on saada oma programmide igast detailist aru
-
-
 Programmeerimise õppimine
 ------------------------------
-Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks mahutada ühele A4-le, ei piisa nende meeldejätmisest, sest võimalusi nende reeglite kombineerimiseks on lõputult. Lisaks reeglite teadmisele tuleb osata vaadata ülesande sisse, märgata selle üldist struktuuri ja nüansse, kujutleda otsitavat lahendust erinevas detailsuses ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab loovust, täpsust ja konkreetsust.
+Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks mahutada ühele A4-le, ei piisa nende meeldejätmisest, sest võimalusi nende reeglite kombineerimiseks on lõputult. Lisaks reeglite teadmisele tuleb osata vaadata ülesande sisse, märgata selle üldist struktuuri ja nüansse, kujutleda otsitavat lahendust erinevas detailsuses ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab loovust, täpsust, üldistusvõimet ja konkreetsust. 
 
-Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) ülesannete puhul, on vaja palju harjutada, ainult teooria lugemisest ja näiteülesannete läbiproovimisest ei piisa. Seetõttu on õpikus hulgaliselt ülesandeid, mis nõuavad äsja loetud materjali loomingulist kasutamist.
+Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) ülesannete puhul, on vaja harjutada järjest raskemate ülesannetega, ainult teooria lugemisest ja näiteülesannete läbiproovimisest ei piisa. Seetõttu on õpikus hulgaliselt ülesandeid, mis nõuavad äsja loetud materjali loomingulist kasutamist.
 
-Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range, kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
+.. note::
 
+    Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range, kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
+
+Kui te tunnete, et mõne ülesande lahendamiseks pole antud piisavalt eelteadmisi või juhtnööre, siis teadke, et see on taotluslik -- need ülesanded õpetavad teile tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovige taolist ülesannet enda jaoks ümber sõnastada, otsige seoseid ja sarnasusi teiste ülesannetega, lihtsustage ülesannet, otsige abi internetist, võtke väike puhkepaus, vaadake ülesannet värske pilguga ja proovige jälle. Läbi raskuste saavutatud kogemused ja oskused on teile edaspidi kõige rohkem abiks!
+
+Programmeerimiseks vajalikke eeldusi on ühel rohkem ja teisel vähem, aga kõigil on võimalik neid endas arendada!
+
+Programmeerimine ja loovus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Suur osa sellest õpikust keskendub 
 .. todo:: Miks on kasulik mõelda välja oma projekt.
 
 kirjuta natuke ja katseta, paranda vead ja kirjuta järgmine asi
 
-Programmeerima pole võimalik õppida vaid loenguid kuulates – tegemist on praktilise oskusega, mis nõuab eelkõige harjutamist. Reeglina ei piisa vaid praktikumides tehtud ülesannetest ning harjutada tuleks kindlasti ka kodus.
+Programmeerimine ja maagia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. todo:: selgita Cargo cult-i ja et siitmaalt edasi vaja on saada oma programmide igast detailist aru
+
+
 
 
 

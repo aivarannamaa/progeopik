@@ -7,8 +7,8 @@ Oletame, et te külastate regulaarselt ühte veebilehte, kus muu teksti hulgas o
 
 Oletame, et te õpite parasjagu elementaarset hulgateooriat, aga üksteist lõikavate ringide joonistamine on teid juba ära tüüdanud. Te võite:
 
-    * mõelda, et harjutamine teeb meistriks, ning jätkata hulkade vahe drilli vastavalt etteantud instruktsioonidele;
-    * kirjutada hulgateooria harjutamiseks programmi, mis leiab kaustast ``d:\vana_lapaka_stuff\`` need `mp3`-d, mida pole veel kaustas ``c:\musa\``. (Ettevaatust! Taoline harjutus võib põhjustada ohtlikke mõrasid teooria ja praktika vahel olevas müüris!)
+    * sisendada endale, et harjutamine teeb meistriks, ning jätkata hulkade vahe drilli vastavalt etteantud instruktsioonidele;
+    * kirjutada õpitu kinnistamiseks programmi, mis leiab kaustast ``d:\vana_lapaka_stuff\`` need `mp3`-d, mida pole veel kaustas ``c:\musa\``. (Ettevaatust! Taoline harjutus võib põhjustada ohtlikke mõrasid teooria ja praktika vahel olevas müüris!)
 
 Oletame, et teil on hoopis ambitsioonikamad ideed: luua videomontaaži programm, mis on peaaegu sama võimas, kui Adobe Premiere, aga palju lihtsam ja kasutajasõbralikum, ning pealegi `open-source`. Te võite:
 
