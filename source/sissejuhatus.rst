@@ -96,14 +96,14 @@ Selgitused:
 
 Kasutajaga suhtlemine
 -----------------------------
-Meie esimene program polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb dialoogi, mitte monoloogi vormis. Tekitage `File -> New window` abil uus programmiaken ja kopeerige sinna järgnev programm. *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
+Meie esimene program polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekitage `File -> New window` abil uus programmiaken ja kopeerige sinna järgnev programm. *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
 
 .. sourcecode:: py3
 
     nimi = input("Palun sisesta oma nimi ja vajuta ENTER: ")
     print("Tere " + nimi + "!")
 
-Salvestage ja käivitage programm. Ilmub taas käsurea aken, palvega sisestada oma nimi. Enne oma nime kirjutamist kooloni järele proovige ennustada, milline tekst ilmub ekraanile, kui te olete nime sisestanud. Katsetage!
+Salvestage ja käivitage programm. Ilmub taas käsurea aken, palvega sisestada oma nimi. Enne oma nime kirjutamist (kooloni järele) proovige ennustada, milline tekst ilmub ekraanile, kui te olete nime sisestanud. Katsetage! Kui arvasite õigesti, siis vaadake programmi teksti uue pilguga üle ja mõelge, milline otstarve võiks olla igal programmielemendil.
 
 Selgitused:
 
