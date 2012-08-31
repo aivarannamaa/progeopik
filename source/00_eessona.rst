@@ -8,11 +8,11 @@ Oletame, et te külastate regulaarselt ühte veebilehte, kus muu teksti hulgas o
 Oletame, et te õpite parasjagu elementaarset hulgateooriat, aga üksteist lõikavate ringide joonistamine on teid juba ära tüüdanud. Te võite:
 
     * sisendada endale, et harjutamine teeb meistriks, ning jätkata hulkade vahe drilli vastavalt etteantud instruktsioonidele;
-    * kirjutada õpitu kinnistamiseks programmi, mis leiab kaustast ``d:\vana_lapaka_stuff\`` need `mp3`-d, mida pole veel kaustas ``c:\musa\``. (Ettevaatust! Taoline harjutus võib põhjustada ohtlikke mõrasid teooria ja praktika vahel olevas müüris!)
+    * kirjutada õpitu kinnistamiseks programmi, mis leiab kaustast ``d:\vana_lapaka_stuff\`` need `mp3`-d, mida pole veel kaustas ``c:\musa\``.
 
 Oletame, et teil on hoopis ambitsioonikamad ideed: luua videomontaaži programm, mis on peaaegu sama võimas, kui Adobe Premiere, aga palju lihtsam ja kasutajasõbralikum, ning pealegi `open-source`. Te võite:
 
-    * öelda, et see on liiga raske (jah, on küll!), ning sukelduda Bubble Witch Saga-sse;
+    * öelda, et see on liiga raske (jah, on küll!), ning teha midagi lihtsat;
     * leppida sellega, et teised peavad teid veidi imelikuks ning astuda oma eesmärgi suunas esimene samm õppides algtasemel programmeerima.
 
 Oletame, et õppekava nõuab teilt aine "Programmeerimine" läbimist... Tjah, elu on karm.
