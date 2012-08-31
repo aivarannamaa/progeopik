@@ -1,20 +1,17 @@
 I. Sissejuhatus
 ===============
-    * Põhiülesanne: näidata lahedaid asju, mida on võimalik programmeerida ja veenda, et need on varsti jõukohased ka lugejale.
-
-
-Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning keele Python põhilisi töövahendeid. Uurime ka mõningaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
+Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning keele Python põhilisi töövahendeid. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
 
 
 Programmeerimine ja Python
 ----------------------------
-Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
+Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmeerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
 
 Mis on programm?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 `Programm`, nii nagu me seda selles õpikus mõistame, on mingi tegevuse kirjeldus. Selle poolest on programmi mõiste väga sarnane teatris ja kinos kasutatavale `käsikirja` e. `stsenaariumi` mõistele (inglise keeles saab kasutada mõlema mõiste kohta lausa sama sõna -- `script`).
 
-.. todo:: script vs script
+.. todo:: pilt: script vs script
 
 Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest) ning seetõttu on võimalik programmeerimiskeeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil:
 
@@ -27,20 +24,29 @@ Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse
 
 Mis on programmeerimine?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tuleb ka inimlik aspekt -- programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse programmeerimise
+Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned inimlikud aspektid.
 
-    * Programmeerimine, kui protsess
-    * Programmeerimise õppimine, kui protsess
+Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
 
-Miks Python?
+Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on teie arvates juba valmis.
+
+Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
+
+Mis on Python?
 ~~~~~~~~~~~~~~
+Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keeles Python kirjutatud programme. Seega ülalpool esitatud programmi jooksutamise skeemi võiks Pythoni kasutamise korral täpsustada järgnevalt:
 
-TODO
+.. todo:: skeem koos pythoniga arvuti sees
 
-    * Meie kirjutatud programmid on samavõrd programmid nagu Microsoft Word või Google Chrome või Crysis.
-    * keskendume sellele osale programmeerimisest, mis jääb inputi ja outputi vahele
-    * liiguta osa Kilpkonna asju siit järgmisesse peatükki ja too siia lihtsad if/while/for näited
+Pythoni interpretaatori käivitamisest tuleb juttu allpool
 
+.. note::
+
+    Mõnede programmeerimiskeelte puhul (nt. `C` või `C++`) `tõlgitakse` e. `kompileeritakse` programmid enne käivitamist `masinkoodi` (st. "arvuti keelde"). Selliselt ettevalmistatud programmide käivitamiseks pole eraldi interpretaatorprogrammi tarvis -- arvuti ise on interpretaator.
+    
+    Taolisel lähenemisel on omad eelised ja omad puudused, aga on leitud, et vähemalt programmeerimise õppimisel on interpreteeritava keele (nt. Python) kasutamine mugavam.
+    
+    
 
 .. index::
     single: installeerimine
@@ -151,7 +157,24 @@ Selgitused:
     * konstruktsioon ``a = ...`` salvestab saadud arvu mällu, edaspidi saab selle arvu kätte kirjutades lihtsalt ``a``
     * ``print`` käsule võib ette anda nii teksti, kui arve, kui ka mõlemat korraga
     * konstruktsioon ``if-else`` valib täitmisele minevad käsud vastavalt etteantud tingimustele 
-      
+
+Näide. Matemaatilised funktsioonid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. todo:: import, sin, pi jne.      
+
+Ülesanne 2. Puu läbimõõdu arvutamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Proovige kirjutada eelnevate näidete põhjal programm, mis küsib kasutaja käest puu ümbermõõdu ning teatab selle peale puu läbimõõdu.
+
+
+.. note::
+    Kui jääte veateadetega hätta, siis kontrollige kõigepealt, kas teil on sulud `balansis`, st. iga alustava sulu jaoks on õiges kohas ka lõpetav sulg.
+
+    Kui jääte hätta lahendusideega, siis vaadake järgnevat vihjet.
+
+.. hint::
+
+    .. todo:: mingi sarnase ülesande lahendus
     
 .. index::
     single: turtle
@@ -198,12 +221,12 @@ Proovige järgnevat näiteskripti, mis joonistab kilpkonna abil kolmnurga:
     
     exitonclick() # see võimaldab akna sulgemist hiireklõpsuga
 
-Ülesanne 2. Ruut
+Ülesanne 3. Ruut
 ~~~~~~~~~~~~~~~~
 Joonistage kilpkonnaga ruut.
 
 
-Ülesanne 3. Ümbrik
+Ülesanne 4. Ümbrik
 ~~~~~~~~~~~~~~~~~~
 Kirjutage skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbriku. NB! Ärge unustage lisamast skripti algusesse `import`-lauset.
 
@@ -249,7 +272,7 @@ Kui teil on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saate avada m
 
 
 
-Ülesanne. Interaktiivne programmeerimine
+Ülesanne 5. Interaktiivne programmeerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Katsetage erinevaid siiani nähtud käske ka käsureal. Proovige muuhulgas ka Pythoni mälu kasutamist. (Paraku võib kilpkonna juhtimine käsurealt ebaõnnestuda, see sõltub IDLE'i seadetest.)
 
@@ -278,7 +301,7 @@ Nagu nägite, oskab Python arvutada, seega saaks Pythoni käsurida kasutada või
     
     Selline trikk toimib ainult käsureal. Kui soovite skriptis midagi ekraanil näidata, tuleb kasutada ikkagi ``print`` käsku.
 
-Samamoodi nagu mõnede taskukalkulaatorite puhul, saab ka Pythonis arve "mällu" salvestada:
+Arve saab "mällu" salvestada samamoodi nagu skriptis:
 
 .. sourcecode:: py3
 
@@ -287,7 +310,7 @@ Samamoodi nagu mõnede taskukalkulaatorite puhul, saab ka Pythonis arve "mällu"
     >>> a + b + 2
     9
 
-Kui soovite kasutada trigonomeetrilisi funktsioone või matemaatilisi konstante, siis tuleb kõigepealt öelda Pythonile ``from math import *``, nt:
+Ka matemaatiliste funktsioonide `importimine` toimib samal põhimõttel nagu skripti puhul:
 
 .. sourcecode:: py3
 
@@ -298,17 +321,11 @@ Kui soovite kasutada trigonomeetrilisi funktsioone või matemaatilisi konstante,
     3.141592653589793
 
 
-Ülesanne 1. Puu läbimõõt
-~~~~~~~~~~~~~~~~~~~~~~~~
-Arvutage Pythonis, kui suur on puu läbimõõt, kui ümbermõõt on 75cm.
-
-Harjutus
-~~~~~~~~
-Proovige sisestada ka keerulisemaid avaldisi. Soovi korral saab tehete järjekorda muuta sulgudega. Katsetage ka "mälu" kasutamist.
-
-
-
-
+Ülesanne 6. `math` moodul
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Uurige Pythoni matemaatikamooduli dokumentatsiooni aadressilt http://docs.python.org/py3k/library/math.html
+#. Otsige välja, kuidas arvutatakse Pythonis ruutjuurt
+#. Arvutage Pythoni käsureal, kui pikk on ristkülikukujulise maatüki diagonaal, mille mõõtmed on 50mx75m.
 
 
 Vigadest
@@ -333,7 +350,7 @@ Veateateid näete te oma programeerimise karjääri jooksul väga palju, seega e
 
 Programmeerimises on veel üks liik vigasid, mis on kõige ohtlikumad ja mida nimetatakse **semantilisteks vigadeks** või ka lihtsalt **loogikavigadeks**. Nende vigade puhul võib kõik olla Pythoni seisukohast korrektne (st. mingit veateadet ei tule), aga programm ei tee seda, mis programmeerija silmas pidas.
 
-Ülesanne X. Semantiline viga
+Ülesanne 7. Semantiline viga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Leidke järgnevast näiteprogrammist semantiline viga:
 
@@ -359,57 +376,44 @@ Kui te tunnete, et mõne ülesande lahendamiseks pole antud piisavalt eelteadmis
 
 Programmeerimiseks vajalikke eeldusi on ühel rohkem ja teisel vähem, aga kõigil on võimalik neid endas arendada!
 
-Programmeerimine ja loovus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Suur osa sellest õpikust keskendub 
-.. todo:: Miks on kasulik mõelda välja oma projekt.
-
-kirjuta natuke ja katseta, paranda vead ja kirjuta järgmine asi
 
 Programmeerimine ja maagia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. todo:: selgita Cargo cult-i ja et siitmaalt edasi vaja on saada oma programmide igast detailist aru
+Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb "sõnuda" (oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
 
-
-
+On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid teie jaoks segaseks -- eesmärk oli saada lihtsalt esimene ettekujutus programmeerimise olemusest. Seevastu järgmisest peatükist alates on oluline, et te mõistaksite oma programmide iga sümboli otstarvet ja tähendust. Kui teil jääb mingi alusteema segaseks, siis raskendab see oluliselt järgnevate teemade mõistmist. Vajaduselt küsige julgelt nõu kaaslaste või juhendajate käest, aga ärge kirjutage oma programmidesse ühtegi rida, mille otstarvet te ei mõista!
 
 
 Mis edasi?
 --------------
-TODO
+.. todo::
+
+    Anna aimu sellest, mida selle kursuse teadmistega võiks peale hakata.
+    
+    Suuremad näiteprogrammid:
+    
+    * Konsooliprogramm, mis küsib kuupäeva ja telekanali ning näitab saadete loetelu (tõmmatakse http://kava.ee-st)
+    * GUI programm, mis otsib valitud kaustast välja kõik mp3 failid
+    * Minesweeper mäng tkinter'i canvasega
+
+.. todo:: Miks on kasulik mõelda välja oma projekt.
+
+Ülesanne 8. Projekti idee
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Valige välja mõned esialgsed programmiideed, mida te sooviksite Pythonis realiseerida. Uute teemade õppimisel mõelge, kas ja kuidas te saaksite antud teemat rakendada enda programmi juures.
 
 Kokkuvõte
 -------------
-TODO
+.. todo::
+    * tähtsamad punktid programmeerimise olemusest ja programmeerimise õppimisest
 
 Sõnastik
 ~~~~~~~~~~~~~~
-TODO
-
-(Kodu?)Ülesanded
------------------
-
-Mingi kilpkonna joonistus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO
-
-Projekti teema osas mõtisklemine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO
+.. todo::
+    * programm, programmeerimine, python, interpretaator, silumine, süntaksiviga, täitmisaegne viga, semantiline viga
 
 Lisalugemine
 ------------
-
-blaa, blaa
-~~~~~~~~~~~~~~~~~~~~~~~~
-TODO
-
-    * Näited, mida kõike on võimalik programmeerida
-    * programmeerimine ja juhtimine
-    * Head näited progammeerimise olemusest: http://www.nrg.tartu.ee/algkursus/Teema1.htm
-    * Korda seda, et sellel kursuse fookus on inputi ja outputi vahel oleval alal
-    * Too programeerimise näiteks Ruby Goldbergi masin vms!!
-    * teleka programmeerimine
 
 Pythoni kasutamine süsteemi käsureal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
