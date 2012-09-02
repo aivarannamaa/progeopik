@@ -1,0 +1,32 @@
+from turtle import *
+
+s = Screen()
+
+setup(450, 350, 0, 0)
+
+a = Turtle()
+a.up()
+a.goto(-50, -50)
+a.down()
+
+rd = 71
+rd2 = rd*2
+edge = 100
+
+a.fd(edge)
+a.lt(90)
+a.fd(edge)
+a.lt(45)
+a.fd(rd)
+a.lt(90)
+a.fd(rd)
+a.lt(45)
+a.fd(edge)
+a.lt(135)
+a.fd(rd2)
+a.lt(135)
+a.fd(edge)
+a.lt(135)
+a.fd(rd2)
+
+s.mainloop()
