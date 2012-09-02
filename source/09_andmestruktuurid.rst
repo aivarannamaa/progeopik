@@ -7,7 +7,8 @@ Aga enne, kui asume põhiteemade juurde, vaatame kiiresti üle paar lihtsamat te
 
 .. todo::
 
-    Kas on vaja selgitada "andmestruktuuri" tähendust?
+    * Kas on vaja selgitada "andmestruktuuri" tähendust?
+    * Andmestruktuuride salvestamine faili (pickle.load / dump)
 
 *Vahepala: Sõnede ja väljundi formaatimine*
 ---------------------------------------------

@@ -16,9 +16,7 @@ II. Avaldised ja lihtlaused
     
     Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
 
-    
-
-Selles praktikumis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses praktikumis juba kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. Lisaks vaatame põgusalt, kuidas saab Pythonis väljendada tahvlipraktikumi plokkskeemidest tuttavat *hargnemist*.
+Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses praktikumis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
 
 .. topic:: Soovitus:
 
@@ -28,7 +26,7 @@ Terminoloogia
 -------------
 .. note::
 
-    NB! Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist väga lihtsate mõistetega -- neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada.
+    NB! Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist küllalt lihtsate mõistetega -- neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada.
 
 .. index::
     single: väärtus
@@ -518,31 +516,31 @@ Kirjutage programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vasta
 
 .. _sisendi-lugemine-failist:
 
-Sisendi lugemine failist
-~~~~~~~~~~~~~~~~~~~~~~~~
-.. todo:: siin peaks olema ilma tsüklita
-
-Siinkohal õpime ära ka kõige lihtsama viisi tekstifailidest sisendi lugemiseks.  Alustuseks koostage ja salvestage tekstifail nimega `andmed.txt`, mis sisaldab suvalisi sõnu eraldi ridadel (lihtsuse mõttes ärge praegu täpitähti kasutage). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvestage *samasse kausta* järgnev skript, ning käivitage see. NB! tühikud ``print`` käskude ees on olulised!
+Failide lugemine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+Siinkohal õpime ära ka ühe viisi tekstifailidest sisendi lugemiseks. Alustuseks koostage ja salvestage tekstifail nimega `andmed.txt`, mille esimesel real on inimese nimi, teisel real vanus (täisarvuna) ning kolmandal real e-maili aadress (lihtsuse mõttes ärge praegu täpitähti kasutage). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvestage loodud failiga *samasse kausta* järgnev skript, ning käivitage see. NB! tühikud ``print`` käskude ees on olulised!
 
 .. sourcecode:: py3
 
     f = open('andmed.txt')
     
-    for rida in f:
-        print('Lugesin järgneva rea: ' + rida)
+    nimi = f.readline()
+    vanus = f.readline()
+    aadress = f.readline()
+    
+    print("Nimi:", nimi)
+    print("Vanus:", vanus, "aastat")
+    print("Aadress:", aadress)
     
     f.close()
 
-Põgusaks selgituseks: 
+Selgituseks: 
 
 * Käsk ``open`` otsib failisüsteemist üles soovitud faili ja tagastab viite sellele (antud näites salvestasime selle viite muutujasse ``f``). NB! kui on antud ainult failinimi, ilma teeta, siis otsitakse seda ainult sellest kaustast, kus asub skript.
-* Programmi osa, mis algab ``for rida in f``, nimetatakse ``for``-tsükliks. Antud näites loetakse siin failist ükshaaval ridu ning töödeldakse neid. (NB! rea sisu loetakse sisse koos reavahetuse sümboliga sõne lõpus). Iga rea juures salvestatakse rea sisu kõigepealt muutujasse ``rida`` ja seejärel käivitatakse ``for``-tsükli "all" olevad laused (st. need mis on 4 tühikuga paremale nihutatud).
-* ``f.close()`` ütleb failisüsteemile, et me oleme selle faili kasutamise lõpetanud.
+* ``f.readline()`` loeb failist ühe rea, ning tagastab selle sõnena. See käsk liigutab edasi ka failist lugemise "järjehoidjat", st. järgmisel korral sama käsku kasutades loetakse järgmine rida.
+* ``f.close()`` ütleb failisüsteemile, et me oleme selle faili kasutamise lõpetanud. 
 
-Täpsemad selgitused jätame tsüklite praktikumi, kuid sinnamaani kasutame mõnedes harjutustes just sellist programmi struktuuri. Konkreetsetes ülesannetes muudame vaid seda osa, mis käivitatakse iga rea puhul.
-
-.. note::
-    Kui seda programmi katsetate, siis märkate, et väljundis jääb iga rea vahele üks tühi rida. Põhjus on just selles, et failist lugedes jäetakse iga rea lõppu ka reavahetus alles. Kui rida uuesti ekraanile ``print``-ida, siis kuvatakse kõigepealt rea sisu koos reavahetusega, ja sellele lisab ``print`` käsk omaltpoolt veel ühe reavahetuse.
+    Kui seda programmi katsetate, siis märkate, et väljundis jääb iga rea vahele üks tühi rida. Põhjus on just selles, et failist lugedes jäetakse iga rea lõppu ka reavahetus alles (faili viimase rea puhul võib see puududa, vastavalt sellele, kas failis on viimase rea lõpus reavahetus või mitte). Kui rida uuesti ekraanile ``print``-ida, siis kuvatakse kõigepealt rea sisu koos reavahetusega, ja sellele lisab ``print`` käsk omaltpoolt veel ühe reavahetuse.
 
 .. note::
     Kui Python ütleb teile (Windowsi arvutis), et ta ei leia faili, aga te olete veendunud, et fail on õiges kaustas olemas, siis tuleks kontrollida, ega failinimele pole saanud eksikombel kaks faililaiendit. Segadust võib tekitada asjaolu, et Windows Explorer vaikimisi varjab teatud faililaiendid.
@@ -552,12 +550,32 @@ Täpsemad selgitused jätame tsüklite praktikumi, kuid sinnamaani kasutame mõn
 .. note::
     Kui proovite lugeda sisse täpitähtedega teksti, siis võib juhtuda, et saate veateate ``UnicodeDecodeError``. Sel juhul tuleks ``open`` käsu rakendamisel öelda, millises kodeeringus on teie tekst, nt. ``open('andmed.txt', encoding='UTF-8')``. ``'UTF-8'`` asemel võite proovida ka ``'cp1257'``.
 
-Ülesanne 4. Temperatuuride lugemine failist
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
+Ülesanne 4. Reavahetuste eemaldamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tuletage meelde, mida tegi sõnemeetod ``strip()``. Modifitseerige eelnevat näiteprogrammi selliselt, et programmi väljundisse ei tekiks tühje ridu.
 
-.. hint:: 
-    Justnagu ``input`` käsu puhul, saame ka tekstifailist lugedes sisendi alati tekstina, seetõttu tuleb antud ülesandes teisendada algandmed enne kasutamist arvudeks.
+Failide kirjutamine
+~~~~~~~~~~~~~~~~~~~~
+Järgnev programm demonstreerib andmete kirjutamist tekstifaili:
+
+.. sourcecode:: py3
+
+    nimi = input("Palun sisesta oma nimi: ")
+    vanus = input("vanus: ")
+    aadress = input("aadress: ")
+    
+    f = open("saladus.txt", "w")
+    f.write(nimi + "\n")
+    f.write(vanus + "\n")
+    f.write(aadress + "\n")
+    f.close()
+
+Selgituseks:
+
+* failide kirjutamiseks tuleb funktsioonile ``open`` anda ka teine argument väärtusega ``"w"`` (nagu `write`).
+* kui antud fail juba eksisteerib, siis ``open(..., "w")`` teeb selle tühjaks.
+* faili meetod ``write`` ei tekita automaatselt reavahetust. Selleks, et saada eri andmeid eri ridadele, lisasime reavahetuse sümboli käsitsi.
+
 
 .. index::
     single: kommentaarid

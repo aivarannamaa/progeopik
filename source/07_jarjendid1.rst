@@ -179,7 +179,7 @@ Lõpuks kontrollige, kas teie funktsioon annab samade järjendite puhul sama tul
 
 Failist lugemine
 -----------------
-Kui mäletate, siis 2. praktikumis oli ``for``-tsüklist juba pisut juttu seoses failist andmete lugemisega. Toome siinkohal selle programmi uuesti välja -- nüüd peaks see olema juba palju arusaadavam:
+Tuleb välja, et ``for``-tsükkel on väga mugav ka failist lugemiseks:
 
 .. sourcecode:: py3
 
@@ -197,6 +197,13 @@ Selle näidet kommenteerides võiks lihtsustatult öelda, et:
     #. ``for``-tsükkel käib selle järjendi elemendid ükshaaval läbi.
 
 Tegelikult ei ole muutujas ``f`` siiski mitte järjend, vaid natuke keerulisem väärtus. Õnneks oskab ``for``-tsükkel käsitleda seda väärtust justkui järjendit, seetõttu ei pea me muretsema, kuidas need faili read on tegelikult esitatud.
+
+Ülesanne 4. Temperatuuride lugemine failist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
+
+.. hint:: 
+    Meeldetuletus: Justnagu ``input`` käsu puhul, saame ka tekstifailist lugedes sisendi alati tekstina, seetõttu tuleb antud ülesandes teisendada algandmed enne kasutamist arvudeks.
 
 
 Funktsioon ``range``
