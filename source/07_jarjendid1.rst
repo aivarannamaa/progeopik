@@ -461,7 +461,7 @@ Kirjutage programm, mis küsib sisendiks täisarvu ning väljastab kõikide arvu
 
 3. Laulusõnad
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis kuvab ekraanile laulu "99 Bottles of Beer on the Wall" sõnad.  Tulemus peaks olema selline, nagu näidatud siin: :download:`99-bottles.txt <_static/99-bottles.txt>`. (NB! See fail on vaid näiteks -- sõnad tuleb genereerida, mitte failist sisse lugeda).
+Kirjutage programm, mis kuvab ekraanile laulu "99 Bottles of Beer on the Wall" sõnad.  Tulemus peaks olema selline, nagu näidatud siin: :download:`99-bottles.txt <downloads/99-bottles.txt>`. (NB! See fail on vaid näiteks -- sõnad tuleb genereerida, mitte failist sisse lugeda).
 
 .. note::
     Ärge unustage tulemust testida! Viisi saab kuulata siit: http://www.youtube.com/watch?v=3KnpZYkTWno

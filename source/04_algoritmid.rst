@@ -34,11 +34,11 @@ Selliseid küsimusi saab esitada veel ja lahendust pole võimalik üheselt mää
 
 Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala. 
 
-.. image:: _static/l04_fig1.gif
+.. image:: images/l04_fig1.gif
 
 Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg) ja väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist 
 
-.. image:: _static/l04_fig2.gif
+.. image:: images/l04_fig2.gif
 
 ja esitame lahenduse kahe sammuna:
 
@@ -59,7 +59,7 @@ Seda tüüpi ülesanne sisaldab loogikat. Tulemuseks ei ole arvutatav väärtus 
 ~~~~~~~~~~~~~~~
 Joonisel on esitatud Pascal'i arvude kolmnurk
 
-.. image:: _static/l04_fig4.gif
+.. image:: images/l04_fig4.gif
 
 Äärmistel kohtadel on arv 1. Ülejäänute korral on väärtuseks kahe lähima arvu summa arvule vahetult ülemisel real. Kuidas arvutada kombinatsioonide arvu *n* elemendist *k* kaupa
 
@@ -107,7 +107,7 @@ Esitame nüüd algoritmile täpsema definitsiooni.
 
 **Algoritm**  on  täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, mis saab sisendina ette mingi väärtuse või väärtuste hulga ja leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.
 
-.. image:: _static/l04_fig8.gif 
+.. image:: images/l04_fig8.gif 
 
 Kokkuvõtvalt, algoritm on arvutispetsialistide kõnepruugis lihtsalt protseduur. Erinevate elukutsete inimestel on erinev vorm oma töövoost ja nad nimetavad seda erinevalt. Näiteks kokk järgib protseduuri, mida nimetatakse  retseptiks. Retsept kirjeldab algoritmi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). Algoritm hõlmab lahenduse kogu loogikat. Seega ülesande lahendamine jaotub kaheks etapiks:
 
@@ -151,28 +151,28 @@ Algoritmi saab esitada ka graafiliselt, nt plokkskeemina. Vaatleme järgnevalt p
 .. _plokkskeem:    
 
 
-.. image:: _static/l04_fig9.gif 
+.. image:: images/l04_fig9.gif 
 
 
 Kartulisalati tegemise plokkskeem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
 
-.. image:: _static/l05_fig1.gif
+.. image:: images/l05_fig1.gif
 
 Üksi salatit valmistades on meil võimalik lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
 
-.. image:: _static/l05_fig2.gif
+.. image:: images/l05_fig2.gif
 
 
 Korraldame loendamist pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
 
-.. image:: _static/l05_fig3.gif
+.. image:: images/l05_fig3.gif
 
 Arvutis me kasutamine loendamiseks muutujaid, hoides nendes näiteks loendamise jooksvat seisu. Loendamise algul peame loenduri seisu nullima.  
 
 
-.. image:: _static/l05_fig4.gif
+.. image:: images/l05_fig4.gif
 
 OLetame, et meil on juba olemas käsklused (funktsioonid), mis rakendamisel annavad meile vajaliku asja või toiduaine:
 
@@ -190,19 +190,19 @@ Samuti oletame, et me saame kasutada olemasolevaid protseduure, millele asju ett
 
 Kasutades neid käsklusi, saame kartulisalati tegemise esitada järgmisel kujul:
  
-.. image:: _static/l05_fig5.gif
+.. image:: images/l05_fig5.gif
 
 Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilusikatäie hapukoore ja noaotsatäie soola võtmise otse lisamise käsklustele, sest meil ei ole neid eraldi muutujates vaja rohkem kasutada:
 
 
-.. image:: _static/l05_fig6.gif
+.. image:: images/l05_fig6.gif
 
 
 Ringi pindala
 ~~~~~~~~~~~~~
 1. Esitame ülesande 2 lahenduse plokkskeemina:
 
- .. image:: _static/l04_fig20.gif 
+ .. image:: images/l04_fig20.gif 
 
 Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
 Lahendame nüüd selle ülesande arvutil, tehes läbi ka ülesande lahendamise teised etapid. 
@@ -227,41 +227,41 @@ Lahendame nüüd selle ülesande arvutil, tehes läbi ka ülesande lahendamise t
 Robotkilpkonn
 --------------
 
-.. image:: _static/l04_fig10.gif 
+.. image:: images/l04_fig10.gif 
 
 Edasiseks harjutamiseks võtame appi ühe virtuaalse robotkilpkonna, mis suudab etteantud keskkonnas liikuda ja reageerida veel mõnedele lihtsatele käskudele. Oletame, et robotkilpkonn liigub ristkülikukujulisel mänguväljakul, mille mõõtmed pole teada:
 
- .. image:: _static/l04_fig11.gif 
+ .. image:: images/l04_fig11.gif 
  
 Kilpkonn oskab sooritada järgmiseid tegevusi:
 
- .. image:: _static/l04_fig12.gif  
+ .. image:: images/l04_fig12.gif  
  
 **Ülesanne 5.** Kolm sammu edasi ja ümberpöörd
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Robotkilpkonn asub näoga seina poole selliselt, et seinani on vähemalt 3 sammu. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber).   
 
-.. image:: _static/l04_fig13.gif  
+.. image:: images/l04_fig13.gif  
 
 Lahenduse võib esitada järgmise plokkskeemina:
 
-.. image:: _static/l04_fig14.gif  
+.. image:: images/l04_fig14.gif  
 
 **Ülesanne 6.** Kui võimalik, kolm sammu  edasi ja ümberpöörd 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Robotkilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber). Kui seinani on vähem kui kolm sammu, siis liikuda seinani ja pöörata ümber. 
 
-.. image:: _static/l04_fig15.gif  
+.. image:: images/l04_fig15.gif  
 
 Nüüd on lahendus juba veidi keerulisem:  
 
-.. image:: _static/l04_fig16.gif  
+.. image:: images/l04_fig16.gif  
 
 **Ülesanne 7.** Ring ümber mänguväljaku 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  
 
-.. image:: _static/l04_fig17.gif  
+.. image:: images/l04_fig17.gif  
 
 **Ülesanne 8.** Liikumine takistusest mööda
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -270,11 +270,11 @@ Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul
 .. hint:: 
     Antud ülesande korral võib olla olukord, kus takistus asub roboti ees
 
-    .. image:: _static/l04_fig18.gif  
+    .. image:: images/l04_fig18.gif  
 
     või siis ei asu
 
-    .. image:: _static/l04_fig19.gif  
+    .. image:: images/l04_fig19.gif  
 
 .. note:: 
 

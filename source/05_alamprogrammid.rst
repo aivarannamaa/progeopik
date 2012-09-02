@@ -64,18 +64,18 @@ Alamprotseduur ``triip()``
 
 Tegevus: Robotkilpkonn värvib triibu kuni seinani.
 
-.. image:: _static/l05_fig13.gif
+.. image:: images/l05_fig13.gif
 
 
 Alamprotseduur ``tagasi()``
 
 Tegevus: Robotkilpkonn pöörab ümber, liigub seinani ja lõpuks pöörab paremale.
 
-.. image:: _static/l05_fig14.gif
+.. image:: images/l05_fig14.gif
 
 Koostame nüüd plokkskeemi kogu mänguväljaku värvimiseks triibuliseks, kasutades juba koostatud protseduure:
 
-.. image:: _static/l05_fig15.gif
+.. image:: images/l05_fig15.gif
 
 Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus kilpkonn ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame veel ühe protseduuri, mille abil kilpkonn pöörab vasakule:
 
@@ -83,12 +83,12 @@ Alamprotseduur ``vasakule()``
 
 Tegevus: Robotkilpkonn pöörab vasakule.
 
-.. image:: _static/l05_fig17.gif
+.. image:: images/l05_fig17.gif
 
 Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
 
 
-.. image:: _static/l05_fig18.gif
+.. image:: images/l05_fig18.gif
 
 Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
 
@@ -173,28 +173,28 @@ Tuleme tagasi eelmises peatükis alustatud kartulisalati teema juurde.
 Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
 Kartulite lisamine: 
 
-.. image:: _static/l05_fig7.gif
+.. image:: images/l05_fig7.gif
 
 Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
 Järgmiseks protseduuriks on hapukurkide lisamine:
 
-.. image:: _static/l05_fig8.gif
+.. image:: images/l05_fig8.gif
 
 Hapukoore lisamine:
 
-.. image:: _static/l05_fig9.gif
+.. image:: images/l05_fig9.gif
 
 Soola lisamine:
 
-.. image:: _static/l05_fig10.gif
+.. image:: images/l05_fig10.gif
 
 Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
 
-.. image:: _static/l05_fig11.gif
+.. image:: images/l05_fig11.gif
 
 Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
 
-.. image:: _static/l05_fig12.gif
+.. image:: images/l05_fig12.gif
 
     
 
@@ -364,7 +364,7 @@ Väärtusega alamprogrammid plokkskeemis
 Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
 
 
-.. image:: _static/l05_fig23.gif
+.. image:: images/l05_fig23.gif
  
 Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
 
@@ -545,7 +545,7 @@ Koduülesanded
 ~~~~~~~~~~~~
 Kirjutage funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja joonistab kilpkonnaga neile vastava ristküliku. Joonistage loodud funktsiooni kasutades järgnev kujund:
 
-.. image:: _static/rist.png
+.. image:: images/rist.png
 
 .. hint::
 
@@ -658,7 +658,7 @@ Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul fun
 
 ``KasTumeLaik()`` - Kilpkonn kontrollib, kas ruut, millel asub kilpkonn, on tume.
 
-.. image:: _static/l05_fig19.gif
+.. image:: images/l05_fig19.gif
 
 Koostada abistavaid alamprotseduure.
 
@@ -669,7 +669,7 @@ Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduur
 
 ``Istuta()`` - Kilpkonn istutab lille samale ruudule, kus ta parajasti asub, kusjuures kilpkonna orientatsioon pole oluline. 
 
-.. image:: _static/l05_fig20.gif
+.. image:: images/l05_fig20.gif
 
 Koostada abistavaid alamprotseduure.
 
@@ -678,7 +678,7 @@ Koostada abistavaid alamprotseduure.
 
 Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
 
-.. image:: _static/l05_fig21.gif
+.. image:: images/l05_fig21.gif
 
 **Ülesanne 9.** Bankett
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -690,7 +690,7 @@ Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt pai
 ``KasTool()`` - Kilpkonn kontrollib, kas sellel ruudul, kus kilpkonn seisab, on tool.
 
 
-.. image:: _static/l05_fig22.gif
+.. image:: images/l05_fig22.gif
 
 Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
 
@@ -702,7 +702,7 @@ Soovituslik lisaülesanne: Kolmandate osapoolte moodulid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Neid mooduleid, mis ei kuulu Pythoni standardteeki ja mida te pole ise kirjutanud, vaid internetist alla laadinud, nimetatakse tavaliselt *kolmandate osapoolte* mooduliteks.  Siinkohal demonstreerime ühe lihtsa kolmanda osapoole mooduli kasutamist.
 
-Laadige alla moodul :download:`bingtrans <_static/bingtrans.py>`, mis võimaldab kasutada Microsoft Bing tõlketeenust (NB! salvestage ta nimega ``bingtrans.py``). Seejärel salvestage samasse kausta järgnev programm ja katsetage seda:
+Laadige alla moodul :download:`bingtrans <downloads/bingtrans.py>`, mis võimaldab kasutada Microsoft Bing tõlketeenust (NB! salvestage ta nimega ``bingtrans.py``). Seejärel salvestage samasse kausta järgnev programm ja katsetage seda:
 
 .. sourcecode:: py3
     

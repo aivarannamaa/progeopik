@@ -357,7 +357,7 @@ Sama põhimõte kehtib ka "järjendite ennikute" ja "sõnastike ennikute järjen
 
 Ülesanne 2. Sudoku tabeli sisselugemine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis loeb etteantud failist (:download:`sudoku.txt <_static/sudoku.txt>`) arvud kahemõõtmelisse järjendisse.
+Kirjutage programm, mis loeb etteantud failist (:download:`sudoku.txt <downloads/sudoku.txt>`) arvud kahemõõtmelisse järjendisse.
 
 .. note:: 
     Kui jääte jänni, siis uurige järgmist punkti, aga enne kindlasti üritage ise! Kõik selle ülesande lahendamiseks vajalikud teadmised on teil juba olemas!
@@ -391,7 +391,7 @@ Mitmemõõtmelise järjendi loomisel ``append`` meetodiga tuleb jällegi mõelda
 
 Näide: Eksami statistika
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Õppejõud koostas eksami, milles oli 7 ülesannet. Iga ülesannet eest võis saada kuni 10 punkti. Eksami tulemused on kirjas failis :download:`eksam.txt<_static/eksam.txt>`.
+Õppejõud koostas eksami, milles oli 7 ülesannet. Iga ülesannet eest võis saada kuni 10 punkti. Eksami tulemused on kirjas failis :download:`eksam.txt<downloads/eksam.txt>`.
 
 Leida iga tudengi eksamipunktide kogusumma.
 
@@ -462,7 +462,7 @@ Vahel läheb mitmekordseid tsükleid tarvis ka ühemõõtmeliste järjendite tö
 
 Näide: Libisev keskmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Antud on fail (:download:`aktsiad.txt <_static/aktsiad.txt>`), kus on antud ühe aktsia hinnad järjestikustel päevadel. Küsida kasutajalt päevade arv *k* ning väljastada järjest iga päeva kohta sellele eelnenud *k* päeva keskmine aktsiahind.
+Antud on fail (:download:`aktsiad.txt <downloads/aktsiad.txt>`), kus on antud ühe aktsia hinnad järjestikustel päevadel. Küsida kasutajalt päevade arv *k* ning väljastada järjest iga päeva kohta sellele eelnenud *k* päeva keskmine aktsiahind.
 
 .. sourcecode:: py3
 
@@ -513,7 +513,7 @@ Koostage funktsioon ``kõik_erinevad``, mis tagastab ``True`` või ``False`` vas
     
 Ülesanne 5. Kaugeimad punktid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Failis :download:`punktid.txt<_static/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leida punktid, mis asuvad teineteisest kõige kaugemal. Väljastada ekraanile ka nende punktide koordinaadid.
+Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leida punktid, mis asuvad teineteisest kõige kaugemal. Väljastada ekraanile ka nende punktide koordinaadid.
 
 .. hint::
 
@@ -582,7 +582,7 @@ Kirjutage programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust e
 
 2. Sudoku lahenduse kontrollimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis kontrollib, kas etteantud failis (:download:`sudoku.txt <_static/sudoku.txt>`) on korrektne Sudoku lahendus. Mittekorrektse lahenduse korral tuleb öelda, millises veerus, reas või 3x3 ruudus probleem esineb.
+Kirjutage programm, mis kontrollib, kas etteantud failis (:download:`sudoku.txt <downloads/sudoku.txt>`) on korrektne Sudoku lahendus. Mittekorrektse lahenduse korral tuleb öelda, millises veerus, reas või 3x3 ruudus probleem esineb.
 
 Lisainfot Sudoku kohta: http://en.wikipedia.org/wiki/Sudoku
 
@@ -620,7 +620,7 @@ NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tul
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *See ülesanne on antud koos näitelahendusega, aga enne selle vaatamist üritage ise lahenduseni jõuda!*
 
-Antud on fail :download:`SKP.txt<_static/SKP.txt>`, kus on kirjas riikide nimed ja nende SKP-d semikooloniga eraldatult (miljonites USA dollarites, 2009. aasta seisuga). Küsida kasutajalt, kui suur SKP teda huvitab ning leida kolm sisestatud arvule kõige lähema SKP-ga riiki.
+Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nimed ja nende SKP-d semikooloniga eraldatult (miljonites USA dollarites, 2009. aasta seisuga). Küsida kasutajalt, kui suur SKP teda huvitab ning leida kolm sisestatud arvule kõige lähema SKP-ga riiki.
 
 .. hint::
 

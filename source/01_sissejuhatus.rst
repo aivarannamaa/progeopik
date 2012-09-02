@@ -11,34 +11,24 @@ Mis on programm?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 `Programm`, nii nagu me seda selles õpikus mõistame, on mingi tegevuse kirjeldus. Selle poolest on programmi mõiste väga sarnane teatris ja kinos kasutatavale `käsikirja` e. `stsenaariumi` mõistele (inglise keeles saab kasutada mõlema mõiste kohta lausa sama sõna -- `script`).
 
-.. todo:: pilt: script vs script
+Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest) ning seetõttu on võimalik programmeerimiskeeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil.
 
-Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest) ning seetõttu on võimalik programmeerimiskeeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil:
-
-.. todo:: skeem ilma hiire ja klaverita
-
-Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist:
-
-.. todo:: skeem koos IO seadmetega
+Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist.
 
 
-Mis on programmeerimine?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned inimlikud aspektid.
+.. admonition:: Aga mis on programmeerimine?
 
-Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
+    Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned inimlikud aspektid.
 
-Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on teie arvates juba valmis.
+    Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
 
-Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
+    Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on teie arvates juba valmis.
+
+    Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
 
 Mis on Python?
 ~~~~~~~~~~~~~~
-Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keeles Python kirjutatud programme. Seega ülalpool esitatud programmi jooksutamise skeemi võiks Pythoni kasutamise korral täpsustada järgnevalt:
-
-.. todo:: skeem koos pythoniga arvuti sees
-
-Pythoni interpretaatori käivitamisest tuleb juttu allpool
+Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keeles Python kirjutatud programme. Pythoni interpretaatori kasutamisest tuleb juttu allpool.
 
 .. note::
 
@@ -46,7 +36,7 @@ Pythoni interpretaatori käivitamisest tuleb juttu allpool
     
     Taolisel lähenemisel on omad eelised ja omad puudused, aga on leitud, et vähemalt programmeerimise õppimisel on interpreteeritava keele (nt. Python) kasutamine mugavam.
     
-    
+
 
 .. index::
     single: installeerimine
@@ -231,7 +221,7 @@ Joonistage kilpkonnaga ruut.
 Kirjutage skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbriku. NB! Ärge unustage lisamast skripti algusesse `import`-lauset.
 
 
-.. image:: _static/ymbrik.png
+.. image:: images/ymbrik.png
 
 .. hint::
     
@@ -261,7 +251,7 @@ Kui teil on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saate avada m
 
 .. note::
 
-    Edaspidi tuleb meil näiteid nii käsurea, kui skriptide (st. faili salvestatud programmide) kohta. Kui näide algab käsuviibaga (``>>>``), siis sisaldab see käsurea dialoogi. Vastasel juhul on tegemist skriptiga.
+    Edaspidi tuleb meil näiteid nii käsurea, kui skriptide (st. faili salvestatud programmide) kohta. Kui näide algab käsuviibaga (``>>>``), siis esitab see käsurea dialoogi. Vastasel juhul on tegemist skriptiga.
     
     NB! Käsureal kasutatakse käsuviiba märki vaid selleks, et oleks kergem eristada, millistel ridadel on käsud ja millistel on vastused. Seda ei ole vaja kunagi ise kirjutada. Skiptis ei kasutata seda märki kunagi.
 
@@ -368,39 +358,26 @@ Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida 
 
 Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) ülesannete puhul, on vaja harjutada järjest raskemate ülesannetega, ainult teooria lugemisest ja näiteülesannete läbiproovimisest ei piisa. Seetõttu on õpikus hulgaliselt ülesandeid, mis nõuavad äsja loetud materjali loomingulist kasutamist.
 
-.. note::
+.. admonition:: NB!
 
     Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range, kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
 
-Kui te tunnete, et mõne ülesande lahendamiseks pole antud piisavalt eelteadmisi või juhtnööre, siis teadke, et see on taotluslik -- need ülesanded õpetavad teile tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovige taolist ülesannet enda jaoks ümber sõnastada, otsige seoseid ja sarnasusi teiste ülesannetega, lihtsustage ülesannet, otsige abi internetist, võtke väike puhkepaus, vaadake ülesannet värske pilguga ja proovige jälle. Läbi raskuste saavutatud kogemused ja oskused on teile edaspidi kõige rohkem abiks!
+
+Kui te tunnete, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis teadke, et see on taotluslik -- need ülesanded õpetavad teile tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovige taolist ülesannet enda jaoks ümber sõnastada, otsige seoseid ja sarnasusi teiste ülesannetega, lihtsustage ülesannet, otsige abi internetist, võtke väike puhkepaus, vaadake ülesannet värske pilguga ja proovige jälle. Läbi raskuste saavutatud kogemused ja oskused on teile edaspidi kõige rohkem abiks!
 
 Programmeerimiseks vajalikke eeldusi on ühel rohkem ja teisel vähem, aga kõigil on võimalik neid endas arendada!
 
 
-Programmeerimine ja maagia
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Programmeerimine vs. maagia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb "sõnuda" (oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
 
-On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid teie jaoks segaseks -- eesmärk oli saada lihtsalt esimene ettekujutus programmeerimise olemusest. Seevastu järgmisest peatükist alates on oluline, et te mõistaksite oma programmide iga sümboli otstarvet ja tähendust. Kui teil jääb mingi alusteema segaseks, siis raskendab see oluliselt järgnevate teemade mõistmist. Vajaduselt küsige julgelt nõu kaaslaste või juhendajate käest, aga ärge kirjutage oma programmidesse ühtegi rida, mille otstarvet te ei mõista!
+On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid teie jaoks segaseks või "müstiliseks" -- peatüki eesmärk oli anda lihtsalt esimene ettekujutus programmeerimisest. Tegelikult pole programmeerimises aga midagi müstilist, iga programmilõigu tööpõhimõtet on võimalik alati täielikult ära seletada.
+
+Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid siis, kui te saate programmist lõpuni aru. Seetõttu on oluline, et järgmisest peatükist alates mõistaksite te oma programmide iga sümboli otstarvet ja tähendust. Kui teil jääb mingi alusteema segaseks, siis raskendab see oluliselt järgnevate teemade mõistmist. Vajaduselt küsige julgelt nõu kaaslaste või juhendajate käest, aga **ärge kirjutage oma programmidesse ühtegi rida, mille tähendust te täpselt ei mõista**, huupi programmilõikude kopeerimine on tupiktee!
 
 
-Mis edasi?
---------------
-.. todo::
-
-    Anna aimu sellest, mida selle kursuse teadmistega võiks peale hakata.
-    
-    Suuremad näiteprogrammid:
-    
-    * Konsooliprogramm, mis küsib kuupäeva ja telekanali ning näitab saadete loetelu (tõmmatakse http://kava.ee-st)
-    * GUI programm, mis otsib valitud kaustast välja kõik mp3 failid
-    * Minesweeper mäng tkinter'i canvasega
-
-.. todo:: Miks on kasulik mõelda välja oma projekt.
-
-Ülesanne 8. Projekti idee
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Valige välja mõned esialgsed programmiideed, mida te sooviksite Pythonis realiseerida. Uute teemade õppimisel mõelge, kas ja kuidas te saaksite antud teemat rakendada enda programmi juures.
 
 Kokkuvõte
 -------------
@@ -412,9 +389,65 @@ Sõnastik
 .. todo::
     * programm, programmeerimine, python, interpretaator, silumine, süntaksiviga, täitmisaegne viga, semantiline viga
 
+.. glossary::
+
+
+   environment
+      A structure where information about all documents under the root is
+      saved, and used for cross-referencing.  The environment is pickled
+      after the parsing stage, so that successive runs only need to read
+      and parse new and changed documents.
+
+   source directory
+      The directory which, including its subdirectories, contains all
+      source files for one Sphinx project.    
+
+
+Projekt
+----------
+Selle õpiku näited ja ülesanded on valdavalt fokusseeritud mingile kindlale teemale mida vastavas peatükis käsitletakse. Reaalse elu programmeerimisülesannetel aga pole taolisi teemalipikuid küljes -- programmeerija ise peab selgusele jõudma, milliseid vahendeid antud ülesande lahendamiseks tarvis läheb.
+
+Teine paratamatu puudus õpikunäidete ja ülesannete juures on see, et need ei pruugi olla kõigi lugejate jaoks ühtviisi huvitavad. Seetõttu on programmeerimise õppimisel väga kasulik valida endale mõni suuremat sorti huvipakkuv ülesanne -- nn. `projekt`, ning tegelda sellega paralleelselt uute teemade õppimisega. Tuleb välja, et õppimine on palju ladusam ja huvitavam, kui teil on iga uue teema jaoks juba valmis paras "auk" oma projektiidees, kus õpitut saab kohe rakendada!
+
+Huvitavate ideede realiseerimiseks läheb aga tavaliselt vaja rohkem abivahendeid, kui õpikunäidete jaoks. Nende abivahendite tutvustamiseks ongi iga peatüki lõpus plokk pealkirjaga `Projekt`. Kui õpiku põhitekst keskendub Pythoni üldistele põhimõtetele, siis edaspidistes projektiplokkides demonstreeritakse mingi spetsiifilisema `teegi` (ing.k. `library`) kasutamist, mille abil saaks luua midagi põnevat ja/või praktilist.
+
+Selle peatüki projektiploki eesmärgiks on aidata ideede genereerimisel. Allpool tutvustame kolme küllalt erinevat programmi, mida oleks võimalik kirjutada antud õpiku materjali põhjal. Laadige need programmid oma arvutisse ja käivitage samamoodi, nagu ülalpool toodud näiteprogrammid. 
+
+.. note::
+
+    Arvatavasti jääb nende programmide kood praegu paljuski arusaamatuks, kuid proovige siiski seda lugeda, kasvõi selleks, et saada aimu, mis teid ees ootab :)
+
+"Mis toimub?"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:download:`mistoimub.py <downloads/mistoimub.py>`
+
+See küllalt lihtne programm loeb ja esitab andmeid kahelt veebilehelt. Ühel juhul loetakse sisse XML formaadis infot (XML-i töötlemise kohta tuleb juttu ühes hilisemas projektiplokis), teisel juhul otsitakse soovitud info üles Pythoni tekstitöötlusvahenditega (seda õpetab juba järgmine peatükk).
+
+Eurokalkulaator
+~~~~~~~~~~~~~~~~~~~~
+:download:`eurokalkulaator.py <downloads/eurokalkulaator.py>`
+
+See programm demonstreerib "standardse" graafilise kasutajaliidese loomise võimalusi Pythonis. Programmi loogika on siin väga lihtne, põhitöö on kulunud kasutajaliidese elementide paikasättimisele. Sellele teemale on pühendatud mitu järgnevat projektiplokki ning õpiku lisa `tkinter`.
+
+Minesweeper
+~~~~~~~~~~~~~~~~
+Salvesta järgnevad 3 faili samasse kausta:
+
+    * :download:`eurokalkulaator.py <downloads/minesweeper/minesweeper.py>`
+    * :download:`plain_cover.gif <downloads/minesweeper/plain_cover.gif>`
+    * :download:`flagged_cover.gif <downloads/minesweeper/flagged_cover.gif>`
+    
+
+Siin on tegemist "vabas vormis" graafiline kasutajaliidesega, mis sobib hästi just mängude tegemiseks. Rohkem selgitusi tuleb järgnevates projektiplokkides ning lisas `tkinter`.
+
+Teie enda projekt
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Valige välja mõned esialgsed programmiideed, mida te sooviksite Pythonis realiseerida. Uute teemade õppimisel mõelge, kas ja kuidas te saaksite antud teemat rakendada enda programmi juures.
+
+
 Lisalugemine
 ------------
-
+    
 Pythoni kasutamine süsteemi käsureal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nagu eespool mainitud, on Pythoni programmid tavalised tekstifailid ja nende käivitamiseks läheb vaja vaid Pythoni interpretaatorit. Selle demonstreerimiseks kirjutame oma esimese "Tere maailm!" programmi nüüd Notepad'is (Linuxi ja Mac-i puhul kasutage mõnd suvalist tekstiredaktorit) ning käivitame selle *süsteemi käsureal*.

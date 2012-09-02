@@ -123,7 +123,7 @@ Fraktalid on graafilised kujundid, milles kordub sama motiiv üha väiksemal kuj
 
 Kirjutage rekursiivne funktsioon, mis vastavalt etteantud tasemele joonistab vastava kujundi järgmiselt skeemilt (esimene kujund on tasemega 0, teine tasemega 1 jne):
 
-.. image:: _static/fraktal.png
+.. image:: images/fraktal.png
 
 Selle fraktali joonistamise mitteformaalne juhis: 0 tasemega fraktali joonistamiseks tuleb joonistada kriips; selleks, et joonistada fraktalit tasemega *n*, tuleb joonistada kriips ja selle kriipsu otsa paremale ja vasakule joonistada vähendatud suurusega fraktalid tasemega *n-1*.
 

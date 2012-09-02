@@ -347,7 +347,7 @@ Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuup
 
 3. Palkade analüüs
 ~~~~~~~~~~~~~~~~~~
-Antud on tekstifail :download:`palgad.txt <_static/palgad.txt>`, kus igal real on töötaja nimi, tema vanus ja kuupalk. Kirjutada programm mis arvutab ja väljastab antud andmete põhjal:
+Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real on töötaja nimi, tema vanus ja kuupalk. Kirjutada programm mis arvutab ja väljastab antud andmete põhjal:
 
     * kõige suurema palgaga töötaja nime ja palga suuruse (vihje: suurima palga otsimisel jätke meelde, milliselt positsioonilt te selle leidsite)
     * keskmise palga
@@ -358,7 +358,7 @@ Antud on tekstifail :download:`palgad.txt <_static/palgad.txt>`, kus igal real o
 
     Eesti-Inglise sõnaraamat
 
-    Laadige alla Eesti-Inglise sõnastik(_static/Sonastik.txt) (NB! originaal (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt) on vigase formaadiga). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis "\t") ning lõpuks eestikeelne vaste.
+    Laadige alla Eesti-Inglise sõnastik(downloads/Sonastik.txt) (NB! originaal (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt) on vigase formaadiga). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis "\t") ning lõpuks eestikeelne vaste.
 
     Kirjutage programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võite ise valida)
 
@@ -370,7 +370,7 @@ Soovituslik lisaülesanne: Eesti filmide statistika
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Veebisait http://www.imdb.com kogub ja jagab informatsiooni filmide kohta. Aadressilt ftp://ftp.funet.fi/pub/mirrors/ftp.imdb.com/pub/ saab IMDB poolt kogutud infot alla laadida pakitud tekstifailidena.
 
-Fail :download:`filmid.zip (9MB) <_static/filmid.zip>` on koostatud faili "countries.list.gz" põhjal, ning see sisaldab filmide (ja telesaadete) loetelu koos riigi nime ning valmimise aastaga. Laadige see fail alla ning pakkige lahti.
+Fail :download:`filmid.zip (9MB) <downloads/filmid.zip>` on koostatud faili "countries.list.gz" põhjal, ning see sisaldab filmide (ja telesaadete) loetelu koos riigi nime ning valmimise aastaga. Laadige see fail alla ning pakkige lahti.
 
 .. note:: 
 

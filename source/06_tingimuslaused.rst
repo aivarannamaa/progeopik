@@ -321,7 +321,7 @@ Soovituslik lisaülesanne: Ruudustik
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``ruudustik``, mis võtab argumentideks ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal ja ruudu küljepikkuse, ning joonistab kilpkonna abil vastava ruudustiku. Näiteks funktsiooni väljakutse ``ruudustik(4, 6, 20)`` peaks tegema sellise ruudustiku:
 
-.. image:: _static/ruudustik.png
+.. image:: images/ruudustik.png
 
 .. topic:: Lisaülesande lisa
     

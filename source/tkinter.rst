@@ -72,7 +72,7 @@ Hakkame nüüd selle programmi sisu analüüsima:
 #. Järgnevalt luuakse 3 kasutajaliidese komponenti e. *vidinat* (ing. k *widget*):
 
     * Funktsioon ``ttk.Label`` loob ühe *sildi* (so. vidin teksti näitamiseks). Funktsiooni esimese argumendiga näitasime, et me soovime seda silti kasutada eespool loodud aknas. Kasutades *nimelist argumenti* ``text``, andsime sellele sildile ka soovitud teksti. Käsk ``silt.place(...)`` paigutas loodud sildi soovitud koordinaatidele (ühikuteks on pikslid, punkt (0,0) paikneb akna sisuosa ülemises vasakus nurgas ning koordinaadid kasvavad paremale/alla liikudes).
-        .. image:: _static/coords.gif
+        .. image:: images/coords.gif
         
     * Järgmises plokis lõime ja seadsime paika tekstisisestuskasti (``ttk.Entry``). Selle paigutamisel näitasime ära ka soovitud laiuse.
     
@@ -193,7 +193,7 @@ Lisainfot ``canvas``-e kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/t
 
 Koostage programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saarte lipp" ja joonistab sinna Bahama lipu.
 
-.. image:: _static/bahama.png
+.. image:: images/bahama.png
 
 
 Keerulisemad kujundid
@@ -241,9 +241,9 @@ Kas saadud graafik on korrektne? Miks? Leidke ja parandage viga.
 
 Piltide esitamine
 ~~~~~~~~~~~~~~~~~~
-Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite proovimiseks salvestage programmiga samasse kausta järgmised failid:  :download:`pall.gif <_static/pall.gif>`,
-:download:`avatud.gif <_static/avatud.gif>`,
-:download:`suletud.gif <_static/suletud.gif>`
+Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite proovimiseks salvestage programmiga samasse kausta järgmised failid:  :download:`pall.gif <downloads/pall.gif>`,
+:download:`avatud.gif <downloads/avatud.gif>`,
+:download:`suletud.gif <downloads/suletud.gif>`
 
 .. sourcecode:: py3
 
@@ -385,7 +385,7 @@ Täiendage kella. Lisage minuti- ja tunniosuti, mis samuti muudaks aja jooksul o
 
 Kasutaja tegevusele reageerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Järgmine näide demonstreerib, kuidas uuendada tahvli sisu vastavalt kasutaja tegevusele (näite proovimiseks salvestage samasse kausta :download:`juku.gif <_static/juku.gif>`):
+Järgmine näide demonstreerib, kuidas uuendada tahvli sisu vastavalt kasutaja tegevusele (näite proovimiseks salvestage samasse kausta :download:`juku.gif <downloads/juku.gif>`):
 
 .. sourcecode:: py3
 
@@ -451,7 +451,7 @@ Mõned lisanipid
 -----------------
 Paljude objektide genereerimine tsüklis ning hiirekliki seostamine konkreetse objektiga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole "ligi pääseda", salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvestage samasse kausta :download:`juku.gif <_static/juku.gif>`.
+Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole "ligi pääseda", salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvestage samasse kausta :download:`juku.gif <downloads/juku.gif>`.
 
 .. sourcecode:: py3
 
@@ -520,7 +520,7 @@ Tsüklis genereerimist võib kasutada ka siis kui on vaja palju nuppe või tekst
 
 Pildi vahetamine
 ~~~~~~~~~~~~~~~~~~~~
-Eelmise praktikumi materjalis oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvestage samasse kausta :download:`avatud.gif <_static/avatud.gif>` ja  :download:`suletud.gif <_static/suletud.gif>`.
+Eelmise praktikumi materjalis oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvestage samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
 
 .. sourcecode:: py3
 
