@@ -34,7 +34,7 @@ print()
 # Kõigilt veebilehtedelt ei saa eriti kergelt kätte struktuurset infot.
 # Selleks, et saada TÜ füüsikahoone ilmajaama kodulehelt kätte hetketemperatuuri,
 # otsime vastava tekstijupi üles selle ees ja järel olevate kindlate
-# tekstijuppide järgi
+# tekstijuppide järgi. (vt. http://en.wikipedia.org/wiki/Data_scraping)
 f = urlopen("http://meteo.physic.ut.ee/et/frontmain.php?m=2") 
 sisu = str(f.read()) # loeme kogu lehekülje sisu sõnena sisse
 f.close()
@@ -48,7 +48,7 @@ hinnang = ""
 if temperatuur < -20:
     hinnang = "pane ikka kindad ka kätte, kui välja lähed"
 elif temperatuur > 35:
-    hinnang = "otsi veekogu ja mine kaelani vette"
+    hinnang = "otsi mõni veekogu ja mine kaelani vette"
 else:
     hinnang = "normaalne ilm"
 
