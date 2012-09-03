@@ -5,10 +5,6 @@
 
     Selle peatüki materjali veel täiendatakse
 
-.. todo::
-
-    osa ülesandeid kanda siia üle peatükist "tingimuslaused"
-    
 
 .. index::
     single: tingimuslaused
