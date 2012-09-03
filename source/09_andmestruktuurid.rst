@@ -1,5 +1,8 @@
-IX. Andmestruktuurid
+9. Andmestruktuurid
 =============================================
+.. warning::
+
+    Selle peatüki materjal võib veel muutuda
 
 Selles praktikumis õpite kasutama tavalistest järjenditest veidi keerulisemaid (ja võimsamaid) andmestruktuure -- sõnastikke ja mitmemõõtmelisi järjendeid. Mitmemõõtmeliste järjenditega tuleb kaasa ka mitmekordsete tsüklite teema.
 

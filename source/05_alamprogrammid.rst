@@ -1,5 +1,9 @@
-V. Alamprogrammid e. funktsioonid
+5. Alamprogrammid e. funktsioonid
 ====================================
+.. warning::
+
+    Selle peatüki materjali veel täiendatakse
+
 Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli teil tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks teilt praegu, millise eesmärgiga on teie programmis mingi konkreetne rida või plokk, siis ilmselt peaksite enne vastamist omajagu süvenema.
 
 Kuna enamus praktikas kasutatavaid programme on üüratult keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.

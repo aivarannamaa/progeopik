@@ -1,4 +1,4 @@
-XII. Rekursioon
+12. Rekursioon
 ================
 Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse ülesande lahendamiseks lahendatakse kõigepealt väiksem alamülesanne ja seejärel täiendatakse saadud vastust mingil moel. Sarnast skeemi kasutasime korduvalt tsüklite peatükis.
 

@@ -1,6 +1,6 @@
-I. Sissejuhatus
+1. Sissejuhatus
 ===============
-Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning keele Python põhilisi töövahendeid. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse praktikumidesse.
+Esimese peatüki esmärgiks on tutvustada programmeerimise olemust ja võimalusi ning keele Python põhilisi töövahendeid. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
 
 
 Programmeerimine ja Python
@@ -16,15 +16,15 @@ Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pann
 Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist.
 
 
-.. admonition:: Aga mis on programmeerimine?
+Mis on programmeerimine?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned inimlikud aspektid.
 
-    Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned inimlikud aspektid.
+Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
 
-    Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
+Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on teie arvates juba valmis.
 
-    Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on teie arvates juba valmis.
-
-    Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
+Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
 
 Mis on Python?
 ~~~~~~~~~~~~~~

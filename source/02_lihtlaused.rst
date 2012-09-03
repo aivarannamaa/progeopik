@@ -1,4 +1,4 @@
-II. Avaldised ja lihtlaused
+2. Avaldised ja lihtlaused
 ================================
 
 .. todo::

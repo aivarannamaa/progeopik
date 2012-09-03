@@ -1,5 +1,9 @@
-VI. ``bool`` ja tingimuslaused
+6. ``bool`` ja tingimuslaused
 =======================================
+
+.. warning::
+
+    Selle peatüki materjal võib veel muutuda
 
 Selles praktikumis käsitleme kahte teemat. Kõigepealt uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi
 

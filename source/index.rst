@@ -14,12 +14,6 @@ Sisukord
    07_jarjendid1
    08_jarjendid2
    09_andmestruktuurid
-   10_oop1
-   11_oop2
-   12_rekursioon
-   13_keerukus
-   14_varia
-   15_kokkuvote
    tkinter
    python2
 

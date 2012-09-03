@@ -1,4 +1,4 @@
-XV. Kokkuvõte
+15. Kokkuvõte
 =======================================
 
 Kokkuvõte ning järgmiste kursuste tutvustus: algoritmid, süsteemid, veeb, tarkvara arendusprotsess, FP

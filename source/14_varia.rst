@@ -1,4 +1,4 @@
-XIV. Varia
+14. Varia
 ==========
 
 Erindid

@@ -1,5 +1,9 @@
-IV. Algoritm ja plokkskeem
+4. Algoritm ja plokkskeem
 ==========================
+
+.. warning::
+
+    Selle peatüki materjali veel täiendatakse
 
 Peale antud teema läbimist üliõpilane oskab
 

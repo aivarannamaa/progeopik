@@ -1,4 +1,4 @@
-Lisa: Graafilised programmid
+Lisa: tkinter
 =================================
 Selles peatükis vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Peatüki teises osas uurime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
 

@@ -507,3 +507,7 @@ p {
 .admonition-tegemata *, .admonition-todo * {
     background-color:pink ! important;
 }
+
+.admonition.warning, .admonition.warning * {
+	background-color:#FF9900 ! important;
+}
