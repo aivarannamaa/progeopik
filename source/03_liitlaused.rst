@@ -135,7 +135,7 @@ Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas ol
 
 .. topic:: Muutuja muutmine
 
-    Nagu 2. praktikumis mainitud, on võimalik Pythonis muutuja väärtust uue väärtusega üle kirjutada. Tsüklid ongi see koht, kus seda võimalust kõige sagedamini tarvis läheb.
+    Nagu 2. peatükis mainitud, on võimalik Pythonis muutuja väärtust uue väärtusega üle kirjutada. Tsüklid ongi see koht, kus seda võimalust kõige sagedamini tarvis läheb.
     
     Muutuja väärtuse suurendamiseks kirjutasime eelnevas näites ``i = i + 1``, st. ``i`` uueks väärtuseks sai ``i`` hetkeväärtus + 1. Sellist suurendamist mingi arvu võrra saab Pythonis ka lühemalt kirjutada: ``i += 1``. Muutuja väärtuse vähendamiseks võib analoogselt kirjutada ``i -= 1``.
 
@@ -295,7 +295,7 @@ Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seej�
 
 .. topic:: Etteruttavalt:
 
-    Tingimuslause sisse võib panna veel teisi tingimuslauseid või tsükleid (mille sees võib omakorda olla tingimuslauseid ja tsükleid jne.) Lisaks on võimalik tingimusi omavahel kombineerida kasutades operaatoreid ``and`` ja ``or``. Nende teemadega tegeleme põhjalikult 4. praktikumis.
+    Tingimuslause sisse võib panna veel teisi tingimuslauseid või tsükleid (mille sees võib omakorda olla tingimuslauseid ja tsükleid jne.) Lisaks on võimalik tingimusi omavahel kombineerida kasutades operaatoreid ``and`` ja ``or``. Nende teemadega tegeleme põhjalikult peatükis `Tingimuslaused`.
  
 Funktsioonid e. uute käskude loomine
 -----------------------------------------

@@ -4,7 +4,7 @@
 
     Selle peatüki materjal võib veel muutuda
 
-Selle praktikumi põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.
+Selle peatüki põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.
 
 
 
@@ -65,7 +65,6 @@ Nagu juba teate, võib ``for``-tsükli aluseks olla ka mingi tekstifail.
 
 Kirjutage programm, mis loeb tekstifailist ükshaaval ridu (eeldame, et igal real on üks arv) ning koostab selle käigus järjendi, mis sisaldab failist leitud paarisarve. Koostatud järjend kuvada ekraanile.
 
-(Meeldetuletuseks: 2. praktikum, :ref:`sisendi-lugemine-failist`)
 
 Juhuslike järjendite genereerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -313,7 +312,7 @@ Koduülesanded
 
 1. Kuupäevade töötlemine
 ~~~~~~~~~~~~~~~~~~~~~~~~
-*See ülesande lahendamisel tuleks abifunktsioonidena kasutada 4. praktikumis loodud funktsioone.*
+*See ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.*
 
 Kirjutage funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt. ``'24.02.1918'``), ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
 
@@ -401,7 +400,7 @@ Vihjed:
 
 .. _tagasivaade_1-6:
 
-*Tagasivaade praktikumidele I-VI*
+*Tagasivaade peatükkidele 1-8*
 ---------------------------------
 On teada, et mingi teema valdamiseks tuleb tegelda vaheldumisi nii teooria, kui praktikaga. Praeguseks olete harjutanud läbi kõik olulisemad Python keele võimalused ja nüüd on paras aeg astuda samm tagasi ning vaada juba läbitud materjalile uue, veidi kogenuma pilguga.
 
@@ -431,7 +430,7 @@ Muutujad
 ~~~~~~~~
 Muutujad võimaldavad meil tegelda mingite väärtustega ilma, et me peaks mainima mingit konkreetset väärtust. Näiteks, kui me salvestame kaks kasutaja poolt sisestatud arvu muutujatesse ``a`` ja ``b``, siis nende kokku liitmisel ei huvita meid enam, mis on nende muutujate konkreetne väärtus. 
 
-Soovitav on lugeda uuesti läbi 2. praktikumi osa :ref:`muutujad`, tõenäoliselt näete nüüd muutujate olemust juba uue pilguga.
+Soovitav on lugeda uuesti läbi 2. peatüki osa :ref:`muutujad`, tõenäoliselt näete nüüd muutujate olemust juba uue pilguga.
 
 Funktsioonid
 ~~~~~~~~~~~~
@@ -451,7 +450,7 @@ Kui muutujad võimaldavad meil kasutada mingit väärtust ilma, et me peaksime m
 
 Tõenäoliselt oskate isegi ilma funktsiooni definitsiooni süvenemata arvata, mida taoline programm ekraanile prindib. Põhjus on selles, et antud funktsiooni olemus tuleb välja juba tema nimest ja üldjuhul võime me eeldada, et funktsiooni tegelik definitsioon on tema nimele vastav. Seetõttu, kui meil on sobivad funktsioonid juba defineeritud, siis saame me programmi põhiosas (või järgmiste funktsioonide defineerimisel) töötada "kõrgemal tasemel", ilma "pisiasjade" pärast muretsemata.
 
-Kuna funktsioonide teema on programmeerimise algkursuses tavaliselt tudengitele kõige hägusam, siis on soovitav lugeda uuesti läbi 3. praktikumikumist vähemalt järgmised osad:
+Kuna funktsioonide teema on programmeerimise algkursuses tavaliselt tudengitele kõige hägusam, siis on soovitav lugeda uuesti läbi 3. peatükist vähemalt järgmised osad:
 
     * :ref:`param-vs-input`
     * :ref:`return-vs-print`
@@ -484,7 +483,7 @@ Järjendeid saab programmi "sisse kirjutada", koostada teiste järjendite põhja
 
 Mis ootab ees?
 ~~~~~~~~~~~~~~
-Järgmistes praktikumides tulevad küll mõned uued teemad aga põhiliselt keskendume suuremate (ja huvitavamate) ülesannete lahendamisele, kasutades juba õpitud vahendeid.
+Järgmistes peatükkides tulevad küll mõned uued teemad aga põhiliselt keskendume suuremate (ja huvitavamate) ülesannete lahendamisele, kasutades juba õpitud vahendeid.
 
 
 .. todo::   

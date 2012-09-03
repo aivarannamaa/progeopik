@@ -229,7 +229,7 @@ Nagu näete, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras n
         tere("Kalle", 3)
         tere("Malle")
     
-    Eelmises praktikumis juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (so. reavahetus). See on põhjus, miks ``print`` vaikimisi kuvab teksti koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st. seda ei saa anda positsiooniliselt.
+    Eespool juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (so. reavahetus). See on põhjus, miks ``print`` vaikimisi kuvab teksti koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st. seda ei saa anda positsiooniliselt.
 
 Ülesanne 3. Värviline ruut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -283,7 +283,7 @@ Väärtusega funktsioonid
         
 
 
-Funktsioone ``ruut`` ja ``print`` kasutasime käskudena -- meid huvitas see **tegevus**, mida see funktsioon tegi (kilpkonna liigutamine või ekraanile kirjutamine). Seevastu, eelmises praktikumis kasutasime muuhulgas ka funktsioone ``sin`` ning ``sqrt``, aga nende kasutusviis oli hoopis erinev -- meid huvitas hoopis vastava funktsiooni rakendamisel saadav **väärtus**.
+Funktsioone ``ruut`` ja ``print`` kasutasime käskudena -- meid huvitas see **tegevus**, mida see funktsioon tegi (kilpkonna liigutamine või ekraanile kirjutamine). Seevastu, eelmises peatükis kasutasime muuhulgas ka funktsioone ``sin`` ning ``sqrt``, aga nende kasutusviis oli hoopis erinev -- meid huvitas hoopis vastava funktsiooni rakendamisel saadav **väärtus**.
 
 TODO: selgita, et sqrt ei prindi vastust ekraanile, seda teeb IDLE! Too siin uuesti(!) välja näide, kus sqrt'd kasutatakse alamaavaldisena.
 
@@ -406,7 +406,7 @@ Funktsiooni definitsioonis (olgu väärtusega või ilma) saab kasutada tingimusl
         
         return tulemus
 
-Kui võrdlete seda funktsiooni eelmises praktikumis näidatud absoluutväärtuse arvutamise programmiga, siis märkate, et erinevus on vaid sisendandmete saamises (parameeter vs. ``input``) ning tulemuse esitamises (``return`` vs. ``print``).
+Kui võrdlete seda funktsiooni kolmandas peatükis näidatud absoluutväärtuse arvutamise programmiga, siis märkate, et erinevus on vaid sisendandmete saamises (parameeter vs. ``input``) ning tulemuse esitamises (``return`` vs. ``print``).
 
 .. note:: 
 
@@ -436,7 +436,7 @@ Vaatame üle peamised põhjused, miks on funktsioonid kasulikud.
     
 *DRY*-printsiip
 ~~~~~~~~~~~~~~~
-Eelmises praktikumis anti koduülesanne pere sissetuleku arvutamiseks. Tõenäoliselt kasutasite programmis netopalga arvutamise valemit kahes kohas (vastavalt isa ja ema palga jaoks).
+Kolmandas peatükis oli ülesanne pere sissetuleku arvutamiseks. Tõenäoliselt kasutasite programmis netopalga arvutamise valemit kahes kohas (vastavalt isa ja ema palga jaoks).
 
 Kui taoline programm oleks reaalses kasutuses, siis nt. tulumaksuvaba miinimumi muutmise korral tuleks parandused teha kahes kohas. Antud näite puhul oleks see piisavalt lihtne, kuid reaalsetes programmides juhtub tihti, et vajalik parandus unustatakse mõnes kohas tegemata. Seetõttu propageeritakse programmeerimisel nn. **DRY-printsiipi** -- see tuleb ingliskeelsest väljendist *Don't Repeat Yourself*, millega tahetakse öelda, et sarnase koodi kordamist tuleks vältida.
 
@@ -470,7 +470,7 @@ Kui *DRY*-printsiibi juures rõhutasime seda, et funktsioonid aitavad sama koodi
 
     See ülesanne demonstreerib väga hästi *DRY*-printsiibi ning abstraktsiooni olemust.
 
-Võtke aluseks eelmise praktikumi koduülesanne "Pere sissetulek". Muutke lahendust selliselt, et netopalga valem oleks programmis kirja pandud vaid ühes kohas.
+Võtke aluseks kolmanda peatüki koduülesanne "Pere sissetulek". Muutke lahendust selliselt, et netopalga valem oleks programmis kirja pandud vaid ühes kohas.
 
 
 .. index::
@@ -481,7 +481,7 @@ Moodulid ja ``import``
 ----------------------
 Pythoniga tuleb kaasa tuhandeid erinevaid funktsioone, lisaks kirjutavad Pythoni programmeerijad üle maailma igapäevaselt tuhandeid funktsioone juurde. Sellises situatsioonis on täiesti loomulik, et mitmele erinevale funktsioonile pannakse sama nimi. Selleks, et erinevatel funktsioonidel oleks siiski võimalik vahet teha, jagatakse need **moodulitesse**.
 
-Eelmistes praktikumides kohtusite juba moodulitega ``math`` ja ``turtle``, ning nägite, et mooduli sisu muutub kättesaadavaks ``import`` käsuga, nt:
+Eelmistes peatükkides kohtusite juba moodulitega ``math`` ja ``turtle``, ning nägite, et mooduli sisu muutub kättesaadavaks ``import`` käsuga, nt:
 
 .. sourcecode:: py3
 
@@ -514,7 +514,7 @@ Ka selle variandi puhul ei pea oma muutujate nimede valimisel muretsema, kui imp
     
     Uue mooduli loomine on Pythonis imelihtne -- funktsioonide definitsioonid tuleb lihtsalt salvestada tavalisse *py*-laiendiga faili. Mooduli nimeks saab seejuures tema failinimi ilma *py*-laiendita. Selleks, et neid funktsioone saaks kasutada teistes failides, tuleb seal teha sobiv ``import``, justkui ``math`` või ``turtle`` mooduli puhul. 
     
-    Siit tuleb ka välja, miks esimeses praktikumis märgiti, et omaloodud faili nimeks ei tohiks panna `turtle.py`. Kui panna, siis hakatakse ``import turtle`` puhul funktsioone ``left()``, ``right()`` jt otsime uuest failist, kus neid aga pole.
+    Siit tuleb ka välja, miks esimeses peatükis märgiti, et omaloodud faili nimeks ei tohiks panna `turtle.py`. Kui panna, siis hakatakse ``import turtle`` puhul funktsioone ``left()``, ``right()`` jt otsime uuest failist, kus neid aga pole.
 
     NB! Erinevalt standardmoodulitest, peab enda moodul olema üldjuhul samas kaustas, kus seda kasutav programm (täpsem info siit: http://docs.python.org/py3k/tutorial/modules.html#the-module-search-path)
 
@@ -524,7 +524,7 @@ Ka selle variandi puhul ei pea oma muutujate nimede valimisel muretsema, kui imp
 
 Meetodid
 --------
-Eelmises praktikumis nägime, et sõnede puhul kirjutati mõne funktsiooni nimi (nt. ``count``) sõne ja argumentide vahele, nt:
+Teises peatükis nägime, et sõnede puhul kirjutati mõne funktsiooni nimi (nt. ``count``) sõne ja argumentide vahele, nt:
 
 .. sourcecode:: py3
 
@@ -718,7 +718,7 @@ Laadige alla moodul :download:`bingtrans <downloads/bingtrans.py>`, mis võimald
 
 Me importisime moodulist ``bingtrans`` funktsiooni nimega ``translate``, mis võtab argumentideks tõlgitava teksti, lähtekeele koodi (eesti keele kood on ``'et'``) ning sihtkeele koodi. Proovige ka teisi keelekoode (nt. ``'ru'``, ``'fr'``, ``'ko'``).
 
-Proovige nüüd kohandada antud näidet nii, et tõlgitavad sõnad või laused loetakse tekstifailist (vajadusel uurige failist lugemise näidet eelmise praktikumi materjalist).
+Proovige nüüd kohandada antud näidet nii, et tõlgitavad sõnad või laused loetakse tekstifailist (vajadusel uurige failist lugemise näidet kolmanda peatüki materjalist).
 
 .. note::
     Selle ülesandega tahtsime demonstreerida, et internetis on saadaval Pythoni mooduleid, mis võivad väga tehnilise programmeerimisülesande muuta väga lihtsaks. Selleks, et saada aimu, milliseid võimalusi veel leidub, soovitame külastada aadressi http://pypi.python.org/pypi

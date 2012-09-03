@@ -6,7 +6,7 @@
 
 Meie senistes programmides on iga andmejupp kuskil eraldi ära mainitud (nt. muutujana). Kui mõelda reaalsete programmide peale (nt. firma raamatupidamissüsteem), siis üldjuhul ei ole võimalik kõiki asjassepuutuvaid objekte (nt. töötajad või arved) programmis üksikult ära mainida, kuna selliste objektide hulk pole piiratud.
 
-Selles praktikumis õpite, kuidas käsitleda mitut objekti ühe kogumina ning mida taolise kogumiga Pythonis teha saab.
+Selles peatükis õpite, kuidas käsitleda mitut objekti ühe kogumina ning mida taolise kogumiga Pythonis teha saab.
 
 Järjendid
 ---------
@@ -166,7 +166,7 @@ Paljude ülesannete puhul on vaja antud järjend elementhaaval läbi vaadata nin
 
 Sellise töötlemise juures kasutatakse enamasti abimuutujat, mida nimetatakse *akumulaatoriks* ja millesse kogutakse samm-sammult infot läbivaadatud järjendi osa kohta. Antud näite käivitamisel on igal tsükli sammul muutuja ``seni_suurim`` väärtuseks läbivaadatud elementide hulgast suurim.
 
-Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad etteantud järjendi kohta mingit infot. Näiteks funktsioon ``max`` teeb sama, mis meie eelmise näite funktsioon. Selle praktikumi raames aga üritame taolisi funktsioone ise "leiutada", et õppida järjendeid ning ``for``-tsüklit paremini tundma.
+Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad etteantud järjendi kohta mingit infot. Näiteks funktsioon ``max`` teeb sama, mis meie eelmise näite funktsioon. Selles peatükis aga üritame taolisi funktsioone ise "leiutada", et õppida järjendeid ning ``for``-tsüklit paremini tundma.
 
 Ülesanne 2. Elementide summa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -232,7 +232,7 @@ Nüüd peaks olema selge, miks meie ``for``-tsükli näide sedasi käitus -- ``r
 
 .. note::
 
-    Mõnikord läheb meile korda ainult see, mitu korda tsükli keha on vaja korrata, st. tsüklimuutuja konkreetsete väärtuste vastu me huvi ei tunnegi. Järgnev ruudu joonistamise näide peaks olema tuttav eelmisest praktikumist, ainult, et seekord kasutame me ``while``-tsükli asemel ``for``-tsüklit:
+    Mõnikord läheb meile korda ainult see, mitu korda tsükli keha on vaja korrata, st. tsüklimuutuja konkreetsete väärtuste vastu me huvi ei tunnegi. Järgnev ruudu joonistamise näide peaks olema tuttav kolmandast peatükist, ainult, et seekord kasutame me ``while``-tsükli asemel ``for``-tsüklit:
 
     .. sourcecode:: py3
         
@@ -328,7 +328,7 @@ Tegelikult saaks ``for``-tsükli asemel alati kasutada ka ``while``-tsüklikt, a
 |         i += 1                   |                                   |
 +----------------------------------+-----------------------------------+
 
-Kui meenutate eelmist praktikumi, siis selleks, et ``while`` tsükliga teha mingit toimingut *n* korda, tuleb:
+Kui meenutate kolmandat peatükki, siis selleks, et ``while`` tsükliga teha mingit toimingut *n* korda, tuleb:
 
     * võtta kasutusele abimuutuja (loendur) algväärtusega 0
     * tsükli kehas suurendada muutuja väärtust igal kordusel
@@ -336,7 +336,7 @@ Kui meenutate eelmist praktikumi, siis selleks, et ``while`` tsükliga teha ming
 
 Nagu näha, annab ``for``-tsükkel koos ``range``-ga sama tulemuse palju lihtsamalt -- tsüklimuutuja algväärtustamine, selle suurendamine ja tsükli lõpetamise kontrollimine toimuvad kõik automaatselt. Seetõttu ongi soovitav loenduril põhinevad tsüklid kirjutada ``for``-tsüklina.
 
-Samas, mõnede probleemide lahendamisel ei piisa ``for``-tsüklist. Näiteks eelmises praktikumis kirjeldatud arvamismängu ei saa ``for``-tsükliga kirja panna. Seetõttu ongi Pythonis kaks erinevat korduslauset -- paindlik, aga pisut tülikas ``while``-lause ning mugav, aga teatud juhtudel ebasobiv ``for``-lause.
+Samas, mõnede probleemide lahendamisel ei piisa ``for``-tsüklist. Näiteks kolmandas peatükis kirjeldatud arvamismängu ei saa ``for``-tsükliga kirja panna. Seetõttu ongi Pythonis kaks erinevat korduslauset -- paindlik, aga pisut tülikas ``while``-lause ning mugav, aga teatud juhtudel ebasobiv ``for``-lause.
 
 
 Veel järjendioperatsioone
@@ -345,7 +345,7 @@ Veel järjendioperatsioone
 
 Sõne kui järjend
 ~~~~~~~~~~~~~~~~
-Nagu eelmises praktikumis juba mainitud, saab sõnet käsitleda justkui sümbolite järjendit:
+Nagu eespool juba mainitud, saab sõnet käsitleda justkui sümbolite järjendit:
 
 .. sourcecode:: py3
 
@@ -540,6 +540,15 @@ Kui olete programmi tööle saanud, siis muutke programmi põhiosa funktsiooniks
                 print "Failis oli tundmatu käsk!"
 
     Sisuliselt kirjutasime me just interpretaatori niiöelda "Kilpkonna keele" jaoks, mis tõlkis lihtsalt loetud käsud meie kilpkonnale arusaadavasse keelde. Põhimõtteliselt sama moodi toimivad ka teiste keelte interpretaatorid. Interpretaator ei ole seega midagi keerulist ja abstraktset – tegu on lihtsalt asjaga, mis loeb käske ja täidab neid.
+
+Projekt
+---------
+Miniprojekti teema
+~~~~~~~~~~~~~~~~~~~~
+*Järgmise praktikumi* ja sellele järgneva viimase koduülesande teemaks on realiseerida mingi lihtne graafiline programm -- see võib olla midagi asjalikku (nt. mingi kalkulaator või teisendaja), mingi lihtne mäng (nt. ülespoomine, trips-traps-trull, http://en.wikipedia.org/wiki/Sokoban, http://en.wikipedia.org/wiki/Fifteen_puzzle, ...) või ka mingi huvitav mittetriviaalne graafik või animatsioon. Kui teil on piisavalt suurejooneline idee, siis võite teha projekti ka kahekesi või kolmekesi.
+
+*Selle nädala ülesandeks* on mõelda välja miniprojekti, visandada tulemuseks oleva programmi oodatav välimus ja alustada programmi kirjutamisega. 
+
 
      
 

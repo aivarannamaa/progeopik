@@ -16,7 +16,7 @@
     
     Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
 
-Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses praktikumis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
+Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
 
 .. topic:: Soovitus:
 
@@ -429,7 +429,7 @@ Pythoni käsureal toimub avaldiste sisestamine ning tulemuste väljastamine ilma
     
 Käsk ``print``
 ~~~~~~~~~~~~~~
-Skriptina esitatud programmis saab väärtusi kuvada ekraanile käsuga **print**. Salvesta järgnev näide faili ning käivita. (Vajadusel vaadake sellekohast juhendit eelmise praktikumi materjalist.)
+Skriptina esitatud programmis saab väärtusi kuvada ekraanile käsuga **print**. Salvesta järgnev näide faili ning käivita. (Vajadusel vaadake sellekohast juhendit eelmisest peatükist.)
 
 .. sourcecode:: py3
 

@@ -4,7 +4,7 @@
 
     Selle peatüki materjal võib veel muutuda
 
-Selles praktikumis õpite kasutama tavalistest järjenditest veidi keerulisemaid (ja võimsamaid) andmestruktuure -- sõnastikke ja mitmemõõtmelisi järjendeid. Mitmemõõtmeliste järjenditega tuleb kaasa ka mitmekordsete tsüklite teema.
+Selles peatükis õpite kasutama tavalistest järjenditest veidi keerulisemaid (ja võimsamaid) andmestruktuure -- sõnastikke ja mitmemõõtmelisi järjendeid. Mitmemõõtmeliste järjenditega tuleb kaasa ka mitmekordsete tsüklite teema.
 
 Aga enne, kui asume põhiteemade juurde, vaatame kiiresti üle paar lihtsamat teemat: *sõnede formaatimine* ja *ennikud*.
 
@@ -499,7 +499,7 @@ Sisemise tsükli jaoks on valitud väiksem indeksivahemik (``range(i-k, i)``), m
 
 .. note::
 
-    Tegelikult on seda ülesannet võimalik lahendada ka ilma sisemist tsüklit kasutamata. Sellest, kuidas seda teha, on võimalik lugeda selle praktikumi lisas "Keerukus". 
+    Tegelikult on seda ülesannet võimalik lahendada ka ilma sisemist tsüklit kasutamata. Sellest, kuidas seda teha, on võimalik lugeda selle peatüki lisas "Keerukus". 
 
 
 Ülesanne 4. Erinevad väärtused
@@ -593,7 +593,7 @@ NB! testige oma programmi nii korrektse kui ka mittekorrektse lahendusega!
 
 .. hint::
 
-    Ülesande lahendamisel võib olla abiks üks selles praktikumis defineeritud funktsioonidest.
+    Ülesande lahendamisel võib olla abiks üks selles peatükis defineeritud funktsioonidest.
     
 
 3. Eksami statistika, 2. osa

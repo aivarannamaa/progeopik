@@ -284,13 +284,11 @@ Antud on linnakese elanike arv *n*. Leida mitme tunni pärast teavad kuulujuttu 
 
 Lisaülesanne. Arvamismäng
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Realiseerige IV praktikumis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
+Realiseerige 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
 
 Lisaülesanne. Fibonacci arvud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjutage funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
-
-(Tahvlipraktikumis anti selle ülesande lahendus, kus kasutati 3 argumendiga abifunktsiooni. Proovige leida mingi alternatiivne lahendus.)
 
 .. hint:: 
 

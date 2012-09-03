@@ -1,12 +1,10 @@
 Lisa: tkinter
 =================================
-Selles peatükis vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Peatüki teises osas uurime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
+Käesolevas lisas vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Seejärel demonstreerime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
 
 .. topic:: Tähelepanu!
 
-    Käesolev praktikum on mõeldud peamiselt eesoleva "miniprojekti" ettevalmistuseks. Miniprojekti käigus tuleb realiseerida mingi lihtne graafiline programm vabalt valitud teemal, olgu see kasulik, meelelahtuslik või muidu huvitav. (Täpsemalt on sellest juttu koduülesannete osas).
-    
-    Alljärgnev mahukas materjal toetab erinevaid valikuid miniprojekti teemade osas. Seetõttu on soovitav see alguses põgusalt üle vaadata ja seejärel keskenduda nendele ülesannetele ja teemadele, mida teil läheb tarvis oma projekti teostamiseks või mis teile rohkem huvi pakuvad.
+    Alljärgnev mahukas materjal toetab erinevaid valikuid projekti teemade osas. Seetõttu on soovitav see alguses põgusalt üle vaadata ja seejärel keskenduda nendele ülesannetele ja teemadele, mida teil läheb tarvis oma projekti teostamiseks või mis teile rohkem huvi pakuvad.
 
 Tk ja ``tkinter``
 -----------------------
@@ -17,7 +15,7 @@ Käesolevas materjalis eeldame Python 3-ga kaasas olevat ``tkinter``-i versiooni
 .. note::
 
 
-    Kuna ``tkinter`` on väga paljude võimalustega, siis selles praktikumis saame demonstreerida vaid väikest osa. Paraku ei ole ka Pythoni standard-dokumentatsioon ``tkinter``-i osas piisavalt põhjalik ja seetõttu tuleks huvi korral otsida lisainfot internetist. Kuna *Tk*-le pandi algus juba aastal 1988, leidub nii *Tk* kui ``tkinter``-i kohta interetis palju materjali, millest kõik ei kajasta adekvaatselt uuemate versioonide võimalusi. Alljärgnevalt on toodud mõned paremad kohad, kust uuemate *Tk* versioonide kohta infot leida:
+    Kuna ``tkinter`` on väga paljude võimalustega, siis siin saame demonstreerida vaid väikest osa. Paraku ei ole ka Pythoni standard-dokumentatsioon ``tkinter``-i osas piisavalt põhjalik ja seetõttu tuleks huvi korral otsida lisainfot internetist. Kuna *Tk*-le pandi algus juba aastal 1988, leidub nii *Tk* kui ``tkinter``-i kohta interetis palju materjali, millest kõik ei kajasta adekvaatselt uuemate versioonide võimalusi. Alljärgnevalt on toodud mõned paremad kohad, kust uuemate *Tk* versioonide kohta infot leida:
 
     * http://www.tkdocs.com/ -- kõige parem koht Tk ja ``tkinter``-i põhimõtete õppimiseks.  
     * http://infohost.nmt.edu/tcc/help/pubs/tkinter/ -- põhjalik materjal. Käib ``tkinter`` 8.4 kohta (st. ei kirjelda "platvormi stiiliga" vidinaid). Samas väga hea koht ``canvas``-e võimalustega tutvumiseks.
@@ -520,7 +518,7 @@ Tsüklis genereerimist võib kasutada ka siis kui on vaja palju nuppe või tekst
 
 Pildi vahetamine
 ~~~~~~~~~~~~~~~~~~~~
-Eelmise praktikumi materjalis oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvestage samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
+Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvestage samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
 
 .. sourcecode:: py3
 
@@ -605,12 +603,6 @@ Koduülesanded
 ``tkinter``-i võimaluste uurimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eksperimenteerige ``tkinter``-iga. Tutvuge aadressil  http://www.tkdocs.com/tutorial/firstexample.html oleva Tk baasil tehtud programmiga. Uurige, milliseid erinevaid vidinaid ``tkinter`` pakub (http://www.tkdocs.com/tutorial/widgets.html ja http://www.tkdocs.com/tutorial/morewidgets.html).
-
-Miniprojekti teema
-~~~~~~~~~~~~~~~~~~~~
-*Järgmise praktikumi* ja sellele järgneva viimase koduülesande teemaks on realiseerida mingi lihtne graafiline programm -- see võib olla midagi asjalikku (nt. mingi kalkulaator või teisendaja), mingi lihtne mäng (nt. ülespoomine, trips-traps-trull, http://en.wikipedia.org/wiki/Sokoban, http://en.wikipedia.org/wiki/Fifteen_puzzle, ...) või ka mingi huvitav mittetriviaalne graafik või animatsioon. Kui teil on piisavalt suurejooneline idee, siis võite teha projekti ka kahekesi või kolmekesi.
-
-*Selle nädala ülesandeks* on mõelda välja miniprojekti, visandada tulemuseks oleva programmi oodatav välimus ja alustada programmi kirjutamisega. 
 
 
 Lisalugemine

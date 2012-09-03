@@ -5,11 +5,8 @@
 
     Selle peatüki materjal võib veel muutuda
 
-Selles praktikumis käsitleme kahte teemat. Kõigepealt uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi
+Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi
 
-.. topic:: NB!
-
-    Osadele selle praktikumi ülesannetele tuleb loogiline jätk koduülesannetes -- seega on soovitav praktikumis lahendatud ülesanded koju kaasa võtta.
 
 .. index::
     single: bool; tõeväärtustüüp
@@ -274,7 +271,7 @@ Kirjutage funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu 
 
 Seejärel kirjutage programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta. Kui neile vastav kuupäev on legaalne, siis kuvada ekraanile vastav kuupäev sõnena, vastasel juhul kuvada ``'Viga: mittelegaalne kuupäev'``.
 
-Kasutage abifunktsioonidena praktikumi ajal loodud funktsioone (vt. ülesandeid 2-5).
+Kasutage abifunktsioonidena ülalpood loodud funktsioone (vt. ülesandeid 2-5).
 
 2. Õpikuülesanne
 ~~~~~~~~~~~~~~~~
