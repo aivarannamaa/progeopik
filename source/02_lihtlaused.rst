@@ -1,20 +1,11 @@
 2. Avaldised ja lihtlaused
 ================================
 
-.. todo::
-    * Millest koosnevad programmid? ...
-    * Meeldetuletuseks üks lihtlausetega programm eelmisest peatükist
-    * IPO? (Zelle Ch2)
-    * kas tutvustada input / output enne ja avaldised (data) pärast?
-    * tee (plokk?)skeem, mis näitab, et suurtes programmides on input/output'i osakaal palju väiksem (siin on see IPO mõiste suht sobilik)
-    * see, et avaldist saab käsureal kasutada ilma prindita, võiks mainida avaldiste osa juures?
+.. warning::
+
+    Selle peatüki materjal võib veel muutuda
 
 
-.. note::
-
-    Üks mugav viis, kuidas Windowsis avada olemasolevaid Pythoni faile IDLE-s, on teha `Windows Explorer`-is soovitud failil paremklõps ning valida `Edit with IDLE`.
-    
-    Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
 
 Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
 
@@ -222,43 +213,67 @@ Väärtustage järgnevad aritmeetilised avaldised Pythoni käsureal:
     
 Sõned
 --------
-**Sõne** (ing.k `string`, lühend `str`) on andmetüüp teksti esitamiseks. Enamasti piisab Pythonis sõne kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``. Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei 
+**Sõne** (ing.k `string`, lühend `str`) on andmetüüp teksti esitamiseks. Enamasti piisab Pythonis sõne kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``. Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde.
 
-Asi läheb veidi keerulisemaks, kui sõne sees kasutada jutumärke, ülakomasid või muid erisümboleid
-.. todo:: näita järgnevate stringide tegelikku sisu ``print``-i abil
+Asi läheb veidi keerulisemaks, kui sõne sees kasutada jutumärke, ülakomasid või muid erisümboleid. Järgnevalt demonstreerime erinevaid sõnede kirjapaneku viise (kasutame ``print`` käsku, kuna see toob välja ka sõne tegeliku sisu):
 
-.. topic:: Mõned näited keerulisematest sõneliteraalidest:
-
-    .. sourcecode:: py3
-
-        # kui tekstis on ülakomasid, siis kasuta piiritlejaks jutumärke ja vastupidi
-        "Rock 'n' roll"  
-        'Jim ütles vaid: "Siin see on."'
+    * kui tekstis on ülakomasid, siis kasuta piiritlejaks jutumärke ja vastupidi:
+    
+        .. sourcecode:: py3
         
-        # piiritlejateks võivad olla ka 3-kordsed ülakomad või jutumärgid
-        # sel juhul saab teksti sees vabalt jutmärke, ülakomasid ja reavahetusi kasutada
-        """Jack vastas: "Rock 'n' roll"."""
-        '''Jack vastas: "Rock 'n' roll".'''
+            >>> print("Rock 'n' roll")
+            Rock 'n' roll
+            >>> print('Jim ütles vaid: "Siin see on."')
+            Jim ütles vaid: "Siin see on."
+            
+    *  piiritlejateks võivad olla ka 3-kordsed ülakomad või jutumärgid, sel juhul saab teksti sees vabalt jutmärke, ülakomasid ja reavahetusi kasutada:
+    
+        .. sourcecode:: py3
         
-        """Seda kuupaistet!
-        Oh muutuksin sündides
-        männiks mäetipul!
-        --Ryota"""
+            >>> print("""Jack vastas: "Rock 'n' roll".""")
+            Jack vastas: "Rock 'n' roll".
+            >>> print('''Jack vastas: "Rock 'n' roll".''')
+            Jack vastas: "Rock 'n' roll".
+            >>> print("""Seda kuupaistet!
+            Oh muutuksin sündides
+            männiks mäetipul!
+            --Ryota""")
+            Seda kuupaistet!
+            Oh muutuksin sündides
+            männiks mäetipul!
+            --Ryota
+            
+    *  piiritlejaid saab tekstis kasutada, kui panna nende ette langkriips:
+    
+        .. sourcecode:: py3
+        
+            >>> print("Jack vastas: \"Rock 'n' roll\".")
+            Jack vastas: "Rock 'n' roll".
+            >>> print('Jack vastas: "Rock \'n\' roll".')
+            Jack vastas: "Rock 'n' roll".
+            
+    *  reavahetusi võib esitada ka kombinatsiooniga ``\n``:
+    
+        .. sourcecode:: py3
+        
+            >>> print("Seda kuupaistet!\nOh muutuksin sündides\nmänniks mäetipul!\n--Ryota")
+            Seda kuupaistet!
+            Oh muutuksin sündides
+            männiks mäetipul!
+            --Ryota
+            
+    *  kui soovid esitada langkriipse endid, siis tuleb need kirjutada topelt:
+    
+        .. sourcecode:: py3
+        
+            >>> print("C:\\kaustanimi\\failinimi.txt")
+            C:\kaustanimi\failinimi.txt
 
-        # piiritlejaid saab tekstis kasutada, kui panna nende ette langkriips
-        "Jack vastas: \"Rock 'n' roll\"."
-        'Jack vastas: "Rock \'n\' roll".'
-        
-        # reavahetusi võib esitada ka kombinatsiooniga \n
-        "Seda kuupaistet!\nOh muutuksin sündides\nmänniks mäetipul!\n--Ryota"
-        
-        # kui soovid esitada langkriipse endid, siis tuleb need kirjutada topelt
-        "C:\\kaustanimi\\failinimi.txt"
-        
-
+.. note::
+            
     On oluline mõista, et piiritlejad ning langkriipsud on vaid selleks, et Python suudaks teksti õigesti sisse lugeda -- peale sisselugemist muutub ``'Rock\'n\'roll'`` tekstiks `Rock'n'roll`.
 
-    Neid näiteid Pythoni käsureale sisestades saate piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt. Kui kasutada ``print`` käsku (nt. ``print('Rock \'n\' roll')``), siis on näha, et Python sai tekstist siiski õigesti aru.
+    Neid sõneliteraale Pythoni käsureale sisestades (ilma ``print``-i kasutamata) saate piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt.
 
 NB! Kui unustate sõneliteraali kirjutades piiritlejaid kasutada, siis peab Python vastavat tekstijuppi muutuja nimeks (või kui tekstis oli tühik, siis ei oska ta sellest midagi arvata). Proovige järgi, millised veateated neil juhtudel antakse -- siis on edaspidi taolisi näpuvigu kergem tuvastada.
 
@@ -317,15 +332,11 @@ Kõik levinud programmeerimiskeeled võimaldavad kindlatele väärtustele või a
 
 Esimesel real teeb Python kaks erinevat toimingut: kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise väärtus. Peale seda on võimalik muutuja väärtust kasutada vastava väärtuse asemel. 
 
-Programmi loetavuse huvides peaks muutuja nimi kirjeldama vastava väärtuse tähendust antud kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``.
+Programmi loetavuse huvides peaks muutuja nimi kirjeldama vastava väärtuse tähendust antud kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``. Muutuja nimes võib kasutada ka numbreid, aga esimene sümbol peab olema täht (või allkriips).
 
 .. topic :: Etteruttavalt:
 
     Pythonis saab vajadusel muutuja väärtust ka uue väärtusega üle kirjutada -- selleks tuleb lihtsalt teha uus omistamine samale muutujale. Muutuja ülekirjutamist meil praegu siiski veel tarvis ei lähe.
-
-.. todo::
-    muutuja *nime* reeglid
-    mooduli nimed, funktsiooni nimed samade reeglite järgi
 
 
 .. _milleks-muutujad:
@@ -417,7 +428,47 @@ Kõiki arvu- ja sõneoperatsioone, mida demonstreerisime eelnevalt kasutades lit
 
 Funktsioonid
 ---------------
-.. todo:: ...
+Funktsioonid on need Pythoni objektid, mille abil saab midagi arvutada või teha. Me oleme siiani näinud hulka erinevaid funktsioone, nt ``sin``, ``cos``, ``int``, ``input``, ``print``.
+
+Funktsiooni kasutamiseks e. `rakendamiseks` tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem `argumenti` so. miski, mida funktsioon oma töös kasutab. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni rakendamine (e. `funktsiooni applikatsiooni`).
+
+Mõned funktsioonid (nt. ``sin`` ja ``int``) on olemuselt küllalt sarnased matemaatikast tuntud funktsioonidele, kuna nad "võtavad" ühe väärtuse ja "annavad vastu" mingi teise väärtuse. Nt ``int("3")`` võtab sõne tüüpi väärtuse ``"3"`` ning annab vastu täisarvu tüüpi väärtuse ``3``. See võimaldab nende funktsioonide kasutamist avaldistes.
+
+Lisaks sellele, et funktsiooni rakendamist võib kasutada mingi avaldise komponendina, võib ka funktsiooni argument olla ükskõik kui keeruline avaldis, sh. funktsiooni rakendamine:
+
+.. sourcecode:: py3
+
+    >>> x = 4
+    >>> cos(sin(float("0" + "." + str(x)) + 4))
+    0.5803791917941865
+
+
+
+Funktsioonidest tuleb edaspidi veel palju juttu, seepärast me praegu nendel pikemalt ei peatu.
+
+``import``
+------------
+Pythoni `standardteegis` (so. funktsioonide ja teiste programmielementide kogum) on väga palju funktsioone (ja teisi Pythoni objekte). Nende paremaks organiseerimiseks on nad jaotatud gruppidesse, mida nimetatakse `mooduliteks`. ``import`` lause teeb moodulis oleva funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
+
+.. sourcecode:: py3
+
+    from math import sin, cos
+    
+    print(sin(0.3))
+    print(cos(sin(0.3)))
+
+Kui soovime moodulist kõiki funktsioone, siis võime kasutada import lauses funktsiooninime(de) asemel tärni:
+
+.. sourcecode:: py3
+
+    from turtle import *
+    
+    forward(100)
+    left(90)
+    forward(100)
+
+    
+Mõned funktsioonid, nagu näiteks ``int`` ja ``float``, on alati kättesaadavad, neid pole vaja importida.
 
 Sisend ja väljund
 -----------------
@@ -502,7 +553,14 @@ Teema kinnistamiseks uurige veel ühte näidet muutujate, ``input``-i ja teksti 
 
 Ülesanne 2. Kasutaja tervitamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis küsib kasutaja eesnime ja perekonnanime, ning tervitab teda tema täisnimega.
+Nüüd peaks olema täiesti arusaadav eelmises peatükis esitatud tervitamise programm:
+
+.. sourcecode:: py3
+
+    nimi = input("Palun sisesta oma nimi ja vajuta ENTER: ")
+    print("Tere " + nimi + "!")
+
+Muutke seda programmi nii, et see küsiks eraldi kasutaja eesnime ja perekonnanime, ning tervitaks teda tema täisnimega.
 
 
 Ülesanne 3. Celsius-Fahrenheit teisendus
@@ -605,17 +663,20 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
 
 Kokkuvõte
 ---------------
-.. todo::
-    
-    * Selgita, et siiani keskendusime "lineaarsetele" asjadele, aga järgmises peatükis läheb asi huvitavamaks.
+Selles peatükis keskendusime kõigepealt Pythoni programmide kõige väiksematele elementidele, mida kasutatakse kõikides programmides:
 
-    
+    * `väärtus` (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi" -- see eksisteerib programmi jooksmise ajal ja sellega tehakse midagi
+    * `literaal` (nt. ``"tere"`` või ``3``) on konkreetse väärtuse esitusviis programmi tekstis
+    * `muutuja` (nt. ``x``) on mingi nimi, mis viitab mingile väärtusele. Muutuja abil saab programmis tähistada väärtust, mis selgub alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``)
+    * `funktsioon` (nt. ``sin``) on miski, mille abil saab midagi teha või arvutada
+    * `funktsiooni rakendamine` (nt. ``sin(0.5)``) on kombinatsioon funktsioonist ja argumendist ja tähistab mingit konkreetset arvutust või tegevust
+    * kõikvõimalikke literaalide, muutujate, funktsioonide rakendamiste ja operaatorite rakendamiste kombinatsioone nimetatakse `avaldisteks`. (NB! ka üksik literaal või muutuja on avaldis)
+    * avaldisele vastava väärtuse väljaarvutamist nimetatakse `avaldise väärtustamiseks`. Avaldise väärtustamine toimub programmi jooksutamise ajal ja see on üks Pythoni põhilistest tööülesannetest
+    * igal väärtusel on mingi tüüp (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
 
+Mainitud mõisted on tegelikult väga lihtsad, aga nende abstraktne olemus võib esmapilgul tekitada segadust.
 
-
-
-
-Koduülesanded
+Ülesanded
 -------------
 .. note::
     Kuigi mõned järgnevad ülesanded nõuavad programmi vormistamist koos kasutajalt sisendi küsimisega, on soovitav esialgu kirjutada ``input`` käskude asemele mingid konkreetsed väärtused -- sedasi läheb võimalike arvutusvalemite katsetamine kiiremini. Kui olete saanud kätte õige valemi, siis asendage need ajutised algandmed ``input`` käskudega.
@@ -623,55 +684,26 @@ Koduülesanded
 
 1. Pythoni dokumentatsioon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tutvuge põgusalt Pythoni dokumentatsioonis ``math`` mooduli kohta käiva infoga (http://docs.python.org/py3k/library/math.html). Uurige muuhulgas välja käskude ``floor`` ja ``ceil`` tähendus -- neid võib edaspidi ülesannete lahendamisel tarvis minna.
+Uurige jällegi Pythoni dokumentatsioonist ``math`` mooduli kohta käivat infot (http://docs.python.org/py3k/library/math.html). Otsige välja käskude ``floor`` ja ``ceil`` tähendus -- neid võib edaspidi ülesannete lahendamisel tarvis minna.
 
-
-2. Paaris või paaritu
-~~~~~~~~~~~~~~~~~~~~~
-Koostage tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjutage programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
-
-3. Pere sissetulek
-~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 20€ kuus.) 
-
-Esialgu võite eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum.
-
-Lõpuks korraldage nii, et programm töötab õigesti ka siis, kui ühel (või mõlemal) vanemal on brutopalk maksuvabast miinimumist väiksem.
-
-4. Pangaarve intress
+2. Pangaarve intress
 ~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib kasutajalt tema pangaarvel olevat summat ning intressi protsenti, mida pank talle igal aastal maksab. Vastuseks peab programm väljastama pangaarvel oleva summa 5 aasta pärast.
 
 **Testige** oma programmi erinevate summa ja intressi kombinatsioonidega.
 
-.. topic:: Vabatahtlik lisaülesanne
+.. topic:: Lisaülesanne
 
-    Kui olete saanud õige valemi paika, siis modifitseerige oma programmi nii, et kasutajalt küsitakse vaid intressi protsent ja erinevad algsummad loetakse tekstifailist. Programm peaks arvutama tulemuse iga algsumma jaoks.
+    Kui olete saanud õige valemi paika, siis modifitseerige oma programmi nii, et kasutajalt küsitakse vaid intressi protsent ja algsumma loetakse tekstifailist.
 
-5. Busside logistika
-~~~~~~~~~~~~~~~~~~~~~
-.. todo:: Viimase bussi inimeste arvu osa vajab praegu siiski tingimuslauset
-
-Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjutage programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
-
-.. note::
-    Võib tunduda, et selle ülesande jaoks läheb tarvis tingimuslauset, aga tegelikult on võimalik see lahendada ka lihtsamalt. Vihje: abiks võivad olla ``//``, ``%``, ``floor`` või ``ceil``, valige neist selle ülesande jaoks sobivad.
-    
-**Testige** oma programmi muuhulgas järgmiste algandmetega:
-
-* inimeste arv: 60, kohtade arv: 40
-* inimeste arv: 80, kohtade arv: 40
-* inimeste arv: 20, kohtade arv: 40
-* inimeste arv: 40, kohtade arv: 40
-
-Üritage mõista, miks valiti taolised testiandmed.
-
-
-Soovituslik lisaülesanne: Küpsisetort
+3. Küpsisetort
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Küpsisetordi tegemisel laotakse küpsised ristkülikukujulisele kandikule ja seda mitmes kihis, nii, et igas kihis on sama palju küpsiseid. Küsida kasutajalt, mitu küpsist mahub kandikule laiuses ja mitu pikkuses ning kui mitme kihilist torti ta teha soovib. Seejärel küsida, kui mitu küpsist on ühes pakis.
 
 Lõpuks väljastada, mitu küpsisepakki tuleb sellise tordi tegemiseks osta. NB! Eeldame, et poolikut küpsisepakki osta ei saa.
 
 **Testige** oma programmi, valides algandmed sama skeemi järgi nagu eelmises ülesandes.
+
+Lisalugemine
+---------------
 

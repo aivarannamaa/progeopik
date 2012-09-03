@@ -1,6 +1,10 @@
 3. Liitlaused
 ============================================
 
+.. warning::
+
+    Selle peatüki materjali veel täiendatakse
+
 .. todo::
 
     osa ülesandeid kanda siia üle peatükist "tingimuslaused"
@@ -374,7 +378,35 @@ Kirjutage mingi funktsioon, mille kehas oleks kasutatud korduslauset.
 
 Koduülesanded
 -------------------
-TODO:
+1. Paaris või paaritu
+~~~~~~~~~~~~~~~~~~~~~
+Koostage tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjutage programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
+
+2. Pere sissetulek
+~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 20€ kuus.) 
+
+Esialgu võite eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum.
+
+Lõpuks korraldage nii, et programm töötab õigesti ka siis, kui ühel (või mõlemal) vanemal on brutopalk maksuvabast miinimumist väiksem.
+
+3. Busside logistika
+~~~~~~~~~~~~~~~~~~~~~
+Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjutage programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
+
+.. note::
+    Võib tunduda, et selle ülesande jaoks läheb tarvis tingimuslauset, aga tegelikult on võimalik see lahendada ka lihtsamalt. Vihje: abiks võivad olla ``//``, ``%``, ``floor`` või ``ceil``, valige neist selle ülesande jaoks sobivad.
+    
+**Testige** oma programmi muuhulgas järgmiste algandmetega:
+
+* inimeste arv: 60, kohtade arv: 40
+* inimeste arv: 80, kohtade arv: 40
+* inimeste arv: 20, kohtade arv: 40
+* inimeste arv: 40, kohtade arv: 40
+
+Üritage mõista, miks valiti taolised testiandmed.
+
+
 
 Lisalugemine
 -----------------
