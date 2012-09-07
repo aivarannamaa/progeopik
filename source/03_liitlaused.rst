@@ -71,7 +71,7 @@ Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides
     Tegelikult pole enamasti vaja IDLE-s isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
 
 
-Ülesanne 5. Eristav kasutaja tervitamine 
+Harjutus 5. Eristav kasutaja tervitamine 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muutke ülesandes 2 kirjeldatud kasutaja tervitamise programmi selliselt, et kasutajat nimega `Margus` tervitatakse familiaarselt aga kõiki ülejäänuid tervitatakse formaalselt.
 
@@ -145,7 +145,7 @@ Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas ol
     Tegelikult on Pythonis olemas ka teine, natuke spetsiifilisem tsüklitüüp, mida nimetatakse ``for``-tsükliks ja mis sobib *n*-korduse tegemiseks isegi paremini, kui ``while``. ``for``-tsüklit vaatame järjendite peatükis.
 
 
-Ülesanne 6. Funktsioon *n*-nurga joonistamiseks
+Harjutus 6. Funktsioon *n*-nurga joonistamiseks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage eelmise näite põhjal funktsioon, mis joonistab *n*-küljega hulknurga. Funktsioonil peavad olema parameetrid nurkade arvu ning küljepikkuse määramiseks.
 
@@ -183,7 +183,7 @@ Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui j
     Programm, mis kordab "Ütle 'Palun!'", kuni kasutaja selle lõpuks sisestab
 
 
-Ülesanne 7. Algandmete kontrollimine tsükliga
+Harjutus 7. Algandmete kontrollimine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. todo:: Kontrolli viidatud ülesannet
 
@@ -193,7 +193,7 @@ Modifitseerige 1. ülesande lahendust -- kui kasutaja poolt sisestatud tekst pol
 
 Alles siis, kui korrektne sisend on käes, tuleks väljastada sisestatud arvu ruut.
 
-Ülesanne 8. Täiendatud arvamismäng
+Harjutus 8. Täiendatud arvamismäng
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
 Täiendage arvamismängu selliselt, et programm ütleb õige vastuse ära, kui kasutaja pole 10 arvamisega suutnud õiget pakkumist teha.
 
@@ -253,11 +253,11 @@ Mõnikord on vaja tsükli lõpetamise tingimust kontrollida *ainult* tsükli keh
         else: # ei olnud ei arv ega tühisõne
             print("Vigane sisend, proovi uuesti!")
 
-Ülesanne 9. Juhuslikud arvud
+Harjutus 9. Juhuslikud arvud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis väljastab iga ENTER vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
 
-Ülesanne. Algandmete kontrollimine ja ``break``
+Harjutus. Algandmete kontrollimine ja ``break``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage algandmete kontrollimise ülesande lahendus ümber nii, et ``input`` käsku on programmis kasutatud vaid ühes kohas.
 
@@ -347,7 +347,7 @@ Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem
 
     Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
 
-Ülesanne ?. Ruudu joonistamine
+Harjutus ?. Ruudu joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
 
@@ -360,19 +360,19 @@ Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurd
     Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
 
 
-Ülesanne ?. Tingimuslause kasutamine funktsioonis
+Harjutus ?. Tingimuslause kasutamine funktsioonis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Funktsiooni kehas saab kasutada suvalist tüüpi lauseid, st. ka tingimuslauset ja korduslauset (või ka nende kombinatsiooni, ükskõik kui keerulist). 
 
 .. todo:: ülesanne
 
-Ülesanne ?. Korduslause kasutamine funktsioonis
+Harjutus ?. Korduslause kasutamine funktsioonis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage mingi funktsioon, mille kehas oleks kasutatud korduslauset. 
 
 
 
-Koduülesanded
+Ülesanded
 -------------------
 1. Paaris või paaritu
 ~~~~~~~~~~~~~~~~~~~~~

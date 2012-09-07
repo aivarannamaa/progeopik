@@ -1,16 +1,11 @@
-a = float(input("Palun sisesta esimene arv: "))
-b = float(input("sisesta teine arv: "))
+f = open('andmed2.txt')
 
-print("Arvude summa:", a + b)
-print("Arvude korrutis:", a * b)
-print("Esimese ja teise jagatis:", a / b)
-print("25% esimesest arvust:", a * 0.25)
+nimi = f.readline()
+vanus = f.readline()
+aadress = f.readline()
 
-if a == b:
-    print("Arvud on võrdsed")
-else:
-    print("Arvud on erinevad")
-    if a > b:
-        print("Esimene arv on suurem")
-    else:
-        print("Teine arv on suurem")
+print("Nimi:", nimi)
+print("Vanus:", vanus, "aastat")
+print("Aadress:", aadress)
+
+f.close()

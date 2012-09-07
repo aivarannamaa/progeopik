@@ -92,7 +92,7 @@ Selgitused:
 
 Kasutajaga suhtlemine
 -----------------------------
-Meie esimene program polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekitage `File -> New window` abil uus programmiaken ja kopeerige sinna järgnev programm. *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
+Meie esimene programm polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekitage `File -> New window` abil uus programmiaken ja kopeerige sinna järgnev programm. *NB! Ärge praegu veel oma nime kuhugi kirjutage!*
 
 .. sourcecode:: py3
 
@@ -107,7 +107,7 @@ Selgitused:
     * konstruktsioon ``nimi = ...`` salvestab selle teksti mällu. Edaspidi saab sellele tekstile viidata kirjutades lihtsalt ``nimi``
     * konstruktsioon ``Tere " + nimi + "!"`` kombineerib etteantud tekstijupid ja kasutaja nime uueks tekstiks
 
-Ülesanne 1. Programmi muutmine
+Harjutus 1. Programmi muutmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tehke programmis mingeid muudatusi, salvestage ja käivitage. Katsetage ka selliseid muudatusi, mis võiksid teie arvates Pythoni segadusse ajada.
 
@@ -164,7 +164,7 @@ Python tunneb ka matemaatilisi funktsioone ja konstante, nagu näiteks ``sin`` j
     print(x)
     print(round(x,2))
 
-Ülesanne 2. Puu läbimõõdu arvutamine
+Harjutus 2. Puu läbimõõdu arvutamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Proovige kirjutada eelnevate näidete põhjal programm, mis küsib kasutaja käest puu ümbermõõdu ning teatab selle peale puu läbimõõdu.
 
@@ -217,12 +217,12 @@ Proovige järgnevat näiteskripti, mis joonistab kilpkonna abil kolmnurga:
     
     exitonclick() # see võimaldab akna sulgemist hiireklõpsuga
 
-Ülesanne 3. Ruut
+Harjutus 3. Ruut
 ~~~~~~~~~~~~~~~~
 Kirjutage skript, mis joonistab kilpkonnaga ruudu.
 
 
-Ülesanne 4. Ümbrik
+Harjutus 4. Ümbrik
 ~~~~~~~~~~~~~~~~~~
 Kirjutage skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbriku. 
 
@@ -268,7 +268,7 @@ Kui teil on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saate avada m
 
 
 
-Ülesanne 5. Interaktiivne programmeerimine
+Harjutus 5. Interaktiivne programmeerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Katsetage erinevaid siiani nähtud käske ka käsureal. Proovige muuhulgas ka Pythoni mälu kasutamist. (Paraku võib kilpkonna juhtimine käsurealt ebaõnnestuda, see sõltub IDLE'i seadetest.)
 
@@ -318,7 +318,7 @@ Ka matemaatiliste funktsioonide `importimine` toimib samal põhimõttel nagu skr
     3.141592653589793
 
 
-Ülesanne 6. `math` moodul
+Harjutus 6. `math` moodul
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #. Uurige Pythoni matemaatikamooduli dokumentatsiooni aadressilt http://docs.python.org/py3k/library/math.html
 #. Proovige saada aru, kuidas arvutatakse Pythonis ruutjuurt
@@ -350,13 +350,13 @@ Nagu te ehk eelnevaid ülesandeid lahendades juba märkasite, annab Pythoni mär
 
     Veateate põhjust on kergem leida, kui te kirjutate programmi järk-järgult ja katsetate poolikut lahendust iga täienduse järel. Kui programm töötas korralikult enne viimase rea lisamist, siis tõenäoliselt on viga viimases reas ja te ei pea tervet programmi läbi vaatama.
 
-Veateateid näete te oma programeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtuge sellest, et iga veateade on mõeldud programmeerija abistamiseks -- lugege teate tekst alati hoolikalt läbi ja mõelge, milles võis probleem olla. Nii märkate varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks informatsiooniks.
+Veateateid näete te oma programmeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtuge sellest, et iga veateade on mõeldud programmeerija abistamiseks -- lugege teate tekst alati hoolikalt läbi ja mõelge, milles võis probleem olla. Nii märkate varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks informatsiooniks.
 
 Semantilised vead
 ~~~~~~~~~~~~~~~~~~~~~~
 Programmeerimises on veel üks liik vigasid, mis on kõige ohtlikumad ja mida nimetatakse **semantilisteks vigadeks** või ka lihtsalt **loogikavigadeks**. Nende vigade puhul võib kõik olla Pythoni seisukohast korrektne (st. mingit veateadet ei tule), aga programm ei tee seda, mis programmeerija silmas pidas.
 
-Ülesanne 7. Semantiline viga
+Harjutus 7. Semantiline viga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Leidke järgnevast näiteprogrammist semantiline viga:
 
@@ -376,7 +376,7 @@ Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) �
 
 .. admonition:: NB!
 
-    Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range, kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
+    Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
 
 
 Kui te tunnete, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis teadke, et see on taotluslik -- need ülesanded õpetavad teile tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovige taolist ülesannet enda jaoks ümber sõnastada, otsige seoseid ja sarnasusi teiste ülesannetega, lihtsustage ülesannet, otsige abi internetist, võtke väike puhkepaus, vaadake ülesannet värske pilguga ja proovige jälle. Läbi raskuste saavutatud kogemused ja oskused on teile edaspidi kõige rohkem abiks!
@@ -387,7 +387,7 @@ Programmeerimiseks vajalikku ettevalmistust on mõnel inimesel rohkem ja teisel 
 Programmeerimine vs. maagia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb "sõnuda" (oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
+Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb rituaali korras "sõnuda" (oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
 
 On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid *praegu* teie jaoks segaseks või lausa "müstiliseks" -- peatüki eesmärk oli anda lihtsalt esimene ettekujutus programmeerimisest. Tegelikult pole programmeerimises aga midagi müstilist, iga programmilõigu tööpõhimõtet on võimalik alati täielikult ära seletada.
 
@@ -410,11 +410,25 @@ Iga peatüki lõpus on soovitav teha iseenda jaoks mõttes (või kirjalikult) ol
     * programmeerimiskeeled on ranged, seetõttu tuleb programmeerimisel olla täpne
     * programmeerimise õppimine nõuab harjutamist
     * vigade tegemist ei maksa karta
-    * enda kirjutatud programmi tuleks lubada vaid neid lauseid, millest otstarbest saate te täielikult aru
+    * enda kirjutatud programmi tuleks lubada vaid neid lauseid, mille otstarbest saate te täielikult aru
+
+Ülesanded
+------------
+.. note ::
+
+    Peatükkide lõpus olevad ülesanded on mahukamad, kui teksti sees antud ülesanded ja õpetavad seega paremini probleemi lahendamise oskust. Praktikumide korralduses on eeldatud, et need ülesanded on lahendatud (või proovitud lahendada) enne praktikumi tulemist. Esimeses peatükis on soenduseks vaid üks ülesanne, edaspidi tuleb neid rohkem.
+    
+1. Kilpkonna joonistus
+~~~~~~~~~~~~~~~~~~~~~~ 
+Kirjutage programm, mis joonistab kilpkonnaga lihtsa otsevaates maja (võib olla ka "pseudo-3d" vaatega). 
+
+.. hint::
+
+    Vaja võib minna kilpkonna käske ``up()`` ja ``down()``. Vaadake nende tähendust ülaltpoolt.
 
 Projekt
 ----------
-Selle õpiku näited ja ülesanded on valdavalt fokusseeritud mingile kindlale teemale mida vastavas peatükis käsitletakse. Reaalse elu programmeerimisülesannetel aga pole taolisi teemalipikuid küljes -- programmeerija ise peab selgusele jõudma, milliseid vahendeid antud ülesande lahendamiseks tarvis läheb.
+Selle õpiku näited ja ülesanded on valdavalt fokuseeritud mingile kindlale teemale, mida vastavas peatükis käsitletakse. Reaalse elu programmeerimisülesannetel aga pole taolisi teemalipikuid küljes -- programmeerija peab ise selgusele jõudma, milliseid vahendeid antud ülesande lahendamiseks tarvis läheb.
 
 Teine paratamatu puudus õpikunäidete ja ülesannete juures on see, et need ei pruugi olla kõigi lugejate jaoks ühtviisi huvitavad. Seetõttu on programmeerimise õppimisel väga kasulik valida endale mõni suuremat sorti huvipakkuv ülesanne -- nn. `projekt`, ning tegelda sellega paralleelselt uute teemade õppimisega. Tuleb välja, et õppimine on palju ladusam ja huvitavam, kui teil on iga uue teema jaoks juba valmis paras "auk" oma projektiidees, kus õpitut saab kohe rakendada!
 
@@ -424,7 +438,7 @@ Selle peatüki projektiploki eesmärgiks on aidata ideede genereerimisel. Allpoo
 
 .. note::
 
-    Arvatavasti jääb nende programmide kood praegu arusaamatuks, kuid proovige siiski seda lugeda, kasvõi selleks, et saada aimu, mis teid ees ootab :)
+    Arvatavasti jääb nende programmide kood praegu arusaamatuks, kuid proovige siiski seda lugeda, kas või selleks, et saada aimu, mis teid ees ootab :)
 
 "Mis toimub?"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

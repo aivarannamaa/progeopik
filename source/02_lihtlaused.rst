@@ -1,10 +1,9 @@
 2. Avaldised ja lihtlaused
 ================================
 
-.. warning::
+.. topic:: Muudatused
 
-    Selle peatüki materjal võib veel muutuda
-
+    * 7. sept - Ülesannete plokki lisatud 4. ülesanne
 
 
 Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
@@ -114,9 +113,9 @@ Ujukomaarvude literaalid võivad esineda järgmistel kujudel:
 
     Ootuspärane vastus oleks `0.3`, kuid Python tagastas midagi muud.
 
-    Asi on selles, et arvutis esitatakse ujukomaarvud kahendkujul, kasutades piiratud arvu bitte ja seetõttu polegi võimalik teatud kümnendmurde (nende hulgas `0.1`) täpselt esitada (analoogiliselt pole kümnendmurruna võimalik täpselt esitada näiteks `10 / 3`). Taolistel juhtudel ümardatakse sisestatud arv lihtsalt lähima kahendmurruni ja see ongi põhjus, miks antud näites oli tulemus ebatäpne. 
+    Asi on selles, et arvutis esitatakse ujukomaarvud kahendkujul, kasutades piiratud arvu bitte ja seetõttu polegi võimalik teatud kümnendmurde (nende hulgas `0.1`) täpselt esitada (analoogiliselt pole kümnendmurruna võimalik täpselt esitada näiteks `10 / 3`). Taolistel juhtudel ümardatakse sisestatud arv lihtsalt lähima võimaliku kahendmurruni ja see ongi põhjus, miks antud näites oli tulemus ebatäpne. 
 
-    Kui ujukomaarvu on tarvis esitada kümnendmurruna (nt. ekraanile kuvamisel), siis toimub jälle ümardamine -- see on põhjus, miks sisestades käsureale ``0.1`` antakse vastuseks tagasi ``0.1``, kuigi Python sisimas ei suuda seda arvu täpselt esitada. Kui korrutasime ``0.1`` 3-ga, siis muutus viga juba piisavalt suureks, et saadud tulemusele lähim kümnendmurd oli ``0.30000000000000004``, mitte ``0.3``
+    Kui ujukomaarvu on tarvis esitada kümnendmurruna (nt. ekraanile kuvamisel), siis toimub jälle ümardamine -- see on põhjus, miks sisestades käsureale ``0.1`` antakse vastuseks tagasi ``0.1``, kuigi Python sisimas ei suuda seda arvu täpselt esitada. Kui korrutasime ``0.1`` 3-ga, siis muutus viga juba piisavalt suureks, et saadud tulemusele lähim võimalik kümnendmurd oli ``0.30000000000000004``, mitte ``0.3``
 
     Tegelikult tekitab ujukomaarvude ligikaudsus probleeme vaid siis, kui me eeldame reaalarvude absoluutselt täpset esitamist (nt. kümnendmurruna esitatud rahasummad, kus murdosa tähistatab sente). Ujukomaarve kasutatakse peamiselt kõikvõimalike mõõtmistulemuste esitamiseks ja selle jaoks on Pythoni `float` tüübi ulatus ning täpsus enam kui piisav.
 
@@ -189,7 +188,7 @@ Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, k
 .. note::
     Kõikide mooduli ``math`` võimalustega saate tutvuda vastaval Pythoni dokumentatsiooni leheküljel: http://docs.python.org/py3k/library/math.html.
 
-Ülesanne 1. Matemaatilised avaldised
+Harjutus 1. Matemaatilised avaldised
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Väärtustage järgnevad aritmeetilised avaldised Pythoni käsureal:
 
@@ -215,7 +214,7 @@ Sõned
 --------
 **Sõne** (ing.k `string`, lühend `str`) on andmetüüp teksti esitamiseks. Enamasti piisab Pythonis sõne kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``. Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde.
 
-Asi läheb veidi keerulisemaks, kui sõne sees kasutada jutumärke, ülakomasid või muid erisümboleid. Järgnevalt demonstreerime erinevaid sõnede kirjapaneku viise (kasutame ``print`` käsku, kuna see toob välja ka sõne tegeliku sisu):
+Asi läheb veidi keerulisemaks, kui sõne sees kasutada jutumärke, ülakomasid või muid erisümboleid. Järgnevalt demonstreerime erinevaid sõnede kirjapaneku viise (kasutame ``print`` käsku, kuna see toob välja sõne tegeliku sisu):
 
     * kui tekstis on ülakomasid, siis kasuta piiritlejaks jutumärke ja vastupidi:
     
@@ -330,7 +329,7 @@ Kõik levinud programmeerimiskeeled võimaldavad kindlatele väärtustele või a
     >>> x * x
     25
 
-Esimesel real teeb Python kaks erinevat toimingut: kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise väärtus. Peale seda on võimalik muutuja väärtust kasutada vastava väärtuse asemel. 
+Esimesel real teeb Python kaks erinevat toimingut: kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise väärtus. Peale seda on võimalik muutuja nime kasutada vastava väärtuse asemel. 
 
 Programmi loetavuse huvides peaks muutuja nimi kirjeldama vastava väärtuse tähendust antud kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``. Muutuja nimes võib kasutada ka numbreid, aga esimene sümbol peab olema täht (või allkriips).
 
@@ -551,7 +550,7 @@ Teema kinnistamiseks uurige veel ühte näidet muutujate, ``input``-i ja teksti 
     Ärge unustage, et avaldis ``int(tekst1)`` mitte ei muuda muutujat ``tekst1`` arvuks, vaid genereerib vastava *uue* arvulise väärtuse.
 
 
-Ülesanne 2. Kasutaja tervitamine
+Harjutus 2. Kasutaja tervitamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nüüd peaks olema täiesti arusaadav eelmises peatükis esitatud tervitamise programm:
 
@@ -563,7 +562,7 @@ Nüüd peaks olema täiesti arusaadav eelmises peatükis esitatud tervitamise pr
 Muutke seda programmi nii, et see küsiks eraldi kasutaja eesnime ja perekonnanime, ning tervitaks teda tema täisnimega.
 
 
-Ülesanne 3. Celsius-Fahrenheit teisendus
+Harjutus 3. Celsius-Fahrenheit teisendus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vastavate kraadide arvu Fahrenheiti skaalas.
 
@@ -598,7 +597,7 @@ Selgituseks:
 * ``f.readline()`` loeb failist ühe rea, ning tagastab selle sõnena. See käsk liigutab edasi ka failist lugemise "järjehoidjat", st. järgmisel korral sama käsku kasutades loetakse järgmine rida.
 * ``f.close()`` ütleb failisüsteemile, et me oleme selle faili kasutamise lõpetanud. 
 
-    Kui seda programmi katsetate, siis märkate, et väljundis jääb iga rea vahele üks tühi rida. Põhjus on just selles, et failist lugedes jäetakse iga rea lõppu ka reavahetus alles (faili viimase rea puhul võib see puududa, vastavalt sellele, kas failis on viimase rea lõpus reavahetus või mitte). Kui rida uuesti ekraanile ``print``-ida, siis kuvatakse kõigepealt rea sisu koos reavahetusega, ja sellele lisab ``print`` käsk omaltpoolt veel ühe reavahetuse.
+Kui seda programmi katsetate, siis märkate, et väljundis tekib iga sisestatud andmejupi järele üks üleliigne tühi rida. Põhjus on just selles, et failist lugedes jäetakse iga rea lõppu alles ka reavahetuse sümbol (faili viimase rea puhul võib see puududa, vastavalt sellele, kas failis on viimase rea lõpus reavahetus või mitte). Käsk ``print`` lisab omaltpoolt veel ühe reavahetuse.
 
 .. note::
     Kui Python ütleb teile (Windowsi arvutis), et ta ei leia faili, aga te olete veendunud, et fail on õiges kaustas olemas, siis tuleks kontrollida, ega failinimele pole saanud eksikombel kaks faililaiendit. Segadust võib tekitada asjaolu, et Windows Explorer vaikimisi varjab teatud faililaiendid.
@@ -608,9 +607,9 @@ Selgituseks:
 .. note::
     Kui proovite lugeda sisse täpitähtedega teksti, siis võib juhtuda, et saate veateate ``UnicodeDecodeError``. Sel juhul tuleks ``open`` käsu rakendamisel öelda, millises kodeeringus on teie tekst, nt. ``open('andmed.txt', encoding='UTF-8')``. ``'UTF-8'`` asemel võite proovida ka ``'cp1257'``.
 
-Ülesanne 4. Reavahetuste eemaldamine
+Harjutus 4. Reavahetuste eemaldamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tuletage meelde, mida tegi sõnemeetod ``strip()``. Modifitseerige eelnevat näiteprogrammi selliselt, et programmi väljundisse ei tekiks tühje ridu.
+Tuletage meelde, mida tegi sõnemeetod ``strip()``. Modifitseerige eelnevat näiteprogrammi selliselt, et programmi väljundisse ei tekiks üleliigseid reavahetusi.
 
 Failide kirjutamine
 ~~~~~~~~~~~~~~~~~~~~
@@ -622,7 +621,7 @@ Järgnev programm demonstreerib andmete kirjutamist tekstifaili:
     vanus = input("vanus: ")
     aadress = input("aadress: ")
     
-    f = open("saladus.txt", "w")
+    f = open("andmed2.txt", "w")
     f.write(nimi + "\n")
     f.write(vanus + "\n")
     f.write(aadress + "\n")
@@ -632,7 +631,7 @@ Selgituseks:
 
 * failide kirjutamiseks tuleb funktsioonile ``open`` anda ka teine argument väärtusega ``"w"`` (nagu `write`).
 * kui antud fail juba eksisteerib, siis ``open(..., "w")`` teeb selle tühjaks.
-* faili meetod ``write`` ei tekita automaatselt reavahetust. Selleks, et saada eri andmeid eri ridadele, lisasime reavahetuse sümboli käsitsi.
+* erinevalt ``print`` käsust, ei tekita faili meetod ``write`` automaatselt reavahetust. Selleks, et saada eri andmeid eri ridadele, lisasime reavahetuse sümboli käsitsi.
 
 
 .. index::
@@ -684,13 +683,14 @@ Mainitud mõisted on tegelikult väga lihtsad, aga nende abstraktne olemus võib
 
 1. Pythoni dokumentatsioon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Uurige jällegi Pythoni dokumentatsioonist ``math`` mooduli kohta käivat infot (http://docs.python.org/py3k/library/math.html). Otsige välja käskude ``floor`` ja ``ceil`` tähendus -- neid võib edaspidi ülesannete lahendamisel tarvis minna.
+* Uurige jällegi Pythoni dokumentatsioonist ``math`` mooduli kohta käivat infot (http://docs.python.org/py3k/library/math.html). Otsige välja käskude ``floor`` ja ``ceil`` tähendus -- neid võib edaspidi ülesannete lahendamisel tarvis minna.
+* Vaadake üle ka sõnemeetodite dokumentatsioon (http://docs.python.org/py3k/library/stdtypes.html#string-methods). 
 
 2. Pangaarve intress
 ~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib kasutajalt tema pangaarvel olevat summat ning intressi protsenti, mida pank talle igal aastal maksab. Vastuseks peab programm väljastama pangaarvel oleva summa 5 aasta pärast.
 
-**Testige** oma programmi erinevate summa ja intressi kombinatsioonidega.
+**Testige** oma programmi erinevate summa ja intressi kombinatsioonidega!
 
 .. topic:: Lisaülesanne
 
@@ -704,6 +704,53 @@ Lõpuks väljastada, mitu küpsisepakki tuleb sellise tordi tegemiseks osta. NB!
 
 **Testige** oma programmi, valides algandmed sama skeemi järgi nagu eelmises ülesandes.
 
+4. Nimede korrastamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Modifitseerige veelkord kasutaja tervitamise programmi, kus kasutaja sisestab eraldi ees- ja perenime ning programm tervitab teda täisnimega. 
+
+Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi algavad suure tähega ja ülejäänud tähed on väikesed, hoolimata sellest, kuidas nimi sisestati (olgu ainult väikeste tähtedega, ainult suurtega või segamini).
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        >>> "pEEteR".capitalize()
+        'Peeter'
+    
+.. note::
+
+    Praegu on aktsepteeritav, kui programm ei esita sidekriipsuga nimesid ootuspäraselt (nt. kui kasutaja sisestas eesnimeks `Mari-Liis`, siis on OK, kui programm muudab selle `Mari-liis`-iks).
+    
+.. admonition:: Väljakutse
+
+    Kui see ülesanne oli teie jaoks liiga lihtne, siis proovige muuta programmi selliselt, et nt. `Mari-Liis`, `mari-liis` ja `mAri-liiS` muudetakse kõik `Mari-Liis`-iks.
+    
+    NB! selle jaoks läheb tarvis ühte Pythoni konstruktsiooni, mida pole selles peatükis tutvustatud! 
+    
+    .. hint::
+    
+        http://www.google.com
+    
+    .. hint::
+    
+        .. sourcecode :: py3
+        
+            >>> x = "tere"
+            >>> x[0]
+            't'
+            >>> x[1]
+            'e'
+            >>> x[2]
+            'r'
+            >>> x.find("r")
+            2
+            >>> x[0:2]
+            'te'
+            >>> x[2:4]
+            're'
+        
+        Kui te pole veendunud, et saite konstruktsiooni ``[...]`` tähendusest aru, siis lugege täpsemalt siit: http://docs.python.org/py3k/tutorial/introduction.html#strings. Antud õpikus käsitleme seda teemat alles järjendite peatükis.
+
 Lisalugemine
 ---------------
-
+Ilmub varsti! :)
