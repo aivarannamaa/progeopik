@@ -4,6 +4,7 @@
 .. topic:: Muudatused
 
     * 7. sept - Ülesannete plokki lisatud 4. ülesanne
+    * 10. sept - lisatud Lisalugemise plokk
 
 
 Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
@@ -662,18 +663,21 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
 
 Kokkuvõte
 ---------------
-Selles peatükis keskendusime kõigepealt Pythoni programmide kõige väiksematele elementidele, mida kasutatakse kõikides programmides:
+Selles peatükis keskendusime kõigepealt Pythoni programmide kõige väiksematele elementidele, mida kasutatakse kõikides programmides. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib esmapilgul tekitada segadust.
 
-    * `väärtus` (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi" -- see eksisteerib programmi jooksmise ajal ja sellega tehakse midagi
-    * `literaal` (nt. ``"tere"`` või ``3``) on konkreetse väärtuse esitusviis programmi tekstis
-    * `muutuja` (nt. ``x``) on mingi nimi, mis viitab mingile väärtusele. Muutuja abil saab programmis tähistada väärtust, mis selgub alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``)
-    * `funktsioon` (nt. ``sin``) on miski, mille abil saab midagi teha või arvutada
-    * `funktsiooni rakendamine` (nt. ``sin(0.5)``) on kombinatsioon funktsioonist ja argumendist ja tähistab mingit konkreetset arvutust või tegevust
-    * kõikvõimalikke literaalide, muutujate, funktsioonide rakendamiste ja operaatorite rakendamiste kombinatsioone nimetatakse `avaldisteks`. (NB! ka üksik literaal või muutuja on avaldis)
-    * avaldisele vastava väärtuse väljaarvutamist nimetatakse `avaldise väärtustamiseks`. Avaldise väärtustamine toimub programmi jooksutamise ajal ja see on üks Pythoni põhilistest tööülesannetest
+    * `väärtus` (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi" -- see eksisteerib programmi jooksutamise ajal ja sellega tehakse midagi
     * igal väärtusel on mingi tüüp (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
+    * `literaal` (nt. ``"tere"`` või ``3``) on mingi konkreetse väärtuse esitusviis programmi tekstis
+    * `muutuja` (nt. ``x``) abil saab programmi tekstis esitada mingit väärtust kaudselt, teisisõnu -- muutuja on nimi, mis `viitab` mingile väärtusele. Muutuja abil saab programmis kasutada ka väärtust, mis selgub alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``)
+    * muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``)
+    * `funktsioon` (nt. ``sin``) on miski, mille abil saab midagi teha või arvutada
+    * `funktsiooni rakendamine` (nt. ``sin(0.5)``) tähistab mingit konkreetset arvutust või tegevust
+    * `operaator` on olemuselt väga sarnane funktsioonile, aga erinevalt funktsioonist kirjutatakse operaator oma `argumentide` vahele (nt. ``2 + 3``)
+    * literaale, muutujaid ja funktsiooni või operaatori rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4``, ``len("tere") + len(nimi) - 1``) -- taolist kombinatsiooni nimetatakse `avaldiseks`. Samas, ka üksik literaal või muutuja on avaldis -- tegemist on üldise mõistega, mis käib kõigi programmiosade kohta, millel on väärtus.
+    * avaldisele vastava väärtuse väljaarvutamist nimetatakse `avaldise väärtustamiseks`. Avaldise väärtustamine toimub programmi jooksutamise ajal ja see on üks Pythoni põhilistest tööülesannetest
+    * Keeruline avaldis koosneb omakorda alam-avaldistest, aga  -- seega 
 
-Mainitud mõisted on tegelikult väga lihtsad, aga nende abstraktne olemus võib esmapilgul tekitada segadust.
+
 
 Ülesanded
 -------------
@@ -702,7 +706,7 @@ Küpsisetordi tegemisel laotakse küpsised ristkülikukujulisele kandikule ja se
 
 Lõpuks väljastada, mitu küpsisepakki tuleb sellise tordi tegemiseks osta. NB! Eeldame, et poolikut küpsisepakki osta ei saa.
 
-**Testige** oma programmi, valides algandmed sama skeemi järgi nagu eelmises ülesandes.
+**Testige** oma programmi! Valige vähemalt üks komplekt algandmeid nii, et küpsistest jätkub täpselt ja vähemalt üks komplekt nii, et osa ostetud küpsiseid jääb üle.
 
 4. Nimede korrastamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -753,4 +757,36 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
 
 Lisalugemine
 ---------------
-Ilmub varsti! :)
+Kolmandate osapoolte moodulid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Neid mooduleid, mis ei kuulu Pythoni standardteeki ja mida te pole ise kirjutanud, vaid internetist alla laadinud, nimetatakse tavaliselt *kolmandate osapoolte* mooduliteks (ing. k `third party modules`).  Siinkohal demonstreerime ühe lihtsa kolmanda osapoole mooduli kasutamist.
+
+Laadige alla moodul :download:`bingtrans <downloads/bingtrans.py>`, mis võimaldab kasutada Microsoft Bing tõlketeenust (NB! salvestage ta nimega ``bingtrans.py``). Seejärel salvestage samasse kausta järgnev programm ja katsetage seda:
+
+.. sourcecode:: py3
+    
+    from bingtrans import translate
+    
+    eesti_keeles = input("Palun sisesta eestikeelne sõna (või lause): ")
+    ing_vaste = translate(eesti_keeles, 'et', 'en')
+    print("Inglise keelne vaste: " + ing_vaste)
+
+Me importisime moodulist ``bingtrans`` funktsiooni nimega ``translate``, mis võtab argumentideks tõlgitava teksti, lähtekeele koodi (eesti keele kood on ``'et'``) ning sihtkeele koodi. Proovige ka teisi keelekoode (nt. ``'ru'``, ``'fr'``, ``'ko'``).
+
+.. admonition:: Harjutus
+
+    Proovige nüüd kohandada antud näidet nii, et tõlgitav sõna või lause ning keelekood loetakse tekstifailist.
+
+``bingtrans.py`` on lihtsustatud versioon Byung Gyu Ahn'i poolt kirjutatud moodulist, mis asub aadressil https://github.com/bahn/bingtrans. 
+
+Selle näite moraal on see, et internetis on saadaval Pythoni mooduleid, mis võivad väga tehnilise programmeerimisülesande muuta väga lihtsaks. Selleks, et saada aimu, milliseid võimalusi veel leidub, soovitame külastada aadressi http://pypi.python.org/pypi.
+    
+Tavaliselt on kolmandate osapoolte moodulid pakendatud koos installeerimisskriptidega ja nende paigaldamine võib nõuda pisut tehnilist tööd. Vastavaid juhiseid saab huvi korral lugeda siit: http://docs.python.org/py3k/install/index.html.
+
+.. admonition:: Väljakutse
+
+    Proovige leida internetist Pythoni moodul (või moodulite kogum e. `pakett`, ing. k `package`), mille abil saab Twitteri sõnumeid kirjutada ja lugeda. Üritage selle abil midagi postitada.
+    
+    NB! varuge piisavalt aega ja kannatust, et võimalike tehniliste katsumustega hakkama saada. Võibolla peate valitud paketi installimiseks töötama ka käsureal (selle kohta leiab juhiseid eelmise peatüki lisalugemises). Samas, läbi taolise "mässamise" saab oma OP-süsteemi kõige paremini tundma õppida.
+
+
