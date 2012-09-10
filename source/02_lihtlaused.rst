@@ -663,19 +663,31 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
 
 Kokkuvõte
 ---------------
-Selles peatükis keskendusime kõigepealt Pythoni programmide kõige väiksematele elementidele, mida kasutatakse kõikides programmides. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib esmapilgul tekitada segadust.
+Selles peatükis keskendusime kõigepealt Pythoni programmide kõige väiksematele aga samas kõige tähtsamatele komponentidele, millest ei saa üle ega ümber. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib esmapilgul tekitada segadust, seepärast vaatame nende tähendused veelkord kiiresti üle:
 
-    * `väärtus` (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi" -- see eksisteerib programmi jooksutamise ajal ja sellega tehakse midagi
-    * igal väärtusel on mingi tüüp (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
-    * `literaal` (nt. ``"tere"`` või ``3``) on mingi konkreetse väärtuse esitusviis programmi tekstis
-    * `muutuja` (nt. ``x``) abil saab programmi tekstis esitada mingit väärtust kaudselt, teisisõnu -- muutuja on nimi, mis `viitab` mingile väärtusele. Muutuja abil saab programmis kasutada ka väärtust, mis selgub alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``)
-    * muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``)
-    * `funktsioon` (nt. ``sin``) on miski, mille abil saab midagi teha või arvutada
-    * `funktsiooni rakendamine` (nt. ``sin(0.5)``) tähistab mingit konkreetset arvutust või tegevust
-    * `operaator` on olemuselt väga sarnane funktsioonile, aga erinevalt funktsioonist kirjutatakse operaator oma `argumentide` vahele (nt. ``2 + 3``)
-    * literaale, muutujaid ja funktsiooni või operaatori rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4``, ``len("tere") + len(nimi) - 1``) -- taolist kombinatsiooni nimetatakse `avaldiseks`. Samas, ka üksik literaal või muutuja on avaldis -- tegemist on üldise mõistega, mis käib kõigi programmiosade kohta, millel on väärtus.
-    * avaldisele vastava väärtuse väljaarvutamist nimetatakse `avaldise väärtustamiseks`. Avaldise väärtustamine toimub programmi jooksutamise ajal ja see on üks Pythoni põhilistest tööülesannetest
-    * Keeruline avaldis koosneb omakorda alam-avaldistest, aga  -- seega 
+    * **Väärtus** (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi", millega tehakse midagi (nt. kuvatakse ekraanile, kombineeritakse teiste väärtustega, võrreldakse, salvestatakse mällu vms)
+    * Igal väärtusel on mingi **tüüp** (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
+    * **Literaal** (nt. ``"tere"`` või ``3``) on mingi *konkreetse* väärtuse esitusviis programmi tekstis
+    * **Muutuja** (nt. ``laste_arv``) võimaldab esitada programmi tekstis mingit väärtust *kaudselt*, teisisõnu -- muutuja `viitab` mingile väärtusele. Muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``). Muutujate abil saab programmis kasutada ka väärtusi, mis selguvad alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``).
+    * **Funktsioon** (nt. ``print`` või ``sin``) on miski, mille abil saab midagi teha või arvutada. **Funktsiooni rakendamine** (nt. ``print(nimi)`` või ``sin(0.5)``) tähistab mingit konkreetset tegevust või arvutust. Kui funktsioon on mõeldud millegi arvutamiseks, siis tema rakendamisel saame vastuseks mingi väärtuse. NB! arvutamise all mõtleme suvaliste väärtustega toimetamist, mitte ainult arvudega.
+    * **Operaator** on olemuselt väga sarnane funktsioonile, aga erinevalt funktsioonist kirjutatakse operaator oma `argumentide` vahele (nt. ``2 + 3``). Ka operaatori rakendamise tulemuseks on mingi väärtus.
+    * **Avaldis**: literaale, muutujaid ja väärtusega funktsioonide ning operaatorite rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4``, ``len("tere") + len(nimi.lower()) - 1``) -- taolist kombinatsiooni nimetatakse *avaldiseks*. Samas, ka üksik literaal või muutuja on avaldis -- *tegemist on üldise mõistega*, mis käib kõigi programmiosade kohta, millel on väärtus.
+    * Avaldisele vastava väärtuse väljaarvutamist nimetatakse **avaldise väärtustamiseks**. Avaldise väärtustamine on üks Pythoni põhilistest tööülesannetest programmide jooksutamisel.
+
+Konkreetsetest andmetüüpidest vaatlesime *sõnet* ja *arvutüüpi*:
+
+    * blaa
+    * blaa
+
+Nagu eespool öeldud, on väärtused miski, millega `saab midagi teha`. Seega, et midagi üldse juhtuks, on vaja programmi kirjutada ka mingi *tegevus*, näiteks kasutajaga (või failisüsteemiga) suhtlemine:
+
+    * print 
+    * input
+    * failist lugemine
+
+Programmi osa, mis tähistab mingit tegevust nimetatakse **lauseks**. Pythoni programm pole muud, kui lausete jada, avaldisi kasutatakse lausete koosseisus. Lausetest tuleb palju rohkem juttu järgmises peatükis. 
+
+
 
 
 
