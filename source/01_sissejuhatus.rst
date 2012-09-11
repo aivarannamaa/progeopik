@@ -461,7 +461,7 @@ Selle programmi katsetamiseks tuleb alla laadida 3 faili. Kõik need tuleks salv
     * :download:`flagged_cover.gif <downloads/minesweeper/flagged_cover.gif>`
     
 
-Siin on tegemist "vabas vormis" graafiline kasutajaliidesega, mis sobib hästi just mängude tegemiseks. Rohkem selgitusi tuleb järgnevates projektiplokkides ning lisas `tkinter`.
+Siin on tegemist "vabas vormis" graafilise kasutajaliidesega, mis sobib hästi just mängude tegemiseks. Rohkem selgitusi tuleb järgnevates projektiplokkides ning lisas `tkinter`.
 
 Teie enda projekt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
