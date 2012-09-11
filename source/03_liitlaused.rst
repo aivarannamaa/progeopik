@@ -15,7 +15,7 @@ Kui eelmise peatüki teemad liigitasime "lihtlausete" kategooriatesse, siis nü�
 
 Tingimuslause e. ``if``-lause
 -------------------------------
-Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva käsuga, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul -- enamasti tuleb programmil mingil hetkel teha situatsioonist sõltuvalt valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad koos soovitud valikukriteeriumidega panna kirja **tingimuslause** e. ``if``-lause abil.
+Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul -- enamasti tuleb programmil mingil hetkel teha valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad koos soovitud valikukriteeriumidega panna kirja **tingimuslause** e. ``if``-lause abil.
 
 Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
 
@@ -54,7 +54,14 @@ Treppimine
 ~~~~~~~~~~~~~~~~
 ``if``-lause kasutamisel on vaja pöörata tähelepanu tühikutele -- tühikutega joondamine e. *treppimine* määrab, millised käsud kuuluvad tingimuslause alla ja millised mitte. Antud näites on mõlemas tingimuslause *harus* vaid üks käsk, aga neid võib seal olla ka rohkem:
 
-.. todo:: näide
+.. sourcecode:: py3
+
+    nimi = input("Mis su nimi on? ")
+    if nimi == "Imelik":
+        print("Tõesti?")
+        print("Imelik nimi!")
+    else:
+        print("Tere " + nimi + "!")
 
 Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides ning põhimõte on alati selles, et sama kaugele joondatud read moodustavad mingi terviku. 
 
@@ -178,9 +185,17 @@ Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui j
     print("Ära arvasid! Tubli!")
 
 
-.. todo::
+Harjutus x. Kolmeaastase lapse simulaator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga sisestuse peale "Aga miks?" niikaua, kuni kasutaja sisestab mingi kindla "võlusõna".
 
-    Programm, mis kordab "Ütle 'Palun!'", kuni kasutaja selle lõpuks sisestab
+.. note:: 
+
+    Võite kirjutada ka terapeudi variandi.
+    
+    .. hint::
+    
+        "Mis tundeid see sinus tekitab?"
 
 
 Harjutus 7. Algandmete kontrollimine tsükliga

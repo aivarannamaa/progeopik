@@ -5,7 +5,7 @@
 
     * 7. sept - Ülesannete plokki lisatud 4. ülesanne
     * 10. sept - lisatud Lisalugemise plokk
-    * 11. sept - täiendatud kokkuvõtet
+    * 11. sept - täiendatud kokkuvõtet, listatud 5. ülesanne
 
 
 Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
@@ -714,7 +714,7 @@ Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksemate
     * Igal väärtusel on mingi **tüüp** (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
     * **Literaal** (nt. ``"tere"`` või ``3``) on mingi *konkreetse* väärtuse esitusviis programmi tekstis
     * **Muutuja** (nt. ``laste_arv``) võimaldab esitada programmi tekstis mingit väärtust *kaudselt*, teisisõnu -- muutuja `viitab` mingile väärtusele. Muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``). Muutujate abil saab programmis kasutada ka väärtusi, mis selguvad alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``).
-    * **Funktsioon** (nt. ``print`` või ``sin``) on miski, mille abil saab midagi teha või arvutada. **Funktsiooni rakendamine** (nt. ``print(nimi)`` või ``sin(0.5)``) tähistab mingit konkreetset tegevust või arvutust. Kui funktsioon on mõeldud millegi arvutamiseks, siis tema rakendamisel saame vastuseks mingi väärtuse. NB! arvutamise all mõtleme suvaliste väärtustega toimetamist, mitte ainult arvudega.
+    * **Funktsioon** (nt. ``print`` või ``sin``) on miski, mille abil saab midagi teha või arvutada. **Funktsiooni rakendamine e. väljakutse** (nt. ``print(nimi)`` või ``sin(0.5)``) tähistab mingit konkreetset tegevust või arvutust. Kui funktsioon on mõeldud millegi arvutamiseks, siis tema rakendamisel saame vastuseks mingi väärtuse. NB! arvutamise all mõtleme suvaliste väärtustega toimetamist, mitte ainult arvudega.
     * **Operaator** on olemuselt väga sarnane funktsioonile, aga erinevalt funktsioonist kirjutatakse operaator oma `argumentide` vahele (nt. ``2 + 3``). Ka operaatori rakendamise tulemuseks on mingi väärtus.
     * **Avaldis**: literaale, muutujaid ja väärtusega funktsioonide ning operaatorite rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4`` või ``len("tere") + len(nimi.lower()) - 1``) -- taolist kombinatsiooni nimetatakse *avaldiseks*. Samas, ka üksik literaal või muutuja on avaldis -- *tegemist on üldise mõistega*, mis käib kõigi programmiosade kohta, millel on väärtus.
     * Avaldisele vastava väärtuse väljaarvutamist nimetatakse **avaldise väärtustamiseks**. Avaldise väärtustamine on üks Pythoni põhilistest tööülesannetest programmide jooksutamisel.
@@ -732,7 +732,7 @@ Sisend ja väljund
 ~~~~~~~~~~~~~~~~~~~
 Et programmi käivitamisel midagi üldse juhtuks, on vaja programmi kirjutada ka mingi *tegevus*, näiteks kasutajaga (või failisüsteemiga) suhtlemine:
 
-    * ``print`` kuvab etteantud teksti või arvu ekraanile
+    * ``print`` kuvab etteantud väärtuse ekraanile
     * ``input`` küsib kasutajalt mingi tekstijupi ja *tagastab selle*, seega ``input("Sisesta oma nimi: ")`` on avaldis
     * faili lugemiseks ja kirjutamiseks tuleb fail kõigepealt *avada* (``f = open("andmed.txt")`` või ``f2 = open("andmed2.txt", mode="w")``). Lugemiseks saab kasutada failimeetodit ``readline`` (nt ``print(f.readline())``), kirjutamiseks meetodit ``write`` (nt ``f2.write(nimi + "\n")``).
     
@@ -746,11 +746,11 @@ Kuna Pythonis standardteegis (ja teiste arendajate teekides) eksisteerib väga p
 
 Avaldised vs. laused
 ~~~~~~~~~~~~~~~~~~~~~~~~
-Selle peatüki programmide iga rida nimetatakse **lauseks**. Pythoni programm polegi muud, kui lausete jada. Avaldisi kasutatakse vaid lausete koosseisus. Need lauseliigid mida me kohtasime olid:
+Selle peatüki programmide puhul saame programmi iga rida nimetada **lauseks**. Pythoni programm polegi muud, kui lausete jada. Avaldisi kasutatakse vaid lausete koosseisus. Need lauseliigid mida me kohtasime olid:
 
     * import-lause, nt. ``from math import sin``
-    * omistuslause, nt. ``vanus = input("Sisesta nimi: ")``
-    * "käsulause", nt. ``print("Tere!")`` (tehniline termin selle lauseliigi kohta on *avaldislause*, sest selle lause sisu on formaalselt võttes avaldis)
+    * omistuslause, nt. ``vanus = input("Sisesta nimi: ")``. Selle lauseliigi *komponentideks* on muutuja nimi, võrdusmärk ja suvaline avaldis.
+    * "käsulause", nt. ``print("Tere!")`` (tehniline termin selle lauseliigi kohta on *avaldislause*, sest formaalselt loetakse Pythonis ka tegevust väljendav funktsiooni väljakutse avaldiseks)
     
 Kuna nende lauseliikide korral kulub iga lause jaoks täpselt üks rida, nimetatakse neid *lihtlauseteks*. Keerulisematest lausetest tuleb juttu järgmises peatükis. 
 
@@ -833,6 +833,19 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
             're'
         
         Kui te pole veendunud, et saite konstruktsiooni ``[...]`` tähendusest aru, siis lugege täpsemalt siit: http://docs.python.org/py3k/tutorial/introduction.html#strings. Antud õpikus käsitleme seda teemat alles järjendite peatükis.
+
+5. Redeli pikkus
+~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrgusele ronimiseks. Programm peaks küsima kasutajalt soovitud kõrguse ning väljastama minimaalse ja maksimaalse pulkade arvu, mis peaks sobival redelil olema. Arvestame, et:
+ 
+    * redeli alumine ja ülemine pulk on redeli otstest 15cm kaugusel
+    * redeli pulkade vahekaugus on 25cm
+    * redeli ülemine ots peab toetuma etteantud kõrgusele
+    * nurk redeli ja maapinna vahel peab olema vahemikus 50° - 80°
+
+.. hint::
+
+    Selleks, et arvutused ei läheks liiga keeruliseks, on soovitav vahetulemused salvestada abimuutujatesse.
 
 Lisalugemine
 ---------------
