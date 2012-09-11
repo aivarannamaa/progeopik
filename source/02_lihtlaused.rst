@@ -5,6 +5,7 @@
 
     * 7. sept - Ülesannete plokki lisatud 4. ülesanne
     * 10. sept - lisatud Lisalugemise plokk
+    * 11. sept - täiendatud kokkuvõtet
 
 
 Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
@@ -242,6 +243,22 @@ Asi läheb veidi keerulisemaks, kui sõne sees kasutada jutumärke, ülakomasid 
             Oh muutuksin sündides
             männiks mäetipul!
             --Ryota
+            >>> print("""
+               _____                                            
+              / ____|                                           
+             | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
+             | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+             | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
+              \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+            """)
+
+               _____                                            
+              / ____|                                           
+             | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
+             | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+             | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
+              \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+
             
     *  piiritlejaid saab tekstis kasutada, kui panna nende ette langkriips:
     
@@ -318,7 +335,7 @@ Operatsioonid sõnedega
 
 Muutujad
 --------
-Kõik levinud programmeerimiskeeled võimaldavad kindlatele väärtustele või arvutuste tulemustele anda nime. Teisiti väljendudes: väärtusi saab salvestada **muutujatesse**. Järgnev käsurea näide demonstreerib muutuja (nimega `x`) defineerimist ja kasutamist:
+Kõik levinud programmeerimiskeeled võimaldavad konkreetsetele väärtustele või arvutuste tulemustele anda nime. Teisiti väljendudes: väärtusi saab salvestada **muutujatesse**. Järgnev käsurea näide demonstreerib muutuja (nimega `x`) defineerimist ja kasutamist:
 
 .. sourcecode:: py3
     
@@ -374,7 +391,7 @@ Siin on konkreetset raadiust mainitud vaid ühes kohas -- muutuja ``raadius`` de
 
 .. topic :: Analoogia:
 
-    Mõelge Eesti Vabariigi põhiseadusele -- kui seal räägitakse presidendi rollist, siis ei nimetata ühegi konkreetse presidendi nime vaid kasutatakse väljendit *Vabariigi President*. Seevastu seaduse rakendamisel tõlgendatakse seda väljendit vastavalt sellele, kes on antud hetkel presidendiks. Selline lähenemine teeb seaduse teksti üldisemaks, konkreetsetest isikutest sõltumatuks.
+    Mõelge Eesti Vabariigi põhiseadusele -- kui seal räägitakse presidendi rollist, siis ei nimetata ühegi konkreetse presidendi nime vaid kasutatakse väljendit *Vabariigi President*. Seaduse rakendamisel tõlgendatakse seda väljendit vastavalt sellele, kes on antud hetkel presidendiks. Selline lähenemine teeb seaduse teksti üldisemaks, konkreetsetest isikutest sõltumatuks.
 
 .. _operatsioonid-muutujatega:
     
@@ -439,15 +456,15 @@ Lisaks sellele, et funktsiooni rakendamist võib kasutada mingi avaldise kompone
 .. sourcecode:: py3
 
     >>> x = 4
-    >>> cos(sin(float("0" + "." + str(x)) + 4))
-    0.5803791917941865
+    >>> round(cos(sin(float("0" + "." + str(x)) + 4)), 2)
+    0.58
 
 
 
 Funktsioonidest tuleb edaspidi veel palju juttu, seepärast me praegu nendel pikemalt ei peatu.
 
-``import``
-------------
+``import``-lause
+--------------------
 Pythoni `standardteegis` (so. funktsioonide ja teiste programmielementide kogum) on väga palju funktsioone (ja teisi Pythoni objekte). Nende paremaks organiseerimiseks on nad jaotatud gruppidesse, mida nimetatakse `mooduliteks`. ``import`` lause teeb moodulis oleva funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
 
 .. sourcecode:: py3
@@ -469,6 +486,18 @@ Kui soovime moodulist kõiki funktsioone, siis võime kasutada import lauses fun
 
     
 Mõned funktsioonid, nagu näiteks ``int`` ja ``float``, on alati kättesaadavad, neid pole vaja importida.
+
+.. note::
+
+    Importida saab ka moodulit ennast, sel juhul tuleb soovitava funktsiooni nimi kirjutada koos mooduli nimega:
+    
+    .. sourcecode:: py3
+    
+        >>> import math
+        >>> print(math.sin(0.5))
+        0.479425538604203
+        >>> print(math.cos(0.5))
+        0.8775825618903728    
 
 Sisend ja väljund
 -----------------
@@ -492,6 +521,20 @@ Sulgudes olevat avaldist ``32 * 57`` nimetatakse siinkohal käsu ``print`` **arg
     
     Kui skripti kirjutada lihtsalt ``32 * 57``, siis midagi ekraanile ei ilmu. Sel juhul Python küll arvutab antud avaldise väärtuse, aga saadud tulemusega midagi ette ei võta.
 
+Käsule ``print`` võib anda ka mitu argumenti, sel juhul trükitakse samale reale mitu asja järjest, tühikutega eraldatuna. Järgnev näide demonstreerib kahte samaväärset viisi, kuidas trükkida ekraanile mitu infokildu korraga. Esimene variant kombineerib andmed üheks sõneks ja kasutab seega ``print``-i ühe argumendiga, teine variant annab kõik komponendid eraldi argumentidena:
+
+.. sourcecode:: py3
+
+    >>> eesnimi = "Peeter"
+    >>> perenimi = "Paan"
+    >>> vanus = 21
+    >>> print(eesnimi + " " + perenimi + " vanus: " + str(vanus))
+    Peeter Paan vanus: 21
+    >>> print(eesnimi, perenimi, "vanus:", vanus)
+    Peeter Paan vanus: 21
+
+Eraldi argumentidega variant on küll lühem kirja panna, aga mõnikord see siiski ei sobi, näiteks kui me ei soovi väljundis argumentide vahele tühikut.
+    
 .. topic:: Lisainfo
 
     Vaikimisi lisab ``print`` väljundi lõppu alati ka reavahetuse. Kui te seda ei soovi, siis tuleks seda näidata lisaargumendiga ``end``:
@@ -663,29 +706,53 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
 
 Kokkuvõte
 ---------------
-Selles peatükis keskendusime kõigepealt Pythoni programmide kõige väiksematele aga samas kõige tähtsamatele komponentidele, millest ei saa üle ega ümber. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib esmapilgul tekitada segadust, seepärast vaatame nende tähendused veelkord kiiresti üle:
+Väärtused ja avaldised
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksematele, aga samas ka kõige tähtsamatele elementidele, millest ei saa üle ega ümber. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib tekitada segadust, seepärast vaatame nende tähendused veelkord üle:
 
-    * **Väärtus** (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi", millega tehakse midagi (nt. kuvatakse ekraanile, kombineeritakse teiste väärtustega, võrreldakse, salvestatakse mällu vms)
+    * **Väärtus** (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi", millega tehakse midagi (nt. kuvatakse ekraanile, kombineeritakse teiste väärtustega, võrreldakse, salvestatakse mällu vms). Väärtusi nimetatakse ka *andmeteks*.
     * Igal väärtusel on mingi **tüüp** (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
     * **Literaal** (nt. ``"tere"`` või ``3``) on mingi *konkreetse* väärtuse esitusviis programmi tekstis
     * **Muutuja** (nt. ``laste_arv``) võimaldab esitada programmi tekstis mingit väärtust *kaudselt*, teisisõnu -- muutuja `viitab` mingile väärtusele. Muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``). Muutujate abil saab programmis kasutada ka väärtusi, mis selguvad alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``).
     * **Funktsioon** (nt. ``print`` või ``sin``) on miski, mille abil saab midagi teha või arvutada. **Funktsiooni rakendamine** (nt. ``print(nimi)`` või ``sin(0.5)``) tähistab mingit konkreetset tegevust või arvutust. Kui funktsioon on mõeldud millegi arvutamiseks, siis tema rakendamisel saame vastuseks mingi väärtuse. NB! arvutamise all mõtleme suvaliste väärtustega toimetamist, mitte ainult arvudega.
     * **Operaator** on olemuselt väga sarnane funktsioonile, aga erinevalt funktsioonist kirjutatakse operaator oma `argumentide` vahele (nt. ``2 + 3``). Ka operaatori rakendamise tulemuseks on mingi väärtus.
-    * **Avaldis**: literaale, muutujaid ja väärtusega funktsioonide ning operaatorite rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4``, ``len("tere") + len(nimi.lower()) - 1``) -- taolist kombinatsiooni nimetatakse *avaldiseks*. Samas, ka üksik literaal või muutuja on avaldis -- *tegemist on üldise mõistega*, mis käib kõigi programmiosade kohta, millel on väärtus.
+    * **Avaldis**: literaale, muutujaid ja väärtusega funktsioonide ning operaatorite rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4`` või ``len("tere") + len(nimi.lower()) - 1``) -- taolist kombinatsiooni nimetatakse *avaldiseks*. Samas, ka üksik literaal või muutuja on avaldis -- *tegemist on üldise mõistega*, mis käib kõigi programmiosade kohta, millel on väärtus.
     * Avaldisele vastava väärtuse väljaarvutamist nimetatakse **avaldise väärtustamiseks**. Avaldise väärtustamine on üks Pythoni põhilistest tööülesannetest programmide jooksutamisel.
 
-Konkreetsetest andmetüüpidest vaatlesime *sõnet* ja *arvutüüpi*:
+Arvud ja sõned
+~~~~~~~~~~~~~~
+Konkreetsetest andmetüüpidest vaatlesime *täisarve*, *ujukomaarve* ja *sõnesid*:
 
-    * blaa
-    * blaa
+    * Täisarvude suurus pole Pythonis piiratud
+    * Ujukomaarvude juures tuleb arvestada, et kõiki kümnendmurde ei suuda Python täpselt esitada
+    * Sõne kirjapanekuks on mitmeid erinevaid viise
+    * Enamik sõneoperatsioone on Pythonis realiseeritud `meetoditena` (nt. ``nimi.lower()``)
 
-Nagu eespool öeldud, on väärtused miski, millega `saab midagi teha`. Seega, et midagi üldse juhtuks, on vaja programmi kirjutada ka mingi *tegevus*, näiteks kasutajaga (või failisüsteemiga) suhtlemine:
+Sisend ja väljund
+~~~~~~~~~~~~~~~~~~~
+Et programmi käivitamisel midagi üldse juhtuks, on vaja programmi kirjutada ka mingi *tegevus*, näiteks kasutajaga (või failisüsteemiga) suhtlemine:
 
-    * print 
-    * input
-    * failist lugemine
+    * ``print`` kuvab etteantud teksti või arvu ekraanile
+    * ``input`` küsib kasutajalt mingi tekstijupi ja *tagastab selle*, seega ``input("Sisesta oma nimi: ")`` on avaldis
+    * faili lugemiseks ja kirjutamiseks tuleb fail kõigepealt *avada* (``f = open("andmed.txt")`` või ``f2 = open("andmed2.txt", mode="w")``). Lugemiseks saab kasutada failimeetodit ``readline`` (nt ``print(f.readline())``), kirjutamiseks meetodit ``write`` (nt ``f2.write(nimi + "\n")``).
+    
+Importimine
+~~~~~~~~~~~~
+Kuna Pythonis standardteegis (ja teiste arendajate teekides) eksisteerib väga palju funktsioone, on nad organiseeritud *moodulitesse*. Moodulis olevatele funktsioonidele ligipääsemiseks on vaja kasutada *import lauset*. Sellel lausel on 3 erinevat varianti:
 
-Programmi osa, mis tähistab mingit tegevust nimetatakse **lauseks**. Pythoni programm pole muud, kui lausete jada, avaldisi kasutatakse lausete koosseisus. Lausetest tuleb palju rohkem juttu järgmises peatükis. 
+    * ``from math import sin, cos`` -- üksikute funktsioonide importimine
+    * ``from math import *`` -- kogu mooduli sisu importimine
+    * ``import math`` -- mooduli enda importimine. Sel juhul tuleb funktsiooni nimi kirjutada koos mooduli nimega (``math.sin(0.5)``)
+
+Avaldised vs. laused
+~~~~~~~~~~~~~~~~~~~~~~~~
+Selle peatüki programmide iga rida nimetatakse **lauseks**. Pythoni programm polegi muud, kui lausete jada. Avaldisi kasutatakse vaid lausete koosseisus. Need lauseliigid mida me kohtasime olid:
+
+    * import-lause, nt. ``from math import sin``
+    * omistuslause, nt. ``vanus = input("Sisesta nimi: ")``
+    * "käsulause", nt. ``print("Tere!")`` (tehniline termin selle lauseliigi kohta on *avaldislause*, sest selle lause sisu on formaalselt võttes avaldis)
+    
+Kuna nende lauseliikide korral kulub iga lause jaoks täpselt üks rida, nimetatakse neid *lihtlauseteks*. Keerulisematest lausetest tuleb juttu järgmises peatükis. 
 
 
 
