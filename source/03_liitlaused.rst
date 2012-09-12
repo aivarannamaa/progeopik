@@ -189,13 +189,13 @@ Harjutus x. Kolmeaastase lapse simulaator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga sisestuse peale "Aga miks?" niikaua, kuni kasutaja sisestab mingi kindla "võlusõna".
 
-.. note:: 
+Proovige kirjutada ka terapeudi variant, kus vahelduvad kaks erinevat küsimust.
+    
+.. hint::
 
-    Võite kirjutada ka terapeudi variandi.
+    "Millest sa veel sooviksid rääkida?"
     
-    .. hint::
-    
-        "Mis tundeid see sinus tekitab?"
+    "Milliseid tundeid see sinus tekitab?"
 
 
 Harjutus 7. Algandmete kontrollimine tsükliga
