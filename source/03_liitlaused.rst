@@ -1,11 +1,6 @@
 3. Liitlaused
 ============================================
 
-.. warning::
-
-    Selle peatüki materjali veel täiendatakse
-
-
 .. index::
     single: tingimuslaused
     single: tingimuslaused; if-lause
@@ -15,7 +10,7 @@ Kui eelmise peatüki teemad liigitasime "lihtlausete" kategooriatesse, siis nü�
 
 Tingimuslause e. ``if``-lause
 -------------------------------
-Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul -- enamasti tuleb programmil mingil hetkel teha valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad koos soovitud valikukriteeriumidega panna kirja **tingimuslause** e. ``if``-lause abil.
+Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul -- enamasti tuleb programmil mingil hetkel teha valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad panna kirja **tingimuslause** e. ``if``-lause abil.
 
 Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
 
@@ -48,7 +43,41 @@ Tingimusi saab moodustada järgmiste operaatoritega:
     
     Ärge unustage, et üksikut võrdusmärki (``=``) kasutatakse Pythonis muutujale väärtuse omistamiseks, seetõttu on võrdsuse kontrollimiseks ette nähtud topeltvõrdusmärk (``==``).
 
+.. admonition:: Etteruttavalt
 
+    Mitut tingimust saab omavahel kombineerida operaatoritega ``and`` ja ``or``:
+    
+    .. sourcecode:: py3
+        
+        if x > 9 and x < 100:
+            print("x on kahekohaline arv")
+        else:
+            print("x ei ole kahekohaline")
+    
+    Sellest tuleb põhjalikult juttu ühes hilisemas peatükis.
+
+Harjutus 1. Jaguvus
+~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib kasutajalt kaks arvu ning vastab, kas esimene arv jagub teisega või mitte.
+
+.. hint::
+
+    Tuletage meelde, mida teeb operaator ``%``.
+
+.. hint::
+
+    >>> 6 % 4
+    2
+    >>> 6 % 3
+    0
+    >>> 4 % 3
+    1
+    >>> 4 % 2
+    0    
+    >>> 4 % 4
+    0
+    >>> 4 % 1
+    0
 
 Treppimine
 ~~~~~~~~~~~~~~~~
@@ -78,10 +107,44 @@ Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides
     Tegelikult pole enamasti vaja IDLE-s isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
 
 
-Harjutus 5. Eristav kasutaja tervitamine 
+Harjutus 2. Eurokalkulaator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Muutke ülesandes 2 kirjeldatud kasutaja tervitamise programmi selliselt, et kasutajat nimega `Margus` tervitatakse familiaarselt aga kõiki ülejäänuid tervitatakse formaalselt.
+Kirjutage programm, mis küsib kasutajalt rahasumma ja selle, kas ta soovib teisendada Eesti kroone eurodeks või vastupidi. Seepeale kuvab programm teisenduse tulemuse ekraanile. 
 
+.. hint::
+
+    .. sourcecode:: py3
+        
+        ...
+        algyhik = input("Kas sinu summa on eurodes (EUR) või kroonides (EEK) ?")
+        ...
+
+Proovige kirjutada sellest programmist kaks varianti erinevate kitsendustega: 
+
+    * esimeses programmis kasutatakse muutujale omistamist ainult ühes kohas
+    * teises programmis kasutatakse ``print`` käsku ainult ühes kohas
+
+.. hint::
+
+    .. sourcecode:: py3
+        
+        ...
+        if ... :
+            print(...)
+        else:
+            print(...)
+        ...
+
+
+    .. sourcecode:: py3
+        
+        ...
+        if ... :
+            tulemus = ...
+        else:
+            tulemus = ...
+        
+        print(...)
 
 .. index:: 
     single: tsükkel
@@ -121,17 +184,19 @@ Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstrukt
 ``while``-tsükkel
 ~~~~~~~~~~~~~~~~~~~
 
-``while``-tsükliga saaksime ruudu joonistamise funktsiooni panna kirja järgnevalt:
+``while``-tsükliga saaksime ruudu joonistamise programmi panna kirja järgnevalt:
 
 .. sourcecode:: py3
     
     from turtle import *
     
-    i = 0               # i näitab, mitu külge on juba joonistatud
-    while i < 4:
+    # selle muutuja abil peame arvet, mitu külge on juba joonistatud
+    joonistatud_kylgi = 0               
+    
+    while joonistatud_kylgi < 4:
         forward(100)
         left(90)
-        i = i + 1       # suurendame i väärtust
+        joonistatud_kylgi = joonistatud_kylgi + 1   # suurendame muutuja väärtust
 
     exitonclick()
 
@@ -152,15 +217,48 @@ Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas ol
     Tegelikult on Pythonis olemas ka teine, natuke spetsiifilisem tsüklitüüp, mida nimetatakse ``for``-tsükliks ja mis sobib *n*-korduse tegemiseks isegi paremini, kui ``while``. ``for``-tsüklit vaatame järjendite peatükis.
 
 
-Harjutus 6. Funktsioon *n*-nurga joonistamiseks
+Harjutus 3. Programm *n*-nurga joonistamiseks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage eelmise näite põhjal funktsioon, mis joonistab *n*-küljega hulknurga. Funktsioonil peavad olema parameetrid nurkade arvu ning küljepikkuse määramiseks.
+Kirjutage eelmise näite põhjal programm, mis joonistab *n*-küljega hulknurga (*n* väärtus ja küljepikkus küsitakse kasutajalt). 
 
 .. hint::
     Iga nurga juures peab kilpkonn pöörama 360/n kraadi.
     
-Testige loodud funktsiooni joonistades üksteise kõrvale kolmnurga, ruudu ja viisnurga.
+Tsükli ja tingimuslause kombineerimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni lausetest. Järelikult võib panna ka ``if``-lause ``while``-lause sisse (ja vastupidi):
 
+.. sourcecode:: py3
+
+    n = 1
+
+    while n <= 10:
+        print("Vaadeldav arv on", n)
+        if n % 2 == 0:
+            print("Tegemist on paarisarvuga")
+        else:
+            print("Tegemist on paaritu arvuga")
+
+        ruut = n * n
+        if ruut % 2 == 0:
+            print("Tema ruut", ruut, "on paarisarv")
+        else:
+            print("Tema ruut", ruut, "on paaritu arv")
+
+        print("--------------------------------")
+        n += 1
+    
+    print("Sellega on meie arvuteoreetiline uurimus lõppenud")
+
+.. note::
+
+    Proovige järgi, kuidas Python käitub, kui unustate ``while`` või ``if`` lauses kasutada koolonit või jätate ära mõne taandrea. Sellega saate end taoliseks situatsiooniks juba ette valmistada.
+
+
+
+Harjutus 4. Loendamine
+~~~~~~~~~~~~~~~~~~~~~~
+Täiendage eelnevat programmi veel ühe loenduriga, mille abil loetakse kokku 3-ga jaguvate ruutude arv. Kui kõik arvud on läbi vaadatud, siis väljastage saadud tulemus.
 
 Määramata tsükkel
 ~~~~~~~~~~~~~~~~~
@@ -185,7 +283,7 @@ Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui j
     print("Ära arvasid! Tubli!")
 
 
-Harjutus x. Kolmeaastase lapse simulaator
+Harjutus 5. Kolmeaastase lapse simulaator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga sisestuse peale "Aga miks?" niikaua, kuni kasutaja sisestab mingi kindla "võlusõna".
 
@@ -198,23 +296,11 @@ Proovige kirjutada ka terapeudi variant, kus vahelduvad kaks erinevat küsimust.
     "Milliseid tundeid see sinus tekitab?"
 
 
-Harjutus 7. Algandmete kontrollimine tsükliga
+Harjutus 6. Algandmete kontrollimine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. todo:: Kontrolli viidatud ülesannet
-
 Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
 
-Modifitseerige 1. ülesande lahendust -- kui kasutaja poolt sisestatud tekst polnud numbriline, siis peaks programm kordama küsimist ja andmete sisselugemist niikaua, kuni kasutaja sisestab numbrilise teksti.
-
-Alles siis, kui korrektne sisend on käes, tuleks väljastada sisestatud arvu ruut.
-
-Harjutus 8. Täiendatud arvamismäng
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
-Täiendage arvamismängu selliselt, et programm ütleb õige vastuse ära, kui kasutaja pole 10 arvamisega suutnud õiget pakkumist teha.
-
-.. hint:: 
-    
-    Siin tuleks kombineerida loenduri kasutamine ning kasutaja pakkumise kontrollimine.
+Kirjutage ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata (koos selgitusega, miks eelmine sisend ei sobinud).
 
 
 Käsk ``break``
@@ -248,45 +334,48 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
         print("Ära arvasid! Tubli!")
     else:
         print("Kümnest arvamisest ei piisanud, äkki peaksid taktikat muutma?")
-    
 
-Tegelikult pole ``break`` lause hädavajalik - tsükli saab alati ümber kirjutada nii, et kõiki jätkamise/lõpetamise tingimusi kontrollitakse tsükli päises, aga vahel on ``break``-iga lahendus lihtsam.
+.. note::
 
-Mõnikord on vaja tsükli lõpetamise tingimust kontrollida *ainult* tsükli kehas, sel juhul pannakse tsükli päisesse alati kehtiv tingimus ``True``. Järgnev programm küsib kasutajalt arve ja näitab nende ruute niikaua, kuni kasutaja sisestab *tühisõne* (st. vajutab ENTER ilma midagi tegelikult sisestamata):
+    Selles programmis kasutasime ka ``if``-lause "üheharulist" varianti -- st ``if`` ilma ``else``-ta. Selle variandi puhul ei tehta tingimuse mittekehtimise puhul mitte midagi. Erinevatest ``if``-lause kujudest tuleb täpsemalt juttu ühes hilisemas peatükis.
+
+Tegelikult pole ``break`` lause Pythoni programmides hädavajalik - tsükli saab alati ümber kirjutada nii, et kõiki jätkamise/lõpetamise tingimusi kontrollitakse tsükli päises, aga vahel on ``break``-iga lahendus lihtsam.
+
+Mõnikord on mugav tsükli lõpetamise tingimust kontrollida *ainult* tsükli kehas, sel juhul pannakse tsükli päisesse alati kehtiv tingimus ``True``. Järgnev programm küsib kasutajalt arve ja näitab nende ruute niikaua, kuni kasutaja sisestab *tühisõne* (st. vajutab ENTER ilma midagi tegelikult sisestamata):
 
 .. sourcecode:: py3
 
     while True:
         tekst = input("Sisesta arv ja vajuta ENTER (lõpetamiseks vajuta ainult ENTER): ")
         
-        if tekst.isnumeric():
-            arv = int(tekst)
-            print("Arvu ruut on: " + str(arv * arv))
-        elif tekst == "":  
+        if tekst == "":  
             print("OK, lõpetan")
             break
         else: # ei olnud ei arv ega tühisõne
             print("Vigane sisend, proovi uuesti!")
 
-Harjutus 9. Juhuslikud arvud
+Harjutus 7. Juhuslikud arvud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis väljastab iga ENTER vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
 
-Harjutus. Algandmete kontrollimine ja ``break``
+Harjutus 8. Algandmete kontrollimine ja ``break``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage algandmete kontrollimise ülesande lahendus ümber nii, et ``input`` käsku on programmis kasutatud vaid ühes kohas.
 
-Lausete kombineerimine
-----------------------------------------
-.. todo:: for!
-
-Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seejärel katsetage järgmist programmi:
+Failist lugemine tsükliga
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mitu rida antud failis on. Praktikas tuleb aga palju sagedamini ette situatsioone, kus faili ridade arv pole teada. Järgnev näide demonstreerib faili kõikide ridade lugemist:
 
 .. sourcecode:: py3
 
     f = open('nimed.txt')
     
-    for nimi in f:
+    while True:
+        nimi = f.readline()
+        # kui jõuti faili lõppu, siis readline tagastab "tühja sõne"
+        if nimi == "":
+            break
+            
         if nimi.strip() == 'Margus':  # strip eemaldab reavahetuse sümboli
             print('Hommik!')
             print('Kuis kulgeb?')
@@ -295,30 +384,67 @@ Tingimuslauseid võib kasutada näiteks ka ``for``-tsükli sees. Uurige ja seej�
     
     f.close()
 
-.. note::
+.. admonition:: Veaotsingust
 
-    Proovige järgi, kuidas Python käitub, kui unustate ``for`` või ``if`` lauses kasutada koolonit või jätate ära mõne taandrea. Sellega saate end taoliseks situatsiooniks juba ette valmistada.
-
-.. index::
-    single: veaotsing
+    Selles näites kasutasime ``strip`` meetodit seepärast, et failist ridade lugemisel jäetakse rea lõppu ka reavahetuse sümbol. Selline nüanss aga ei pruugi alati meelde tulla ja sel juhul programm lihtsalt ei tööta õieti.
     
-.. topic:: Veaotsingust
+    Kui tekib selline situatsioon, kus programm, ei tööta nii nagu te soovite, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu te arvasite. Antud programmis võiks tsüklis esimese asjana (enne tingimuslauset) kuvada ekraanile loetud nime. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
 
-    Selle näite tingimuses kasutasime ``strip`` meetodit seepärast, et failist ridade lugemisel jäetakse rea lõppu ka reavahetuse sümbol. Selline nüanss aga ei pruugi alati meelde tulla ja sel juhul programm lihtsalt ei tööta õieti.
-    
-    Kui tekib selline situatsioon, kus programm, ei tööta nii nagu te soovite, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu te arvasite. Antud programmis võiks ``for``-tsüklis esimese asjana (enne tingimuslauset) kuvada ekraanile loetud nime. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
+Harjutus 9. Failis olevate temperatuuride teisendamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja väljastab ekraanile vastavad temperatuurid Celsiuse skaalas.
 
-.. topic:: Etteruttavalt:
+.. hint::
 
-    Tingimuslause sisse võib panna veel teisi tingimuslauseid või tsükleid (mille sees võib omakorda olla tingimuslauseid ja tsükleid jne.) Lisaks on võimalik tingimusi omavahel kombineerida kasutades operaatoreid ``and`` ja ``or``. Nende teemadega tegeleme põhjalikult peatükis `Tingimuslaused`.
- 
+    Ärge unustage, et ``readline`` tagastab sõne. Arvutamiseks on vaja see teisendada arvuks.
+
+
 Funktsioonid e. uute käskude loomine
 -----------------------------------------
-Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimese ruudu vasak-ülemine nurk koordinaatidel (0,0), teisel (50,20), kolmandal (130,85). Mitu rida läheks sellise programmi kirjutamiseks vaja? Kas programmi lühendamiseks oleks abi tsüklist, mis teeb 3 kordust ja joonistab igal kordusel ühe ruudu?
+.. note::
 
-Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis kolm identset plokki:
+    Siin on tegemist väga põgusa sissejuhatusega funktsioonide defineerimisest. Sellel teemal tuleb edaspidi palju rohkem juttu.
+    
+Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas üleval-vasakul ja teisest natuke allpool. Mitu rida läheks sellise programmi kirjutamiseks vaja? Kas programmi lühendamiseks oleks abi tsüklist, mis teeb 3 kordust ja joonistab igal kordusel ühe ruudu?
 
-.. todo:: näide
+Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu joonistamise kood kolmes kohas:
+
+.. sourcecode:: py3
+
+    from turtle import *
+
+    küljepikkus = 30
+
+    n = 0
+    while n < 4:
+        forward(küljepikkus)
+        left(90)
+        n += 1 
+
+    up()
+    forward(100)
+    left(90)
+    forward(100)
+    down()
+
+    n = 0
+    while n < 4:
+        forward(küljepikkus)
+        left(90)
+        n += 1 
+
+    up()
+    left(90)
+    forward(200)
+    down()
+
+    n = 0
+    while n < 4:
+        forward(küljepikkus)
+        left(90)
+        n += 1 
+
+    exitonclick()    
 
 Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi käsk. ``turtle`` moodulis sellist käsku küll pole, aga õnneks võimaldab Python programmeerijal uusi käske e. *funktsioone* ise *defineerida*.
 
@@ -352,9 +478,6 @@ Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulg
 
     Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud tühjad sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
 
-.. note::
-
-    Selles peatükis kirjutame funktsiooni definitsiooni koos väljakutse(te)ga samasse faili. Edaspidi vaatame ka varianti, kus funktsioonide definitsioonide jaoks luuakse eraldi fail.
     
 Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
 
@@ -362,33 +485,24 @@ Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem
 
     Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
 
-Harjutus ?. Ruudu joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde. Kirjutage funktsioon ``ruut()``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
+Harjutus 10. Ruudu joonistamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde.
+Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
 
-.. hint:: 
+.. note::
 
-    Tuletage meelde, mida tegid kilpkonna käsud ``up()`` ja ``down()``
-    
-.. hint::
+    Justnagu tsükli või tingimuslause kehas, saab ka funktsiooni kehas kasutada ükskõik kui keerulisi ``if``- või ``while`` lauseid (ja nende kombinatsioone). 
+
+.. note::
 
     Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
 
 
-Harjutus ?. Tingimuslause kasutamine funktsioonis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Funktsiooni kehas saab kasutada suvalist tüüpi lauseid, st. ka tingimuslauset ja korduslauset (või ka nende kombinatsiooni, ükskõik kui keerulist). 
-
-.. todo:: ülesanne
-
-Harjutus ?. Korduslause kasutamine funktsioonis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage mingi funktsioon, mille kehas oleks kasutatud korduslauset. 
-
-
-
 Ülesanded
 -------------------
+[NB! 13. septembri õhtuks lisandub siia veel ülesandeid]
+
 1. Paaris või paaritu
 ~~~~~~~~~~~~~~~~~~~~~
 Koostage tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjutage programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
@@ -405,8 +519,6 @@ Lõpuks korraldage nii, et programm töötab õigesti ka siis, kui ühel (või m
 ~~~~~~~~~~~~~~~~~~~~~
 Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjutage programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
 
-.. note::
-    Võib tunduda, et selle ülesande jaoks läheb tarvis tingimuslauset, aga tegelikult on võimalik see lahendada ka lihtsamalt. Vihje: abiks võivad olla ``//``, ``%``, ``floor`` või ``ceil``, valige neist selle ülesande jaoks sobivad.
     
 **Testige** oma programmi muuhulgas järgmiste algandmetega:
 
@@ -417,12 +529,18 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 
 Üritage mõista, miks valiti taolised testiandmed.
 
+Kokkuvõte
+----------
+[Materjal lisatakse 13. septembri õhtuks]
 
+Projekt
+----------
+[Materjal lisatakse 13. septembri õhtuks]
 
 Lisalugemine
 -----------------
 Veaotsingust
 ~~~~~~~~~~~~~~
-.. todo:: 
-    selgita
-    http://openbookproject.net/thinkcs/python/english3e/app_a.html
+[Materjal lisatakse 13. septembri õhtuks]
+    
+http://openbookproject.net/thinkcs/python/english3e/app_a.html
