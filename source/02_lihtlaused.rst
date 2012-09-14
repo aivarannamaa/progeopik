@@ -178,6 +178,12 @@ Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, k
     -1.8369701987210297e-16
     >>> atan(0.5)   
     0.4636476090008061
+    >>> radians(360)
+    6.283185307179586
+    >>> 2 * pi
+    6.283185307179586
+    >>> degrees(2*pi)
+    360.0
     >>> log(10.0)
     2.302585092994046
     >>> log(e)      
@@ -186,6 +192,9 @@ Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, k
     2.0
     >>> sqrt(9)     
     3.0
+
+.. note::
+    Nagu võibolla märkasite, töötavad Pythoni trigonomeetrilised funktsioonid radiaanide, mitte kraadidega. Kraadide teisendamisel radiaanideks on abiks funktsion ``radians``, vastupidises suunas ``degrees``.
     
 .. note::
     Kõikide mooduli ``math`` võimalustega saate tutvuda vastaval Pythoni dokumentatsiooni leheküljel: http://docs.python.org/py3k/library/math.html.

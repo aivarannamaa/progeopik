@@ -1,11 +1,15 @@
 3. Liitlaused
 ============================================
 
+.. admonition:: Muudatused
+
+    * 13. september -- lisatud mõned uued ülesanded.
+
 .. index::
     single: tingimuslaused
     single: tingimuslaused; if-lause
 
-Kui eelmise peatüki teemad liigitasime "lihtlausete" kategooriatesse, siis nüüd vaatame, milliseid on Pythoni olulisimad "liitlaused", mille abil saab lihtlauseid erinevatesse seostesse paigutada.
+Kui eelmise peatüki teemad liigitasime "lihtlausete" kategooriatesse, siis nüüd vaatame, milliseid on Pythoni olulisimad "liitlaused", mille abil saab teiste lausete toimimist muuta.
 
 
 Tingimuslause e. ``if``-lause
@@ -250,6 +254,8 @@ Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni la
     
     print("Sellega on meie arvuteoreetiline uurimus lõppenud")
 
+Siin peaks juba olema näha, miks programmiridade taandamist nimetatakse treppimiseks -- taandatud plokid taandatud plokkide sees moodustavad vasakult vaadates justkui trepiastmed.
+
 .. note::
 
     Proovige järgi, kuidas Python käitub, kui unustate ``while`` või ``if`` lauses kasutada koolonit või jätate ära mõne taandrea. Sellega saate end taoliseks situatsiooniks juba ette valmistada.
@@ -337,7 +343,7 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
 
 .. note::
 
-    Selles programmis kasutasime ka ``if``-lause "üheharulist" varianti -- st ``if`` ilma ``else``-ta. Selle variandi puhul ei tehta tingimuse mittekehtimise puhul mitte midagi. Erinevatest ``if``-lause kujudest tuleb täpsemalt juttu ühes hilisemas peatükis.
+    Selles programmis kasutasime ka ``if``-lause "üheharulist" varianti -- st ``if`` ilma ``else``-ta. Selle variandi puhul ei tee ``if``-lause tingimuse mittekehtimise puhul mitte midagi. Erinevatest tingimuslause kujudest tuleb täpsemalt juttu ühes hilisemas peatükis.
 
 Tegelikult pole ``break`` lause Pythoni programmides hädavajalik - tsükli saab alati ümber kirjutada nii, et kõiki jätkamise/lõpetamise tingimusi kontrollitakse tsükli päises, aga vahel on ``break``-iga lahendus lihtsam.
 
@@ -501,8 +507,6 @@ Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkus
 
 Ülesanded
 -------------------
-[NB! 13. septembri õhtuks lisandub siia veel ülesandeid]
-
 1. Paaris või paaritu
 ~~~~~~~~~~~~~~~~~~~~~
 Koostage tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjutage programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
@@ -529,18 +533,59 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 
 Üritage mõista, miks valiti taolised testiandmed.
 
+4. projecteuler.net
+~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis lahendab esimese ülesande aadressilt http://projecteuler.net/problems.
+
+.. note::
+
+    Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teete endale seal konto, siis saate oma progressi salvestada ja tulemusi kontrollida.
+
+5. Ringi funktsioon
+~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage *funktsioon*, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva ringitaolise kujundi. Lisage programmi ka selle funktsiooni väljakutse.
+
+.. hint::
+
+    Sarnane ülesanne on ülalpool juba antud, aga natuke teises sõnastuses.
+
+6. Kivi-paber-käärid
+~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikult valitud sõna loetelust "kivi", "paber", "käärid". Programmi töö lõpetamiseks tuleb kasutajal enne ENTERi vajutamist sisestada "aitab".
+
+.. hint::
+
+    ENTER-i vajutamine on Pythoni jaoks sama, mis tühja sõne sisestamine
+
+.. hint::
+
+    >>> from random import randint
+    >>> randint(1,3)
+    3
+    >>> randint(1,3)
+    1
+    
+
+7. Raskem: Redeli asendid
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ülesandeks on genereerida Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonistage redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
+
+.. hint::
+
+    Abiks võib olla ``turtle`` käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
+
 Kokkuvõte
 ----------
-[Materjal lisatakse 13. septembri õhtuks]
+[Materjal lisatakse 14. septembril]
 
 Projekt
 ----------
-[Materjal lisatakse 13. septembri õhtuks]
+[Materjal lisatakse 14. septembril]
 
 Lisalugemine
 -----------------
 Veaotsingust
 ~~~~~~~~~~~~~~
-[Materjal lisatakse 13. septembri õhtuks]
+[Materjal lisatakse 14. septembril]
     
 http://openbookproject.net/thinkcs/python/english3e/app_a.html
