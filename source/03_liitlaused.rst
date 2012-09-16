@@ -4,6 +4,7 @@
 .. admonition:: Muudatused
 
     * 13. september -- lisatud mõned uued ülesanded.
+    * 15. september -- lisatud kokkuvõte
 
 .. index::
     single: tingimuslaused
@@ -478,11 +479,16 @@ Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulg
         print("Tere")
         print("Kuidas läheb?")
     
+    # funktsiooni defineerimise ja väljakutse vahel võib olla
+    # ükskõik kui palju muid lauseid
+    print("blaa, blaa, blaa")
+    # ...
+    
     tere() # funktsiooni väljakutse e. rakendamine
 
 .. note::
 
-    Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud tühjad sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
+    Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud *tühjad* sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
 
     
 Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
@@ -498,15 +504,41 @@ Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkus
 
 .. note::
 
-    Justnagu tsükli või tingimuslause kehas, saab ka funktsiooni kehas kasutada ükskõik kui keerulisi ``if``- või ``while`` lauseid (ja nende kombinatsioone). 
+    Justnagu tsükli või tingimuslause kehas, saab ka funktsiooni kehas kasutada ükskõik kui keerulisi ``if``- või ``while`` lauseid (ja nende kombinatsioone):
+    
+    .. sourcecode:: py3
+    
+        def mitu_teret():
+            n = 0
+            
+            while n < 10:
+                print("Tere!")
+                n += 1
+        
+        mitu_teret()
 
 .. note::
 
     Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
 
 
+Kokkuvõte
+----------
+Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käskude jada, mida täidetakse üksteise järel kuni jõutakse programmi lõppu. Vaatlesime kolme programmikonstruktsiooni, millel kõigil on **päis** ja tühikutega veidi paremale nihutatud **keha**, kusjuures kehas olevate lausete täitmise viis on kõigil kolmel juhul erinev:
+
+    * **Tingimuslause** e. ``if``-lause peaharus olevad laused täidetakse ainult siis, kui päises esitatud tingimus kehtib. Kui tingimuslauses on olemas ka ``else`` haru, siis seal olevad laused täidetakse siis, kui tingimus *ei* kehti. Sellise konstruktsiooniga saab muuta programme paindlikumaks, pannes selle käituma üht- või teistmoodi vastavalt olukorrale.
+    * **Korduslause** e. tsükli puhul täidetakse kehas olevad laused 0 või rohkem korda, vastavalt päisele. Selles peatükis vaadeldud ``while``-lause korral kontrollitakse enne kehas olevate lausete täitmist, kas päises antud tingimus kehtib, justnagu tingimuslausegi puhul. Erinevalt tingimuslausest, minnakse peale keha täitmist uuesti tingimust kontrollima ja kui see kehtib endiselt, siis täidetakse kehas olevad laused uuesti jne. Seda protsessi korratakse niikaua, kuni tingimus enam ei kehti. Korduslausega saame kirjeldada protsesse, kus sama toimingut tuleb teha mitu korda järjest (ja seejuures ei pruugi me korduste arvu programmi kirjutamisel ette teada).
+    * **Funktsiooni definitsiooni** kehas olevad laused jäetakse esialgu lihtsalt meelde. Neid saab hiljem käivitada kirjutades definitsiooni päises antud nime koos sulgudega -- seda nimetatakse *funktsiooni väljakutseks* e. rakendamiseks. Funktsioonid võimaldavad keerulise programmilõigu panna kirja vaid ühekordselt, aga kasutada seda mitmes erinevas kohas.
+
+Kõiki vaadeldavaid programmikonstruktsioone nimetatakse Pythonis **liitlauseteks**. Nagu ülalpool mainitud, koosnevad nende kehad suvalist liiki lausetest -- see võimaldab näiteks funktsiooni definitsioonis lisaks lihtlausetele (vt. eelmisest peatükist) kasutada ka korduslauset, mille kehas on omakorda kasutatud tingmuslauset, mille kehas on veel üks tingimuslause jne.
+
+Taolist lausete üksteise sisse panemist esitatakse Pythonis **treppimisega** -- samasse kehasse (e. plokki) kuuluvate lausete vasakud servad joondatakse tühikute abil sama kaugele. Liitlausete puhul joondatakse eelnevate ja järgnevate lausetega vaadeldava lause päis, keha nihutatakse päisega võrreldes veel rohkem paremale.
+
+Kõikide nimetatud programmikonstruktsioonide kohta andsime selles peatükis vaid kõige olulisema info, neist kõigist tuleb edaspidi veel palju juttu.
+
 Ülesanded
 -------------------
+
 1. Paaris või paaritu
 ~~~~~~~~~~~~~~~~~~~~~
 Koostage tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjutage programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
@@ -515,9 +547,13 @@ Koostage tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjutage progra
 ~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 20€ kuus.) 
 
-Esialgu võite eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum.
+Esialgu võite eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum. (Siiamaani saaksite selle ülesande lahendada ka ilma selle peatüki vahenditeta).
 
 Lõpuks korraldage nii, et programm töötab õigesti ka siis, kui ühel (või mõlemal) vanemal on brutopalk maksuvabast miinimumist väiksem.
+
+.. note::
+
+    Kui teile tundub, et selle ülesande juures oleks kasu funktsioonidest, siis olete täiesti õigel teel. Paraku tuleks sissetuleku funktsiooni defineerimisel kasutada teatud lisavigureid, mida selles peatükis polnud mahti tutvustada. Seega, praegu soovitame selle ülesande lahendada ilma uusi funktsioone defineerimata (aga soovi korral võite muidugi vajalikud vigurid juba välja uurida).
 
 3. Busside logistika
 ~~~~~~~~~~~~~~~~~~~~~
@@ -533,21 +569,21 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 
 Üritage mõista, miks valiti taolised testiandmed.
 
-4. projecteuler.net
-~~~~~~~~~~~~~~~~~~~~
+4. projecteuler.net, problem 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis lahendab esimese ülesande aadressilt http://projecteuler.net/problems.
 
 .. note::
 
     Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teete endale seal konto, siis saate oma progressi salvestada ja tulemusi kontrollida.
 
-5. Ringi funktsioon
-~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage *funktsioon*, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva ringitaolise kujundi. Lisage programmi ka selle funktsiooni väljakutse.
+5. Ringi joonistamise funktsioon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage *funktsioon* ``ring()``, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva ringitaolise kujundi. Ringi suurus pole praegu oluline. Lisage programmi ka selle funktsiooni väljakutse.
 
 .. hint::
 
-    Sarnane ülesanne on ülalpool juba antud, aga natuke teises sõnastuses.
+    Sarnane ülesanne on ülalpool juba antud, aga natuke teises sõnastuses. Nüüd on aga vaja lahendus vormistada funktsioonina.
 
 6. Kivi-paber-käärid
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -574,18 +610,74 @@ Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslik
 
     Abiks võib olla ``turtle`` käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
 
-Kokkuvõte
-----------
-[Materjal lisatakse 14. septembril]
-
 Projekt
 ----------
-[Materjal lisatakse 14. septembril]
+[Materjal lisatakse 16. septembril]
 
 Lisalugemine
 -----------------
 Veaotsingust
 ~~~~~~~~~~~~~~
-[Materjal lisatakse 14. septembril]
-    
-http://openbookproject.net/thinkcs/python/english3e/app_a.html
+Esimeses peatükis sai juba veidi tutvustatud Pythoni veateadete hingeelu. (Kuna nüüd olete veateateid juba rohkem näinud, on soovitav see osa uuesti, uue pilguga üle lugeda.)
+
+Nagu ilmselt juba olete kogenud, on kõige problemaatilisemad vead aga need, mille kohta Python veateadet ei taipa anda. Selleks, et taolisi vigu väiksema närvikuluga avastada, soovitame lugeda läbi lihtsad ja kasulikud retseptid järgnevalt aadressilt: http://openbookproject.net/thinkcs/python/english3e/app_a.html
+
+Ruutjuure leidmine
+~~~~~~~~~~~~~~~~~~
+Kuidas arvutada ruutjuurt? Kui importida moodul ``math``, on asi muidugi lihtne. Tegelikult ei vasta see aga küsimusele, vaid lükkab selle lihtsalt meist kaugemale – me teame, et seda funktsiooni välja kutsudes saame me õige tulemuse, kuid me ei tea, kuidas arvuti selleni jõuab. Järgnevalt vaatame ühte viisi ruutjuure leidmiseks kus kasutatakse vaid lihtsaid aritmeetilisi tehteid.
+
+Olgu meil antud arv `y`. Otsime sellist `x` et `x * x = y`. Siis aga `x = y / x`. Seega, kui võtta mingi lähend x\ :sub:`0` selle ruutjuure jaoks, võiks x\ :sub:`0` ja y/x\ :sub:`0` aritmeetiline keskmine olla tegelikule ruutjuure väärtusele juba lähemal, kui x\ :sub:`0` ise seda on. Tuleb välja, et nii enamasti ka on. See lubab ruutjuure leidmiseks kirjutada järgmise programmi:
+
+.. sourcecode:: py3
+
+    y = float(input("Sisestage arv, mille ruutjuurt tahate leida: "))
+
+    x0 = 1
+    while True :
+        eelmine_x0 = x0
+        
+        x0 = (x0 + y / x0 ) / 2.0
+
+        print("Lähend on " + str(x0))
+
+        # Lõpeta arvutamine, kui lähend enam eriti ei muutu
+        if abs(x0-eelmine_x0) < 0.0000001:
+            break
+
+    print("Ruutjuur on ligikaudu: " + str(x0))
+
+``while True`` tähendab lõpmatut kordust. Tsükli kehas on aga siiski ``if``-lause, mille täidetuse korral kordus break-käsuga lõpetatakse. ``if``-lause kontrollib sisuliselt seda, kas eelmise lähendi ja uue lähendi erinevus on väiksem, kui 0,0000001. Peale natukest katsetamist peaks olema selge, et enamasti jõutakse sellise täpsuseni väga väheste korduste arvuga. Võiksite kontrollimise huvides võrrelda selle programmi ja näiteks ``math.sqrt`` tulemusi. Sellist lähendi leidmise meetodit nimetatakse Newtoni iteratsioonimeetodiks, inglise matemaatiku ja füüsiku Isaac Newtoni auks.
+
+π leidmine
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Järgmisena kirjeldaksime aga hästi kavalat viisi kuidas leida π (ringi ümbermõõdu ja diameetri vahelise suhte) väärtust. Kui joonistada ruut ja selle sisse ring, siis kui ringi raadius on `r`, on ruudu pindala `(2*r)*(2*r) = 4*r**2` ja ringi pindala `pi*r**2`. Seega ringi pindala moodustab `pi/4` kogu ruudu pindalast. Seega, valides juhusliku punkti ruudu seest, asub ta ringi sees tõenäosusega `pi/4`. Seega, kui valida juhuslikult palju punkte ruudu seest, peaks ligikaudu `pi/4` osa neist olema ringi sees. Neid kokku lugedes saame seega hinnata `pi/4` väärtust suhtega `ringi sees olevate arv` / `katsete koguarv`.
+
+Teame, et ringi moodustavad kõik punktid, mis on tema keskpunktile lähemal kui raadius. Seega, kui keskpunkt on (0,0), siis on ringi sees täpselt need punktid (x,y) mille korral 
+`sqrt(x**2 + y**2) ≤  r`, st. `x**2 + y**2 ≤  r**2`. Valides `r=1`, saame koostada järgmise programmi:
+
+.. sourcecode:: py3
+
+    import random
+
+    n = int(input("Sisesta katsete arv: "))
+    c = 0
+
+    i = 0
+    while i < n:
+        # Genereeri juhuslik punkt
+        x = random.uniform(-1,1)
+        y = random.uniform(-1,1)
+
+        # Kontrolli, kas ta on ringi sees
+        if (x**2 + y**2 < 1):
+            c=c+1
+        
+        i += 1
+
+    print("Hinnanguks on "+ str((4.0*c) / n))
+
+Funktsioon ``random.uniform`` valib ühtlase jaotuse põhjal juhuslikult ühe reaalarvu etteantud vahemikust. Kõik muu programmi juures peaks olema juba tuttav.
+
+Katsetamine erinevate katsete arvudega (10,100,1000,...,1000000) peaks veenma, et kuigi tulemused on reeglina π-le lähedased, on see siiski suhteliselt halb meetod π kohtade leidmiseks sest vähegi mõistliku täpsuse saamiseks tuleb teha väga palju katseid.
+
+Selliseid arvutusmeetodeid nimetatakse Monte Carlo meetoditeks (kuulsa kasiinolinna järgi Monakos). Antud näide on taas pigem illustratiivne – praktikas kasutatakse seda reeglina ülesannete puhul, mida muud moodi lahendada ei osata. π arvutamiseks teatakse aga palju teisi ja oluliselt paremaid meetodeid.
