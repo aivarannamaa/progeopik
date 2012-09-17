@@ -4,7 +4,8 @@
 .. admonition:: Muudatused
 
     * 13. september -- lisatud mõned uued ülesanded.
-    * 15. september -- lisatud kokkuvõte
+    * 15. september -- lisatud kokkuvõte ja lisalugemine
+    
 
 .. index::
     single: tingimuslaused
@@ -139,7 +140,8 @@ Proovige kirjutada sellest programmist kaks varianti erinevate kitsendustega:
         else:
             print(...)
         ...
-
+    
+    vs.
 
     .. sourcecode:: py3
         
@@ -235,25 +237,31 @@ Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni la
 
 .. sourcecode:: py3
 
-    n = 1
+    i = 1
 
-    while n <= 10:
-        print("Vaadeldav arv on", n)
-        if n % 2 == 0:
+    while i <= 10:
+        print("Vaadeldav arv on", i)
+        if i % 2 == 0:
             print("Tegemist on paarisarvuga")
         else:
             print("Tegemist on paaritu arvuga")
 
-        ruut = n * n
+        ruut = i * i
         if ruut % 2 == 0:
             print("Tema ruut", ruut, "on paarisarv")
         else:
             print("Tema ruut", ruut, "on paaritu arv")
 
         print("--------------------------------")
-        n += 1
+        i += 1
     
     print("Sellega on meie arvuteoreetiline uurimus lõppenud")
+
+.. note::
+
+    Eelmises peatükis soovitati valida muutujatele nimed, mis kirjeldavad nende tähendust. Selles näites on aga muutuja nimega ``i``, mis ei paista midagi tähedavat. Milles asi?
+    
+    Asi on selles, et nime ``i`` kasutamine tsüklimuutuja jaoks lihtsalt väga levinud. Nähes muutujat nimega ``i`` kusagil tsükli läheduses, eeldab iga vähegi kogenud programeerija, et seda muutujat kasvatatakse igal tsükli sammul ühe võrra. Seega ei rikkunud me antud näites tähendusrikka muutujanime reeglit -- sellele  nimele lihtsalt ongi kujunenud oma tähendus.
 
 Siin peaks juba olema näha, miks programmiridade taandamist nimetatakse treppimiseks -- taandatud plokid taandatud plokkide sees moodustavad vasakult vaadates justkui trepiastmed.
 
@@ -359,7 +367,8 @@ Mõnikord on mugav tsükli lõpetamise tingimust kontrollida *ainult* tsükli ke
             print("OK, lõpetan")
             break
         else: # ei olnud ei arv ega tühisõne
-            print("Vigane sisend, proovi uuesti!")
+            arv = float(tekst)
+            print("Selle arvu ruut on", arv * arv)
 
 Harjutus 7. Juhuslikud arvud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -422,11 +431,11 @@ Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu jooni
 
     küljepikkus = 30
 
-    n = 0
-    while n < 4:
+    i = 0
+    while i < 4:
         forward(küljepikkus)
         left(90)
-        n += 1 
+        i += 1 
 
     up()
     forward(100)
@@ -434,22 +443,22 @@ Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu jooni
     forward(100)
     down()
 
-    n = 0
-    while n < 4:
+    i = 0
+    while i < 4:
         forward(küljepikkus)
         left(90)
-        n += 1 
+        i += 1 
 
     up()
     left(90)
     forward(200)
     down()
 
-    n = 0
-    while n < 4:
+    i = 0
+    while i < 4:
         forward(küljepikkus)
         left(90)
-        n += 1 
+        i += 1 
 
     exitonclick()    
 
@@ -610,17 +619,23 @@ Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslik
 
     Abiks võib olla ``turtle`` käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
 
-Projekt
-----------
-[Materjal lisatakse 16. septembril]
-
-Lisalugemine
------------------
+Praktilisi näpunäiteid
+------------------------
 Veaotsingust
 ~~~~~~~~~~~~~~
 Esimeses peatükis sai juba veidi tutvustatud Pythoni veateadete hingeelu. (Kuna nüüd olete veateateid juba rohkem näinud, on soovitav see osa uuesti, uue pilguga üle lugeda.)
 
 Nagu ilmselt juba olete kogenud, on kõige problemaatilisemad vead aga need, mille kohta Python veateadet ei taipa anda. Selleks, et taolisi vigu väiksema närvikuluga avastada, soovitame lugeda läbi lihtsad ja kasulikud retseptid järgnevalt aadressilt: http://openbookproject.net/thinkcs/python/english3e/app_a.html
+
+
+Lisalugemine
+-----------------
+
+.. admonition:: Matemaatika ja programmeerimine
+
+    Loodetavasti veendute järgnevat lugedes, et matemaatikat ja programmeerimist (ning matemaatika ja programmeerimise õppimist) saab omavahel väga edukalt siduda. Tegelikult ongi väga kasulik mingi uue matemaatilise mõiste õppimisel proovida väljendada seda mõnes programmeerimiskeeles. Erinevalt tavakeelest peab programeerimiskeeles väljendama ennast alati absoluutselt täpselt, seetõttu toob taoline harjutus välja need aspektid, mille osas teie arusaamine antud mõistest on jäänud veidi hägusaks.
+
+    Loomulikult ei pruugi alati tulla head ideed, kuidas mingit matemaatilist teemat programmeerimisega siduda. Selles osas on tavaliselt abi Wikipediast (nt http://en.wikipedia.org/wiki/Square_root#Computation)
 
 Ruutjuure leidmine
 ~~~~~~~~~~~~~~~~~~
@@ -681,3 +696,4 @@ Funktsioon ``random.uniform`` valib ühtlase jaotuse põhjal juhuslikult ühe re
 Katsetamine erinevate katsete arvudega (10,100,1000,...,1000000) peaks veenma, et kuigi tulemused on reeglina π-le lähedased, on see siiski suhteliselt halb meetod π kohtade leidmiseks sest vähegi mõistliku täpsuse saamiseks tuleb teha väga palju katseid.
 
 Selliseid arvutusmeetodeid nimetatakse Monte Carlo meetoditeks (kuulsa kasiinolinna järgi Monakos). Antud näide on taas pigem illustratiivne – praktikas kasutatakse seda reeglina ülesannete puhul, mida muud moodi lahendada ei osata. π arvutamiseks teatakse aga palju teisi ja oluliselt paremaid meetodeid.
+

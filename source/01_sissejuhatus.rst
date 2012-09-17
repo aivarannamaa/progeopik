@@ -432,7 +432,7 @@ Selle õpiku näited ja ülesanded on valdavalt fokuseeritud mingile kindlale te
 
 Teine paratamatu puudus õpikunäidete ja ülesannete juures on see, et need ei pruugi olla kõigi lugejate jaoks ühtviisi huvitavad. Seetõttu on programmeerimise õppimisel väga kasulik valida endale mõni suuremat sorti huvipakkuv ülesanne -- nn. `projekt`, ning tegelda sellega paralleelselt uute teemade õppimisega. Tuleb välja, et õppimine on palju ladusam ja huvitavam, kui teil on iga uue teema jaoks juba valmis paras "auk" oma projektiidees, kus õpitut saab kohe rakendada!
 
-Huvitavate ideede realiseerimiseks läheb aga tavaliselt vaja rohkem abivahendeid, kui õpikunäidete jaoks. Nende abivahendite tutvustamiseks ongi iga peatüki lõpus plokk pealkirjaga `Projekt`. Erinevalt õpiku põhitekstist, mis keskendub Pythoni üldistele põhimõtetele, vaadeldakse edaspidistes projektiplokkides mingi spetsiifilisema `teegi` (ing.k. `library`) kasutamist, mille abil saaks luua midagi põnevat ja/või praktilist.
+Huvitavate ideede realiseerimiseks läheb aga tavaliselt vaja rohkem abivahendeid, kui õpikunäidete jaoks. Nende abivahendite tutvustamiseks ongi mõnede peatükkide lõpus plokk pealkirjaga `Projekt`. Erinevalt õpiku põhitekstist, mis keskendub Pythoni üldistele põhimõtetele, vaadeldakse edaspidistes projektiplokkides mingi spetsiifilisema `teegi` (ing.k. `library`) kasutamist, mille abil saaks luua midagi põnevat ja/või praktilist.
 
 Selle peatüki projektiploki eesmärgiks on aidata ideede genereerimisel. Allpool tutvustame kolme küllalt erinevat programmi, mida oleks võimalik kirjutada antud õpiku materjali põhjal. Laadige need programmid oma arvutisse ja käivitage samamoodi nagu ülalpool toodud näiteprogrammid. 
 
@@ -468,8 +468,8 @@ Teie enda projekt
 Valige välja mõned esialgsed programmiideed, mida te sooviksite Pythonis realiseerida. Uute teemade õppimisel mõelge, kas ja kuidas te saaksite antud teemat rakendada enda programmi juures.
 
 
-Lisalugemine
-------------
+Praktilisi näpunäiteid
+-----------------------
     
 Pythoni kasutamine süsteemi käsureal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

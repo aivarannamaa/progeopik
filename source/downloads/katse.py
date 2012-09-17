@@ -1,15 +1,9 @@
-y = float(input("Sisestage arv, mille ruutjuurt tahate leida: "))
+while True:
+    tekst = input("Sisesta arv ja vajuta ENTER (lõpetamiseks vajuta ainult ENTER): ")
 
-x0 = 1
-while True :
-    eelmine_x0 = x0
-
-    x0 = (x0 + y / x0 ) / 2.0
-
-    print("Lähend on " + str(x0))
-
-    # Lõpeta arvutamine, kui lähend enam eriti ei muutu
-    if abs(x0-eelmine_x0) < 0.0000001:
+    if tekst == "":
+        print("OK, lõpetan")
         break
-
-print("Ruutjuur on ligikaudu: " + str(x0))
+    else: # ei olnud ei arv ega tühisõne
+        arv = float(tekst)
+        print("Selle arvu ruut on", arv * arv)
