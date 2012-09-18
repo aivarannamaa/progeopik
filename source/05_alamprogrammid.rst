@@ -598,36 +598,6 @@ Testige oma programmi ja kontrollige, kas saate järgnevad tulemused:
     * hind: 10000, sissemakse: 2900, aastaid: 10; kogusumma: 14260, intressid: 4260
     * hind: 10000, sissemakse: 2900, aastaid: 0; kogusumma: 10000, intressid: 0
 
-4. Sõnemeetodid
-~~~~~~~~~~~~~~~
-Tutvuge Pythoni erinevate sõnemeetoditega aadressil:  http://docs.python.org/py3k/library/stdtypes.html#string-methods
-
-NB! Mõnda neist meetoditest läheb tarvis järgmise ülesande lahendamiseks.
-
-.. note ::
-    Nurksulud Pythoni funktsioonide dokumentatsioonis näitavad, et sellele parameetrile ei pea väljakutsel tingimata väärtust andma, sest tal on olemas vaikeväärtus. Nt. kui meetodi kirjeldus on kujul ``str.center(width[, fillchar])``, siis see tähendab, et seda võib kasutada kas 1 argumendiga (nt. ``kliendi_nimi.center(80)``) või 2 argumendiga (``kliendi_nimi.center(80, '~')``).
-
-
-5. Nimede korrastamine
-~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon, mis võtab argumentidena eraldi eesnime ja perenime ning tagastab 
-täisnime, kusjuures tulemuses peab mõlema nimeosa esitäht olema suur ning ülejäänud väiksed, hoolimata sellest, kas argumendid anti suur- või väiketähtedega (taolist funktsiooni saaks kasutada näiteks kliendi andmete sisestamise programmis). Eeldame praegu, et funktsiooni ei kasutata sidekriipsuga nimede jaoks, sest nende puhul ei tule tulemus korrektne.
-
-Kirjutage programmi lõppu laused, mis demonstreerivad, et:
-
-    * kui eesnimi on ``'uku'`` ja perenimi on ``'masing'``, siis tulemus on ``'Uku Masing'``
-    * kui eesnimi on ``'UkU'`` ja perenimi on ``'maSINg'``, siis tulemus on ``'Uku Masing'``
-    * kui eesnimi on ``'Uku'`` ja perenimi on ``'Masing'``, siis tulemus on ``'Uku Masing'``
-    
-Viimaks täiendage funktsiooni selliselt, et kui nimi siiski sisaldab sidekriipsu, siis tagastatakse sõne ``'viga: programm ei toeta sidekriipsuga nimesid'``, st:
-
-    * kui eesnimi on ``'Aita-Leida'`` ja perenimi on ``'Kuusepuu'``, siis tulemus on ``'viga: programm ei toeta sidekriipsuga nimesid'``
-
-
-
-.. index::
-    single: kolmanda osapoole moodulid
-    single: moodulid; kolmanda osapoole moodulid
 
 
 **Ülesanne 2.** Liigu nurka

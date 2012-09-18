@@ -1,9 +1,10 @@
-while True:
-    tekst = input("Sisesta arv ja vajuta ENTER (lõpetamiseks vajuta ainult ENTER): ")
+n = int(input("Sisesta naturaalarv: "))
 
-    if tekst == "":
-        print("OK, lõpetan")
-        break
-    else: # ei olnud ei arv ega tühisõne
-        arv = float(tekst)
-        print("Selle arvu ruut on", arv * arv)
+summa = 0
+i = 0
+
+while i < n:
+    summa += i
+    i += 1
+
+print(n, "esimese naturaalarvu summa on", summa)

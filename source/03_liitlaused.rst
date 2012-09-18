@@ -6,6 +6,7 @@
     * 13. september -- lisatud mõned uued ülesanded.
     * 15. september -- lisatud kokkuvõte ja lisalugemine.
     * 18. september -- lisalugemise juurde lisatud π arvutamise graafiline demoprogramm.
+    * 19. september -- lisatud näide "Summa arvutamine tsüklis"
     
 
 .. index::
@@ -383,6 +384,32 @@ Harjutus 8. Algandmete kontrollimine ja ``break``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage algandmete kontrollimise ülesande lahendus ümber nii, et ``input`` käsku on programmis kasutatud vaid ühes kohas.
 
+Summa arvutamine tsüklis
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Nagu võib arvata, ei piira Python tegelikult, kuidas me muutuja väärtust suurendame või vähendame:
+
+.. sourcecode:: py3
+
+    n = int(input("Sisesta naturaalarv: "))
+    
+    summa = 0
+    i = 0
+    
+    while i <= n:
+        summa += i
+        i += 1
+    
+    print(n, "esimese naturaalarvu summa on", summa)
+
+
+Harjutus 9. Faktoriaali arvutamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis arvutab etteantud arvu faktoriaali.
+
+.. note:: 
+
+    Kuidas käitub teie programm negatiivse arvu korral?
+
 Failist lugemine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mitu rida antud failis on. Praktikas tuleb aga palju sagedamini ette situatsioone, kus faili ridade arv pole teada. Järgnev näide demonstreerib faili kõikide ridade lugemist:
@@ -411,8 +438,8 @@ Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mit
     
     Kui tekib selline situatsioon, kus programm ei tööta nii nagu te soovite, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu te arvasite. Antud programmis võiks tsüklis esimese asjana (enne tingimuslauset) kuvada ekraanile loetud nime. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
 
-Harjutus 9. Failis olevate temperatuuride teisendamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Harjutus 10. Failis olevate temperatuuride teisendamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja väljastab ekraanile vastavad temperatuurid Celsiuse skaalas.
 
 .. hint::
@@ -511,7 +538,7 @@ Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem
 
     Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
 
-Harjutus 10. Ruudu joonistamine
+Harjutus 11. Ruudu joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde.
 Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.

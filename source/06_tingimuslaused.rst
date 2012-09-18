@@ -1,6 +1,18 @@
 6. ``bool`` ja tingimuslaused
 =======================================
 
+..
+    COMMENTS:
+    http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/ch05.html
+    Give the logical opposites of these conditions
+
+    a > b
+    a >= b
+    a >= 18  and  day == 3
+    a >= 18  and  day != 3
+
+
+
 .. warning::
 
     Selle peatüki materjal võib veel muutuda
@@ -280,12 +292,6 @@ Lahendage `õpiku 5. peatükist <http://courses.cs.ut.ee/2011/programmeerimine/u
 3. Klaveri mahutamine
 ~~~~~~~~~~~~~~~~~~~~~
 Ülikool on ostnud endale uue klaveri peahoone aula tarbeks. Paraku unustati  kontrollida, kas see klaver üldse välisuksest sisse mahub. Kirjutada programm, mis küsib kasutajalt klaverit sisaldava kasti kolm mõõdet (pikkus, laius, kõrgus) ning ukse laiuse ja kõrguse ning vastab, kas klaver on võimalik aulasse sisse toimetada.
-
-4. Paprikasupp
-~~~~~~~~~~~~~~
-Kausitäis paprikasuppi jahtub minuti jooksul 19% võrra supi ja ruumi temperatuuride vahest. Koostage programm, mis väljastab supi temperatuuri iga minuti kohta, kui supi algtemperatuur on 90 kraadi. Ruumi temperatuur on 20 kraadi.
-
-Hoiatus: olge ettevaatlik tsükli jätkamistingimusega! Kui lasete supil jahtuda 20 kraadini, peate väga kaua ootama. Mõelge ja/või proovige järele, miks.
 
 5. Kujundid
 ~~~~~~~~~~~~
