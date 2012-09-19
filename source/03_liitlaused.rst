@@ -6,7 +6,7 @@
     * 13. september -- lisatud mõned uued ülesanded.
     * 15. september -- lisatud kokkuvõte ja lisalugemine.
     * 18. september -- lisalugemise juurde lisatud π arvutamise graafiline demoprogramm.
-    * 19. september -- lisatud näide "Summa arvutamine tsüklis"
+    * 19. september -- lisatud näide "Summa arvutamine tsüklis". 4. ja 6. ülesandele lisatud kummalegi üks uus vihje.
     
 
 .. index::
@@ -614,6 +614,13 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis lahendab esimese ülesande aadressilt http://projecteuler.net/problems.
 
+.. hint::
+
+    .. sourcecode:: py3
+    
+        if esimene_tingimus or teine_tingimus:
+            ...
+
 .. note::
 
     Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teete endale seal konto, siis saate oma progressi salvestada ja tulemusi kontrollida.
@@ -641,7 +648,18 @@ Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslik
     3
     >>> randint(1,3)
     1
+
+.. hint::
+
+    .. sourcecode:: py3
     
+        if ...:
+            ...
+        else:
+            if ...:
+                ...
+            else:
+                ...
 
 7. Raskem: Redeli asendid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
