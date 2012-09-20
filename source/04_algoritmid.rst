@@ -16,51 +16,54 @@ Peale antud teema läbimist üliõpilane oskab
 * esitada lihtsamate ülesannete lahendust plokkskeemina (nt. lihtsamate kilpkonnaülesannete korral).
 
 
-Sissejuhatus
-------------
+Ülesanded ja nende lahendamine
+--------------------------------------
+Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (arst avastab teie lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (Mis on elu mõte?). 
 
-**Ülesanne 1.** Dokumentideta võõras linnas
+Vaatame mõnesid ülesandeid, millega võite kokku puutuda.
+
+
+Näide 1. Dokumentideta võõras linnas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde avastad, et ühiselamu võti, ID-kaart ja mobiiltelefon on kadunud. Kuidas lahendada olukord?
+Kujutlege end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde avastate, et ühiselamu võti, ID-kaart ja mobiiltelefon on kadunud. Kuidas lahendada olukord?
 
-Meie igapäevaelus tuleb meil ette suuri ja väikesi ülesandeid. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (arst avastab sinu lähedasel üliharva esineva ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte.  
-Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (Mis on elu mõte?). Arvutiteaduses me tegeleme probleemidega, mille lahendust saab esitada algoritmina. 
+.. admonition:: Kommentaar 
 
-*Algoritmiks* nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida on võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja  mida täidab arvuti. 
+    Antud ülesande püstitus tekitab palju küsimusi: kuhu need asjad võisid kaduda? Kas nad kadusid korraga? Millal nad viimati olemas olid? Kas ülikooli ruumidesse pääseb veel sisse, et neid sinna otsima minna? Selliseid küsimusi saab esitada veel ja seetõttu oleks väga raske lahendust üheselt määrata. Me võiksime ju proovida formuleerida kaotatud asjade leidmiseks mingi "retsepti" aga tõenäoliselt nõuab selle situatsiooni lahendamine ka *loovust*, st. oskust toimida ettenägematus olukorras.
 
-Pöördume tagasi ülesande 1 juurde. Siin on ülesande püstitus puudulik. Tekib palju küsimusi, millele pole vastuseid antud: Kuhu need asjad kadusid? Kas need kadusid korraga? Kas need kadusid teel koju? Kas nad jäid ülikooli mõnda auditooriumi? 
-
-Selliseid küsimusi saab esitada veel ja lahendust pole võimalik üheselt määrata.    
-
-**Ülesanne 2.** Ruut ja ring
+Näide 2. Ruut ja ring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala. 
 
-.. image:: images/l04_fig1.gif
+.. image:: images/ring_ruut1.gif
 
-Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg) ja väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist 
+.. admonition:: Kommentaar
 
-.. image:: images/l04_fig2.gif
+    Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg) ja väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist 
 
-ja esitame lahenduse kahe sammuna:
+    .. image:: images/ring_ruut2.gif
 
-.. centered::
-    :math:`d=\sqrt{a^2+a^2}=\sqrt{2}a`
-    :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
+    ja esitame lahenduse kahe sammuna:
 
-**Ülesanne 3.** Hundi, kitse ja kapsa üle jõe viimine 
+    .. centered::
+        :math:`d=\sqrt{a^2+a^2}=\sqrt{2}a`
+        :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
+
+Näide 3. Hundi, kitse ja kapsa üle jõe viimine 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal, kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
 
-Seda tüüpi ülesanne sisaldab loogikat. Tulemuseks ei ole arvutatav väärtus nagu ülesandes 2, vaid rida käike, mis esitavad üleminekut algseisundist (kõik tegelased on ühel pool jõge) lõppseisundisse (kõik tegelased on teisel pool jõge). 
+Leida ülesandele vähemalt üks lahendus.
 
-.. note::
-   Leida ülesandele vähemalt üks lahendus.
+.. admonition:: Kommentaar
+    
+    Seda tüüpi ülesanne sisaldab loogikat. Tulemuseks ei ole arvutatav väärtus nagu ülesandes 2, vaid rida käike, mis esitavad üleminekut algseisundist (kõik tegelased on ühel pool jõge) lõppseisundisse (kõik tegelased on teisel pool jõge). 
 
-**Ülesanne 4.** 
-~~~~~~~~~~~~~~~
+
+Näide 4. Pascal'i kolmnurk 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Joonisel on esitatud Pascal'i arvude kolmnurk
 
 .. image:: images/l04_fig4.gif
@@ -82,19 +85,8 @@ Kuidas on Pascali kolmnurga arvud seotud kordajatega valemis
 .. centered::
     :math:`(x + y)^n`
 
-peale valemi lahtikirjutamist? 
-Toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. 
+peale valemi lahtikirjutamist?  
 
-
-Ülesande lahendamise protsess (problem solving)  
------------------------------------------------
-Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
-
-1. Algoritmi koostamine ja esitamine.
-2. Programmi koostamine mingis konkreetses programmeerimiskeeles.
-3. Programmi sisestamine arvutisse.
-4. Programmi testimine ja silumine.
-5. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
 
 
 .. index::
@@ -103,20 +95,24 @@ Toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel.
 .. _algoritm:    
 
 Algoritm
---------
+---------
+Ülalpool toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. Arvutiteaduses tegeleme me probleemidega, mille lahendust saab esitada `algoritmina`. 
 
-Mõiste *‘algoritm’* on tuletatud 9. sajandi Pärsia matemaatiku Mohammed al-Khowarizmi nimest. Al-Khowarizmi on Algorismus (ladina keeles) - algorithm.
+**Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehhaaniliselt* (st. ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
 
-Esitame nüüd algoritmile täpsema definitsiooni.
+Algoritm ja arvuti
+~~~~~~~~~~~~~~~~~~~~~~~~
+Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja seega saab neid vajadusel käivitada arvutil. Sellest vaatenurgast võiksime anda algoritmile ka järgneva, veidi kitsama definitsiooni:
 
-**Algoritm**  on  täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, mis saab sisendina ette mingi väärtuse või väärtuste hulga ja leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.
+*Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, mis saab sisendina ette mingi väärtuse või väärtuste hulga ja leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.* 
 
 .. image:: images/l04_fig8.gif 
 
-Kokkuvõtvalt, algoritm on arvutispetsialistide kõnepruugis lihtsalt protseduur. Erinevate elukutsete inimestel on erinev vorm oma töövoost ja nad nimetavad seda erinevalt. Näiteks kokk järgib protseduuri, mida nimetatakse  retseptiks. Retsept kirjeldab algoritmi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). Algoritm hõlmab lahenduse kogu loogikat. Seega ülesande lahendamine jaotub kaheks etapiks:
 
-* algoritmi koostamine, mis lahendaks ülesande,
-* algoritmi teisendamine programmiks.
+Algoritm hõlmab lahenduse kogu loogikat. Seega ülesande lahendamine jaotub kaheks etapiks:
+
+    * algoritmi koostamine, mis lahendaks ülesande,
+    * algoritmi teisendamine programmiks.
 
 Viimast protsessi nimetatakse programmeerimiseks ja see protsess on suhteliselt lihtsam, sest kogu loogika on juba olemas ja tuleb lihtsalt järgida kasutatava programmeerimiskeele süntaksit. Esimene etapp võib olla komistuskiviks paljudele ja seda kahel põhjusel:
 
@@ -124,19 +120,42 @@ Viimast protsessi nimetatakse programmeerimiseks ja see protsess on suhteliselt 
 * see nõuab võimet selgesti väljendada lahenduskäik täpselt samm-sammuliste isntruktsioonidena.
 
 Teist oskust omandatakse ja täiustatakse pidevalt läbi praktika. 
+
+
+.. note::
+    Algoritme kasutatakse erinevate elukutsete juures. Näiteks kokk järgib algoritmi, mida nimetatakse retseptiks. Retsept kirjeldab protsessi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). 
+
+ 
+.. note::
+
+    Sõna *‘algoritm’* on tuletatud 9. sajandi Pärsia matemaatiku Mohammed al-Khowarizmi nimest. Tema nime ladinapärane kuju on *Algorismus*.
+
+
    
 .. index::
     single: algoritmi omadused
 
 
 Algoritmi omadused
-------------------
+~~~~~~~~~~~~~~~~~~~~~
 Algoritmil on neli olulist omadust:
 
 1. Algoritmi iga samm peab olema *täpne*, st olema ühetähenduslik.
 2. Algoritm peab olema *lõplik*. Vastasel juhul me ei saa probleemile lahendust.
 3. Algoritm peab olema *efektiivne*, st ta peab andma probleemile korrektse vastuse.
 4. Algoritm peab olema *üldine*, st ta peab lahendama ülesande iga eksemplari. Näiteks programm, mis leiab ringi pindala, peab töötama kõigi võimalike algandmete korral antud programmeerimiskeele ja arvuti korral. 
+
+Algoritm ja arvuti 
+~~~~~~~~~~~~~~~~~~~~~
+Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
+
+    #. Algoritmi koostamine ja esitamine.
+    #. Programmi koostamine mingis konkreetses programmeerimiskeeles.
+    #. Programmi sisestamine arvutisse.
+    #. Programmi testimine ja silumine.
+    #. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
+
+
 
 .. index::
     single: algoritmi esitus plokkskeemina

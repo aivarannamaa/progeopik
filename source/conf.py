@@ -28,6 +28,8 @@ import sys, os
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.todo', 'sphinx.ext.pngmath']
 todo_include_todos = True
 
+pngmath_dvipng_args = ['-gamma 1.5', '-D 110', '-bg Transparent']
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
