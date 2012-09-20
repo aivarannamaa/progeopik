@@ -1,2 +1,3 @@
 syntax: glob
 build
+source/downloads/__pycache__/pykkar.cpython-32.pyc
