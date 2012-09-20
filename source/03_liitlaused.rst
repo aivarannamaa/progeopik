@@ -214,20 +214,16 @@ Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstrukt
 
 Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas olema mingi lause, mis mõjutab tingimuse kehtivust -- antud näites on selleks lause, mis muudab muutuja ``joonistatud_kylgi`` väärtust 1 võrra suuremaks.
 
-.. note::
-
-    Muutujaid, mille väärtust suurendatakse igal tsükli sammul, nimetatakse *loenduriteks* ja nende nimeks pannakse tavaliselt ``i``. Selliseid tsükleid, kus korduste arv on tsükli alustamise hetkel teada, nimetatakse *määratud tsükliteks*.
-
 .. topic:: Muutuja muutmine
 
     Nagu 2. peatükis mainitud, on võimalik Pythonis muutuja väärtust uue väärtusega üle kirjutada. Tsüklid ongi see koht, kus seda võimalust kõige sagedamini tarvis läheb.
     
     Muutuja väärtuse suurendamiseks kirjutasime eelnevas näites ``joonistatud_kylgi = joonistatud_kylgi + 1``, st. ``joonistatud_kylgi`` uueks väärtuseks sai ``joonistatud_kylgi`` hetkeväärtus + 1. Sellist suurendamist mingi arvu võrra saab Pythonis ka lühemalt kirjutada: ``joonistatud_kylgi += 1``. Muutuja väärtuse vähendamiseks võib analoogselt kirjutada ``joonistatud_kylgi -= 1``.
 
-
 .. note::
 
-    Tegelikult on Pythonis olemas ka teine, natuke spetsiifilisem tsüklitüüp, mida nimetatakse ``for``-tsükliks ja mis sobib *n*-korduse tegemiseks isegi paremini, kui ``while``. ``for``-tsüklit vaatame järjendite peatükis.
+    Muutujaid, mille väärtust suurendatakse igal tsükli sammul, nimetatakse *loenduriteks* ja nende nimeks pannakse tavaliselt ``i``. Selliseid tsükleid, kus korduste arv on tsükli alustamise hetkel teada, nimetatakse *määratud tsükliteks*.
+
 
 
 Harjutus 3. Programm *n*-nurga joonistamiseks

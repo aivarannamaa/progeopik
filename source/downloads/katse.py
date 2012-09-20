@@ -1,10 +1,27 @@
-n = int(input("Sisesta naturaalarv: "))
+from pykkar import *
 
-summa = 0
-i = 0
+# create_world võtab argumendiks mitmerealise sõne, mis esitab
+# roboti "maailma"
+# Trellid tähistavad seinu, nooleke tähistab robotit
+# (noole suund tähistab roboti suunda)
+create_world("""
+########
+#     >#
+#      #
+#      #
+#      #
+#      #
+########
+""")
 
-while i < n:
-    summa += i
-    i += 1
+samme_jäänud = 3
+while samme_jäänud > 0:
+    if is_wall(): # ei lase robotil vastu seina põrgata
+        break
+    else:
+        step() # robot liigub ühe ruudu võrra edasi
+        samme_jäänud -= 1
 
-print(n, "esimese naturaalarvu summa on", summa)
+# pöörame ringi
+right()
+right()

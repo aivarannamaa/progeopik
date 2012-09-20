@@ -1,26 +1,21 @@
 4. Algoritm ja plokkskeem
 ==========================
 
-.. warning::
+Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame läbitud juba teemasid veidi teise nurga alt.
 
-    Selle peatüki materjali veel täiendatakse
+Peale antud teema läbimist oskate:
 
-Peale antud teema läbimist üliõpilane oskab
-
-* selgitada algoritmi mõistet;
-
-* lihtsamate ülesannete korral esitada probleemi täpse püstituse, st välja selgitada algandmed ja nõutava tulemuse;
-
-* leida antud ülesande lahendamiseks kohased põhitegevused ja esitada nende täitmise järjekorra;
-
-* esitada lihtsamate ülesannete lahendust plokkskeemina (nt. lihtsamate kilpkonnaülesannete korral).
+    * selgitada algoritmi mõistet;
+    * lihtsamate ülesannete korral esitada probleemi täpse püstituse, st välja selgitada algandmed ja nõutava tulemuse;
+    * leida antud ülesande lahendamiseks kohased põhitegevused ja esitada nende täitmise järjekorra;
+    * esitada lihtsamate ülesannete lahendust plokkskeemina.
 
 
 Ülesanded ja nende lahendamine
 --------------------------------------
-Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (arst avastab teie lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (Mis on elu mõte?). 
+Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab teie lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (nt. Mis on elu mõte?). 
 
-Vaatame mõnesid ülesandeid, millega võite kokku puutuda.
+Vaatame nüüd mõnesid ülesandeid, millega võite kokku puutuda.
 
 
 Näide 1. Dokumentideta võõras linnas
@@ -100,79 +95,56 @@ Algoritm
 
 **Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehhaaniliselt* (st. ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
 
-Algoritm ja arvuti
-~~~~~~~~~~~~~~~~~~~~~~~~
-Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja seega saab neid vajadusel käivitada arvutil. Sellest vaatenurgast võiksime anda algoritmile ka järgneva, veidi kitsama definitsiooni:
+Algoritmil on neli olulist omadust:
 
-*Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, mis saab sisendina ette mingi väärtuse või väärtuste hulga ja leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.* 
-
-.. image:: images/l04_fig8.gif 
-
-
-Algoritm hõlmab lahenduse kogu loogikat. Seega ülesande lahendamine jaotub kaheks etapiks:
-
-    * algoritmi koostamine, mis lahendaks ülesande,
-    * algoritmi teisendamine programmiks.
-
-Viimast protsessi nimetatakse programmeerimiseks ja see protsess on suhteliselt lihtsam, sest kogu loogika on juba olemas ja tuleb lihtsalt järgida kasutatava programmeerimiskeele süntaksit. Esimene etapp võib olla komistuskiviks paljudele ja seda kahel põhjusel:
-
-* esitatakse väljakutse vaimsetele võimetele (mõtlemisele), et leida õige lahendus.
-* see nõuab võimet selgesti väljendada lahenduskäik täpselt samm-sammuliste isntruktsioonidena.
-
-Teist oskust omandatakse ja täiustatakse pidevalt läbi praktika. 
+1. Algoritmi iga samm peab olema *täpne*, st olema ühetähenduslik.
+2. Algoritm peab olema *lõplik*. Vastasel juhul me ei saa probleemile lahendust.
+3. Algoritm peab olema *efektiivne*, st ta peab andma probleemile korrektse vastuse.
+4. Algoritm peab olema *üldine*, st ta peab lahendama ülesande iga eksemplari. Näiteks ringi pindala leidmise algoritm peab sobima kõigi võimalike algandmete jaoks.
 
 
-.. note::
-    Algoritme kasutatakse erinevate elukutsete juures. Näiteks kokk järgib algoritmi, mida nimetatakse retseptiks. Retsept kirjeldab protsessi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). 
-
+Algoritme kasutatakse erinevate elukutsete juures. Näiteks kokk järgib algoritmi, mida nimetatakse retseptiks. Retsept kirjeldab protsessi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). 
  
 .. note::
 
     Sõna *‘algoritm’* on tuletatud 9. sajandi Pärsia matemaatiku Mohammed al-Khowarizmi nimest. Tema nime ladinapärane kuju on *Algorismus*.
 
 
+
+Algoritm ja arvuti
+~~~~~~~~~~~~~~~~~~~~~~~~
+Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja seega saab neid vajadusel käivitada arvutil. Sellest vaatenurgast võiksime anda algoritmile ka järgneva, veidi kitsama definitsiooni:
+
+*Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, millele antakse sisendina ette mingi väärtus või väärtuste hulk ja mis leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.* 
+
+.. image:: images/l04_fig8.gif 
+
+
+Algoritmi loomine
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Iga algoritmi saab kergesti kohandada selliseks, et tema *rakendamiseks* sobib masin. Seevastu algoritmide *loomiseks* on vaja midagi enamat.
+
+Esimeses peatükis oli juttu programmeerimise olemusest. Sama kehtib ka algoritmide loomise juures -- tegemist on loomingulise protsessiga, kus läheb vaja samaaegselt konkreetsust (täpsust) ja üldistusvõimet (abstraktset mõtlemist). Algoritmide loomine on üks põhilisi tegevusi programmeerimise juures. Piisavalt täpselt formuleeritud algoritmi esitamine arvutiprogrammina on küllaltki lihtne, tuleb vaid jälgida vastava programmeerimiskeele sõnavara ja reegleid. 
+
+Kuidas aga formuleerida algoritmi? Mõned ütlevad, et programmeerimine ja algoritmide loomine ongi üks ja sama. Tavapärases kõnepruugis siiski tehakse algoritmil ja programmil vahet: algoritm esitab mingi ülesande lahenduskäiku ilma tehnilistesse detailidesse laskumata (aga siiski ühetähenduslikult), programm on aga tavaliselt mõeldud mingi konkreetse masina (sh virtuaalse masina) juhtimiseks ja seetõttu võib sisaldada nüansse, mis on olulised vaid selle masina kasutamise korral.
+
+Kaasaegsetes programmeerimiskeeltes (nt Python) ei ole masina nüanssidele eriti vaja mõelda, seetõttu kasutatakse programmeerimiskeeli juba algoritmide väljatöötamise faasis. Vahel on aga siiski mugavam panna algoritm esialgu kirja kuidagi teisiti, näiteks *pseudokoodina* (so. loomuliku keele ja matemaatiliste sümbolite segu) või mingi visuaalse *skeemina*. Järgnevalt uurimegi lähemalt ühte algoritmide skemaatilise esitamise viisi.
+
    
-.. index::
-    single: algoritmi omadused
-
-
-Algoritmi omadused
-~~~~~~~~~~~~~~~~~~~~~
-Algoritmil on neli olulist omadust:
-
-1. Algoritmi iga samm peab olema *täpne*, st olema ühetähenduslik.
-2. Algoritm peab olema *lõplik*. Vastasel juhul me ei saa probleemile lahendust.
-3. Algoritm peab olema *efektiivne*, st ta peab andma probleemile korrektse vastuse.
-4. Algoritm peab olema *üldine*, st ta peab lahendama ülesande iga eksemplari. Näiteks programm, mis leiab ringi pindala, peab töötama kõigi võimalike algandmete korral antud programmeerimiskeele ja arvuti korral. 
-
-Algoritm ja arvuti 
-~~~~~~~~~~~~~~~~~~~~~
-Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
-
-    #. Algoritmi koostamine ja esitamine.
-    #. Programmi koostamine mingis konkreetses programmeerimiskeeles.
-    #. Programmi sisestamine arvutisse.
-    #. Programmi testimine ja silumine.
-    #. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
-
 
 
 .. index::
     single: algoritmi esitus plokkskeemina
     
-.. _algoritmi esitus plokkskeemina:    
+.. _plokkskeem:    
 
-Algoritmi esitus plokkskeemina
-------------------------------
-
-Algoritmi tavaliseks esitusviisiks on nn pseudokood, mis on segu loomuliku keele sõnadest, matemaatilistest märkidest ja programmeerimiskeele võtmesõnadest. 
-Algoritmi saab esitada ka graafiliselt, nt plokkskeemina. Vaatleme järgnevalt plokkskeemis kasutatavaid kujundeid:
+Plokkskeem
+--------------------------------
+Üks levinud graafiline notatsioon algoritmide esitamiseks on *plokkskeem*. Vaatleme järgnevalt plokkskeemis kasutatavaid kujundeid:
 
 .. index::
     single: plokkskeem
     
-.. _plokkskeem:    
-
 
 .. image:: images/l04_fig9.gif 
 
@@ -221,31 +193,37 @@ Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilus
 .. image:: images/l05_fig6.gif
 
 
-Ringi pindala
-~~~~~~~~~~~~~
-1. Esitame ülesande 2 lahenduse plokkskeemina:
+Ülesande lahendamise protsess
+-----------------------------------------------
+Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
 
- .. image:: images/l04_fig20.gif 
+    #. Algoritmi koostamine ja esitamine.
+    #. Programmi koostamine mingis konkreetses programmeerimiskeeles.
+    #. Programmi sisestamine arvutisse.
+    #. Programmi testimine ja silumine.
+    #. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
 
-Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
-Lahendame nüüd selle ülesande arvutil, tehes läbi ka ülesande lahendamise teised etapid. 
+Teeme need etapid läbi ringi pindala ülesande näitel:
 
+    #. Esitame algoritmi plokkskeemina:
 
-2. Koostame programmi, kasutades programmeerimiskeelt Python:
+        .. image:: images/l04_fig20.gif 
 
-.. sourcecode:: py3
+        Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
 
-    from math import *
+    #. Koostame programmi, kasutades programmeerimiskeelt Python:
 
-    a = int(input("Sisesta külje pikkus a: "))
-    S = pi*a*a/2
-    print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
+        .. sourcecode:: py3
 
-3. Enamasti me teostame sammud 2 ja 3 korraga, st programmi koostamise käigus sisestame selle ka arvutisse.
+            from math import *
 
-4. Selgub, et meie programm jääb hätta siis kui kasutaja ei sisesta midagi või sisestab külje pikkuse asemel midagi muud, nt "kuus". Seega saab öelda, et antud programm töötab vaid korrektse arvulise sisendi korral, vigase sisendi korral programmi töö lõpeb veaga.   
+            a = int(input("Sisesta külje pikkus a: "))
+            S = pi*a*a/2
+            print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
 
-5. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
+    #. Enamasti me teostame sammud 2 ja 3 korraga, st programmi koostamise käigus sisestame selle ka arvutisse.
+    #. Selgub, et meie programm jääb hätta siis kui kasutaja ei sisesta midagi või sisestab külje pikkuse asemel midagi muud, nt "kuus". Seega saab öelda, et antud programm töötab vaid korrektse arvulise sisendi korral, vigase sisendi korral programmi töö lõpeb veaga.   
+    #. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
 
 Robotkilpkonn
 --------------
@@ -260,7 +238,7 @@ Kilpkonn oskab sooritada järgmiseid tegevusi:
 
  .. image:: images/l04_fig12.gif  
  
-**Ülesanne 5.** Kolm sammu edasi ja ümberpöörd
+Harjutus 1. Kolm sammu edasi ja ümberpöörd
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Robotkilpkonn asub näoga seina poole selliselt, et seinani on vähemalt 3 sammu. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber).   
 
@@ -270,7 +248,7 @@ Lahenduse võib esitada järgmise plokkskeemina:
 
 .. image:: images/l04_fig14.gif  
 
-**Ülesanne 6.** Kui võimalik, kolm sammu  edasi ja ümberpöörd 
+Harjutus 2. Kui võimalik, kolm sammu  edasi ja ümberpöörd 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Robotkilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber). Kui seinani on vähem kui kolm sammu, siis liikuda seinani ja pöörata ümber. 
 
@@ -280,13 +258,13 @@ Nüüd on lahendus juba veidi keerulisem:
 
 .. image:: images/l04_fig16.gif  
 
-**Ülesanne 7.** Ring ümber mänguväljaku 
+Harjutus 3. Ring ümber mänguväljaku 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  
 
 .. image:: images/l04_fig17.gif  
 
-**Ülesanne 8.** Liikumine takistusest mööda
+Harjutus 4. Liikumine takistusest mööda
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Kilpkonnal on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on. Koostada plokkskeem.  
 
@@ -304,7 +282,7 @@ Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul
     Laadides alla väikese programmi, on võimalik kilpkonna liikumist modelleerivate plokkskeemide koostamist testida ka arvuti abil: http://www.physicsbox.com/indexrobotprogen.html
 
 
-**Ülesanne 9.** Põrandaa värvimine triibuliseks
+Harjutus 5. Põranda värvimine triibuliseks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Oletame, et kilpkonnal on lisaks veel käsk ``värvi()``, mille saamisel värvib ta selle ruudu, kus ta parasjagu asub, tumedaks. Programmi alguses asub kilpkonn juhuslikul ruudul näoga põhja suunas. Ruudustik on ristkülikukujuline, ilma takistusteta. Ruudustiku täpne suurus pole teada.
 
@@ -317,13 +295,55 @@ Olge valmis, et see plokkskeem tuleb eelmistest omajagu suurem.
     Ülesande lahendamiseks tuleks valida kõigepealt strateegia, kuidas robotkilpkonn liigub ruudustikul. Üheks võimaluseks on variant, kus kilpkonn värvib ühe triibu ja liigub tuldud teed tagasi. Ta kordab värvimist järgmisel värvitaval veerul (üks veerg tuleb jätta vahele, et tulemus oleks triibuline). 
     
 
-Plokkskeem vs. Python
------------------------
-.. todo:: selgita erinevusi ja sarnasusi
-
 Pykkar
-~~~~~~~~~~~~
-.. todo:: tutvusta Pykkarit, too näitena mõni eelneva ülesande lahendus ja anna ülesandeks triibutamine.
+-----------------------
+Kui tegite eelnevate harjutuste plokkskeemid paberile, siis saite sedasi esitatud algoritme "käivitada" vaid enda peas. Nagu teada, on inimene aga ekslik ja seetõttu võisid mõned vead algoritmides jääda märkamatuks. 
+
+Nüüd on teil võimalus teisendada oma skeemid Pythoni koodiks ja näha roboti liikumist oma ekraanil. Kõigepealt laadige alla moodul :download:`pykkar.py <downloads/pykkar.py>` ja salvestage see oma töökausta.
+
+Nüüd salvestage samasse kausta järgnev näiteskript ja käivitage see:
+
+.. sourcecode:: py3
+
+    from pykkar import *
+    
+    # create_world võtab argumendiks mitmerealise sõne, mis esitab
+    # roboti "maailma"
+    # Trellid tähistavad seinu, nooleke tähistab robotit
+    # (noole suund tähistab roboti suunda)
+    create_world("""
+    ########
+    #  >   #
+    #      #
+    #      #
+    #      #
+    #      #
+    ########
+    """)
+
+    samme_jäänud = 3
+    while samme_jäänud > 0:
+        if is_wall(): # ei lase robotil vastu seina põrgata
+            break
+        else:
+            step() # robot liigub ühe ruudu võrra edasi
+            samme_jäänud -= 1
+    
+    # pöörame ringi
+    right()
+    right()
+
+Loodetavasti nägite programmi käivitamisel umbes sellist pilti:
+
+.. image:: images/pykkar.png
+
+Justnagu plokkskeemi robot, mõistab ka Pykkar liikuda ühe sammu edasi (``step()``), pöörata 90° paremale (``right()``) ning kontrollida, kas ta ees on sein (``is_wall()``). Kõikide lubatud käskude ning maailma kujundamiste võimaluste kohta lugege dokumentatsioni mooduli faili algusest.
+
+Antud näiteprogramm vastab umbkaudselt eespool toodud harjutusele "2. Kui võimalik, kolm sammu  edasi ja ümberpöörd" (lahendus on küll natuke üldisem). Muutke programmis roboti algset asukohta ja katsetage, kas programm toimib õieti ka siis, kui seinani on vähem, kui 3 sammu.
+
+Harjutus 6. Plokkskeemi kohandamine Pythoni programmiks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage nüüd eespool antud robotiülesanded ümber Pythoni programmideks, kasutades moodulit ``pykkar``.
 
 
 Lisalugemist
