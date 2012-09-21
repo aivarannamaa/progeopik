@@ -1,7 +1,7 @@
 4. Algoritm ja plokkskeem
 ==========================
 
-Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame läbitud juba teemasid veidi teise nurga alt.
+Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame juba läbitud teemasid veidi teise nurga alt.
 
 Peale antud teema läbimist oskate:
 
