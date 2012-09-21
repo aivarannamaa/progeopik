@@ -337,7 +337,7 @@ Loodetavasti nägite programmi käivitamisel umbes sellist pilti:
 
 .. image:: images/pykkar.png
 
-Justnagu plokkskeemi robot, mõistab ka Pykkar liikuda ühe sammu edasi (``step()``), pöörata 90° paremale (``right()``) ning kontrollida, kas ta ees on sein (``is_wall()``). Kõikide lubatud käskude ning maailma kujundamiste võimaluste kohta lugege dokumentatsioni mooduli faili algusest.
+Justnagu plokkskeemi robot, mõistab ka Pykkar liikuda ühe sammu edasi (``step()``), pöörata 90° paremale (``right()``), värvida enda all olevat ruutu (``paint()``) ning kontrollida, kas ta ees on sein (``is_wall()``). 
 
 Antud näiteprogramm vastab umbkaudselt eespool toodud harjutusele "2. Kui võimalik, kolm sammu  edasi ja ümberpöörd" (lahendus on küll natuke üldisem). Muutke programmis roboti algset asukohta ja katsetage, kas programm toimib õieti ka siis, kui seinani on vähem, kui 3 sammu.
 
