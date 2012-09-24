@@ -184,7 +184,9 @@ def is_box():
         
 def is_cone():
     return world.execute("is_cone")        
-        
+
+def is_painted():
+    return world.execute("is_painted")        
 
 
 class Pykkar:
@@ -412,6 +414,9 @@ class _WorldProper:
     
     def _cmd_is_cone(self):
         return self._is_item("cone")
+    
+    def _cmd_is_painted(self):
+        return self._get_current_tile().base_kind == 'painted_floor'
     
     def _is_item(self, item_kind):
         (next_x, next_y) = self._get_next_pos()
