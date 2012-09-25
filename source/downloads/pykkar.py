@@ -228,7 +228,10 @@ class Pykkar:
         return self._world.execute("is_box")        
             
     def is_cone(self):
-        return self._world.execute("is_cone")        
+        return self._world.execute("is_cone")       
+    
+    def is_painted(self):
+        return self._world.execute("is_painted") 
             
     
 class _WorldProper:
