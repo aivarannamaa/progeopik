@@ -1,8 +1,5 @@
 5. Alamprogrammid e. funktsioonid
 ====================================
-.. warning::
-
-    Selle peatüki materjali veel täiendatakse
 
 Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli teil tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks teilt praegu, millise eesmärgiga on teie programmis mingi konkreetne rida või plokk, siis ilmselt peaksite enne vastamist omajagu süvenema.
 
@@ -557,8 +554,6 @@ Kirjutage funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab s
 
 .. topic:: Väärtusega alamprogrammid plokkskeemis
 
-    .. todo:: Äkki oleks kasulikum mingi keerulisem arvutus, nt. netopalga arvutamine. Ühe plokiga plokkskeemid ei ole minu arust eriti veenvad.
-
     Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
 
 
@@ -566,7 +561,6 @@ Kirjutage funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab s
      
     Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
 
-    .. todo:: Näide, kus seda funktsiooni on kasutatud avaldises
 
 
 
@@ -725,7 +719,31 @@ Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite pu
 
 Veateted ja funktsioonid
 ---------------------------
-.. todo:: selgita stack-trace'i tähendust
+Esimeses peatükis soovitasime pikkade veatedete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovige käivitada järgnevat programmi:
+
+.. sourcecode:: py3
+
+    def arvuta_kuupalk(aastapalk):
+        return aastapalk / 12
+    
+    aastapalk = input("Palun sisesta aastapalk: ")
+    print("Kuupalk on", arvuta_kuupalk(aastapalk))    
+
+
+Kui sisestate nõutud palganumbri, siis saate umbes taolise veateate:
+
+.. sourcecode:: none
+
+    Traceback (most recent call last):
+      File "C:/harjutused/vigane.py", line 5, in <module>
+        print("Kuupalk on", arvuta_kuupalk(aastapalk))
+      File "C:/harjutused/vigane.py", line 2, in arvuta_kuupalk
+        return aastapalk / 12
+    TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr. 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas kutsuti mida välja.
+
+
 
 Ülesanded
 -------------
@@ -798,23 +816,17 @@ Võtke aluseks kolmanda peatüki Ülesanne "Pere sissetulek". Muutke lahendust s
 Plokkskeemi ülesanded
 --------------------------
 
-**Ülesanne 2.** Liigu nurka
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda nurka (pole oluline, millisesse). Koostada plokkskeem, milles kasutatakse uut alamprotseduuri. 
-
-
-**Ülesanne 3.** Ring ümber mänguväljaku
+1. Ring ümber mänguväljaku
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  Kasutada eelmise ülesande alamprotseduuri. 
  
-**Ülesanne 4.** Seinani ja tagasi
+2. Seinani ja tagasi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda seinani, pöörata ümber ja liikuda tagasi samasse kohta algasendisse. Koostada plokkskeem.  
 
 
-**Ülesanne 5.** Liigu ettenähtud kohta
+3. Liigu ettenähtud kohta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kilpkonn asub seinaga ümbritsetud ja ilmakaarte järgi orienteeritud ruudustiku mingil ruudul, ninaga itta. Kirjutada plokkskeemi kujul protseduurid, millega kilpkonn
@@ -824,7 +836,7 @@ c) liigub ruudustiku äärele ja hakkab äärt pidi päripäeva ringiratast liik
 
 
 
-**Ülesanne 6.** Loe tumedad laigud
+4. Loe tumedad laigud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul funktsioon, mis loendab ruudustikul asuvad tumedad laigud. Ruudustiku mõõtmed pole teada. Kilpkonna juhtimiseks on lisaks veel operatsioon
 
@@ -835,7 +847,7 @@ Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul fun
 Koostada abistavaid alamprotseduure.
 
 
-**Ülesanne 7.** Istuta lilli
+5. Istuta lilli
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis istutab ruudustikule lilli. Ruudustiku mõõtmed pole teada. Lill ei kasva äärel ega kontaktis teise lillega. Kilpkonna juhtimiseks on lisaks lille istutamise operatsioon:
 
@@ -845,14 +857,14 @@ Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduur
 
 Koostada abistavaid alamprotseduure.
 
-**Ülesanne 8.** Malelaud
+6. Malelaud
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
 
 .. image:: images/l05_fig21.gif
 
-**Ülesanne 9.** Bankett
+7. Bankett
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt paigutatud pika banketilaua ääres on iga koha juures tool. Kilpkonn seisab banketilaua põhjapoolses otsas. Laua pikkus on talle teadmata. Toolid peavad olema iga ruudu juures, ka laua põhja ja lõunaotsas. Kilpkonna juhtimiseks on lisaks järgmised operatsioonid: 
@@ -867,35 +879,9 @@ Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt pai
 Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
 
 
-
-    
-
-Soovituslik lisaülesanne: Kolmandate osapoolte moodulid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Neid mooduleid, mis ei kuulu Pythoni standardteeki ja mida te pole ise kirjutanud, vaid internetist alla laadinud, nimetatakse tavaliselt *kolmandate osapoolte* mooduliteks.  Siinkohal demonstreerime ühe lihtsa kolmanda osapoole mooduli kasutamist.
-
-Laadige alla moodul :download:`bingtrans <downloads/bingtrans.py>`, mis võimaldab kasutada Microsoft Bing tõlketeenust (NB! salvestage ta nimega ``bingtrans.py``). Seejärel salvestage samasse kausta järgnev programm ja katsetage seda:
-
-.. sourcecode:: py3
-    
-    from bingtrans import translate
-    
-    eesti_keeles = input("Palun sisesta eestikeelne sõna (või lause): ")
-    ing_vaste = translate(eesti_keeles, 'et', 'en')
-    print("Inglise keelne vaste: " + ing_vaste)
-
-Me importisime moodulist ``bingtrans`` funktsiooni nimega ``translate``, mis võtab argumentideks tõlgitava teksti, lähtekeele koodi (eesti keele kood on ``'et'``) ning sihtkeele koodi. Proovige ka teisi keelekoode (nt. ``'ru'``, ``'fr'``, ``'ko'``).
-
-Proovige nüüd kohandada antud näidet nii, et tõlgitavad sõnad või laused loetakse tekstifailist (vajadusel uurige failist lugemise näidet kolmanda peatüki materjalist).
-
-.. note::
-    Selle ülesandega tahtsime demonstreerida, et internetis on saadaval Pythoni mooduleid, mis võivad väga tehnilise programmeerimisülesande muuta väga lihtsaks. Selleks, et saada aimu, milliseid võimalusi veel leidub, soovitame külastada aadressi http://pypi.python.org/pypi
-    
-    Antud näites on tegemist on kohandatud versiooniga Byung Gyu Ahn'i poolt kirjutatud moodulist, mis asub aadressil https://github.com/bahn/bingtrans. Tavaliselt on kolmandate osapoolte moodulid pakendatud koos installeerimisskriptidega ja nende paigaldamine võib nõuda pisut tehnilist tööd. Vastavaid juhiseid saab huvi korral lugeda siit: http://docs.python.org/py3k/install/index.html
-
-
-
-
+Projekt
+-------------
+[Materjal ilmub 1. oktoobril] 
 
 
 
