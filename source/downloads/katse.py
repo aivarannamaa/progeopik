@@ -1,27 +1,20 @@
-from pykkar import *
+from turtle import *
 
-# create_world võtab argumendiks mitmerealise sõne, mis esitab
-# roboti "maailma"
-# Trellid tähistavad seinu, nooleke tähistab robotit
-# (noole suund tähistab roboti suunda)
-create_world("""
-########
-#     >#
-#      #
-#      #
-#      #
-#      #
-########
-""")
+def ruut(kylg):
+    i = 0
+    while i < 4:
+        forward(kylg)
+        left(90)
+        i += 1
 
-samme_jäänud = 3
-while samme_jäänud > 0:
-    if is_wall(): # ei lase robotil vastu seina põrgata
-        break
-    else:
-        step() # robot liigub ühe ruudu võrra edasi
-        samme_jäänud -= 1
+ruut(100)
 
-# pöörame ringi
-right()
-right()
+# liigume kuskile mujale
+up()
+forward(200)
+down()
+
+# väiksem ruut
+ruut(20)
+
+exitonclick()

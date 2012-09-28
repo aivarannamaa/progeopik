@@ -6,14 +6,7 @@
 
 Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli teil tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks teilt praegu, millise eesmärgiga on teie programmis mingi konkreetne rida või plokk, siis ilmselt peaksite enne vastamist omajagu süvenema.
 
-Kuna enamus praktikas kasutatavaid programme on üüratult keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
-
-Peale antud teema läbimist üliõpilane oskab:
-
-    * jaotada lihtsamaid ülesandeid alamülesanneteks ja esitada lahendust plokkskeemina;
-    * lihtsamate ülesannete korral tuua välja võimalikud erijuhud ja kontrollima neid olemasoleva algoritmi korral;
-    * parandada algoritmi efektiivsust (konkreetsete näidete abil).
-
+Kuna enamus praktikas kasutatavaid programme on palju keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
 
 
 Alamülesannete tuvastamine ja alamprogrammide loomine
@@ -26,79 +19,269 @@ Programmeerimises nimetatakse alamülesande lahendust **alamprogrammiks** (see o
 
     Erinevalt teistest siiani tutvustatud Pythoni põhikonstruktsioonidest (hargnemine ja tsükkel), ei ole alamprogrammid tehniliselt võttes programmeerimisel hädavajalikud -- kõik programmid on teoreetiliselt võimalik kirjutada kasutades vaid väikest hulka sisseehitatud käske. Taoliselt kirjutatud praktilised programmid aga läheksid peagi nii suureks ja keeruliseks, et ka parimad programmeerijad ei suudaks neid enam hallata.
 
-Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. [TODO link siia]. Kui teil on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha).
+Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui teil on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). Me käsitleme seda ülesannet praegu Pythoni süntaksi abil, aga samad põhimõtted kehtivad ka plokkskeemi puhul.
 
 Toome siinkohal ära ühe võimaliku lahenduse, kus pole alamprogramme kasutatud:
 
-.. todo:: Pythoni versioon
+.. sourcecode:: py3
 
+    from pykkar import *
 
-Nagu juba varem mainitud (?), oskab meie robot pöörata vaid paremale. Seetõttu on näitekoodis koht, kus 90° võrra vasakule pööramise saavutamiseks on antud 3 korda järjest käsklus ``paremale()``. See on üks koht, mis võib programmi lugejale esmapilgul segadust tekitada. Kasutame võimalust ja defineerime uue alamprogrammi vasakule pööramiseks. Selleks lisame esialgse programmi algusse uue *funktsiooni definitsiooni*:
+    create_world("""
+    ########
+    #      #
+    #      #
+    #  ^   #
+    #      #
+    #      #
+    ########
+    """)
 
-.. todo:: näide pythonis
+    # eeldame, et robot alustab alati näoga põhjasuunas
 
-Sisuliselt defineerisime ühe uue roboti juhtimise käsu ja me võime algses programmis kolmekordse paremale pööramise asendada käsuga ``vasakule()``. Nii ei jäta me koodi lugejale enam kahtlust, mida me soovime real nr ... saavutada.
+    # liigu põhjaseinani
+    while not is_wall():
+        step()
 
-Koostame plokkskeemid järgmiste alamülesannete jaoks:
+    # pööra läänesuunda
+    right()
+    right()
+    right()
 
-* Ühe triibu värvimine robotkilpkonna liikumisel kuni seinani.
-* Robotkilpkonna tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
+    # liigu lääneseinani
+    while not is_wall():
+        step()
 
+    # pööra lõunasuunda
+    right()
+    right()
+    right()
 
-.. todo:: järgmised alamprogrammid
+    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
+    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
+    while True:
 
-.. todo:: uuendatud näide
+        # allaminek ja värvimine
+        paint()
+        while not is_wall():
+            step()
+            paint()
 
-Nende muudatustega programmiteksti üldpikkus küll pisut suurenes, aga programmi põhiosa muutus lühemaks ja selgemaks. Kuna valisime alamprogrammidele sellised nimed, mis kirjeldavad nende sisu väga hästi, siis on võimalik programmi põhiosast aru saada isegi ilma alamprogrammide definitsioone uurimata.
+        # liigu järgmisele veerule (kui võimalik)
+        right()
+        right()
+        right()
+        
+        if is_wall():
+            # rohkem veerge pole
+            break
 
-Alamprogrammid plokkskeemis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Alamprogramme kasutatakse ka plokkskeemides. 
+        # kui jõudsime siia, siis on järelikult veel veerge
+        step()
+        # pööra nina põhjasuunda
+        right()
+        right()
+        right()
 
-.. todo:: süntaksi selgitus 
+        # liigu üles
+        while not is_wall():
+            step()
 
-Meeldetultuseks käsud, mida kasutasime roboti juhtimiseks plokkskeemis:
+        # proovime liikuda järgmisele (värvitavale) veerule
+        right()
+        if is_wall():
+            # pole rohkem veerge
+            break
 
-    * ``edasi()`` - kilpkonn liigub ühe sammu edasi;
-    * ``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
-    * ``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
-    * ``kasSein()``, kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
+        step()
+        # pöörame õigesse suunda
+        right()
 
-Alamprotseduur ``triip()``
+        
+        
 
-Tegevus: Robotkilpkonn värvib triibu kuni seinani.
-
-.. image:: images/l05_fig13.gif
-
-
-Alamprotseduur ``tagasi()``
-
-Tegevus: Robotkilpkonn pöörab ümber, liigub seinani ja lõpuks pöörab paremale.
-
-.. image:: images/l05_fig14.gif
-
-Koostame nüüd plokkskeemi kogu mänguväljaku värvimiseks triibuliseks, kasutades juba koostatud protseduure:
-
-.. image:: images/l05_fig15.gif
-
-Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus kilpkonn ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame veel ühe protseduuri, mille abil kilpkonn pöörab vasakule:
-
-Alamprotseduur ``vasakule()``
-
-Tegevus: Robotkilpkonn pöörab vasakule.
-
-.. image:: images/l05_fig17.gif
-
-Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
-
-
-.. image:: images/l05_fig18.gif
-
-Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
-
-.. todo::
     
-    vali altpoolt siia üks paraja keerukusega harjutusülesanne
+
+
+Nagu juba varem mainitud, oskab meie robot pöörata vaid paremale. Seetõttu on näitekoodis koht, kus 90° võrra vasakule pööramise saavutamiseks on antud 3 korda järjest käsklus ``paremale()``. See on üks koht, mis võib programmi lugejale esmapilgul segadust tekitada. Kasutame võimalust ja defineerime uue alamprogrammi vasakule pööramiseks. Selleks lisame esialgse programmi algusse uue *funktsiooni definitsiooni*:
+
+.. sourcecode:: py3
+
+    from pykkar import *
+
+    def left():
+        right()
+        right()
+        right()
+    
+    ...
+
+
+
+Sisuliselt defineerisime ühe uue roboti juhtimise käsu ja me võime algses programmis kolmekordse paremale pööramise asendada käsuga ``left()``. Nii ei jäta me koodi lugejale enam kahtlust, mida me soovime kolmekordse pööramisega saavutada.
+
+Teine korduv motiiv esialgses programmis on seinani liikumine. Ka selle saame vormistada alamprogrammina (e. funktsiooni või uue "käsuna"):
+
+.. sourcecode:: py3
+
+    ...
+    
+    def move_to_wall():
+        while not is_wall():
+            step()
+    
+    ...
+
+Kui nüüd mõlemaid uusi käske programmis kasutada, saame juba omajagu lihtsama tulemuse:
+
+.. sourcecode:: py3
+
+    from pykkar import *
+
+    def left():
+        right()
+        right()
+        right()
+
+    def move_to_wall():
+        while not is_wall():
+            step()
+
+    create_world("""
+    ########
+    #      #
+    #      #
+    #  ^   #
+    #      #
+    #      #
+    ########
+    """)
+
+    # eeldame, et robot alustab alati näoga põhjasuunas
+
+    # liigu põhjaseinani
+    move_to_wall()
+
+    # pööra läänesuunda
+    left()
+
+    # liigu lääneseinani
+    move_to_wall()
+
+    # pööra lõunasuunda
+    left()
+
+    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
+    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
+    while True:
+
+        # allaminek ja värvimine
+        paint()
+        while not is_wall():
+            step()
+            paint()
+
+        # liigu järgmisele veerule (kui võimalik)
+        left()
+        
+        if is_wall():
+            # rohkem veerge pole
+            break
+
+        # kui jõudsime siia, siis on järelikult veel veerge
+        step()
+        # pööra nina põhjasuunda
+        left()
+
+        # liigu üles
+        move_to_wall()
+        
+        # proovime liikuda järgmisele (värvitavale) veerule
+        right()
+        if is_wall():
+            # pole rohkem veerge
+            break
+
+        step()
+        # pöörame õigesse suunda
+        right()
+
+
+Nende funktsioonide loomine ja kasutuselevõtt tuli kasuks kahel viisil. Esiteks, funktsiooni defineerimisega **andsime (potentsiaalselt) keerulisele programmilõigule selgitava nime** ning võisime programmi põhiosas mainida ainult nime -- nii muutsime programmi põhiosa veidi lihtsamaks. Nüüd on meil võimalus analüüsida seda värjaeraldatud koodi põhiprogrammist eraldi ja samuti on võimalik analüüsida põhiprogrammi ilma, et peaks muretsema detailide pärast. Näiteks, põhiprogrammi uurides piisab meile teadmisest, et robot pöörab mingis kohas vasakule, me ei pea muretsema selle pärast, kuidas ta seda teeb. Samas, kui meid detailid siiski huvitavad, siis saame alati otsida üles vastava funktsiooni definitsiooni.
+
+Teiseks, me **saime sama defineeritud funktsiooni kasutada mitmes kohas**, seega hoidsime kokku tippimise vaeva.
+
+.. note::
+
+    Alamprogrammide defineerimine on tihti mõistlik ka siis, kui väljaeraldatud koodi on kasutatud vaid ühes kohas, aga ta on piisavalt keeruline, et programmi mõistmist raskendada. Meie näite puhul võiksime eraldi funktsiooni panna veel kuni seinani värvimise koha:
+    
+    .. sourcecode:: py3
+    
+        def paint_until_wall():
+            paint()
+            while not is_wall():
+                step()
+                paint()
+    
+    Selle funktsiooni kasutamisega saaksime lahti ka kahekordsest tsüklist (tsükkel tsükli sees), mis võib mõnele programmi lugejale tunduda keeruline.
+    
+
+Harjutus 1. Liigu nurka
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Lisage vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
+
+Kasutage seda funktsiooni programmis sobival kohal.
+
+
+.. topic:: Alamprogrammid plokkskeemis
+
+    Alamprogramme saab defineerida ka plokkskeemides. Selleks eraldatakse lihtsalt skeemil üks eraldiolev ala alamprogrammi jaoks (näiteks ümbritsetakse kastiga) ning kirjutatakse selle juurde alamprogrammi nimi.
+
+    Proovime nüüd koostada mõned alamprogrammide skeemid põranda värvimise plokkskeemi jaoks. NB! siin jaotame ülesande osadeks veidi teistest kohtadest, kui Pythoni näites, sellega demonstreerime, et alamülesannete väljaaeraldamise viis on alati programmeerija valiku küsimus.
+
+    Loome kõigepealt alamprogrammid järgmistele tegevustele: 
+
+    * Ühe triibu värvimine robotkilpkonna liikumisel kuni seinani.
+    * Robotkilpkonna tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
+
+    Meeldetultuseks käsud, mida kasutasime roboti juhtimiseks plokkskeemis:
+
+        * ``edasi()`` - kilpkonn liigub ühe sammu edasi;
+        * ``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
+        * ``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
+        * ``kasSein()``, kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
+
+    Alamprotseduur ``triip()``
+
+    Tegevus: Robotkilpkonn värvib triibu kuni seinani.
+
+    .. image:: images/l05_fig13.gif
+
+
+    Alamprotseduur ``tagasi()``
+
+    Tegevus: Robotkilpkonn pöörab ümber, liigub seinani ja lõpuks pöörab paremale.
+
+    .. image:: images/l05_fig14.gif
+
+    Koostame nüüd plokkskeemi kogu mänguväljaku värvimiseks triibuliseks, kasutades juba koostatud protseduure:
+
+    .. image:: images/l05_fig15.gif
+
+    Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus kilpkonn ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame veel ühe protseduuri, mille abil kilpkonn pöörab vasakule:
+
+    Alamprotseduur ``vasakule()``
+
+    Tegevus: Robotkilpkonn pöörab vasakule.
+
+    .. image:: images/l05_fig17.gif
+
+    Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
+
+
+    .. image:: images/l05_fig18.gif
+
+    Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
 
 
     
@@ -122,13 +305,45 @@ Selles näites on funktsioonil ``tere`` parameeter nimega "nimi". Parameetri nä
     single: funktsioon; argumendid
     single: argumendid; funktsiooni argumendid
 
-Terminoloogia: Parameetrid vs. argumendid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Koos parameetritega räägitakse enamasti ka **argumentidest**. Argumendiks nimetakse funktsiooni väljakutses sulgudes antud avaldise väärtust, millest saab vastava parameetri väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
+.. admonition:: Terminoloogia: Parameetrid ja argumendid
 
-.. note::
+    Koos parameetritega räägitakse enamasti ka **argumentidest**. Argumendiks nimetakse funktsiooni väljakutses sulgudes antud avaldise väärtust, millest saab vastava parameetri väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
+
     
     `Parameetri` vs. `argumendi` asemel võite mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
+
+Harjutus 2. Parameetriseeritud ``ruut``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Täiustage 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasutage loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
+
+.. note::
+
+    Järgnevas vihjes on antud harjutuse näitelahendus, ärge seda enne vaadake, kui olete ise proovinud!
+
+.. hint::
+    
+    .. sourcecode:: py3
+    
+        from turtle import *
+        
+        def ruut(kylg):
+            i = 0
+            while i < 4:
+                forward(kylg)
+                left(90)
+                i += 1
+        
+        ruut(100)
+        
+        # liigume kuskile mujale
+        up()
+        forward(200)
+        down()
+        
+        # väiksem ruut
+        ruut(20)
+        
+        exitonclick()
 
 
 .. _param-vs-input:
@@ -164,41 +379,40 @@ See näide demonstreerib parameetritega funktsioonide universaalsust -- vastaval
     See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab teid ennast segadusse, siis võite kasutada alati erinevaid muutujanimesid.
 
 
-Ülesanne 2. Parameetriseeritud ``ruut``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Täiustage eespool mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasutage loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
 
-Parameetrid plokkskeemis
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. todo:: Java stiilis parameetrite deklareerimine tuleks ära muuta (või siis selgitada)
+.. topic:: Parameetrid plokkskeemis
 
-Tuleme tagasi eelmises peatükis alustatud kartulisalati teema juurde.
+    .. note:: 
+    
+        Järgnevates plokkskeemides on parameetritega koos antud ka parameetri tüüp. Sellist lähenemist kasutatakse mitmetes programmeerimiskeeltes (nt. Java), aga mitte Pythonis.
 
-Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
-Kartulite lisamine: 
+    Tuleme tagasi eelmises peatükis alustatud kartulisalati teema juurde.
 
-.. image:: images/l05_fig7.gif
+    Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
+    Kartulite lisamine: 
 
-Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
-Järgmiseks protseduuriks on hapukurkide lisamine:
+    .. image:: images/l05_fig7.gif
 
-.. image:: images/l05_fig8.gif
+    Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
+    Järgmiseks protseduuriks on hapukurkide lisamine:
 
-Hapukoore lisamine:
+    .. image:: images/l05_fig8.gif
 
-.. image:: images/l05_fig9.gif
+    Hapukoore lisamine:
 
-Soola lisamine:
+    .. image:: images/l05_fig9.gif
 
-.. image:: images/l05_fig10.gif
+    Soola lisamine:
 
-Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
+    .. image:: images/l05_fig10.gif
 
-.. image:: images/l05_fig11.gif
+    Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
 
-Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
+    .. image:: images/l05_fig11.gif
 
-.. image:: images/l05_fig12.gif
+    Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
+
+    .. image:: images/l05_fig12.gif
 
     
 
@@ -231,8 +445,8 @@ Nagu näete, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras n
     
     Eespool juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (so. reavahetus). See on põhjus, miks ``print`` vaikimisi kuvab teksti koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st. seda ei saa anda positsiooniliselt.
 
-Ülesanne 3. Värviline ruut
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Harjutus 3. Värviline ruut
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele argumendiks sõne ingliskeelse värvinimega, nt. ``color('red')``. Peale seda teeb kilpkonn järgmised jooned nõutud värviga. 
 
 .. note::
@@ -249,43 +463,17 @@ Lisage funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta
     
 Väärtusega funktsioonid
 -----------------------
-.. todo::
+.. admonition:: Probleem
 
-    Alternatiivne tekst:
+    Kolmanda peatüki pere sissetuleku ülesandes kordasite tõenäoliselt netopalga arvutamise valemit kahes kohas -- ema ja isa netopalga arvutamisel. (Kui teil jäi see ülesanne tegemata, siis on väga soovitav see praegu, enne edasi lugemist ära teha). 
     
-    Pere sissetuleku ülesandes kordasite tõenäoliselt netopalga arvutamise valemit kahes kohas -- ema ja isa netopalga arvutamisel. (Kui teil jäi see ülesanne tegemata, siis on väga soovitav see praegu, enne edasi lugemist ära teha). Edasise arutelu illustreerimiseks toome siin ära mainitud ülesande ühe võimaliku lahenduse:
-
-    .. sourcecode:: py3
-
-        # TODO
-
     Siin polnud õnneks tegemist eriti keerulise valemiga ning copy-paste'ga oli võimalik topelt tippimise vaeva vältida. Aga kui netopalga arvutamise valem peaks muutuma, siis peab olema meeles programmi muuta kõigis kohtades, kus seda valemit on kasutatud. 
 
     Ilmselt juba aimate, et taolise kordamise vältimiseks on jälle abiks funktsioonid -- netopalga arvutamiseks tuleb defineerida uus funktsioon (nt. nimega ``neto``), valem tuleb kirja panna selle funktsiooni kehas, ning edaspidi tuleb netopalga arvutamiseks kasutada uut funktsiooni. Kuidas aga saada funktsiooni käest vastust kätte? Võib proovida muutujatega, aga kuna antud programmi puhul tuleb ühel juhul salvestatakse tulemus muutujasse ``isa_sissetulek`` ja teisel juhul muutujasse ``ema_sissetulek``, siis pole selge, millist muutujat kasutada. Mis teha siis, kui mõnikord on tarvis tulemus kohe ekraanile näidata ja muutujat polegi tarvis?
 
-    Taolisel juhul tuleb appi ``return`` käsk, mis on mõeldud justnimelt funktsioonist vastuse välja andmiseks, ilma, et programmeerija peaks funktsiooni defineerimisel täpsustama, kuhu see vastus peab jõudma:
-
-    .. sourcecode:: py3
-
-        # TODO
-
-    Kogu real nr. X tehtavat toimingut nimetame *tagastamiseks* ja ``return`` järel oleva avaldise väärtust nimetame *tagastusväärtuseks*. Tagastusväärtusega funktsiooni võib nimetada ka lihtsalt *väärtusega funktsiooniks*. Kui funktsiooni tagastusväärtus on arvutüüpi, siis saab seda funktsiooni kasutada igal pool, kus läheb vaja arvu (nt. matemaatilises avaldises), kui tagastusväärtus on sõnetüüpi, siis võib seda funktsiooni kasutada igal pool, kus läheb vaja sõne jne. Seda demonstreerib veidi muudetud versioon vaadeldavast programmist:
-
-    .. sourcecode:: py3
-
-        # TODO
 
 
-
-    .. admonition:: Protseduurid vs funktsioonid 
-
-        Võibolla juba märkasite, et ülalpool defineeritud funktsioon ``ruut`` on oma olemuselt ja otstarbelt üpriski erinev nendest funktsioonidest, millest räägitakse matemaatikas. ``ruut`` ja ``tere`` kirjeldavad mingit *tegevust* (vastavalt ekraanile ruudu joonistamine või kasutajaga suhtlemine), seevastu näiteks matemaatiline siinusfunktsioon (või ``sin``, nagu teda Pythonis nimetatakse) meenutab pigem mingit aritmeetilist tehet, mis genereerib *vastuse* vastavalt etteantud argumendile.
-        
-
-
-Funktsioone ``ruut`` ja ``print`` kasutasime käskudena -- meid huvitas see **tegevus**, mida see funktsioon tegi (kilpkonna liigutamine või ekraanile kirjutamine). Seevastu, eelmises peatükis kasutasime muuhulgas ka funktsioone ``sin`` ning ``sqrt``, aga nende kasutusviis oli hoopis erinev -- meid huvitas hoopis vastava funktsiooni rakendamisel saadav **väärtus**.
-
-TODO: selgita, et sqrt ei prindi vastust ekraanile, seda teeb IDLE! Too siin uuesti(!) välja näide, kus sqrt'd kasutatakse alamaavaldisena.
+Funktsioone ``ruut`` ja ``print`` kasutame käskudena -- meid huvitab see **tegevus**, mida see funktsioon teeb (kilpkonna liigutamine või ekraanile kirjutamine). Seevastu funktsioonide ``sin`` ning ``sqrt`` kasutusviis on hoopis erinev -- meid huvitab hoopis vastava funktsiooni rakendamisel saadav **väärtus**.
 
 Nii ``sin`` kui ``sqrt`` teevad argumentidega mingi arvutuse, ning **tagastavad** saadud väärtuse, mida võime nt. kasutada avaldises, salvestada muutujasse või vaadata käsureal. Taolisi funktsioone nimetame **väärtusega funktsioonideks**.
 
@@ -306,20 +494,17 @@ Järgnev näide defineerib funktsiooni, mis arvutab ja tagastab ristküliku pind
 
 Väärtusega funktsioonide puhul on oluline *võtmesõna* ``return`` -- sellele sõnale järgnev avaldis määrab funktsiooni väljakutse väärtuse.
 
-.. note::
-    
-    Kuigi ka funktsioon ``print`` näib "tagastavat" oma argumendi (kuvades selle ekraanile), ei ole see siiski ``print`` funktsiooni tagastusväärtus: nt. kirjutades ``x = print("Tere")`` ei jõua sõne ``"Tere"`` muutujasse ``x``.
+Harjutus 4. Topelt
+~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage funktsioon, mis võtab argumendiks ühe arvu ning tagastab selle arvu kahega korrutatuna.
 
-.. note:: 
-
-    Kui päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``ruut``. Need funktsioonid, mille eesmärk on vaid mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata ning seepärast Python'i käsurida ka ei näita seda automaatselt.
-
+Demonstreerige loodud funktsiooni tööd, kirjutades programmi ka mõned funktsiooni väljakutsed erinevate argumentidega. NB! tulemuse ekraanile kuvamine tuleks korraldada funktsiooni väljakutse juures, mitte funktsiooni definitsioonis!
 
 
 .. _return-vs-print:
 
 ``return`` vs. ``print``
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eelnevalt märkisime, et nii funktsiooni parameetrid kui ``input`` on olemuselt sarnased, kuna mõlemad on seotud sisendi saamisega, kuid parameetrid on paindlikumad, kuna täpne sisendi saamise viis jäetakse lahtiseks.
 
 Analoogselt võime võrrelda ``print`` ja ``return`` käsku -- mõlemad on seotud väljundi andmisega, kuid ``return`` on paindlikum, kuna *täpne tulemuse kasutamise viis jäetakse lahtiseks*. Kuigi ristküliku pindala näites me lõpuks ikkagi ``print``-isime saadud tulemuse, siis tänu ``return``-ile jäi meie funktsiooni definitsioon universaalseks ja see võimaldas meil tulemust kasutada ka teistes arvutustes.
@@ -335,8 +520,17 @@ Analoogselt võime võrrelda ``print`` ja ``return`` käsku -- mõlemad on seotu
 
     ... siis see funktsioon oleks sobinud vaid neil juhtudel, kui me soovime arvutuse tulemust ainult ekraanil näidata, teistes arvutustes poleks me tulemust enam kasutada saanud.
 
+.. note::
+    
+    Kuigi ka funktsioon ``print`` näib "tagastavat" oma argumendi (kuvades selle ekraanile), ei ole see siiski ``print`` funktsiooni tagastusväärtus: nt. kirjutades ``x = print("Tere")`` ei jõua sõne ``"Tere"`` muutujasse ``x``.
+    
+    Segadus võib tekkida Pythoni käsurea kasutamisel -- kui kirjutada sinna avaldis ``sqrt(2)``, siis tulemus ilmub ikkagi ekraanile, kuigi me ei kasutanud ``print`` käsku. Kas see tähendab, et ka "funktsioon" ``sqrt`` kuvab vastuse ekraanile? Ei, tegelikult Pythoni käsurida kuvab ``sqrt`` käest saadud vastuse ekraanile omal algatusel, ``sqrt`` ei tea sellest midagi.
 
-Ülesanne 4. Tollid ja sentimeetrid
+    Kui päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``ruut``. Need funktsioonid, mille eesmärk on vaid mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata ning seepärast Python'i käsurida ka ei näita seda automaatselt.
+
+
+
+Harjutus 5. Tollid ja sentimeetrid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
     Selle ülesandega saate harjutada ühte levinud võtet uute funktsioonide loomiseks
@@ -345,7 +539,7 @@ Analoogselt võime võrrelda ``print`` ja ``return`` käsku -- mõlemad on seotu
 #. Testige loodud funktsiooni käsureal (käivitage programm IDLE-ga, ning kirjutage mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeerige definitsiooni ja proovige uuesti.
 #. Lõpuks kasutage funktsiooni programmis, mis küsib kasutajalt tema pikkuse tollides ja väljastab ekraanile vastava pikkuse sentimeetrites ning tema nn. "ideaalkaalu" (so. pikkus sentimeetrites - 100, nt. kui pikkus on 185cm, siis ideaalkaal on 85kg).
 
-Ülesanne 5. Sõne dubleerimine
+Harjutus 6. Sõne dubleerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab selle sõne dubleerituna niimitu korda, kui mitu tähte on esialgses sõnes:
 
@@ -361,18 +555,18 @@ Kirjutage funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab s
     Abiks on funktsioon ``len`` ja operaator ``*``
 
 
-Väärtusega alamprogrammid plokkskeemis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. todo:: Äkki oleks kasulikum mingi keerulisem arvutus, nt. netopalga arvutamine. Ühe plokiga plokkskeemid ei ole minu arust eriti veenvad.
+.. topic:: Väärtusega alamprogrammid plokkskeemis
 
-Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
+    .. todo:: Äkki oleks kasulikum mingi keerulisem arvutus, nt. netopalga arvutamine. Ühe plokiga plokkskeemid ei ole minu arust eriti veenvad.
+
+    Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
 
 
-.. image:: images/l05_fig23.gif
- 
-Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
+    .. image:: images/l05_fig23.gif
+     
+    Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
 
-.. todo:: Näide, kus seda funktsiooni on kasutatud avaldises
+    .. todo:: Näide, kus seda funktsiooni on kasutatud avaldises
 
 
 
@@ -392,9 +586,9 @@ Nüüd on meil eraldi kahendlogaritmi arvutamise funktsioon, millele peame andma
 
 
 
-Tingimuslause kasutamine funktsioonis
+Funktsiooni keha sisu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Funktsiooni definitsioonis (olgu väärtusega või ilma) saab kasutada tingimuslauset. Järgnev näide esitab absoluutväärtuse arvutamise funktsiooni:
+Nagu juba 3. peatükis mainitud, võib funktsiooni definitsioonis (olgu väärtusega või ilma) kasutada ükskõik milliseid lausetüüpe (sh. tingimuslaused ja tsükleid). Järgnev näide esitab absoluutväärtuse arvutamise funktsiooni:
 
 .. sourcecode:: py3
 
@@ -421,7 +615,7 @@ Kui võrdlete seda funktsiooni kolmandas peatükis näidatud absoluutväärtuse 
                 return arv
 
 
-Ülesanne 6. Kahest arvust suurim
+Harjutus 7. Kahest arvust suurim
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon, mis saab parameetritena kaks arvu ning tagastab neist suurima.
 
@@ -464,15 +658,6 @@ Keskendumine vaid "mustade kastide" *tähendusele*, ignoreerides nende *ehitust*
 Kui *DRY*-printsiibi juures rõhutasime seda, et funktsioonid aitavad sama koodi kasutada korduvalt, siis modulaarsuse põhiidee on selles, et me saame funktsiooni kasutada ilma selle täpse sisu peale mõtlemata, toetudes vaid ta nimele. Seetõttu on uue funktsiooni loomine põhjendatud tihti ka siis, kui seda kasutatakse vaid ühes kohas.
 
 
-Ülesanne 7. Pere sissetulek, ver.2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. note::
-
-    See ülesanne demonstreerib väga hästi *DRY*-printsiibi ning abstraktsiooni olemust.
-
-Võtke aluseks kolmanda peatüki koduülesanne "Pere sissetulek". Muutke lahendust selliselt, et netopalga valem oleks programmis kirja pandud vaid ühes kohas.
-
-
 .. index::
     single: import
     single: moodulid
@@ -506,7 +691,7 @@ Sellise variandi puhul ei teki segadust, kui tahate mõnd ``math`` moodulis defi
 Ka selle variandi puhul ei pea oma muutujate nimede valimisel muretsema, kui imporditud moodulis on juba sama nime kasutatud -- antud näites võiksime vabalt luua uue muutuja nimega ``sqrt`` ja see ei läheks segamini funktsiooniga ``math.sqrt``.
 
 .. note:: 
-    ``import``-laused tuleks panna programmi algusesse. See pole Pythoni poolt range nõue, kuid oluline on see, et ``import``-lauset ei saa panna funktsiooni definitsiooni sisse.
+    ``import``-laused tuleks panna programmi algusesse. See pole Pythoni poolt range nõue, vaid lihtsalt tava --  nii on hea näha, milliste teemadega antud programm tegeleb.
 
 .. topic:: Moodulite loomine
 
@@ -542,7 +727,7 @@ Veateted ja funktsioonid
 ---------------------------
 .. todo:: selgita stack-trace'i tähendust
 
-Koduülesanded
+Ülesanded
 -------------
 
 1. Ristkülik 
@@ -551,6 +736,10 @@ Kirjutage funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust 
 
 .. image:: images/rist.png
 
+.. hint::
+
+    Joonis koosneb kolmest ristkülikust
+    
 .. hint::
 
     Segaduse vältimiseks on soovitav funktsiooni töö lõppedes pöörata kilpkonn tagasi algsesse suunda.
@@ -598,7 +787,16 @@ Testige oma programmi ja kontrollige, kas saate järgnevad tulemused:
     * hind: 10000, sissemakse: 2900, aastaid: 10; kogusumma: 14260, intressid: 4260
     * hind: 10000, sissemakse: 2900, aastaid: 0; kogusumma: 10000, intressid: 0
 
+4. Pere sissetulek, ver.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
 
+    See ülesanne demonstreerib väga hästi *DRY*-printsiibi ning abstraktsiooni olemust.
+
+Võtke aluseks kolmanda peatüki Ülesanne "Pere sissetulek". Muutke lahendust selliselt, et netopalga valem oleks programmis kirja pandud vaid ühes kohas.
+
+Plokkskeemi ülesanded
+--------------------------
 
 **Ülesanne 2.** Liigu nurka
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
