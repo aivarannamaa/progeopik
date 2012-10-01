@@ -86,7 +86,7 @@ Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
     Avaldisi, mis tagastavad tõeväärtuse, nimetatakse *loogilisteks avaldisteks*.
 
 
-Ülesanne 1. Arvu ruut koos kontrolliga
+Harjutus 1. Arvu ruut koos kontrolliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib kasutajalt positiivse täisarvu ning kontrollib, kas sisestatud tekst on numbriline. Kui jah, siis kuvatakse antud arvu ruut, vastasel juhul kuvatakse veateade. 
 
@@ -149,7 +149,7 @@ Kui programmis on mitmes kohas vaja kontrollida sarnast tingimust, siis võib se
     else:
         print("Arv pole positiivne või pole paaris")
 
-Ülesanne 2. Liigaasta tuvastamine
+Harjutus 2. Liigaasta tuvastamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``on_liigaasta``, mis võtab argumendiks aastaarvu ning **tagastab tõeväärtuse** vastavalt sellele, kas antud aasta on liigaasta või mitte.
 
@@ -205,11 +205,11 @@ Tingimuslauseid võib panna üksteise sisse, sel juhul tuleb hoolikalt jälgida 
         else:
             print("Arvud on võrdsed")
 
-Ülesanne 3. Päevade arv kuus
+Harjutus 3. Päevade arv kuus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``päevade_arv``, mis võtab argumendiks kuu numbri ja aastaarvu ning tagastab mitu päeva on selles kuus. Kasutage abifunktsioonina eelnevalt defineeritud funktsiooni ``on_liigaasta``. (Kirjutage need funktsioonid samasse faili).
 
-Ülesanne 4. Kuupäeva kontrollimine
+Harjutus 4. Kuupäeva kontrollimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``on_legaalne_kuupäev``, mis võtab argumendiks päeva, kuu ja aasta (arvudena) ning tagastab tõeväärtuse vastavalt sellele, kas argumentidele vastav kuupäev on legaalne või mitte. Kasutage abifunktsioonidena eelmistes ülesannetes defineeritud funktsioone.
 
@@ -264,7 +264,7 @@ Näide: Hinde arvutamise programm
     punkte = int(input("Sisesta punktide arv"))
     print("Nende punktidega saab hindeks " + hinne(punkte))
 
-Ülesanne 5. Kuu esitamine sõnena
+Harjutus 5. Kuu esitamine sõnena
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``kuu_nimi``, mis võtab argumendiks kuu numbri ning tagastab vastava kuu nime. Kui argumendi väärtus on väiksem kui 1 või suurem kui 12, siis tagastatakse sõne ``'Vigane kuu number'``.
 
@@ -274,7 +274,7 @@ Tingimuste kasutamine tsükli päises
 ---------------------------------------
 TODO
 
-Koduülesanded
+Ülesanded
 -------------
 
 1. Kuupäeva esitamine sõnena
@@ -283,53 +283,28 @@ Kirjutage funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu 
 
 Seejärel kirjutage programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta. Kui neile vastav kuupäev on legaalne, siis kuvada ekraanile vastav kuupäev sõnena, vastasel juhul kuvada ``'Viga: mittelegaalne kuupäev'``.
 
-Kasutage abifunktsioonidena ülalpood loodud funktsioone (vt. ülesandeid 2-5).
+Kasutage abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 2-5).
 
-2. Õpikuülesanne
-~~~~~~~~~~~~~~~~
-Lahendage `õpiku 5. peatükist <http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/ch05.html>`_ ülesanded 13 ja 14.
+2. Täisnurkne kolmnurk
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja tagastab ``True`` või ``False`` vastavalt sellele, kas tegemist oli täisnurkse kolmnurgaga või mitte.
+
+.. note:: 
+
+    Lihtsustamise mõttes võite esialgu eeldada, et pikim külg antakse alati 3. argumendina. Kui saate sellise variandi tööle, siis muutke programmi selliselt, et küljepikkuseid võib anda suvalises järjekorras.
+    
+.. note::
+
+    Ärge unustage, et ujukomaarvud on pisut ebatäpsed, seega võib olla vajalik võrdsuse kontrollimise asemel kontrollida sarnasust:
+    
+    .. sourcecode :: py3
+    
+        if abs(x - y) < 0.000001:      # x is peaaegu võrdne y-ga
+            ...
+
 
 3. Klaveri mahutamine
 ~~~~~~~~~~~~~~~~~~~~~
 Ülikool on ostnud endale uue klaveri peahoone aula tarbeks. Paraku unustati  kontrollida, kas see klaver üldse välisuksest sisse mahub. Kirjutada programm, mis küsib kasutajalt klaverit sisaldava kasti kolm mõõdet (pikkus, laius, kõrgus) ning ukse laiuse ja kõrguse ning vastab, kas klaver on võimalik aulasse sisse toimetada.
 
-5. Kujundid
-~~~~~~~~~~~~
 
-Kirjutage programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kujundid järgneva skeemi järgi:
-
-.. sourcecode:: none
-
-    # # # # # # #
-    #           #
-    #           #
-    #           #
-    #           #
-    #           #
-    # # # # # # #
-
-
-.. sourcecode:: none
-
-    * 
-    * * 
-    * * * 
-    * * * * 
-    * * * * * 
-    * * * * * * 
-    * * * * * * * 
-
-.. hint::
-    
-    Tuletage meelde, mida tähendab ``'Tere' * 4``
-
-
-Soovituslik lisaülesanne: Ruudustik
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``ruudustik``, mis võtab argumentideks ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal ja ruudu küljepikkuse, ning joonistab kilpkonna abil vastava ruudustiku. Näiteks funktsiooni väljakutse ``ruudustik(4, 6, 20)`` peaks tegema sellise ruudustiku:
-
-.. image:: images/ruudustik.png
-
-.. topic:: Lisaülesande lisa
-    
-    Uurige kilpkonna dokumentatsioonist, kuidas värvida soovitud ala (http://docs.python.org/py3k/library/turtle.html). Seejärel proovige joonistada malelaud.

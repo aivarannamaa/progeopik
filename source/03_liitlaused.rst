@@ -665,6 +665,18 @@ Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslik
 
     Abiks võib olla ``turtle`` käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
 
+8. Raskem: Ruudustik
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal, ning joonistab kilpkonna abil vastava ruudustiku, nt:
+
+.. image:: images/ruudustik.png
+
+.. topic:: Lisaülesande lisa
+    
+    Uurige kilpkonna dokumentatsioonist, kuidas värvida soovitud ala (http://docs.python.org/py3k/library/turtle.html). Seejärel proovige joonistada malelaud.
+    
+
+
 Praktilisi näpunäiteid
 ------------------------
 Veaotsingust

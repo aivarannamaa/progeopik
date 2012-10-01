@@ -1,10 +1,8 @@
+.. _tkinter:
+
 Lisa: tkinter
 =================================
 Käesolevas lisas vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Seejärel demonstreerime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
-
-.. topic:: Tähelepanu!
-
-    Alljärgnev mahukas materjal toetab erinevaid valikuid projekti teemade osas. Seetõttu on soovitav see alguses põgusalt üle vaadata ja seejärel keskenduda nendele ülesannetele ja teemadele, mida teil läheb tarvis oma projekti teostamiseks või mis teile rohkem huvi pakuvad.
 
 Tk ja ``tkinter``
 -----------------------
@@ -132,7 +130,7 @@ Eelmist näiteprogrammi käivitades ei olnud te võibolla rahul vidinate paigutu
 
     Lisaks meetoditele ``place`` ja ``grid`` võite kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry
 
-Ülesanne 1. Täiendatud tervitaja
+Harjutus 1. Täiendatud tervitaja
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Täiendage eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
 
@@ -186,7 +184,7 @@ Tahvel (``canvas``)
 
 Lisainfot ``canvas``-e kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/tkinter/canvas.html
 
-Ülesanne 2. Bahama lipp
+Harjutus 2. Bahama lipp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Koostage programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saarte lipp" ja joonistab sinna Bahama lipu.
@@ -375,7 +373,7 @@ Kutsuge funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
 
 Pange kood kokku ja käivitage rakendus.
 
-Ülesanne 3. Täiendatud kell
+Harjutus 3. Täiendatud kell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Täiendage kella. Lisage minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
 
@@ -598,8 +596,3 @@ Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutami
 
 Kahjuks ei toimu automaatselt piltide suuruse muutmine -- täieliku *zoom* efekti saamiseks tuleks ka piltide sisu vahetada suuremate vastu.
 
-Koduülesanded
-------------------
-``tkinter``-i võimaluste uurimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Eksperimenteerige ``tkinter``-iga. Tutvuge aadressil  http://www.tkdocs.com/tutorial/firstexample.html oleva Tk baasil tehtud programmiga. Uurige, milliseid erinevaid vidinaid ``tkinter`` pakub (http://www.tkdocs.com/tutorial/widgets.html ja http://www.tkdocs.com/tutorial/morewidgets.html).
