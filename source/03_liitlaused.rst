@@ -629,7 +629,39 @@ Kirjutage *funktsioon* ``ring()``, mis joonistab kilpkonnaga pisikestest sirglõ
 
     Sarnane ülesanne on ülalpool juba antud, aga natuke teises sõnastuses. Nüüd on aga vaja lahendus vormistada funktsioonina.
 
-6. Kivi-paber-käärid
+6. Kujundid
+~~~~~~~~~~~~
+
+Kirjutage programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kujundid järgneva skeemi järgi:
+
+.. sourcecode:: none
+
+    # # # # # # #
+    #           #
+    #           #
+    #           #
+    #           #
+    #           #
+    # # # # # # #
+
+
+.. sourcecode:: none
+
+    * 
+    * * 
+    * * * 
+    * * * * 
+    * * * * * 
+    * * * * * * 
+    * * * * * * * 
+
+.. hint::
+    
+    Tuletage meelde, mida tähendab ``'Tere' * 4``
+
+
+
+7. Kivi-paber-käärid
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikult valitud sõna loetelust "kivi", "paber", "käärid". Programmi töö lõpetamiseks tuleb kasutajal enne ENTERi vajutamist sisestada "aitab".
 
@@ -657,7 +689,7 @@ Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslik
             else:
                 ...
 
-7. Raskem: Redeli asendid
+8. Raskem: Redeli asendid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülesandeks on genereerida Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonistage redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
 
@@ -665,7 +697,7 @@ Kirjutage programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslik
 
     Abiks võib olla ``turtle`` käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
 
-8. Raskem: Ruudustik
+9. Raskem: Ruudustik
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal, ning joonistab kilpkonna abil vastava ruudustiku, nt:
 
