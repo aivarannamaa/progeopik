@@ -745,9 +745,12 @@ Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis
 
 
 
-Ülesanded
+Ülesanded 
 -------------
+.. note::
 
+    Kursuse kodulehel loetletud kontrollülesannete all on mõeldud just selle ploki ülesandeid.
+    
 1. Ristkülik 
 ~~~~~~~~~~~~
 Kirjutage funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja joonistab kilpkonnaga neile vastava ristküliku. Joonistage loodud funktsiooni kasutades järgnev kujund:
@@ -816,6 +819,10 @@ Võtke aluseks kolmanda peatüki Ülesanne "Pere sissetulek". Muutke lahendust s
 Plokkskeemi ülesanded
 --------------------------
 
+.. note::
+
+    Neid ülesandeid praktikumis ei kontrollita, aga need on soovitav siiski lahendada. Ülesandeid 1,2,3,4,6 saab lahendada ka Pykkariga.
+
 1. Ring ümber mänguväljaku
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -845,6 +852,10 @@ Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul fun
 .. image:: images/l05_fig19.gif
 
 Koostada abistavaid alamprotseduure.
+
+.. note::
+
+    Pykkari tumeda ruudu kontrollimise funktsioon on ``is_painted()``, tumeda ruudu tekitamiseks maailma kaardil tuleks kasutada sümbolit ``.``.
 
 
 5. Istuta lilli
