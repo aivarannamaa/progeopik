@@ -295,7 +295,9 @@ Lisaülesanne. Fibonacci arvud
      Kasutage funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust st. kirjutage hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrrelge antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-da Fibonacci arvu leidmisel.
 
 
-
+Projecteuler.net
+~~~~~~~~~~~~~~~~~~~~~~
+http://projecteuler.net/index.php?section=problems&id=15
 
 Lisalugemine
 ------------

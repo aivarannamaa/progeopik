@@ -586,7 +586,7 @@ Kirjutage programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste la
 
 Esialgu võite eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum. (Siiamaani saaksite selle ülesande lahendada ka ilma selle peatüki vahenditeta).
 
-Lõpuks korraldage nii, et programm töötab õigesti ka siis, kui ühel (või mõlemal) vanemal on brutopalk maksuvabast miinimumist väiksem.
+Lõpuks korraldage nii, et programm töötab õigesti ka siis, kui ema või isa brutopalk on maksuvabast miinimumist väiksem.
 
 .. note::
 
