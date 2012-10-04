@@ -945,11 +945,11 @@ Nagu ikka, on mõttekas alustada millestki lihtsast. Vaadake üle järgnev näit
 
 Loodetavasti ilmus teie ekraanile aken, kus oli võimalik sisestada mingi tekst ja vajutada nupule. Peale nupuvajutust pidi ilmuma uus väike aken tervitusega.
 
-Kuigi see programm on suhteliselt lihtne ja lühike, illustreerib ta küllalat hästi graafiliste programmide põhimõtteid:
+Kuigi see programm on suhteliselt lihtne ja lühike, illustreerib ta küllalt hästi graafiliste programmide põhimõtteid:
 
     * kuskil on olemas funktsioonid ja andmetüübid, mis oskavad ekraanile manada nuppe jms. (antud juhul moodulid ``tkinter`` ja ``tkinter.ttk``)
-    * erinevad kasutajaliidese komponente (e. "vidinaid") saab paigutada üksteise sisse (antud näites on ``silt``, ``nimi`` ja ``nupp`` asuvad ``raam``-i sees)
-    * vidinate juures saab ära näidata, millised funktsioonid tuleb käivitada mingi kasutaja tegevusele korral (``... command=tervita ...``). Vastavates funktsioonides võite teha mida iganes oskate -- lugeda ja kirjutada faile, tõmmata midagi internetist, muuta teiste vidinate sisu või välimust jne.
+    * erinevaid kasutajaliidese komponente (e. "vidinaid") saab paigutada üksteise sisse (antud näites ``silt``, ``nimi`` ja ``nupp`` asuvad ``raam``-i sees)
+    * vidinate juures saab ära näidata, millised funktsioonid tuleb käivitada mingi kasutaja tegevuse korral (``... command=tervita ...``). Vastavates funktsioonides võite teha mida iganes oskate -- lugeda ja kirjutada faile, tõmmata midagi internetist, muuta teiste vidinate sisu või välimust jne.
     * vidinate omadusi saab määrata nende loomisel (``... text="Tervita!" ...) või ka hiljem (``nupp.place(...)``). 
     * peale kasutajaliidese paikasättimist pannakse programm kasutaja tegevusi ootama (``raam.mainloop()``).
     
