@@ -624,9 +624,9 @@ Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite pu
 .. note::
     Meetodeid ei ole vaja kunagi ``import``-ida.
 
-Veateted ja funktsioonid
+Veateated ja funktsioonid
 ---------------------------
-Esimeses peatükis soovitasime pikkade veatedete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovige käivitada järgnevat programmi:
+Esimeses peatükis soovitasime pikkade veateadete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovige käivitada järgnevat programmi:
 
 .. sourcecode:: py3
 
@@ -655,7 +655,7 @@ Alaprogrammid plokkskeemis
 ----------------------------------
 Alamprogramme saab defineerida ka plokkskeemides. Selleks eraldatakse lihtsalt skeemil üks eraldiolev ala alamprogrammi jaoks (näiteks ümbritsetakse kastiga) ning kirjutatakse selle juurde alamprogrammi nimi.
 
-Proovime nüüd koostada mõned alamprogrammide skeemid põranda värvimise plokkskeemi jaoks. NB! siin jaotame ülesande osadeks veidi teistest kohtadest, kui Pythoni näites, sellega demonstreerime, et alamülesannete väljaaeraldamise viis on alati programmeerija valiku küsimus.
+Proovime nüüd koostada mõned alamprogrammide skeemid põranda värvimise plokkskeemi jaoks. NB! siin jaotame ülesande osadeks veidi teistest kohtadest, kui Pythoni näites, sellega demonstreerime, et alamülesannete väljaeraldamise viis on alati programmeerija valiku küsimus.
 
 Loome kõigepealt alamprogrammid järgmistele tegevustele: 
 
