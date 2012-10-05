@@ -13,10 +13,6 @@
 
 
 
-.. warning::
-
-    Selle peatüki materjal võib veel muutuda
-
 Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi
 
 
@@ -272,10 +268,18 @@ Testige oma funktsiooni!
 
 Tingimuste kasutamine tsükli päises
 ---------------------------------------
-TODO
+Justkui tingimuslause päises, lubatakse ka ``while``-lause päises suvaliselt keerulist tingimuslauset:
+
+.. todo:: Näide
 
 Ülesanded
 -------------
+
+.. note::
+
+    8. oktoobril lisatakse siia ülesandeid juurde
+
+
 
 1. Kuupäeva esitamine sõnena
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
