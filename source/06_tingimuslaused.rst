@@ -1,19 +1,10 @@
 6. ``bool`` ja tingimuslaused
 =======================================
 
-..
-    COMMENTS:
-    http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/ch05.html
-    Give the logical opposites of these conditions
 
-    a > b
-    a >= b
-    a >= 18  and  day == 3
-    a >= 18  and  day != 3
+Meeldetuletus 3. peatükist -- Pythoni programmi kood koosneb lausetest ja lause komponentideks on avaldised. Tuleb välja, et ka ``if`` või ``while`` lause päises olev tingimus on tegelikult avaldis. Kuna igal avaldisel on väärtus ja igal väärtusel on tüüp, siis mis on tingimuse tüüp?
 
-
-
-Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi
+Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi, aga kõigepealt tutvume ühe uue andmetüübiga, mida olete tegelikult juba korduvalt kasutanud.
 
 
 .. index::
@@ -120,6 +111,17 @@ Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema priorite
     * ``or``
 
 Kahtluse korral kasutage soovitud tehete järjekorra määramiseks sulge.
+
+Harjutus 2
+~~~~~~~~~~~~~~~~
+Pange kirja järgnevate avaldiste loogilised *vastandid*:
+
+.. sourcecode:: none
+
+    a > b
+    a >= b
+    a >= 18  and  day == 3
+    a >= 18  and  day != 3
     
 Loogiliste avaldiste samaväärsus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +147,7 @@ Kui programmis on mitmes kohas vaja kontrollida sarnast tingimust, siis võib se
     else:
         print("Arv pole positiivne või pole paaris")
 
-Harjutus 2. Liigaasta tuvastamine
+Harjutus 3. Liigaasta tuvastamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``on_liigaasta``, mis võtab argumendiks aastaarvu ning **tagastab tõeväärtuse** vastavalt sellele, kas antud aasta on liigaasta või mitte.
 
@@ -201,11 +203,11 @@ Tingimuslauseid võib panna üksteise sisse, sel juhul tuleb hoolikalt jälgida 
         else:
             print("Arvud on võrdsed")
 
-Harjutus 3. Päevade arv kuus
+Harjutus 4. Päevade arv kuus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``päevade_arv``, mis võtab argumendiks kuu numbri ja aastaarvu ning tagastab mitu päeva on selles kuus. Kasutage abifunktsioonina eelnevalt defineeritud funktsiooni ``on_liigaasta``. (Kirjutage need funktsioonid samasse faili).
 
-Harjutus 4. Kuupäeva kontrollimine
+Harjutus 5. Kuupäeva kontrollimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``on_legaalne_kuupäev``, mis võtab argumendiks päeva, kuu ja aasta (arvudena) ning tagastab tõeväärtuse vastavalt sellele, kas argumentidele vastav kuupäev on legaalne või mitte. Kasutage abifunktsioonidena eelmistes ülesannetes defineeritud funktsioone.
 
@@ -260,7 +262,7 @@ Näide: Hinde arvutamise programm
     punkte = int(input("Sisesta punktide arv"))
     print("Nende punktidega saab hindeks " + hinne(punkte))
 
-Harjutus 5. Kuu esitamine sõnena
+Harjutus 6. Kuu esitamine sõnena
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``kuu_nimi``, mis võtab argumendiks kuu numbri ning tagastab vastava kuu nime. Kui argumendi väärtus on väiksem kui 1 või suurem kui 12, siis tagastatakse sõne ``'Vigane kuu number'``.
 
@@ -268,18 +270,77 @@ Testige oma funktsiooni!
 
 Tingimuste kasutamine tsükli päises
 ---------------------------------------
-Justkui tingimuslause päises, lubatakse ka ``while``-lause päises suvaliselt keerulist tingimuslauset:
+Justkui tingimuslause päises, lubatakse ka ``while``-lause päises suvalisel kujul tingimust, peamine, et tegemist oleks ``bool`` tüüpi avaldisega:
 
-.. todo:: Näide
+.. sourcecode:: py3
+    
+    a = ...
+    b = ...
+    c = ...
+    s = ...
 
-Ülesanded
--------------
+    
+    while (a == b or b > c) and s == "Tere":
+        ...
+
+        
+    tingimus = ... or ... or ... or ...
+    while tingimus or a > b or s.endswith("kala"):
+        ...
+        a = ...
+        ...
+
+    
+    while True:
+        ...
+
+
+Tingimusavaldis
+-----------------
+Lisaks ``if``-*lausele* on Pythonis olemas ka ``if``-*avaldis* e. *tingimusavaldis*. Selle olemust on kõige lihtsam selgitada näitega:
+
+.. sourcecode:: py3
+
+    >>> a = 1
+    >>> b = 2
+    >>> 'suurem' if a > b else 'väiksem'
+    'väiksem'
+
+Ka ``if``-avaldise juures kasutatakse võtmesõnu ``if`` ja ``else``, aga nende paigutus on erinev -- tõesele tingumusele vastav haru kirjutatakse ``if``-i ette ja väärale tingimusele vastav haru kirjutatakse ``else`` järele, koolonit ega treppimist ei kasutata. Oluline on veel see, et erinevalt tingimuslausest, ei käi tingimusavaldise harudesse mitte laused vaid avaldised. Tingimusavaldise väärtus võetakse ühest või teisest harust, vastavalt tingimusele. See asjaolu tingib ka selle, et mõlemad harud peavad olema antud.
+
+Toome siinkohal veel ühe näite tingimusavaldise kasutamise kohta:
+
+.. sourcecode:: py3
+
+    def neto(bruto):
+        return bruto if bruto <= 144 else (bruto - 144) * 0.79 + 144
+
+Tingimusavaldise asemel saab alati kasutada tingimuslauset ...
+    
+.. sourcecode:: py3
+
+    def neto(bruto):
+        if bruto <= 144:
+            vastus = bruto
+        else:
+            vastus = (bruto - 144) * 0.79 + 144
+            
+        return vastus
+
+... aga mõnikord saab tingimusavaldisega oma idee lihtsalt kompaktsemalt kirja panna.
+
+
+.. note:: 
+
+    Ärge ajage segamini ka tingimusavaldist ja loogilist avaldist. Loogiline avaldis on avaldis, mille tüüp on ``bool``. Tingimusavaldis on avaldis, milles on kasutatud äsja tutvustatud valikuskeemi, tingimusavaldise tüüp tavaliselt *ei ole* ``bool``.
 
 .. note::
 
-    8. oktoobril lisatakse siia ülesandeid juurde
+    Kui teile siiski tundub, et tingimusavaldis teeb teie jaoks asjad liiga segaseks, siis võite seda rahumeeli ignoreerida. Alati saab hakkama ka ainult tingimuslausega. Mitmes populaarses programmeerimiskeeles isegi pole tingimusavaldist.
 
 
+Ülesanded
+-------------
 
 1. Kuupäeva esitamine sõnena
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -287,7 +348,7 @@ Kirjutage funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu 
 
 Seejärel kirjutage programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta. Kui neile vastav kuupäev on legaalne, siis kuvada ekraanile vastav kuupäev sõnena, vastasel juhul kuvada ``'Viga: mittelegaalne kuupäev'``.
 
-Kasutage abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 2-5).
+Kasutage abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 3-6).
 
 2. Täisnurkne kolmnurk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,7 +356,7 @@ Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja ta
 
 .. note:: 
 
-    Lihtsustamise mõttes võite esialgu eeldada, et pikim külg antakse alati 3. argumendina. Kui saate sellise variandi tööle, siis muutke programmi selliselt, et küljepikkuseid võib anda suvalises järjekorras.
+    Lihtsustamise mõttes võite esialgu eeldada, et pikim külg antakse alati kolmanda argumendina. Kui saate esialgse variandi tööle, siis muutke programmi selliselt, et küljepikkuseid võib anda suvalises järjekorras.
     
 .. note::
 
@@ -311,4 +372,98 @@ Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja ta
 ~~~~~~~~~~~~~~~~~~~~~
 Ülikool on ostnud endale uue klaveri peahoone aula tarbeks. Paraku unustati  kontrollida, kas see klaver üldse välisuksest sisse mahub. Kirjutada programm, mis küsib kasutajalt klaverit sisaldava kasti kolm mõõdet (pikkus, laius, kõrgus) ning ukse laiuse ja kõrguse ning vastab, kas klaver on võimalik aulasse sisse toimetada.
 
+4. Pitsapood
+~~~~~~~~~~~~
+Kirjutage programm, mis küsib kasutajalt infot tellitava pitsa suuruse, komponentide ja kättetoimetamise detailide kohta. Igal sammul tuleks esitada kasutajale võimalikud valikud koos vastavate koodidega, nt:
 
+.. sourcecode:: none
+
+    ...
+    ...
+    Millise suurusega pitsat soovite? Valikud on:
+      1 - väike (18cm)
+      2 - keskmine (25cm)
+      3 - suur (35cm)
+    Palun sisesta oma valik: 2
+    ...
+    ...
+    Mida kasutada pitsa katmisel? 
+      0 - pitsa kate valmis
+      1 - juust
+      2 - vorst
+      3 - ...   
+      4 - ...   
+    ...
+    ...
+    Kuidas pitsa kohale toimetada? 
+      1 - tulen ise järele
+      2 - sisestan aadressi ja telefoninumbri
+    ...
+    
+Pitsakatte komponente peaks saama valida ükskõik kui palju. Aadressi küsida ainult siis, kui kasutaja ei soovi ise järele tulla. Kogutud andmed salvestada tekstifaili.
+
+Projekt
+------------
+Tkinter'i Canvas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Eelmises peatükis tutvustasime mõningaid tkinter'i võimalusi graafiliste kasutajaliideste loomisel. Siis demonstreerimsime põhiliste "standardvidinate", nagu nuppude ja tekstisisestuskastide kasutamist. Seekord uurime ühte väga paindlikku vidinat, mille nimi on *Canvas* (tõlkes *lõuend*). *Canvase* peale saab joonistada kujundeid, laadida pilte, neid pilte ja kujundeid saab liigutada, nendele klõpsamist on võimalik registreerida jne.
+
+Salvestage endale järgnev näiteprogramm. Enne käivitamist salvestage samasse kausta ka fail :download:`juku.gif <downloads/juku.gif>`.
+
+.. sourcecode:: py3
+
+    from tkinter import *
+    from random import randint
+
+    # mõningad abikonstandid
+    juku_sammu_pikkus = 50
+    tahvli_laius = 600
+    tahvli_kõrgus = 600
+
+    # funktsioonid, mis käivitatakse vastavalt kasutaja tegevusele
+    def hiireklõps_juku_peal(event):
+        # liigutan Juku juhuslikku positsiooni
+        uus_x = randint(0, tahvli_laius-50)
+        uus_y = randint(0, tahvli_kõrgus-50)
+        tahvel.coords(juku_id, uus_x, uus_y)
+
+    def nool_üles(event):
+        tahvel.move(juku_id, 0, -juku_sammu_pikkus)
+
+    def nool_alla(event):
+        tahvel.move(juku_id, 0, juku_sammu_pikkus)
+
+    def nool_vasakule(event):
+        tahvel.move(juku_id, -juku_sammu_pikkus, 0)
+
+    def nool_paremale(event):
+        tahvel.move(juku_id, juku_sammu_pikkus, 0)
+
+
+    # tavaline raami ja tahvli loomine
+    raam = Tk()
+    raam.title("Tahvel")
+    tahvel = Canvas(raam, width=tahvli_laius, height=tahvli_kõrgus, background="white")
+    tahvel.grid()
+
+    # tavaline pildi sisselugemine
+    juku = PhotoImage(file="juku.gif")
+
+    # pildi loomisel jätan meelde pildi id 
+    juku_id = tahvel.create_image(100, 100, image=juku)
+
+    # pildi id kaudu seon sellel pildil toimunud klõpsud vastava funktsiooniga
+    # <1> tähistab vasakut hiireklahvi
+    tahvel.tag_bind(juku_id, '<1>', hiireklõps_juku_peal)
+
+    # seon nooleklahvid vastavate funktsioonidega
+    raam.bind_all("<Up>",    nool_üles)
+    raam.bind_all("<Down>",  nool_alla)
+    raam.bind_all("<Left>",  nool_vasakule)
+    raam.bind_all("<Right>", nool_paremale)
+
+    raam.mainloop()
+
+Käivitage programm, vajutage nooleklahve, klõpsake hiirega kriipsujukul.
+
+See näiteprogramm oli siinkohal mõeldud vaid "isuäratajana" -- selleks, et sellest aru saada, lugege esmalt lihtsamate Canvase programmide selgitusi õpiku lisast *tkinter*, jaotusest :ref:`canvas`.

@@ -134,6 +134,7 @@ Harjutus 1. Täiendatud tervitaja
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Täiendage eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
 
+.. _canvas:
 
 Tahvel (``canvas``)
 ---------------------
