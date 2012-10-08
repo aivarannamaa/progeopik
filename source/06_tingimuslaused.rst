@@ -367,6 +367,11 @@ Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja ta
         if abs(x - y) < 0.000001:      # x on peaaegu võrdne y-ga
             ...
 
+.. hint::
+
+    Tuletage jälle meelde see vana hea koolimatemaatika teoreem.
+
+Kasutage loodud funktsiooni, küsides kasutajalt kolmnurga 3 külje pikkused ja väljastades info selle kohta, kas antud kolmnurk on täisnurkne või mitte.
 
 3. Klaveri mahutamine
 ~~~~~~~~~~~~~~~~~~~~~
