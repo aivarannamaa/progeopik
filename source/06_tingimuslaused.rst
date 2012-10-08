@@ -112,16 +112,16 @@ Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema priorite
 
 Kahtluse korral kasutage soovitud tehete järjekorra määramiseks sulge.
 
-Harjutus 2
-~~~~~~~~~~~~~~~~
+Harjutus 2. Vastandid
+~~~~~~~~~~~~~~~~~~~~~~
 Pange kirja järgnevate avaldiste loogilised *vastandid*:
 
 .. sourcecode:: none
 
     a > b
     a >= b
-    a >= 18  and  day == 3
-    a >= 18  and  day != 3
+    a >= 18  and  b == 3
+    a >= 18  and  b != 3
     
 Loogiliste avaldiste samaväärsus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,7 +171,7 @@ Kirjutage programm, mis küsib kasutajalt aastaarvu ning väljastab ekraanile in
 
 Tingimuslaused
 --------------
-Siiani oleme kasutanud tingimuslauset (e. ``if``-lauset e. hargnemislauset) kõige lihtsamal kujul, kus on välja toodud täpselt 2 alternatiivi. Järgnevalt vaatame kuidas kirjutada "üheharulist" tingumuslauset ning kuidas mitut tingimuslauset kombineerida. 
+Pythoni tingimuslausega olete juba kokku puutunud, aga vaatame siinkohal mõned punktid veel üle. Lisaks tutvustame "mitmeharulist" tingimuslauset.
 
 ``if`` ilma ``else``-ta
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -219,8 +219,8 @@ Testige loodud funktsiooni järgnevate avaldistega:
 
     
 
-``elif`` konstruktsioon
-~~~~~~~~~~~~~~~~~~~~~~~
+``elif`` konstruktsioon e. mitmeharuline tingimuslause
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülalpool toodud arvude võrdlemise näite saab kirjutada ümber kasutades ``elif`` konstruktsiooni (tuleb sõnadest *else if*):
 
 .. sourcecode:: py3
@@ -357,6 +357,10 @@ Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja ta
 .. note:: 
 
     Lihtsustamise mõttes võite esialgu eeldada, et pikim külg antakse alati kolmanda argumendina. Kui saate esialgse variandi tööle, siis muutke programmi selliselt, et küljepikkuseid võib anda suvalises järjekorras.
+
+.. note::
+    
+    Ärge unustage, et mitte igast küljepikkuste komplektist ei saa moodustada kolmnurka! Soovitame kirjutada abifunktsiooni, mis ütleb, kas antud küljepikkused üldse sobivad kolmnurgale.
     
 .. note::
 
@@ -371,7 +375,8 @@ Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja ta
 
     Tuletage jälle meelde see vana hea koolimatemaatika teoreem.
 
-Kasutage loodud funktsiooni, küsides kasutajalt kolmnurga 3 külje pikkused ja väljastades info selle kohta, kas antud kolmnurk on täisnurkne või mitte.
+
+Kasutage loodud funktsiooni, küsides kasutajalt kolmnurga 3 külje pikkused ja väljastades info selle kohta, kas antud kolmnurk on täisnurkne või mitte. Kui küljepikkused ei sobi kolmnurgale, siis tuleks ka seda öelda.
 
 3. Klaveri mahutamine
 ~~~~~~~~~~~~~~~~~~~~~
@@ -392,8 +397,8 @@ Kirjutage programm, mis küsib kasutajalt infot tellitava pitsa suuruse, kompone
     Palun sisesta oma valik: 2
     ...
     ...
-    Mida kasutada pitsa katmisel? 
-      0 - pitsa kate valmis
+    Mida lisada pitsa peale? 
+      0 - rohkem mitte midagi
       1 - juust
       2 - vorst
       3 - ...   
