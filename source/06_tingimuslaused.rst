@@ -364,7 +364,7 @@ Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja ta
     
     .. sourcecode :: py3
     
-        if abs(x - y) < 0.000001:      # x is peaaegu võrdne y-ga
+        if abs(x - y) < 0.000001:      # x on peaaegu võrdne y-ga
             ...
 
 
