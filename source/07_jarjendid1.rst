@@ -451,6 +451,121 @@ Kirjutage funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle
 
 
 
+Ennikud
+---------------------
+Ennik (ing.k. *tuple*) on Pythoni andmetüüp, mis on väga sarnane järjendile. Ainsaks sisuliseks erinevusteks on see, et ennikut ei saa muuta -- st. ennikusse ei saa ``append`` meetodiga elemente lisada ega olemasolevaid elemente muuta. Ennikud kirjutatakse ümarsulgude vahele, aga nende indekseerimiseks kasutatakse siiski nurksulge:
+
+.. sourcecode:: py3
+
+    punkt = (3, 8)
+    print("Punkti x-koordinaat on:", punkt[0])
+    print("Punkti y-koordinaat on:", punkt[1])
+    
+    andmed = ("Peeter", "Paun", 1967)
+    print("Eesnimi:", andmed[0])
+    print("Perenimi:", andmed[1])
+    print("Sünniaasta:", andmed[2])
+
+Tegelikult saaksime alati ennikute asemel kasutada ka järjendeid, aga heaks tavaks on kasutada järjendeid vaid neil juhtudel, kus kogumi elemendid on kõik ühte tüüpi.
+
+Ennikuid võiks eelistada siis, kui meil on mingi kindel komplekt elemente, mida me tahame koos käsitleda, kusjuures iga element võib olla erinevat tüüpi.
+
+.. note::
+
+    Mingit 3-elemendilist kogumit nimetatakse tavaliselt *kolmikuks*, 4-elemendilist *nelikuks* jne. Enniku nimi on tulnud selle skeemi üldistamisest: *n*-elemendilist kogumit nimetatakse *ennikuks*.
+
+Mitme väärtuse tagastamine funktsioonist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ennikuid kasutatakse tihti siis, kui funktsioonist on vaja tagastada mitut väärtust:
+
+.. sourcecode:: py3
+
+    def loe_andmed(failinimi):
+        nimed = []
+        sünniaastad = []
+        
+        f = open(failinimi)
+        for rida in f:
+            jupid = rida.split()
+            nimed.append(jupid[0])
+            sünniaastad.append(jupid[1])
+        
+        f.close()
+        
+        # tagastan kaheelemendilise enniku
+        return (nimed, sünniaastad)
+
+    # salvestan enniku komponendid muutujatesse
+    (meeste_nimed, meeste_sünniaastad) = loe_andmed("mehed.txt")
+    (naiste_nimed, naiste_sünniaastad) = loe_andmed("naised.txt")
+    
+    print(meeste_nimed)
+    print(naiste_sünniaastad)
+
+
+Näite lõpp näitab, et enniku komponente saab omistamise süntaksi abil salvestada muutujatesse. (Alternatiivina võiksime kasutada ka indekseerimist).
+
+.. note::
+
+    Taolist ennikutega omistamise trikki kasutatakse mõnikord ka 2 muutuja väärtuste vahetamiseks:
+    
+    .. sourcecode:: py3
+    
+        x = 1
+        y = 2
+        
+        x, y = y, x
+        
+        print(x)
+        print(y)
+        
+    See näide demonstreerib veel seda, et teatud juhtudel on lubatud enniku ümbert sulud ära jätta.
+
+
+*Vahepala: Sõnede ja väljundi formaatimine*
+---------------------------------------------
+Seni oleme sõnede ja teiste andmetüüpide kombineerimisel kasutanud komponentide ühendamiseks operatsiooni ``+`` ning teisendamiseks funktsiooni ``str``. Nüüd vaatame alternatiivset viisi selle toimingu tegemiseks.
+
+Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatele sõnekujudele. Selle meetodi põhiolemust demonstreerib järgnev käsurea näide:
+
+.. sourcecode:: py3
+
+    >>> eesnimi = "Kalle"
+    >>> perenimi = "Kala"
+    >>> vanus = 25
+    >>> 'Klient: {0} {1}, vanus: {2}'.format(eesnimi, perenimi, vanus)
+    'Klient: Kalle Kala, vanus: 25'
+
+Meetod ``format`` konstrueerib tulemuse (uue sõne) mitmest komponendist: esimeseks komponendiks on lähtesõne, mis sisaldab muuhulgas loogeliste sulgudega tähistatud "markereid" (ing.k. `placeholders`); ülejäänud komponentideks on suvalised väärtused, mis kopeeritakse vastavate markerite asemele.
+
+Markerite sisu on kõige lihtsamal juhul täisarv, mis näitab, mitmes väärtus tuleb antud markeri asemele panna. Seejuures tuleb arvestada, et loendamist alustatakse `0`-st. 
+
+Markeritesse saab märkida ka lisatingimusi andmete formaadi kohta:
+
+.. sourcecode:: py3
+    
+    pikkused = [173.235235, 33.0, 167.333]
+
+    for i in range(len(pikkused)):
+        pikkus_sõnena = "{0}. pikkus on {1:>6.2f}cm".format(i, pikkused[i])
+        print(pikkus_sõnena)
+
+Hakkame jupphaaval analüüsima markeri ``{1:>6.2f}`` tähendust:
+
+    * koolonist vasakul on markeri järjekorranumber
+    * ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb nihutada sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit
+    * ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
+    
+.. note::
+
+    | ``format`` meetodi teiste võimalustega saab tutvuda aadressil:    
+    | http://docs.python.org/py3k/library/string.html#format-examples
+
+
+
+
+
+
 Koduülesanded
 -------------
 
