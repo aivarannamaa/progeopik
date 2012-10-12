@@ -1,8 +1,5 @@
 7. Järjendid ja ``for``-tsükkel
 =================================
-.. warning::
-
-    Selle peatüki materjal võib veel muutuda
 
 Meie senistes programmides on iga andmejupp kuskil eraldi ära mainitud (nt. muutujana). Kui mõelda reaalsete programmide peale (nt. firma raamatupidamissüsteem), siis üldjuhul ei ole võimalik kõiki asjassepuutuvaid objekte (nt. töötajad või arved) programmis üksikult ära mainida, kuna selliste objektide hulk pole piiratud.
 
@@ -79,7 +76,7 @@ Järgnev tabel demonstreerib olulisimaid järjendioperatsioone:
 
 NB! Nagu viimastest ridadest selgub, võib järjendis olla korduvaid väärtusi, ning elementide järjekord on oluline.
     
-Ülesanne 1. Järjendiavaldiste kasutamine
+Harjutus 1. Järjendiavaldiste kasutamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Olgu meil defineeritud järgnevad järjendimuutujad:
 
@@ -168,7 +165,7 @@ Sellise töötlemise juures kasutatakse enamasti abimuutujat, mida nimetatakse *
 
 Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad etteantud järjendi kohta mingit infot. Näiteks funktsioon ``max`` teeb sama, mis meie eelmise näite funktsioon. Selles peatükis aga üritame taolisi funktsioone ise "leiutada", et õppida järjendeid ning ``for``-tsüklit paremini tundma.
 
-Ülesanne 2. Elementide summa
+Harjutus 2. Elementide summa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``elementide_summa``, mis võtab argumendiks arvujärjendi ning tagastab kõigi elementide summa. (Selle jaoks on küll Pythonis juba olemas funktsioon ``sum``, aga ärge praegu seda kasutage).
 
@@ -202,7 +199,7 @@ Selle näidet kommenteerides võiks lihtsustatult öelda, et:
 
 Tegelikult ei ole muutujas ``f`` siiski mitte järjend, vaid natuke keerulisem väärtus. Õnneks oskab ``for``-tsükkel käsitleda seda väärtust justkui järjendit, seetõttu ei pea me muretsema, kuidas need faili read on tegelikult esitatud.
 
-Ülesanne 4. Temperatuuride lugemine failist
+Harjutus 4. Temperatuuride lugemine failist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
 
@@ -247,7 +244,7 @@ Nüüd peaks olema selge, miks meie ``for``-tsükli näide sedasi käitus -- ``r
     Kuigi me muutuja ``i`` väärtust ei kasutanud, siis Pythoni süntaks nõuab ikkagi selle muutuja kirjapanekut.
 
 
-Ülesanne 3. Kilpkonn tsüklis
+Harjutus 3. Kilpkonn tsüklis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Proovige ennustada, mida joonistab järgmine programm:
 
@@ -302,11 +299,11 @@ Kommentaarid:
     * kahe argumendi puhul algab loetelu esimese argumendi väärtusest ja lõpeb *enne* teise argumendini jõudmist
     * kolme argumendi puhul näitab kolmas argument väärtuste kasvamise sammu
 
-Ülesanne 4. Kolmega jaguvad arvud
+Harjutus 4. Kolmega jaguvad arvud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage ``for``-tsükkel koos sobiva ``range`` variandiga, mis kuvab ekraanile kõik 3-ga jaguvad arvud vahemikus 10 kuni 100.
 
-Ülesanne 5. ``range`` avaldis
+Harjutus 5. ``range`` avaldis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
@@ -384,7 +381,7 @@ Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
     >>> ';'.join(['CY2X44', '3', '66', 'T'])
     'CY2X44;3;66;T'
 
-Ülesanne 1. Kuupäeva "lahtiharutamine"
+Harjutus 6. Kuupäeva "lahtiharutamine"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``kuu``, mis võtab argumendiks sõne kujul *<päev>. <kuu> <aasta>* (nt. ``'24. veebruar 1918'`` ning tagastab vastava kuu nime.
 
@@ -445,7 +442,7 @@ Proovige läbi järgnev näide, et te tunneksite saadud veateate edaspidi ära:
     print(a[66])
 
 
-Ülesanne 2. Sõne viilutamine
+Harjutus 7. Sõne viilutamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle sõne 3 viimast tähte. Kui sõnes on vähem kui 3 tähte, siis tagastada terve sõne.
 
@@ -568,32 +565,57 @@ Hakkame jupphaaval analüüsima markeri ``{1:>6.2f}`` tähendust:
 
 Koduülesanded
 -------------
+..
 
-1. Õpikuülesanne
-~~~~~~~~~~~~~~~~
-Lahendage `õpiku 6. peatükist <http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/ch06.html>`_ ülesanne nr. 1.
+
+1. Paarisarvude loendamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage funktsioon, mis võtab argumendiks täisarvude listi, ning tagastab, mitu elementi antud listis olid paarisarvud.
+
+Testige oma funktsiooni erinevate listidega (sh. tühja listiga).
 
 
 2. Ruudud
 ~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis küsib sisendiks täisarvu ning väljastab kõikide arvude ruudud alates 1-st kuni sisestatud arvuni (kaasaarvatud) ja lõpuks ka kõigi nende ruutude summa.
+Kirjutage programm, mis küsib sisendiks täisarvu ning väljastab ``for``-tsükli abil kõikide arvude ruudud alates 1-st kuni sisestatud arvuni (kaasaarvatud) ja lõpuks ka kõigi nende ruutude summa.
 
-3. Laulusõnad
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis kuvab ekraanile laulu "99 Bottles of Beer on the Wall" sõnad.  Tulemus peaks olema selline, nagu näidatud siin: :download:`99-bottles.txt <downloads/99-bottles.txt>`. (NB! See fail on vaid näiteks -- sõnad tuleb genereerida, mitte failist sisse lugeda).
-
-.. note::
-    Ärge unustage tulemust testida! Viisi saab kuulata siit: http://www.youtube.com/watch?v=3KnpZYkTWno
-
-4. Teksti esitamine
+3. Teksti esitamine
 ~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis küsib kasutajalt failinime ning kuvab faili sisu ekraanile.
+Kirjutage programm, mis küsib kasutajalt failinime ning ``for``-tsüklit kasutades kuvab faili sisu ekraanile.
 
 Seejärel täiendage programmi sedasi, et teksti näidatakse 20 rea kaupa -- st. iga kord peale 20 rea näitamist jääb programm ootama kasutajapoolset ENTER-i vajutust (vihje: ``input()``).
 
 Testimiseks võib alla laadida nt. "Alice in Wonderland" teksti aadressilt http://www.gutenberg.org/files/11/11.txt.
 
+4. Värvid
+~~~~~~~~~~~~~~~~~~~~~~
+Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võite lihtsuse mõttes ignoreerida). Kirjutage programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
 
+.. image:: images/varvid.png
+
+Võite proovida ka paigutada värvid hõredamalt ja kirjutada iga värvi juurde tema nime (vt. http://docs.python.org/py3k/library/turtle.html#turtle.write).
+
+Otsige võimalusi rakendada selle peatüki uusi teemasid (``for``, ``split``).
+
+NB! ülesande saab lahendada ilma mingi rutiinse "käsitööta"!
+
+
+.. hint::
+
+    http://docs.python.org/py3k/library/turtle.html#turtle.pencolor
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        nimed_sõnena = """Mari Kalle Malle
+        Jüri Peeter Toomas Olev
+        Kaur Jaanus Jaan"""
+        
+        nimed_listina = nimed_sõnena.split()
+        
+        for nimi in nimed_listina:
+            ...
 
 5. Keskmise hinde leidmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -602,82 +624,8 @@ Olgu meil fail nimega ``hinded.txt``, kus on igal real üks hinne (vahemikus 1 k
 Kui olete programmi tööle saanud, siis muutke programmi põhiosa funktsiooniks, mis **võtab argumendiks** failinime ning **tagastab** failis olevate hinnete keskmise.
 
 
-.. todo::
-    NB! selle sissepanemiseks on tarvis et selles praksis on split-i tutvustatud
-    lisaülesanne: Kilpkonna interpretaator
-    
-    Kilpkonnaga Pythoni käsureal joonistamine on üpris lõbus, kuid muutub pikkade käskude tõttu kähku tüütuks. Arvutid on aga just mõeldud tüütute ülesannete automatiseerimiseks ja lihtsustamiseks. See motiveerib ka järgnevat ülesannet.
-
-    Antud on fail, kus igal real on kilpkonna käsk – täht ja selle järel number, näiteks:
-
-
-    .. sourcecode:: none
-
-        F 100
-        L 90
-        B 100
-        R 120
-
-    Kirjutada programm, mis loeb sisse vastava faili ja edastab need käsud kilpkonnale, lastes sellel joonistada siis neile vastava kujundi.
-
-    Programm ise on tegelikult üsna lihtne:
-
-    .. sourcecode:: py3
-
-        import turtle
-
-        # Faili avamine
-        file = open("Kilpkonn.txt","r")
-
-        # Faili töötlemine ja kilpkonnaga joonistamine
-        while True:
-            rida = file.readline()
-            # Katkesta viimase rea puhul
-            if rida == "" :
-                break
-
-           
-
-            # Teisenda käsk kaheks komponendiks
-            kask = rida.split()
-            tyyp = kask[0]
-            param = int(kask[1])
-
-            if tyyp == "L" :
-                turtle.left(param)
-            elif tyyp == "R" :
-                turtle.right(param)
-            elif tyyp == "F" :
-                turtle.forward(param)
-            elif tyyp == "B" :
-                turtle.backward(param)
-            else :
-                print "Failis oli tundmatu käsk!"
-
-    Sisuliselt kirjutasime me just interpretaatori niiöelda "Kilpkonna keele" jaoks, mis tõlkis lihtsalt loetud käsud meie kilpkonnale arusaadavasse keelde. Põhimõtteliselt sama moodi toimivad ka teiste keelte interpretaatorid. Interpretaator ei ole seega midagi keerulist ja abstraktset – tegu on lihtsalt asjaga, mis loeb käske ja täidab neid.
-
-Projekt
----------
-Miniprojekti teema
-~~~~~~~~~~~~~~~~~~~~
-*Järgmise praktikumi* ja sellele järgneva viimase koduülesande teemaks on realiseerida mingi lihtne graafiline programm -- see võib olla midagi asjalikku (nt. mingi kalkulaator või teisendaja), mingi lihtne mäng (nt. ülespoomine, trips-traps-trull, http://en.wikipedia.org/wiki/Sokoban, http://en.wikipedia.org/wiki/Fifteen_puzzle, ...) või ka mingi huvitav mittetriviaalne graafik või animatsioon. Kui teil on piisavalt suurejooneline idee, siis võite teha projekti ka kahekesi või kolmekesi.
-
-*Selle nädala ülesandeks* on mõelda välja miniprojekti, visandada tulemuseks oleva programmi oodatav välimus ja alustada programmi kirjutamisega. 
-
-
-     
-
-
-
 Lisalugemine
 ------------
-
-.. todo::
-
-    need teemad võiks äkki panna (osaliselt) eelmise praksi lisalugemiseks
-
-Kõigis järgnevates näiteprobleemides kasutatakse tulemuseni jõudmiseks tsükleid.
-
 Paroolide murdmine
 ~~~~~~~~~~~~~~~~~~
 Järgnev näide demonstreerib jõumeetodil paroolide murdmise põhiideed.
@@ -714,4 +662,57 @@ Järgnev programm küsib kasutajalt MD5 räsikoodi, ning otsib paroolisõnastiku
     print(tulemus)
     
 Tegelikkuses ei lähe paroolide murdmine siiski nii libedalt -- esiteks piirasime end praegu vaid väikeste tähtedega paroolidega ja teiseks, reaalselt kasutatavad krüptimismeetodid on palju aeglasemad, kui meie kasutatud *MD5*.
+
+
+Kilpkonna keel ja interpretaator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+Kilpkonnaga Pythoni käsureal joonistamine on üpris lõbus, kuid muutub pikkade käskude tõttu kähku tüütuks. Arvutid on aga just mõeldud tüütute ülesannete automatiseerimiseks ja lihtsustamiseks. See motiveerib ka järgnevat ülesannet.
+
+Antud on fail, kus igal real on kilpkonna käsk – täht ja selle järel number, näiteks:
+
+
+.. sourcecode:: none
+
+    F 100
+    L 90
+    B 100
+    R 120
+
+Kirjutada programm, mis loeb sisse vastava faili ja edastab need käsud kilpkonnale, lastes sellel joonistada siis neile vastava kujundi.
+
+Programm ise on tegelikult üsna lihtne:
+
+.. sourcecode:: py3
+
+    import turtle
+
+    # Faili avamine
+    file = open("Kilpkonn.txt","r")
+
+    # Faili töötlemine ja kilpkonnaga joonistamine
+    while True:
+        rida = file.readline()
+        # Katkesta viimase rea puhul
+        if rida == "" :
+            break
+
+       
+
+        # Teisenda käsk kaheks komponendiks
+        kask = rida.split()
+        tyyp = kask[0]
+        param = int(kask[1])
+
+        if tyyp == "L" :
+            turtle.left(param)
+        elif tyyp == "R" :
+            turtle.right(param)
+        elif tyyp == "F" :
+            turtle.forward(param)
+        elif tyyp == "B" :
+            turtle.backward(param)
+        else :
+            print "Failis oli tundmatu käsk!"
+
+Sisuliselt kirjutasime me just interpretaatori niiöelda "Kilpkonna keele" jaoks, mis tõlkis lihtsalt loetud käsud meie kilpkonnale arusaadavasse keelde. Põhimõtteliselt sama moodi toimivad ka teiste keelte interpretaatorid. Interpretaator ei ole seega midagi keerulist ja abstraktset – tegu on lihtsalt asjaga, mis loeb käske ja täidab neid.
 
