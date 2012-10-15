@@ -533,11 +533,11 @@ Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatel
     >>> 'Klient: {0} {1}, vanus: {2}'.format(eesnimi, perenimi, vanus)
     'Klient: Kalle Kala, vanus: 25'
 
-Meetod ``format`` konstrueerib tulemuse (uue sõne) mitmest komponendist: esimeseks komponendiks on lähtesõne, mis sisaldab muuhulgas loogeliste sulgudega tähistatud "markereid" (ing.k. `placeholders`); ülejäänud komponentideks on suvalised väärtused, mis kopeeritakse vastavate markerite asemele.
+Meetod ``format`` konstrueerib tulemuse (uue sõne) mitmest komponendist: esimeseks komponendiks on lähtesõne, mis sisaldab muuhulgas loogeliste sulgudega tähistatud "pesasid" (ing.k. `placeholders`); ülejäänud komponentideks (st. meetodi argumentideks) on suvalised väärtused, mis kopeeritakse vastavatesse pesadesse.
 
-Markerite sisu on kõige lihtsamal juhul täisarv, mis näitab, mitmes väärtus tuleb antud markeri asemele panna. Seejuures tuleb arvestada, et loendamist alustatakse `0`-st. 
+Pesa kirjeldus on kõige lihtsamal juhul täisarv, mis näitab, mitmes argumentväärtus tuleb antud pesasse panna. Seejuures tuleb arvestada, et loendamist alustatakse `0`-st. 
 
-Markeritesse saab märkida ka lisatingimusi andmete formaadi kohta:
+Pesa kirjeldusse saab märkida ka lisatingimusi andmete formaadi kohta:
 
 .. sourcecode:: py3
     
@@ -547,9 +547,9 @@ Markeritesse saab märkida ka lisatingimusi andmete formaadi kohta:
         pikkus_sõnena = "{0}. pikkus on {1:>6.2f}cm".format(i, pikkused[i])
         print(pikkus_sõnena)
 
-Hakkame jupphaaval analüüsima markeri ``{1:>6.2f}`` tähendust:
+Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust:
 
-    * koolonist vasakul on markeri järjekorranumber
+    * koolonist vasakul on pesa järjekorranumber
     * ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb nihutada sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit
     * ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
     
