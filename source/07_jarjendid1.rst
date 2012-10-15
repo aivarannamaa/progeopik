@@ -16,9 +16,7 @@ Järjend (ing.k. *list*) on andmetüüp loetelude esitamiseks. Järjendi loomise
     
 Me salvestasime muutujasse ``pikad_kuud`` ühe arvujärjendi (31-päevaliste kuude numbrid) ning muutujasse ``linnad`` ühe sõnejärjendi 3 sõnega.
 
-..
-
-    TODO: skeem, kus järjendi elemendid on nummerdatud kastikesed
+.. TODO: skeem, kus järjendi elemendid on nummerdatud kastikesed
 
 Operatsioonid järjenditega
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
