@@ -68,7 +68,7 @@ Hakkame nüüd selle programmi sisu analüüsima:
 #. Järgnevalt luuakse 3 kasutajaliidese komponenti e. *vidinat* (ing. k *widget*):
 
     * Funktsioon ``ttk.Label`` loob ühe *sildi* (so. vidin teksti näitamiseks). Funktsiooni esimese argumendiga näitasime, et me soovime seda silti kasutada eespool loodud aknas. Kasutades *nimelist argumenti* ``text``, andsime sellele sildile ka soovitud teksti. Käsk ``silt.place(...)`` paigutas loodud sildi soovitud koordinaatidele (ühikuteks on pikslid, punkt (0,0) paikneb akna sisuosa ülemises vasakus nurgas ning koordinaadid kasvavad paremale/alla liikudes).
-        .. image:: images/coords.gif
+        .. image:: images/coords.png
         
     * Järgmises plokis lõime ja seadsime paika tekstisisestuskasti (``ttk.Entry``). Selle paigutamisel näitasime ära ka soovitud laiuse.
     

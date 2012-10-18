@@ -84,7 +84,7 @@ Joonistage ``turtle`` mooduli abil Mitsubishi logo kontuurid:
 ~~~~~~~~~~~~~~
 Joonistage ``turtle`` mooduli abil umbes selline kuup:
 
-.. image:: images/kuup.gif
+.. image:: images/kuup.png
 
 4a. Nimede lugemine
 ~~~~~~~~~~~~~~~~~~~~~~

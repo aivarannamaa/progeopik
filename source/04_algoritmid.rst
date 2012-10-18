@@ -32,13 +32,13 @@ Näide 2. Ruut ja ring
 
 Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala. 
 
-.. image:: images/ring_ruut1.gif
+.. image:: images/ring_ruut1.png
 
 .. admonition:: Kommentaar
 
     Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg) ja väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist 
 
-    .. image:: images/ring_ruut2.gif
+    .. image:: images/ring_ruut2.png
 
     ja esitame lahenduse kahe sammuna:
 
@@ -61,7 +61,7 @@ Näide 4. Pascal'i kolmnurk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Joonisel on esitatud Pascal'i arvude kolmnurk
 
-.. image:: images/l04_fig4.gif
+.. image:: images/l04_fig4.png
 
 Äärmistel kohtadel on arv 1. Ülejäänute korral on väärtuseks kahe lähima arvu summa arvule vahetult ülemisel real. Kuidas arvutada kombinatsioonide arvu *n* elemendist *k* kaupa
 
@@ -117,7 +117,7 @@ Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida
 
 *Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, millele antakse sisendina ette mingi väärtus või väärtuste hulk ja mis leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.* 
 
-.. image:: images/l04_fig8.gif 
+.. image:: images/l04_fig8.png 
 
 
 Algoritmi loomine
@@ -146,28 +146,28 @@ Plokkskeem
     single: plokkskeem
     
 
-.. image:: images/l04_fig9.gif 
+.. image:: images/l04_fig9.png 
 
 
 Kartulisalati tegemise plokkskeem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
 
-.. image:: images/l05_fig1.gif
+.. image:: images/l05_fig1.png
 
 Üksi salatit valmistades on meil võimalik lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
 
-.. image:: images/l05_fig2.gif
+.. image:: images/l05_fig2.png
 
 
 Korraldame loendamist pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
 
-.. image:: images/l05_fig3.gif
+.. image:: images/l05_fig3.png
 
 Arvutis me kasutamine loendamiseks muutujaid, hoides nendes näiteks loendamise jooksvat seisu. Loendamise algul peame loenduri seisu nullima.  
 
 
-.. image:: images/l05_fig4.gif
+.. image:: images/l05_fig4.png
 
 OLetame, et meil on juba olemas käsklused (funktsioonid), mis rakendamisel annavad meile vajaliku asja või toiduaine:
 
@@ -185,12 +185,12 @@ Samuti oletame, et me saame kasutada olemasolevaid protseduure, millele asju ett
 
 Kasutades neid käsklusi, saame kartulisalati tegemise esitada järgmisel kujul:
  
-.. image:: images/l05_fig5.gif
+.. image:: images/l05_fig5.png
 
 Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilusikatäie hapukoore ja noaotsatäie soola võtmise otse lisamise käsklustele, sest meil ei ole neid eraldi muutujates vaja rohkem kasutada:
 
 
-.. image:: images/l05_fig6.gif
+.. image:: images/l05_fig6.png
 
 
 Ülesande lahendamise protsess
@@ -207,7 +207,7 @@ Teeme need etapid läbi ringi pindala ülesande näitel:
 
     #. Esitame algoritmi plokkskeemina:
 
-        .. image:: images/l04_fig20.gif 
+        .. image:: images/l04_fig20.png 
 
         Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
 
@@ -228,41 +228,41 @@ Teeme need etapid läbi ringi pindala ülesande näitel:
 Robotkilpkonn
 --------------
 
-.. image:: images/l04_fig10.gif 
+.. image:: images/l04_fig10.png 
 
 Edasiseks harjutamiseks võtame appi ühe virtuaalse robotkilpkonna, mis suudab etteantud keskkonnas liikuda ja reageerida veel mõnedele lihtsatele käskudele. Oletame, et robotkilpkonn liigub ristkülikukujulisel mänguväljakul, mille mõõtmed pole teada:
 
- .. image:: images/l04_fig11.gif 
+ .. image:: images/l04_fig11.png 
  
 Kilpkonn oskab sooritada järgmiseid tegevusi:
 
- .. image:: images/l04_fig12.gif  
+ .. image:: images/l04_fig12.png  
  
 Harjutus 1. Kolm sammu edasi ja ümberpöörd
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Robotkilpkonn asub näoga seina poole selliselt, et seinani on vähemalt 3 sammu. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber).   
 
-.. image:: images/l04_fig13.gif  
+.. image:: images/l04_fig13.png  
 
 Lahenduse võib esitada järgmise plokkskeemina:
 
-.. image:: images/l04_fig14.gif  
+.. image:: images/l04_fig14.png  
 
 Harjutus 2. Kui võimalik, kolm sammu  edasi ja ümberpöörd 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Robotkilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber). Kui seinani on vähem kui kolm sammu, siis liikuda seinani ja pöörata ümber. 
 
-.. image:: images/l04_fig15.gif  
+.. image:: images/l04_fig15.png  
 
 Nüüd on lahendus juba veidi keerulisem:  
 
-.. image:: images/l04_fig16.gif  
+.. image:: images/l04_fig16.png  
 
 Harjutus 3. Ring ümber mänguväljaku 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  
 
-.. image:: images/l04_fig17.gif  
+.. image:: images/l04_fig17.png  
 
 Harjutus 4. Liikumine takistusest mööda
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -271,11 +271,11 @@ Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul
 .. hint:: 
     Antud ülesande korral võib olla olukord, kus takistus asub roboti ees
 
-    .. image:: images/l04_fig18.gif  
+    .. image:: images/l04_fig18.png  
 
     või siis ei asu
 
-    .. image:: images/l04_fig19.gif  
+    .. image:: images/l04_fig19.png  
 
 .. note:: 
 
