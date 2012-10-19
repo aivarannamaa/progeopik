@@ -298,7 +298,6 @@ Täiustage 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu k�
 
 
 .. _param-vs-input:
-
 .. topic:: Parameetrid vs. ``input``
 
     Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``input`` käsku -- mõlemal juhul on konkreetsed sisendandmed teadmata. Erinevus on selles, et kui ``input`` puhul on teada, et sisendandmed küsitakse kasutajalt, siis parameetrite kasutamisel jäetakse (funktsiooni seisukohast vaadatuna) sisendi saamise viis lahtiseks. Eelnevas näites andsime funktsiooni väljakutsel parameetri väärtuseks sõneliteraalid, kuid seal oleks võinud kasutada ka muutujat:

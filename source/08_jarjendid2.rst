@@ -1,8 +1,5 @@
 8. Järjendite muteerimine
 =======================================
-.. warning::
-
-    Selle peatüki materjal võib veel muutuda
 
 Selle peatüki põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.
 
@@ -59,7 +56,7 @@ Antud näite puhul oli tsükli aluseks kasutaja tegevused. Samahästi võiksime 
     
     print('Arvude 1..9 ruudud on: ' + str(ruudud))
 
-Ülesanne 3. Failist järjendisse
+Harjutus 1. Failist järjendisse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nagu juba teate, võib ``for``-tsükli aluseks olla ka mingi tekstifail.
 
@@ -81,7 +78,7 @@ Selle asemel, et harjutustes järjendeid ise sisse toksida, võime kasutada ka j
     
     print(arvud)
 
-Ülesanne 4. Juhuslik järjend
+Harjutus 2. Juhuslik järjend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``juhuslik_järjend``, mis võtab argumendiks järjendi elementide arvu ning kaks argumenti arvuvahemiku määramiseks ning tagastab vastava juhuslikult genereeritud arvujärjendi. (Seda funktsiooni võite edaspidi kasutada alati, kui on tarvis genereerida mingi juhuslik järjend).
 
@@ -110,7 +107,7 @@ Tihti on tarvis teha mingit operatsiooni järjendi iga elemendiga ning salvestad
     
     print(arvud)
 
-Ülesanne 5. Sõned arvudeks
+Harjutus 3. Sõned arvudeks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage eelneva programmi näitel funktsioon ``sõned_arvudeks``, mis võtab argumendiks sõnede järjendi ning tagastab vastava arvude järjendi. (Võite praegu eeldada, et argumendiks antud järjendis sisalduvad vaid sellised sõned, mida saab arvudeks teisendada).
 
@@ -132,11 +129,11 @@ Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhja
     
     print (paarisarvud([1,2,3,4,5,6,7]))
 
-Ülesanne 6. Arvude tuvastamine
+Harjutus 4. Arvude tuvastamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``naturaal_sõned``, mis võtab argumendiks sõnede järjendi ning tagastab uue sõnede järjendi, milles sisalduvad vaid need esialgse järjendi väärtused, mis kujutavad naturaalarve (st. ``sõne.isnumeric() == True``). NB! Sõnede teisendamist arvudeks pole selles ülesandes tarvis.
 
-Ülesanne 7. Arvude tuvastamine koos teisendamisega
+Harjutus 5. Arvude tuvastamine koos teisendamisega
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede järjendi ning tagastab täisarvude järjendi, mis vastab esialgse järjendi nendele elementidele, mis kujutavad täisarve. Näide selle funktsiooni kasutamisest:
 
@@ -171,7 +168,7 @@ Järgnevas näites võtab funktsioon ``ühend`` argumendiks kaks järjendit ning
     
     print(ühend([1, 2, 3, 2], [1, 6, 6]))
 
-Ülesanne 8. Järjendite ühisosa
+Harjutus 6. Järjendite ühisosa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage funktsioon ``ühisosa``, mis võtab argumendiks kaks järjendit ning tagastab **uue** järjendi, mis sisaldab (ühekordselt) neid väärtusi, mis esinevad mõlemas järjendis.
 
@@ -226,7 +223,7 @@ Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed faili
 
     Kui me soovime failist loetud (või kasutaja käest küsitud) järjendi põhjal arvutada midagi lihtsat (nt. arvude summat või maksimaalset arvu), siis pole järjendi koostamine tegelikult isegi vajalik -- piisaks ühest abimuutujast, mille väärtust me iga järgmise arvu sisselugemisel sobivalt uuendame. Andmete järjendisse salvestamine on oluline näiteks siis, kui andmeid on vaja mitu korda läbi vaadata, sest järjendi korduv läbivaatamine on palju kiirem, kui faili korduv lugemine.
 
-Ülesanne 9. Eksami tulemused
+Harjutus 7. Eksami tulemused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma ja saadud punktide arv (nt. ``Jaan Tamm,24``). Maksimaalne eksami eest saadav punktide arv on 40. Õppejõud soovib näha nende tudengite nimesid ja tulemusi, kes said eksamil vähem, kui 50% punktidest. Kirjutage programm selle probleemi lahendamiseks.
 
@@ -249,7 +246,7 @@ Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde
 Nagu ikka, võib ka siin kasutada indeksina mingit täisarvulist muutujat.
 
 
-Ülesanne 10. Täringuvisete statistika
+Harjutus 8. Täringuvisete statistika
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Genereerige 100 täringuviske tulemust (kasutades eelpool defineeritud funktsiooni ``juhuslik_järjend``) ning salvestage tulemus muutujasse.
 
@@ -310,9 +307,15 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovite parameetri
 Koduülesanded
 -------------
 
+.. note::
+
+    Ülesandeid lisatakse 22. oktoobril
+
 1. Kuupäevade töötlemine
 ~~~~~~~~~~~~~~~~~~~~~~~~
-*See ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.*
+.. note::
+
+    Selle ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.
 
 Kirjutage funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt. ``'24.02.1918'``), ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
 
@@ -356,13 +359,11 @@ Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real
     * keskmisest palgast rohkem teenijate arvu
     * keskmised vanused eraldi neile, kes teenivad keskmise palgast vähem (või samapalju) ning neile, kes teenivad keskmisest palgast rohkem
 
-.. todo::
+4. Eesti-Inglise sõnaraamat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Laadige alla Eesti-Inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`) (NB! originaal (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt) on vigase formaadiga). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
-    Eesti-Inglise sõnaraamat
-
-    Laadige alla Eesti-Inglise sõnastik(downloads/Sonastik.txt) (NB! originaal (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt) on vigase formaadiga). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis "\t") ning lõpuks eestikeelne vaste.
-
-    Kirjutage programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võite ise valida)
+Kirjutage programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võite ise valida)
 
 4. Tagasivaade
 ~~~~~~~~~~~~~~
@@ -450,10 +451,10 @@ Kui muutujad võimaldavad meil kasutada mingit väärtust ilma, et me peaksime m
 
 Tõenäoliselt oskate isegi ilma funktsiooni definitsiooni süvenemata arvata, mida taoline programm ekraanile prindib. Põhjus on selles, et antud funktsiooni olemus tuleb välja juba tema nimest ja üldjuhul võime me eeldada, et funktsiooni tegelik definitsioon on tema nimele vastav. Seetõttu, kui meil on sobivad funktsioonid juba defineeritud, siis saame me programmi põhiosas (või järgmiste funktsioonide defineerimisel) töötada "kõrgemal tasemel", ilma "pisiasjade" pärast muretsemata.
 
-Kuna funktsioonide teema on programmeerimise algkursuses tavaliselt tudengitele kõige hägusam, siis on soovitav lugeda uuesti läbi 3. peatükist vähemalt järgmised osad:
+Kuna funktsioonide teema on programmeerimise algkursuses tavaliselt tudengitele kõige hägusam, siis on soovitav lugeda uuesti läbi 5. peatükist vähemalt järgmised osad:
 
-    * :ref:`param-vs-input`
-    * :ref:`return-vs-print`
+    * :ref:`Parameetrid vs. input<param-vs-input>`
+    * :ref:`return vs. print <return-vs-print>`
     * :ref:`milleks-funktsioonid`
     
 
@@ -486,57 +487,56 @@ Mis ootab ees?
 Järgmistes peatükkides tulevad küll mõned uued teemad aga põhiliselt keskendume suuremate (ja huvitavamate) ülesannete lahendamisele, kasutades juba õpitud vahendeid.
 
 
-.. todo::   
-    Lisalugemine
+Lisalugemine
+----------------
+Pööratud Poola notatsioon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tänapäeval oleme harjunud kirjutama matemaatilisi avaldisi nõndanimetatud infiksnotatsioonis, kus tehtemärk on nende kahe arvu vahel, millega ta töötab. See tekitab tegelikult aga igasuguseid probleeme, seoses sellega, et vahel on raske öelda, mis järjestuses tehteid tegema peab. Koolis õpetatakse meile, et kõigepealt tuleb teha astendamised, siis korrutamised ja jagamised ning alles siis liitmised ja lahutamised. Kui tehteid tuleb mingis muus järjestuses teha, saab kasutada sulge.
 
-    Pööratud Poola notatsioon
+Tegelikult on aga juba ammusest olnud tuntud viise avaldiste kirjutamiseks nii, et sulge pole vaja, kuid kõik tehete tegemise järjestused oleks ometi kirjeldatavad. Ehk tuntuim neist on nõndanimetatud postfiksnotatsioon ehk pööratud Poola notatsioon (Poola notatsioon on nii nimetatud, sest selle põhiline propageerija oli poola matemaatik Jan Łukasiewicz ja ta pakkus selle välja 1920. aastal; pööratud Poola notatsiooni pakkusid välja F. L. Bauer ja E. W. Dijkstra kuuekümnendates).
 
-    Tänapäeval oleme harjunud kirjutama matemaatilisi avaldisi nõndanimetatud infiksnotatsioonis, kus tehtemärk on nende kahe arvu vahel, millega ta töötab. See tekitab tegelikult aga igasuguseid probleeme, seoses sellega, et vahel on raske öelda, mis järjestuses tehteid tegema peab. Koolis õpetatakse meile, et kõigepealt tuleb teha astendamised, siis korrutamised ja jagamised ning alles siis liitmised ja lahutamised. Kui tehteid tuleb mingis muus järjestuses teha, saab kasutada sulge.
+Selles kirjutatakse tehe mitte rakendatavate arvude vahele vaid vahetult nende järgi. Nii teisendatakse
+2 + 3 avaldiseks 2 3 +. Kui üheks neist arvudest juhtub aga olema juba mõne eelneva tehte tulemus, siis täidabki selle arvu rolli just see tehtemärk. Nii saab näiteks 2 + 3 – 1 teisendada kujule 2 3 + 1 -. See tähendab siis seda, et kõigepealt tehakse liitmine 2 ja 3 vahel ning seejärel lahutamine selle liitmise tulemuse ja 1 vahel. Selline kirjutamisviis kaotab igasuguse vajaduse sulgude jaoks: (2 + 7) * 3 saab kirjutada ju lihtsalt kui 2 7 + 3 * kusjuures on üheselt selge, et kõigepealt tehakse 2 ja 7 liitmine ning alles siis korrutatakse selle tulemus ja kolm omavahel. Muuseas võib juhtuda, et järjest on ka kaks või kolm või isegi enam tehtemärki. Näiteks teiseneb 3 + 2 * (4 - 1) kujule 3 2 4 1 - * +.
 
-    Tegelikult on aga juba ammusest olnud tuntud viise avaldiste kirjutamiseks nii, et sulge pole vaja, kuid kõik tehete tegemise järjestused oleks ometi kirjeldatavad. Ehk tuntuim neist on nõndanimetatud postfiksnotatsioon ehk pööratud Poola notatsioon (Poola notatsioon on nii nimetatud, sest selle põhiline propageerija oli poola matemaatik Jan Łukasiewicz ja ta pakkus selle välja 1920. aastal; pööratud Poola notatsiooni pakkusid välja F. L. Bauer ja E. W. Dijkstra kuuekümnendates).
+Selle kirjapildi teine tõsine eelis on see, et see muudab aritmeetiliste avaldiste töötlemise arvuti jaoks kõvasti lihtsaks. Tuleb vaid meeles pidada, mis arvud parasjagu loetud on ning tehtemärki kohates kaks viimati lisatud arvu välja võtta, neile see tehe rakendada ning siis see tulemus uuesti meeles peetud arvude nimekirja lõppu lisada. Seega on väga lihtne koostada programm, mis antud avaldise tulemuse välja arvutab. Toomegi siinkohal programmi, mis seda teeb:
 
-    Selles kirjutatakse tehe mitte rakendatavate arvude vahele vaid vahetult nende järgi. Nii teisendatakse
-    2 + 3 avaldiseks 2 3 +. Kui üheks neist arvudest juhtub aga olema juba mõne eelneva tehte tulemus, siis täidabki selle arvu rolli just see tehtemärk. Nii saab näiteks 2 + 3 – 1 teisendada kujule 2 3 + 1 -. See tähendab siis seda, et kõigepealt tehakse liitmine 2 ja 3 vahel ning seejärel lahutamine selle liitmise tulemuse ja 1 vahel. Selline kirjutamisviis kaotab igasuguse vajaduse sulgude jaoks: (2 + 7) * 3 saab kirjutada ju lihtsalt kui 2 7 + 3 * kusjuures on üheselt selge, et kõigepealt tehakse 2 ja 7 liitmine ning alles siis korrutatakse selle tulemus ja kolm omavahel. Muuseas võib juhtuda, et järjest on ka kaks või kolm või isegi enam tehtemärki. Näiteks teiseneb 3 + 2 * (4 - 1) kujule 3 2 4 1 - * +.
+ 
+.. sourcecode:: py3
 
-    Selle kirjapildi teine tõsine eelis on see, et see muudab aritmeetiliste avaldiste töötlemise arvuti jaoks kõvasti lihtsaks. Tuleb vaid meeles pidada, mis arvud parasjagu loetud on ning tehtemärki kohates kaks viimati lisatud arvu välja võtta, neile see tehe rakendada ning siis see tulemus uuesti meeles peetud arvude nimekirja lõppu lisada. Seega on väga lihtne koostada programm, mis antud avaldise tulemuse välja arvutab. Toomegi siinkohal programmi, mis seda teeb:
+    print "Sisestage avaldis:"
+    rida = raw_input()
+    kasud = rida.split()
 
+    # Töötle avaldis
+    loend = []
+
+    for kask in kasud :
+        # Liitmine
+        if kask == "+" :
+            # asenda viimane element tulemusega
+            loend[-1] = loend[-2] + loend[-1]
+            # eemalda eelviimane element
+            loend.pop(-2)
+
+        # Lahutamine
+        elif kask == "-" :
+            loend[-1] = loend[-2] - loend[-1]
+            loend.pop(-2)
+
+        # Korrutamine
+        elif kask == "*" :
+            loend[-1] = loend[-2] * loend[-1]
+            loend.pop(-2)
+
+        # Jagamine
+        elif kask == "/" :
+            loend[-1] = loend[-2] / loend[-1]
+            loend.pop(-2)
+        else :
+            # polegi käsk, seega loodetavasti hoopis number
+            loend.append(float(kask))
      
-    .. sourcecode:: py3
+    print "Tulemus on: " + str(loend[-1])
 
-        print "Sisestage avaldis:"
-        rida = raw_input()
-        kasud = rida.split()
-
-        # Töötle avaldis
-        loend = []
-
-        for kask in kasud :
-            # Liitmine
-            if kask == "+" :
-                # asenda viimane element tulemusega
-                loend[-1] = loend[-2] + loend[-1]
-                # eemalda eelviimane element
-                loend.pop(-2)
-
-            # Lahutamine
-            elif kask == "-" :
-                loend[-1] = loend[-2] - loend[-1]
-                loend.pop(-2)
-
-            # Korrutamine
-            elif kask == "*" :
-                loend[-1] = loend[-2] * loend[-1]
-                loend.pop(-2)
-
-            # Jagamine
-            elif kask == "/" :
-                loend[-1] = loend[-2] / loend[-1]
-                loend.pop(-2)
-            else :
-                # polegi käsk, seega loodetavasti hoopis number
-                loend.append(float(kask))
-         
-        print "Tulemus on: " + str(loend[-1])
-
-    Tegu on ka asjaga, mis on praktikas täiesti kasutust leidnud. Oma töötlemise lihtsuse tõttu ehitati selline arvutamise süsteem sisse mõningatesse võimsamatesse kalkulaatoritesse, mida kunagi müüdi. Viimase 15 aasta jooksul on see aga arvutusvõimsuse kasvu tõttu vaikselt kalkulaatorites asendunud meile loomulikuma koolis õpitud infiksnotatsiooniga.
+Tegu on ka asjaga, mis on praktikas täiesti kasutust leidnud. Oma töötlemise lihtsuse tõttu ehitati selline arvutamise süsteem sisse mõningatesse võimsamatesse kalkulaatoritesse, mida kunagi müüdi. Viimase 15 aasta jooksul on see aga arvutusvõimsuse kasvu tõttu vaikselt kalkulaatorites asendunud meile loomulikuma koolis õpitud infiksnotatsiooniga.
 
