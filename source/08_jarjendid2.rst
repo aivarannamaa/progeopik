@@ -304,28 +304,12 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovite parameetri
 
 
 
-Koduülesanded
+Ülesanded
 -------------
 
-.. note::
-
-    Ülesandeid lisatakse 22. oktoobril
-
-1. Kuupäevade töötlemine
-~~~~~~~~~~~~~~~~~~~~~~~~
-.. note::
-
-    Selle ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.
-
-Kirjutage funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt. ``'24.02.1918'``), ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
-
-Etteantud sõnes võib olla kuupäeva osade vahel kasutatud ka sidekriipse. Sel juhul tuleb tõlgendada kuupäeva kujul *<aasta>-<kuu>-<päev>* (nn. *ISO formaat*). NB! Tagastatav kuupäev peab olema ikkagi kujul `<päev>. <kuu nimi> <aasta>`.
-
-Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuupäevaga, siis tagastada vastav veateade. Eeldame, et etteantud sõnes on kuu antud alati numbriga.
-
-.. topic:: Soovituslik lisaülesanne
-
-    Kui osade vahel on kaldkriipsud, siis eeldame, et tegemist on USA formaadiga: *<kuu>\/<päev>\/<kahekohaline aasta>*. Uurige välja, kuidas kahekohalisi aastaid tõlgendatakse (nt. *12\/25\/10* vs. *12\/25\/97*).
+1. Tagasivaade
+~~~~~~~~~~~~~~
+Lugege läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`
 
 
 2. Lausegeneraator
@@ -361,45 +345,96 @@ Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real
 
 4. Eesti-Inglise sõnaraamat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Laadige alla Eesti-Inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`) (NB! originaal (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt) on vigase formaadiga). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
+Laadige alla Eesti-Inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
 Kirjutage programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võite ise valida)
 
-4. Tagasivaade
-~~~~~~~~~~~~~~
-Lugege läbi selle lehekülje lõpus olev :ref:`tagasivaade_1-6`
+.. note::
+    
+    Antud sõnastiku fail on veidi modifitseeritud variant Eesti Keele Instituudi poolt jagatavast failist (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt).
 
-Soovituslik lisaülesanne: Eesti filmide statistika
+5. minu_shuffle
+~~~~~~~~~~~~~~~~
+Pythoni ``random`` moodulis on funktsioon ``shuffle``, mis ajab argumendiks antud järjendis elementide järjekorra juhuslikult segamini:
+
+.. sourcecode:: py3
+
+    >>> from random import shuffle
+    >>> a = [1,2,3,4,5,6]
+    >>> shuffle(a)
+    >>> a
+    [2, 3, 6, 5, 4, 1]
+
+Kirjutage ise analoogne funktsioon ``minu_shuffle``, mis teeb sama (seejuures pole lubatud kasutada olemasolevat ``shuffle`` funktsiooni).
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        >>> from random import randint
+        >>> randint(1,4)
+        1
+        >>> randint(1,4)
+        1
+        >>> randint(1,4)
+        3
+        >>> randint(1,4)
+        2
+        >>> randint(1,4)
+        4
+        >>> randint(1,4)
+        2
+        >>> randint(1,4)
+        2
+
+.. hint::
+
+    Üks võimalus on valida iga listi elemendi jaoks juhuslikult uus positsioon ...
+    
+.. hint::
+
+    ... ja vahetada need kaks elementi omavahel.
+    
+
+6. Eesti filmide statistika (raskem)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Veebisait http://www.imdb.com kogub ja jagab informatsiooni filmide kohta. Aadressilt ftp://ftp.funet.fi/pub/mirrors/ftp.imdb.com/pub/ saab IMDB poolt kogutud infot alla laadida pakitud tekstifailidena.
 
-Fail :download:`filmid.zip (9MB) <downloads/filmid.zip>` on koostatud faili "countries.list.gz" põhjal, ning see sisaldab filmide (ja telesaadete) loetelu koos riigi nime ning valmimise aastaga. Laadige see fail alla ning pakkige lahti.
+Fail :download:`filmid.zip (4.5MB) <downloads/filmid.zip>` on koostatud faili "countries.list.gz" põhjal, ning see sisaldab filmide (ja telesaadete) loetelu koos riigi nime ning valmimise aastaga. Laadige see fail alla ning pakkige lahti.
 
 .. note:: 
 
-    Filmide fail on lahtipakitult umbes 40MB suurune. Kui teil ei õnnestu (Windows'is) seda faili avada Notepad'iga, siis kasutage vabavaralist programmi Notepad2 (http://www.flos-freeware.ch/notepad2.html).
+    Filmide fail on lahtipakitult ligi 18MB suurune. Kui teil ei õnnestu (Windows'is) seda faili avada Notepad'iga, siis kasutage vabavaralist programmi Notepad2 (http://www.flos-freeware.ch/notepad2.html).
     
 Failis ``filmid.txt`` on ühe filmi andmed ühel real, kujul *<nimi><tühik>(<aasta>)<tabulaator><riik>*. (Notepad2-s saate tühikuid ja tabulaatoreid eristada, kui märgite menüüs *View* valiku *Show whitespace*).
 
 Ülesandeks on kirjutada programm, mis otsib sellest failist üles Eestis valminud filmid (ja telesaated), ning koostab statistika selle kohta, mitu filmi mingil aastal valmis.
 
-Vihjed:
+.. hint::
 
-    * fail on kodeeringus ``UTF-8``, st. faili avamisel tuleks seda mainida: ``f = open("filmid.txt", encoding="UTF-8")``
-    * tabulaatorit kirjutatakse Pythoni sõneliteraalina nii: ``'\t'``.
-    * võibolla tuleb kasuks uurida ülalpool antud ülesannet "Täringuvisete statistika"
-    * kui te loete järjenditesse kogu failis sisalduva info, siis võib Pythonil mälust puudu tulla.
+    Fail on kodeeringus ``UTF-8``, st. faili avamisel tuleks seda mainida: ``f = open("filmid.txt", encoding="UTF-8")``.
+    
+.. hint::
+
+    Tabulaatorit kirjutatakse Pythoni sõneliteraalina nii: ``'\t'``.
+.. hint::
+
+    Võibolla tuleb kasuks uurida ülalpool antud ülesannet "Täringuvisete statistika".
+
+.. hint::
+
+    Kui te loete järjenditesse kogu failis sisalduva info, siis võib Pythonil mälust puudu tulla. 
     
 .. topic:: Lisaülesande lisa
 
     Täiendage programmi selliselt, et see küsib (korduvalt) kasutajalt aastaarvu ning väljastab ekraanile kõik selle aasta Eesti filmid. Kui kasutaja sisestab tühisõne (st. vajutab lihtsalt ENTER), siis programm lõpetab töö. Selleks tuleb organiseerida sisseloetud filmid aastate kaupa eraldi.
     
-    Vihjed:
-        * Järjend võib sisaldada järjendeid: ``a = [[1, 2, 3], [5, 5, 6], [4, 4, 3]]``
-        * Mõelge, mida võiks tähendada ``a[2][1]``
+    .. hint::
+        
+        Järjend võib sisaldada järjendeid: ``a = [[1, 2, 3], [5, 5, 6], [4, 4, 3]]``. Mõelge, mida võiks tähendada ``a[2][1]``?
 
 
-.. _tagasivaade_1-6:
+.. _tagasivaade_1-8:
 
 *Tagasivaade peatükkidele 1-8*
 ---------------------------------
@@ -481,6 +516,9 @@ Järjendid on vajalikud neil juhtudel, kus programmi kirjutades pole võimalik �
 
 Järjendeid saab programmi "sisse kirjutada", koostada teiste järjendite põhjal või lugeda failist. Kui järjendeid on vaja ükshaaval järjest läbi vaadata, siis on selleks kõige mugavam kasutada ``for``-tsüklit, kui on vaja lugeda järjendist mingit konkreetset elementi, siis tuleks kasutada indekseerimist.
 
+Kust saab rohkem infot?
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kes soovib läbitud teemade kohta rohkem detaile või lihtsalt teist vaatenurka, siis soovitame lugeda läbi Pythoni ametliku `tutoriali`: http://docs.python.org/py3k/tutorial/.
 
 Mis ootab ees?
 ~~~~~~~~~~~~~~

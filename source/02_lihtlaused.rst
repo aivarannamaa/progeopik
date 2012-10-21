@@ -1,13 +1,6 @@
 2. Avaldised ja lihtlaused
 ================================
 
-.. topic:: Muudatused
-
-    * 7. sept - Ülesannete plokki lisatud 4. ülesanne
-    * 10. sept - lisatud Lisalugemise plokk
-    * 11. sept - täiendatud kokkuvõtet, listatud 5. ülesanne
-
-
 Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
 
 .. topic:: Soovitus:
@@ -223,115 +216,151 @@ Väärtustage järgnevad aritmeetilised avaldised Pythoni käsureal:
     
 Sõned
 --------
-**Sõne** (ing.k `string`, lühend `str`) on andmetüüp teksti esitamiseks. Enamasti piisab Pythonis sõne kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``. Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde.
+Programmeerimine pole ainult arvudega manipuleerimine, paljudes programmides on palju tähtsamal kohal töö *tekstiga* (tuletage meelde näiteks esimese peatüki programmi, mis kuvas ekraanile teksti *Tere maailm!*). Selle tarvis on Pythonis olemas eraldi andmetüüp **sõne** (ing.k `string`, lühend `str`), mida kasutatakse justnimelt teksti esitamiseks.
 
-Asi läheb veidi keerulisemaks, kui sõne sees kasutada jutumärke, ülakomasid või muid erisümboleid. Järgnevalt demonstreerime erinevaid sõnede kirjapaneku viise (kasutame ``print`` käsku, kuna see toob välja sõne tegeliku sisu):
+Konkreetsed tekstijupid pannakse programmi tekstis kirja *sõneliteraalidena*. Enamasti piisab sõneliteraali kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``.
 
-    * kui tekstis on ülakomasid, siis kasuta piiritlejaks jutumärke ja vastupidi:
-    
-        .. sourcecode:: py3
+Pange tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde. Demonstreerime seda ``print`` käsu abil, mis toob ekraanile alati sõne *tegeliku* sisu, hoolimata sellest, kuidas ta programmi tekstis kirja on pandud:
+
+.. sourcecode:: py3
+
+    >>> print("Tartu")
+    Tartu
+
+
+.. admonition:: NB!
+
+    Kui unustate sõneliteraali kirjutades piiritlejaid kasutada, siis peab Python vastavat tekstijuppi muutuja nimeks (või kui tekstis oli tühik, siis ei oska ta sellest midagi arvata). Proovige järgi, millised veateated neil juhtudel antakse -- siis on edaspidi taolisi näpuvigu kergem tuvastada.
+
+
+Loomulikult saab sõneliteraali (nagu iga teise literaaliliigi) väärtuse salvestada muutujasse, et seda hiljem kasutada. Igal pool, kus võib kasutada sõneliteraali, võib kasutada ka sõnemuutujat (ja vastupidi):
+
+.. sourcecode:: py3
+
+    >>> nimi = "Peeter"
+    >>> print(nimi)
+    Peeter
+    >>> print("Peeter")
+    Peeter
+
+
+
+
+.. topic:: "Aga kui mu tekst sisaldab jutumärke või ülakomasid?"
+
+    Asi läheb veidi keerulisemaks, kui sõne *sees* on vaja kasutada jutumärke, ülakomasid või muid erisümboleid. Järgnevalt demonstreerime erinevaid viise selle probleemi lahendamiseks:
+
+        * Kui tekstis on ülakomasid, siis kõige lihtsam on kasutada piiritlejaks jutumärke ja vastupidi:
         
-            >>> print("Rock 'n' roll")
-            Rock 'n' roll
-            >>> print('Jim ütles vaid: "Siin see on."')
-            Jim ütles vaid: "Siin see on."
+            .. sourcecode:: py3
             
-    *  piiritlejateks võivad olla ka 3-kordsed ülakomad või jutumärgid, sel juhul saab teksti sees vabalt jutmärke, ülakomasid ja reavahetusi kasutada:
-    
-        .. sourcecode:: py3
+                >>> print("Rock 'n' roll")
+                Rock 'n' roll
+                >>> print('Jim ütles vaid: "Siin see on."')
+                Jim ütles vaid: "Siin see on."
+                
+        * Kui tekstis on vaja kasutada nii jutumärke kui ülakomasid, siis pole eelmisest soovitusest abi. Sellisel juhul tuleb üks neist (nt. jutumärk) ikkagi valida piiritlejaks, aga tema kasutamisel tekstis tuleb ta spetsiaalselt märgistada langkriipsuga (seda nimetatakse inglise keeles *escaping*) -- see annab Pythonile märku, et tegemist pole veel teksti lõpuga, vaid sooviti kirja panna piiritlejaks valitud sümbolit ennast:
         
-            >>> print("""Jack vastas: "Rock 'n' roll".""")
-            Jack vastas: "Rock 'n' roll".
-            >>> print('''Jack vastas: "Rock 'n' roll".''')
-            Jack vastas: "Rock 'n' roll".
-            >>> print("""Seda kuupaistet!
-            Oh muutuksin sündides
-            männiks mäetipul!
-            --Ryota""")
-            Seda kuupaistet!
-            Oh muutuksin sündides
-            männiks mäetipul!
-            --Ryota
-            >>> print("""
-               _____                                            
-              / ____|                                           
-             | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
-             | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
-             | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
-              \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
-            """)
-
-               _____                                            
-              / ____|                                           
-             | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
-             | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
-             | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
-              \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
-
+            .. sourcecode:: py3
             
-    *  piiritlejaid saab tekstis kasutada, kui panna nende ette langkriips:
-    
-        .. sourcecode:: py3
+                >>> print("Jack vastas: \"Rock 'n' roll\".")
+                Jack vastas: "Rock 'n' roll".
+                >>> print('Jack vastas: "Rock \'n\' roll".')
+                Jack vastas: "Rock 'n' roll".
+                
+        * Langkriipsu saab kasutada ka muul otstarbel, nt. reavahetusi saab esitada kombinatsiooniga ``\n`` (tavalist reavahetust Python siin ei lubaks):
         
-            >>> print("Jack vastas: \"Rock 'n' roll\".")
-            Jack vastas: "Rock 'n' roll".
-            >>> print('Jack vastas: "Rock \'n\' roll".')
-            Jack vastas: "Rock 'n' roll".
+            .. sourcecode:: py3
             
-    *  reavahetusi võib esitada ka kombinatsiooniga ``\n``:
-    
-        .. sourcecode:: py3
+                >>> print("Seda kuupaistet!\nOh muutuksin sündides\nmänniks mäetipul!\n--Ryota")
+                Seda kuupaistet!
+                Oh muutuksin sündides
+                männiks mäetipul!
+                --Ryota
+                
+        * Nagu näha on langkriips tekstiliteraalis spetsiaalse tähendusega. Kuidas aga esitada langkriipsu ennast? Lihtne, see tuleb ära märgistada ... langkriipsuga!:
         
-            >>> print("Seda kuupaistet!\nOh muutuksin sündides\nmänniks mäetipul!\n--Ryota")
-            Seda kuupaistet!
-            Oh muutuksin sündides
-            männiks mäetipul!
-            --Ryota
+            .. sourcecode:: py3
             
-    *  kui soovid esitada langkriipse endid, siis tuleb need kirjutada topelt:
-    
-        .. sourcecode:: py3
+                >>> print("C:\\kaustanimi\\failinimi.txt")
+                C:\kaustanimi\failinimi.txt
+
+                
+        * Kui tekstis on vaja kasutada palju erisümboleid, siis võib tulemus muutuda langkriipsude tõttu väga kirjuks. Seetõttu on Pythonis veel üks sõne kirjapaneku viis -- kolmekordsete ülakomade või jutumärkide vahele. Sel juhul ei ole langkriipsul literaali sees enam mingit eritähendust -- iga täht ja sümbol seisab iseenda eest. Selle esitusviisiga saab teksti sees kasutada ka tavalist reavahetust:
         
-            >>> print("C:\\kaustanimi\\failinimi.txt")
-            C:\kaustanimi\failinimi.txt
-
-.. note::
+            .. sourcecode:: py3
             
-    On oluline mõista, et piiritlejad ning langkriipsud on vaid selleks, et Python suudaks teksti õigesti sisse lugeda -- peale sisselugemist muutub ``'Rock\'n\'roll'`` tekstiks `Rock'n'roll`.
+                >>> print("""Jack vastas: "Rock 'n' roll".""")
+                Jack vastas: "Rock 'n' roll".
+                >>> print('''Jack vastas: "Rock 'n' roll".''')
+                Jack vastas: "Rock 'n' roll".
+                >>> print("""Seda kuupaistet!
+                Oh muutuksin sündides
+                männiks mäetipul!
+                --Ryota""")
+                Seda kuupaistet!
+                Oh muutuksin sündides
+                männiks mäetipul!
+                --Ryota
+                >>> print("""
+                   _____                                            
+                  / ____|                                           
+                 | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
+                 | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+                 | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
+                  \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+                """)
 
-    Neid sõneliteraale Pythoni käsureale sisestades (ilma ``print``-i kasutamata) saate piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt.
+                   _____                                            
+                  / ____|                                           
+                 | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
+                 | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+                 | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
+                  \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+                  
+                  
 
-NB! Kui unustate sõneliteraali kirjutades piiritlejaid kasutada, siis peab Python vastavat tekstijuppi muutuja nimeks (või kui tekstis oli tühik, siis ei oska ta sellest midagi arvata). Proovige järgi, millised veateated neil juhtudel antakse -- siis on edaspidi taolisi näpuvigu kergem tuvastada.
+                
+                
+        * On oluline mõista, et piiritlejad ning langkriipsud on vaid selleks, et Python suudaks teksti õigesti sisse lugeda -- peale sisselugemist muutub ``'Rock\'n\'roll'`` tekstiks `Rock'n'roll`.
+
+        * Neid sõneliteraale Pythoni käsureale sisestades (ilma ``print``-i kasutamata) saate piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt. Kui soovite näha sõne tegelikku väärtust, siis kuvage see ``print`` käsuga ekraanile.
+
 
 Operatsioonid sõnedega
 ~~~~~~~~~~~~~~~~~~~~~~
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| Avaldis                             | Väärtus      | Kommentaar                                                          |
-+=====================================+==============+=====================================================================+
-| ``'Lao' + ' ' + 'Tzu'``             |``'Lao Tzu'`` | ``+`` loob kahe sõne põhjal uue sõne                                |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``'nr.' + 1``                       | Viga!!!      | Sõnet ja arvu ei saa niisama ühendada                               |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``'nr.' + str(1)``                  | ``'nr.1'``   | ``str`` annab arvule vastava sõne                                   |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``'5' + '3'``                       | ``'53'``     | Sõnena esitatud arve ei käsitleta arvudena                          |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``int('5')``                        | ``5``        | Annab sõnele vastava täisarvu                                       |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``float('5.3')``                    | ``5.3``      | Annab sõnele vastava ujukomaarvu                                    |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``'xo' * 3``                        | ``'xoxoxo'`` | Sõne dubleerimine                                                   |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``len('tere')``                     | ``4``        | Sõne pikkuse (`length`) küsimine                                    |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``'tere'.upper()``                  | ``'TERE'``   | Mõnede käskude korral kirjutatakse sõne käsu ette.                  |
-+-------------------------------------+--------------+ Taolisi käske nimetatakse *meetoditeks*                             |
-| ``'jäääär'.count('ä')``             | ``4``        |                                                                     |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``' tere '.strip()``                | ``'tere'``   | Annab sõne ilma alguses ja lõpus olevate tühikute ja reavahetusteta |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
-| ``'tere'.replace('e','ö').upper()`` | ``'TÖRÖ'``   | Käske saab kombineerida                                             |
-+-------------------------------------+--------------+---------------------------------------------------------------------+
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| Avaldis                             | Väärtus            | Kommentaar                                                          |
+|                                     | (literaalina)      |                                                                     |
++=====================================+====================+=====================================================================+
+| ``'Tere' + 'Madis!'``               |``'TereMadis!'``    | ``+`` loob kahe sõne põhjal uue sõne                                |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'Tere' + ' Madis!'``              |``'Tere Madis!'``   | Tühikud tuleb vajadusel ise vahele panna                            |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'Tere' + ' ' + 'Mad' + 'is!'``    |``'Tere Madis!'``   | kokku võib liita ka mitu sõnet                                      |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'nr.' + 1``                       | Viga!!!            | Sõnet ja arvu ei saa niisama ühendada                               |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'nr.' + str(1)``                  | ``'nr.1'``         | ``str`` annab arvule vastava sõne                                   |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'5' + '3'``                       | ``'53'``           | Sõnena esitatud arve ei käsitleta arvudena                          |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``int('5')``                        | ``5``              | Annab sõnele vastava täisarvu                                       |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``float('5.3')``                    | ``5.3``            | Annab sõnele vastava ujukomaarvu                                    |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'xo' * 3``                        | ``'xoxoxo'``       | Sõne dubleerimine                                                   |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``len('tere')``                     | ``4``              | Sõne pikkuse (`length`) küsimine                                    |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'tere'.upper()``                  | ``'TERE'``         | Mõnede käskude korral kirjutatakse sõne käsu ette.                  |
++-------------------------------------+--------------------+ Taolisi käske nimetatakse *meetoditeks*                             |
+| ``'jäääär'.count('ä')``             | ``4``              |                                                                     |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``' tere '.strip()``                | ``'tere'``         | Annab sõne ilma alguses ja lõpus olevate tühikute ja reavahetusteta |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'tere'.replace('e','ö').upper()`` | ``'TÖRÖ'``         | Käske saab kombineerida                                             |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
 
 
 .. note::
@@ -356,7 +385,11 @@ Kõik levinud programmeerimiskeeled võimaldavad konkreetsetele väärtustele v�
     >>> x * x
     25
 
-Esimesel real teeb Python kaks erinevat toimingut: kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise väärtus. Peale seda on võimalik muutuja nime kasutada vastava väärtuse asemel. 
+Esimesel real teeb Python kaks erinevat toimingut: kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise ``2 + 3`` väärtus. Peale seda on võimalik muutuja nime kasutada vastava väärtuse asemel. 
+
+.. note::
+
+    Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
 
 Programmi loetavuse huvides peaks muutuja nimi kirjeldama vastava väärtuse tähendust antud kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``. Muutuja nimes võib kasutada ka numbreid, aga esimene sümbol peab olema täht (või allkriips).
 
@@ -722,11 +755,11 @@ Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksemate
     * **Väärtus** (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi", millega tehakse midagi (nt. kuvatakse ekraanile, kombineeritakse teiste väärtustega, võrreldakse, salvestatakse mällu vms). Väärtusi nimetatakse ka *andmeteks*.
     * Igal väärtusel on mingi **tüüp** (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
     * **Literaal** (nt. ``"tere"`` või ``3``) on mingi *konkreetse* väärtuse esitusviis programmi tekstis
-    * **Muutuja** (nt. ``laste_arv``) võimaldab esitada programmi tekstis mingit väärtust *kaudselt*, teisisõnu -- muutuja `viitab` mingile väärtusele. Muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``). Muutujate abil saab programmis kasutada ka väärtusi, mis selguvad alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``).
+    * **Muutuja** (nt. ``laste_arv``) võimaldab esitada programmi tekstis mingit väärtust *kaudselt*, teisisõnu -- muutuja `viitab` mingile väärtusele. Muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``). Muutujate abil saab programmis mainida ka väärtusi, mis selguvad alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``).
     * **Funktsioon** (nt. ``print`` või ``sin``) on miski, mille abil saab midagi teha või arvutada. **Funktsiooni rakendamine e. väljakutse** (nt. ``print(nimi)`` või ``sin(0.5)``) tähistab mingit konkreetset tegevust või arvutust. Kui funktsioon on mõeldud millegi arvutamiseks, siis tema rakendamisel saame vastuseks mingi väärtuse. NB! arvutamise all mõtleme suvaliste väärtustega toimetamist, mitte ainult arvudega.
     * **Operaator** on olemuselt väga sarnane funktsioonile, aga erinevalt funktsioonist kirjutatakse operaator oma `argumentide` vahele (nt. ``2 + 3``). Ka operaatori rakendamise tulemuseks on mingi väärtus.
     * **Avaldis**: literaale, muutujaid ja väärtusega funktsioonide ning operaatorite rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4`` või ``len("tere") + len(nimi.lower()) - 1``) -- taolist kombinatsiooni nimetatakse *avaldiseks*. Samas, ka üksik literaal või muutuja on avaldis -- *tegemist on üldise mõistega*, mis käib kõigi programmiosade kohta, millel on väärtus.
-    * Avaldisele vastava väärtuse väljaarvutamist nimetatakse **avaldise väärtustamiseks**. Avaldise väärtustamine on üks Pythoni põhilistest tööülesannetest programmide jooksutamisel.
+    * Avaldisele vastava väärtuse väljaarvutamist nimetatakse **avaldise väärtustamiseks**. Avaldiste väärtustamine on üks Pythoni põhilistest tööülesannetest programmide jooksutamisel.
 
 Arvud ja sõned
 ~~~~~~~~~~~~~~

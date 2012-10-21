@@ -428,8 +428,10 @@ Sisemise tsükli viimasel real on tegemist kahe elemendi väärtuse vahetamisega
 
 
 
-Koduülesanded
+Ülesanded
 ---------------
+
+0. oma split
 
 1. Teksti analüüs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -254,7 +254,7 @@ Järgnev programmilõik demonstreerib nende kasutamist:
 
 
 
-Koduülesanded
+Ülesanded
 -------------------
 
 1. Kaustad ja järjendid

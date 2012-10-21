@@ -563,10 +563,8 @@ Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust:
 
 
 
-Koduülesanded
+Ülesanded
 -------------
-..
-
 
 1. Paarisarvude loendamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -587,7 +585,24 @@ Seejärel täiendage programmi sedasi, et teksti näidatakse 20 rea kaupa -- st.
 
 Testimiseks võib alla laadida nt. "Alice in Wonderland" teksti aadressilt http://www.gutenberg.org/files/11/11.txt.
 
-4. Värvid
+4. Kuupäevade töötlemine
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
+
+    Selle ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.
+
+Kirjutage funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt. ``'24.02.1918'``), ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
+
+Etteantud sõnes võib olla kuupäeva osade vahel kasutatud ka sidekriipse. Sel juhul tuleb tõlgendada kuupäeva kujul *<aasta>-<kuu>-<päev>* (nn. *ISO formaat*). NB! Tagastatav kuupäev peab olema ikkagi kujul `<päev>. <kuu nimi> <aasta>`.
+
+Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuupäevaga, siis tagastada vastav veateade. Eeldame, et etteantud sõnes on kuu antud alati numbriga.
+
+.. topic:: Soovituslik lisaülesanne
+
+    Kui osade vahel on kaldkriipsud, siis eeldame, et tegemist on USA formaadiga: *<kuu>\/<päev>\/<kahekohaline aasta>*. Uurige välja, kuidas kahekohalisi aastaid tõlgendatakse (nt. *12\/25\/10* vs. *12\/25\/97*).
+
+
+5. Värvid
 ~~~~~~~~~~~~~~~~~~~~~~
 Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võite lihtsuse mõttes ignoreerida). Kirjutage programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
 
@@ -617,7 +632,7 @@ NB! ülesande saab lahendada ilma mingi rutiinse "käsitööta"!
         for nimi in nimed_listina:
             ...
 
-5. Keskmise hinde leidmine
+6. Keskmise hinde leidmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Olgu meil fail nimega ``hinded.txt``, kus on igal real üks hinne (vahemikus 1 kuni 5). Kirjutage programm, mis arvutab nende hinnete keskmise. (Ärge unustage, et failist ridade sisselugemisel antakse read sõnedena, mitte arvudena).
 
