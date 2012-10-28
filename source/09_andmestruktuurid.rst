@@ -4,14 +4,13 @@
 
     Selle peatüki materjal võib veel muutuda
 
-Selles peatükis õpite kasutama tavalistest järjenditest veidi keerulisemaid (ja võimsamaid) andmestruktuure -- sõnastikke ja mitmemõõtmelisi järjendeid. Mitmemõõtmeliste järjenditega tuleb kaasa ka mitmekordsete tsüklite teema.
+Juba 2. peatükis oli juttu ühest olulisest programmeerimise mõistest -- *andmetüüp* (või lihtsalt *tüüp*). Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni olete tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi, ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
 
-Aga enne, kui asume põhiteemade juurde, vaatame kiiresti üle paar lihtsamat teemat: *sõnede formaatimine* ja *ennikud*.
 
-.. todo::
+Hulgad
+----------
+TODO
 
-    * Kas on vaja selgitada "andmestruktuuri" tähendust?
-    * Andmestruktuuride salvestamine faili (pickle.load / dump)
 
 
 Sõnastikud
@@ -102,7 +101,6 @@ Sõnastiku elemendi väärtuse muutmine käib samasuguse süntaksiga nagu elemen
 Ülesanne 1. Telefoniraamat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muuda ülalpool toodud telefoniraamatu näidet selliselt, et andmed loetakse sisse tekstifailist ja programm võimaldab kasutajal küsida telefoninumbrit omaniku nime järgi.
-
 
 Mitmemõõtmelised andmestruktuurid
 ---------------------------------
@@ -424,6 +422,26 @@ Sisemise tsükli viimasel real on tegemist kahe elemendi väärtuse vahetamisega
 .. hint::
 
     Katsetage seda funktsiooni näiteks järjendiga ``[5, 2, 1, 4, 3]``. Proovige mõttes funktsiooni töö läbi mängida mõne lühema järjendiga.
+
+
+Andmestruktuurid
+--------------------
+Peatüki pealkirjaks on andmestruktuurid, nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab.
+
+Laias laastus jaotatakse andmetüübid *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad nö "atomaarseid" või "jagamatuid" väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisud segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks, kui liittüübiks).
+
+Nagu öeldud, liittüüpi väärtused on kombineeritud kokku mingitest teistest väärtustest. Oluline on see, et need komponendid moodustavad mingi kindla *struktuuri*. Näiteks järjendite puhul moodustub struktuur sellest, et iga komponent (element) on teiste komponentidega võrreldes kas eespool või tagapool, teisisõnu -- järjendi struktuur määrab elementide järjestuse. Teistel Pythoni liitüüpidel on teistsugune struktuur -- näiteks hulgatüübi struktuur määrab ära vaid selle, millised elemendid hulka kuuluvad, elementide järjestus pole selles struktuuris oluline. Kuna struktuur on liittüüpide puhul väga tähtis, siis nimetatakse neid vahel ka *struktuurseteks tüüpideks* või *andmestruktuurideks*.
+
+
+.. note::
+
+    Programmeerimise teemad jaotatakse tihti tinglikult kaheks -- *algoritmid* ja *andmed* (või andmestruktuurid). Algoritmid kehastavad programmide "aktiivset" poolt -- nad kirjeldavad mingit tegevust, arvutamist, valikut, teisendamist vms. Selle poole märksõnad on näiteks ``if``, ``print``, ``while``, ``sin``.
+
+    Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- nad kehastavad mingeid abstraktseid või konkreetseid asju, seoseid või muud laadi infot ja nad "lihtsalt on". Selleks, et midagi juhtuks, peab mõni algoritm neid uurima ja saadud info põhjal midagi tegema. Selle poole märksõnadeks on nt. *väärtus*, *tüüp*, *sõne*, *list*.
+
+Pythoni andmestruktuuride salvestamine ja sisselugemine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO pickle.load/dump
 
 
 
