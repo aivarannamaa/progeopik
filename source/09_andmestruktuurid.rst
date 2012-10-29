@@ -352,9 +352,15 @@ Nüüd on ilusti näha, et sulgudes olev avaldis kujutab endast ``i``-ndat eleme
 
 Kokkuvõtteks: Mitmemõõtmeliste andmestruktuuride kasutamise põhimõte
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Olgu meil ühe-, kahe- või 100-mõõtmeline järjend, tegemist on ennekõike ikkagi järjendiga ja sedasi tuleb talle ka läheneda. Vaja on lihtsalt arvestada, millised on tema elemendid (vastavalt lihttüübid, ühemõõtmelised järjendid või 99-mõõtmelised järjendid).
+Pythonis ei ole tehniliselt võttes eraldi konstruktsiooni "kahemõõtmeline järjend". On järjendid ja järjendite elemendid võivad olla suvalist tüüpi (sh. järjenditüüpi). Mõistet "kahemõõtmeline järjend" kasutatakse vaid selleks, et anda lugejale/kuulajale veidi lisainfot vaadeldava järjendi sisu/kuju kohta.
+
+Olgu meil ühe-, kahe- või 100-mõõtmeline järjend, tegemist on alati ikkagi järjendiga ja sedasi tuleb talle ka läheneda. Vaja on lihtsalt arvestada, millised on tema elemendid (vastavalt lihttüüpi väärtused, ühemõõtmelised järjendid või 99-mõõtmelised järjendid).
     
-Sama põhimõte kehtib ka "järjendite ennikute" ja "sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastikega" -- alustage lähenemist "välimisest kihist" ja pidage meeles, millised on sisemised kihid.
+Sama põhimõte kehtib ka "järjendite ennikute" ja "hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastikega" -- alustage lähenemist "välimisest kihist" ja pidage meeles, millised on sisemised kihid.
+
+.. note::
+
+    Proovige panna kirja üks hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastik :)
 
 
 Harjutus 3. Sudoku tabeli sisselugemine
