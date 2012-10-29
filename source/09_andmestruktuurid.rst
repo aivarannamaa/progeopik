@@ -1,25 +1,112 @@
 9. Andmestruktuurid
 =============================================
-.. warning::
-
-    Selle peatüki materjal võib veel muutuda
-
-Juba 2. peatükis oli juttu ühest olulisest programmeerimise mõistest -- *andmetüüp* (või lihtsalt *tüüp*). Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni olete tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi, ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
+Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni olete tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi, ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
 
 
 Hulgad
 ----------
-TODO
+Pythoni *hulga* (ing.k *set*) andmetüüp on küllalt sarnane listile -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttavas hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elementi (jällegi, sarnaselt matemaatilisele hulgale).
 
+Konkreetse hulga kirjapanekuks kasutatakse loogelisi sulge. Järgnev käsurea näide demonstreerib eelpoolmainitud hulkade omadusi:
+
+.. sourcecode:: py3
+    :linenos:
+    
+    >>> {1,2,4}
+    {1, 2, 4}
+    >>> {1,2,2}
+    {1, 2}
+    >>> {1,2,4} == {2,4,1}
+    True
+
+Real 3 üritasime luua korduvate elementidega hulka, aga vastusest on näha, et Python arvestas arvu *2* vaid ühekordselt. 
+
+.. note::
+
+    Ärge üllatage, kui mõnikord näitab Python teie poolt esitatud hulga elemente teistsuguses järjekorras, kui teie need kirja panite. Kuna hulga puhul ei ole elementide järjekord tähtis, siis Python võib paigutada nad ümber, kui see lubab tal hulka efektiivsemalt hoida või kasutada.
+    
+Olulisimad hulgaoperatsioonid on mingi väärtuse hulgas sisalduvuse kontroll (``in``), hulga elementide arvu leidmine (``len``) ning hulka elemendi lisamine (``add``):
+
+.. sourcecode:: py3
+
+    >>> nimed = {'Tõnu', 'Toomas', 'Malle'}
+    >>> len(nimed)
+    3
+    >>> 'Malle' in nimed
+    True
+    >>> 'Kalle' in nimed
+    False
+    >>> nimed.add('Kalle')
+    >>> 'Kalle' in nimed
+    True
+    >>> nimed
+    {'Kalle', 'Toomas', 'Malle', 'Tõnu'}
+    >>> len(nimed)
+    4
+    
+Nagu näha, ei pea hulgas olema vaid arvud -- just nagu listis, saab ka hulgas hoida erinevaid Pythoni väärtusi. (Selle väite osas teeme allpool väikese korrektuuri, aga praegu on oluline, et hulgas saab hoida vähemalt täisarve, ujukomaarve, tõeväärtusi ja sõnesid).
+
+Pange tähele, et elemendi hulka lisamiseks on meetod ``add``, mitte ``append`` nagu listide puhul. Põhjus on selles, et sõna *append* viitab justnimelt lõppu lisamisele, aga kuna hulkadel pole elementide järjekord tähtis, siis kasutatakse üldisemat sõna *add*.
+
+Kui proovisite tühja hulka kirja panna kirjutades ``{}``, siis saite sellise "hulga" kasutamisel ilmselt veateate. Põhjus on selles, et sellist tähistust kasutatakse Pythonis ühe teise andmestruktuuri, nimelt tühja sõnastiku tähistamiseks. Tühi hulk tuleb kirjutada kasutades funktsiooni ``set``:
+
+.. sourcecode:: py3
+
+    >>> a = set()
+    >>> a
+    set()
+    >>> a.add(1)
+    >>> a
+    {1}
+    >>> a.add(2)
+    >>> a
+    {1, 2}
+    
+Funktsiooni ``set`` saab kasutada ka mõnede teiste andmetüüpide teisendamiseks hulkadeks:
+
+.. sourcecode:: py3
+
+    >>> set("abc")
+    {'a', 'c', 'b'}
+    >>> set([1,2,3])
+    {1, 2, 3}
+
+Just nagu järjendite puhul, saab ka hulga kõiki elemente saab "läbi käia" kasutades ``for``-tsüklit:
+
+
+.. sourcecode:: py3
+
+    nimed = {'Tõnu', 'Toomas', 'Malle'}
+    
+    # läbimise järjekorra võib Python valida oma suva järgi
+    for nimi in nimed:
+        print(nimi) 
+
+Täpsemat infot Pythoni hulkade kohta saab aadressilt http://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset.
+
+Harjutus 1. Hulkade vahe
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage funktsioon, mis võtab argumendiks kaks hulka ja tagastab esimese ja teise hulga vahe, st. hulga, mis sisaldab kõiki neid esimese hulga elemente, mis ei sisaldu teises hulgas.
+
+.. admonition:: NB!
+
+    Pythonis saab tegelikult hulkade vahet arvutada ka tavalise miinusmärgiga:
+    
+    .. sourcecode:: py3
+    
+        >>> {1,2,3} - {1,3}
+        {2}
+    
+    Harjutamise mõttes aga proovige see operatsioon ise defineerida. Miinusmärki kasutage pärast kontrollimaks, kas teie funktsioon arvutab sama tulemuse.
 
 
 Sõnastikud
 ----------
 Sõnastik (ing.k. *dictionary*, lühendatult ``dict``) on Pythoni andmetüüp, mis meenutab jällegi mitmes mõttes järjendeid: teda kasutatakse andmete koondamisel üheks kogumiks ja temas sisalduvaid üksikuid elemente on võimalik küsida kasutades  avaldist kujul ``kogum[võti]``.
 
-Põhiline erinevus on selles, et kui järjendi puhul on võtmeks (e. indeksiks) alati täisarv (nt. ``palgad[0]``), siis sõnastike puhul saab kasutada võtmeks ka näiteks sõnesid (nt. ``telefoninumbrid['Peeter']`` (või muid Pythoni lihtsamaid tüüpe).
+Põhiline erinevus on selles, et kui järjendi puhul on võtmeks (e. indeksiks) alati täisarv (nt. ``palgad[0]``), siis sõnastike puhul saab kasutada võtmeks ka näiteks sõnesid (nt. ``telefoninumbrid['Peeter']``), või muid Pythoni lihtsamaid tüüpe.
 
-Sõnastikud kirjutatakse looksulgude vahele ja iga elemendi juures näidatakse ära elemendi võti ja väärtus. Väärtuse küsimiseks tuleb nurksulgudes anda soovitud elemendi võti:
+Sõnastikud kirjutatakse looksulgude vahele, just nagu hulgad, aga iga elemendi juures näidatakse ära elemendi võti ja väärtus. Väärtuse küsimiseks tuleb nurksulgudes anda soovitud elemendi võti:
 
 .. sourcecode:: py3
     
@@ -34,6 +121,10 @@ Sõnastikud kirjutatakse looksulgude vahele ja iga elemendi juures näidatakse �
     if 'politsei' in telefonid:
         print("Politsei number on", telefonid['politsei'])
 
+.. note::
+
+    Sõnastike ja hulkade sarnast kirjapaneku viisi saab selgitada sellega, et sõnastikku võib vaadata kui paaride hulka, kus paari esimeseks komponendiks on võti ja teiseks väärtus.
+
 Justnagu järjendite puhul, saab kõiki sõnastiku elemente läbi vaadata kasutades ``for``-tsüklit, aga erinevalt järjenditest antakse igal sammul tsüklimuutujasse elemendi võti, mitte väärtus:
 
 .. sourcecode:: py3
@@ -45,11 +136,11 @@ Justnagu järjendite puhul, saab kõiki sõnastiku elemente läbi vaadata kasuta
     for nimi in telefonid:
         print(nimi.capitalize() + " - " + telefonid[nimi])
 
-Kui te proovisite seda näidet käivitada, siis võis juhtuda, et telefoninumbrid väljastati teistsuguses järjekorras, kui sõnastiku loomisel. Põhjus on selles, et sõnastiku puhul ei pea Python elementide omavahelist järjekorda oluliseks ja võib neid programmi efektiivsuse huvides ümber tõsta (aga ühe elemendi võti ja väärtus jäävad siiski alati omavahel seotuks).
+Kui te proovisite seda näidet käivitada, siis võis juhtuda, et telefoninumbrid väljastati teistsuguses järjekorras, kui sõnastiku loomisel. Põhjus on selles, et just nagu hulkade puhul, ei pea ka sõnastiku puhul Python elementide omavahelist järjekorda oluliseks ja võib neid programmi efektiivsuse huvides ümber tõsta (aga ühe elemendi võti ja väärtus jäävad siiski alati omavahel seotuks).
 
 Sõnastiku täiendamine elementhaaval
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Justnagu järjendeid, saab ka sõnastikke programmi töö käigus täiendada, aga erinevalt järjenditest, ei kasutata mitte ``append`` meetodit, vaid võtme järgi omistamist kujul ``sõnastik[võti] = väärtus``:
+Justnagu järjendeid ja hulki, saab ka sõnastikke programmi töö käigus täiendada, aga seejuures ei kasutata mitte meetodeid ``append`` või ``add``, vaid võtme järgi omistamist kujul ``sõnastik[võti] = väärtus``:
 
 .. sourcecode:: py3
 
@@ -98,7 +189,7 @@ Sõnastiku elemendi väärtuse muutmine käib samasuguse süntaksiga nagu elemen
     print("Uuendatud telefoniraamat:", telefonid)
 
 
-Ülesanne 1. Telefoniraamat
+Harjutus 2. Telefoniraamat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muuda ülalpool toodud telefoniraamatu näidet selliselt, et andmed loetakse sisse tekstifailist ja programm võimaldab kasutajal küsida telefoninumbrit omaniku nime järgi.
 
@@ -136,6 +227,43 @@ Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset
     ]
 
 
+.. topic:: Mitmemõõtmelised hulgad?
+    
+    Hulkade puhul peame pisut hoogu tagasi tõmbama -- kui soovime luua hulka, mille elementideks on hulgad, siis saame Pythonilt veateate:
+    
+    .. sourcecode:: py3
+
+        >>> {{1,2}, {3,4,5}}
+        Traceback (most recent call last):
+          File "<pyshell#45>", line 1, in <module>
+            {{1,2}, {3,4,5}}
+        TypeError: unhashable type: 'set'        
+
+    Lahtiseletatult ütleb veateade, et tüübil ``set`` puudub teatud omadus *hashable*, mille olemasolu on vajalik, et Python saaks väga kiiresti ja kindlalt kontrollida kahe väärtuse võrdsust. Kuna elementide võrdsuse kontroll on hulkade juures oluline (et vältida kahe võrdse elemendi sattumist samasse hulka), siis Python keeldub loomast hulkade hulka. Sama lugu on ka listide hulgaga:
+
+    .. sourcecode:: py3
+
+        >>> {[1,2], [3,4,5]}
+        Traceback (most recent call last):
+          File "<pyshell#46>", line 1, in <module>
+            {[1,2], [3,4,5]}
+        TypeError: unhashable type: 'list'
+
+    Seevastu ennikute hulgaga jääb Python rahule:
+
+    .. sourcecode:: py3
+
+        >>> {(1,2), (3,4,5)}
+        {(1, 2), (3, 4, 5)}
+
+    Põhjus on selles, et ennikud pole muteeritavad ning seetõttu saab Python kasutada erinevaid lisanippe, et nendega opereerimist (sh nende võrdsuse kontrollimist) piisavalt efektiivselt korraldada.
+
+    *Listid* ei sea mingeid piiranguid oma elementide tüübile, sest listi ei huvita elementide võrdsus või mittevõrdsus. Seetõttu pole mingit probleemi koostada Pythonis näiteks hulkade listi.
+    
+    *Sõnastike* puhul on piirangud vaid sõnastiku võtme tüübile -- ka siin nõutakse omadust *hashable* (kuna sõnastikusse ei tohi lubada korduvaid võtmeid). Kirje väärtuse tüübi osas kitsendusi ei seata -- seega saab vabalt luua näiteks sõnastiku, mille võtmetüübiks on sõne ning väärtuse tüübiks arvude list -- justnagu on demonstreeritud ülalpooltoodud näites, kus sõnastikku nimega on kasutatud hinnete loetelu sidumiseks inimese nimega.
+
+
+
 
 Mitmemõõtmeliste järjendite läbimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,7 +292,7 @@ Taoliste andmestruktuuride kasutamiseks ei ole tarvis mingisuguseid erivõtteid 
             print("Sisemine tsükkel, arv:", arv)
 
 
-Veidi veider võib tunduda see, et üks tsükkel on kirjutatud teise sisse. Selles pole tegelikult midagi erilist, mõlemad tsüklid toimivad tavapäraselt -- enne uuele ringile minekut tehakse tsükli keha sees olevad käsud lõpuni. See tähendab muuhulgas seda, et välimise tsükli iga korduse puhul tehakse läbi sisemise tsükli kõik kordused.
+Kuigi tsüklit tsükli sees olete ka juba eespool kohanud, võib see siiski tunduda pisut veider. Selles pole tegelikult midagi erilist, mõlemad tsüklid toimivad tavapäraselt -- enne uuele ringile minekut tehakse tsükli keha sees olevad käsud lõpuni. See tähendab muuhulgas seda, et välimise tsükli iga korduse puhul tehakse läbi sisemise tsükli kõik kordused.
 
 .. note::
 
@@ -222,14 +350,14 @@ Viimasel real oleva ``print``-i argumendi tähendus saab võibolla selgemaks, ku
 
 Nüüd on ilusti näha, et sulgudes olev avaldis kujutab endast ``i``-ndat elementi ``arvujärjendite_järjend``-ist (ehk siis ühte arvujärjendit) ning sellest omakorda võetakse element indeksiga ``j``, seega on tulemuseks mingi arv.
 
-Kokkuvõtteks: Mitmemõõtmeliste järjendite kasutamise põhimõte
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kokkuvõtteks: Mitmemõõtmeliste andmestruktuuride kasutamise põhimõte
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Olgu meil ühe-, kahe- või 100-mõõtmeline järjend, tegemist on ennekõike ikkagi järjendiga ja sedasi tuleb talle ka läheneda. Vaja on lihtsalt arvestada, millised on tema elemendid (vastavalt lihttüübid, ühemõõtmelised järjendid või 99-mõõtmelised järjendid).
     
 Sama põhimõte kehtib ka "järjendite ennikute" ja "sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastikega" -- alustage lähenemist "välimisest kihist" ja pidage meeles, millised on sisemised kihid.
 
 
-Ülesanne 2. Sudoku tabeli sisselugemine
+Harjutus 3. Sudoku tabeli sisselugemine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis loeb etteantud failist (:download:`sudoku.txt <downloads/sudoku.txt>`) arvud kahemõõtmelisse järjendisse.
 
@@ -321,7 +449,7 @@ Leida iga tudengi eksamipunktide kogusumma.
 
 
 
-Ülesanne 3. Keskmine tulemus ülesannete kaupa
+Harjutus 4. Keskmine tulemus ülesannete kaupa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Täiendage eelnevat näiteprogrammi nii, et see näitaks millised ülesanded olid üldiselt raskemad ja millised kergemad. Selleks väljastage keskmised tulemused ülesannete kaupa (st. eraldi kõigi tudengite 1. ülesande eest saadud punktide keskmine jne).
 
@@ -373,7 +501,7 @@ Sisemise tsükli jaoks on valitud väiksem indeksivahemik (``range(i-k, i)``), m
     Tegelikult on seda ülesannet võimalik lahendada ka ilma sisemist tsüklit kasutamata. Sellest, kuidas seda teha, on võimalik lugeda selle peatüki lisas "Keerukus". 
 
 
-Ülesanne 4. Erinevad väärtused
+Harjutus 5. Erinevad väärtused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Koostage funktsioon ``kõik_erinevad``, mis tagastab ``True`` või ``False`` vastavalt sellele, kas etteantud järjendis on kõik väärtused erinevad või mitte.
 
@@ -385,20 +513,16 @@ Koostage funktsioon ``kõik_erinevad``, mis tagastab ``True`` või ``False`` vas
 
     Seda ülesannet saaks lahendada ka ``count`` meetodit kasutades, aga kuna ``count`` meetod kasutab sisemas samuti tsüklit, siis kokkuvõttes on Pythoni jaoks ikkagi tegemist kahekordse tsükliga.
     
-Ülesanne 5. Kaugeimad punktid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leida punktid, mis asuvad teineteisest kõige kaugemal. Väljastada ekraanile ka nende punktide koordinaadid.
+    On veel üks viis selle ülesande lahendamiseks, mille jaoks läheb vaja ühte selle peatüki teema tundmist.
+    
+    .. hint::
 
-.. hint::
-
-    Kontrollida tuleb iga punkti kaugust igast teisest punktist. Seda võib teha kahekordse tsükliga. Välimises tsüklis võiks indeks ``i`` muutuda 1-st kuni n-ni, igal välimise tsükli sammul arvutatakse sisemises tsüklis i-nda punkti kaugus j-ndast punktist, kus j on sisemise for-tsükli indeks.
-
-.. hint::
-
-    Punktide omavahelise kauguse arvutamisel on abi *Pythagorase teoreemist*. Vajadusel visandage skeem koordinaatteljestiku ja kahe punktiga ning otsige pildilt täisnurkset kolmnurka.
-
-
-Ülesanne 6. Mõistatuslik teisendus
+        >>> set([1,2,3,2])
+        {1, 2, 3}
+    
+    
+    
+Harjutus 6. Mõistatuslik teisendus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Proovige ennustada, mida teeb järgmine funktsioon: 
 
@@ -426,30 +550,27 @@ Sisemise tsükli viimasel real on tegemist kahe elemendi väärtuse vahetamisega
 
 Andmestruktuurid
 --------------------
-Peatüki pealkirjaks on andmestruktuurid, nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab.
+Peatüki pealkirjaks on andmestruktuurid, nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab :)
 
-Laias laastus jaotatakse andmetüübid *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad nö "atomaarseid" või "jagamatuid" väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisud segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks, kui liittüübiks).
+Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad nö "atomaarseid" või "jagamatuid" väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisud segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks, kui liittüübiks).
 
 Nagu öeldud, liittüüpi väärtused on kombineeritud kokku mingitest teistest väärtustest. Oluline on see, et need komponendid moodustavad mingi kindla *struktuuri*. Näiteks järjendite puhul moodustub struktuur sellest, et iga komponent (element) on teiste komponentidega võrreldes kas eespool või tagapool, teisisõnu -- järjendi struktuur määrab elementide järjestuse. Teistel Pythoni liitüüpidel on teistsugune struktuur -- näiteks hulgatüübi struktuur määrab ära vaid selle, millised elemendid hulka kuuluvad, elementide järjestus pole selles struktuuris oluline. Kuna struktuur on liittüüpide puhul väga tähtis, siis nimetatakse neid vahel ka *struktuurseteks tüüpideks* või *andmestruktuurideks*.
 
+Antud õpiku käsitluses on erinevatel andmestruktuuridel erinevad kasutusviisid, mida nad toetavad -- listi puhul saab elementi ``append``-ida, sõnastikus saab küsida elementi tema (suvalist tüüpi) võtme järgi jne, st. meid huvitab eelkõige *mida* mingi andmestruktuur "teha oskab". Reaalsetes programmides aga on tihti vaja teada ka ka seda *kuidas* seda tehakse. Seetõttu on loodud näiteks erinevaid listitüüpe, millega saab teha samu asju, aga mis sisemas töötavad erinevalt ning seetõttu sobivad eri situatsioonidesse paremini või halvemini (näiteks ühe tuntud listitüübi variatsiooni puhul toimib indekseerimine väga kiiresti aga teise puhul saab väga kiiresti listi algusesse uut elementi lisada).
 
-.. note::
+Algoritmid ja andmestruktuurid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+Programmeerimise teemad jaotatakse tihti tinglikult kaheks pooleks -- *algoritmid* ja *andmestruktuurid* (või lihtsalt *andmed*).
+    
+Algoritmid kehastavad programmide "aktiivset" poolt -- nad kirjeldavad mingit tegevust, arvutamist, valikut, teisendamist vms. Selle poole märksõnad on näiteks ``if``, ``print``, ``while``, ``sin``.
 
-    Programmeerimise teemad jaotatakse tihti tinglikult kaheks -- *algoritmid* ja *andmed* (või andmestruktuurid). Algoritmid kehastavad programmide "aktiivset" poolt -- nad kirjeldavad mingit tegevust, arvutamist, valikut, teisendamist vms. Selle poole märksõnad on näiteks ``if``, ``print``, ``while``, ``sin``.
-
-    Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- nad kehastavad mingeid abstraktseid või konkreetseid asju, seoseid või muud laadi infot ja nad "lihtsalt on". Selleks, et midagi juhtuks, peab mõni algoritm neid uurima ja saadud info põhjal midagi tegema. Selle poole märksõnadeks on nt. *väärtus*, *tüüp*, *sõne*, *list*.
-
-Pythoni andmestruktuuride salvestamine ja sisselugemine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO pickle.load/dump
+Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- nad kehastavad mingeid abstraktseid või konkreetseid asju, seoseid või muud laadi infot ja nad "lihtsalt on". Selleks, et midagi juhtuks, peab mõni algoritm neid manipuleerima või uurima ja saadud info põhjal midagi tegema. Selle poole märksõnadeks on nt. *väärtus*, *tüüp*, *sõne*, *list*.
 
 
 
 
 Ülesanded
 ---------------
-
-0. oma split
 
 1. Teksti analüüs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -476,21 +597,12 @@ Kirjutage programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust e
     Kui nuputate, millises etapis tuleks kasutada oma head tuttavat ``split`` meetodit, siis mõelge järgi, kas seda üldse läheb antud ülesandes tarvis.
 
 
-2. Sudoku lahenduse kontrollimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis kontrollib, kas etteantud failis (:download:`sudoku.txt <downloads/sudoku.txt>`) on korrektne Sudoku lahendus. Mittekorrektse lahenduse korral tuleb öelda, millises veerus, reas või 3x3 ruudus probleem esineb.
-
-Lisainfot Sudoku kohta: http://en.wikipedia.org/wiki/Sudoku
-
-NB! testige oma programmi nii korrektse kui ka mittekorrektse lahendusega!
-
-.. hint::
-
-    Ülesande lahendamisel võib olla abiks üks selles peatükis defineeritud funktsioonidest.
-    
-
-3. Eksami statistika, 2. osa
+2. Eksami statistika, 2. osa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
+
+    Praktikumiks ettevalmistamiseks piisab, kui lahendate allolevatest alamülesannetest vaid ühe. Samas, harjutamise mõttes on kindlasti kasulik kõik ära lahendada.
+
 See ülesanne põhineb ülalpool toodud näiteülesandel.
 
 Kõigepealt muutke etteantud lahendust nii, et küsimuste arv 7 ei oleks fikseeritud, vaid tuvastataks käigu pealt, vastavalt esimesel real olevate tulemuste arvule (võib eeldada, et kõigil ridadel on võrdne arv tulemusi).
@@ -510,9 +622,89 @@ NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tul
 #. **Skaleeritud hindamine**: Oletame, et hindamisskeem on selline, et kui mõne ülesande eest ei saanud keegi maksimumpunkte, siis korrutatakse kõigi tudengite punktid läbi sellise konfitsendiga, et parima tulemuse saanud tudengi uus tulemus oleks 10. Teisendage ja väljastage kõigi tudengite kõigi ülesannete punktid sellest hindamisskeemist lähtuvalt (1 komakoha täpsusega). Vihje: koostage järjend, kus on iga ülesande kohta leitud sellele vastav kordaja, ning kasutage seda tudengite hinnete tuvastamisel.
 
 
+3. Kaugeimad punktid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leida punktid, mis asuvad teineteisest kõige kaugemal. Väljastada ekraanile ka nende punktide koordinaadid.
+
+.. hint::
+
+    Kontrollida tuleb iga punkti kaugust igast teisest punktist. Seda võib teha kahekordse tsükliga. Välimises tsüklis võiks indeks ``i`` muutuda 1-st kuni n-ni, igal välimise tsükli sammul arvutatakse sisemises tsüklis i-nda punkti kaugus j-ndast punktist, kus j on sisemise for-tsükli indeks.
+
+.. hint::
+
+    Punktide omavahelise kauguse arvutamisel on abi *Pythagorase teoreemist*. Vajadusel visandage skeem koordinaatteljestiku ja kahe punktiga ning otsige pildilt täisnurkset kolmnurka.
+
+4. Sudoku lahenduse kontrollimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kirjutage programm, mis kontrollib, kas etteantud failis (:download:`sudoku.txt <downloads/sudoku.txt>`) on korrektne Sudoku lahendus. Mittekorrektse lahenduse korral tuleb öelda, millises veerus, reas või 3x3 ruudus probleem esineb.
+
+Lisainfot Sudoku kohta: http://en.wikipedia.org/wiki/Sudoku
+
+NB! testige oma programmi nii korrektse kui ka mittekorrektse lahendusega!
+
+.. note::
+
+    Tegemist on küllalt mahuka ülesandega, seega on kasulik jagada ülesanne mõttes alamülesanneteks ja panna iga alamülesande lahendus kirja eraldi funktsioonina. 
+    
+
+
+.. hint::
+    
+    Üks võimalik viis lahenduse struktureerimiseks:
+    
+    .. sourcecode:: py3
+    
+        def loe_tabel(failinimi):
+            tabel = []
+            ...
+            return tabel
+        
+        def veerg_on_korras(tabel, veeru_indeks):
+            # tagastab True või False
+            ...
+        
+        def rida_on_korras(tabel, rea_indeks):
+            ...
+            
+        def ruut_3x3_on_korras(tabel, nurga_rea_indeks, nurga_veeru_indeks):
+            ...
+        
+        
+        # kõigepealt loeme andmed failist kahemõõtmelisse järjendisse
+        tabel = loe_tabel("sudoku.txt")
+        
+        # alustame kontrollimist optimistlikult
+        lahendus_on_korras = True
+        
+        # kontrollime üle kõik veerud
+        for i in range(9):
+            if not veerg_on_korras(tabel, i):
+                # Tuleb välja, et optimism polnud põhjendatud.
+                # Korrigeerime on seisukohta.
+                lahendus_on_korras = False
+        ...
+        ...
+        
+        if lahendus_on_korras:
+            print("Korras")
+        else:
+            print("Viga!)
+            # aga kuidas öelda vea asukoht?
+        
+
+
+.. hint::
+
+    Iga rea, veeru ja 3x3 ruudukese kontrollimisel koostage vaadeldavatest elementidest arvuhulk ...
+    
+.. hint::
+
+    ... ja kontrollige, kas see arvuhulk võrdub ühe konkreetse (ning Sudoku puhul olulise) arvuhulgaga.
+
 
     
-4. SKP
+5. SKP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *See ülesanne on antud koos näitelahendusega, aga enne selle vaatamist üritage ise lahenduseni jõuda!*
 
@@ -531,7 +723,7 @@ Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nime
         nimed = []
 
         # Faili sisse lugemine
-        f = open("SKP.txt","r")
+        f = open("SKP.txt","r", encoding="UTF-8")
         for rida in f:
             # Teisenda rida riigiks ja skp-ks ning lisa need järjenditele
             paar = rida.split(";")
@@ -568,22 +760,43 @@ Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nime
             print(lahimadnimed[i] + " - " + str(lahimadskpd[i]))
 
 
-.. todo::
 
-    varuülesanded ......................
-    Supermarket
-    
-    Järjendisse on salvestatud kassajärjekorras olevate inimeste korvis olevate esemete arvud (küsida kasutajalt). Koostada programm, mis iga järjekorras oleva inimese korral leiab, mitmel inimesel tema ees on korvis rohkem kui kolm eset.
-    Järjestikused naturaalarvud
+Projekt
+----------
+Pythoni andmestruktuuride salvestamine ja sisselugemine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Selleks, et "järjendikujulist" infot failis hoida, oleme seni kasutanud mingit lihtsat tekstilist formaati, mida on mugav näiteks tsükli ja ``split``-i abil töödelda. Selle lähenemise eelis on see, et taolist tekstiformaati saab vabalt ka suvalises tekstiredaktoris lugeda või koostada.
 
-    Indiaanlased
-    
-    Indiaanlased liiguvad hanereas, nende pikkusi kirjeldab järjend (lugeda failist või küsida kasutajalt). Mitmendal positsioonil selles reas asub indiaanlane, kelle ees (vahetult) asub kõige rohkem temast lühemaid indiaanlasi?
+Keerulisemate andmestruktuuride ja nende kombinatsioonide (nt. sõnastike või mitmemõõtmeliste järjendite) puhul võib sobiva formaadi väljatöötamine ja kasutamine olla küllalt suur töö. Seetõttu on Pythonis olemas vahendid, mis seda tööd lihtsustavad.
 
-    Juhis: Järjendit läbides peame meeles juba vaadeldud indiaanlaste seast "parima" järjekorranumbrit ja seda, mitmest vahetult eelnevast inimesest ta pikem on. Leides iga indiaanlase korral lühemate eelkõndijate arvu, tuleb järjendis liikuda näiteks while-tsükliga ettepoole niikaua, kui järjendi liikmete väärtused on vaadeldavast väärtusest väiksemad, ja lugeda kokku selliste väärtuste arv.
+Esimese võimalusena uurime käske ``repr`` ja ``eval``:
 
+.. sourcecode:: py3
 
+    >>> repr(3)
+    '3'
+    >>> repr(3)
+    '3'
+    >>> repr("tere")
+    "'tere'"
+    >>> repr({'a', 'b', 'c'})
+    "{'a', 'c', 'b'}"
+    >>> eval("3")
+    3
+    >>> eval("'tere'")
+    'tere'
+    >>> eval("{'a', 'c', 'b'}")
+    {'a', 'c', 'b'}
+    >>> eval(repr(3))
+    3
 
+Nende kasutamise põhimõte on lihtne: ``repr`` teisendab argumendiks antud väärtuse sõneks ja ``eval`` teeb sõnena esitatud väärtuse tagasi algseks väärtuseks. Faili salvestamisel tuleks lihtsalt väärtus teisendada sõneks ja salvestada saadud sõne juba tuttavate vahenditega. Failist lugemisel tuleb sisseloetud sõne teisendada ``eval``-iga tagasi algseks väärtuseks.
+
+.. note:: 
+
+    Kui teile tundub, et ``repr`` ja ``str`` on väga sarnased funktsioonid, siis teil on täiesti õigus -- paljude andmetüüpide puhul toimivad nad täpselt samamoodi. Mõnede tüüpide puhul on aga ``str`` ülesandeks moodustada väärtuse "kasutajasõbralik" esitus ja ``repr`` ülesandeks moodustatada "``eval``-i sõbralik" esitus, seetõttu on tavaks kasutada koos ``eval``-iga justnimelt funktsiooni ``repr``.
+
+Tegelikult sobib ``eval`` suvalise sõnena esitatud Pythoni avaldise väärtustamiseks. Seetõttu on selle kasutamisel oht, et kui keegi teie andmeid pahatahtlikult modifitseerib, siis andmete ``eval``-iga sisselugemisel käivitab programm hoopis mingi pahatahtliku käsu (näiteks kustutab kogu kõvaketta sisu). Seega maksab uurida ka alternatiivset viisi Pythoni andmete faili salvestamiseks -- käsud ``pickle.dump`` ja ``pickle.load``: http://docs.python.org/3/library/pickle.html. 
 
 
 Lisalugemine
