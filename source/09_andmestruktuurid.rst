@@ -558,7 +558,7 @@ Andmestruktuurid
 --------------------
 Peatüki pealkirjaks on andmestruktuurid, nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab :)
 
-Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad nö "atomaarseid" või "jagamatuid" väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisud segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks, kui liittüübiks).
+Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad nö "atomaarseid" või "jagamatuid" väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisut segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks, kui liittüübiks).
 
 Nagu öeldud, liittüüpi väärtused on kombineeritud kokku mingitest teistest väärtustest. Oluline on see, et need komponendid moodustavad mingi kindla *struktuuri*. Näiteks järjendite puhul moodustub struktuur sellest, et iga komponent (element) on teiste komponentidega võrreldes kas eespool või tagapool, teisisõnu -- järjendi struktuur määrab elementide järjestuse. Teistel Pythoni liitüüpidel on teistsugune struktuur -- näiteks hulgatüübi struktuur määrab ära vaid selle, millised elemendid hulka kuuluvad, elementide järjestus pole selles struktuuris oluline. Kuna struktuur on liittüüpide puhul väga tähtis, siis nimetatakse neid vahel ka *struktuurseteks tüüpideks* või *andmestruktuurideks*.
 
@@ -621,7 +621,7 @@ NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tul
 
 #. **Seinast seina**: Väljastage nende tudengite nimed, kes said vähemalt ühe ülesande eest 10 punkti ja mõne teise ülesande eest 0 punkti.
 
-#. **Primused**: Leida nende tudengite nimed, kes kogusid summaarselt kõige rohkem punkte. Kui mitu inimest sai sama palju punkte, väljastada kõigi nende nimed (vihje – koguge need nimed järjendisse).
+#. **Priimused**: Leida nende tudengite nimed, kes kogusid summaarselt kõige rohkem punkte. Kui mitu inimest sai sama palju punkte, väljastada kõigi nende nimed (vihje – koguge need nimed järjendisse).
 
 #. **Spikerdamine**: Fail on koostatud nii, et kõrvuti istunud tudengite andmed on failis järjest. Kontrollida, kas tulemused viitavad sellele, et mõni oma naabri pealt spikerdas. Spikerdamises võib tudengit kahtlustada, kui tema kõik tulemused on kas võrdsed või ülimalt 2 punkti võrra väiksemad, kui ühel tema kahest naabrist. Väljastada kõigi spikerdamises kahtlustatavate tudengite nimed.
 
