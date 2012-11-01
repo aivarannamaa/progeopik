@@ -433,7 +433,7 @@ Leida iga tudengi eksamipunktide kogusumma.
 
     n = len(tabel)
 
-    print
+    print()
 
     # Tulemuste väljastamine
     print("Tulemused:")
