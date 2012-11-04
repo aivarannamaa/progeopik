@@ -1,6 +1,7 @@
 .. admonition:: Muudatused
 
-    1. okt - lisatud projektiplokk; plokkskeemi teemad viidud kokku ühe jaotuse alla.
+    * 1. okt - lisatud projektiplokk; plokkskeemi teemad viidud kokku ühe jaotuse alla.
+    * 3. nov - lisatud lokaalsete muutujate osa.
 
 5. Alamprogrammid e. funktsioonid
 ====================================
@@ -518,6 +519,59 @@ Kui võrdlete seda funktsiooni kolmandas peatükis näidatud absoluutväärtuse 
 Harjutus 7. Kahest arvust suurim
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon, mis saab parameetritena kaks arvu ning tagastab neist suurima.
+
+.. _lokaalsed-muutujad:
+
+Lokaalsed muutujad
+---------------------
+Funktsiooni kehas võib võtta vahetulemuste salvestamiseks kasutusele abimuutujaid, justnagu me oleme siiani neid kasutanud funktsioonidest väljaspool. Proovige järgmist programmi:
+
+.. sourcecode:: py3
+
+    from math import pi
+
+    def ringi_ümbermõõt(raadius):
+        diameeter = 2 * raadius
+        return diameeter * pi
+
+    print(ringi_ümbermõõt(40))
+
+Kui me üritaksime aga lisaks arvutatud ümbermõõdule kuvada ekraanile ka funktsiooni poolt arvutatud diameetrit, siis saaksime Pythonilt veateate:
+
+.. sourcecode:: py3
+
+    from math import pi
+
+    def ringi_ümbermõõt(raadius):
+        diameeter = 2 * raadius
+        return diameeter * pi
+
+    print(ringi_ümbermõõt(40))
+    
+    # ei tööta:
+    print(diameeter)
+    
+Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on *lokaalsed*, st nad "elavad" täielikult funktsiooni sees. Lokaalsed muutujad "ärkavad ellu" funktsiooni käivitamisel ja kaovad, kui funktsioon oma tööga lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
+
+Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees defineeritud muutuja ``x`` ei mõjuta kuidagi programmi põhiosas defineeritud samanimelist muutujat, tegemist on kahe eraldi muutujaga, millele on juhtumisi sama nimi (justnagu kahel erineval inimesel võib olla sama nimi):
+
+.. sourcecode:: py3
+
+    x = 1
+
+    def f():
+        x = 2
+        print(x)
+    
+    print(x) # ekraanile kuvatakse 1
+    f()      # ekraanile kuvatakse 2
+    print(x) # ekraanile kuvatakse 1
+        
+
+.. note::
+
+    Programmi põhiosa muutujate (neid nimetakse ka *globaalseteks muutujateks*) ning funktsiooni kehas defineeritud muutujate (e. lokaalsete muutujate) eraldatus ei ole päris samaväärne -- kuigi programmi põhiosal pole ligipääsu funktsiooni muutujatele, saab funktsioonis vajadusel siiski kasutada programmi põhiosa muutujaid. Sellest võimalusest tuleb täpsemalt juttu ühes hilisemas peatükis.
+
 
 .. _milleks-funktsioonid:
 

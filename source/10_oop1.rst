@@ -1,3 +1,39 @@
-10. OOP 1
-==========
-TODO
+10. Modulaarsus
+================
+Miks on vaja teatud funktsioone (nt. ``sin``) *importida*? Miks hoiab Python funktsiooni sees defineeritud muutujaid ülejäänud muutujatest eraldi? Kuidas leiab Python muutuja nime põhjal muutuja väärtuse?
+
+Selles peatükis vaatame detailsemalt Pythoni muutujate, funktsioonide ja moodulite tööpõhimõtteid ning näeme, et need põhimõtted on mõeldud toetamaks suurte ja keeruliste programmide loomist. 
+
+Suurte programmide probleemid
+------------------------------
+Paljude tänapäeva programmide taga on meeletu hulk koodi -- pole lootustki, et keegi suudaks näiteks Microsoft Wordi või Linuxi tuuma kogu koodi olulisi detaile ühekorraga hoomata. Seetõttu rakendatakse keeruliste tarkvaralahenduste loomisel juba eespool mainitud "jaga ja valitse" printsiipi -- ülesanne ja sellele vastav lahendus jagatakse osadeks, millest igaüks keskendub mingile konkreetsele lõigule koguülesandest. Kui sedasi saadud alamülesanded on ikka liiga keerulised, siis jagatakse need omakorda veel osadeks jne, kuni saadakse paraja suurusega ülesanded, mida programmeerija suudab oma peas piisava täpsusega "töödelda".
+
+Ülesannet ei saa siiski jagada osadeks suvalisest kohast -- on oluline, et alamülesanded ja neile vastavad lahendused (st. programmiosad) sõltuksid üksteisest võimalikult vähe, vastasel juhul peab programmeerija ikkagi mõtlema mitmele ülesandele korraga. Kuigi lõpuks tuleb need suhteliselt iseseisvad programmiosad ikkagi panna koos töötama (vastasel juhul poleks tegemist ühe süsteemi komponentidega), tuleb osade arendamisel kasuks, kui me ei pea eriti ülejäänud süsteemi peale mõtlema.
+
+Kui mingi süsteemi (nt. tarkvara) komponentidest rääkides tahetakse rõhutada just nende suhtelist sõltumatust, siis  ......
+
+Pythoni programmi komponendid
+------------------------------
+Teises peatükis mainiti, et programmi jooksutamisel keerleb Pythoni maailm ümber *väärtuste* (e. objektide) -- neid luuakse, teisendatakse, kombineeritakse, kuvatakse ekraanile, salvestatakse muutujatesse (st. mälupesadesse), saadetakse argumentidena funktsioonidesse jne.
+
+Samas, programmi kirjutamise ajal me enamasti konkreetseid väärtusi ei maini, sest need kas selguvad alles programmi töö käigus või on liiga keerulised, et neid iga kord uuesti kirja panna, kui neid vaja läheb. Seetõttu on Pythonis (nagu ka kõigis teistes programmeerimiskeeltes) olemas *muutujad*, mida saab kasutada konkreetse väärtuse asemel. Muutuja juures on kõige olulisem tema nimi ja see, millist konkreetset väärtust ta (parasjagu) esindab.
+
+Nagu juba öeldud, väärtustega (olgu need esitatud konkreetselt st. literaalidena või abstraktselt st. muutujatena) tehakse midagi. Olulisimad tegevuste liigid on *omistamine* (st. uue muutuja loomine või olemasoleva muutuja sisu muutmine) ning *funktsiooni väljakutse* (st. funktsioonina esitatud tegevuste või arvutuste käivitamine). Tegevuste käivitamist saab kontrollida tingimuslause ja tsüklitega.
+
+asemel kasutame me *nimesid* (e. muutujaid). Näiteks
+* nimede tekitamine (omistamine, import, def)
+* skoop
+* nimeruum
+* nime skoop -- piirkond, kus see nimi eksisteerib
+* http://stackoverflow.com/questions/10269012/global-scope-vs-global-namespace
+* http://bytes.com/topic/c/answers/61508-namespace-scope-namespace
+* Miks eraldi skoobid? Miks mitte ainult global? miks mitte ainult erinevad local?
+* Modulaarsus
+
+Nimeruum ja skoop
+
+Funktsiooni skoobis on võimalik kasutada funktsiooni nimeruumi, builtins nimeruumi ja mooduli nimeruumi. Mooduli skoobis on võimalik kasutada 
+
+Skoop on staatiline mõiste, nimeruum on objekt
+
+igal moodulil on oma nimeruum

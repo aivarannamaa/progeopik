@@ -464,7 +464,7 @@ kusjuures nii ``laused1``, kui ``laused2`` võivad sisaldada suvalisi lauseid, s
 
 Muutujad
 ~~~~~~~~
-Muutujad võimaldavad meil tegelda mingite väärtustega ilma, et me peaks mainima mingit konkreetset väärtust. Näiteks, kui me salvestame kaks kasutaja poolt sisestatud arvu muutujatesse ``a`` ja ``b``, siis nende kokku liitmisel ei huvita meid enam, mis on nende muutujate konkreetne väärtus. 
+Muutujad võimaldavad meil tegelda väärtustega ilma, et me peaks mainima mingit konkreetset väärtust. Näiteks, kui me salvestame kaks kasutaja poolt sisestatud arvu muutujatesse ``a`` ja ``b``, siis nende kokku liitmisel ei huvita meid enam, mis on nende muutujate konkreetne väärtus. 
 
 Soovitav on lugeda uuesti läbi 2. peatüki osa :ref:`muutujad`, tõenäoliselt näete nüüd muutujate olemust juba uue pilguga.
 
