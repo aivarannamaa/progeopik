@@ -234,6 +234,71 @@ Lisage vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_n
 
 Kasutage seda funktsiooni programmis sobival kohal.
 
+.. _lokaalsed-muutujad:
+
+Lokaalsed muutujad
+---------------------
+Funktsiooni kehas võib võtta kasutusele abimuutujaid, justnagu me oleme siiani neid kasutanud funktsioonidest väljaspool. Toome siinkohal uuesti ära 3. peatükist tuttava ruudu joonistamise funktsiooni:
+
+.. sourcecode:: py3
+    
+    from turtle import *
+    
+    def ruut():
+        # selle muutuja abil peame arvet, mitu külge on juba joonistatud
+        joonistatud_kylgi = 0               
+        
+        while joonistatud_kylgi < 4:
+            forward(100)
+            left(90)
+            joonistatud_kylgi = joonistatud_kylgi + 1   # suurendame muutuja väärtust
+    
+    ruut()
+    exitonclick()
+
+
+Kuidas oleks, kui me üritaksime peale funktsiooni ``ruut`` väljakutsumist kontrollida, milline oli ikkagi muutuja ``joonistatud_kylgi`` viimane väärtus? Proovige järgmist, veidi muudetud programmi:
+
+.. sourcecode:: py3
+    :emphasize-lines: 13
+    
+    from turtle import *
+    
+    def ruut():
+        # selle muutuja abil peame arvet, mitu külge on juba joonistatud
+        joonistatud_kylgi = 0               
+        
+        while joonistatud_kylgi < 4:
+            forward(100)
+            left(90)
+            joonistatud_kylgi = joonistatud_kylgi + 1   # suurendame muutuja väärtust
+    
+    ruut()
+    print(joonistatud_kylgi)
+    exitonclick()
+
+
+Ilmselt saite programmi käivitamisel Pythonilt veateate (``"NameError: name 'joonistatud_kylgi' is not defined"``). Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on *lokaalsed*, st nad "elavad" täielikult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni käivitamisel ja nad kaovad, kui funktsioon oma tööga lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
+
+Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees defineeritud muutuja ``x`` ei mõjuta kuidagi programmi põhiosas defineeritud samanimelist muutujat, tegemist on kahe eraldi muutujaga, millele on juhtumisi sama nimi (justnagu kahel erineval inimesel võib olla sama nimi):
+
+.. sourcecode:: py3
+
+    x = 1
+
+    def f():
+        x = 2
+        print(x)
+    
+    print(x) # ekraanile kuvatakse 1
+    f()      # ekraanile kuvatakse 2
+    print(x) # ekraanile kuvatakse 1
+        
+
+.. note::
+
+    Programmi põhiosa muutujate (neid nimetakse ka *globaalseteks muutujateks*) ning funktsiooni kehas defineeritud muutujate (e. lokaalsete muutujate) eraldatus ei ole päris samaväärne -- kuigi programmi põhiosal pole ligipääsu funktsiooni muutujatele, saab funktsioonis vajadusel siiski kasutada programmi põhiosa muutujaid. Sellest võimalusest tuleb täpsemalt juttu ühes hilisemas peatükis.
+
 
 
     
@@ -250,7 +315,7 @@ Täpselt sama tegevuse kordamist on tegelikult vaja siiski üpris harva. Tavalis
     tere("Kalle")
     tere("Malle")
     
-Funktsiooni ``tere`` definitsiooni päises on lisaks funktsiooni nimele näidatud ära ka üks *parameeter* nimega "nimi". Parameetri näol on sisuliselt tegu *muutujaga*, mille väärtus antakse ette funktsiooni väljakutsel. Konkreetsed väärtused (nt. ``"Kalle"``) kirjutatakse väljakutsel funktsiooni nime järel olevatesse sulgudesse. Antud juhul on parameetri ``nimi`` väärtuseks esimesel väljakutsel "Kalle" ning teisel väljakutsel "Malle". Funktsioon töötab aga mõlemal juhul samamoodi – ta võtab parameetri väärtuse ning lisab selle tervitusele. Kuna aga väärtused on kahel juhul erinevad, on ka tulemus erinev.
+Funktsiooni ``tere`` definitsiooni päises on lisaks funktsiooni nimele näidatud ära ka üks *parameeter* nimega "nimi". Parameetri näol on sisuliselt tegu spetsiaalse *lokaalse muutujaga*, millele Python annab konkreetse väärtuse funktsiooni väljakutsel. Konkreetsed väärtused (nt. ``"Kalle"``) kirjutatakse väljakutsel funktsiooni nime järel olevatesse sulgudesse. Antud juhul on parameetri ``nimi`` väärtuseks esimesel väljakutsel "Kalle" ning teisel väljakutsel "Malle". Funktsioon töötab aga mõlemal juhul samamoodi – ta võtab parameetri väärtuse ning lisab selle tervitusele. Kuna aga väärtused on kahel juhul erinevad, on ka tulemus erinev.
 
 
 .. index::
@@ -327,7 +392,9 @@ Täiustage 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu k�
             nimi = input("Kuidas on sinu nimi? ")
             tere(nimi)
             
-        See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab teid ennast segadusse, siis võite kasutada alati erinevaid muutujanimesid.
+        See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Kõlab sarnaselt sektsioonile "Lokaalsed muutujad"? Tegemist ongi sama teemaga -- nagu juba korra mainitud, käsitletakse ka parameetreid justkui (lokaalseid) muutujaid.
+        
+        Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab teid ennast segadusse, siis võite kasutada alati erinevaid muutujanimesid.
 
 
 
@@ -416,6 +483,23 @@ Kirjutage funktsioon, mis võtab argumendiks ühe arvu ning tagastab selle arvu 
 
 Demonstreerige loodud funktsiooni tööd, kirjutades programmi ka mõned funktsiooni väljakutsed erinevate argumentidega. NB! tulemuse ekraanile kuvamine tuleks korraldada funktsiooni väljakutse juures, mitte funktsiooni definitsioonis!
 
+.. topic:: ``return`` lõpetab funktsiooni töö
+
+    Eelmises näites oli ``return`` lause funktsiooni kehas kõige viimane asi. Tegelikult ei pea ``return`` olema tingimata funktsiooni lõpus. Järgnevas absoluutväärtuse arvutamise funktsiooni näites kasutatakse ``return``-i kahes kohas -- funktsiooni lõpus ja tingimuslause sees:
+
+    .. sourcecode:: py3
+
+        def absoluut(x):
+            if x < 0:
+                return -x
+            
+            return x
+
+    Kumb neist ``return``-idest siis ikkagi kehtib? Sellele vastamiseks peame teadma, et ``return`` lause käivitamine lõpetab alati funktsiooni töö. Seega, kui kutsume antud funktsiooni välja negatiivse argumendiga, siis käivitub esimene ``return`` ja ``if``-lausele järgnevat rida üldse ei vaadatagi. Kui aga ``if`` lause tingimus osutub vääraks, siis ``if``-lause keha ei vaadata ja Python jätkab sellega, mis tuleb peale ``if``-lauset (so. teine ``return```).
+    
+    See võimalus kasutada ``return``-i funktsiooni keskel ei ole tegelikult eriti oluline -- alati saab funktsiooni panna kirja nii, et seal on täpselt üks ``return`` lause ja see paikneb funktsiooni lõpus.
+
+
 
 .. _return-vs-print:
 
@@ -442,7 +526,6 @@ Demonstreerige loodud funktsiooni tööd, kirjutades programmi ka mõned funktsi
         Sarnane segadus võib tekkida ka Pythoni käsurea kasutamisel -- kui kirjutada sinna avaldis ``sqrt(2)``, siis tulemus ilmub ikkagi ekraanile, kuigi me ei kasutanud ``print`` käsku. Kas see tähendab, et ka "funktsioon" ``sqrt`` kuvab vastuse ekraanile? Ei, tegelikult Pythoni käsurida kuvab ``sqrt`` käest saadud vastuse ekraanile omal algatusel, ``sqrt`` ei tea sellest midagi.
 
         Kui päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``ruut``. Need funktsioonid, mille eesmärk on vaid mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata ning seepärast Python'i käsurida ka ei näita seda automaatselt.
-
 
 
 Harjutus 5. Tollid ja sentimeetrid
@@ -519,58 +602,6 @@ Kui võrdlete seda funktsiooni kolmandas peatükis näidatud absoluutväärtuse 
 Harjutus 7. Kahest arvust suurim
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon, mis saab parameetritena kaks arvu ning tagastab neist suurima.
-
-.. _lokaalsed-muutujad:
-
-Lokaalsed muutujad
----------------------
-Funktsiooni kehas võib võtta vahetulemuste salvestamiseks kasutusele abimuutujaid, justnagu me oleme siiani neid kasutanud funktsioonidest väljaspool. Proovige järgmist programmi:
-
-.. sourcecode:: py3
-
-    from math import pi
-
-    def ringi_ümbermõõt(raadius):
-        diameeter = 2 * raadius
-        return diameeter * pi
-
-    print(ringi_ümbermõõt(40))
-
-Kui me üritaksime aga lisaks arvutatud ümbermõõdule kuvada ekraanile ka funktsiooni poolt arvutatud diameetrit, siis saaksime Pythonilt veateate:
-
-.. sourcecode:: py3
-
-    from math import pi
-
-    def ringi_ümbermõõt(raadius):
-        diameeter = 2 * raadius
-        return diameeter * pi
-
-    print(ringi_ümbermõõt(40))
-    
-    # ei tööta:
-    print(diameeter)
-    
-Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on *lokaalsed*, st nad "elavad" täielikult funktsiooni sees. Lokaalsed muutujad "ärkavad ellu" funktsiooni käivitamisel ja kaovad, kui funktsioon oma tööga lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
-
-Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees defineeritud muutuja ``x`` ei mõjuta kuidagi programmi põhiosas defineeritud samanimelist muutujat, tegemist on kahe eraldi muutujaga, millele on juhtumisi sama nimi (justnagu kahel erineval inimesel võib olla sama nimi):
-
-.. sourcecode:: py3
-
-    x = 1
-
-    def f():
-        x = 2
-        print(x)
-    
-    print(x) # ekraanile kuvatakse 1
-    f()      # ekraanile kuvatakse 2
-    print(x) # ekraanile kuvatakse 1
-        
-
-.. note::
-
-    Programmi põhiosa muutujate (neid nimetakse ka *globaalseteks muutujateks*) ning funktsiooni kehas defineeritud muutujate (e. lokaalsete muutujate) eraldatus ei ole päris samaväärne -- kuigi programmi põhiosal pole ligipääsu funktsiooni muutujatele, saab funktsioonis vajadusel siiski kasutada programmi põhiosa muutujaid. Sellest võimalusest tuleb täpsemalt juttu ühes hilisemas peatükis.
 
 
 .. _milleks-funktsioonid:

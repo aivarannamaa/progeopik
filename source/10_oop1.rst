@@ -2,7 +2,7 @@
 ================
 Miks on vaja teatud funktsioone (nt. ``sin``) *importida*? Miks hoiab Python funktsiooni sees defineeritud muutujaid ülejäänud muutujatest eraldi? Kuidas leiab Python muutuja nime põhjal muutuja väärtuse?
 
-Selles peatükis vaatame detailsemalt Pythoni muutujate, funktsioonide ja moodulite tööpõhimõtteid ning näeme, et need põhimõtted on mõeldud toetamaks suurte ja keeruliste programmide loomist. 
+Selles peatükis vaatame detailsemalt Pythoni muutujate, funktsioonide ja moodulite tööpõhimõtteid ning näeme, et need on valitud toetamaks programmide loomist osade kaupa. 
 
 Suurte programmide probleemid
 ------------------------------
@@ -29,6 +29,8 @@ asemel kasutame me *nimesid* (e. muutujaid). Näiteks
 * http://bytes.com/topic/c/answers/61508-namespace-scope-namespace
 * Miks eraldi skoobid? Miks mitte ainult global? miks mitte ainult erinevad local?
 * Modulaarsus
+* majast näeb õue aga mitte vastupidi
+* dir, del locals, globals ja nimeruum (näited nii objektide, kui moodulite kohta)
 
 Nimeruum ja skoop
 
