@@ -1,8 +1,84 @@
-10. Modulaarsus
-================
-Miks on vaja teatud funktsioone (nt. ``sin``) *importida*? Miks hoiab Python funktsiooni sees defineeritud muutujaid ülejäänud muutujatest eraldi? Kuidas leiab Python muutuja nime põhjal muutuja väärtuse?
+10. Moodulid ja skoop
+===================================
+Miks on vaja teatud funktsioone (nt. ``sin``) enne kasutamist *importida*? Mis asi ikkagi on moodul? Miks hoiab Python funktsiooni sees defineeritud muutujaid ülejäänud muutujatest eraldi? Kuidas leiab Python muutuja nime põhjal muutuja väärtuse?
 
-Selles peatükis vaatame detailsemalt Pythoni muutujate, funktsioonide ja moodulite tööpõhimõtteid ning näeme, et need on valitud toetamaks programmide loomist osade kaupa. 
+Selles peatüki tegelastega olete õigupoolest juba tuttavad -- käsitleme Pythoni muutujaid, funktsioone ja mooduleid aga seda veidi teise nurga alt kui seni. Nimelt võtame me need mõisted "pulkadeks" lahti, uurime natuke ja paneme uuesti kokku, lootuses, et taoline analüüs aitab Pythoni tööpõhimõtetest paremini aru saada. Lõpuks näeme, et Pythoni tööpõhimõtted toetavad programmide loomist osade kaupa. 
+
+
+Moodulid, objektid ja attribuudid
+----------------------------------
+Pythoni moodulitega tutvusite juba 1. peatükis, kus öeldi, et teatud matemaatiliste funktsioonide kasutamiseks on need vaja kõigepalt ``math`` moodulist *importida*, näiteks:
+
+.. sourcecode:: py3
+
+    >>> from math import sqrt
+    >>> sqrt(4.0)
+    2.0
+
+Teises peatükis tutvustati ``import``-lausest ka teist varianti, kus imporditi *moodul* ise ja soovitud funktsiooni kasutati koos mooduli nimega:
+
+.. sourcecode:: py3
+
+    >>> import math
+    >>> math.sqrt(4.0)
+    2.0
+
+Tuleb välja, et just selle variandi kaudu jõuame natuke lähemale moodulite olemusele!
+
+Hakkame näidet lähemalt uurima. Näite teine rida tundub väga sarnane mingi *meetodi* kasutamisele. Vaatame näiteks sõnemeetodi ``count`` kasutamist:
+
+.. sourcecode:: py3
+
+    >>> lause = "tere vana kere!"
+    >>> lause.count("e")
+    4
+    
+Mõlemal juhul on kõigepealt kirjutatud mingi nimi (vastavalt ``math`` või ``lause``), siis punkt, siis veel mingi nimi (``sqrt`` ja ``count``) ja lõpuks sulgudes mingi argument. Ilmselt juba teate, et ``lause`` on antud näites *muutuja* ning nagu iga muutuja, tähistab ta mingit *väärtust* e. *objekti* (selles peatükis kasutame mõlemaid termineid). Kas antud näidete *süntaktilise* sarnasuse järgi võib järeldada, et ka ``math`` avaldises ``math.sqrt(4.0)`` on muutuja? Kui jah, siis mis on selle muutuja väärtus?
+
+Siiani oleme muutuja väärtust uurinud kas ``print`` käsu abil või siis käsureal. Proovime järgi:
+
+.. sourcecode:: py3
+
+    >>> import math
+    >>> math
+    <module 'math' (built-in)>
+    
+Käsurida andis meile vastuse -- ``math``-il on tõepoolest väärtus!
+
+Moodul kui väärtus/objekt
+~~~~~~~~~~~~~~~~~~~~~~~~~~  
+Tuleb välja, et ``import`` lause tekitab programmi uue muutuja, mille väärtuseks on samanimelises programmifailis sisalduvate funktsioonidefinitsioonide (ja teiste definitsioonide) kogum. Kuna sõna *moodul* kasutatakse ka programmifaili tähistamiseks, siis on tavaks ``import`` lausega tekitatud väärtust nimetada *mooduli objektiks*. 
+
+.. note::
+
+    Erinevalt siiani nähtud väärtustest (nagu näiteks arvud või sõnastikud), paistab mooduli objekt Pythoni käsurealt vaadates väga veider (``<module 'math' (built-in)>``) -- lubatud definitsioonide kogumit pole kusagil näha. Asi on selles, et osade moodulite jaoks ei ole head viisi, kuidas neid ekraanil näida, seetõttu näidatakse vaikimisi moodulite kohta alati vaid lühike kirjeldus. 
+
+Nagu teame, on igal Pythoni väärtusel/objektil mingi tüüp, mis määrab ära, mida sellega teha saab. Uurime järgi, mis on mooduli objekti tüüp:
+
+.. sourcecode:: py3
+
+    >>> import math
+    >>> type(math)
+    <class 'module'>
+    
+Saime teada, et tegemist on tüübiga ``module``. Arve saab liita ja korrutada, sõnesid saab teisendada suurtähtedeks jne. Mida saab teha ``module`` tüüpi objektiga?
+
+Nagu mainitud, on moodul mingite definitsioonide kogum, seega võib arvata, et moodulilt saab küsida mingit definitsiooni. Nii see on -- mingi moodulis sisalduva definitsiooni kasutamiseks tuleb kirjutada moodulit tähistava muutuja nimi, punkt ja definitsiooni nimi. Seega, kui te olete mõnes oma programmis kasutanud avaldist ``math.pi``, siis meie uue terminoloogia järgi võite öelda, et küsisite mooduli objektilt ``math`` defintsiooni ``pi`` väärtust.
+
+Kuidas jääb aga avaldisega ``math.sqrt(4.0)``? See avaldis on veid keerulisem, sest siin on kasutatud funktsiooni definitsiooni, aga ``pi`` oli lihtsalt mingi konstant. Tuleb välja, et me võime selle avaldise veel osadeks võtta:
+
+.. sourcecode:: py3
+
+    >>> import math
+    
+    >>> math.sqrt
+    <built-in function sqrt>
+    
+    >>> type(math.sqrt)
+    <class 'builtin_function_or_method'>
+
+Nagu näha, õnnestus meil küsida definitsiooni ``sqrt`` väärtus ilma argumenti mainimata. Justnagi mooduli objekti puhul, on tegemist väärtusega, mida ei ole lihtne ekraanil näidata, sellepärast näitabki käsurida ainult lühikest kirjeldust. 
+
 
 Suurte programmide probleemid
 ------------------------------
