@@ -235,7 +235,7 @@ Lisage vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_n
 Kasutage seda funktsiooni programmis sobival kohal.
 
 .. _lokaalsed-muutujad:
-
+ 
 Lokaalsed muutujad
 ---------------------
 Funktsiooni kehas võib võtta kasutusele abimuutujaid, justnagu me oleme siiani neid kasutanud funktsioonidest väljaspool. Toome siinkohal uuesti ära 3. peatükist tuttava ruudu joonistamise funktsiooni:
