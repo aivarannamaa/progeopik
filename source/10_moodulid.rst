@@ -15,13 +15,13 @@ Lokaalsed ja globaalsed muutujad
 ----------------------------------
 .. admonition:: NB!
 
-    6. peatükki lisati 4. novembril juurde uus lõik :ref:`lokaalsed-muutujad`. Lugege see enne jätkamist läbi!
+    5. peatükki lisati 4. novembril juurde uus lõik :ref:`lokaalsed-muutujad`. Lugege see enne jätkamist läbi!
 
 .. note::
     
     Siin on esitatud pisut lihtsustatud mudel Pythoni muutujate haldamise süsteemist. Täpsemalt saab lugeda näiteks Pythoni ametlikust dokumentatsioonist: http://docs.python.org/3/reference/executionmodel.html#naming-and-binding
     
-Nagu 6. peatükis (:ref:`lokaalsed-muutujad`) mainitud, on kõik funktsiooni definitsiooni sees kasutusele võetud muutujad **lokaalsed**, st. neid pole võimalik funktsioonist väljaspool kasutada. Taoline korraldus on mugav, kuna nii ei pea programmeerija funktsiooni kirjutamisel muretsema kellegi teise (või tema enda) poolt kusagil mujal kasutatud muutujate kogemata ülekirjutamise pärast. Kui kogu vajaminev info tuleb funktsiooni sisse parameetrite kaudu ja tulemused tagastatakse ``return`` lausega, siis võib funktsiooni kirjutamisel kogu ülejäänud programmi ära unustada ja keskenduda ainult käesolevale alamülesandele.
+Nagu 5. peatükis (:ref:`lokaalsed-muutujad`) mainitud, on kõik funktsiooni definitsiooni sees kasutusele võetud muutujad **lokaalsed**, st. neid pole võimalik funktsioonist väljaspool kasutada. Taoline korraldus on mugav, kuna nii ei pea programmeerija funktsiooni kirjutamisel muretsema kellegi teise (või tema enda) poolt kusagil mujal kasutatud muutujate kogemata ülekirjutamise pärast. Kui kogu vajaminev info tuleb funktsiooni sisse parameetrite kaudu ja tulemused tagastatakse ``return`` lausega, siis võib funktsiooni kirjutamisel kogu ülejäänud programmi ära unustada ja keskenduda ainult käesolevale alamülesandele.
 
 Samas, mõnikord on kasulik, kui me saaksime ka funktsiooni sees otse "välise maailmaga" suhelda, lugedes ja/või kirjutades funktsioonist väljaspool olevaid muutujaid e. **globaalseid muutujaid**.
 

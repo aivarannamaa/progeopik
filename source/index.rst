@@ -9,7 +9,6 @@ Sisukord
    02_lihtlaused
    03_liitlaused
    04_algoritmid
-   kt1
    05_alamprogrammid
    06_tingimuslaused
    07_jarjendid1
