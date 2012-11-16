@@ -15,6 +15,7 @@ Sisukord
    08_jarjendid2
    09_andmestruktuurid
    10_moodulid
+   12_rekursioon
    tkinter
    python2
 

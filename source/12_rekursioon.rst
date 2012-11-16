@@ -43,7 +43,7 @@ Nagu näha, on `5!` arvutus väga sarnane `4!` arvutusele -- selleks, et arvutad
             return fact(n-1) * n
 
 
-Ülesanne 1. Faktoriaali algoritmi analüüs
+Harjutus 1. Faktoriaali algoritmi analüüs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Väärtustage *mõttes* ülaltoodud definitsiooni järgides avaldis ``fact(3)``.
 * Milline osa antud näites on rekursiooni baas? Milline on samm? Kuidas jõutakse alamülesande lahendusest terve ülesande lahenduseni?
@@ -86,7 +86,7 @@ Kui antud funktsiooni definitsiooni rahulikult lugeda, siis peaks selle tähendu
         * ``stardiloendus`` argumendiga `2` lõpetab oma töö
     * ``stardiloendus`` argumendiga `3` lõpetab oma töö
 
-Ülesanne 2. Modifitseeritud stardiloendus
+Harjutus 2. Modifitseeritud stardiloendus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunud sekundeid, st. ``uus_stardiloendus(3)`` peaks andma väljundi:
 
@@ -100,12 +100,12 @@ Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunu
     2
     3
 
-Ülesanne 3. Spiraali joonistamine
+Harjutus 3. Spiraali joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta rekursiivne funktsioon, mis joonistaks kilpkonna abil kandilise spiraali, alustades etteantud küljepikkusest ning vähendades küljepikkust igal ringil mingi väärtuse võrra, kuni see jõuab nulli.  (Analoogse ülesande lahendasime ühes varasemas peatükis tsükliga.)
 
 
-Ülesanne 4. Eukleidese algoritm
+Harjutus 4. Eukleidese algoritm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eukleidese algoritm leiab kahe naturaalarvu suurima ühisteguri.
 
@@ -117,7 +117,23 @@ Algoritm on järgmine:
 
 Realiseerige Eukleidese algoritm rekursiivse funktsioonina.
 
-Ülesanne 5. Fraktal
+Mitmeharuline rekursioon e. *puurekursioon*
+------------------------------------------------
+Rekursiivses funktsioonis võib olla mitu rekursiivset väljakutset. Sellist *rekursiooniskeemi* nimetatakse *puurekursiooniks*, kuna selle graafilises esituses moodustub funktsiooni väljakutseid tähistavatest nooltest puutaoline kujutis. 
+
+Järgnev funktsioon annab Fibonacci arvujada *n*-da liikme. Funktsiooni definitsioon põhineb otseselt Fibonacci jada definitsioonil (http://en.wikipedia.org/wiki/Fibonacci_number).
+
+.. sourcecode:: py3
+
+    def fib(n):
+        if n == 0:
+            return 0
+        elif n == 1:
+            return 1
+        else:
+            return fib(n-1) + fib(n-2)
+
+Harjutus 5. Fraktal
 ~~~~~~~~~~~~~~~~~~~~~~
 Fraktalid on graafilised kujundid, milles kordub sama motiiv üha väiksemal kujul (loodetavasti paistab siit seos rekursiooniga).
 
@@ -132,28 +148,13 @@ Selle fraktali joonistamise mitteformaalne juhis: 0 tasemega fraktali joonistami
     Ülesannet on lihtsam lahendada, kui korraldate nii, et funktsiooni lõpus on kilpkonn samas punktis ja sama suunaga nagu funkstiooni väljakutsel.
 
 
-Ülesanne 6. Kuulujutt
+Harjutus 6. Kuulujutt
 ~~~~~~~~~~~~~~~~~~~~~~
 Keegi laseb lahti kuulujutu, rääkides seda 3 inimesele. Iga tunni jooksul räägivad kõik, kes kuulujuttu juba teavad, selle edasi 3 inimesele, kes seda veel ei teadnud. Mitu inimest teavad kuulujuttu 10 tunni pärast?
 
 Kirjutage rekursiivne funktsioon, mis annab selle ülesande vastuse suvalise tundide arvu korral.
 
-
-Mitmeharuline rekursioon
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Rekursiivses funktsioonis võib olla mitu rekursiivset väljakutset. Järgnev funktsioon annab Fibonacci arvujada *n*-da liikme. Funktsiooni definitsioon põhineb otseselt Fibonacci jada definitsioonil (http://en.wikipedia.org/wiki/Fibonacci_number).
-
-.. sourcecode:: py3
-
-    def fib(n):
-        if n == 0:
-            return 0
-        elif n == 1:
-            return 1
-        else:
-            return fib(n-1) + fib(n-2)
-
-Ülesanne 7. Küülikud
+Harjutus 7. Küülikud
 ~~~~~~~~~~~~~~~~~~~~~~
 Üks XIII sajandi matemaatik tundis huvi küülikute paljunemise vastu. Ta koostas sellise ülesande: 
 
@@ -225,7 +226,7 @@ Kuna me ei teadnud, kas mingil tasemel on meil järjendis veel järjendeid, või
 
     Kas oskaksite kirjutada funktsiooni taoliselt esitatud naturaalarvude liitmiseks?
 
-Ülesanne 8. Kaustade läbimine
+Harjutus 8. Kaustade läbimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kirjutage programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamkaustadest *mp3* faile ja kuvab nende nimed ekraanile.
@@ -271,22 +272,44 @@ siis funktsioon peaks tagastama sellise järjendi:
 
     * ``[['kaelakee_hääl.mp3', 'Bemmi kummid.mp3'], 'miami_vice_theme.mp3']``
 
-2. Cesaro fraktal
-~~~~~~~~~~~~~~~~~~
-Lahendage õpiku pt. 10 lõpust ülesanne nr. 3 (*Cesaro torn square fractal*).
-http://courses.cs.ut.ee/2011/programmeerimine/uploads/Raamat/ch10.html
+2. Arvamismäng
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Realiseerige 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
 
-3. Kuulujutt ver.2
+
+3. Cesaro fraktal
+~~~~~~~~~~~~~~~~~~
+Kirjutage funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri, ning joonistab kilpkonnaga vastava taseme Cesaro fraktali.
+
+Järgneval pildid on Cesaro fraktali tasemed 1, 2, 3 ja 4:
+
+.. image:: images/cesaro.png
+
+.. hint::
+
+    Alustage veidi lihtsamast fraktalist:
+    
+    .. image:: images/cesaro2.png
+    
+    Selleks et joonistada lihtsustatud fraktali tase *n*, tuleb:
+    
+    * joonistada fraktal tasemega *n-1*
+    * pöörata (veidi vähem, kui 90 kraadi)
+    * joonistada fraktal tasemega *n-1*
+    * teha järsk pööre tagasi
+    * joonistada fraktal tasemega *n-1*
+    * pöörata
+    * joonistada fraktal tasemega *n-1*
+    
+    Erijuht (baas) on tase 0, kus tuleb joonistada lihtsalt kriips
+
+4. Kuulujutt ver.2
 ~~~~~~~~~~~~~~~~~~~~~~
 Lahendage ülalpool toodud kuulujutu ülesandest ümberpööratud variant:
 
 Antud on linnakese elanike arv *n*. Leida mitme tunni pärast teavad kuulujuttu kõik selle linnakese elanikud.
 
-Lisaülesanne. Arvamismäng
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Realiseerige 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
-
-Lisaülesanne. Fibonacci arvud
+5. Efektiivsem Fibonacci
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjutage funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
 
@@ -295,7 +318,7 @@ Lisaülesanne. Fibonacci arvud
      Kasutage funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust st. kirjutage hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrrelge antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-da Fibonacci arvu leidmisel.
 
 
-Projecteuler.net
+6. Projecteuler.net
 ~~~~~~~~~~~~~~~~~~~~~~
 http://projecteuler.net/index.php?section=problems&id=15
 
@@ -304,7 +327,7 @@ Lisalugemine
 
 Rekursioon, müstika, huumor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mõned lingid rekursiooniga seotud koomiksitele, piltidele, mõistetele:
+Mõned viited rekursiooniga seotud koomiksitele, piltidele, mõistetele:
 
 * http://en.wikipedia.org/wiki/Ouroboros
 * http://xkcd.com/244/
@@ -312,7 +335,7 @@ Mõned lingid rekursiooniga seotud koomiksitele, piltidele, mõistetele:
 * http://www.peteonsoftware.com/images/201108/InfiniteRecursion.jpg
 * http://en.wikipedia.org/wiki/Drawing_Hands
 * http://en.wikipedia.org/wiki/Recursive_acronym
-* The Hasselhoffian Recursion ;)
+* The Hasselhoffian Recursion 
 
 Mitmetes programmeerimiskeelte õpikutes on terminoloogia osas taoline fragment: 
 
