@@ -1,3 +1,7 @@
+.. admonition:: Muudatused
+
+    19. nov -- lisatud uus jaotus "Rekursioon järjenditel"
+
 12. Rekursioon
 ================
 Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse ülesande lahendamiseks lahendatakse kõigepealt väiksem alamülesanne ja seejärel täiendatakse saadud vastust mingil moel. Sarnast skeemi kasutasime korduvalt tsüklite peatükis.
@@ -104,7 +108,6 @@ Harjutus 3. Spiraali joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta rekursiivne funktsioon, mis joonistaks kilpkonna abil kandilise spiraali, alustades etteantud küljepikkusest ning vähendades küljepikkust igal ringil mingi väärtuse võrra, kuni see jõuab nulli.  (Analoogse ülesande lahendasime ühes varasemas peatükis tsükliga.)
 
-
 Harjutus 4. Eukleidese algoritm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eukleidese algoritm leiab kahe naturaalarvu suurima ühisteguri.
@@ -116,6 +119,48 @@ Algoritm on järgmine:
     * Kui ei, siis korda protsessi, võttes uueks a-ks b ja uueks b-ks endiste a ja b jagamisel saadud jääk.
 
 Realiseerige Eukleidese algoritm rekursiivse funktsioonina.
+
+Rekursioon järjenditel
+------------------------------
+Nagu ülalpool mainitud, on rekursiooni põhimõte teha ülesanne pisut "väiksemaks" alamülesandeks, lahendada see uus ülesanne (sama meetodiga) ning lõpuks jõuda alamülesande lahendusest algse ülesande lahenduseni.
+
+Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- so. kõik elemendid peale esimest elementi). Uurige näiteks järjendi elementide loendamise funktsiooni:
+
+.. sourcecode:: py3
+
+    def loenda(järjend, element):
+    
+        # tühjas järjendis ei saa seda elementi esineda
+        # see on rekursiooni baas
+        if len(järjend) == 0: 
+            return 0
+        else:
+            # rekursiooni samm
+            # järjendi päiseks nimetame tema esimest elementi
+            päis = järjend[0]
+            # sabaks nimetame kõike seda, mis tuleb peale esimest elementi
+            saba = järjend[1:]
+
+            # kasutame sama funktsiooni rekursiivselt järjendi sabal ...
+            elementide_arv_sabas = loenda(saba, element)
+
+            # ... ja kombineerime saadud tulemuse päisest saadud infoga
+            if päis == element:
+                return elementide_arv_sabas + 1
+            else:
+                return elementide_arv_sabas
+
+
+    print(loenda("kukesupp", "u"))
+    print(loenda("kukesupp", "p"))
+    print(loenda("kukesupp", "r"))
+    print(loenda([1,2,3,2,2], 2))
+    print(loenda([1,2,3,2,2], 8))
+
+Harjutus 5
+~~~~~~~~~~~~~~
+Kirjutage rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st. elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
+
 
 Mitmeharuline rekursioon e. *puurekursioon*
 ------------------------------------------------
@@ -133,7 +178,7 @@ Järgnev funktsioon annab Fibonacci arvujada *n*-da liikme. Funktsiooni definits
         else:
             return fib(n-1) + fib(n-2)
 
-Harjutus 5. Fraktal
+Harjutus 6. Fraktal
 ~~~~~~~~~~~~~~~~~~~~~~
 Fraktalid on graafilised kujundid, milles kordub sama motiiv üha väiksemal kujul (loodetavasti paistab siit seos rekursiooniga).
 
@@ -148,13 +193,13 @@ Selle fraktali joonistamise mitteformaalne juhis: 0 tasemega fraktali joonistami
     Ülesannet on lihtsam lahendada, kui korraldate nii, et funktsiooni lõpus on kilpkonn samas punktis ja sama suunaga nagu funkstiooni väljakutsel.
 
 
-Harjutus 6. Kuulujutt
+Harjutus 7. Kuulujutt
 ~~~~~~~~~~~~~~~~~~~~~~
 Keegi laseb lahti kuulujutu, rääkides seda 3 inimesele. Iga tunni jooksul räägivad kõik, kes kuulujuttu juba teavad, selle edasi 3 inimesele, kes seda veel ei teadnud. Mitu inimest teavad kuulujuttu 10 tunni pärast?
 
 Kirjutage rekursiivne funktsioon, mis annab selle ülesande vastuse suvalise tundide arvu korral.
 
-Harjutus 7. Küülikud
+Harjutus 8. Küülikud
 ~~~~~~~~~~~~~~~~~~~~~~
 Üks XIII sajandi matemaatik tundis huvi küülikute paljunemise vastu. Ta koostas sellise ülesande: 
 
@@ -226,7 +271,7 @@ Kuna me ei teadnud, kas mingil tasemel on meil järjendis veel järjendeid, või
 
     Kas oskaksite kirjutada funktsiooni taoliselt esitatud naturaalarvude liitmiseks?
 
-Harjutus 8. Kaustade läbimine
+Harjutus 9. Kaustade läbimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kirjutage programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamkaustadest *mp3* faile ja kuvab nende nimed ekraanile.
@@ -309,7 +354,24 @@ Lahendage ülalpool toodud kuulujutu ülesandest ümberpööratud variant:
 
 Antud on linnakese elanike arv *n*. Leida mitme tunni pärast teavad kuulujuttu kõik selle linnakese elanikud.
 
-5. Efektiivsem Fibonacci
+5. Vokaalide eemaldamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja tagastab sellest sõnest uue variandi, kus kõik vokaalid on eemaldatud, nt. ``konsonandid("kapitalist")`` peaks tagastama sõne ``"kptlst"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata.
+
+.. hint::
+
+    Tuletage meelde ülaltpool esitatud näitefunktsiooni ``loenda``. Seal koguti rekursiivsete väljakutsete tulemused kokku üheks täisarvuks. Siin on vaja korjata tulemused kokku üheks sõneks.
+
+6. Tagurpidi
+~~~~~~~~~~~~~~~~
+Kirjutage rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi ja tagastab selle elemendid uue järjendina vastupidises järjestuses. Nt. ``tagurpidi("stressed")`` peaks tagastama sõne ``"desserts"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata. NB! see funktsioon peaks töötama ka tühja järjendi puhul!
+
+.. hint::
+
+    Tühja järjendi puhul on vastus lihtne. Pikemate järjendite puhul võib küsida ümberpööratud versiooni järjendi sabast (st. esimesele elemendile järgnevad elemendid) ja kombineerida (liita) see järjendi päisega (st. esimese elemendiga).
+
+
+7. Efektiivsem Fibonacci
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjutage funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
 
@@ -318,7 +380,7 @@ Antud on linnakese elanike arv *n*. Leida mitme tunni pärast teavad kuulujuttu 
      Kasutage funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust st. kirjutage hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrrelge antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-da Fibonacci arvu leidmisel.
 
 
-6. Projecteuler.net
+8. Projecteuler.net
 ~~~~~~~~~~~~~~~~~~~~~~
 http://projecteuler.net/index.php?section=problems&id=15
 
@@ -417,7 +479,7 @@ Selle plaani põhjal on kirjutatud järgnev programm, mis toetub rekursiivsetele
         
         # kui enne termi on operaator (+ või -), siis enne operaatorit peab olema avaldis
         if märgid != [] and märgid[-1] in ['+', '-']:
-            operaator = märgid.pop()
+            operaator = märgid.pop() # pop tagastab ja eemaldab listi viimase elemendi
             vasak_argument = loe_avaldis(märgid)
             if operaator == '+':
                 return vasak_argument + parem_argument
