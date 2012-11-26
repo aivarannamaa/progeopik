@@ -1,0 +1,10 @@
+Kalle: Teet, Maris
+Maris: Kontstantin, Mari
+Rita: Teet, Maris
+Siim: Teet, Maris
+Mari: Karl, Leeni
+Teet: Joosep, Adele
+Adele: Johannes, Leida
+Konstantin: Viktor, Jelena
+Joosep: August, Emma
+Viktor: Nikolai, Maria
