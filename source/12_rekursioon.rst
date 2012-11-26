@@ -372,7 +372,12 @@ Kirjutage rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi
 
 
 7. Efektiivsem Fibonacci
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    Kui see ülesanne tundub liiga raske, siis lahendage selle asemel 9. ülesanne
+
 Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjutage funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
 
 .. hint:: 
@@ -383,6 +388,22 @@ Kirjutage rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi
 8. Projecteuler.net
 ~~~~~~~~~~~~~~~~~~~~~~
 http://projecteuler.net/index.php?section=problems&id=15
+
+9. Sugupuu
+~~~~~~~~~~~~~~~~
+.. note::
+
+    Sarnane ülesanne oli antud ka praktikumiks. Nüüd aga tuleks see lahendada rekursiooniga. 
+    
+Antud on fail :download:`sugupuu.txt <downloads/sugupuu.txt>` sugulussidemetega (igal real on inimese nimi, koolon ning tema isa ja ema nimed). 
+
+Lugege esmalt andmed Pythoni sõnastikku (võtmeks inimese nimi, väärtuseks kaheelemendiline järjend tema isa ja ema nimedega).
+
+Kirjutage rekursiivne funktsioon ``on_eellane``, mis võtab argumentideks kahe inimese nimed ja sugupuu sõnastiku ning tagastab ``True``, kui esimene inimene on teise eellane (st. isa või vanaema või vanaisa ema jne), vastasel juhul ``False``.
+
+.. hint::
+
+    A on B eellane, kui ta on B ema/isa või kui ta on B ema/isa eellane.
 
 Lisalugemine
 ------------
