@@ -1,4 +1,4 @@
-8. Järjendite muteerimine
+9. Järjendite muteerimine
 =======================================
 
 Selle peatüki põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.

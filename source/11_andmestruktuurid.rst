@@ -1,4 +1,4 @@
-9. Andmestruktuurid
+11. Andmestruktuurid
 =============================================
 Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni olete tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi, ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
 

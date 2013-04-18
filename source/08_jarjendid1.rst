@@ -1,4 +1,4 @@
-7. Järjendid ja ``for``-tsükkel
+8. Järjendid ja ``for``-tsükkel
 =================================
 
 Meie senistes programmides on iga andmejupp kuskil eraldi ära mainitud (nt. muutujana). Kui mõelda reaalsete programmide peale (nt. firma raamatupidamissüsteem), siis üldjuhul ei ole võimalik kõiki asjassepuutuvaid objekte (nt. töötajad või arved) programmis üksikult ära mainida, kuna selliste objektide hulk pole piiratud.

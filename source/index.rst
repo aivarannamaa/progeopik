@@ -11,11 +11,11 @@ Sisukord
    04_definitsioonid
    05_pythoni_pohimotted
    06_algoritmid
-   06_tingimuslaused
-   07_jarjendid1
-   08_jarjendid2
-   09_andmestruktuurid
-   10_moodulid
+   07_tingimuslaused
+   08_jarjendid1
+   09_jarjendid2
+   10_mustrid
+   11_andmestruktuurid
    12_rekursioon
    tkinter
    python2

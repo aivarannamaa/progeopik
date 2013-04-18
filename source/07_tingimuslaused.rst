@@ -1,4 +1,4 @@
-7. ``bool`` ja tingimuslaused
+7. Hargnemine
 =======================================
 
 
