@@ -8,3 +8,19 @@ Võibolla on teil hoopis ambitsioonikamad ideed: näiteks luua videomontaaži pr
 
 Selle õpiku abil on teil võimalus õppida algtasemel programmeerima. Ärge alahinnake sõna `algtase` -- see käib ennekõike raamatu läbitöötamisel saadava kogemustepagasi kohta. Kuna kasutatav programmeerimiskeel Python on oma põhiolemuselt lihtne, aga võimas, on pakutavad teemad täesti piisavad kõikide teie programmiideede realiseerimiseks. 
 
+Mis Sind ees ootab?
+----------------------
+* algul keele õppimine
+* siis keele kasutamine mõtlemise arendamiseks
+* siis varia
+
+Mida Sult oodatakse?
+-------------------------
+* aktiivsust, initsiatiivi
+* järelemõtlemist, 
+* püsivust?
+* work smarter, not harder (küsi abi, jne)
+    * eriti kui sul on aega vähe (nt. töötad)
+* julgust -- ka siis kui ülesanne tundub raske, haara ikkagi härjal sarvist
+* kogukonda panustamist?
+* (NB! mõni tahab käsku täita)

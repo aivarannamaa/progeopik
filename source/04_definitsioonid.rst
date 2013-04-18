@@ -3,7 +3,7 @@
     * 1. okt - lisatud projektiplokk; plokkskeemi teemad viidud kokku ühe jaotuse alla.
     * 3. nov - lisatud lokaalsete muutujate osa.
 
-5. Alamprogrammid e. funktsioonid
+4. Alamprogrammid e. funktsioonid
 ====================================
 
 Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli teil tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks teilt praegu, millise eesmärgiga on teie programmis mingi konkreetne rida või plokk, siis ilmselt peaksite enne vastamist omajagu süvenema.
@@ -21,7 +21,7 @@ Programmeerimises nimetatakse alamülesande lahendust **alamprogrammiks** (see o
 
     Erinevalt teistest siiani tutvustatud Pythoni põhikonstruktsioonidest (hargnemine ja tsükkel), ei ole alamprogrammid tehniliselt võttes programmeerimisel hädavajalikud -- kõik programmid on teoreetiliselt võimalik kirjutada kasutades vaid väikest hulka sisseehitatud käske. Taoliselt kirjutatud praktilised programmid aga läheksid peagi nii suureks ja keeruliseks, et ka parimad programmeerijad ei suudaks neid enam hallata.
 
-Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui teil on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). Me käsitleme seda ülesannet praegu Pythoni süntaksi abil, aga samad põhimõtted kehtivad ka plokkskeemi puhul.
+Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui teil on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). 
 
 Toome siinkohal ära ühe võimaliku lahenduse, kus pole alamprogramme kasutatud:
 

@@ -1,4 +1,4 @@
-4. Algoritm ja plokkskeem
+5. Algoritm ja plokkskeem
 ==========================
 
 Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame juba läbitud teemasid veidi teise nurga alt.
@@ -348,6 +348,104 @@ Antud näiteprogramm vastab umbkaudselt eespool toodud harjutusele "2. Kui võim
 Harjutus 6. Plokkskeemi kohandamine Pythoni programmiks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage nüüd eespool antud robotiülesanded ümber Pythoni programmideks, kasutades moodulit ``pykkar``.
+
+Alaprogrammid plokkskeemis
+----------------------------------
+Alamprogramme saab defineerida ka plokkskeemides. Selleks eraldatakse lihtsalt skeemil üks eraldiolev ala alamprogrammi jaoks (näiteks ümbritsetakse kastiga) ning kirjutatakse selle juurde alamprogrammi nimi.
+
+Proovime nüüd koostada mõned alamprogrammide skeemid põranda värvimise plokkskeemi jaoks. NB! siin jaotame ülesande osadeks veidi teistest kohtadest, kui Pythoni näites, sellega demonstreerime, et alamülesannete väljaeraldamise viis on alati programmeerija valiku küsimus.
+
+Loome kõigepealt alamprogrammid järgmistele tegevustele: 
+
+* Ühe triibu värvimine robotkilpkonna liikumisel kuni seinani.
+* Robotkilpkonna tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
+
+Meeldetultuseks käsud, mida kasutasime roboti juhtimiseks plokkskeemis:
+
+    * ``edasi()`` - kilpkonn liigub ühe sammu edasi;
+    * ``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
+    * ``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
+    * ``kasSein()``, kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
+
+Alamprotseduur ``triip()``
+
+Tegevus: Robotkilpkonn värvib triibu kuni seinani.
+
+.. image:: images/l05_fig13.png
+
+
+Alamprotseduur ``tagasi()``
+
+Tegevus: Robotkilpkonn pöörab ümber, liigub seinani ja lõpuks pöörab paremale.
+
+.. image:: images/l05_fig14.png
+
+Koostame nüüd plokkskeemi kogu mänguväljaku värvimiseks triibuliseks, kasutades juba koostatud protseduure:
+
+.. image:: images/l05_fig15.png
+
+Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus kilpkonn ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame veel ühe protseduuri, mille abil kilpkonn pöörab vasakule:
+
+Alamprotseduur ``vasakule()``
+
+Tegevus: Robotkilpkonn pöörab vasakule.
+
+.. image:: images/l05_fig17.png
+
+Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
+
+
+.. image:: images/l05_fig18.png
+
+Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
+
+
+Parameetrid plokkskeemis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+.. note:: 
+
+    Järgnevates plokkskeemides on parameetritega koos antud ka parameetri tüüp. Sellist lähenemist kasutatakse mitmetes programmeerimiskeeltes (nt. Java), aga mitte Pythonis.
+
+Tuleme tagasi eelmises peatükis alustatud kartulisalati teema juurde.
+
+Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
+Kartulite lisamine: 
+
+.. image:: images/l05_fig7.png
+
+Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
+Järgmiseks protseduuriks on hapukurkide lisamine:
+
+.. image:: images/l05_fig8.png
+
+Hapukoore lisamine:
+
+.. image:: images/l05_fig9.png
+
+Soola lisamine:
+
+.. image:: images/l05_fig10.png
+
+Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
+
+.. image:: images/l05_fig11.png
+
+Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
+
+.. image:: images/l05_fig12.png
+
+
+Väärtusega alamprogrammid plokkskeemis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
+
+
+.. image:: images/l05_fig23.png
+ 
+Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
+
+
+
 
 
 Lisalugemist

@@ -1,4 +1,4 @@
-3. Liitlaused
+3. Tingimus- ja korduslaused
 ============================================
 
 .. admonition:: Muudatused

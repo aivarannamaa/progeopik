@@ -8,8 +8,9 @@ Sisukord
    01_sissejuhatus
    02_lihtlaused
    03_liitlaused
-   04_algoritmid
-   05_alamprogrammid
+   04_definitsioonid
+   05_pythoni_pohimotted
+   06_algoritmid
    06_tingimuslaused
    07_jarjendid1
    08_jarjendid2
