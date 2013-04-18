@@ -1,4 +1,4 @@
-5. Algoritm ja plokkskeem
+6. Algoritm ja plokkskeem
 ==========================
 
 Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame juba läbitud teemasid veidi teise nurga alt.

@@ -442,121 +442,128 @@ Kirjutage programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja v
 
     Ärge unustage, et ``readline`` tagastab sõne. Arvutamiseks on vaja see teisendada arvuks.
 
+Tõeväärtustüüp ``bool``
+-----------------------
+.. note:
+    Meeldetuletus 3. peatükist -- Pythoni programmi kood koosneb lausetest ja lause komponentideks on avaldised. Tuleb välja, et ka ``if`` või ``while`` lause päises olev tingimus on tegelikult avaldis. Kuna igal avaldisel on väärtus ja igal väärtusel on tüüp, siis mis on tingimuse tüüp?
 
-Funktsioonid e. uute käskude loomine
------------------------------------------
-.. note::
 
-    Siin on tegemist väga põgusa sissejuhatusega funktsioonide defineerimisest. Sellel teemal tuleb edaspidi palju rohkem juttu.
-    
-Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas üleval-vasakul ja teisest natuke allpool. Mitu rida läheks sellise programmi kirjutamiseks vaja? Kas programmi lühendamiseks oleks abi tsüklist, mis teeb 3 kordust ja joonistab igal kordusel ühe ruudu?
 
-Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu joonistamise kood kolmes kohas:
+
+Lisaks sõnedele ja arvudele on Pythonis üks oluline andmetüüp nimega ``bool`` (lühend sõnast ``boolean``), milles on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks**.
+
+Tõeväärtustüübiga olete tegelikult juba kokku puutunud -- ``if``-lause tingimuseks olev avaldis on justnimelt tõeväärtustüüpi. Samas, tõeväärtustüübi kasutusvõimalused pole piiratud vaid ``if``-lausega -- nagu kõiki väärtusi, saab ka tõeväärtusi muutujasse salvestada või funktsiooni argumendina kasutada. Selles veendumiseks mängime läbi järgneva lihtsa näite:
 
 .. sourcecode:: py3
 
-    from turtle import *
+    vastus = 3 > 2
+    print(vastus)
 
-    küljepikkus = 30
+* kõigepealt väärtustakse avaldis ``3 > 2``
+* tulemuseks saadud väärtus ``True`` salvestatakse muutujasse ``vastus``
+* muutuja ``vastus`` väärtus kuvatakse ekraanile
 
-    i = 0
-    while i < 4:
-        forward(küljepikkus)
-        left(90)
-        i += 1 
+Kuna ``if``-lause tingimuses võib tõeväärtus olla antud mistahes kujul, siis võiksime kontrolli tulemuse salvestada eelnevalt muutujasse ning hiljem kasutada seda muutujat tingimusena:
 
-    up()
-    forward(100)
-    left(90)
-    forward(100)
-    down()
+.. sourcecode:: py3
 
-    i = 0
-    while i < 4:
-        forward(küljepikkus)
-        left(90)
-        i += 1 
-
-    up()
-    left(90)
-    forward(200)
-    down()
-
-    i = 0
-    while i < 4:
-        forward(küljepikkus)
-        left(90)
-        i += 1 
-
-    exitonclick()    
-
-Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi käsk. ``turtle`` moodulis sellist käsku küll pole, aga õnneks võimaldab Python programmeerijal uusi käske e. *funktsioone* ise *defineerida*.
-
-Funktsiooni defineerimine ja kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Jätame hetkeks kilpkonna kõrvale ja vaatleme ühte väga lihtsat näidet funktsioonide defineerimisest. Järgnevas näiteprogrammis defineeritakse funktsioon nimega ``tere``:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-
-Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
-
-Proovige seda kolmerealist programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
-
-Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
-
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega e. programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
+    arv = int(input("Sisesta arv: "))
+    jagub_kahega = arv % 2 == 0 # salvestame tõeväärtuse abimuutujasse
     
-    # funktsiooni defineerimise ja väljakutse vahel võib olla
-    # ükskõik kui palju muid lauseid
-    print("blaa, blaa, blaa")
-    # ...
+    if jagub_kahega:
+        print("Sisestati paarisarv")
+    else:
+        print("Sisestati paaritu arv")
+
+Enamasti pole siiski taolist abimuutujat tarvis ja me võime kirjutada lihtsalt:
+
+.. sourcecode:: py3
+
+    arv = int(input("Sisesta arv: "))
     
-    tere() # funktsiooni väljakutse e. rakendamine
+    if arv % 2 == 0:
+        print("Sisestati paarisarv")
+    else:
+        print("Sisestati paaritu arv")
 
-.. note::
 
-    Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud *tühjad* sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
+Tõeväärtusega avaldised
+~~~~~~~~~~~~~~~~~~~~~~~
+Pythonis on olemas hulk operaatoreid ning funktsioone, mis tagastavad tõeväärtuse ja mida saab seetõttu kasutada ``if``-lause tingimuses. Proovige käsureal järgmisi avaldisi:
 
+    * ``4 < 3``
+    * ``4 >= 4``
+    * ``4 == 3``
+    * ``4 != 3``
+    * ``4 != 4``
+    * ``'r' in 'tore'``
+    * ``'r' in 'tobe'``
+    * ``'Tallinn'.endswith('linn')``
+    * ``'Tartu'.startswith('reha')``
+    * ``'10203'.isnumeric()`` (sobib märgita täisarvude tuvastamiseks)
+    * ``'suramura'.isnumeric()``
+
+Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
+
+.. topic:: Terminoloogia
+
+    Avaldisi, mis tagastavad tõeväärtuse, nimetatakse *loogilisteks avaldisteks*.
+
+
+Harjutus 1. Arvu ruut koos kontrolliga
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis küsib kasutajalt positiivse täisarvu ning kontrollib, kas sisestatud tekst on numbriline. Kui jah, siis kuvatakse antud arvu ruut, vastasel juhul kuvatakse veateade. 
+
+.. index::
+    single: loogilised avaldised
+
+Tõeväärtuste kombineerimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kuna tõeväärtustüübis on vaid kaks väärtust, ei ole nende väärtuste kombineerimiseks nii palju võimalusi, kui näiteks sõnede või arvude puhul. Kõige tähtsamad operaatorid, mis võtavad argumendiks tõeväärtused (e. *loogilised tehted*), on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järgi proovida:
+
+    * ``True and False``
+    * ``True and True``
+    * ...
+    * ``True or False``
+    * ``True or True``
+    * ...
+    * ``not True``
+    * ``not False``
+
+Tehete järjekord
+~~~~~~~~~~~~~~~~
+Keerulisemate avaldiste puhul tuleb arvestada, et ``not`` on kõrgema prioriteediga kui ``and`` ning ``and`` on kõrgema prioriteediga kui ``or``, seega ``not x or not y and z`` tähendab ``(not x) or ((not y) and z)``.
+
+Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõige kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on kõige madalama prioriteediga (tehakse viimasena).
+
+Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema prioriteediga tehted on ülalpool, samal real olevad operaatorid on sama prioriteediga):
+
+    * ``**``
+    * ``-x`` (*unaarne* miinus)
+    * ``*``, ``/``, ``//``, ``%``
+    * ``+``, ``-``
+    * ``==``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``in``
+    * ``not``
+    * ``and``
+    * ``or``
+
+Kahtluse korral kasutage soovitud tehete järjekorra määramiseks sulge.
+
+Harjutus 2. Vastandid
+~~~~~~~~~~~~~~~~~~~~~~
+Pange kirja järgnevate avaldiste loogilised *vastandid*:
+
+.. sourcecode:: none
+
+    a > b
+    a >= b
+    a >= 18  and  b == 3
+    a >= 18  and  b != 3
     
-Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
 
-.. note:: 
-
-    Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
-
-Harjutus 11. Ruudu joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde.
-Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
-
-.. note::
-
-    Justnagu tsükli või tingimuslause kehas, saab ka funktsiooni kehas kasutada ükskõik kui keerulisi ``if``- või ``while`` lauseid (ja nende kombinatsioone):
-    
-    .. sourcecode:: py3
-    
-        def mitu_teret():
-            n = 0
-            
-            while n < 10:
-                print("Tere!")
-                n += 1
-        
-        mitu_teret()
-
-.. note::
-
-    Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
+Erijuhtude käsitlemine
+----------------------------
+TODO
 
 
 Kokkuvõte

@@ -6,6 +6,124 @@
 4. Alamprogrammid e. funktsioonid
 ====================================
 
+
+Funktsioonid e. uute käskude loomine
+-----------------------------------------
+.. note::
+
+    Siin on tegemist väga põgusa sissejuhatusega funktsioonide defineerimisest. Sellel teemal tuleb edaspidi palju rohkem juttu.
+    
+Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas üleval-vasakul ja teisest natuke allpool. Mitu rida läheks sellise programmi kirjutamiseks vaja? Kas programmi lühendamiseks oleks abi tsüklist, mis teeb 3 kordust ja joonistab igal kordusel ühe ruudu?
+
+Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu joonistamise kood kolmes kohas:
+
+.. sourcecode:: py3
+
+    from turtle import *
+
+    küljepikkus = 30
+
+    i = 0
+    while i < 4:
+        forward(küljepikkus)
+        left(90)
+        i += 1 
+
+    up()
+    forward(100)
+    left(90)
+    forward(100)
+    down()
+
+    i = 0
+    while i < 4:
+        forward(küljepikkus)
+        left(90)
+        i += 1 
+
+    up()
+    left(90)
+    forward(200)
+    down()
+
+    i = 0
+    while i < 4:
+        forward(küljepikkus)
+        left(90)
+        i += 1 
+
+    exitonclick()    
+
+Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi käsk. ``turtle`` moodulis sellist käsku küll pole, aga õnneks võimaldab Python programmeerijal uusi käske e. *funktsioone* ise *defineerida*.
+
+Funktsiooni defineerimine ja kasutamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jätame hetkeks kilpkonna kõrvale ja vaatleme ühte väga lihtsat näidet funktsioonide defineerimisest. Järgnevas näiteprogrammis defineeritakse funktsioon nimega ``tere``:
+
+.. sourcecode:: python
+
+    def tere():
+        print("Tere")
+        print("Kuidas läheb?")
+
+Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
+
+Proovige seda kolmerealist programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
+
+Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
+
+Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega e. programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
+
+.. sourcecode:: python
+
+    def tere():
+        print("Tere")
+        print("Kuidas läheb?")
+    
+    # funktsiooni defineerimise ja väljakutse vahel võib olla
+    # ükskõik kui palju muid lauseid
+    print("blaa, blaa, blaa")
+    # ...
+    
+    tere() # funktsiooni väljakutse e. rakendamine
+
+.. note::
+
+    Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud *tühjad* sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
+
+    
+Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
+
+.. note:: 
+
+    Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
+
+Harjutus 11. Ruudu joonistamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde.
+Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
+
+.. note::
+
+    Justnagu tsükli või tingimuslause kehas, saab ka funktsiooni kehas kasutada ükskõik kui keerulisi ``if``- või ``while`` lauseid (ja nende kombinatsioone):
+    
+    .. sourcecode:: py3
+    
+        def mitu_teret():
+            n = 0
+            
+            while n < 10:
+                print("Tere!")
+                n += 1
+        
+        mitu_teret()
+
+.. note::
+
+    Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
+
+
+
 Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli teil tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks teilt praegu, millise eesmärgiga on teie programmis mingi konkreetne rida või plokk, siis ilmselt peaksite enne vastamist omajagu süvenema.
 
 Kuna enamus praktikas kasutatavaid programme on palju keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
@@ -733,103 +851,6 @@ Kui sisestate nõutud palganumbri, siis saate umbes taolise veateate:
     TypeError: unsupported operand type(s) for /: 'str' and 'int'
 
 Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr. 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas kutsuti mida välja.
-
-
-Alaprogrammid plokkskeemis
-----------------------------------
-Alamprogramme saab defineerida ka plokkskeemides. Selleks eraldatakse lihtsalt skeemil üks eraldiolev ala alamprogrammi jaoks (näiteks ümbritsetakse kastiga) ning kirjutatakse selle juurde alamprogrammi nimi.
-
-Proovime nüüd koostada mõned alamprogrammide skeemid põranda värvimise plokkskeemi jaoks. NB! siin jaotame ülesande osadeks veidi teistest kohtadest, kui Pythoni näites, sellega demonstreerime, et alamülesannete väljaeraldamise viis on alati programmeerija valiku küsimus.
-
-Loome kõigepealt alamprogrammid järgmistele tegevustele: 
-
-* Ühe triibu värvimine robotkilpkonna liikumisel kuni seinani.
-* Robotkilpkonna tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
-
-Meeldetultuseks käsud, mida kasutasime roboti juhtimiseks plokkskeemis:
-
-    * ``edasi()`` - kilpkonn liigub ühe sammu edasi;
-    * ``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
-    * ``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
-    * ``kasSein()``, kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
-
-Alamprotseduur ``triip()``
-
-Tegevus: Robotkilpkonn värvib triibu kuni seinani.
-
-.. image:: images/l05_fig13.png
-
-
-Alamprotseduur ``tagasi()``
-
-Tegevus: Robotkilpkonn pöörab ümber, liigub seinani ja lõpuks pöörab paremale.
-
-.. image:: images/l05_fig14.png
-
-Koostame nüüd plokkskeemi kogu mänguväljaku värvimiseks triibuliseks, kasutades juba koostatud protseduure:
-
-.. image:: images/l05_fig15.png
-
-Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus kilpkonn ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame veel ühe protseduuri, mille abil kilpkonn pöörab vasakule:
-
-Alamprotseduur ``vasakule()``
-
-Tegevus: Robotkilpkonn pöörab vasakule.
-
-.. image:: images/l05_fig17.png
-
-Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
-
-
-.. image:: images/l05_fig18.png
-
-Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
-
-
-Parameetrid plokkskeemis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-.. note:: 
-
-    Järgnevates plokkskeemides on parameetritega koos antud ka parameetri tüüp. Sellist lähenemist kasutatakse mitmetes programmeerimiskeeltes (nt. Java), aga mitte Pythonis.
-
-Tuleme tagasi eelmises peatükis alustatud kartulisalati teema juurde.
-
-Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
-Kartulite lisamine: 
-
-.. image:: images/l05_fig7.png
-
-Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
-Järgmiseks protseduuriks on hapukurkide lisamine:
-
-.. image:: images/l05_fig8.png
-
-Hapukoore lisamine:
-
-.. image:: images/l05_fig9.png
-
-Soola lisamine:
-
-.. image:: images/l05_fig10.png
-
-Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
-
-.. image:: images/l05_fig11.png
-
-Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
-
-.. image:: images/l05_fig12.png
-
-
-Väärtusega alamprogrammid plokkskeemis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
-
-
-.. image:: images/l05_fig23.png
- 
-Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
-
 
 
 

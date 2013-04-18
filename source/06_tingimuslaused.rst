@@ -1,8 +1,6 @@
-6. ``bool`` ja tingimuslaused
+7. ``bool`` ja tingimuslaused
 =======================================
 
-
-Meeldetuletus 3. peatükist -- Pythoni programmi kood koosneb lausetest ja lause komponentideks on avaldised. Tuleb välja, et ka ``if`` või ``while`` lause päises olev tingimus on tegelikult avaldis. Kuna igal avaldisel on väärtus ja igal väärtusel on tüüp, siis mis on tingimuse tüüp?
 
 Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi, aga kõigepealt tutvume ühe uue andmetüübiga, mida olete tegelikult juba korduvalt kasutanud.
 
@@ -11,118 +9,6 @@ Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid
     single: bool; tõeväärtustüüp
     single: boolean; tõeväärtustüüp
 
-Tõeväärtustüüp ``bool``
------------------------
-Lisaks sõnedele ja arvudele on Pythonis üks oluline andmetüüp nimega ``bool`` (lühend sõnast ``boolean``), milles on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks**.
-
-Tõeväärtustüübiga olete tegelikult juba kokku puutunud -- ``if``-lause tingimuseks olev avaldis on justnimelt tõeväärtustüüpi. Samas, tõeväärtustüübi kasutusvõimalused pole piiratud vaid ``if``-lausega -- nagu kõiki väärtusi, saab ka tõeväärtusi muutujasse salvestada või funktsiooni argumendina kasutada. Selles veendumiseks mängime läbi järgneva lihtsa näite:
-
-.. sourcecode:: py3
-
-    vastus = 3 > 2
-    print(vastus)
-
-* kõigepealt väärtustakse avaldis ``3 > 2``
-* tulemuseks saadud väärtus ``True`` salvestatakse muutujasse ``vastus``
-* muutuja ``vastus`` väärtus kuvatakse ekraanile
-
-Kuna ``if``-lause tingimuses võib tõeväärtus olla antud mistahes kujul, siis võiksime kontrolli tulemuse salvestada eelnevalt muutujasse ning hiljem kasutada seda muutujat tingimusena:
-
-.. sourcecode:: py3
-
-    arv = int(input("Sisesta arv: "))
-    jagub_kahega = arv % 2 == 0 # salvestame tõeväärtuse abimuutujasse
-    
-    if jagub_kahega:
-        print("Sisestati paarisarv")
-    else:
-        print("Sisestati paaritu arv")
-
-Enamasti pole siiski taolist abimuutujat tarvis ja me võime kirjutada lihtsalt:
-
-.. sourcecode:: py3
-
-    arv = int(input("Sisesta arv: "))
-    
-    if arv % 2 == 0:
-        print("Sisestati paarisarv")
-    else:
-        print("Sisestati paaritu arv")
-
-
-Tõeväärtusega avaldised
-~~~~~~~~~~~~~~~~~~~~~~~
-Pythonis on olemas hulk operaatoreid ning funktsioone, mis tagastavad tõeväärtuse ja mida saab seetõttu kasutada ``if``-lause tingimuses. Proovige käsureal järgmisi avaldisi:
-
-    * ``4 < 3``
-    * ``4 >= 4``
-    * ``4 == 3``
-    * ``4 != 3``
-    * ``4 != 4``
-    * ``'r' in 'tore'``
-    * ``'r' in 'tobe'``
-    * ``'Tallinn'.endswith('linn')``
-    * ``'Tartu'.startswith('reha')``
-    * ``'10203'.isnumeric()`` (sobib märgita täisarvude tuvastamiseks)
-    * ``'suramura'.isnumeric()``
-
-Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
-
-.. topic:: Terminoloogia
-
-    Avaldisi, mis tagastavad tõeväärtuse, nimetatakse *loogilisteks avaldisteks*.
-
-
-Harjutus 1. Arvu ruut koos kontrolliga
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis küsib kasutajalt positiivse täisarvu ning kontrollib, kas sisestatud tekst on numbriline. Kui jah, siis kuvatakse antud arvu ruut, vastasel juhul kuvatakse veateade. 
-
-.. index::
-    single: loogilised avaldised
-
-Tõeväärtuste kombineerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kuna tõeväärtustüübis on vaid kaks väärtust, ei ole nende väärtuste kombineerimiseks nii palju võimalusi, kui näiteks sõnede või arvude puhul. Kõige tähtsamad operaatorid, mis võtavad argumendiks tõeväärtused (e. *loogilised tehted*), on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järgi proovida:
-
-    * ``True and False``
-    * ``True and True``
-    * ...
-    * ``True or False``
-    * ``True or True``
-    * ...
-    * ``not True``
-    * ``not False``
-
-Tehete järjekord
-~~~~~~~~~~~~~~~~
-Keerulisemate avaldiste puhul tuleb arvestada, et ``not`` on kõrgema prioriteediga kui ``and`` ning ``and`` on kõrgema prioriteediga kui ``or``, seega ``not x or not y and z`` tähendab ``(not x) or ((not y) and z)``.
-
-Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõige kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on kõige madalama prioriteediga (tehakse viimasena).
-
-Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema prioriteediga tehted on ülalpool, samal real olevad operaatorid on sama prioriteediga):
-
-    * ``**``
-    * ``-x`` (*unaarne* miinus)
-    * ``*``, ``/``, ``//``, ``%``
-    * ``+``, ``-``
-    * ``==``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``in``
-    * ``not``
-    * ``and``
-    * ``or``
-
-Kahtluse korral kasutage soovitud tehete järjekorra määramiseks sulge.
-
-Harjutus 2. Vastandid
-~~~~~~~~~~~~~~~~~~~~~~
-Pange kirja järgnevate avaldiste loogilised *vastandid*:
-
-.. sourcecode:: none
-
-    a > b
-    a >= b
-    a >= 18  and  b == 3
-    a >= 18  and  b != 3
-    
 Loogiliste avaldiste samaväärsus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tihti on teatud tähendusega tõeväärtusavaldist võimalik kirjutada mitmel erineval kujul, näiteks:
