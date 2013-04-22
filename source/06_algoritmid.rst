@@ -1,6 +1,10 @@
 6. Algoritm ja plokkskeem
 ==========================
 
+.. admonition:: Õpinipp
+
+    Programmeerimise õppimiseks läheb teil vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. On täiesti normaalne, kui kulutate loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.
+
 Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame juba läbitud teemasid veidi teise nurga alt.
 
 Peale antud teema läbimist oskate:
@@ -491,4 +495,77 @@ George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soo
 
 
 
+
+Plokkskeemi ülesanded
+--------------------------
+
+.. note::
+
+    Neid ülesandeid praktikumis ei kontrollita, aga need on soovitav siiski lahendada. Ülesandeid 1,2,3,4,6 saab lahendada ka Pykkariga.
+
+1. Ring ümber mänguväljaku
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  Kasutada eelmise ülesande alamprotseduuri. 
+ 
+2. Seinani ja tagasi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda seinani, pöörata ümber ja liikuda tagasi samasse kohta algasendisse. Koostada plokkskeem.  
+
+
+3. Liigu ettenähtud kohta
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub seinaga ümbritsetud ja ilmakaarte järgi orienteeritud ruudustiku mingil ruudul, ninaga itta. Kirjutada plokkskeemi kujul protseduurid, millega kilpkonn
+a) liigub ruudustiku kirdenurka ja jääb seal pidama;
+b) liigub ruudustiku edelanurka ja jääb seal pidama;
+c) liigub ruudustiku äärele ja hakkab äärt pidi päripäeva ringiratast liikuma.
+
+
+
+4. Loe tumedad laigud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul funktsioon, mis loendab ruudustikul asuvad tumedad laigud. Ruudustiku mõõtmed pole teada. Kilpkonna juhtimiseks on lisaks veel operatsioon
+
+``KasTumeLaik()`` - Kilpkonn kontrollib, kas ruut, millel asub kilpkonn, on tume.
+
+.. image:: images/l05_fig19.png
+
+Koostada abistavaid alamprotseduure.
+
+.. note::
+
+    Pykkari tumeda ruudu kontrollimise funktsioon on ``is_painted()``, tumeda ruudu tekitamiseks maailma kaardil tuleks kasutada sümbolit ``.``.
+
+
+5. Istuta lilli
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis istutab ruudustikule lilli. Ruudustiku mõõtmed pole teada. Lill ei kasva äärel ega kontaktis teise lillega. Kilpkonna juhtimiseks on lisaks lille istutamise operatsioon:
+
+``Istuta()`` - Kilpkonn istutab lille samale ruudule, kus ta parajasti asub, kusjuures kilpkonna orientatsioon pole oluline. 
+
+.. image:: images/l05_fig20.png
+
+Koostada abistavaid alamprotseduure.
+
+6. Malelaud
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
+
+.. image:: images/l05_fig21.png
+
+7. Bankett
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt paigutatud pika banketilaua ääres on iga koha juures tool. Kilpkonn seisab banketilaua põhjapoolses otsas. Laua pikkus on talle teadmata. Toolid peavad olema iga ruudu juures, ka laua põhja ja lõunaotsas. Kilpkonna juhtimiseks on lisaks järgmised operatsioonid: 
+
+``KasLaud()`` - Kilpkonn kontrollib, kas kilpkonna nina ees on laud.
+
+``KasTool()`` - Kilpkonn kontrollib, kas sellel ruudul, kus kilpkonn seisab, on tool.
+
+
+.. image:: images/l05_fig22.png
+
+Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
 

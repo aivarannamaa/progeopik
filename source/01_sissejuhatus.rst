@@ -60,6 +60,12 @@ Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketih
 
 IDLE ja esimene programm
 ----------------------------
+.. admonition:: Õpinipp
+
+    TODO: Soovitav on teha ka väikeseid muudatusi ning ennustada, kuidas need tulemust mõjutavad.
+    TODO: Olge julge. proovige Pythonit "pange" ajada
+
+
 Alustuseks kirjutame ühe väga lihtsa programmi, mis ei tee muud, kui kirjutab ekraanile ``Tere maailm!`` (vt. ka http://en.wikipedia.org/wiki/Hello_world_program). 
 
 Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.

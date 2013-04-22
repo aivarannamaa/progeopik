@@ -1,53 +1,59 @@
 2. Avaldised ja lihtlaused
 ================================
+Esimeses peatükis nägite ja katsetasite mitmeid erinevaid Pythoni programme. Millest need programmid koosnesid? Millest koosnevad mõnes loomulikus keeles (nt. eesti keeles) kirjutatud tekstid? 
 
-Selles peatükis vaatame süstemaatilisemalt üle mõned programmeerimise põhiteemad, millega esimeses peatükis juba põgusalt kokku puutusite: operatsioonid *arvude* ja *tekstiga*, *muutujad* ning *sisendi* ja *väljundi* kasutamine. 
+.. topic:: Õpinipp:
 
-.. topic:: Soovitus:
+    Taolised mõtteharjutused on antud õpiku oluline osa, ärge libisege neist üle!
 
-    Näited lugege kõigepealt hoolikalt läbi, mõeldes, milline võiks olla tulemus ja alles seejärel katsetage. Soovitav on teha ka väikeseid muudatusi ning ennustada, kuidas need tulemust mõjutavad. 
+Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selles peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. Esimese asjana, enne praktilise osa juurde minemist, paneme paika mõned terminid.
+    
 
-Terminoloogia
--------------
+Avaldised ja väärtused
+-------------------------
 .. note::
 
-    NB! Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist küllalt lihtsate mõistetega -- neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada.
+    Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
+    
+Pythoni tutvustuse juures käisid läbi Pythoni laused ``print("Tere maailm!")`` ja ``print(2 + 3)``. Saite teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhitermineid. 
+
+Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas erinevat liiki avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
+
+Nüüd võib tekkida kohe järgmine küsimus: miks ilmus lause ``print(2 + 3)`` käivitamisel ekraanile ``5`` mitte ``2 + 3``? Asi on selles, et arvutustehte kujul avaldiste kasutamisel arvutab Python ilma küsimata tulemuse välja ja kasutab siis seda esialgse avaldise asemel. Arvutuse tulemust nimetatakse **väärtuseks** (ing.k. `value`) ning arvutusprotsessi avaldise **väärtustamiseks** (ing.k. `evaluation`).
 
 .. index::
     single: väärtus
     
-**Väärtused** (ing.k. `values`) on andmed, mida programm kasutab või loob. Mõned näited väärtustest:
-
-* arv *2*
-* arv *2,3*
-* tekst *Tartu*
-
-Keeles Python pannakse need väärtused kirja järgmiselt:
-
-* ``2``
-* ``2.3`` NB! koma asemel kasutatakse punkti
-* ``'Tartu'``
+Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on need reaalsed andmed, mida programm oma töö käigus kasutab, loob, arvutab, teisendab vms. Võib öelda, et avaldised *tähistavad* mingisuguseid asju programmi tekstis, aga väärtused *on* need asjad programmi jooksutamise ajal.
 
 .. index::
     single: andmetüüp; tüüp
     single: tüüp
     
-Kõikidel väärtustel on kindel **andmetüüp**, või lihtsalt **tüüp**. Meie näiteväärtuste tüübid on vastavalt *täisarv*, *ujukomaarv* ja *sõne*. Edaspidi vaatame ka Pythoni keerulisemaid andmetüüpe (*järjend*, *sõnastik* jt.)
-
 .. index::
     single: tehe; operatsioon
     single: operatsioon
-    
-Andmetüübi mõiste on oluline, kuna eri tüüpi väärtustega saab kasutada erinevaid **operatsioone** (e. *tehteid*) -- nt. arve saab omavahel liita, sõnesid (e. teksti) saab teisendada suurtähtedesse jne.
 
-Analüüsime järgmist näidet:
+Andmetüübid, literaalid ja operatsioonid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**. 
+
+Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" väärtusi nimetatakse **literaalideks**.
+
+Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid operatsioone.
+
+Avaldiste kasutamine
+~~~~~~~~~~~~~~~~~~~~~~~
+Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa teksti "koer" pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi *väärtustada* ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate operatsioonide katsetamiseks.
+
+Selle teema kokkuvõtteks analüüsimegi järgmist lihtsat käsurea näidet:
 
 .. sourcecode:: py3
 
     >>> 2 + 3
     5
 
-Antud juhul teostas Python liitmisoperatsiooni väärtustega ``2`` ja ``3``, mille tulemusena konstrueeriti uus väärtus ``5``. Programmeerimise terminoloogiat kasutades saame seda näidet kirjeldada järgnevalt:
+Antud juhul teostas Python liitmisoperatsiooni arvudega *2* ja *3* (mis olid esitatud *literaalidena*, st. konkreetselt). Selle tulemusena konstrueeriti uus väärtus *5*, mis kuvati käsureale (meeldetuletuseks: käsureal ei ole tarvis tulemuste kuvamiseks ``print`` käsku kasutada). Programmeerimise terminoloogiat kasutades saame seda näidet kirjeldada järgnevalt:
 
 .. index::
     single: operaator
@@ -58,12 +64,11 @@ Antud juhul teostas Python liitmisoperatsiooni väärtustega ``2`` ja ``3``, mil
     single: literaalid
     
     
+* ``2 + 3`` on **avaldis**
 *  ``+`` on **operaator**
-* ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`)
-* ``2 + 3`` on **avaldis** (ing.k. `expression`)
+* ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`). Antud juhul on mõlemad argumendid **literaalid** (st. konkreetsed väärtused).
 * `5` on antud **avaldise väärtus**
 * toiming, mille käigus ``2 + 3``-st saadakse `5`, on **avaldise väärtustamine** (ing.k. *evaluation*)
-* väärtuseid, mis on programmi "sisse kirjutatud" (antud näite puhul ``2`` ja ``3``), nimetatakse **literaalideks**
 
 Järgnevalt uurime lähemalt, milliseid operatsioone saab teha arvude ja sõnedega. 
 
@@ -76,44 +81,23 @@ Pythonis (nagu ka enamikes teistes programmeerimiskeeltes) on eraldi andmetüüb
 
 Täisarvud
 ~~~~~~~~~
-Pythoni **täisarvu** tüübi nimeks on `int` (lühend sõnast *integer*). Erinevalt paljudest teistest keeltest, ei ole Python 3-s piiratud, kui suuri (või väikseid) täisarve saab selle andmetüübiga esitada.
+Pythoni **täisarvu** tüübi nimeks on `int` (lühend ingliskeelsest sõnast *integer*). Erinevalt paljudest teistest keeltest, ei ole Python 3-s piiratud, kui suuri (või väikseid) täisarve saab selle andmetüübiga esitada.
 
 .. index::
     single: ujukomaarvud
     
 Ujukomaarvud
 ~~~~~~~~~~~~
-Reaalarvudele vastavad Pythonis (ja paljudes teistes keeltes) **ujukomaarvud** (ing. k. `floating point number`, lühemalt `float`). 
+Reaalarvudele vastavad Pythonis (ja paljudes teistes keeltes) nn. **ujukomaarvud** (ing. k. `floating point number`, lühemalt `float`). 
 
 .. note::
     Nimetus `ujukomaarvud` tuleb nende esitusviisist arvuti mälus -- lihtsustatult võib öelda, et kõigepealt on toodud välja arvu numbrite jada (ing.k `significant digits`) ning eraldi on öeldud, millisele positsioonile käib koma (seega koma on numbrijadast sõltumatu, "ujuv").
 
 Ujukomaarvude literaalid võivad esineda järgmistel kujudel:
 
-* ``3.0``, ``1.165``, ``-4.25`` tavapärane kirjapilt. NB! koma asemel kasutatakse punkti
-* ``6.1529e+18``, ``1.253e-12`` nn. `teaduslik notatsioon`
-
-.. note::
-
-    Viimast kirjapilti kasutatakse väga suurte või nullilähedaste arvude esitamiseks. Tavapärases matemaatilises notatsioonis võiks viimased näited kirjutada vastavalt 6.1529×10\ :sup:`18` ja 1.253×10\ :sup:`-12`.
+* ``3.0``, ``1.165``, ``-4.25`` on näited tavapärasest kirjapildist. NB! koma asemel kasutatakse punkti!
+* ``6.1529e+18``, ``1.253e-12`` on nn. `teadusliku notatsiooni` näited. Seda kirjapilti kasutatakse väga suurte või nullilähedaste arvude esitamiseks. Traditsioonilises matemaatilises notatsioonis võiks need arvud kirjutada vastavalt 6.1529×10\ :sup:`18` ja 1.253×10\ :sup:`-12`.
     
-.. topic:: Ujukomaarvude ligikaudsus
-
-    Proovige läbi järgnev lihtne näide:
-
-    .. sourcecode:: py3
-        
-        >>> 0.1 * 3.0
-        0.30000000000000004
-
-    Ootuspärane vastus oleks `0.3`, kuid Python tagastas midagi muud.
-
-    Asi on selles, et arvutis esitatakse ujukomaarvud kahendkujul, kasutades piiratud arvu bitte ja seetõttu polegi võimalik teatud kümnendmurde (nende hulgas `0.1`) täpselt esitada (analoogiliselt pole kümnendmurruna võimalik täpselt esitada näiteks `10 / 3`). Taolistel juhtudel ümardatakse sisestatud arv lihtsalt lähima võimaliku kahendmurruni ja see ongi põhjus, miks antud näites oli tulemus ebatäpne. 
-
-    Kui ujukomaarvu on tarvis esitada kümnendmurruna (nt. ekraanile kuvamisel), siis toimub jälle ümardamine -- see on põhjus, miks sisestades käsureale ``0.1`` antakse vastuseks tagasi ``0.1``, kuigi Python sisimas ei suuda seda arvu täpselt esitada. Kui korrutasime ``0.1`` 3-ga, siis muutus viga juba piisavalt suureks, et saadud tulemusele lähim võimalik kümnendmurd oli ``0.30000000000000004``, mitte ``0.3``
-
-    Tegelikult tekitab ujukomaarvude ligikaudsus probleeme vaid siis, kui me eeldame reaalarvude absoluutselt täpset esitamist (nt. kümnendmurruna esitatud rahasummad, kus murdosa tähistatab sente). Ujukomaarve kasutatakse peamiselt kõikvõimalike mõõtmistulemuste esitamiseks ja selle jaoks on Pythoni `float` tüübi ulatus ning täpsus enam kui piisav.
-
     
 Operatsioonid arvudega
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -155,13 +139,9 @@ Operatsioonid arvudega
 .. note::
     
     Siin ja edaspidistes näidetes on parema loetavuse huvides tehtemärkide ümber pandud tühikud, aga need võib ka ära jätta.
-    
 
-
-.. topic:: Operatsioonid negatiivsete arvudega
-
-    Mitmed operaatorid ja funksioonid annavad esmapilgul üllatava tulemuse, kui neid kasutada negatiivsete argumentidega. Proovige järgi, kuidas toimivad sel puhul ``//``, ``%``, ``int`` ja ``round``.
-
+Moodul ``math``
+~~~~~~~~~~~~~~~~~~~~     
 Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, kui need importida moodulist nimega ``math``:
 
 .. sourcecode:: py3
@@ -209,6 +189,26 @@ Väärtustage järgnevad aritmeetilised avaldised Pythoni käsureal:
     Teise ülesande vastus peaks olema ``8.54572989502183``.
 
     Kui viimase avaldisega tekib probleeme, siis mõelge, milliste argumentide korral on arkuskoosinus üldse defineeritud. Veateade ``math domain error`` tähendab, et funktsiooni kasutati ebasobiva argumendiga. Muutke avaldist nii, et ``acos`` saab sobiva argumendi ja proovige uuesti.
+
+Ujukomaarvude ligikaudsus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Proovige läbi järgnev lihtne näide:
+
+.. sourcecode:: py3
+    
+    >>> 0.1 * 3.0
+    0.30000000000000004
+
+Ootuspärane vastus oleks `0.3`, kuid Python tagastas midagi muud.
+
+Asi on selles, et arvutis esitatakse ujukomaarvud kahendkujul, kasutades piiratud arvu bitte ja seetõttu polegi võimalik teatud kümnendmurde (nende hulgas `0.1`) täpselt esitada (analoogiliselt pole kümnendmurruna võimalik täpselt esitada näiteks `10 / 3`). Taolistel juhtudel ümardatakse sisestatud arv lihtsalt lähima võimaliku kahendmurruni ja see ongi põhjus, miks antud näites oli tulemus ebatäpne. 
+
+Kui ujukomaarvu on tarvis esitada kümnendmurruna (nt. ekraanile kuvamisel), siis toimub jälle ümardamine -- see on põhjus, miks sisestades käsureale ``0.1`` antakse vastuseks tagasi ``0.1``, kuigi Python sisimas ei suuda seda arvu täpselt esitada. Kui korrutasime ``0.1`` 3-ga, siis muutus viga juba piisavalt suureks, et saadud tulemusele lähim võimalik kümnendmurd oli ``0.30000000000000004``, mitte ``0.3``
+
+Tegelikult tekitab ujukomaarvude ligikaudsus probleeme vaid siis, kui me eeldame reaalarvude absoluutselt täpset esitamist (nt. kümnendmurruna esitatud rahasummad, kus murdosa tähistatab sente). Ujukomaarve kasutatakse peamiselt kõikvõimalike mõõtmistulemuste esitamiseks ja selle jaoks on Pythoni `float` tüübi ulatus ning täpsus enam kui piisav.
+
+
+
       
 .. index::
     single: sõne
@@ -744,59 +744,6 @@ Kommenteerida tuleks neid kohti programmis, mis võivad jääda lugejale segasek
     Programmi loetavuse seisukohast on tegelikult kõige olulisemad hästi valitud muutuja- ja funktsiooninimed. Kommentaaride põhiprobleem on see, et kuna Python nende vastu huvi ei tunne, siis võivad nad programmi arenedes "vananeda", st. programmeerija muudab programmi sisu aga unustab vastava kommentaari uuendada.
 
 Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu.
-
-
-Kokkuvõte
----------------
-Väärtused ja avaldised
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksematele, aga samas ka kõige tähtsamatele elementidele, millest ei saa üle ega ümber. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib tekitada segadust, seepärast vaatame nende tähendused veelkord üle:
-
-    * **Väärtus** (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi", millega tehakse midagi (nt. kuvatakse ekraanile, kombineeritakse teiste väärtustega, võrreldakse, salvestatakse mällu vms). Väärtusi nimetatakse ka *andmeteks*.
-    * Igal väärtusel on mingi **tüüp** (nt. ``int`` või ``str``), see määrab ära, mida selle väärtusega teha saab
-    * **Literaal** (nt. ``"tere"`` või ``3``) on mingi *konkreetse* väärtuse esitusviis programmi tekstis
-    * **Muutuja** (nt. ``laste_arv``) võimaldab esitada programmi tekstis mingit väärtust *kaudselt*, teisisõnu -- muutuja `viitab` mingile väärtusele. Muutuja loomiseks (või olemasoleva muutuja "sisu" uuendamiseks) on mõeldud `omistuslause` (nt. ``vanuse_alampiir = 21``). Muutujate abil saab programmis mainida ka väärtusi, mis selguvad alles programmi jooksutamisel (nt. ``nimi = input("Sisesta oma nimi: ")``).
-    * **Funktsioon** (nt. ``print`` või ``sin``) on miski, mille abil saab midagi teha või arvutada. **Funktsiooni rakendamine e. väljakutse** (nt. ``print(nimi)`` või ``sin(0.5)``) tähistab mingit konkreetset tegevust või arvutust. Kui funktsioon on mõeldud millegi arvutamiseks, siis tema rakendamisel saame vastuseks mingi väärtuse. NB! arvutamise all mõtleme suvaliste väärtustega toimetamist, mitte ainult arvudega.
-    * **Operaator** on olemuselt väga sarnane funktsioonile, aga erinevalt funktsioonist kirjutatakse operaator oma `argumentide` vahele (nt. ``2 + 3``). Ka operaatori rakendamise tulemuseks on mingi väärtus.
-    * **Avaldis**: literaale, muutujaid ja väärtusega funktsioonide ning operaatorite rakendamisi võib omavahel kombineerida ükskõik kui keeruliselt (nt. ``x + 2 * 4`` või ``len("tere") + len(nimi.lower()) - 1``) -- taolist kombinatsiooni nimetatakse *avaldiseks*. Samas, ka üksik literaal või muutuja on avaldis -- *tegemist on üldise mõistega*, mis käib kõigi programmiosade kohta, millel on väärtus.
-    * Avaldisele vastava väärtuse väljaarvutamist nimetatakse **avaldise väärtustamiseks**. Avaldiste väärtustamine on üks Pythoni põhilistest tööülesannetest programmide jooksutamisel.
-
-Arvud ja sõned
-~~~~~~~~~~~~~~
-Konkreetsetest andmetüüpidest vaatlesime *täisarve*, *ujukomaarve* ja *sõnesid*:
-
-    * Täisarvude suurus pole Pythonis piiratud
-    * Ujukomaarvude juures tuleb arvestada, et kõiki kümnendmurde ei suuda Python täpselt esitada
-    * Sõne kirjapanekuks on mitmeid erinevaid viise
-    * Enamik sõneoperatsioone on Pythonis realiseeritud `meetoditena` (nt. ``nimi.lower()``)
-
-Sisend ja väljund
-~~~~~~~~~~~~~~~~~~~
-Et programmi käivitamisel midagi üldse juhtuks, on vaja programmi kirjutada ka mingi *tegevus*, näiteks kasutajaga (või failisüsteemiga) suhtlemine:
-
-    * ``print`` kuvab etteantud väärtuse ekraanile
-    * ``input`` küsib kasutajalt mingi tekstijupi ja *tagastab selle*, seega ``input("Sisesta oma nimi: ")`` on avaldis
-    * faili lugemiseks ja kirjutamiseks tuleb fail kõigepealt *avada* (``f = open("andmed.txt")`` või ``f2 = open("andmed2.txt", mode="w")``). Lugemiseks saab kasutada failimeetodit ``readline`` (nt ``print(f.readline())``), kirjutamiseks meetodit ``write`` (nt ``f2.write(nimi + "\n")``).
-    
-Importimine
-~~~~~~~~~~~~
-Kuna Pythonis standardteegis (ja teiste arendajate teekides) eksisteerib väga palju funktsioone, on nad organiseeritud *moodulitesse*. Moodulis olevatele funktsioonidele ligipääsemiseks on vaja kasutada *import lauset*. Sellel lausel on 3 erinevat varianti:
-
-    * ``from math import sin, cos`` -- üksikute funktsioonide importimine
-    * ``from math import *`` -- kogu mooduli sisu importimine
-    * ``import math`` -- mooduli enda importimine. Sel juhul tuleb funktsiooni nimi kirjutada koos mooduli nimega (``math.sin(0.5)``)
-
-Avaldised vs. laused
-~~~~~~~~~~~~~~~~~~~~~~~~
-Selle peatüki programmide puhul saame programmi iga rida nimetada **lauseks**. Pythoni programm polegi muud, kui lausete jada. Avaldisi kasutatakse vaid lausete koosseisus. Need lauseliigid mida me kohtasime olid:
-
-    * import-lause, nt. ``from math import sin``
-    * omistuslause, nt. ``vanus = input("Sisesta nimi: ")``. Selle lauseliigi *komponentideks* on muutuja nimi, võrdusmärk ja suvaline avaldis.
-    * "käsulause", nt. ``print("Tere!")`` (tehniline termin selle lauseliigi kohta on *avaldislause*, sest formaalselt loetakse Pythonis ka tegevust väljendav funktsiooni väljakutse avaldiseks)
-    
-Kuna nende lauseliikide korral kulub iga lause jaoks täpselt üks rida, nimetatakse neid *lihtlauseteks*. Keerulisematest lausetest tuleb juttu järgmises peatükis. 
-
-
 
 
 

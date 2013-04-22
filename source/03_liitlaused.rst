@@ -1,19 +1,18 @@
 3. Tingimus- ja korduslaused
 ============================================
 
-.. admonition:: Muudatused
-
-    * 13. september -- lisatud mõned uued ülesanded.
-    * 15. september -- lisatud kokkuvõte ja lisalugemine.
-    * 18. september -- lisalugemise juurde lisatud π arvutamise graafiline demoprogramm.
-    * 19. september -- lisatud näide "Summa arvutamine tsüklis". 4. ja 6. ülesandele lisatud kummalegi üks uus vihje.
-    
-
 .. index::
     single: tingimuslaused
     single: tingimuslaused; if-lause
 
 Kui eelmise peatüki teemad liigitasime "lihtlausete" kategooriatesse, siis nüüd vaatame, milliseid on Pythoni olulisimad "liitlaused", mille abil saab teiste lausete toimimist muuta.
+
+
+
+.. admonition:: Õpinipp
+
+    Olge aktiivne! Võimalusel eelistage värsket "mõttetoitu" õpiku "läbimälutud" tarkuseterade asemel, st. proovige olla materjalist sammu võrra ees, märgates seosed ja võimalusi enne, kui õpik neid mainib. Iga näite juures lugege esimese asjana programmi tekst hoolikalt läbi ja ennustage, mida iga rida teeb. 
+
 
 
 Tingimuslause e. ``if``-lause
@@ -382,7 +381,7 @@ Kirjutage algandmete kontrollimise ülesande lahendus ümber nii, et ``input`` k
 
 Summa arvutamine tsüklis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Nagu võib arvata, ei piira Python tegelikult, kuidas me muutuja väärtust suurendame või vähendame:
+Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Tegelikult ei ole Pythonil mingit põhjust piirata, kuidas me muutuja väärtust suurendame (või vähendame). Uurige ja proovige mõista järgmist näidet: 
 
 .. sourcecode:: py3
 
@@ -396,6 +395,8 @@ Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Nagu 
         i += 1
     
     print(n, "esimese naturaalarvu summa on", summa)
+
+Antud juhul suurendasime igal tsükli kordusel ühe muutuja väärtust teise muutuja väärtuse võrra.
 
 
 Harjutus 9. Faktoriaali arvutamine
@@ -441,6 +442,11 @@ Kirjutage programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja v
 .. hint::
 
     Ärge unustage, et ``readline`` tagastab sõne. Arvutamiseks on vaja see teisendada arvuks.
+
+
+.. index::
+    single: bool; tõeväärtustüüp
+    single: boolean; tõeväärtustüüp
 
 Tõeväärtustüüp ``bool``
 -----------------------
@@ -560,10 +566,6 @@ Pange kirja järgnevate avaldiste loogilised *vastandid*:
     a >= 18  and  b == 3
     a >= 18  and  b != 3
     
-
-Erijuhtude käsitlemine
-----------------------------
-TODO
 
 
 Kokkuvõte
