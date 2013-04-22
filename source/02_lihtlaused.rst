@@ -44,7 +44,7 @@ Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jäll
 
 Avaldiste kasutamine
 ~~~~~~~~~~~~~~~~~~~~~~~
-Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa teksti "koer" pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi *väärtustada* ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate operatsioonide katsetamiseks.
+Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi *väärtustada* ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate operatsioonide katsetamiseks.
 
 Selle teema kokkuvõtteks analüüsimegi järgmist lihtsat käsurea näidet:
 
