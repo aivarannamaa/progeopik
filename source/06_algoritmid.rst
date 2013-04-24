@@ -1,6 +1,13 @@
 6. Algoritm ja plokkskeem
 ==========================
 
+Struktuurse progemise skeem
+http://www.freenetpages.co.uk/hp/alan.gauld/tutwhat.htm
+
+TODO The skill of programming is in translating a dynamic algorithm into a static text. (http://www.i-programmer.info/professional-programmer/i-programmer/5180-trouble-at-code-school.html) The first step in programming isn't thinking up complex algorithms, it is in seeing the connection between simple algorithms and the equivalent text.
+
+TODO: Arvude tuvastamise “jaga ja valitse” lahendus peaks olema õpikus, funktsioonide juures. Võibolla mingi pikema arutluse (case-study?) vormis.
+
 .. admonition:: Õpinipp
 
     Programmeerimise õppimiseks läheb teil vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. On täiesti normaalne, kui kulutate loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.
@@ -302,56 +309,6 @@ Olge valmis, et see plokkskeem tuleb eelmistest omajagu suurem.
 
     Ülesande lahendamiseks tuleks valida kõigepealt strateegia, kuidas robotkilpkonn liigub ruudustikul. Üheks võimaluseks on variant, kus kilpkonn värvib ühe triibu ja liigub tuldud teed tagasi. Ta kordab värvimist järgmisel värvitaval veerul (üks veerg tuleb jätta vahele, et tulemus oleks triibuline). 
     
-
-Pykkar
------------------------
-Kui tegite eelnevate harjutuste plokkskeemid paberile, siis saite sedasi esitatud algoritme "käivitada" vaid enda peas. Nagu teada, on inimene aga ekslik ja seetõttu võisid mõned vead algoritmides jääda märkamatuks. 
-
-Nüüd on teil võimalus teisendada oma skeemid Pythoni koodiks ja näha roboti liikumist oma ekraanil. Kõigepealt laadige alla moodul :download:`pykkar.py <downloads/pykkar.py>` ja salvestage see oma töökausta.
-
-Nüüd salvestage samasse kausta järgnev näiteskript ja käivitage see:
-
-.. sourcecode:: py3
-
-    from pykkar import *
-    
-    # create_world võtab argumendiks mitmerealise sõne, mis esitab
-    # roboti "maailma"
-    # Trellid tähistavad seinu, nooleke tähistab robotit
-    # (noole suund tähistab roboti suunda)
-    create_world("""
-    ########
-    #  >   #
-    #      #
-    #      #
-    #      #
-    #      #
-    ########
-    """)
-
-    samme_jäänud = 3
-    while samme_jäänud > 0:
-        if is_wall(): # ei lase robotil vastu seina põrgata
-            break
-        else:
-            step() # robot liigub ühe ruudu võrra edasi
-            samme_jäänud -= 1
-    
-    # pöörame ringi
-    right()
-    right()
-
-Loodetavasti nägite programmi käivitamisel umbes sellist pilti:
-
-.. image:: images/pykkar.png
-
-Justnagu plokkskeemi robot, mõistab ka Pykkar liikuda ühe sammu edasi (``step()``), pöörata 90° paremale (``right()``), värvida enda all olevat ruutu (``paint()``) ning kontrollida, kas ta ees on sein (``is_wall()``). 
-
-Antud näiteprogramm vastab umbkaudselt eespool toodud harjutusele "2. Kui võimalik, kolm sammu  edasi ja ümberpöörd" (lahendus on küll natuke üldisem). Muutke programmis roboti algset asukohta ja katsetage, kas programm toimib õieti ka siis, kui seinani on vähem, kui 3 sammu.
-
-Harjutus 6. Plokkskeemi kohandamine Pythoni programmiks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage nüüd eespool antud robotiülesanded ümber Pythoni programmideks, kasutades moodulit ``pykkar``.
 
 Alaprogrammid plokkskeemis
 ----------------------------------

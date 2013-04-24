@@ -34,26 +34,26 @@ Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on n
     single: tehe; operatsioon
     single: operatsioon
 
-Andmetüübid, literaalid ja operatsioonid
+Andmetüübid, literaalid ja tehted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**. 
+Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**.
 
 Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" väärtusi nimetatakse **literaalideks**.
 
 Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid operatsioone.
 
-Avaldiste kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~
-Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi *väärtustada* ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate operatsioonide katsetamiseks.
+Avaldiste väärtustamine käsureal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi väärtustada ka ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate tehete katsetamiseks. Kuna antud peatüki esimeses pooles keskendumegi just avaldiste ja väärtuste teemale, siis eelistame skripti koostamise asemel kasutada käsurida.
 
-Selle teema kokkuvõtteks analüüsimegi järgmist lihtsat käsurea näidet:
+Selle teema kokkuvõtteks analüüsime järgmist lihtsat käsurea näidet:
 
 .. sourcecode:: py3
 
     >>> 2 + 3
     5
 
-Antud juhul teostas Python liitmisoperatsiooni arvudega *2* ja *3* (mis olid esitatud *literaalidena*, st. konkreetselt). Selle tulemusena konstrueeriti uus väärtus *5*, mis kuvati käsureale (meeldetuletuseks: käsureal ei ole tarvis tulemuste kuvamiseks ``print`` käsku kasutada). Programmeerimise terminoloogiat kasutades saame seda näidet kirjeldada järgnevalt:
+Antud juhul teostas Python liitmisoperatsiooni arvudega *2* ja *3*, mille tulemusena konstrueeriti uus väärtus *5*. Programmeerimise terminitega saame seda näidet kirjeldada järgnevalt:
 
 .. index::
     single: operaator
@@ -68,7 +68,7 @@ Antud juhul teostas Python liitmisoperatsiooni arvudega *2* ja *3* (mis olid esi
 *  ``+`` on **operaator**
 * ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`). Antud juhul on mõlemad argumendid **literaalid** (st. konkreetsed väärtused).
 * `5` on antud **avaldise väärtus**
-* toiming, mille käigus ``2 + 3``-st saadakse `5`, on **avaldise väärtustamine** (ing.k. *evaluation*)
+* toiming, mille käigus ``2 + 3``-st saadakse `5`, on **avaldise väärtustamine**
 
 Järgnevalt uurime lähemalt, milliseid operatsioone saab teha arvude ja sõnedega. 
 
@@ -99,7 +99,7 @@ Ujukomaarvude literaalid võivad esineda järgmistel kujudel:
 * ``6.1529e+18``, ``1.253e-12`` on nn. `teadusliku notatsiooni` näited. Seda kirjapilti kasutatakse väga suurte või nullilähedaste arvude esitamiseks. Traditsioonilises matemaatilises notatsioonis võiks need arvud kirjutada vastavalt 6.1529×10\ :sup:`18` ja 1.253×10\ :sup:`-12`.
     
     
-Operatsioonid arvudega
+Tehted arvudega
 ~~~~~~~~~~~~~~~~~~~~~~
 +--------------------+----------+---------------------------------------------------------+
 | Avaldis            | Väärtus  | Kommentaar                                              |
@@ -216,7 +216,7 @@ Tegelikult tekitab ujukomaarvude ligikaudsus probleeme vaid siis, kui me eeldame
     
 Sõned
 --------
-Programmeerimine pole ainult arvudega manipuleerimine, paljudes programmides on palju tähtsamal kohal töö *tekstiga* (tuletage meelde näiteks esimese peatüki programmi, mis kuvas ekraanile teksti *Tere maailm!*). Selle tarvis on Pythonis olemas eraldi andmetüüp **sõne** (ing.k `string`, lühend `str`), mida kasutatakse justnimelt teksti esitamiseks.
+Programmeerimine pole ainult arvudega manipuleerimine, paljudes programmides on tähtsamal kohal töö *tekstiga* (tuletage meelde näiteks esimese peatüki programmi, mis kuvas ekraanile teksti *Tere maailm!*). Selle tarvis on Pythonis olemas eraldi andmetüüp **sõne** (ing.k `string`, lühend `str`), mida kasutatakse justnimelt teksti esitamiseks.
 
 Konkreetsed tekstijupid pannakse programmi tekstis kirja *sõneliteraalidena*. Enamasti piisab sõneliteraali kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``.
 
@@ -230,21 +230,8 @@ Pange tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kaun
 
 .. admonition:: NB!
 
-    Kui unustate sõneliteraali kirjutades piiritlejaid kasutada, siis peab Python vastavat tekstijuppi muutuja nimeks (või kui tekstis oli tühik, siis ei oska ta sellest midagi arvata). Proovige järgi, millised veateated neil juhtudel antakse -- siis on edaspidi taolisi näpuvigu kergem tuvastada.
-
-
-Loomulikult saab sõneliteraali (nagu iga teise literaaliliigi) väärtuse salvestada muutujasse, et seda hiljem kasutada. Igal pool, kus võib kasutada sõneliteraali, võib kasutada ka sõnemuutujat (ja vastupidi):
-
-.. sourcecode:: py3
-
-    >>> nimi = "Peeter"
-    >>> print(nimi)
-    Peeter
-    >>> print("Peeter")
-    Peeter
-
-
-
+    Kui unustate sõneliteraali kirjutades piiritlejaid kasutada, siis peab Python vastavat tekstijuppi muutuja nimeks (või kui tekstis oli tühik, siis ei oska ta sellest midagi arvata). Proovige käivitada laused ``print(Tere)`` ja ``print(Tere maailm)`` ning uurige, millised veateated neil juhtudel antakse -- siis on edaspidi taolisi näpuvigu kergem tuvastada.
+    
 
 .. topic:: "Aga kui mu tekst sisaldab jutumärke või ülakomasid?"
 
@@ -327,11 +314,12 @@ Loomulikult saab sõneliteraali (nagu iga teise literaaliliigi) väärtuse salve
         * Neid sõneliteraale Pythoni käsureale sisestades (ilma ``print``-i kasutamata) saate piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt. Kui soovite näha sõne tegelikku väärtust, siis kuvage see ``print`` käsuga ekraanile.
 
 
-Operatsioonid sõnedega
+Tehted sõnedega
 ~~~~~~~~~~~~~~~~~~~~~~
+
+
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | Avaldis                             | Väärtus            | Kommentaar                                                          |
-|                                     | (literaalina)      |                                                                     |
 +=====================================+====================+=====================================================================+
 | ``'Tere' + 'Madis!'``               |``'TereMadis!'``    | ``+`` loob kahe sõne põhjal uue sõne                                |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
@@ -355,9 +343,23 @@ Operatsioonid sõnedega
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'tere'.upper()``                  | ``'TERE'``         | Mõnede käskude korral kirjutatakse sõne käsu ette.                  |
 +-------------------------------------+--------------------+ Taolisi käske nimetatakse *meetoditeks*                             |
+| ``'TeRe'.lower()``                  | ``'tere'``         |                                                                     |
++-------------------------------------+--------------------+                                                                     |
 | ``'jäääär'.count('ä')``             | ``4``              |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``' tere '.strip()``                | ``'tere'``         | Annab sõne ilma alguses ja lõpus olevate tühikute ja reavahetusteta |
+| ``' tere '.strip()``                | ``'tere'``         | Meetod ``strip`` annab sõne ilma alguses ja lõpus olevate tühikute  |
++-------------------------------------+--------------------+ ja reavahetusteta                                                   +
+| ``'tere'.strip()``                  | ``'tere'``         |                                                                     |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'abc'[0]``                        | ``'a'``            | Kirjutades sõne järele kantsulgudesse mingi numbri, antakse         |
++-------------------------------------+--------------------+ vastuseks vastava järjekorranumbriga e. *indeksiga* täht.           +
+| ``'abc'[1]``                        | ``'b'``            | NB! indeksid algavad 0-ga                                           |
++-------------------------------------+--------------------+                                                                     +
+| ``'abc'[2]``                        | ``'c'``            |                                                                     |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'tere'[0:3]``                     | ``'ter'``          | Kui kantsulgudesse kirjutada kooloniga eraldatult kaks indeksit,    |
++-------------------------------------+--------------------+ siis antakse sõnest lõik alates esimesest indeksist (kaasaarvatud)  +
+| ``'tere'[2:4]``                     | ``'re'``           | kuni viimase indeksini (väljaarvatud)                               |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'tere'.replace('e','ö').upper()`` | ``'TÖRÖ'``         | Käske saab kombineerida                                             |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
@@ -366,180 +368,107 @@ Operatsioonid sõnedega
 .. note::
     Kõikide sõnemeetoditega saab tutvuda aadressil http://docs.python.org/py3k/library/stdtypes.html#string-methods
 
-.. index::
-    single: muutujad
-    
-.. _muutujad:    
 
 Muutujad
---------
-Kõik levinud programmeerimiskeeled võimaldavad konkreetsetele väärtustele või arvutuste tulemustele anda nime. Teisiti väljendudes: väärtusi saab salvestada **muutujatesse**. Järgnev käsurea näide demonstreerib muutuja (nimega `x`) defineerimist ja kasutamist:
+---------
+Kõik levinud programmeerimiskeeled võimaldavad konkreetseid väärtusi või arvutuste tulemusi salvestada **muutujatesse**. Uurige järgnevat näiteskripti, mis demonstreerib muutujate defineerimist ja kasutamist. Proovige ennustada, mis ilmub ekraanile selle skripti käivitamisel! 
 
 .. sourcecode:: py3
     
-    >>> x = 2 + 3
-    >>> x
-    5
-    >>> 2 * x
-    10
-    >>> x * x
-    25
+    x = 2 + 3
+    y = 10
+    print(x)
+    print(y)
+    print(x + y)
+    print(x * 2 + y)
+    print(x)
+    print(y)
+    
+    z = "Peeter"
+    print(z + " " + "Paan")
+    print(z + " " + "Esimene")
+    print(z.upper())
+    print(z + z)
+    print(z * x)
+    print(z)
 
-Esimesel real teeb Python kaks erinevat toimingut: kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise ``2 + 3`` väärtus. Peale seda on võimalik muutuja nime kasutada vastava väärtuse asemel. 
+Selgitus: esimese rea käivitamisel teeb Python kaks erinevat toimingut -- kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise ``2 + 3`` väärtus. Peale seda on võimalik muutuja nime **kasutada** vastava väärtuse asemel. Seega, antud näiteprogrammis tähistavad kõik ``x`` esinemised alates teisest reast arvu `5`.
+
+Muutuja defineerimist (nt. ``x = 2 + 3``, üldisemalt *<muutuja nimi> = <avaldis>*) nimetakse **omistuslauseks**. Kuna tegemist on lausega, siis kirjutatakse ta omaette reale. Seevastu muutuja kasutamine (nt. ``x`` lauses ``print(x)``) on avaldis, mis esineb mingi lause või suurema avaldise sees. 
 
 .. note::
-
-    Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
-
-Programmi loetavuse huvides peaks muutuja nimi kirjeldama vastava väärtuse tähendust antud kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``. Muutuja nimes võib kasutada ka numbreid, aga esimene sümbol peab olema täht (või allkriips).
-
-.. topic :: Etteruttavalt:
-
-    Pythonis saab vajadusel muutuja väärtust ka uue väärtusega üle kirjutada -- selleks tuleb lihtsalt teha uus omistamine samale muutujale. Muutuja ülekirjutamist meil praegu siiski veel tarvis ei lähe.
-
-
-.. _milleks-muutujad:
+    Muutujaid on võimalik defineerida ja kasutada ka käsureal -- kuigi käsurida kasutatakse enamasti avaldiste katsetamiseks, aktsepteerib ta rõõmuga ka lauseid sh. omistuslauseid:
     
+    .. sourcecode:: py3
+
+        >>> eesnimi = "Peeter"
+        >>> eesnimi * 3
+        'PeeterPeeterPeeter'
+        >>> eesnimi.upper()
+        'PEETER'
+        >>> eesnimi
+        'Peeter'
+
+
 Milleks muutujad?
-~~~~~~~~~~~~~~~~~
-Vaatame ühte näiteprogrammi, mis väljastab 60.25cm raadiusega ringi diameetri, ümbermõõdu ja pindala. Esimese versiooni kirjutame ilma muutujaid kasutamata:
+~~~~~~~~~~~~~~~~~~~~~~ 
+Programmeerimises kasutatakse muutujaid samal põhjusel, nagu loomuliku keele tekstides kasutakse mingite spetsiifiliste mõistete definitsioone -- see võimaldab mingi (potentsiaalselt keerulise) asja panna kirja ühekordselt ning viidata sellele edaspidi erinevates kohtades kasutades vaid ühte sõna. Oleks ju üpris tüütu kirjutada trigonomeetrilistes avaldistes alati ``3.141592653589793``. Selle asemel saame importida moodulist ``math`` muutuja ``pi``, (mille väärtuseks on mooduli loojad juhtumisi omistanud `3.141592653589793`) ning kasutada oma arvutustes seda.
+
+Mõnikord on muutuja kasutamine lausa hädavajalik, näiteks programmides, mis küsivad kasutaja käest mingit infot ja kasutavad seda siis mitmes kohas:
 
 .. sourcecode:: py3
 
-    from math import *
+    nimi = input('Palun ütle, mis on sinu nimi: ')
+    print(nimi + '?!! Oo, milline ilus nimi!')
+    print('Ma tahaksin seista mäetipul ja hüüda "' + nimi.upper() + '!!!!"')
+    print('ning kuulda, kuidas kaja vastab: "' + ((nimi.lower() + ' ') * 3) + '..."')
     
-    print('Ringi diameeter on ' + str(2 * 60.25) + ' cm')
-    print('Ümbermõõt on ' + str(pi * 2 * 60.25) + ' cm')
-    print('Pindala on ' + str(pi * (60.25 ** 2)) + ' cm2')
-    
-.. topic:: Meeldetuletus: 
-    
-    Käsku ``str`` kasutame selleks, et arvutuse tulemust teisendada sõneks.
+Ilmselt nõustute, et sellise programmi puhul oleks maitsetu küsida kasutajalt tema nime mitu korda.
 
-See programm arvutab, mida me soovisime, kuid kui me hiljem tahame selle programmiga arvutada mõne teise raadiusega ringi infot, siis peaksime tegema vastava muudatuse kolmes kohas. Sellise kompaktse programmi puhul ei ole see küll probleemiks, kuid reaalsetes programmides on taolisel juhul suur oht, et mõnes kohas ununeb muudatus tegemata. 
-
-Kirjutame nüüd sama programmi ümber kasutades raadiuse hoidmiseks muutujat:
-
-.. sourcecode:: py3
-
-    from math import *
-    
-    raadius = 60.25
-    print('Ringi diameeter on ' + str(2 * raadius) + ' cm')
-    print('Ümbermõõt on ' + str(pi * 2 * raadius) + ' cm')
-    print('Pindala on ' + str(pi * (raadius ** 2)) + ' cm2')
-
-Siin on konkreetset raadiust mainitud vaid ühes kohas -- muutuja ``raadius`` defineerimisel. Edaspidi on valemites kasutatud muutuja nime. Programmi jooksutamisel asendab Python muutuja nimed muutuja väärtusega ja seetõttu annab see versioon sama tulemuse, mis eelminegi. Samas, kui meil on vaja programmi edaspidi kohandada mõne muu ringi jaoks, siis on vaja muudatus teha vaid ühes kohas. Seega, muutuja kasutamine aitas meil teha programmis olevad arvutused *üldisemaks*, konkreetsest väärtusest sõltumatuks.
-
-.. topic :: Analoogia:
-
-    Mõelge Eesti Vabariigi põhiseadusele -- kui seal räägitakse presidendi rollist, siis ei nimetata ühegi konkreetse presidendi nime vaid kasutatakse väljendit *Vabariigi President*. Seaduse rakendamisel tõlgendatakse seda väljendit vastavalt sellele, kes on antud hetkel presidendiks. Selline lähenemine teeb seaduse teksti üldisemaks, konkreetsetest isikutest sõltumatuks.
-
-.. _operatsioonid-muutujatega:
-    
-Operatsioonid muutujatega
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kõiki arvu- ja sõneoperatsioone, mida demonstreerisime eelnevalt kasutades literaale, saab kasutada ka vastavalt arv- ja sõnemuutujatega:
-
-.. sourcecode:: py3
-
-    >>> tervitus = 'Tere'
-    >>> len(tervitus)
-    4
-    >>> tervitus.upper()
-    'TERE'
-    >>> n = 3
-    >>> n * n
-    9
-    >>> n * tervitus
-    'TereTereTere'
-
-.. topic:: Tähtis!!!
-
-    Kui arvu- või sõneoperatsioonides (e. tehetes) kasutada muutujaid (nt. ``n + 1`` või ``tekst.upper()``), siis võib avaldise kujust jääda mulje, et operatsiooni käigus muudetakse muutuja väärtust. Tegelikult genereeritakse tehte tulemusena hoopis *uus väärtus* ja kasutatud muutujaga midagi ei juhtu.
-    
-    Selles veendumiseks uurige järgmisi käsurea näiteid, kus kõigepealt omistatakse muutujale mingi väärtus, seejärel kasutatakse muutujat mingis tehtes (mis konstrueerib uue väärtuse), ning lõpuks demonstreeritakse, et see ei mõjutanud muutuja väärtust:
-    
-    .. sourcecode:: py3
-    
-        >>> n = 3
-        >>> n + 2
-        5
-        >>> n
-        3
-        
-    .. sourcecode:: py3
-    
-        >>> tervitus = '  tere  '
-        >>> tervitus.strip()
-        'tere'
-        >>> tervitus
-        '  tere  '
-        
-    .. sourcecode:: py3
-    
-        >>> tekst = '3'
-        >>> int(tekst)
-        3
-        >>> tekst
-        '3'
+Muutujale nime valimine
+~~~~~~~~~~~~~~~~~~~~~~~~ 
+Pythoni jaoks on ükskõik, millise nime sa mingi muutuja jaoks valid, aga programmi loetavuse huvides peaks nimi kirjeldama muutuja tähendust antud ülesande kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``. Muutuja nimes võib kasutada ka numbreid, aga esimene sümbol peab olema täht (või allkriips).
 
 
-Funktsioonid
----------------
-Funktsioonid on need Pythoni objektid, mille abil saab midagi arvutada või teha. Me oleme siiani näinud hulka erinevaid funktsioone, nt ``sin``, ``cos``, ``int``, ``input``, ``print``.
+Avaldiste kombineerimine
+------------------------------
+Me oleme nüüdseks kasutanud mitut viisi Pythoni maailma "asjade" e. väärtuste kirjeldamiseks. Konkreetse väärtuse puhul on kõige lihtsam see panna kirja *literaalina* (nt. ``2.5`` või ``"Tere!"``). Mõnikord on mugavam väärtusele viidata hoopis läbi *muutuja* (nt. ``x``). Enamasti aga on meil programmi kirjutamise ajal väärtuse asemel teada hoopis selle leidmise "valem", mille me paneme kirja Pythoni *tehte* e. *operatsioonina* (nt. ``sin(x) * 2 - 1`` või ``nimi.upper()``). Kõik need viisid kannavad ühist nimetust *avaldis*.
 
-Funktsiooni kasutamiseks e. `rakendamiseks` tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem `argumenti` so. miski, mida funktsioon oma töös kasutab. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni rakendamine (e. `funktsiooni applikatsiooni`).
+Kahtlemata on neist kolmest avaldise liigist kõige põnevam arvutustehe -- on ju arvutamine üks põhjus miks programme üldse kirjutatakse. Loodetavasti märkasite, et Pythoni arvutustehetel on üks oluline omadus, mis tõstab ta peajagu kõrgemale taskukalkulaatoritest -- tehete komponentideks võivad olla suvalist liiki avaldised, st. mitte ainult konkreetsed väärtused vaid ka muutujad või mingid muud tehted, mis võivad omakorda koosneda konkreetsetest väärtustest, muutujatest või tehetest, mis võivad omakorda ... jne. Seetõttu nimetatakse tehete komponente vahel üldistavalt *alamavaldisteks*.
 
-Mõned funktsioonid (nt. ``sin`` ja ``int``) on olemuselt küllalt sarnased matemaatikast tuntud funktsioonidele, kuna nad "võtavad" ühe väärtuse ja "annavad vastu" mingi teise väärtuse. Nt ``int("3")`` võtab sõne tüüpi väärtuse ``"3"`` ning annab vastu täisarvu tüüpi väärtuse ``3``. See võimaldab nende funktsioonide kasutamist avaldistes.
+Kokkuvõttes, **igal pool, kus saab kasutada mingit konkreetset väärtust, saab kasutada ka muutujat või mingit tehet**, või veel üldisemalt, **igal pool, kus saab kasutada ühte avaldise liiki, saab kasutada ka teisi**. Siit tuleb ka välja miks me literaale, muutujaid ja tehteid koos vaatasime ning miks neile on välja mõeldud ühine nimetus -- hoolimata nende erinevast iseloomust kuuluvad nad Pythoni jaoks ühte perekonda.
 
-Lisaks sellele, et funktsiooni rakendamist võib kasutada mingi avaldise komponendina, võib ka funktsiooni argument olla ükskõik kui keeruline avaldis, sh. funktsiooni rakendamine:
+Toome järgnevalt mõned näited avaldistest mis koosnevad erinevatest alamavaldistest:
 
-.. sourcecode:: py3
+TODO: näide
 
-    >>> x = 4
-    >>> round(cos(sin(float("0" + "." + str(x)) + 4)), 2)
-    0.58
+Tehniliselt võttes ühendab erinevaid avaldise liike see, et neil kõigil on *väärtus* -- literaalide puhul on väärtus otseselt kirja pandud, muutuja kasutamisel vaatab Python järele selle defineerimisel antud väärtuse, tehete väärtuse leidmiseks tuleb teha vastavad arvutused. Asjaolu, et Python suudab leida iga avaldise väärtuse ja et reaalne arvutamine (nt. liitmine) toimub justnimelt väärtustega, ongi see, mis võimaldab meil erinevat liiki avaldisi nii vabalt kombineerida.
+
+Harjutus x
+~~~~~~~~~~~~~~
+TODO: sõne- ja arvavaldise kombineerimine
+
+
+Abimuutujate kasutamine
+~~~~~~~~~~~~~~~~~~~~~~~~ 
+See, et meil on võimalik kirjutada väga keerulisi arvutusi ühe avaldisena, ei tähenda, et seda tuleks tingimata teha -- tihti on lihtsam jagada arvutus *abimuutujate* abil mitmeks sammuks:
+
+TODO: näide
+
+Taoline sammukaupa arvutamine võimaldab ka kergemini leida üles viga, kui ilmneb, et arvutuse tulemus ei ole õige, selleks tuleb iga sammu järel kuvada vahetulemus ekraanile, mispeale peaks olema lihtne tuvastada, millises sammus viga sisse tuli.
+
+Harjutus x
+~~~~~~~~~~~~~~
+TODO: kirjuta arvutus lahti mitmeks sammuks
+
+Harjutus x
+~~~~~~~~~~~~~~
+TODO: kirjuta mitmesammuline arvutus üheks avaldiseks
 
 
 
-Funktsioonidest tuleb edaspidi veel palju juttu, seepärast me praegu nendel pikemalt ei peatu.
 
-``import``-lause
---------------------
-Pythoni `standardteegis` (so. funktsioonide ja teiste programmielementide kogum) on väga palju funktsioone (ja teisi Pythoni objekte). Nende paremaks organiseerimiseks on nad jaotatud gruppidesse, mida nimetatakse `mooduliteks`. ``import`` lause teeb moodulis oleva funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
 
-.. sourcecode:: py3
-
-    from math import sin, cos
-    
-    print(sin(0.3))
-    print(cos(sin(0.3)))
-
-Kui soovime moodulist kõiki funktsioone, siis võime kasutada import lauses funktsiooninime(de) asemel tärni:
-
-.. sourcecode:: py3
-
-    from turtle import *
-    
-    forward(100)
-    left(90)
-    forward(100)
-
-    
-Mõned funktsioonid, nagu näiteks ``int`` ja ``float``, on alati kättesaadavad, neid pole vaja importida.
-
-.. note::
-
-    Importida saab ka moodulit ennast, sel juhul tuleb soovitava funktsiooni nimi kirjutada koos mooduli nimega:
-    
-    .. sourcecode:: py3
-    
-        >>> import math
-        >>> print(math.sin(0.5))
-        0.479425538604203
-        >>> print(math.cos(0.5))
-        0.8775825618903728    
 
 Sisend ja väljund
 -----------------
@@ -661,6 +590,8 @@ Kirjutage programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vasta
 
 Failide lugemine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+TODO read meetod
+
 Siinkohal õpime ära ka ühe viisi tekstifailidest sisendi lugemiseks. Alustuseks koostage ja salvestage tekstifail nimega `andmed.txt`, mille esimesel real on inimese nimi, teisel real vanus (täisarvuna) ning kolmandal real e-maili aadress (lihtsuse mõttes ärge praegu täpitähti kasutage). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvestage loodud failiga *samasse kausta* järgnev skript, ning käivitage see. NB! tühikud ``print`` käskude ees on olulised!
 
 .. sourcecode:: py3
@@ -722,6 +653,8 @@ Selgituseks:
 
 .. index::
     single: kommentaarid
+
+
     
 Kommentaarid
 ------------
@@ -745,7 +678,13 @@ Kommenteerida tuleks neid kohti programmis, mis võivad jääda lugejale segasek
 
 Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu.
 
+Suur näide
+--------------
+.. note::
 
+    Siin ja edasipidi proovige kõigepealt ise lahenduseni jõuda. Mõnikord see õnnestub, mõnikord mitte, aga alati treenib see teie probleemilahendamise oskust.
+
+TODO
 
 Ülesanded
 -------------

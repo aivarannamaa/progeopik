@@ -192,6 +192,8 @@ Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstrukt
 ``while``-tsükkel
 ~~~~~~~~~~~~~~~~~~~
 
+TODO: seleta muutuja muutmine
+
 ``while``-tsükliga saaksime ruudu joonistamise programmi panna kirja järgnevalt:
 
 .. sourcecode:: py3
@@ -222,6 +224,36 @@ Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas ol
 .. note::
 
     Muutujaid, mille väärtust suurendatakse igal tsükli sammul, nimetatakse *loenduriteks* ja nende nimeks pannakse tavaliselt ``i``. Selliseid tsükleid, kus korduste arv on tsükli alustamise hetkel teada, nimetatakse *määratud tsükliteks*.
+
+.. topic:: Tähtis!!!
+
+    Kui arvu- või sõneoperatsioonides (e. tehetes) kasutada muutujaid (nt. ``n + 1`` või ``tekst.upper()``), siis võib avaldise kujust jääda mulje, et operatsiooni käigus muudetakse muutuja väärtust. Tegelikult genereeritakse tehte tulemusena hoopis *uus väärtus* ja kasutatud muutujaga midagi ei juhtu.
+    
+    Selles veendumiseks uurige järgmisi käsurea näiteid, kus kõigepealt omistatakse muutujale mingi väärtus, seejärel kasutatakse muutujat mingis tehtes (mis konstrueerib uue väärtuse), ning lõpuks demonstreeritakse, et see ei mõjutanud muutuja väärtust:
+    
+    .. sourcecode:: py3
+    
+        >>> n = 3
+        >>> n + 2
+        5
+        >>> n
+        3
+        
+    .. sourcecode:: py3
+    
+        >>> tervitus = '  tere  '
+        >>> tervitus.strip()
+        'tere'
+        >>> tervitus
+        '  tere  '
+        
+    .. sourcecode:: py3
+    
+        >>> tekst = '3'
+        >>> int(tekst)
+        3
+        >>> tekst
+        '3'
 
 
 
@@ -515,6 +547,11 @@ Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
 
     Avaldisi, mis tagastavad tõeväärtuse, nimetatakse *loogilisteks avaldisteks*.
 
+Harjutus x. Mitte-tõstutundlik sõnede võrdlemine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO
+
+
 
 Harjutus 1. Arvu ruut koos kontrolliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -542,18 +579,7 @@ Keerulisemate avaldiste puhul tuleb arvestada, et ``not`` on kõrgema prioriteed
 
 Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõige kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on kõige madalama prioriteediga (tehakse viimasena).
 
-Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema prioriteediga tehted on ülalpool, samal real olevad operaatorid on sama prioriteediga):
-
-    * ``**``
-    * ``-x`` (*unaarne* miinus)
-    * ``*``, ``/``, ``//``, ``%``
-    * ``+``, ``-``
-    * ``==``, ``!=``, ``<``, ``<=``, ``>``, ``>=``, ``in``
-    * ``not``
-    * ``and``
-    * ``or``
-
-Kahtluse korral kasutage soovitud tehete järjekorra määramiseks sulge.
+TODO: näide
 
 Harjutus 2. Vastandid
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -565,7 +591,86 @@ Pange kirja järgnevate avaldiste loogilised *vastandid*:
     a >= b
     a >= 18  and  b == 3
     a >= 18  and  b != 3
+
+Tingimuste kasutamine tsükli päises
+---------------------------------------
+Justkui tingimuslause päises, lubatakse ka ``while``-lause päises suvalisel kujul tingimust, peamine, et tegemist oleks ``bool`` tüüpi avaldisega:
+
+.. sourcecode:: py3
     
+    a = ...
+    b = ...
+    c = ...
+    s = ...
+
+    
+    while (a == b or b > c) and s == "Tere":
+        ...
+
+        
+    tingimus = ... or ... or ... or ...
+    while tingimus or a > b or s.endswith("kala"):
+        ...
+        a = ...
+        ...
+
+    
+    while True:
+        ...
+
+
+
+    
+Pykkar
+-----------------------
+Kui tegite eelnevate harjutuste plokkskeemid paberile, siis saite sedasi esitatud algoritme "käivitada" vaid enda peas. Nagu teada, on inimene aga ekslik ja seetõttu võisid mõned vead algoritmides jääda märkamatuks. 
+
+Nüüd on teil võimalus teisendada oma skeemid Pythoni koodiks ja näha roboti liikumist oma ekraanil. Kõigepealt laadige alla moodul :download:`pykkar.py <downloads/pykkar.py>` ja salvestage see oma töökausta.
+
+Nüüd salvestage samasse kausta järgnev näiteskript ja käivitage see:
+
+.. sourcecode:: py3
+
+    from pykkar import *
+    
+    # create_world võtab argumendiks mitmerealise sõne, mis esitab
+    # roboti "maailma"
+    # Trellid tähistavad seinu, nooleke tähistab robotit
+    # (noole suund tähistab roboti suunda)
+    create_world("""
+    ########
+    #  >   #
+    #      #
+    #      #
+    #      #
+    #      #
+    ########
+    """)
+
+    samme_jäänud = 3
+    while samme_jäänud > 0:
+        if is_wall(): # ei lase robotil vastu seina põrgata
+            break
+        else:
+            step() # robot liigub ühe ruudu võrra edasi
+            samme_jäänud -= 1
+    
+    # pöörame ringi
+    right()
+    right()
+
+Loodetavasti nägite programmi käivitamisel umbes sellist pilti:
+
+.. image:: images/pykkar.png
+
+Justnagu plokkskeemi robot, mõistab ka Pykkar liikuda ühe sammu edasi (``step()``), pöörata 90° paremale (``right()``), värvida enda all olevat ruutu (``paint()``) ning kontrollida, kas ta ees on sein (``is_wall()``). 
+
+Antud näiteprogramm vastab umbkaudselt eespool toodud harjutusele "2. Kui võimalik, kolm sammu  edasi ja ümberpöörd" (lahendus on küll natuke üldisem). Muutke programmis roboti algset asukohta ja katsetage, kas programm toimib õieti ka siis, kui seinani on vähem, kui 3 sammu.
+
+Harjutus 6. Plokkskeemi kohandamine Pythoni programmiks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage nüüd eespool antud robotiülesanded ümber Pythoni programmideks, kasutades moodulit ``pykkar``.
+
 
 
 Kokkuvõte

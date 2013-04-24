@@ -22,6 +22,7 @@ body {
 }
 
 
+
 /* Page layout */
 
 div.header, div.content, div.footer {
@@ -514,4 +515,26 @@ p {
 
 div.highlight-py3 * {
     line-height: 140% ! important;
+}
+
+
+table.docutils {
+    border-collapse: collapse;
+}
+
+table.docutils th {
+    background-color: #f3f3f3;
+    color: #444444;
+}
+
+table.docutils th, table.docutils td {
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    padding: 2px 4px;
+    font-size: 14px;
+}
+
+p.admonition {
+    font-size: 13px;
 }

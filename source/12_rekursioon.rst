@@ -1,5 +1,14 @@
 12. Rekursioon
 ================
+
+TODO:
+
+* lineaarne rekursioon ei ole tegelikult nii kasulik
+* ei ole tegemist eraldi keelekonstruktsiooniga
+* aluseks on hea funktsiooni väljakutsete mõistmine, võiks alustada selle kordamisest
+* rekursiooni näide: “I promise to repeat the sentence I just said” Papert, teaching children .. lk 8
+* rekursiooni näide: habemeajaja (lisalugemisse)
+
 Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse ülesande lahendamiseks lahendatakse kõigepealt väiksem alamülesanne ja seejärel täiendatakse saadud vastust mingil moel. Sarnast skeemi kasutasime korduvalt tsüklite peatükis.
 
 Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- so. funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad, kui tsüklitega kirjutatud lahendused.

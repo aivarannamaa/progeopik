@@ -1,6 +1,7 @@
 7. Programmi käigu juhtimine
 =======================================
 
+TODO: selgita, et programmi käik sõltub sisendandmetest
 
 Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi, ...
 
@@ -153,32 +154,6 @@ Harjutus 6. Kuu esitamine sõnena
 Kirjutage funktsioon ``kuu_nimi``, mis võtab argumendiks kuu numbri ning tagastab vastava kuu nime. Kui argumendi väärtus on väiksem kui 1 või suurem kui 12, siis tagastatakse sõne ``'Vigane kuu number'``.
 
 Testige oma funktsiooni!
-
-Tingimuste kasutamine tsükli päises
----------------------------------------
-Justkui tingimuslause päises, lubatakse ka ``while``-lause päises suvalisel kujul tingimust, peamine, et tegemist oleks ``bool`` tüüpi avaldisega:
-
-.. sourcecode:: py3
-    
-    a = ...
-    b = ...
-    c = ...
-    s = ...
-
-    
-    while (a == b or b > c) and s == "Tere":
-        ...
-
-        
-    tingimus = ... or ... or ... or ...
-    while tingimus or a > b or s.endswith("kala"):
-        ...
-        a = ...
-        ...
-
-    
-    while True:
-        ...
 
 
 Tingimusavaldis

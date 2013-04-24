@@ -1,8 +1,42 @@
-4. Alamprogrammid e. funktsioonid
+4. Funktsioonid
 ====================================
 
 
-Funktsioonid e. uute käskude loomine
+.. note::
+
+    omistamise += kuju üle korrata?
+
+    TODO: muutujate juurde
+    Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
+    
+    TODO: Wikipedia sirvimise näide funktsiooni väljakutsete mõistmiseks
+    
+    TODO: **näited** selle kohta, et ühte funktsiooni saab välja kutsuda mitu korda
+
+
+Funktsioonide kasutamine
+-----------------------------
+Funktsioonid on need Pythoni objektid, mille abil saab midagi arvutada või teha. Me oleme siiani näinud hulka erinevaid funktsioone, nt ``sin``, ``cos``, ``int``, ``input``, ``print``.
+
+Funktsiooni kasutamiseks e. `rakendamiseks` tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem `argumenti` so. miski, mida funktsioon oma töös kasutab. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni rakendamine (e. `funktsiooni applikatsiooni`).
+
+Mõned funktsioonid (nt. ``sin`` ja ``int``) on olemuselt küllalt sarnased matemaatikast tuntud funktsioonidele, kuna nad "võtavad" ühe väärtuse ja "annavad vastu" mingi teise väärtuse. Nt ``int("3")`` võtab sõne tüüpi väärtuse ``"3"`` ning annab vastu täisarvu tüüpi väärtuse ``3``. See võimaldab nende funktsioonide kasutamist avaldistes.
+
+Lisaks sellele, et funktsiooni rakendamist võib kasutada mingi avaldise komponendina, võib ka funktsiooni argument olla ükskõik kui keeruline avaldis, sh. funktsiooni rakendamine:
+
+.. sourcecode:: py3
+
+    >>> x = 4
+    >>> round(cos(sin(float("0" + "." + str(x)) + 4)), 2)
+    0.58
+
+
+
+Funktsioonidest tuleb edaspidi veel palju juttu, seepärast me praegu nendel pikemalt ei peatu.
+
+
+
+Funktsioonide defineerimine
 -----------------------------------------
 .. note::
 
@@ -326,11 +360,11 @@ Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele ar
 Lisage funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katsetage.
 
 .. index::
-    single: funktsioon; väärtusega funktsioon
+    single: funktsioon; tagastamine
     single: väärtusega funktsioon
     single: return
     
-Väärtusega funktsioonid
+Väärtuse tagastamine
 -----------------------
 .. admonition:: Probleem
 
@@ -390,6 +424,8 @@ Demonstreerige loodud funktsiooni tööd, kirjutades programmi ka mõned funktsi
 .. _return-vs-print:
 
 .. topic:: ``return`` vs. ``print``
+
+    TODO: mingi absurdne näide, nt. "Selle arvu siinus on .."
 
     Eelnevalt märkisime, et nii funktsiooni parameetrid kui ``input`` on olemuselt sarnased, kuna mõlemad on seotud sisendi saamisega, kuid parameetrid on paindlikumad, kuna täpne sisendi saamise viis jäetakse lahtiseks.
 
@@ -532,6 +568,53 @@ Kui *DRY*-printsiibi juures rõhutasime seda, et funktsioonid aitavad sama koodi
 .. index::
     single: import
     single: moodulid
+
+Muutujad vs funktsioonid
+----------------------------
+TODO
+
+Nimede tähtsus
+------------------
+TODO: Tee näiteprogramm, kus muutujanimed on a,b,c,x,y,z ja lase lugejal arvata, mida see programm teeb, peab olema meeldejääb, sest seda on tarvis tagasi viidata
+
+``import``-lause
+--------------------
+Pythoni `standardteegis` (so. funktsioonide ja teiste programmielementide kogum) on väga palju funktsioone (ja teisi Pythoni objekte). Nende paremaks organiseerimiseks on nad jaotatud teemade kaupa gruppidesse, mida nimetatakse `mooduliteks`. ``import`` lause teeb moodulis olevad funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
+
+.. sourcecode:: py3
+
+    from math import sin, cos
+    
+    print(sin(0.3))
+    print(cos(sin(0.3)))
+
+Kui soovime moodulist kõiki funktsioone, siis võime kasutada import lauses funktsiooninime(de) asemel tärni:
+
+.. sourcecode:: py3
+
+    from turtle import *
+    
+    forward(100)
+    left(90)
+    forward(100)
+
+    
+Mõned funktsioonid, nagu näiteks ``int`` ja ``float``, on alati kättesaadavad, neid pole vaja importida.
+
+.. note::
+
+    Importida saab ka moodulit ennast, sel juhul tuleb soovitava funktsiooni nimi kirjutada koos mooduli nimega:
+    
+    .. sourcecode:: py3
+    
+        >>> import math
+        >>> print(math.sin(0.5))
+        0.479425538604203
+        >>> print(math.cos(0.5))
+        0.8775825618903728    
+
+
+
 
 Moodulid ja ``import``
 ----------------------
@@ -694,6 +777,11 @@ Testige oma programmi ja kontrollige, kas saate järgnevad tulemused:
 Võtke aluseks kolmanda peatüki Ülesanne "Pere sissetulek". Muutke lahendust selliselt, et netopalga valem oleks programmis kirja pandud vaid ühes kohas.
 
 
+Lisalugemine
+-----------------
+Matemaatilised funktsioonid vs. Pythoni funktsioonid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+TODO, tee graafikuid?
 
 
 
