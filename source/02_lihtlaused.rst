@@ -134,11 +134,19 @@ Tehted arvudega
 +--------------------+----------+---------------------------------------------------------+
 
 .. note::
-      Kui avaldis on keeruline, siis võiks kaaluda sulgude kasutamist ka seal, kus Python neid ei nõua, et teha lugemist lihtsamaks.
+    Kui avaldis on keeruline, siis võiks kaaluda *sulgude* kasutamist ka seal, kus Python neid ei nõua, et teha lugemist lihtsamaks. Lisaks on loetavuse huvides siin ja edaspidistes näidetes pandud *tehtemärkide ümber tühikud*, aga need võib ka ära jätta.
 
-.. note::
-    
-    Siin ja edaspidistes näidetes on parema loetavuse huvides tehtemärkide ümber pandud tühikud, aga need võib ka ära jätta.
+Harjutus x. Puuduvad tehtemärgid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Lisa järgnevatesse võrdustesse allkriipsude (``_``) asemele sobivad tehtemärgid. Topeltvõrdusmärk (``==``) tähistab Pythonis võrdust.
+
+* ``8 _ 4 == 2``
+* ``8 _ 4 == 2.0``
+* ``14 _ 7 == 0``
+* ``3 _ 2 == 1`` (3 varianti)
+* ``(6 _ 4) _ 8 == 256``
+
+TODO: näitelahendus
 
 Moodul ``math``
 ~~~~~~~~~~~~~~~~~~~~     
@@ -169,8 +177,7 @@ Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, k
 .. note::
     Nagu võibolla märkasite, töötavad Pythoni trigonomeetrilised funktsioonid radiaanide, mitte kraadidega. Kraadide teisendamisel radiaanideks on abiks funktsion ``radians``, vastupidises suunas ``degrees``.
     
-.. note::
-    Kõikide mooduli ``math`` võimalustega saate tutvuda vastaval Pythoni dokumentatsiooni leheküljel: http://docs.python.org/py3k/library/math.html.
+Kõikide mooduli ``math`` võimalustega saate tutvuda vastaval Pythoni dokumentatsiooni leheküljel: http://docs.python.org/py3k/library/math.html.
 
 Harjutus 1. Matemaatilised avaldised
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -365,8 +372,27 @@ Tehted sõnedega
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 
 
-.. note::
-    Kõikide sõnemeetoditega saab tutvuda aadressil http://docs.python.org/py3k/library/stdtypes.html#string-methods
+Kõikide sõnemeetoditega saab tutvuda aadressil http://docs.python.org/py3k/library/stdtypes.html#string-methods
+
+Harjutus ?. Sõnede teisendamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage iga allpool toodud sõne kohta võimalikult lühike avaldis, kus seda sõnet on kasutatud 1 või rohkem korda, ning mis annab väärtustamisel näidatud tulemuse. Ühtegi teist sõneliteraali ei või avaldises kasutada!
+
++-----------------------+------------------------------+
+| Sõne                  | Tulemus                      |
++=======================+==============================+
+| ``'abc'``             | ``3``                        | 
++-----------------------+------------------------------+
+| ``'abc'``             | ``'33'``                     | 
++-----------------------+------------------------------+
+| ``'abc'``             | ``'ABCABCABC'``              | 
++-----------------------+------------------------------+
+| ``'abc'``             | ``'cba'``                    | 
++-----------------------+------------------------------+
+| ``'koerpoiss'``       | ``'poisskoer'``              | 
++-----------------------+------------------------------+
+
+TODO: näitelahendus
 
 
 Muutujad
@@ -472,6 +498,8 @@ TODO: kirjuta mitmesammuline arvutus üheks avaldiseks
 
 Sisend ja väljund
 -----------------
+TODO: siinsetes harjutustes kasuta ohtrasti ka sõnede ja arvude tehteid.
+
 Pythoni käsureal toimub avaldiste sisestamine ning tulemuste väljastamine ilma, et sellele peaks eriti mõtlema. Kui soovime aga programmi käivitada skriptina, siis tuleb sisendi ja väljundiga eraldi tegeleda. 
 
 .. index::
