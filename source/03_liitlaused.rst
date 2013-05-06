@@ -11,7 +11,7 @@ Kui eelmise peatüki teemad liigitasime "lihtlausete" kategooriatesse, siis nü�
 
 .. admonition:: Õpinipp
 
-    Olge aktiivne! Võimalusel eelistage värsket "mõttetoitu" õpiku "läbimälutud" tarkuseterade asemel, st. proovige olla materjalist sammu võrra ees, märgates seosed ja võimalusi enne, kui õpik neid mainib. Iga näite juures lugege esimese asjana programmi tekst hoolikalt läbi ja ennustage, mida iga rida teeb. 
+    Olge aktiivne! Võimalusel eelistage värsket "mõttetoitu" õpiku "läbimälutud" tarkuseterade asemel, st. proovige olla materjalist sammu võrra ees, märgates seoseid ja võimalusi enne, kui õpik neid mainib. Iga näite juures lugege esimese asjana programmi tekst hoolikalt läbi ja ennustage, mida iga rida teeb. 
 
 
 
@@ -822,6 +822,9 @@ Kirjutage programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horison
     Uurige kilpkonna dokumentatsioonist, kuidas värvida soovitud ala (http://docs.python.org/py3k/library/turtle.html). Seejärel proovige joonistada malelaud.
     
 
+Ülesanne. mp3
+~~~~~~~~~~~~~~~~~~~~
+Loe mp3 metadatat
 
 Praktilisi näpunäiteid
 ------------------------

@@ -24,3 +24,9 @@ Mida Sult oodatakse?
 * julgust -- ka siis kui ülesanne tundub raske, haara ikkagi härjal sarvist
 * kogukonda panustamist?
 * (NB! mõni tahab käsku täita)
+
+Peatüki struktuur
+---------------------
+TODO
+näiteid on vähe, võta ülesandeid kui näiteid
+esimesed peatükid on teksti ja ülesannete arvu poolest mahukamad, aga teemad ja ülesanded on lihtsamad

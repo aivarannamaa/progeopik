@@ -40,12 +40,14 @@ Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andm
 
 Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" väärtusi nimetatakse **literaalideks**.
 
-Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid operatsioone.
+Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid tehteid.
 
-Avaldiste väärtustamine käsureal
+Avaldised käsureal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi väärtustada ka ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate tehete katsetamiseks. Kuna antud peatüki esimeses pooles keskendumegi just avaldiste ja väärtuste teemale, siis eelistame skripti koostamise asemel kasutada käsurida.
 
+Terminoloogia kokkuvõte
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 Selle teema kokkuvõtteks analüüsime järgmist lihtsat käsurea näidet:
 
 .. sourcecode:: py3
@@ -66,11 +68,17 @@ Antud juhul teostas Python liitmisoperatsiooni arvudega *2* ja *3*, mille tulemu
     
 * ``2 + 3`` on **avaldis**
 *  ``+`` on **operaator**
-* ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`). Antud juhul on mõlemad argumendid **literaalid** (st. konkreetsed väärtused).
+* ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`). Antud juhul on mõlemad argumendid **literaalid** (st. konkreetsed väärtused)
 * `5` on antud **avaldise väärtus**
 * toiming, mille käigus ``2 + 3``-st saadakse `5`, on **avaldise väärtustamine**
 
-Järgnevalt uurime lähemalt, milliseid operatsioone saab teha arvude ja sõnedega. 
+Harjutus. Mis on mis?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Proovi oma sõnadega selgitada mõistete *väärtus* ja *avaldis* põhiolemust. Mille poolest on nad erinevad? Mille poolest sarnased?
+
+.. note::
+    
+    Isegi kui praegu tunduvad need mõisted veidi abstraktsed ja hägusad, siis pole põhjust muretsemiseks -- järgneva mõistmiseks piisab tegelikult ka umbkaudsest ettekujutusest. Täielik selgus saabub töö käigus.
 
 Arvud
 -----
@@ -80,8 +88,8 @@ Pythonis (nagu ka enamikes teistes programmeerimiskeeltes) on eraldi andmetüüb
     single: täisarvud
 
 Täisarvud
-~~~~~~~~~
-Pythoni **täisarvu** tüübi nimeks on `int` (lühend ingliskeelsest sõnast *integer*). Erinevalt paljudest teistest keeltest, ei ole Python 3-s piiratud, kui suuri (või väikseid) täisarve saab selle andmetüübiga esitada.
+~~~~~~~~~~~
+Pythoni **täisarvu** tüübi nimeks on `int` (lühend ingliskeelsest sõnast *integer*). Erinevalt paljudest teistest keeltest, ei ole Python 3-s piiratud, kui suuri (või väikseid) täisarve saab selle andmetüübiga esitada. 
 
 .. index::
     single: ujukomaarvud
@@ -97,8 +105,25 @@ Ujukomaarvude literaalid võivad esineda järgmistel kujudel:
 
 * ``3.0``, ``1.165``, ``-4.25`` on näited tavapärasest kirjapildist. NB! koma asemel kasutatakse punkti!
 * ``6.1529e+18``, ``1.253e-12`` on nn. `teadusliku notatsiooni` näited. Seda kirjapilti kasutatakse väga suurte või nullilähedaste arvude esitamiseks. Traditsioonilises matemaatilises notatsioonis võiks need arvud kirjutada vastavalt 6.1529×10\ :sup:`18` ja 1.253×10\ :sup:`-12`.
-    
-    
+
+.. admonition:: Ujukomaarvude ligikaudsus
+
+    Proovige läbi järgnev lihtne näide:
+
+    .. sourcecode:: py3
+        
+        >>> 0.1 * 3.0
+        0.30000000000000004
+
+    Ootuspärane vastus oleks `0.3`, kuid Python tagastas midagi muud.
+
+    Asi on selles, et arvutis esitatakse ujukomaarvud kahendkujul, kasutades piiratud arvu bitte ja seetõttu polegi võimalik teatud kümnendmurde (nende hulgas `0.1`) täpselt esitada (analoogiliselt pole kümnendmurruna võimalik täpselt esitada näiteks `10 / 3`). Taolistel juhtudel ümardatakse sisestatud arv lihtsalt lähima võimaliku kahendmurruni ja see ongi põhjus, miks antud näites oli tulemus ebatäpne. 
+
+    Kui ujukomaarvu on tarvis esitada kümnendmurruna (nt. ekraanile kuvamisel), siis toimub jälle ümardamine -- see on põhjus, miks sisestades käsureale ``0.1`` antakse vastuseks tagasi ``0.1``, kuigi Python sisimas ei suuda seda arvu täpselt esitada. Kui korrutasime ``0.1`` 3-ga, siis muutus viga juba piisavalt suureks, et saadud tulemusele lähim võimalik kümnendmurd oli ``0.30000000000000004``, mitte ``0.3``
+
+    Tegelikult tekitab ujukomaarvude ligikaudsus probleeme vaid siis, kui me eeldame reaalarvude absoluutselt täpset esitamist (nt. kümnendmurruna esitatud rahasummad, kus murdosa tähistatab sente). Praktikas kasutatakse ujukomaarve peamiselt kõikvõimalike mõõtmistulemuste esitamiseks ja selle jaoks on Pythoni `float` tüübi ulatus ning täpsus enam kui piisav.
+
+
 Tehted arvudega
 ~~~~~~~~~~~~~~~~~~~~~~
 +--------------------+----------+---------------------------------------------------------+
@@ -147,6 +172,16 @@ Lisa järgnevatesse võrdustesse allkriipsude (``_``) asemele sobivad tehtemärg
 * ``(6 _ 4) _ 8 == 256``
 
 TODO: näitelahendus
+
+Harjutus x. Tundide lugemine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Juku läks magama kell 23:00 ja pani väsinud peaga äratuse helisema 88 tunni pärast. Mis kell kostab äratushelin (eeldades, et Juku vahepeal äratust ei tühista)?
+
+Vastuse saab kätte ühe Pythoni avaldisega.
+
+.. note::
+
+    Kui said kätte õige tunni täisarvuna, siis täienda avaldist nii, et vastuseks tuleks sõne kujul *<tunnid>:<minutid>*, nt. ``'07:00'``.
 
 Moodul ``math``
 ~~~~~~~~~~~~~~~~~~~~     
@@ -197,24 +232,17 @@ Väärtustage järgnevad aritmeetilised avaldised Pythoni käsureal:
 
     Kui viimase avaldisega tekib probleeme, siis mõelge, milliste argumentide korral on arkuskoosinus üldse defineeritud. Veateade ``math domain error`` tähendab, et funktsiooni kasutati ebasobiva argumendiga. Muutke avaldist nii, et ``acos`` saab sobiva argumendi ja proovige uuesti.
 
-Ujukomaarvude ligikaudsus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Proovige läbi järgnev lihtne näide:
 
-.. sourcecode:: py3
+Kas ``2`` või ``2.0``?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Kas Pythoni literaalid ``2`` ja ``2.0`` tähistavad sama väärtust? Jah ja ei (aga pigem ei). Pythoni aritmeetika vaatenurgast on nad võrdsed -- selles veendumiseks sisestage käsureale ``2 == 2.0`` (topeltvõrdusmärk tähistab Pythonis võrdsust). Samas teeb Python neil siiski vahet: võrrelge kasvõi programme ``print(2)`` ja ``print(2.0)`` -- üks neist kuvab ekraanile 1 märgi, teine 3 märki. 
+
+Matemaatikast on teada, et iga täisarv on ühtlasi ka reaalarv, miks ei võiks siis programmeerimisel kasutada ainult ujukomaarve?
+
+Üks põhjustest on väga pragmaatiline: täisarvudega arvutamine on tavapäraste protsessorite jaoks palju lihtsam ja kiirem, kui ujukomaarvudega arvutamine. 
+
+Teine põhjus on sisuline: teatud suurused, näiteks laste arv konkreetses perekonnas, on alati täisarvulised ning me saame seda rõhutada kirjutades ``2`` (mitte ``2.0``). Samas, kui me räägime näiteks korvpallurite pikkustest meetrites, siis tundub ju täpsem kirjutada mõõtmise tulemuseks ``2.0`` (mitte lihtsalt ``2``). Seega, valides täisarvu ja ujukomaarvu vahel tuleks arvestada ka esitatava suuruse olemust.
     
-    >>> 0.1 * 3.0
-    0.30000000000000004
-
-Ootuspärane vastus oleks `0.3`, kuid Python tagastas midagi muud.
-
-Asi on selles, et arvutis esitatakse ujukomaarvud kahendkujul, kasutades piiratud arvu bitte ja seetõttu polegi võimalik teatud kümnendmurde (nende hulgas `0.1`) täpselt esitada (analoogiliselt pole kümnendmurruna võimalik täpselt esitada näiteks `10 / 3`). Taolistel juhtudel ümardatakse sisestatud arv lihtsalt lähima võimaliku kahendmurruni ja see ongi põhjus, miks antud näites oli tulemus ebatäpne. 
-
-Kui ujukomaarvu on tarvis esitada kümnendmurruna (nt. ekraanile kuvamisel), siis toimub jälle ümardamine -- see on põhjus, miks sisestades käsureale ``0.1`` antakse vastuseks tagasi ``0.1``, kuigi Python sisimas ei suuda seda arvu täpselt esitada. Kui korrutasime ``0.1`` 3-ga, siis muutus viga juba piisavalt suureks, et saadud tulemusele lähim võimalik kümnendmurd oli ``0.30000000000000004``, mitte ``0.3``
-
-Tegelikult tekitab ujukomaarvude ligikaudsus probleeme vaid siis, kui me eeldame reaalarvude absoluutselt täpset esitamist (nt. kümnendmurruna esitatud rahasummad, kus murdosa tähistatab sente). Ujukomaarve kasutatakse peamiselt kõikvõimalike mõõtmistulemuste esitamiseks ja selle jaoks on Pythoni `float` tüübi ulatus ning täpsus enam kui piisav.
-
-
 
       
 .. index::
@@ -227,7 +255,7 @@ Programmeerimine pole ainult arvudega manipuleerimine, paljudes programmides on 
 
 Konkreetsed tekstijupid pannakse programmi tekstis kirja *sõneliteraalidena*. Enamasti piisab sõneliteraali kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``.
 
-Pange tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde. Demonstreerime seda ``print`` käsu abil, mis toob ekraanile alati sõne *tegeliku* sisu, hoolimata sellest, kuidas ta programmi tekstis kirja on pandud:
+Pange tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde. Demonstreerime seda ``print`` käsu abil, mis toob ekraanile alati sõne tegeliku sisu, hoolimata sellest, kuidas ta programmi tekstis kirja on pandud:
 
 .. sourcecode:: py3
 
@@ -420,6 +448,12 @@ Kõik levinud programmeerimiskeeled võimaldavad konkreetseid väärtusi või ar
 
 Selgitus: esimese rea käivitamisel teeb Python kaks erinevat toimingut -- kõigepealt väärtustab avaldise ``2 + 3`` ning seejärel salvestab saadud tulemuse muutujasse ``x``. Programmeerijate kõnepruugis: muutujale ``x`` **omistatakse** avaldise ``2 + 3`` väärtus. Peale seda on võimalik muutuja nime **kasutada** vastava väärtuse asemel. Seega, antud näiteprogrammis tähistavad kõik ``x`` esinemised alates teisest reast arvu `5`.
 
+.. note::
+
+    Pythoni jaoks on ükskõik, millise *nime* sa mingi muutuja jaoks valid, aga programmi loetavuse huvides peaks nimi kirjeldama muutuja tähendust antud ülesande kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``. Muutuja nimes võib kasutada ka numbreid, aga esimene sümbol peab olema täht (või allkriips).
+
+
+
 Muutuja defineerimist (nt. ``x = 2 + 3``, üldisemalt *<muutuja nimi> = <avaldis>*) nimetakse **omistuslauseks**. Kuna tegemist on lausega, siis kirjutatakse ta omaette reale. Seevastu muutuja kasutamine (nt. ``x`` lauses ``print(x)``) on avaldis, mis esineb mingi lause või suurema avaldise sees. 
 
 .. note::
@@ -435,26 +469,104 @@ Muutuja defineerimist (nt. ``x = 2 + 3``, üldisemalt *<muutuja nimi> = <avaldis
         >>> eesnimi
         'Peeter'
 
+Harjutus. Pythagorase teoreem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ilmselt on teile tuttav valem :math:`c = \sqrt{a^2 + b^2}`, mis näitab ära täisnurkse kolmnurga küljepikkuste seosed. Ülesandeks on kirjutada selle põhjal programm, mis kuvab ekraanile hüpotenuusi pikkuse, kui kaatetite pikkused on 2cm ja 3cm. 
+
+Üks võimalus selle valemi kasutamiseks oleks enne tehte Pythonis kirjapanekut asendada `a` ja `b` asemele nõutud arvud (*2* ja *3*), aga sel juhul ei oleks programmile peale vaadates enam nii ilmne, et tegu on Pythagorase teoreemi rakendamisega. Seetõttu proovige muutujaid kasutades säilitada enda programmis valemi üldine kuju!
 
 Milleks muutujad?
 ~~~~~~~~~~~~~~~~~~~~~~ 
-Programmeerimises kasutatakse muutujaid samal põhjusel, nagu loomuliku keele tekstides kasutakse mingite spetsiifiliste mõistete definitsioone -- see võimaldab mingi (potentsiaalselt keerulise) asja panna kirja ühekordselt ning viidata sellele edaspidi erinevates kohtades kasutades vaid ühte sõna. Oleks ju üpris tüütu kirjutada trigonomeetrilistes avaldistes alati ``3.141592653589793``. Selle asemel saame importida moodulist ``math`` muutuja ``pi``, (mille väärtuseks on mooduli loojad juhtumisi omistanud `3.141592653589793`) ning kasutada oma arvutustes seda.
+Eelnev harjutus näitas, et muutujate abil saame teatud kohti programmis kirja panna *üldisemalt*, aga see pole ainus põhjus nende kasutamiseks.
 
-Mõnikord on muutuja kasutamine lausa hädavajalik, näiteks programmides, mis küsivad kasutaja käest mingit infot ja kasutavad seda siis mitmes kohas:
+Muutujaid kasutatakse tihti samal põhjusel, nagu loomuliku keele tekstides kasutakse mingite spetsiifiliste mõistete definitsioone -- see võimaldab mingi (potentsiaalselt keerulise) asja panna kirja ühekordselt ning viidata sellele edaspidi erinevates kohtades kasutades vaid ühte sõna. Oleks ju üpris tüütu kirjutada trigonomeetrilistes avaldistes alati ``3.141592653589793``. Selle asemel saame importida moodulist ``math`` muutuja ``pi``, (mille väärtuseks on mooduli loojad juhtumisi omistanud `3.141592653589793`) ning kasutada oma arvutustes seda.
+
+Vaatame ühte näiteprogrammi, mis väljastab 60.25 cm raadiusega ringi diameetri, ümbermõõdu ja pindala. Esimese versiooni kirjutame ilma muutujaid kasutamata:
 
 .. sourcecode:: py3
 
-    nimi = input('Palun ütle, mis on sinu nimi: ')
-    print(nimi + '?!! Oo, milline ilus nimi!')
-    print('Ma tahaksin seista mäetipul ja hüüda "' + nimi.upper() + '!!!!"')
-    print('ning kuulda, kuidas kaja vastab: "' + ((nimi.lower() + ' ') * 3) + '..."')
+    from math import pi
     
-Ilmselt nõustute, et sellise programmi puhul oleks maitsetu küsida kasutajalt tema nime mitu korda.
+    print('Ringi diameeter on' + str(2 * 60.25) + ' cm')
+    print('Ümbermõõt on ' + str(pi * 2 * 60.25) + ' cm')
+    print('Pindala on ' + str(pi * (60.25 ** 2)) + ' cm2')
+    
+.. topic:: Meeldetuletus: 
+    
+    Käsku ``str`` kasutame selleks, et arvulise arvutuse tulemust teisendada sõneks.
 
-Muutujale nime valimine
-~~~~~~~~~~~~~~~~~~~~~~~~ 
-Pythoni jaoks on ükskõik, millise nime sa mingi muutuja jaoks valid, aga programmi loetavuse huvides peaks nimi kirjeldama muutuja tähendust antud ülesande kontekstis (nt. ``brutopalk`` või ``isikukood``). Kui on tarvis kasutada mitmest sõnast koosnevat muutuja nime, siis tuleks kasutada tühikute asemel allkriipse, nt. ``laste_arv``. Muutuja nimes võib kasutada ka numbreid, aga esimene sümbol peab olema täht (või allkriips).
+See programm arvutab, mida me soovisime, kuid kui me hiljem tahame selle programmiga arvutada mõne teise raadiusega ringi infot, siis peaksime tegema vastava muudatuse kolmes kohas. Nii väikese programmi puhul ei ole see küll probleemiks, kuid reaalsetes programmides on taolisel juhul suur oht, et mõnes kohas ununeb muudatus tegemata. 
 
+Kirjutame nüüd sama programmi ümber kasutades raadiuse hoidmiseks muutujat:
+
+.. sourcecode:: py3
+
+    from math import pi
+    
+    raadius = 60.25
+    print('Ringi diameeter on ' + str(2 * raadius) + ' cm')
+    print('Ümbermõõt on ' + str(pi * 2 * raadius) + ' cm')
+    print('Pindala on ' + str(pi * (raadius ** 2)) + ' cm2')
+
+Siin on konkreetset raadiust mainitud vaid ühes kohas -- muutuja ``raadius`` defineerimisel. Edaspidi on valemites kasutatud muutuja nime. Programmi jooksutamisel asendab Python muutuja nimed muutuja väärtusega ja seetõttu annab see versioon sama tulemuse, mis eelminegi. Samas, kui meil on vaja programmi edaspidi kohandada mõne muu ringi jaoks, siis on vaja muudatus teha vaid ühes kohas. Seega, muutuja kasutamine aitas meil teha programmis olevad arvutused *üldisemaks*, konkreetsest väärtusest sõltumatuks.
+
+.. topic :: Analoogia:
+
+    Mõelge Eesti Vabariigi põhiseadusele -- kui seal räägitakse presidendi rollist, siis ei nimetata ühegi konkreetse presidendi nime vaid kasutatakse väljendit *Vabariigi President*. Seaduse rakendamisel tõlgendatakse seda väljendit vastavalt sellele, kes on antud hetkel presidendiks. Selline lähenemine teeb seaduse teksti üldisemaks, konkreetsetest isikutest sõltumatuks.
+
+
+
+.. note::
+
+    Mõnikord on muutuja kasutamine lausa hädavajalik, näiteks programmides, mis küsivad kasutaja käest mingit infot ja kasutavad seda siis mitmes kohas:
+
+    .. sourcecode:: py3
+
+        nimi = input('Palun ütle, mis on sinu nimi: ')
+        print(nimi + '?!! Oo, milline ilus nimi!')
+        print('Ma tahaksin seista mäetipul ja hüüda "' + nimi.upper() + '!!!!"')
+        print('ning kuulda, kuidas kaja vastab: "' + ((nimi.lower() + ' ') * 3) + '..."')
+        
+    Ilmselt nõustute, et sellise programmi puhul oleks maitsetu küsida kasutajalt tema nime mitu korda.
+
+
+Harjutus x. Nime analüüs
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjuta programm, mis küsib kasutaja käest tema nime ja vastab mitu sulghäälikut tema nimes esineb.
+
+.. hint::
+
+    Mitme abimuutujaga variant:
+    
+    .. sourcecode:: py3
+        
+        ...
+        g_arv = nimi.count('g')
+        ...
+        sulghäälikuid_kokku = ... + g_arv + ...
+        ...
+
+    Alternatiivne võimalus:
+    
+    .. sourcecode:: py3
+        
+        ...
+        sulghäälikuid_kokku = ... + nimi.count('g') + ...
+        ...
+
+Kontrollküsimus. Puuduv lause
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Järgnev on väljavõte ühest käsurea katsetusest:
+
+.. sourcecode:: py3
+
+    >>> kapsas * 9
+    Traceback (most recent call last):
+      File "<pyshell#11>", line 1, in <module>
+        kapsas * 9
+    NameError: name 'kapsas' is not defined
+
+Mida tuleks käsureale eelnevalt sisestada, et avaldis ``kapsas * 9`` annaks veateate asemel tulemuseks ``18.0``?
 
 Avaldiste kombineerimine
 ------------------------------
@@ -498,7 +610,9 @@ TODO: kirjuta mitmesammuline arvutus üheks avaldiseks
 
 Sisend ja väljund
 -----------------
-TODO: siinsetes harjutustes kasuta ohtrasti ka sõnede ja arvude tehteid.
+.. todo::
+
+    siinsetes harjutustes kasuta ohtrasti ka sõnede ja arvude tehteid.
 
 Pythoni käsureal toimub avaldiste sisestamine ning tulemuste väljastamine ilma, et sellele peaks eriti mõtlema. Kui soovime aga programmi käivitada skriptina, siis tuleb sisendi ja väljundiga eraldi tegeleda. 
 
@@ -508,7 +622,9 @@ Pythoni käsureal toimub avaldiste sisestamine ning tulemuste väljastamine ilma
     
 Käsk ``print``
 ~~~~~~~~~~~~~~
-Skriptina esitatud programmis saab väärtusi kuvada ekraanile käsuga **print**. Salvesta järgnev näide faili ning käivita. (Vajadusel vaadake sellekohast juhendit eelmisest peatükist.)
+Nagu võisite eelnevatest näidetest järeldada, saab skriptina esitatud programmis väärtusi ekraanile kuvada käsuga ``print``. Nüüd uurime seda käsku veidi lähemalt.
+
+Esimesena võiks ära märkida, et kui siiani keskendusime põhiliselt avaldistele, mida kasutatakse mingi lause koosseisus, siis ``print`` käsuga moodustatatakse juba päris lauseid. Seetõttu on järgnev lihtne programmijupp täisväärtuslik Pythoni lause ja seega ka täisväärtuslik Pythoni programm:
 
 .. sourcecode:: py3
 
@@ -516,11 +632,11 @@ Skriptina esitatud programmis saab väärtusi kuvada ekraanile käsuga **print**
 
 Sulgudes olevat avaldist ``32 * 57`` nimetatakse siinkohal käsu ``print`` **argumendiks**. Kui kõik läheb ilusti, siis programm kuvab ekraanile ``1824`` ja lõpetab töö.
 
-.. note:: 
+.. admonition:: Meeldetuletus
     
-    Kui skripti kirjutada lihtsalt ``32 * 57``, siis midagi ekraanile ei ilmu. Sel juhul Python küll arvutab antud avaldise väärtuse, aga saadud tulemusega midagi ette ei võta.
+    Avaldise väärtuse automaatne kuvamine toimib ainult käsureal. Kui skripti kirjutada lihtsalt ``32 * 57``, siis midagi ekraanile ei ilmu -- Python küll arvutab antud avaldise väärtuse, aga midagi rohkemat sellega ette ei võta.
 
-Käsule ``print`` võib anda ka mitu argumenti, sel juhul trükitakse samale reale mitu asja järjest, tühikutega eraldatuna. Järgnev näide demonstreerib kahte samaväärset viisi, kuidas trükkida ekraanile mitu infokildu korraga. Esimene variant kombineerib andmed üheks sõneks ja kasutab seega ``print``-i ühe argumendiga, teine variant annab kõik komponendid eraldi argumentidena:
+Käsule ``print`` võib anda ka mitu argumenti, sel juhul trükitakse samale reale mitu asja järjest, tühikutega eraldatuna. Järgnev näide demonstreerib kahte samaväärset viisi, kuidas trükkida ekraanile mitu infokildu korraga. Esimene variant kombineerib komponendid kõigepealt üheks avaldiseks ja kasutab seda ``print``-i argumendina, teine variant annab kõik komponendid eraldi argumentidena:
 
 .. sourcecode:: py3
 
@@ -532,7 +648,7 @@ Käsule ``print`` võib anda ka mitu argumenti, sel juhul trükitakse samale rea
     >>> print(eesnimi, perenimi, "vanus:", vanus)
     Peeter Paan vanus: 21
 
-Eraldi argumentidega variant on küll lühem kirja panna, aga mõnikord see siiski ei sobi, näiteks kui me ei soovi väljundis argumentide vahele tühikut.
+Eraldi argumentidega variant on küll lühem kirja panna (eriti mugav on see, et arve ei pea ise ``str`` käsuga sõneks teisendama), aga mõnikord see siiski ei sobi, näiteks kui me ei soovi väljundis argumentide vahele tühikut.
     
 .. topic:: Lisainfo
 
@@ -558,13 +674,15 @@ Eraldi argumentidega variant on küll lühem kirja panna, aga mõnikord see siis
     
 Käsk ``input``
 ~~~~~~~~~~~~~~
+Kuigi ka see käsk on teile juba tuttav, maksab sedagi põhjalikumalt uurida.
+
 Meie "ringi" programmi viimases versioonis mainisime konkreetset raadiust vaid ühes kohas, kuid me peame ikkagi programmi muutma, kui soovime arvutada mõne teise ringi näitajaid. Alternatiivina võiks programm küsida ringi raadiuse kasutajalt.
 
-Kasutajalt andmete küsimiseks on kõige lihtsam viis käsk **input**, mis kõigepealt kuvab ekraanile teksti selle kohta, milliseid andmeid programm ootab ning seejärel võimaldab kasutajal sisestada vastavad andmed klaviatuurilt. Kolmas versioon ringi arvutuste programmist kasutabki käsku ``input`` raadiuse küsimiseks:
+Kasutajalt andmete küsimiseks ongi kõige lihtsam viis käsk ``input``, mis kõigepealt kuvab ekraanile teksti selle kohta, milliseid andmeid programm ootab ning seejärel võimaldab kasutajal sisestada vastavad andmed klaviatuurilt. Kolmas versioon ringi arvutuste programmist kasutabki käsku ``input`` raadiuse küsimiseks:
 
 .. sourcecode:: py3
 
-    from math import *
+    from math import pi
     
     raadius_tekstina = input('Sisesta ringi raadius: ')
     raadius = float(raadius_tekstina)
@@ -575,6 +693,21 @@ Kasutajalt andmete küsimiseks on kõige lihtsam viis käsk **input**, mis kõig
 
 See versioon on väga sarnane eelmisele versioonile -- viimasel kolmel real ei pidanud me midagi muutma. Erinevus on vaid selles, kuidas saab muutuja ``raadius`` oma väärtuse. Abimuutuja ``raadius_tekstina`` viitab sellele, et ``input`` annab sisestatud info alati teksti kujul. Enne kui me saame sisestatud andmeid kasutada numbrilistes arvutustes, tuleb sisestatud tekst teisendada arvuks (antud juhul ujukomaarvuks, kasutades käsku ``float``).
 
+
+Kontrollküsimus. Avaldis või lause?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Kas eelneva näiteprogrammi fragment ``input('Sisesta ringi raadius: ')`` on avaldis või lause?
+
+.. hint::
+
+    Tuletage meelde, millest koosnes omistuslause.
+
+.. hint:: Vastus
+
+    Mainitud fragment on avaldis, kuna ta genereerib mingi väärtuse. Pealegi, omistuslause parem pool on alati avaldis. Siiski, tegemist on üpris omamoodi avaldisega, kuna tema väärtus võib olla igal korral erinev.
+
+Andmete teisendamine sisendi ja väljundi kasutamisel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Teema kinnistamiseks uurige veel ühte näidet muutujate, ``input``-i ja teksti teisendamise kohta. Selles näites soovime arvutustes kasutada täisarve, seetõttu kasutame teisendamiseks käsku ``int``:
 
 .. sourcecode:: py3
@@ -616,11 +749,9 @@ Kirjutage programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vasta
 
 .. _sisendi-lugemine-failist:
 
-Failide lugemine
+Failide lugemine reakaupa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-TODO read meetod
-
-Siinkohal õpime ära ka ühe viisi tekstifailidest sisendi lugemiseks. Alustuseks koostage ja salvestage tekstifail nimega `andmed.txt`, mille esimesel real on inimese nimi, teisel real vanus (täisarvuna) ning kolmandal real e-maili aadress (lihtsuse mõttes ärge praegu täpitähti kasutage). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvestage loodud failiga *samasse kausta* järgnev skript, ning käivitage see. NB! tühikud ``print`` käskude ees on olulised!
+Nüüd õpime ära ühe viisi tekstifailidest sisendi lugemiseks. Alustuseks koostage ja salvestage tekstifail nimega `andmed.txt`, mille esimesel real on inimese nimi, teisel real vanus (täisarvuna) ning kolmandal real e-maili aadress (lihtsuse mõttes ärge praegu täpitähti kasutage). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvestage loodud failiga *samasse kausta* järgnev skript, ning käivitage see. NB! tühikud ``print`` käskude ees on olulised!
 
 .. sourcecode:: py3
 
@@ -638,8 +769,8 @@ Siinkohal õpime ära ka ühe viisi tekstifailidest sisendi lugemiseks. Alustuse
 
 Selgituseks: 
 
-* Käsk ``open`` otsib failisüsteemist üles soovitud faili ja tagastab viite sellele (antud näites salvestasime selle viite muutujasse ``f``). NB! kui on antud ainult failinimi, ilma teeta, siis otsitakse seda ainult sellest kaustast, kus asub skript.
-* ``f.readline()`` loeb failist ühe rea, ning tagastab selle sõnena. See käsk liigutab edasi ka failist lugemise "järjehoidjat", st. järgmisel korral sama käsku kasutades loetakse järgmine rida.
+* Käsk ``open`` otsib failisüsteemist üles soovitud faili ja tagastab viite sellele (antud näites salvestasime selle viite muutujasse ``f``, mis on levinud nimi failide tähistamiseks). NB! kui on antud ainult failinimi, ilma teeta, siis otsitakse seda ainult sellest kaustast, kus asub skript.
+* Avaldis ``f.readline()`` loeb failist ühe rea, ning annab selle sõnena. See käsk liigutab edasi ka failist lugemise "järjehoidjat", st. järgmisel korral sama käsku kasutades loetakse järgmine rida. See käsk on kaunis sarnane ``input`` käsule, kuna kummalgi juhul ei tea me programmi kirjutades, millise konkreetse väärtuse me tulemuseks saame.
 * ``f.close()`` ütleb failisüsteemile, et me oleme selle faili kasutamise lõpetanud. 
 
 Kui seda programmi katsetate, siis märkate, et väljundis tekib iga sisestatud andmejupi järele üks üleliigne tühi rida. Põhjus on just selles, et failist lugedes jäetakse iga rea lõppu alles ka reavahetuse sümbol (faili viimase rea puhul võib see puududa, vastavalt sellele, kas failis on viimase rea lõpus reavahetus või mitte). Käsk ``print`` lisab omaltpoolt veel ühe reavahetuse.
@@ -655,6 +786,31 @@ Kui seda programmi katsetate, siis märkate, et väljundis tekib iga sisestatud 
 Harjutus 4. Reavahetuste eemaldamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tuletage meelde, mida tegi sõnemeetod ``strip()``. Modifitseerige eelnevat näiteprogrammi selliselt, et programmi väljundisse ei tekiks üleliigseid reavahetusi.
+
+Faili sisu lugemine ühekorraga
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Koostage veel üks mitmerealine, suvalise sisuga tekstifail ning salvestage see nimega *tekst.txt*. Seejärel käivitage (samas kaustas) järgnev näiteprogramm:
+
+.. sourcecode:: py3
+
+    f = open('tekst.txt')
+    faili_sisu = f.read()
+    print(faili_sisu)
+    f.close()
+
+Siin kasutasime ``readline``'i asemel meetodit ``read``, mis luges sisse kogu faili sisu.
+
+Harjutus. Tehete kombineerimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Muutke eelmist näidet selliselt, et kogu failis olev tekst kuvatakse ekraanile suurtähtedes. Proovige ka lahti saada abimuutujast ``faili_sisu``. Muutuja ``f`` võib jääda alles.
+
+.. hint::
+
+    Abimuutuja ärakaotamiseks tuleb lugemine, teisendamine ja kuvamine panna kirja ühe lausega.
+    
+.. hint::
+
+    Ühe sõneoperatsioonide kombineerimise näite leiad sõnede teema juurest, tehete tabelist
 
 Failide kirjutamine
 ~~~~~~~~~~~~~~~~~~~~
@@ -679,10 +835,18 @@ Selgituseks:
 * erinevalt ``print`` käsust, ei tekita faili meetod ``write`` automaatselt reavahetust. Selleks, et saada eri andmeid eri ridadele, lisasime reavahetuse sümboli käsitsi.
 
 
+Harjutus. Failide teisendamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Kirjutage programm, mis küsib kasutajalt kaks failinime. Esimene neist peaks tähistama mingit olemasolevat tekstifaili. Teine failinimi võib olla uus, st. selle nimega faili ei pruugi eksisteerida.
+
+Programmi ülesandeks on võtta esimese faili sisu, teisendada see suurtähtedesse ning kirjutada teise faili. Ekraanile tuleks kuvada teisendatud failis olevate tähemärkide arv.
+
+.. todo::
+
+    anna vihjed
+
 .. index::
     single: kommentaarid
-
-
     
 Kommentaarid
 ------------
@@ -769,12 +933,6 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
 
     Kui see ülesanne oli teie jaoks liiga lihtne, siis proovige muuta programmi selliselt, et nt. `Mari-Liis`, `mari-liis` ja `mAri-liiS` muudetakse kõik `Mari-Liis`-iks.
     
-    NB! selle jaoks läheb tarvis ühte Pythoni konstruktsiooni, mida pole selles peatükis tutvustatud! 
-    
-    .. hint::
-    
-        http://www.google.com
-    
     .. hint::
     
         .. sourcecode :: py3
@@ -793,7 +951,6 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
             >>> x[2:4]
             're'
         
-        Kui te pole veendunud, et saite konstruktsiooni ``[...]`` tähendusest aru, siis lugege täpsemalt siit: http://docs.python.org/py3k/tutorial/introduction.html#strings. Antud õpikus käsitleme seda teemat alles järjendite peatükis.
 
 5. Redeli pikkus
 ~~~~~~~~~~~~~~~~~~
