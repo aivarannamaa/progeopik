@@ -1,6 +1,20 @@
 7. Programmi käigu juhtimine
 =======================================
 
+.. todo::
+
+    * conditional vs alternative execution ???
+    * chained & nested conditionals
+    * Harjutus loogiliste avaldiste samaväärsuse kontrollimiseks (õpeta ka testima)
+    * Harjutus "wrap this code in a function"
+    * tabelite genereerimine
+    * kilpkonnaga rooma numbrite joonistamine
+    * kalendri printimine
+    * etteantud 2-3 muutujaga tõeväärtustabeli põhjal avaldise kirjutamine
+    
+
+
+
 TODO: selgita, et programmi käik sõltub sisendandmetest
 
 Selles peatükis uurime põhjalikumalt tingimuslause (e. ``if``-lause) erinevaid vorme ja tingimuse moodustamise võimalusi, ...
@@ -59,36 +73,6 @@ Kirjutage programm, mis küsib kasutajalt aastaarvu ning väljastab ekraanile in
 Tingimuslaused
 --------------
 Pythoni tingimuslausega olete juba kokku puutunud, aga vaatame siinkohal mõned punktid veel üle. Lisaks tutvustame "mitmeharulist" tingimuslauset.
-
-``if`` ilma ``else``-ta
-~~~~~~~~~~~~~~~~~~~~~~~
-Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui tingimuse mittekehtimise puhul ei ole vaja midagi spetsiifilist teha:
-
-.. sourcecode:: py3
-
-    x = int(input("Sisesta esimene arv: "))
-    y = int(input("Sisesta teine arv: "))
-    
-    print("Arvude erinevus on " + str(abs(x-y)))
-    if x == y:
-        print("... seega on nad võrdsed")
-
-Tingimuslaused üksteise sees
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tingimuslauseid võib panna üksteise sisse, sel juhul tuleb hoolikalt jälgida korrektset treppimist:
-
-.. sourcecode:: py3
-    
-    arv1 = int(input("Sisesta esimene arv: "))
-    arv2 = int(input("Sisesta teine arv: "))
-    
-    if arv1 > arv2:
-        print("Esimene arv on suurem")
-    else:
-        if arv2 > arv1:
-            print("Teine arv on suurem")
-        else:
-            print("Arvud on võrdsed")
 
 Harjutus 4. Päevade arv kuus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@
 ====================================
 
 
-.. note::
+.. todo::
 
     omistamise += kuju üle korrata?
 
@@ -12,7 +12,28 @@
     TODO: Wikipedia sirvimise näide funktsiooni väljakutsete mõistmiseks
     
     TODO: **näited** selle kohta, et ühte funktsiooni saab välja kutsuda mitu korda
-
+    
+    TODO: väljakutse, meetod, argument
+    
+    TODO: Kontrollküsimus: funktsioon, mis teeb midagi n korda kutsutakse välja m korda. Mitu korda tehakse midagi?
+    
+    "Let's wrap it in a function to make it easier to use" -- tee selle kohta näide
+    
+    calling a function *generates* a value
+    
+    funktsioonide komponeerimine avaldises & funktsioonid, mis kutsuvad välja teisi funktsioone
+    
+    bool funktsioonid
+    
+    Ülesanded, kus ühe ülesande lahenduses on vaja teise ülesande funktsiooni
+    
+    paaris, paaritu defineerimine vastastikuselt
+    
+    Definitsioonide laadimine käsureale, harjutused, kus on näidatud käsurea sessioon, aga puudu on definitsioonid, Lõpuks Docstringi ja doctest'i tutvustamine
+    
+    üldistamise harjutus: vt. ex2 http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#exercises
+    
+    
 
 Funktsioonide kasutamine
 -----------------------------

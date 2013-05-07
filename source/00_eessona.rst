@@ -28,5 +28,6 @@ Mida Sult oodatakse?
 Peatüki struktuur
 ---------------------
 TODO
-näiteid on vähe, võta ülesandeid kui näiteid
-esimesed peatükid on teksti ja ülesannete arvu poolest mahukamad, aga teemad ja ülesanded on lihtsamad
+* näiteid on vähe, võta ülesandeid kui näiteid
+* esimesed peatükid on teksti ja ülesannete arvu poolest mahukamad, aga teemad ja ülesanded on lihtsamad
+* kõik ülesanded pole praktilised, võta mõnesid kui nuputusülesandeid

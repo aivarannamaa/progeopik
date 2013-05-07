@@ -57,39 +57,6 @@ Mälu ja muutujad
     
 Milleks muutujad?
 ~~~~~~~~~~~~~~~~~
-Vaatame ühte näiteprogrammi, mis väljastab 60.25 cm raadiusega ringi diameetri, ümbermõõdu ja pindala. Esimese versiooni kirjutame ilma muutujaid kasutamata:
-
-.. sourcecode:: py3
-
-    from math import *
-    
-    print('Ringi diameeter on ' + str(2 * 60.25) + ' cm')
-    print('Ümbermõõt on ' + str(pi * 2 * 60.25) + ' cm')
-    print('Pindala on ' + str(pi * (60.25 ** 2)) + ' cm2')
-    
-.. topic:: Meeldetuletus: 
-    
-    Käsku ``str`` kasutame selleks, et arvutuse tulemust teisendada sõneks.
-
-See programm arvutab, mida me soovisime, kuid kui me hiljem tahame selle programmiga arvutada mõne teise raadiusega ringi infot, siis peaksime tegema vastava muudatuse kolmes kohas. Sellise kompaktse programmi puhul ei ole see küll probleemiks, kuid reaalsetes programmides on taolisel juhul suur oht, et mõnes kohas ununeb muudatus tegemata. 
-
-Kirjutame nüüd sama programmi ümber kasutades raadiuse hoidmiseks muutujat:
-
-.. sourcecode:: py3
-
-    from math import *
-    
-    raadius = 60.25
-    print('Ringi diameeter on ' + str(2 * raadius) + ' cm')
-    print('Ümbermõõt on ' + str(pi * 2 * raadius) + ' cm')
-    print('Pindala on ' + str(pi * (raadius ** 2)) + ' cm2')
-
-Siin on konkreetset raadiust mainitud vaid ühes kohas -- muutuja ``raadius`` defineerimisel. Edaspidi on valemites kasutatud muutuja nime. Programmi jooksutamisel asendab Python muutuja nimed muutuja väärtusega ja seetõttu annab see versioon sama tulemuse, mis eelminegi. Samas, kui meil on vaja programmi edaspidi kohandada mõne muu ringi jaoks, siis on vaja muudatus teha vaid ühes kohas. Seega, muutuja kasutamine aitas meil teha programmis olevad arvutused *üldisemaks*, konkreetsest väärtusest sõltumatuks.
-
-.. topic :: Analoogia:
-
-    Mõelge Eesti Vabariigi põhiseadusele -- kui seal räägitakse presidendi rollist, siis ei nimetata ühegi konkreetse presidendi nime vaid kasutatakse väljendit *Vabariigi President*. Seaduse rakendamisel tõlgendatakse seda väljendit vastavalt sellele, kes on antud hetkel presidendiks. Selline lähenemine teeb seaduse teksti üldisemaks, konkreetsetest isikutest sõltumatuks.
-
 .. _operatsioonid-muutujatega:
     
 

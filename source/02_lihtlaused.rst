@@ -24,7 +24,7 @@ Nüüd võib tekkida kohe järgmine küsimus: miks ilmus lause ``print(2 + 3)`` 
 .. index::
     single: väärtus
     
-Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on need reaalsed andmed, mida programm oma töö käigus kasutab, loob, arvutab, teisendab vms. Võib öelda, et avaldised *tähistavad* mingisuguseid asju programmi tekstis, aga väärtused *on* need asjad programmi jooksutamise ajal.
+Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on need reaalsed andmed, mida programm oma töö käigus kasutab, loob, arvutab, teisendab vms. Võib öelda, et avaldised *tähistavad* mingisuguseid asju programmi tekstis, aga väärtused *on* need asjad programmi jooksutamise ajal. *Väärtustamine* genereerib avaldisele vastava väärtuse.
 
 .. index::
     single: andmetüüp; tüüp
@@ -179,9 +179,6 @@ Juku läks magama kell 23:00 ja pani väsinud peaga äratuse helisema 88 tunni p
 
 Vastuse saab kätte ühe Pythoni avaldisega.
 
-.. note::
-
-    Kui said kätte õige tunni täisarvuna, siis täienda avaldist nii, et vastuseks tuleks sõne kujul *<tunnid>:<minutid>*, nt. ``'07:00'``.
 
 Moodul ``math``
 ~~~~~~~~~~~~~~~~~~~~     
@@ -358,9 +355,9 @@ Tehted sõnedega
 +=====================================+====================+=====================================================================+
 | ``'Tere' + 'Madis!'``               |``'TereMadis!'``    | ``+`` loob kahe sõne põhjal uue sõne                                |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``'Tere' + ' Madis!'``              |``'Tere Madis!'``   | Tühikud tuleb vajadusel ise vahele panna                            |
+| ``'Tere' + ' Madis!'``              |``'Tere Madis!'``   | tühikud tuleb vajadusel ise vahele panna                            |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``'Tere' + ' ' + 'Mad' + 'is!'``    |``'Tere Madis!'``   | kokku võib liita ka mitu sõnet                                      |
+| ``'Tere' + ' ' + 'Mad' + 'is!'``    |``'Tere Madis!'``   | Kokku võib liita ka mitu sõnet                                      |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'nr.' + 1``                       | Viga!!!            | Sõnet ja arvu ei saa niisama ühendada                               |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
@@ -381,6 +378,10 @@ Tehted sõnedega
 | ``'TeRe'.lower()``                  | ``'tere'``         |                                                                     |
 +-------------------------------------+--------------------+                                                                     |
 | ``'jäääär'.count('ä')``             | ``4``              |                                                                     |
++-------------------------------------+--------------------+---------------------------------------------------------------------+
+| ``'tere'.rjust(10)``                | ``'      tere'``   | Sõne paigutamine etteantud "ruumi", see on abiks tabelite           |
++-------------------------------------+--------------------+ moodustamisel                                                       +
+| ``'terekest'.rjust(10)``            | ``'  terekest'``   |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``' tere '.strip()``                | ``'tere'``         | Meetod ``strip`` annab sõne ilma alguses ja lõpus olevate tühikute  |
 +-------------------------------------+--------------------+ ja reavahetusteta                                                   +
@@ -422,6 +423,26 @@ Kirjutage iga allpool toodud sõne kohta võimalikult lühike avaldis, kus seda 
 
 TODO: näitelahendus
 
+Kontrollküsimus. Tehted sõnedega
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kuidas väärtustab Python järgnevad avaldised?
+
+* ``len(Kosmoselaev)``
+* ``len(KoSMoSeElaev.upper())``
+* ``Kosmoselaev[2:4]``
+* ``Kosmoselaev.count(u)``
+* ``len(karu + ott)``
+
+NB! Kontrollige oma oletusi käsureal!
+
+.. hint::
+
+    Ilmselt saite kõigile neile avaldistele vastuseks veateate, sest Python pidas kasutatud sõnu (``Kosmoselaev``, ``ott`` jt) muutujateks, aga selliste nimedega muutujaid ei olnud defineeritud. Sõneliteraalidel on alati ümber ülakomad või jutumärgid!
+
+.. index::
+    single: muutujad
+    
+.. _muutujad:
 
 Muutujad
 ---------
@@ -580,7 +601,7 @@ Toome järgnevalt mõned näited avaldistest mis koosnevad erinevatest alamavald
 
 TODO: näide
 
-Tehniliselt võttes ühendab erinevaid avaldise liike see, et neil kõigil on *väärtus* -- literaalide puhul on väärtus otseselt kirja pandud, muutuja kasutamisel vaatab Python järele selle defineerimisel antud väärtuse, tehete väärtuse leidmiseks tuleb teha vastavad arvutused. Asjaolu, et Python suudab leida iga avaldise väärtuse ja et reaalne arvutamine (nt. liitmine) toimub justnimelt väärtustega, ongi see, mis võimaldab meil erinevat liiki avaldisi nii vabalt kombineerida.
+Tehniliselt võttes ühendab erinevaid avaldise liike see, et neil kõigil on *väärtus* -- literaalide puhul on väärtus otseselt kirja pandud, muutuja kasutamisel vaatab Python järele selle defineerimisel antud väärtuse, tehete väärtuse leidmiseks tuleb teha vastavad arvutused. Asjaolu, et Python suudab genereerida igale avaldisele väärtuse ja et reaalne arvutamine (nt. liitmine) toimub justnimelt väärtustega, ongi see, mis võimaldab meil erinevat liiki avaldisi nii vabalt kombineerida.
 
 Harjutus x
 ~~~~~~~~~~~~~~

@@ -1,3 +1,13 @@
+.. todo::
+
+    * Ül: Kirjuta funkts on_palindroom näidete järgi
+    * Käsurea argumendid (nt. käsurealt antud arvude keskmine)
+    * mediaani arvutamine
+    * Lisalugemiseks statistika?
+    * http://www.openbookproject.net/thinkcs/python/english2e/ch10.html#exercises
+    * http://www.openbookproject.net/thinkcs/python/english2e/ch11.html#exercises
+
+
 8. Järjendid ja ``for``-tsükkel
 =================================
 
@@ -405,6 +415,10 @@ Avaldis ``järjend[-0]`` tähistab siiski esimest elementi, sest *-0 = 0*.
 
 Järjendite "viilutamine"
 ~~~~~~~~~~~~~~~~~~~~~~~~
+.. todo::
+
+    tee skeem, kus indeksid asuvad tähtede vahel. vt. http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#string-slices
+
 Kirjutades nurksulgudesse indeksi asemel *indeksivahemiku* on järjendist (ja sõnedest) võimalik võtta alamjärjendeid (alamsõnesid):
 
 .. sourcecode:: py3
@@ -423,14 +437,14 @@ Kirjutades nurksulgudesse indeksi asemel *indeksivahemiku* on järjendist (ja s�
 
     >>> a[-2:]
     ['e', 'f']
-    >>> a[:]
-    ['a', 'b', 'c', 'd', 'e', 'f']
     
     >>> s = "Tere"
     >>> s[0:3]
     'Ter'
 
 Koolonist vasakule tuleb kirjutada see indeks, millest alates tuleb elemente tulemusse kopeerida, ning koolonist paremale see indeks, mille juures tuleb kopeerimine lõpetada (st. selle indeksiga element jääb tulemusest välja). Kui vasak indeks jätta kirjutamata, siis alustatakse esimesest elemendist ja kui parem indeks jätta kirjutamata, siis kopeeritakse kuni järjendi lõpuni (viimane element kaasaarvatud).
+
+Mida võiks tähendada ``s[:]``?
 
 Valed indeksid
 ~~~~~~~~~~~~~~~~~~
