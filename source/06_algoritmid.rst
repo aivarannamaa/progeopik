@@ -1,6 +1,11 @@
 6. Algoritm ja plokkskeem
 ==========================
 
+.. todo::
+
+    * tutvusta alternatiivsete lahenduste ja elegantsi/loetavuse teemat 
+
+
 Struktuurse progemise skeem
 http://www.freenetpages.co.uk/hp/alan.gauld/tutwhat.htm
 

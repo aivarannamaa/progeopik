@@ -6,7 +6,7 @@ Programmeerimisest on kasu ka matemaatika õppimisel. Oletame, et õpite parasja
 
 Võibolla on teil hoopis ambitsioonikamad ideed: näiteks luua videomontaaži programm, mis on peaaegu sama võimas, kui Adobe Premiere, aga palju lihtsam ja kasutajasõbralikum, ning pealegi `open-source`. Jah, tegemist on äärmiselt julge plaaniga, aga teatavasti algab iga teekond esimesest sammust.
 
-Selle õpiku abil on teil võimalus õppida algtasemel programmeerima. Ärge alahinnake sõna `algtase` -- see käib ennekõike raamatu läbitöötamisel saadava kogemustepagasi kohta. Kuna kasutatav programmeerimiskeel Python on oma põhiolemuselt lihtne, aga võimas, on pakutavad teemad täesti piisavad kõikide teie programmiideede realiseerimiseks. 
+Selle õpiku abil on teil võimalus õppida algtasemel programmeerima. Ärge alahinnake sõna `algtase` -- see käib ennekõike raamatu läbitöötamisel saadava kogemustepagasi kohta. Kuna kasutatav programmeerimiskeel Python on oma põhiolemuselt lihtne, aga võimas, on pakutavad teemad täesti piisavad kõikide teie programmiideede realiseerimiseks. [TODO tulu sõltub pühendumisest]
 
 Mis Sind ees ootab?
 ----------------------
@@ -24,6 +24,10 @@ Mida Sult oodatakse?
 * julgust -- ka siis kui ülesanne tundub raske, haara ikkagi härjal sarvist
 * kogukonda panustamist?
 * (NB! mõni tahab käsku täita)
+
+Lugemise juhis
+----------------
+* soovitav lugeda järjest
 
 Peatüki struktuur
 ---------------------

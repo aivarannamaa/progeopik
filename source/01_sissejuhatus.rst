@@ -248,7 +248,7 @@ Kirjutage skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks üm
     single: käsurida
     single: shell; käsurida
 
-IDLE'i käsurida
+Pythoni käsurida
 ----------------
 Võibolla imestasite, miks tuleb IDLE käivitamisel kõigepelt ette käsurea aken. Põhjus on selles, et programmeerida saab ka käsureal, ilma, et programmi peaks skriptina salvestamata. Selline programmeerimise viis sobib väiksemate ülesanne lahendamiseks ning Pythoni võimaluste katsetamiseks. Kuna käske antakse ühekaupa ja tulemus näidatakse kohe järgmisel real, nimetatakse seda ka *interaktiivseks programmeerimiseks*. 
 

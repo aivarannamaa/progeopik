@@ -3,6 +3,7 @@
 
 .. todo::
 
+    * maini uuesti alternatiivsete lahenduste teemat (nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks)
     * conditional vs alternative execution ???
     * chained & nested conditionals
     * Harjutus loogiliste avaldiste samaväärsuse kontrollimiseks (õpeta ka testima)

@@ -59,7 +59,7 @@ Selles programmis ei täida Python enam kõiki käske -- see, kas täidetakse k�
 
 Tingimuslause komponendid on *päis* (so. ``if``-i ja tingimusega rida), ``then``-haru (so. päisele järgnevad paremale nihutatud read), võtmesõna ``else``, ning ``else``-haru (jällegi paremale nihutatud).
 
-Tingimusi saab moodustada järgmiste operaatoritega: 
+Tingimusi saab (muuhulgas) moodustada järgmiste operaatoritega: 
 
 * ``<``, ``>``, ``<=``, ``>=`` sobivad arvude võrdlemiseks
 * Topeltvõrdusmärk (``==``) tähistab võrdsust nii arvude kui sõnede puhul
@@ -534,76 +534,112 @@ Kirjutage programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja v
     Ärge unustage, et ``readline`` tagastab sõne. Arvutamiseks on vaja see teisendada arvuks.
 
 
+
+
+
 .. index::
     single: bool; tõeväärtustüüp
     single: boolean; tõeväärtustüüp
 
 Tõeväärtustüüp ``bool``
 -----------------------
-.. note:
-    Meeldetuletus 3. peatükist -- Pythoni programmi kood koosneb lausetest ja lause komponentideks on avaldised. Tuleb välja, et ka ``if`` või ``while`` lause päises olev tingimus on tegelikult avaldis. Kuna igal avaldisel on väärtus ja igal väärtusel on tüüp, siis mis on tingimuse tüüp?
-
-
-
-
-Lisaks sõnedele ja arvudele on Pythonis üks oluline andmetüüp nimega ``bool`` (lühend sõnast ``boolean``, tuleb matemaatiku George Boole'i nimest). Selles tüübis on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks**.
-
-Tõeväärtustüübiga olete tegelikult juba kokku puutunud -- ``if``-lause tingimuseks olev avaldis on justnimelt tõeväärtustüüpi. Samas, tõeväärtustüübi kasutusvõimalused pole piiratud vaid ``if``-lausega -- nagu kõiki väärtusi, saab ka tõeväärtusi muutujasse salvestada või funktsiooni argumendina kasutada. Selles veendumiseks mängime läbi järgneva lihtsa näite:
+Nagu varem mainitud, koosneb iga Pythoni programmi lausetest ja lause komponentideks on avaldised. Tuleb välja, et Python peab ka ``if`` või ``while`` lause päises olevat tingimust avaldiseks. Aga kui igal avaldisel on väärtus, siis millised näevad välja tingimuse väärtused? Proovime järgi:
 
 .. sourcecode:: py3
 
-    vastus = 3 > 2
-    print(vastus)
+    >>> 3 > 2
+    True
+    >>> 3 > 3
+    False
+    >>> 3 >= 3
+    True
+    >>> x = 4
+    >>> y = 5
+    >>> x == y
+    False
+    >>> y > x
+    True
+    >>> toit = "Kapsas"   # NB! ühe võrdusmärgiga on omistamine
+    >>> toit == "kapsas"  # kahe võrdusmärgiga on võrduse kontrollimine
+    False
+    >>> toit.lower() == "kapsas"
+    True
 
-* kõigepealt väärtustakse avaldis ``3 > 2``
-* tulemuseks saadud väärtus ``True`` salvestatakse muutujasse ``vastus``
-* muutuja ``vastus`` väärtus kuvatakse ekraanile
+Selgitus: Tingimuste jaoks on Pythonis eraldi andmetüüp nimega ``bool``, milles on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks** (``bool`` on lühend sõnast ``boolean``, mis tuleb omakorda matemaatiku George Boole'i nimest).
 
-Kuna ``if``-lause tingimuses võib tõeväärtus olla antud mistahes kujul, siis võiksime kontrolli tulemuse salvestada eelnevalt muutujasse ning hiljem kasutada seda muutujat tingimusena:
+Pole kokkusattumus, et me käsitleme seda andmetüüpi just tingimuslausete peatükis -- kõik avaldised, mis annavad väärtustamisel tulemuseks ``True`` või ``False`` sobivad ``if`` või ``while``-lause päisesse ning nende lausete päised on põhiline koht, kus tõeväärtusi kohtab. 
 
-.. sourcecode:: py3
+.. note::
 
-    arv = int(input("Sisesta arv: "))
-    jagub_kahega = arv % 2 == 0 # salvestame tõeväärtuse abimuutujasse
-    
-    if jagub_kahega:
-        print("Sisestati paarisarv")
-    else:
-        print("Sisestati paaritu arv")
+    Just nagu iga avaldise puhul, saab ka tõeväärtusavaldise põhjal defineerida muutujaid. Kuna ``if``-lause päises võib tõeväärtus olla antud mistahes kujul, siis võiksime mingi kontrolli tulemuse salvestada eelnevalt muutujasse ning hiljem kasutada seda muutujat tingimusena:
 
-Enamasti pole siiski taolist abimuutujat tarvis ja me võime kirjutada lihtsalt:
+    .. sourcecode:: py3
 
-.. sourcecode:: py3
+        arv = int(input("Sisesta arv: "))
+        jagub_kahega = arv % 2 == 0 # salvestame tõeväärtuse abimuutujasse
+        
+        if jagub_kahega:
+            print("Sisestati paarisarv")
+        else:
+            print("Sisestati paaritu arv")
 
-    arv = int(input("Sisesta arv: "))
-    
-    if arv % 2 == 0:
-        print("Sisestati paarisarv")
-    else:
-        print("Sisestati paaritu arv")
+    Antud näites ei andnud abimuutuja kasutamine küll midagi juurde -- samaväärse programmi võiksime panna kirja ka lihtsamalt:
+
+    .. sourcecode:: py3
+
+        arv = int(input("Sisesta arv: "))
+        
+        if arv % 2 == 0:
+            print("Sisestati paarisarv")
+        else:
+            print("Sisestati paaritu arv")
+
+    Keerulisemate tingimuste korral võib aga abimuutuja kasutamine teha koodi paremini loetavaks.
 
 
-Tõeväärtusega avaldised
+Tõeväärtustehted
 ~~~~~~~~~~~~~~~~~~~~~~~
-Pythonis on olemas hulk operaatoreid ning funktsioone, mis tagastavad tõeväärtuse ja mida saab seetõttu kasutada ``if``-lause tingimuses. Proovige käsureal järgmisi avaldisi:
+Kuigi tõeväärtustüübis on vaid kaks väärtust ``True`` ja ``False``, on olemas palju erinevaid viise nende genereerimiseks. Järgnev tabel demonstreerib mõnesid neist:
 
-    * ``4 < 3``
-    * ``4 >= 4``
-    * ``4 == 3``
-    * ``4 != 3``
-    * ``4 != 4``
-    * ``'r' in 'tore'``
-    * ``'r' in 'tobe'``
-    * ``'Tallinn'.endswith('linn')``
-    * ``'Tartu'.startswith('reha')``
-    * ``'10203'.isnumeric()`` (sobib märgita täisarvude tuvastamiseks)
-    * ``'suramura'.isnumeric()``
++----------------------------------+---------+---------------------------------------------------------------------+
+| Avaldis                          | Väärtus | Kommentaar                                                          |
++==================================+=========+=====================================================================+
+| ``2 == 2.0``                     |``True`` | ``==`` sobib nii sõnede, kui arvude võrduse kontrollimiseks         |
++----------------------------------+---------+                                                                     +
+| ``'tere' == 'tere'``             |``True`` |                                                                     |
++----------------------------------+---------+---------------------------------------------------------------------+
+| ``2 == '2'``                     |``False``| Ükski sõne pole ühegi arvuga võrdne                                 |
++----------------------------------+---------+---------------------------------------------------------------------+
+| ``2 != '2'``                     |``True`` | ``!=`` annab ``True`` neil juhtudel kus ``==`` annaks ``False``     |
++----------------------------------+---------+ ja vastupidi                                                        +
+| ``2 != 2``                       |``False``|                                                                     |
++----------------------------------+---------+---------------------------------------------------------------------+
+| ``3 > 3``                        |``False``| Arvude võrdlemine toimub ootuspäraselt                              |
++----------------------------------+---------+                                                                     +
+| ``3 >= 3``                       | ``True``|                                                                     |
++----------------------------------+---------+                                                                     +
+| ``2 < 3``                        | ``True``|                                                                     |
++----------------------------------+---------+                                                                     +
+| ``2 <= 3``                       | ``True``|                                                                     |
++----------------------------------+---------+---------------------------------------------------------------------+
+| ``'koer' < 'kirp'``              | ``True``| Sõnede võrdlemine toimub tähestiku järgi                            |
++----------------------------------+---------+---------------------------------------------------------------------+
+| ``'r' in 'tore'``                | ``True``| ``in`` kontrollib tähe või *alamsõne* leidumist sõnes               |
++----------------------------------+---------+                                                                     +
+| ``'r' in 'tobe'``                |``False``|                                                                     |
++----------------------------------+---------+                                                                     +
+| ``'art' in 'Tartu'``             | ``True``|                                                                     |
++----------------------------------+---------+---------------------------------------------------------------------+
+| ``'Tallinn'.endswith('linn')``   | ``True``| Sõnemeetodid ``startswith`` ja ``endswith`` teevad seda, mida võiks |
++----------------------------------+---------+ nende nimedest arvata                                               +
+| ``'Tallinn'.startswith('reha')`` |``False``|                                                                     |
++----------------------------------+---------+---------------------------------------------------------------------+
+| ``'10203'.isnumeric()``          | ``True``| ``isnumeric`` annab ``True`` kui sõne sisaldab ainult numbreid      |
++----------------------------------+---------+---------------------------------------------------------------------+
 
 Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
 
-.. topic:: Terminoloogia
 
-    Avaldisi, mis tagastavad tõeväärtuse, nimetatakse *loogilisteks avaldisteks*.
 
 Harjutus x. Mitte-tõstutundlik sõnede võrdlemine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -620,7 +656,9 @@ Kirjutage programm, mis küsib kasutajalt positiivse täisarvu ning kontrollib, 
 
 Tõeväärtuste kombineerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kuna tõeväärtustüübis on vaid kaks väärtust, ei ole nende väärtuste kombineerimiseks nii palju võimalusi, kui näiteks sõnede või arvude puhul. Kõige tähtsamad operaatorid, mis võtavad argumendiks tõeväärtused (e. *loogilised tehted*), on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järgi proovida:
+Nägime, et tõeväärtused on paljude arvu- ja sõnetehete tulemuseks. Kas on olemas mingeid mõistlikke tehteid, mida saab teha tõeväärtuste endiga?
+
+Kõige tähtsamad tehted, mille argumentideks on tõeväärtused, so. **loogilised tehted**, on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järgi proovida:
 
     * ``True and False``
     * ``True and True``
@@ -631,13 +669,21 @@ Kuna tõeväärtustüübis on vaid kaks väärtust, ei ole nende väärtuste kom
     * ``not True``
     * ``not False``
 
-Tehete järjekord
-~~~~~~~~~~~~~~~~
-Keerulisemate avaldiste puhul tuleb arvestada, et ``not`` on kõrgema prioriteediga kui ``and`` ning ``and`` on kõrgema prioriteediga kui ``or``, seega ``not x or not y and z`` tähendab ``(not x) or ((not y) and z)``.
+Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``True and False`` väärtuse -- loogilisi tehteid kasutatakse üldjuhul teiste tõeväärtusavaldiste kombineerimiseks, just nagu järgmises näites:
 
-Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõige kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on kõige madalama prioriteediga (tehakse viimasena).
+.. sourcecode:: py3
 
-TODO: näide
+    parool = input("Sisesta oma uus parool: ")
+    
+    if len(parool) >= 8 and parool != "password":
+        print("Hea valik!")
+    else:
+        print("See parool jääb lahjaks!")
+    
+    
+Keerulisemate loogiliste avaldiste puhul tuleb arvestada, et ``not`` on kõrgema prioriteediga kui ``and`` ning ``and`` on kõrgema prioriteediga kui ``or``, seega ``not x or not y and z`` tähendab ``(not x) or ((not y) and z)``.
+
+Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on madalama prioriteediga (tehakse viimasena), seega ``a > b and b > c`` tähendab ``(a > b) and (b > c)``.
 
 Harjutus 2. Vastandid
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -676,9 +722,6 @@ Justkui tingimuslause päises, lubatakse ka ``while``-lause päises suvalisel ku
     while True:
         ...
 
-
-
-    
 Pykkar
 -----------------------
 Kui tegite eelnevate harjutuste plokkskeemid paberile, siis saite sedasi esitatud algoritme "käivitada" vaid enda peas. Nagu teada, on inimene aga ekslik ja seetõttu võisid mõned vead algoritmides jääda märkamatuks. 
@@ -728,6 +771,9 @@ Antud näiteprogramm vastab umbkaudselt eespool toodud harjutusele "2. Kui võim
 Harjutus 6. Plokkskeemi kohandamine Pythoni programmiks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage nüüd eespool antud robotiülesanded ümber Pythoni programmideks, kasutades moodulit ``pykkar``.
+
+
+
 
 
 
