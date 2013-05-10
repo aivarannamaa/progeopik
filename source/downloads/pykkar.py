@@ -125,10 +125,14 @@ class World():
             (sys.executable, '-u', '-m', 'pykkar',  repr(layout_str)),
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
-            # IDLE can't redirect stderr properly
-            stderr=None if "idlelib.run" in sys.modules else sys.stderr
+            stderr=subprocess.PIPE
         )
-        
+
+        # Check initialization result
+        result_str = self.proc.stdout.readline().decode()
+        if result_str.strip() != "OK":
+            raise RuntimeError("World creation failed: " + eval(result_str))
+
     def execute(self, command_str):
         if self.proc.poll() != None:
             return
@@ -238,13 +242,14 @@ class _WorldProper:
     _block_size = 32
 
     def __init__(self, layout_str):
+        self._command_queue = Queue(maxsize=1)
+        self._result_queue = Queue(maxsize=1)
+
         self._setup_layout(layout_str)
         self._setup_ui()
         self._speed = 5
         self.closed = False
         
-        self._command_queue = Queue(maxsize=1)
-        self._result_queue = Queue(maxsize=1)
         
     def run(self):
         try:
@@ -351,6 +356,7 @@ class _WorldProper:
                         image=self.images[tile.item_kind], 
                         anchor=tk.NW
                     )
+                    self._update_item_image(tile)
                 
                 # pykkar
                 if tile.pykkar_heading != None:
@@ -473,8 +479,8 @@ class _WorldProper:
         if cur_tile.item_kind != None:
             raise Exception("Pykkar already carries something")
         
-        if next_tile.item_kind == None:
-            raise Exception("Nothing to take")
+        if next_tile.item_kind != 'cone':
+            raise Exception("Pykkar can take only cones")
         
         cur_tile.item_kind = next_tile.item_kind
         cur_tile.item_count = 1
@@ -903,10 +909,16 @@ if __name__ == '__main__':
         layout_str = "####\n#> #\n#  #\n####"
     else:
         layout_str = eval(sys.argv[1])
-        
-    wp = _WorldProper(layout_str)
-    cb = _CmdBroker(wp)
-    cb.start()
+
+    try:
+        wp = _WorldProper(layout_str)
+        cb = _CmdBroker(wp)
+        cb.start()
+        print("OK")
+    except:
+        print(repr(traceback.format_exc()))
+
+    # run mainloop
     wp.run()
     
     

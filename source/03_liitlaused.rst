@@ -669,7 +669,7 @@ Kõige tähtsamad tehted, mille argumentideks on tõeväärtused, so. **loogilis
     * ``not True``
     * ``not False``
 
-Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``True and False`` väärtuse -- loogilisi tehteid kasutatakse üldjuhul teiste tõeväärtusavaldiste kombineerimiseks, just nagu järgmises näites:
+Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``True and False`` väärtuse -- loogilisi tehteid kasutatakse üldjuhul teiste tõeväärtusavaldiste kombineerimiseks, just nagu järgmises kahes näites:
 
 .. sourcecode:: py3
 
@@ -680,64 +680,50 @@ Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``T
     else:
         print("See parool jääb lahjaks!")
     
-    
+
+.. sourcecode:: py3
+
+    kuu = int(input("Sisesta kuu number: "))
+    if kuu == 1 or kuu == 3 or kuu == 5 or kuu == 7 or kuu = 8 or kuu == 10 or kuu == 12:
+        print("Selles kuus on 31 päeva")
+    else:
+        print("Selles kuus on vähem, kui 31 päeva")
+
+Tehete järjekord
+~~~~~~~~~~~~~~~~~~~~~~     
 Keerulisemate loogiliste avaldiste puhul tuleb arvestada, et ``not`` on kõrgema prioriteediga kui ``and`` ning ``and`` on kõrgema prioriteediga kui ``or``, seega ``not x or not y and z`` tähendab ``(not x) or ((not y) and z)``.
 
 Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on madalama prioriteediga (tehakse viimasena), seega ``a > b and b > c`` tähendab ``(a > b) and (b > c)``.
 
-Harjutus 2. Vastandid
-~~~~~~~~~~~~~~~~~~~~~~
-Pange kirja järgnevate avaldiste loogilised *vastandid*:
+Harjutus 2. Samaväärne loogiline avaldis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjuta järgneva avaldisega samaväärne avaldis, milles poleks kasutatud ``not`` tehet:
 
 .. sourcecode:: none
 
-    a > b
-    a >= b
-    a >= 18  and  b == 3
-    a >= 18  and  b != 3
-
-Tingimuste kasutamine tsükli päises
----------------------------------------
-Justkui tingimuslause päises, lubatakse ka ``while``-lause päises suvalisel kujul tingimust, peamine, et tegemist oleks ``bool`` tüüpi avaldisega:
-
-.. sourcecode:: py3
+    not (a < 0 and a > 100)
     
-    a = ...
-    b = ...
-    c = ...
-    s = ...
 
-    
-    while (a == b or b > c) and s == "Tere":
-        ...
+Erindid
+----------
+TODO
 
-        
-    tingimus = ... or ... or ... or ...
-    while tingimus or a > b or s.endswith("kala"):
-        ...
-        a = ...
-        ...
-
-    
-    while True:
-        ...
 
 Pykkar
 -----------------------
-Kui tegite eelnevate harjutuste plokkskeemid paberile, siis saite sedasi esitatud algoritme "käivitada" vaid enda peas. Nagu teada, on inimene aga ekslik ja seetõttu võisid mõned vead algoritmides jääda märkamatuks. 
+Nagu eespool veendusime, saab robotkilpkonna juhtimisel tsüklitega teha päris lahedaid asju. Nüüd tutvustame aga järgmist programmeeritavat tegelast, kes lisaks käskude vastuvõtmisele annab ka infot teda ümbritseva keskkonna kohta. Saage tuttavaks, Pykkar!
 
-Nüüd on teil võimalus teisendada oma skeemid Pythoni koodiks ja näha roboti liikumist oma ekraanil. Kõigepealt laadige alla moodul :download:`pykkar.py <downloads/pykkar.py>` ja salvestage see oma töökausta.
+Pykkar on virtuaalne robot, kes tegutseb oma virtuaalses maailmas. Ta oskab liikuda, värvida, asju kanda ja tal on ka sensorid, mis suudavad näiteks anda märku kui otse ees asub sein. See omadus sobib antud peatükki oivaliselt, sest sensoritelt saadud info ning ``if`` ja ``while``-lausete abil saame panna Pykkari tegevuse sõltuma konkreetsest situatsioonist.
 
-Nüüd salvestage samasse kausta järgnev näiteskript ja käivitage see:
+Esimese näitena laseme Pykkaril liikuda otse edasi, kuni ta jõuab seinani ning pöörata siis ümber. See programm (nagu ka kõik meie järgnevad Pykkari programmid) vajab oma tööks moodulit ``pykkar`` (failis :download:`pykkar.py <downloads/pykkar.py>`), mis ei kuulu Pythoni standardteeki, ja tuleb seega enne näiteprogrammi käivitamist salvestada enda arvutisse, näiteprogrammiga samasse kausta.
 
 .. sourcecode:: py3
 
     from pykkar import *
     
-    # create_world võtab argumendiks mitmerealise sõne, mis esitab
-    # roboti "maailma"
-    # Trellid tähistavad seinu, nooleke tähistab robotit
-    # (noole suund tähistab roboti suunda)
+    # create_world võtab argumendiks mitmerealise sõne, mis esitab roboti "maailma"
+    # Trellid tähistavad seinu, nooleke tähistab robotit.
+    # Noole suund (>, <, v või ^) tähistab roboti suunda
     create_world("""
     ########
     #  >   #
@@ -747,33 +733,135 @@ Nüüd salvestage samasse kausta järgnev näiteskript ja käivitage see:
     #      #
     ########
     """)
-
-    samme_jäänud = 3
-    while samme_jäänud > 0:
-        if is_wall(): # ei lase robotil vastu seina põrgata
-            break
-        else:
-            step() # robot liigub ühe ruudu võrra edasi
-            samme_jäänud -= 1
     
-    # pöörame ringi
+    # liigu seinani
+    while not is_wall(): # is_wall() annab True, kui Pykkar on ninaga vastu seina
+        step()
+    
+    # pööra ringi
     right()
     right()
 
-Loodetavasti nägite programmi käivitamisel umbes sellist pilti:
+Loodetavasti nägite programmi käivitamisel umbes sellist pilti, millele järgnes roboti liikumise animatsioon:
 
 .. image:: images/pykkar.png
 
-Justnagu plokkskeemi robot, mõistab ka Pykkar liikuda ühe sammu edasi (``step()``), pöörata 90° paremale (``right()``), värvida enda all olevat ruutu (``paint()``) ning kontrollida, kas ta ees on sein (``is_wall()``). 
+Harjutus. Maksimaalselt 4 sammu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Muutke eelmist näidet selliselt, et Pykkar üritab kõndida 4 sammu, aga kui sein tuleb varem vastu, siis jääb ta seisma seina ääres. Lõpuks pöörab ta ennast ümber.
 
-Antud näiteprogramm vastab umbkaudselt eespool toodud harjutusele "2. Kui võimalik, kolm sammu  edasi ja ümberpöörd" (lahendus on küll natuke üldisem). Muutke programmis roboti algset asukohta ja katsetage, kas programm toimib õieti ka siis, kui seinani on vähem, kui 3 sammu.
+Programm peaks töötama suvalise maailma ja suvalise Pykkari alguspositsiooni korral.
 
-Harjutus 6. Plokkskeemi kohandamine Pythoni programmiks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage nüüd eespool antud robotiülesanded ümber Pythoni programmideks, kasutades moodulit ``pykkar``.
+.. hint::
+
+    Üks võimalik lahendus:
+    
+    .. sourcecode:: py3
+
+        from pykkar import *
+        
+        create_world("""
+        ########
+        #  >   #
+        #      #
+        #      #
+        #      #
+        #      #
+        ########
+        """)
+
+        samme_jäänud = 4
+        while samme_jäänud > 0:
+            if is_wall(): 
+                break
+            else:
+                step() 
+                samme_jäänud -= 1
+        
+        # pöörame ringi
+        right()
+        right()
 
 
 
+Pykkari maailm ja käsud 
+~~~~~~~~~~~~~~~~~~~~~~~~ 
+Vaatame nüüd üle, millises maailmas Pykkar tegutseb ja milliseid käske ta tunneb.
+
+Maailm luuakse käsuga ``create_world``, mille argumendiks on mitmerealine sõne, mis esitab "maailma kaarti", kus iga sümbol tähistab ühte ruutu. Järgnev tabel võtab kokku, milliseid ruute on võimalik kasutada:
+
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| Ruudu sümbol               | Tähendus                                               | Näide                                   |
++============================+========================================================+=========================================+
+| (tühik)                    | Hele põrand                                            |.. image:: images/pykkar_floor_light.png |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``.``                      | Tume põrand                                            |.. image:: images/pykkar_floor_dark.png  |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``#``                      | Sein                                                   |.. image:: images/pykkar_wall.png        |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``^``, ``>``, ``v``, ``<`` | Pykkar heledal põrandal, nool näitab suunda            |.. image:: images/pykkar_n_light.png     |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``N``, ``E``, ``S``, ``W`` | Pykkar tumedal põrandal, ilmakaare täht näitab suunda  |.. image:: images/pykkar_n_dark.png      |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``1``, ``2``, ..., ``9``   | Vastav arv liiklustorbikuid heledal põrandal           |.. image:: images/pykkar_cone_5.png      |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``C``                      | Üks liiklustorbik tumedal põrandal                     |.. image:: images/pykkar_cone_dark.png   |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``b``                      | Kast heledal põrandal                                  |.. image:: images/pykkar_box_light.png   |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+| ``B``                      | Kast tumedal põrandal                                  |.. image:: images/pykkar_box_dark.png    |
++----------------------------+--------------------------------------------------------+-----------------------------------------+
+
+NB! Maailmas on ruumu vaid ühele Pykkarile, st. kaardile on võib valida ``^``, ``>``, ``v``, ``<``, ``N``, ``E``, ``S``, ``W`` hulgast vaid ühe sümboli.
+
+Pykkar saab aru järgnevatest käskudest:
+
++------------------+-----------------------------------------------------------------------------------------------+
+| Käsk             | Tähendus                                                                                      |
++==================+===============================================================================================+
+| ``step()``       | Liigu üks samm edasi                                                                          |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``right()``      | Pööra 90° paremale                                                                            |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``take()``       | Korja üles järgmisel ruudul olev torbik. Pykkar suudab liikuda koos ühe torbikuga             |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``put()``        | Pane ülesvõetud torbik maha järgmisele ruudule (seal võib olla juba kuni 8 torbikut ees)      |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``push()``       | Lükka järgmisel ruudul olevat kasti või torbikut                                              |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``paint()``      | Värvi enda all olev ruut tumedaks                                                             |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``is_wall()``    | Ütle, kas ees on sein (vastab ``True`` või ``False``)                                         |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``is_cone()``    | Ütle, kas ees on torbik                                                                       |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``is_box()``     | Ütle, kas ees on kast                                                                         |
++------------------+-----------------------------------------------------------------------------------------------+
+| ``is_painted()`` | Ütle, kas enda all olev ruut on tume                                                          |
++------------------+-----------------------------------------------------------------------------------------------+
+
+NB! Pykkar ei oska tõepoolest vasakule pöörata!
+
+Harjutus. Torbiku kandmine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjutage programm, mis loob allolevale pildile vastava maailma:
+
+.. image:: images/pykkar_move_single_cone.png
+
+Lisage Pykkari käsud, mis muudavad maailma seisu selliseks:
+
+.. image:: images/pykkar_move_single_cone_end.png
+
+NB! Proovige kirjutada programm selliselt, et see töötaks ka laiemate ja kitsamate maailmade korral.
+
+.. todo::
+
+    Vihjed!
+
+
+Harjutus. Pykkari ülesanne
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mõtle ise välja üks Pykkari ülesanne, mille lahendamine tundub sulle praegu pisut liiga raske. Järgmiste teemade õppimisel mõtle, kuidas need aitaksid seda ülesannet lahendada.
 
 
 
