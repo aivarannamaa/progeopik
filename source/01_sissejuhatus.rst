@@ -2,6 +2,12 @@
 ===============
 Esimese peatüki põhieesmärgiks on tutvustada Python põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
 
+.. admonition:: Õpinipp: Katseta!
+
+    Programmeerimine nõuab täpsust, aga programmeerimise õppimine 
+    TODO: Soovitav on teha ka väikeseid muudatusi ning ennustada, kuidas need tulemust mõjutavad.
+    TODO: Olge julge. proovige Pythonit "pange" ajada
+    
 
 Programmeerimine ja Python
 ----------------------------
@@ -60,12 +66,6 @@ Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketih
 
 IDLE ja esimene programm
 ----------------------------
-.. admonition:: Õpinipp
-
-    TODO: Soovitav on teha ka väikeseid muudatusi ning ennustada, kuidas need tulemust mõjutavad.
-    TODO: Olge julge. proovige Pythonit "pange" ajada
-
-
 Alustuseks kirjutame ühe väga lihtsa programmi, mis ei tee muud, kui kirjutab ekraanile ``Tere maailm!`` (vt. ka http://en.wikipedia.org/wiki/Hello_world_program). 
 
 Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
@@ -280,6 +280,12 @@ Katsetage erinevaid siiani nähtud käske ka käsureal. Proovige muuhulgas ka Py
 
 Python kui kalkulaator
 ~~~~~~~~~~~~~~~~~~~~~~
+.. note::
+    
+    Siin ja edaspidi on käsurea näidete juures soovitav ise järgi katsetada mõned sarnased, aga mitte samad näiteid (kui proovite täpselt samu näiteid, siis uskuge, te saate ka samad tulemused.) Üritage Pythonit (või iseennast) üllatada!
+
+
+
 Nagu nägite, oskab Python arvutada, seega saaks Pythoni käsurida kasutada võimsa kalkulaatorina. Kuna ``print``-i kirjutamine iga arvutuse juures on liiga tüütu, näidatakse käsureal tulemust ka siis, kui avaldis kirjutada ilma ``print`` käsuta: 
 
 .. sourcecode:: py3  
@@ -299,9 +305,6 @@ Nagu nägite, oskab Python arvutada, seega saaks Pythoni käsurida kasutada või
     
     Selline trikk toimib ainult käsureal. Kui soovite skriptis midagi ekraanil näidata, tuleb kasutada ikkagi ``print`` käsku.
     
-.. note::
-    
-    Siin ja edaspidi on käsurea näidete juures soovitav ise järgi katsetada mõned sarnased, aga mitte samad näiteid (kui proovite täpselt samu näiteid, siis uskuge, te saate ka samad tulemused.) Üritage Pythonit (või iseennast) üllatada!
 
 
 Arve saab "mällu" salvestada samamoodi nagu skriptis:
@@ -384,7 +387,6 @@ Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) �
 
     Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
 
-
 Kui te tunnete, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis teadke, et see on taotluslik -- need ülesanded õpetavad teile tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovige taolist ülesannet enda jaoks ümber sõnastada, otsige seoseid ja sarnasusi teiste ülesannetega, lihtsustage ülesannet, otsige abi internetist, võtke väike puhkepaus, vaadake ülesannet värske pilguga ja proovige jälle. Läbi raskuste saavutatud kogemused ja oskused on teile edaspidi kõige rohkem abiks!
 
 Programmeerimiseks vajalikku ettevalmistust on mõnel inimesel rohkem ja teisel vähem, aga harjutamisega on kõigil võimalik end selles osas arendada!
@@ -397,7 +399,7 @@ Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks
 
 On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid *praegu* teie jaoks segaseks või lausa "müstiliseks" -- peatüki eesmärk oli anda lihtsalt esimene ettekujutus programmeerimisest. Tegelikult pole programmeerimises aga midagi müstilist, iga programmilõigu tööpõhimõtet on võimalik alati täielikult ära seletada.
 
-Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid siis, kui te saate programmist lõpuni aru. Seetõttu *on oluline, et järgmisest peatükist alates mõistaksite te enda kirjutatud programmides iga sümboli otstarvet ja tähendust*. Kui te lepite sellega, et mingi koht programmis jääb segaseks, siis tõenäoliselt raskendab see ka järgnevate teemade mõistmist. Vajaduselt küsige julgelt nõu kaaslaste või juhendajate käest, aga **ärge kirjutage oma programmidesse ühtegi rida, mille tähendust te täpselt ei mõista! Katse/eksitus meetodil programmeerimine on tupiktee!**
+Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid siis, kui te saate programmist lõpuni aru. Seetõttu *on oluline, et järgmisest peatükist alates mõistaksite te enda kirjutatud programmides iga sümboli otstarvet ja tähendust*.  Kui te lepite sellega, et mingi koht programmis jääbki segaseks, siis tõenäoliselt raskendab see ka järgnevate teemade mõistmist. Vajaduselt küsige julgelt nõu kaaslaste või juhendajate käest, aga **ärge kirjutage oma programmidesse ühtegi rida, mille tähendust te täpselt ei mõista! Katse/eksitus meetodil programmeerimine on tupiktee!**
 
 
 

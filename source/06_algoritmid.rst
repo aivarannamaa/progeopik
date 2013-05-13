@@ -13,9 +13,6 @@ TODO The skill of programming is in translating a dynamic algorithm into a stati
 
 TODO: Arvude tuvastamise “jaga ja valitse” lahendus peaks olema õpikus, funktsioonide juures. Võibolla mingi pikema arutluse (case-study?) vormis.
 
-.. admonition:: Õpinipp
-
-    Programmeerimise õppimiseks läheb teil vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. On täiesti normaalne, kui kulutate loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.
 
 Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame juba läbitud teemasid veidi teise nurga alt.
 

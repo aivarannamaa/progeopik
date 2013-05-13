@@ -3,7 +3,7 @@
 
 .. todo::
 
-    * counting digits (algul anna vigane variant)
+    * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
     * ASCII ja kilpkonna tulpdiagrammid
     
     .. sourcecode:: none
@@ -22,15 +22,15 @@
 
 Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu -- programmi käik oli täielikult ette ennustatav. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul. 
 
-Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame oma arsenali kahe uue lausetüübiga, mille abil on võimalik määrata teiste lausete käivitamise tingimused.
+Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame oma arsenali kahe uue lausetüübiga, mille abil on võimalik määrata mingite teiste lausete käivitamise tingimused.
 
 
 
-.. admonition:: Õpinipp
+.. admonition:: Õpinipp: Ole aktiivne!
 
-    Olge aktiivne! Proovige olla materjalist sammu võrra ees, märgates seoseid ja võimalusi enne, kui õpik neid mainib. Iga näite juures lugege esimese asjana programmi tekst hoolikalt läbi ja ennustage, mida iga rida teeb.
+    Proovige olla materjalist sammu võrra ees, märgates seoseid ja võimalusi enne, kui õpik neid mainib. Iga näite juures lugege esimese asjana programmi tekst hoolikalt läbi ja ennustage, mida iga rida teeb.
     
-    Teisiti öeldes: eelistage värsket "mõttetoitu" õpiku "läbimälutud" tarkuseterade asemel! 
+    Teisisõnu, eelistage värsket mõttetoitu -- see annab parema vormi, kui juba läbimälutud tarkuseterad! 
 
 
 
@@ -265,7 +265,7 @@ Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstrukt
     exitonclick()
 
 
-``while``-lause keha täidetakse vaid siis kui päises antud tingimus kehtib. Selles suhtes on ``while`` väga sarnane üheharulisele ``if``-lausele. Erinevus on selles, et kui kehas olevad laused on täidetud, siis minnakse uuesti päises näidatud tingimust kontrollima -- kui tingimus kehtib ikka veel, siis täidetakse kehas olevad laused uuesti jne. 
+``while``-lause keha täidetakse vaid siis kui päises antud tingimus kehtib. Selles suhtes on ``while`` väga sarnane üheharulisele ``if``-lausele. Erinevus on selles, et kui kehas olevad laused on täidetud, siis minnakse uuesti päises näidatud tingimust kontrollima -- kui tingimus kehtib ikka veel, siis täidetakse kehas olevad laused uuesti jne. Kui lõpuks tingimus enam ei kehti (antud näites peale 4 kordust), minnakse edasi ``while``-lausele järgnevate lausetega (antud juhul ``exitonclick()``).
 
 Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas olema midagi, mis mõjutab tingimuse kehtivust -- antud näites on selleks lause ``joonistatud_kylgi = joonistatud_kylgi + 1``. Kuju poolest on siin tegemist täiesti tavalise omistuslausega, ainuke veider asi on see, et paremal pool mainitakse sedasama muutujat, mida parasjagu defineeritakse. Kas siin ei lähe miskit "sõlme"?
 
@@ -393,15 +393,15 @@ Harjutus 5. Kolmeaastase lapse simulaator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjutage programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga sisestuse peale "Aga miks?" niikaua, kuni kasutaja sisestab mingi kindla "võlusõna".
 
-Proovige kirjutada ka terapeudi variant, kus vahelduvad kaks erinevat küsimust.
-    
-.. hint::
+.. note::
 
-    "Millest sa veel sooviksid rääkida?"
-    
-    "Milliseid tundeid see sinus tekitab?"
-
-
+    Proovige kirjutada ka kahe küsimusega terapeudi variant: 
+        
+        - "Millest sa veel sooviksid rääkida?"
+        - ...
+        - "Milliseid tundeid see sinus tekitab?"
+        - ...
+        
 Harjutus 6. Algandmete kontrollimine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
@@ -440,10 +440,6 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
         print("Ära arvasid! Tubli!")
     else:
         print("Kümnest arvamisest ei piisanud, äkki peaksid taktikat muutma?")
-
-.. note::
-
-    Selles programmis kasutasime ka ``if``-lause "üheharulist" varianti -- st ``if`` ilma ``else``-ta. Selle variandi puhul ei tee ``if``-lause tingimuse mittekehtimise puhul mitte midagi. Erinevatest tingimuslause kujudest tuleb täpsemalt juttu ühes hilisemas peatükis.
 
 Tegelikult pole ``break`` lause Pythoni programmides hädavajalik - tsükli saab alati ümber kirjutada nii, et kõiki jätkamise/lõpetamise tingimusi kontrollitakse tsükli päises, aga vahel on ``break``-iga lahendus lihtsam.
 
@@ -701,7 +697,7 @@ Kirjuta järgneva avaldisega samaväärne avaldis, milles poleks kasutatud ``not
 
 .. sourcecode:: none
 
-    not (a < 0 and a > 100)
+    not (x < 0 and x > 100)
     
 
 Erindid
@@ -852,7 +848,7 @@ Lisage Pykkari käsud, mis muudavad maailma seisu selliseks:
 
 .. image:: images/pykkar_move_single_cone_end.png
 
-NB! Proovige kirjutada programm selliselt, et see töötaks ka laiemate ja kitsamate maailmade korral.
+NB! Programm peaks töötama ka laiemate ja kitsamate maailmade korral.
 
 .. todo::
 
@@ -871,16 +867,19 @@ Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käsk
 
     * **Tingimuslause** e. ``if``-lause peaharus olevad laused täidetakse ainult siis, kui päises esitatud tingimus kehtib. Kui tingimuslauses on olemas ka ``else`` haru, siis seal olevad laused täidetakse siis, kui tingimus *ei* kehti. Sellise konstruktsiooniga saab muuta programme paindlikumaks, pannes selle käituma üht- või teistmoodi vastavalt olukorrale.
     * **Korduslause** e. tsükli puhul täidetakse kehas olevad laused 0 või rohkem korda, vastavalt päisele. Selles peatükis vaadeldud ``while``-lause korral kontrollitakse enne kehas olevate lausete täitmist, kas päises antud tingimus kehtib, justnagu tingimuslausegi puhul. Erinevalt tingimuslausest, minnakse peale keha täitmist uuesti tingimust kontrollima ja kui see kehtib endiselt, siis täidetakse kehas olevad laused uuesti jne. Seda protsessi korratakse niikaua, kuni tingimus enam ei kehti. Korduslausega saame kirjeldada protsesse, kus sama toimingut tuleb teha mitu korda järjest (ja seejuures ei pruugi me korduste arvu programmi kirjutamisel ette teada).
-    * **Funktsiooni definitsiooni** kehas olevad laused jäetakse esialgu lihtsalt meelde. Neid saab hiljem käivitada kirjutades definitsiooni päises antud nime koos sulgudega -- seda nimetatakse *funktsiooni väljakutseks* e. rakendamiseks. Funktsioonid võimaldavad keerulise programmilõigu panna kirja vaid ühekordselt, aga kasutada seda mitmes erinevas kohas.
+    
+Kõiki vaadeldavaid programmikonstruktsioone nimetatakse Pythonis **liitlauseteks**, kuna nende kehad koosnevad teistest (suvalist liiki) lausetest. See võimaldab näiteks tingimuslause kehas lisaks lihtlausetele kasutada ka korduslauset, mille kehas on omakorda kasutatud tingmuslauset, mille kehas on veel üks tingimuslause jne.
 
-Kõiki vaadeldavaid programmikonstruktsioone nimetatakse Pythonis **liitlauseteks**. Nagu ülalpool mainitud, koosnevad nende kehad suvalist liiki lausetest -- see võimaldab näiteks funktsiooni definitsioonis lisaks lihtlausetele (vt. eelmisest peatükist) kasutada ka korduslauset, mille kehas on omakorda kasutatud tingmuslauset, mille kehas on veel üks tingimuslause jne.
-
-Taolist lausete üksteise sisse panemist esitatakse Pythonis **treppimisega** -- samasse kehasse (e. plokki) kuuluvate lausete vasakud servad joondatakse tühikute abil sama kaugele. Liitlausete puhul joondatakse eelnevate ja järgnevate lausetega vaadeldava lause päis, keha nihutatakse päisega võrreldes veel rohkem paremale.
+Taolist lausete üksteise sisse panemist esitatakse Pythonis **treppimisega** -- samasse kehasse (e. plokki) kuuluvate lausete vasakud servad joondatakse tühikute abil sama kaugele. Liitlausete puhul joondatakse eelnevate ja järgnevate lausetega vaadeldava lause päis, keha (``if ... else`` puhul mõlemad harud) nihutatakse päisega võrreldes veel rohkem paremale.
 
 Kõikide nimetatud programmikonstruktsioonide kohta andsime selles peatükis vaid kõige olulisema info, neist kõigist tuleb edaspidi veel palju juttu.
 
 Ülesanded
 -------------------
+
+.. todo::
+
+    Pykkari harjutus, mis nõuaks vasakule pööramist ja mitu korda seinani kõndimist
 
 1. Paaris või paaritu
 ~~~~~~~~~~~~~~~~~~~~~

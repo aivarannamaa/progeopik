@@ -6,22 +6,22 @@
 
     * omistamise += kuju üle korrata?
     * TODO: muutujate juurde
-    Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
-    TODO: Wikipedia sirvimise näide funktsiooni väljakutsete mõistmiseks
-    TODO: **näited** selle kohta, et ühte funktsiooni saab välja kutsuda mitu korda
-    TODO: väljakutse, meetod, argument
-    TODO: Kontrollküsimus: funktsioon, mis teeb midagi n korda kutsutakse välja m korda. Mitu korda tehakse midagi?
-    "Let's wrap it in a function to make it easier to use" -- tee selle kohta näide
-    calling a function *generates* a value
-    funktsioonide komponeerimine avaldises & funktsioonid, mis kutsuvad välja teisi funktsioone
-    bool funktsioonid
-    Ülesanded, kus ühe ülesande lahenduses on vaja teise ülesande funktsiooni
-    paaris, paaritu defineerimine vastastikuselt
-    Definitsioonide laadimine käsureale, harjutused, kus on näidatud käsurea sessioon, aga puudu on definitsioonid, Lõpuks Docstringi ja doctest'i tutvustamine
-    üldistamise harjutus: vt. ex2 http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#exercises
-    roles of variables
-    roles of functions: utility functions, reuse, division, documentation, encapsulation
-    paralleelid muutujate ja funktsioonide vahel -> tadaa
+    * Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
+    * TODO: Wikipedia sirvimise näide funktsiooni väljakutsete mõistmiseks
+    * TODO: **näited** selle kohta, et ühte funktsiooni saab välja kutsuda mitu korda
+    * TODO: väljakutse, meetod, argument
+    * TODO: Kontrollküsimus: funktsioon, mis teeb midagi n korda kutsutakse välja m korda. Mitu korda tehakse midagi?
+    * "Let's wrap it in a function to make it easier to use" -- tee selle kohta näide
+    * calling a function *generates* a value
+    * funktsioonide komponeerimine avaldises & funktsioonid, mis kutsuvad välja teisi funktsioone
+    * bool funktsioonid
+    * Ülesanded, kus ühe ülesande lahenduses on vaja teise ülesande funktsiooni
+    * paaris, paaritu defineerimine vastastikuselt
+    * Definitsioonide laadimine käsureale, harjutused, kus on näidatud käsurea sessioon, aga puudu on definitsioonid, Lõpuks Docstringi ja doctest'i tutvustamine
+    * üldistamise harjutus: vt. ex2 http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#exercises
+    * roles of variables
+    * roles of functions: utility functions, reuse, division, documentation, encapsulation
+    * paralleelid muutujate ja funktsioonide vahel -> tadaa
     
     
 
@@ -713,6 +713,12 @@ Kui sisestate nõutud palganumbri, siis saate umbes taolise veateate:
     TypeError: unsupported operand type(s) for /: 'str' and 'int'
 
 Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr. 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas kutsuti mida välja.
+
+Kokkuvõte
+--------------
+
+**Funktsiooni definitsiooni** kehas olevad laused jäetakse esialgu lihtsalt meelde. Neid saab hiljem käivitada kirjutades definitsiooni päises antud nime koos sulgudega -- seda nimetatakse *funktsiooni väljakutseks* e. rakendamiseks. Funktsioonid võimaldavad keerulise programmilõigu panna kirja vaid ühekordselt, aga kasutada seda mitmes erinevas kohas.
+
 
 
 

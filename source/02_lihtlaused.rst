@@ -2,9 +2,9 @@
 ================================
 Esimeses peatükis nägite ja katsetasite mitmeid erinevaid Pythoni programme. Millest need programmid koosnesid? Millest koosnevad mõnes loomulikus keeles (nt. eesti keeles) kirjutatud tekstid? 
 
-.. topic:: Õpinipp:
+.. topic:: Õpinipp: Võta aega mõtlemiseks!
 
-    Taolised mõtteharjutused on antud õpiku oluline osa, ärge libisege neist üle!
+    Programmeerimise õppimiseks läheb Sul vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. Mõtteharjutused, nagu eelnevas lõigus, on antud õpiku oluline osa, ära libise neist üle! **On täiesti normaalne, kui kulutad loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.**
 
 Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selles peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. Esimese asjana, enne praktilise osa juurde minemist, paneme paika mõned terminid.
     
