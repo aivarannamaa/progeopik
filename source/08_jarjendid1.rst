@@ -57,7 +57,7 @@ Kui me oleme järjendi kirja pannud, siis tekib loomulikult küsimus, mida selle
     print("Esimene pikk kuu on " + str(esimene_pikk_kuu) \
         + ", teine pikk kuu on " + str(teine_pikk_kuu))
 
-Ilmselt märkasite kahte operatsiooni (``len`` ja ``in``), mida olete juba kasutanud sõnede puhul. Kuna sõnet saab vaadelda kui sümbolite järjendit, siis ongi Pythonis korraldatud nii, et paljud järjendioperatsioonid toimivad ka sõnedega.
+Ilmselt märkasid kahte operatsiooni (``len`` ja ``in``), mida oled juba kasutanud sõnede puhul. Kuna sõnet saab vaadelda kui sümbolite järjendit, siis ongi Pythonis korraldatud nii, et paljud järjendioperatsioonid toimivad ka sõnedega.
 
 Järgnev tabel demonstreerib olulisimaid järjendioperatsioone:
 
@@ -93,7 +93,7 @@ Olgu meil defineeritud järgnevad järjendimuutujad:
     * ``a = [2, 3, 1, 5]``
     * ``b = [6, 4]``
 
-Koostage muutujaid ``a`` ja ``b`` ning järjendioperatsioone kasutades avaldis, mille väärtuseks oleks järjend ``[1, 2, 3, 4, 5, 6]``.
+Koosta muutujaid ``a`` ja ``b`` ning järjendioperatsioone kasutades avaldis, mille väärtuseks oleks järjend ``[1, 2, 3, 4, 5, 6]``.
 
 
 Järjendi elementide küsimine e. indekseerimine
@@ -135,14 +135,14 @@ Sellel teemal me praegu pikemalt ei peatu, sest tuleb välja, et elementide üks
 ---------------
 Lisaks ``while``-tsüklile on Pythonis veel üks tsüklitüüp -- ``for``-tsükkel, mis on oma olemuselt väga tihedalt seotud järjenditega.
 
-Käivitage järgnev näiteprogramm, mis koosneb ühest lihtsast ``for``-tsüklist:
+Käivita järgnev näiteprogramm, mis koosneb ühest lihtsast ``for``-tsüklist:
 
 .. sourcecode:: py3
 
     for linn in ["Tartu", "Tallinn", "Põltsamaa"]:
         print(linn)
 
-Nagu näete, sarnaneb ``for``-tsükkel kuju poolest ``while``-tsüklile -- esimesel real on *päis*, mis määrab korduste korralduse ning edasi tuleb taandreaga esitatud *keha*, mis sisaldab lauseid, mida igal kordusel käivitatakse.
+Nagu näed, sarnaneb ``for``-tsükkel kuju poolest ``while``-tsüklile -- esimesel real on *päis*, mis määrab korduste korralduse ning edasi tuleb taandreaga esitatud *keha*, mis sisaldab lauseid, mida igal kordusel käivitatakse.
 
 ``for``-tsükli kordused põhinevad mingil etteantud järjendil -- antud näites on selleks kolme linna nimest koosnev järjend. Igal kordusel küsitakse järjendist üks element, salvestatakse tema väärtus *tsüklimuutujasse* (antud näites ``linn``) ning seejärel käivitatakse tsükli kehas olevad laused. Elemente loetakse järjendist järjekorras, st. esimesel kordusel esimene element jne. Kui kõik elemendid on sedasi läbi käidud, siis on tsükli töö tehtud -- seega käivitatakse tsükli keha niipalju kordi kui on järjendis elemente.
 
@@ -177,15 +177,15 @@ Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad et
 
 Harjutus 2. Elementide summa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``elementide_summa``, mis võtab argumendiks arvujärjendi ning tagastab kõigi elementide summa. (Selle jaoks on küll Pythonis juba olemas funktsioon ``sum``, aga ärge praegu seda kasutage).
+Kirjuta funktsioon ``elementide_summa``, mis võtab argumendiks arvujärjendi ning tagastab kõigi elementide summa. (Selle jaoks on küll Pythonis juba olemas funktsioon ``sum``, aga ära praegu seda kasuta).
 
 NB! Erinevalt suurima elemendi leidmise funktsioonist, peaks summa funktsioon töötama ka tühja järjendiga, st. ``elementide_summa([])`` peaks andma vastuseks ``0``.
 
 .. hint::
     
-    Jälgige eelmise näite skeemi -- hoidke akumulaatoris seni läbivaadatud summat ning igal tsükli sammul uuendage akumulaatorit. Samuti mõelge, mis on antud ülesande juures sobiv akumulaatori algväärtus.
+    Jälgi eelmise näite skeemi -- hoia akumulaatoris seni läbivaadatud summat ning igal tsükli sammul uuenda akumulaatorit. Samuti mõtle, mis on antud ülesande juures sobiv akumulaatori algväärtus.
 
-Lõpuks kontrollige, kas teie funktsioon annab samade järjendite puhul sama tulemuse, mis Pythoni funktsioon ``sum``.    
+Lõpuks kontrolli, kas sinu funktsioon annab samade järjendite puhul sama tulemuse, mis Pythoni funktsioon ``sum``.    
     
 
 Failist lugemine
@@ -211,7 +211,7 @@ Tegelikult ei ole muutujas ``f`` siiski mitte järjend, vaid natuke keerulisem v
 
 Harjutus 4. Temperatuuride lugemine failist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
+Kirjuta programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
 
 .. hint:: 
     Meeldetuletus: Justnagu ``input`` käsu puhul, saame ka tekstifailist lugedes sisendi alati tekstina, seetõttu tuleb antud ülesandes teisendada algandmed enne kasutamist arvudeks.
@@ -226,7 +226,7 @@ Vaatame nüüd pisut teistsuguse ilmega ``for``-tsükli näidet:
     for i in range(10):
         print(i)
 
-Selle programmi käivitamisel ilmuvad ekraanile numbrid *0..9*. Selleks, et antud näitest paremini aru saada, proovige käsureal läbi järgnev näiteavaldis:
+Selle programmi käivitamisel ilmuvad ekraanile numbrid *0..9*. Selleks, et antud näitest paremini aru saada, proovi käsureal läbi järgnev näiteavaldis:
 
 .. sourcecode:: py3
 
@@ -256,7 +256,7 @@ Nüüd peaks olema selge, miks meie ``for``-tsükli näide sedasi käitus -- ``r
 
 Harjutus 3. Kilpkonn tsüklis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Proovige ennustada, mida joonistab järgmine programm:
+Proovi ennustada, mida joonistab järgmine programm:
 
 .. sourcecode:: python
 
@@ -270,7 +270,7 @@ Proovige ennustada, mida joonistab järgmine programm:
 
 .. topic:: Selgitus
 
-    Nagu näete, joonistub ekraanile kandiline spiraal. Kuidas see programm aga kilpkonna abil sellise tulemuseni jõuab?
+    Nagu näed, joonistub ekraanile kandiline spiraal. Kuidas see programm aga kilpkonna abil sellise tulemuseni jõuab?
 
     Tegelikult on antud programmi puhul üldine seletus lihtne:
 
@@ -282,7 +282,7 @@ Proovige ennustada, mida joonistab järgmine programm:
 
     Et iga kord on joonistatav lõik eelmisest pikem, tekibki selle tsükli tulemusena kandiline spiraal.
 
-Katsetage erinevaid pööramise nurki ning erinevaid teepikkusi. Proovige joonistada kuuekandiline spiraal!
+Katseta erinevaid pööramise nurki ning erinevaid teepikkusi. Proovi joonistada kuuekandiline spiraal!
 
 ``range``'i variandid
 ~~~~~~~~~~~~~~~~~~~~~
@@ -311,11 +311,11 @@ Kommentaarid:
 
 Harjutus 4. Kolmega jaguvad arvud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage ``for``-tsükkel koos sobiva ``range`` variandiga, mis kuvab ekraanile kõik 3-ga jaguvad arvud vahemikus 10 kuni 100.
+Kirjuta ``for``-tsükkel koos sobiva ``range`` variandiga, mis kuvab ekraanile kõik 3-ga jaguvad arvud vahemikus 10 kuni 100.
 
 Harjutus 5. ``range`` avaldis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
+Kirjuta avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
  ``[100, 93, 86, 79, 72, 65, 58, 51, 44, 37, 30, 23, 16]``
 
@@ -335,7 +335,7 @@ Tegelikult saaks ``for``-tsükli asemel alati kasutada ka ``while``-tsüklikt, a
 |         i += 1                   |                                   |
 +----------------------------------+-----------------------------------+
 
-Kui meenutate kolmandat peatükki, siis selleks, et ``while`` tsükliga teha mingit toimingut *n* korda, tuleb:
+Kui meenutad kolmandat peatükki, siis selleks, et ``while`` tsükliga teha mingit toimingut *n* korda, tuleb:
 
     * võtta kasutusele abimuutuja (loendur) algväärtusega 0
     * tsükli kehas suurendada muutuja väärtust igal kordusel
@@ -393,7 +393,7 @@ Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
 
 Harjutus 6. Kuupäeva "lahtiharutamine"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``kuu``, mis võtab argumendiks sõne kujul *<päev>. <kuu> <aasta>* (nt. ``'24. veebruar 1918'`` ning tagastab vastava kuu nime.
+Kirjuta funktsioon ``kuu``, mis võtab argumendiks sõne kujul *<päev>. <kuu> <aasta>* (nt. ``'24. veebruar 1918'`` ning tagastab vastava kuu nime.
 
 Negatiivsed indeksid
 ~~~~~~~~~~~~~~~~~~~~
@@ -448,7 +448,7 @@ Mida võiks tähendada ``s[:]``?
 
 Valed indeksid
 ~~~~~~~~~~~~~~~~~~
-Proovige läbi järgnev näide, et te tunneksite saadud veateate edaspidi ära:
+Proovi läbi järgnev näide, et sa tunneksid saadud veateate edaspidi ära:
 
 .. sourcecode:: py3
 
@@ -458,7 +458,7 @@ Proovige läbi järgnev näide, et te tunneksite saadud veateate edaspidi ära:
 
 Harjutus 7. Sõne viilutamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle sõne 3 viimast tähte. Kui sõnes on vähem kui 3 tähte, siis tagastada terve sõne.
+Kirjuta funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle sõne 3 viimast tähte. Kui sõnes on vähem kui 3 tähte, siis tagastada terve sõne.
 
 
 
@@ -582,20 +582,20 @@ Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust:
 
 1. Paarisarvude loendamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon, mis võtab argumendiks täisarvude listi, ning tagastab, mitu elementi antud listis olid paarisarvud.
+Kirjuta funktsioon, mis võtab argumendiks täisarvude listi, ning tagastab, mitu elementi antud listis olid paarisarvud.
 
-Testige oma funktsiooni erinevate listidega (sh. tühja listiga).
+Testi oma funktsiooni erinevate listidega (sh. tühja listiga).
 
 
 2. Ruudud
 ~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis küsib sisendiks täisarvu ning väljastab ``for``-tsükli abil kõikide arvude ruudud alates 1-st kuni sisestatud arvuni (kaasaarvatud) ja lõpuks ka kõigi nende ruutude summa.
+Kirjuta programm, mis küsib sisendiks täisarvu ning väljastab ``for``-tsükli abil kõikide arvude ruudud alates 1-st kuni sisestatud arvuni (kaasaarvatud) ja lõpuks ka kõigi nende ruutude summa.
 
 3. Teksti esitamine
 ~~~~~~~~~~~~~~~~~~~~
-Kirjutage programm, mis küsib kasutajalt failinime ning ``for``-tsüklit kasutades kuvab faili sisu ekraanile.
+Kirjuta programm, mis küsib kasutajalt failinime ning ``for``-tsüklit kasutades kuvab faili sisu ekraanile.
 
-Seejärel täiendage programmi sedasi, et teksti näidatakse 20 rea kaupa -- st. iga kord peale 20 rea näitamist jääb programm ootama kasutajapoolset ENTER-i vajutust (vihje: ``input()``).
+Seejärel täienda programmi sedasi, et teksti näidatakse 20 rea kaupa -- st. iga kord peale 20 rea näitamist jääb programm ootama kasutajapoolset ENTER-i vajutust (vihje: ``input()``).
 
 Testimiseks võib alla laadida nt. "Alice in Wonderland" teksti aadressilt http://www.gutenberg.org/files/11/11.txt.
 
@@ -605,7 +605,7 @@ Testimiseks võib alla laadida nt. "Alice in Wonderland" teksti aadressilt http:
 
     Selle ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.
 
-Kirjutage funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt. ``'24.02.1918'``), ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
+Kirjuta funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt. ``'24.02.1918'``), ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
 
 Etteantud sõnes võib olla kuupäeva osade vahel kasutatud ka sidekriipse. Sel juhul tuleb tõlgendada kuupäeva kujul *<aasta>-<kuu>-<päev>* (nn. *ISO formaat*). NB! Tagastatav kuupäev peab olema ikkagi kujul `<päev>. <kuu nimi> <aasta>`.
 
@@ -613,18 +613,18 @@ Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuup
 
 .. topic:: Soovituslik lisaülesanne
 
-    Kui osade vahel on kaldkriipsud, siis eeldame, et tegemist on USA formaadiga: *<kuu>\/<päev>\/<kahekohaline aasta>*. Uurige välja, kuidas kahekohalisi aastaid tõlgendatakse (nt. *12\/25\/10* vs. *12\/25\/97*).
+    Kui osade vahel on kaldkriipsud, siis eeldame, et tegemist on USA formaadiga: *<kuu>\/<päev>\/<kahekohaline aasta>*. Uuri välja, kuidas kahekohalisi aastaid tõlgendatakse (nt. *12\/25\/10* vs. *12\/25\/97*).
 
 
 5. Värvid
 ~~~~~~~~~~~~~~~~~~~~~~
-Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võite lihtsuse mõttes ignoreerida). Kirjutage programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
+Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võid lihtsuse mõttes ignoreerida). Kirjuta programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
 
 .. image:: images/varvid.png
 
 Võite proovida ka paigutada värvid hõredamalt ja kirjutada iga värvi juurde tema nime (vt. http://docs.python.org/py3k/library/turtle.html#turtle.write).
 
-Otsige võimalusi rakendada selle peatüki uusi teemasid (``for``, ``split``).
+Otsi võimalusi rakendada selle peatüki uusi teemasid (``for``, ``split``).
 
 NB! ülesande saab lahendada ilma mingi rutiinse "käsitööta"!
 
@@ -648,9 +648,9 @@ NB! ülesande saab lahendada ilma mingi rutiinse "käsitööta"!
 
 6. Keskmise hinde leidmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Olgu meil fail nimega ``hinded.txt``, kus on igal real üks hinne (vahemikus 1 kuni 5). Kirjutage programm, mis arvutab nende hinnete keskmise. (Ärge unustage, et failist ridade sisselugemisel antakse read sõnedena, mitte arvudena).
+Olgu meil fail nimega ``hinded.txt``, kus on igal real üks hinne (vahemikus 1 kuni 5). Kirjuta programm, mis arvutab nende hinnete keskmise. (Ära unusta, et failist ridade sisselugemisel antakse read sõnedena, mitte arvudena).
 
-Kui olete programmi tööle saanud, siis muutke programmi põhiosa funktsiooniks, mis **võtab argumendiks** failinime ning **tagastab** failis olevate hinnete keskmise.
+Kui oled programmi tööle saanud, siis muutke programmi põhiosa funktsiooniks, mis **võtab argumendiks** failinime ning **tagastab** failis olevate hinnete keskmise.
 
 
 Lisalugemine

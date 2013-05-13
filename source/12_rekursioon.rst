@@ -13,7 +13,7 @@ Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse üles
 
 Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- so. funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad, kui tsüklitega kirjutatud lahendused.
 
-Tehniliselt võttes ei õpi te selles peatükis Pythoni kui programmeerimiskeele kohta midagi uut, kuna Pythoni seisukohast ei erine rekursiivsed funktsioonid "tavalistest" funktsioonidest. Samas, rekursiivsetest algoritmidest arusaamiseks on vaja vaadata asju pisut teise nurga alt -- seetõttu on antud peatükis ülesandeid, mis aitavad rekursiivse mõtteviisiga harjuda. 
+Tehniliselt võttes ei õpi sa selles peatükis Pythoni kui programmeerimiskeele kohta midagi uut, kuna Pythoni seisukohast ei erine rekursiivsed funktsioonid "tavalistest" funktsioonidest. Samas, rekursiivsetest algoritmidest arusaamiseks on vaja vaadata asju pisut teise nurga alt -- seetõttu on antud peatükis ülesandeid, mis aitavad rekursiivse mõtteviisiga harjuda. 
 
 
 Rekursiivsed funktsioonid
@@ -54,7 +54,7 @@ Nagu näha, on `5!` arvutus väga sarnane `4!` arvutusele -- selleks, et arvutad
 
 Harjutus 1. Faktoriaali algoritmi analüüs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Väärtustage *mõttes* ülaltoodud definitsiooni järgides avaldis ``fact(3)``.
+* Väärtusta *mõttes* ülaltoodud definitsiooni järgides avaldis ``fact(3)``.
 * Milline osa antud näites on rekursiooni baas? Milline on samm? Kuidas jõutakse alamülesande lahendusest terve ülesande lahenduseni?
 * Kuidas käitub antud funktsioon negatiivsete (või reaalarvuliste) argumentide korral? Kuidas võiks seda probleemi lahendada?
 
@@ -123,13 +123,13 @@ Algoritm on järgmine:
     * Kui b = 0, siis on suurim ühistegur a;
     * Kui ei, siis korda protsessi, võttes uueks a-ks b ja uueks b-ks endiste a ja b jagamisel saadud jääk.
 
-Realiseerige Eukleidese algoritm rekursiivse funktsioonina.
+Realiseeri Eukleidese algoritm rekursiivse funktsioonina.
 
 Rekursioon järjenditel
 ------------------------------
 Nagu ülalpool mainitud, on rekursiooni põhimõte teha ülesanne pisut "väiksemaks" alamülesandeks, lahendada see uus ülesanne (sama meetodiga) ning lõpuks jõuda alamülesande lahendusest algse ülesande lahenduseni.
 
-Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- so. kõik elemendid peale esimest elementi). Uurige näiteks järjendi elementide loendamise funktsiooni:
+Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- so. kõik elemendid peale esimest elementi). Uuri näiteks järjendi elementide loendamise funktsiooni:
 
 .. sourcecode:: py3
 
@@ -164,7 +164,7 @@ Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korral
 
 Harjutus 5
 ~~~~~~~~~~~~~~
-Kirjutage rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st. elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
+Kirjuta rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st. elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
 
 
 Mitmeharuline rekursioon e. *puurekursioon*
@@ -187,7 +187,7 @@ Harjutus 6. Fraktal
 ~~~~~~~~~~~~~~~~~~~~~~
 Fraktalid on graafilised kujundid, milles kordub sama motiiv üha väiksemal kujul (loodetavasti paistab siit seos rekursiooniga).
 
-Kirjutage rekursiivne funktsioon, mis vastavalt etteantud tasemele joonistab vastava kujundi järgmiselt skeemilt (esimene kujund on tasemega 0, teine tasemega 1 jne):
+Kirjuta rekursiivne funktsioon, mis vastavalt etteantud tasemele joonistab vastava kujundi järgmiselt skeemilt (esimene kujund on tasemega 0, teine tasemega 1 jne):
 
 .. image:: images/fraktal.png
 
@@ -202,7 +202,7 @@ Harjutus 7. Kuulujutt
 ~~~~~~~~~~~~~~~~~~~~~~
 Keegi laseb lahti kuulujutu, rääkides seda 3 inimesele. Iga tunni jooksul räägivad kõik, kes kuulujuttu juba teavad, selle edasi 3 inimesele, kes seda veel ei teadnud. Mitu inimest teavad kuulujuttu 10 tunni pärast?
 
-Kirjutage rekursiivne funktsioon, mis annab selle ülesande vastuse suvalise tundide arvu korral.
+Kirjuta rekursiivne funktsioon, mis annab selle ülesande vastuse suvalise tundide arvu korral.
 
 Harjutus 8. Küülikud
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -215,7 +215,7 @@ Harjutus 8. Küülikud
     * oletame, et küülikud ei sure iial
     * mitu paari küülikuid on meil 12 kuu pärast?
 
-Kirjutage üldisem funktsioon, mis annab vastuse suvalise arvu kuude kohta.
+Kirjuta üldisem funktsioon, mis annab vastuse suvalise arvu kuude kohta.
     
 
 Näide: Argumentideta rekursioon
@@ -279,7 +279,7 @@ Kuna me ei teadnud, kas mingil tasemel on meil järjendis veel järjendeid, või
 Harjutus 9. Kaustade läbimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Kirjutage programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamkaustadest *mp3* faile ja kuvab nende nimed ekraanile.
+Kirjuta programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamkaustadest *mp3* faile ja kuvab nende nimed ekraanile.
 
 Abiks on järgnevad Pythoni funktsioonid:
 
@@ -310,7 +310,7 @@ Järgnev programmilõik demonstreerib nende kasutamist:
 
 1. Kaustad ja järjendid
 ~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon, mis etteantud kaustanime põhjal moodustab ja tagastab mitmemõõtmelise järjendi, kus iga alamkaust on omakorda esindatud järjendina ja failid on esindatud vastavas järjendis olevate sõnedena. Kui meil on näiteks selline kataloog:
+Kirjuta funktsioon, mis etteantud kaustanime põhjal moodustab ja tagastab mitmemõõtmelise järjendi, kus iga alamkaust on omakorda esindatud järjendina ja failid on esindatud vastavas järjendis olevate sõnedena. Kui meil on näiteks selline kataloog:
 
 * Muusika
     * Eesti musa
@@ -324,12 +324,12 @@ siis funktsioon peaks tagastama sellise järjendi:
 
 2. Arvamismäng
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Realiseerige 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
+Realiseeri 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
 
 
 3. Cesaro fraktal
 ~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri, ning joonistab kilpkonnaga vastava taseme Cesaro fraktali.
+Kirjuta funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri, ning joonistab kilpkonnaga vastava taseme Cesaro fraktali.
 
 Järgneval pildid on Cesaro fraktali tasemed 1, 2, 3 ja 4:
 
@@ -337,7 +337,7 @@ Järgneval pildid on Cesaro fraktali tasemed 1, 2, 3 ja 4:
 
 .. hint::
 
-    Alustage veidi lihtsamast fraktalist:
+    Alusta veidi lihtsamast fraktalist:
     
     .. image:: images/cesaro2.png
     
@@ -355,21 +355,21 @@ Järgneval pildid on Cesaro fraktali tasemed 1, 2, 3 ja 4:
 
 4. Kuulujutt ver.2
 ~~~~~~~~~~~~~~~~~~~~~~
-Lahendage ülalpool toodud kuulujutu ülesandest ümberpööratud variant:
+Lahenda ülalpool toodud kuulujutu ülesandest ümberpööratud variant:
 
 Antud on linnakese elanike arv *n*. Leida mitme tunni pärast teavad kuulujuttu kõik selle linnakese elanikud.
 
 5. Vokaalide eemaldamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja tagastab sellest sõnest uue variandi, kus kõik vokaalid on eemaldatud, nt. ``konsonandid("kapitalist")`` peaks tagastama sõne ``"kptlst"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata.
+Kirjuta rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja tagastab sellest sõnest uue variandi, kus kõik vokaalid on eemaldatud, nt. ``konsonandid("kapitalist")`` peaks tagastama sõne ``"kptlst"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata.
 
 .. hint::
 
-    Tuletage meelde ülaltpool esitatud näitefunktsiooni ``loenda``. Seal koguti rekursiivsete väljakutsete tulemused kokku üheks täisarvuks. Siin on vaja korjata tulemused kokku üheks sõneks.
+    Tuleta meelde ülaltpool esitatud näitefunktsiooni ``loenda``. Seal koguti rekursiivsete väljakutsete tulemused kokku üheks täisarvuks. Siin on vaja korjata tulemused kokku üheks sõneks.
 
 6. Tagurpidi
 ~~~~~~~~~~~~~~~~
-Kirjutage rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi ja tagastab selle elemendid uue järjendina vastupidises järjestuses. Nt. ``tagurpidi("stressed")`` peaks tagastama sõne ``"desserts"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata. NB! see funktsioon peaks töötama ka tühja järjendi puhul!
+Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi ja tagastab selle elemendid uue järjendina vastupidises järjestuses. Nt. ``tagurpidi("stressed")`` peaks tagastama sõne ``"desserts"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata. NB! see funktsioon peaks töötama ka tühja järjendi puhul!
 
 .. hint::
 
@@ -381,13 +381,13 @@ Kirjutage rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi
 
 .. note::
 
-    Kui see ülesanne tundub liiga raske, siis lahendage selle asemel 9. ülesanne
+    Kui see ülesanne tundub liiga raske, siis lahenda selle asemel 9. ülesanne
 
-Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjutage funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
+Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjuta funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
 
 .. hint:: 
 
-     Kasutage funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust st. kirjutage hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrrelge antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-da Fibonacci arvu leidmisel.
+     Kasuta funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust st. kirjuta hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrrelge antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-da Fibonacci arvu leidmisel.
 
 
 8. Projecteuler.net
@@ -402,9 +402,9 @@ http://projecteuler.net/index.php?section=problems&id=15
     
 Antud on fail :download:`sugupuu.txt <downloads/sugupuu.txt>` sugulussidemetega (igal real on inimese nimi, koolon ning tema isa ja ema nimed). 
 
-Lugege esmalt andmed Pythoni sõnastikku (võtmeks inimese nimi, väärtuseks kaheelemendiline järjend tema isa ja ema nimedega).
+Loe esmalt andmed Pythoni sõnastikku (võtmeks inimese nimi, väärtuseks kaheelemendiline järjend tema isa ja ema nimedega).
 
-Kirjutage rekursiivne funktsioon ``on_eellane``, mis võtab argumentideks kahe inimese nimed ja sugupuu sõnastiku ning tagastab ``True``, kui esimene inimene on teise eellane (st. isa või vanaema või vanaisa ema jne), vastasel juhul ``False``.
+Kirjuta rekursiivne funktsioon ``on_eellane``, mis võtab argumentideks kahe inimese nimed ja sugupuu sõnastiku ning tagastab ``True``, kui esimene inimene on teise eellane (st. isa või vanaema või vanaisa ema jne), vastasel juhul ``False``.
 
 .. hint::
 
@@ -442,7 +442,7 @@ Aritmeetilise avaldise väärtustaja
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
-    See näide demonstreerib ühte ilusat rekursiivset algoritmi. Nagu rekursiivsete algoritmide puhul tavaline, võib see alguses aju "sõlme keerata" -- varuge endale selle teema läbitöötamiseks piisavalt aega!
+    See näide demonstreerib ühte ilusat rekursiivset algoritmi. Nagu rekursiivsete algoritmide puhul tavaline, võib see alguses aju "sõlme keerata" -- varu endale selle teema läbitöötamiseks piisavalt aega!
 
 Ülesanne: Kirjutada funktsioon, mis võtab argumendiks sõne kujul aritmeetilise avaldise ja tagastab selle väärtuse. Avaldis võib sisaldada arve, aritmeetilisi operatsioone (``+``, ``-``, ``*``, ``/``) ning sulge (mitmel tasemel). Seal, kus sulge pole kasutatud, tuleb arvestada tavalise tehete järjekorraga.
 
@@ -450,9 +450,9 @@ Aritmeetilise avaldise väärtustaja
 
 .. note::
 
-    Enne edasi lugemist mõelge, kuidas te sellise ülesande lahendaksite. Katsetage! Milline ülesande aspekt valmistab kõige rohkem probleeme?
+    Enne edasi lugemist mõtle, kuidas sa sellise ülesande lahendaksite. Katseta! Milline ülesande aspekt valmistab kõige rohkem probleeme?
     
-    Astuge samm tagasi ja mõelge, milline võib olla aritmeetilise avaldise *struktuur*.
+    Astu samm tagasi ja mõtle, milline võib olla aritmeetilise avaldise *struktuur*.
 
 Alljärgnevalt on toodud mõned näited erineva struktuuriga avaldistest:
 
@@ -469,7 +469,7 @@ Viimases kahes näites kasutasime avaldise struktuuri kirjelduses mõistet *aval
 Enne edasi minemist defineerime abimõisted erinevatel kujudel avaldiste tähistamiseks:
 
     * `faktor` -- arv või sulgudes olev avaldis, nt. ``3`` või ``( 2 * 3 + ( 4 / 6 ) )``
-    * `term` -- faktor või korrutis/jagatis, nt ``3``, ``( 2 * 3 + ( 4 / 6 ) )`` või ``2 * ( 3 + 4 )``. Pange tähele, et korrutise/jagatise vasak argument võib olla term aga parem argument on faktor (mõelge ``8 / 2 / 2`` struktuuri peale). 
+    * `term` -- faktor või korrutis/jagatis, nt ``3``, ``( 2 * 3 + ( 4 / 6 ) )`` või ``2 * ( 3 + 4 )``. Pange tähele, et korrutise/jagatise vasak argument võib olla term aga parem argument on faktor (mõtle ``8 / 2 / 2`` struktuuri peale). 
     * `avaldis` -- term või liitmine/lahutamine. Liitmise/lahutamise vasak argument võib olla avaldis, aga parem argument on term.
     
 Paneme samad mõisted kirja ka spetsiaalses notatsioonis, mida kasutatakse *grammatikate* esitamiseks (``|`` võib lugeda kui sõna *või*):
@@ -568,4 +568,4 @@ Labürintide genereerimine
 
 Kujutame ette, et meil on suur plokk betooni, kuhu me hakkame uuristama ploki külgedega paralleelseid ja aeg-ajalt täisnurga all pööravaid, mõnikord ka hargnevaid käike. Igal sammul on meil mitu võimalust, kuhupoole edasi uuristada. Üks võimalus probleemile läheneda, on uuristada üks juhuslik labürint otse ette, teine labürint vasakule ja kolmas paremale, aga selle, millisest "alam-labürindist" me alustame, valime juhuslikult. Selleks, et labürint ei tuleks triviaalne, jälgime, et me ei puuriks läbi seda seina, mille taga vahetult on juba üks käik uuristatud -- see tingimus tagab selle, et iga järgmise alam-labürindi võimalik ala on järjest väiksem (ilmselt märkate siin juba viidet rekursiooni põhimõtetele).
 
-Selle algoritmi kohta võite täpsemalt uurida vastavast Wikipedia artiklist (http://en.wikipedia.org/wiki/Maze_generation_algorithm) või laadida alla ühe näiteprogrammi (:download:`mazes.py <downloads/mazes.py>`), mis kasutab Pygame nimelist Pythoni lisateeki (tuleb eraldi installeerida, saadaval aadressilt http://pygame.org). 
+Selle algoritmi kohta võid täpsemalt uurida vastavast Wikipedia artiklist (http://en.wikipedia.org/wiki/Maze_generation_algorithm) või laadida alla ühe näiteprogrammi (:download:`mazes.py <downloads/mazes.py>`), mis kasutab Pygame nimelist Pythoni lisateeki (tuleb eraldi installeerida, saadaval aadressilt http://pygame.org). 

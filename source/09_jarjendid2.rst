@@ -7,7 +7,7 @@ Selle peatüki põhiteema on järjendite elementhaaval koostamine ning analüüs
 
 Järjendite koostamine elementhaaval
 -----------------------------------
-Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku pole alati võimalik kõiki vajaminevaid elemente korraga välja tuua. Seetõttu võimaldab Python juba loodud järjendeid hiljem täiendada. Katsetage järgnevat programmi:
+Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku pole alati võimalik kõiki vajaminevaid elemente korraga välja tuua. Seetõttu võimaldab Python juba loodud järjendeid hiljem täiendada. Katseta järgnevat programmi:
 
 .. sourcecode:: py3
 
@@ -24,7 +24,7 @@ Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku
     print(a)
 
 
-Nagu nägite, oli programmi lõpus järjendi elementideks ``1``, ``5`` ja ``9``. Selle saavutamiseks kasutasime meetodit ``append``, mis lisab järjendi lõppu uue elemendi, st. muudab olemasolevat järjendit.
+Nagu nägid, oli programmi lõpus järjendi elementideks ``1``, ``5`` ja ``9``. Selle saavutamiseks kasutasime meetodit ``append``, mis lisab järjendi lõppu uue elemendi, st. muudab olemasolevat järjendit.
 
 Taolist järjendite elementhaaval "kasvatamist" kasutatakse siis, kui järjendi elemendid selguvad alles programmi töö käigus. Kõige tavalisema skeemi puhul luuakse kõigepealt tühi järjend ning järjendi sisu täiendatakse tsüklis:
 
@@ -60,7 +60,7 @@ Harjutus 1. Failist järjendisse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nagu juba teate, võib ``for``-tsükli aluseks olla ka mingi tekstifail.
 
-Kirjutage programm, mis loeb tekstifailist ükshaaval ridu (eeldame, et igal real on üks arv) ning koostab selle käigus järjendi, mis sisaldab failist leitud paarisarve. Koostatud järjend kuvada ekraanile.
+Kirjuta programm, mis loeb tekstifailist ükshaaval ridu (eeldame, et igal real on üks arv) ning koostab selle käigus järjendi, mis sisaldab failist leitud paarisarve. Koostatud järjend kuvada ekraanile.
 
 
 Juhuslike järjendite genereerimine
@@ -80,13 +80,13 @@ Selle asemel, et harjutustes järjendeid ise sisse toksida, võime kasutada ka j
 
 Harjutus 2. Juhuslik järjend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``juhuslik_järjend``, mis võtab argumendiks järjendi elementide arvu ning kaks argumenti arvuvahemiku määramiseks ning tagastab vastava juhuslikult genereeritud arvujärjendi. (Seda funktsiooni võite edaspidi kasutada alati, kui on tarvis genereerida mingi juhuslik järjend).
+Kirjuta funktsioon ``juhuslik_järjend``, mis võtab argumendiks järjendi elementide arvu ning kaks argumenti arvuvahemiku määramiseks ning tagastab vastava juhuslikult genereeritud arvujärjendi. (Seda funktsiooni võid edaspidi kasutada alati, kui on tarvis genereerida mingi juhuslik järjend).
 
-Genereerige loodud funktsiooni abil mitu erineva pikkusega järjendit, aga nii, et arvuvahemik on kõigil juhtudel sama.
+Genereeri loodud funktsiooni abil mitu erineva pikkusega järjendit, aga nii, et arvuvahemik on kõigil juhtudel sama.
 
-Kirjutage ka lihtne abifunktsioon ``keskmine``, mis annab järjendi arvude aritmeetilise keskmise (siin võite kasutada Pythoni funktsioone ``sum`` ja ``len``).
+Kirjuta ka lihtne abifunktsioon ``keskmine``, mis annab järjendi arvude aritmeetilise keskmise (siin võid kasutada Pythoni funktsioone ``sum`` ja ``len``).
 
-Uurige, kuidas sõltub järjendite keskmine järjendi pikkusest.
+Uuri, kuidas sõltub järjendite keskmine järjendi pikkusest.
 
 
 Järjendite teisendamine
@@ -95,7 +95,7 @@ Järgnevates näidetes ja ülesannetes võetakse aluseks üks või mitu järjend
 
 Järjendi elementide teisendamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tihti on tarvis teha mingit operatsiooni järjendi iga elemendiga ning salvestada tulemused uude järjendisse. Uurige ja katsetage järgnevat näiteprogrammi:
+Tihti on tarvis teha mingit operatsiooni järjendi iga elemendiga ning salvestada tulemused uude järjendisse. Uuri ja katseta järgnevat näiteprogrammi:
 
 .. sourcecode:: py3
 
@@ -109,13 +109,13 @@ Tihti on tarvis teha mingit operatsiooni järjendi iga elemendiga ning salvestad
 
 Harjutus 3. Sõned arvudeks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage eelneva programmi näitel funktsioon ``sõned_arvudeks``, mis võtab argumendiks sõnede järjendi ning tagastab vastava arvude järjendi. (Võite praegu eeldada, et argumendiks antud järjendis sisalduvad vaid sellised sõned, mida saab arvudeks teisendada).
+Kirjuta eelneva programmi näitel funktsioon ``sõned_arvudeks``, mis võtab argumendiks sõnede järjendi ning tagastab vastava arvude järjendi. (Võite praegu eeldada, et argumendiks antud järjendis sisalduvad vaid sellised sõned, mida saab arvudeks teisendada).
 
 
 
 Järjendi filtreerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhjal uue järjendi, milles sisalduvad teatud tingimustele vastavad väärtused algsest järjendist. Uurige ja katsetage järgnevat näidet:
+Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhjal uue järjendi, milles sisalduvad teatud tingimustele vastavad väärtused algsest järjendist. Uuri ja katseta järgnevat näidet:
 
 .. sourcecode:: py3
 
@@ -131,11 +131,11 @@ Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhja
 
 Harjutus 4. Arvude tuvastamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``naturaal_sõned``, mis võtab argumendiks sõnede järjendi ning tagastab uue sõnede järjendi, milles sisalduvad vaid need esialgse järjendi väärtused, mis kujutavad naturaalarve (st. ``sõne.isnumeric() == True``). NB! Sõnede teisendamist arvudeks pole selles ülesandes tarvis.
+Kirjuta funktsioon ``naturaal_sõned``, mis võtab argumendiks sõnede järjendi ning tagastab uue sõnede järjendi, milles sisalduvad vaid need esialgse järjendi väärtused, mis kujutavad naturaalarve (st. ``sõne.isnumeric() == True``). NB! Sõnede teisendamist arvudeks pole selles ülesandes tarvis.
 
 Harjutus 5. Arvude tuvastamine koos teisendamisega
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede järjendi ning tagastab täisarvude järjendi, mis vastab esialgse järjendi nendele elementidele, mis kujutavad täisarve. Näide selle funktsiooni kasutamisest:
+Kirjuta funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede järjendi ning tagastab täisarvude järjendi, mis vastab esialgse järjendi nendele elementidele, mis kujutavad täisarve. Näide selle funktsiooni kasutamisest:
 
 .. sourcecode:: py3
 
@@ -144,7 +144,7 @@ Kirjutage funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede j
 
 .. hint:: 
 
-    Kui kasutate abifunktsioone ``sõned_arvudeks`` ja ``naturaal_sõned``, siis saab selle funktsiooni väga lühidalt kirja panna.
+    Kui kasutad abifunktsioone ``sõned_arvudeks`` ja ``naturaal_sõned``, siis saab selle funktsiooni väga lühidalt kirja panna.
     
 
 Järjendite ühend
@@ -170,12 +170,12 @@ Järgnevas näites võtab funktsioon ``ühend`` argumendiks kaks järjendit ning
 
 Harjutus 6. Järjendite ühisosa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``ühisosa``, mis võtab argumendiks kaks järjendit ning tagastab **uue** järjendi, mis sisaldab (ühekordselt) neid väärtusi, mis esinevad mõlemas järjendis.
+Kirjuta funktsioon ``ühisosa``, mis võtab argumendiks kaks järjendit ning tagastab **uue** järjendi, mis sisaldab (ühekordselt) neid väärtusi, mis esinevad mõlemas järjendis.
 
 
 Järjendite kasutamine "andmebaasina"
 ------------------------------------
-Järgnevates näidetes kasutame me mitut järjendit, mille elemendid on omavahel kuidagi seotud -- nt. järjendi ``a`` element positsioonil ``16`` (st. ``a[16]``) on seotud järjendi ``b`` samal positsioonil oleva elemendiga (st. ``b[16]``). Uurige ja katsetage järgnevat näidet:
+Järgnevates näidetes kasutame me mitut järjendit, mille elemendid on omavahel kuidagi seotud -- nt. järjendi ``a`` element positsioonil ``16`` (st. ``a[16]``) on seotud järjendi ``b`` samal positsioonil oleva elemendiga (st. ``b[16]``). Uuri ja katseta järgnevat näidet:
 
 .. sourcecode:: py3
 
@@ -195,7 +195,7 @@ Taolistes ülesannetes eeldame, et seotud järjendid on sama pikad, seetõttu on
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Et teha järgnevaid näiteid ja ülesandeid realistlikumaks, siis loeme omavahel seotud järjendid sisse tekstifailidest. Kõige lihtsam võimalus oleks kirjutada erinevate järjendite sisu eri failidesse ning lugeda nad sealt järjenditesse, üks järjend/fail korraga. Sellise lähenemise puhul on aga failide koostamine ebamugav, kuna me peame hoolikalt jälgima, et seotud andmed (nt. sama inimese eesnimi ja perenimi) satuksid mõlemas failis ikka samadele ridadele.
 
-Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed failis samale reale ning faili sisselugemisel kasutame ülalpool tutvustatud sõnemeetodit ``split``. Koostage tekstifail ``nimed.txt``, mille igal real on tühikuga eraldatud eesnimi ja perenimi ning katsetage järgnevat programmi:
+Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed failis samale reale ning faili sisselugemisel kasutame ülalpool tutvustatud sõnemeetodit ``split``. Koosta tekstifail ``nimed.txt``, mille igal real on tühikuga eraldatud eesnimi ja perenimi ning katseta järgnevat programmi:
 
 .. sourcecode:: py3
 
@@ -225,14 +225,14 @@ Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed faili
 
 Harjutus 7. Eksami tulemused
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma ja saadud punktide arv (nt. ``Jaan Tamm,24``). Maksimaalne eksami eest saadav punktide arv on 40. Õppejõud soovib näha nende tudengite nimesid ja tulemusi, kes said eksamil vähem, kui 50% punktidest. Kirjutage programm selle probleemi lahendamiseks.
+Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma ja saadud punktide arv (nt. ``Jaan Tamm,24``). Maksimaalne eksami eest saadav punktide arv on 40. Õppejõud soovib näha nende tudengite nimesid ja tulemusi, kes said eksamil vähem, kui 50% punktidest. Kirjuta programm selle probleemi lahendamiseks.
 
 .. hint::
     Meetod ``split`` annab kõik komponendid sõnedena!
 
 Järjendi elementide muutmine
 ----------------------------
-Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde lisada, saab muuta järjendis juba olemasolevaid elemente. Selleks tuleb teha omistamine kasutades järjendi indekseerimise süntaksit. Uurige ja katsetage järgnevat programmi:
+Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde lisada, saab muuta järjendis juba olemasolevaid elemente. Selleks tuleb teha omistamine kasutades järjendi indekseerimise süntaksit. Uuri ja katseta järgnevat programmi:
 
 .. sourcecode:: py3
 
@@ -248,11 +248,11 @@ Nagu ikka, võib ka siin kasutada indeksina mingit täisarvulist muutujat.
 
 Harjutus 8. Täringuvisete statistika
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Genereerige 100 täringuviske tulemust (kasutades eelpool defineeritud funktsiooni ``juhuslik_järjend``) ning salvestage tulemus muutujasse.
+Genereeri 100 täringuviske tulemust (kasutades eelpool defineeritud funktsiooni ``juhuslik_järjend``) ning salvesta tulemus muutujasse.
 
-Koostage 6-elemendiline järjend ``statistika``, mis sisaldab täringuvisete statistikat -- avaldis ``statistika[0]`` peaks näitama, mitu korda tuli täringuviske tulemuseks 1, ``statistika[1]`` peaks näitama kahtede sagedust jne.
+Koosta 6-elemendiline järjend ``statistika``, mis sisaldab täringuvisete statistikat -- avaldis ``statistika[0]`` peaks näitama, mitu korda tuli täringuviske tulemuseks 1, ``statistika[1]`` peaks näitama kahtede sagedust jne.
 
-Kuvage statistika ekraanile.
+Kuva statistika ekraanile.
 
 .. hint::
 
@@ -261,7 +261,7 @@ Kuvage statistika ekraanile.
 
 Muudetavate andmetüüpide omapärad
 ----------------------------------
-Järjendi muutmisel (nii ``append`` kui ``a[i] = x`` puhul) tuleb arvestada ühe omapäraga, mis tuleb ilmsiks siis, kui sama järjend on omistatud mitmele muutujale. Uurige järgnevat näidet ning ennustage, mida antakse selle programmi käivitamisel väljundiks:
+Järjendi muutmisel (nii ``append`` kui ``a[i] = x`` puhul) tuleb arvestada ühe omapäraga, mis tuleb ilmsiks siis, kui sama järjend on omistatud mitmele muutujale. Uuri järgnevat näidet ning ennusta, mida antakse selle programmi käivitamisel väljundiks:
 
 .. sourcecode:: py3
     
@@ -272,7 +272,7 @@ Järjendi muutmisel (nii ``append`` kui ``a[i] = x`` puhul) tuleb arvestada ühe
     
     print(a)
  
-Nagu nägite, ilmus ekraanile ``[1, 2, 3, 4]``, ehkki programmis ei paista, et kusagil oleks järjendisse ``a`` lisatud arv *4*. Selle omapära põhjus peitub real ``b = a``, mis mitte ei kopeeri muutuja ``a`` väärtust muutujasse ``b``, vaid hoopis paneb muutuja ``b`` viitama samale järjendile. Teisisõnu, ``b`` on sama järjendi alternatiivne nimi (ing.k. *alias*). Seetõttu, kui järjendit muuta kasutades nime ``b`` on muudatus näha ka nime ``a`` kaudu (ja vastupidi).
+Nagu nägid, ilmus ekraanile ``[1, 2, 3, 4]``, ehkki programmis ei paista, et kusagil oleks järjendisse ``a`` lisatud arv *4*. Selle omapära põhjus peitub real ``b = a``, mis mitte ei kopeeri muutuja ``a`` väärtust muutujasse ``b``, vaid hoopis paneb muutuja ``b`` viitama samale järjendile. Teisisõnu, ``b`` on sama järjendi alternatiivne nimi (ing.k. *alias*). Seetõttu, kui järjendit muuta kasutades nime ``b`` on muudatus näha ka nime ``a`` kaudu (ja vastupidi).
 
 Kuna funktsiooni parameetrid on oma olemuselt samuti muutujad, siis sama efekt ilmneb ka siis, kui parameetrina antud järjendit muudetakse funktsiooni sees:
 
@@ -286,7 +286,7 @@ Kuna funktsiooni parameetrid on oma olemuselt samuti muutujad, siis sama efekt i
     
     print(arvud)
 
-Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovite parameetrina saadud järjendit arvutuse käigus muuta nii, et funktsioonist väljaspool muutusi näha poleks, siis tuleks teha saadud järjendist koopia, ning muudatused teha vaid koopiale. Koopia tegemiseks saab kasutada viilutamise süntaksi, jättes kirjutamata nii vasaku kui parema indeksi:
+Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovid parameetrina saadud järjendit arvutuse käigus muuta nii, et funktsioonist väljaspool muutusi näha poleks, siis tuleks teha saadud järjendist koopia, ning muudatused teha vaid koopiale. Koopia tegemiseks saab kasutada viilutamise süntaksi, jättes kirjutamata nii vasaku kui parema indeksi:
 
 .. sourcecode:: py3
     
@@ -309,22 +309,22 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovite parameetri
 
 1. Tagasivaade
 ~~~~~~~~~~~~~~
-Lugege läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`
+Loe läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`
 
 
 2. Lausegeneraator
 ~~~~~~~~~~~~~~~~~~~
-* Defineerige funktsioon ``lause``, mis **võtab argumendiks** 3 sõna (sõnena), ning **tagastab** neist kombineeritud lause (muuhulgas lisab tühikud ja punkti).
+* Defineeri funktsioon ``lause``, mis **võtab argumendiks** 3 sõna (sõnena), ning **tagastab** neist kombineeritud lause (muuhulgas lisab tühikud ja punkti).
 
-* Looge 3 tekstifaili -- ``alus.txt``, ``oeldis.txt`` ning ``sihitis.txt``. Kirjutage igasse neist 10 sõna eraldi ridadele:
+* Loo 3 tekstifaili -- ``alus.txt``, ``oeldis.txt`` ning ``sihitis.txt``. Kirjuta igasse neist 10 sõna eraldi ridadele:
 
     * ``alus.txt`` - peaks sisaldama nimisõnu või nimesid nimetavas käändes (nt. `Margus`)
     * ``oeldis.txt`` - oleviku vormis, 3. isikus tegusõnad (nt. `õpetab`)
     * ``sihitis.txt`` - nimisõna osastavas käändes (nt. `tudengeid`)
 
-* Kirjutage funktsioon, mis võtab argumendiks failinime ning tagastab vastava faili read järjendina (reavahetuse sümbolid tuleks eemaldada meetodiga ``strip``).
+* Kirjuta funktsioon, mis võtab argumendiks failinime ning tagastab vastava faili read järjendina (reavahetuse sümbolid tuleks eemaldada meetodiga ``strip``).
 
-* Kirjutage programm, mis 
+* Kirjuta programm, mis 
     
     #. loeb mainitud kolme faili sisud järjenditesse (``alused``, ``oeldised``, ``sihitised``), kasutades selleks eelmises punktis defineeritud funktsiooni
     #. genereerib 3 juhuslikku täisarvu vahemikust 0..9
@@ -338,16 +338,16 @@ Lugege läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`
 ~~~~~~~~~~~~~~~~~~
 Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real on töötaja nimi, tema vanus ja kuupalk. Kirjutada programm mis arvutab ja väljastab antud andmete põhjal:
 
-    * kõige suurema palgaga töötaja nime ja palga suuruse (vihje: suurima palga otsimisel jätke meelde, milliselt positsioonilt te selle leidsite)
+    * kõige suurema palgaga töötaja nime ja palga suuruse (vihje: suurima palga otsimisel jätke meelde, milliselt positsioonilt sa selle leidsid)
     * keskmise palga
     * keskmisest palgast rohkem teenijate arvu
     * keskmised vanused eraldi neile, kes teenivad keskmise palgast vähem (või samapalju) ning neile, kes teenivad keskmisest palgast rohkem
 
 4. Eesti-Inglise sõnaraamat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Laadige alla Eesti-Inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
+Lae alla Eesti-Inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
-Kirjutage programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võite ise valida)
+Kirjuta programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võid ise valida)
 
 .. note::
     
@@ -365,7 +365,7 @@ Pythoni ``random`` moodulis on funktsioon ``shuffle``, mis ajab argumendiks antu
     >>> a
     [2, 3, 6, 5, 4, 1]
 
-Kirjutage ise analoogne funktsioon ``minu_shuffle``, mis teeb sama (seejuures pole lubatud kasutada olemasolevat ``shuffle`` funktsiooni).
+Kirjuta ise analoogne funktsioon ``minu_shuffle``, mis teeb sama (seejuures pole lubatud kasutada olemasolevat ``shuffle`` funktsiooni).
 
 .. hint::
 
@@ -400,15 +400,15 @@ Kirjutage ise analoogne funktsioon ``minu_shuffle``, mis teeb sama (seejuures po
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Veebisait http://www.imdb.com kogub ja jagab informatsiooni filmide kohta. Aadressilt ftp://ftp.funet.fi/pub/mirrors/ftp.imdb.com/pub/ saab IMDB poolt kogutud infot alla laadida pakitud tekstifailidena.
 
-Fail :download:`filmid.zip (4.5MB) <downloads/filmid.zip>` on koostatud faili "countries.list.gz" põhjal, ning see sisaldab filmide (ja telesaadete) loetelu koos riigi nime ning valmimise aastaga. Laadige see fail alla ning pakkige lahti.
+Fail :download:`filmid.zip (4.5MB) <downloads/filmid.zip>` on koostatud faili "countries.list.gz" põhjal, ning see sisaldab filmide (ja telesaadete) loetelu koos riigi nime ning valmimise aastaga. Lae see fail alla ning paki lahti.
 
 .. note:: 
 
-    Filmide fail on lahtipakitult ligi 18MB suurune. Kui teil ei õnnestu (Windows'is) seda faili avada Notepad'iga, siis kasutage vabavaralist programmi Notepad2 (http://www.flos-freeware.ch/notepad2.html).
+    Filmide fail on lahtipakitult ligi 18MB suurune. Kui sul ei õnnestu (Windows'is) seda faili avada Notepad'iga, siis kasuta vabavaralist programmi Notepad2 (http://www.flos-freeware.ch/notepad2.html).
     
-Failis ``filmid.txt`` on ühe filmi andmed ühel real, kujul *<nimi><tühik>(<aasta>)<tabulaator><riik>*. (Notepad2-s saate tühikuid ja tabulaatoreid eristada, kui märgite menüüs *View* valiku *Show whitespace*).
+Failis ``filmid.txt`` on ühe filmi andmed ühel real, kujul *<nimi><tühik>(<aasta>)<tabulaator><riik>*. (Notepad2-s saad tühikuid ja tabulaatoreid eristada, kui märgite menüüs *View* valiku *Show whitespace*).
 
-Ülesandeks on kirjutada programm, mis otsib sellest failist üles Eestis valminud filmid (ja telesaated), ning koostab statistika selle kohta, mitu filmi mingil aastal valmis.
+Ülesandeks on kirjutada programm, mis otsib sellest failist üles Eestis valminud filmid (ja telesaadd), ning koostab statistika selle kohta, mitu filmi mingil aastal valmis.
 
 .. hint::
 
@@ -423,22 +423,22 @@ Failis ``filmid.txt`` on ühe filmi andmed ühel real, kujul *<nimi><tühik>(<aa
 
 .. hint::
 
-    Kui te loete järjenditesse kogu failis sisalduva info, siis võib Pythonil mälust puudu tulla. 
+    Kui sa loed järjenditesse kogu failis sisalduva info, siis võib Pythonil mälust puudu tulla. 
     
 .. topic:: Lisaülesande lisa
 
-    Täiendage programmi selliselt, et see küsib (korduvalt) kasutajalt aastaarvu ning väljastab ekraanile kõik selle aasta Eesti filmid. Kui kasutaja sisestab tühisõne (st. vajutab lihtsalt ENTER), siis programm lõpetab töö. Selleks tuleb organiseerida sisseloetud filmid aastate kaupa eraldi.
+    Täienda programmi selliselt, et see küsib (korduvalt) kasutajalt aastaarvu ning väljastab ekraanile kõik selle aasta Eesti filmid. Kui kasutaja sisestab tühisõne (st. vajutab lihtsalt ENTER), siis programm lõpetab töö. Selleks tuleb organiseerida sisseloetud filmid aastate kaupa eraldi.
     
     .. hint::
         
-        Järjend võib sisaldada järjendeid: ``a = [[1, 2, 3], [5, 5, 6], [4, 4, 3]]``. Mõelge, mida võiks tähendada ``a[2][1]``?
+        Järjend võib sisaldada järjendeid: ``a = [[1, 2, 3], [5, 5, 6], [4, 4, 3]]``. Mõtle, mida võiks tähendada ``a[2][1]``?
 
 
 .. _tagasivaade_1-8:
 
 *Tagasivaade peatükkidele 1-8*
 ---------------------------------
-On teada, et mingi teema valdamiseks tuleb tegelda vaheldumisi nii teooria, kui praktikaga. Praeguseks olete harjutanud läbi kõik olulisemad Python keele võimalused ja nüüd on paras aeg astuda samm tagasi ning vaada juba läbitud materjalile uue, veidi kogenuma pilguga.
+On teada, et mingi teema valdamiseks tuleb tegelda vaheldumisi nii teooria, kui praktikaga. Praeguseks oled harjutanud läbi kõik olulisemad Python keele võimalused ja nüüd on paras aeg astuda samm tagasi ning vaada juba läbitud materjalile uue, veidi kogenuma pilguga.
 
 Avaldised vs. laused 
 ~~~~~~~~~~~~~~~~~~~~
@@ -466,7 +466,7 @@ Muutujad
 ~~~~~~~~
 Muutujad võimaldavad meil tegelda väärtustega ilma, et me peaks mainima mingit konkreetset väärtust. Näiteks, kui me salvestame kaks kasutaja poolt sisestatud arvu muutujatesse ``a`` ja ``b``, siis nende kokku liitmisel ei huvita meid enam, mis on nende muutujate konkreetne väärtus. 
 
-Soovitav on lugeda uuesti läbi 2. peatüki osa :ref:`muutujad`, tõenäoliselt näete nüüd muutujate olemust juba uue pilguga.
+Soovitav on lugeda uuesti läbi 2. peatüki osa :ref:`muutujad`, tõenäoliselt näed nüüd muutujate olemust juba uue pilguga.
 
 Funktsioonid
 ~~~~~~~~~~~~
@@ -484,7 +484,7 @@ Kui muutujad võimaldavad meil kasutada mingit väärtust ilma, et me peaksime m
     
     print(kolmest_suurim(4, 15, 2))
 
-Tõenäoliselt oskate isegi ilma funktsiooni definitsiooni süvenemata arvata, mida taoline programm ekraanile prindib. Põhjus on selles, et antud funktsiooni olemus tuleb välja juba tema nimest ja üldjuhul võime me eeldada, et funktsiooni tegelik definitsioon on tema nimele vastav. Seetõttu, kui meil on sobivad funktsioonid juba defineeritud, siis saame me programmi põhiosas (või järgmiste funktsioonide defineerimisel) töötada "kõrgemal tasemel", ilma "pisiasjade" pärast muretsemata.
+Tõenäoliselt oskad isegi ilma funktsiooni definitsiooni süvenemata arvata, mida taoline programm ekraanile prindib. Põhjus on selles, et antud funktsiooni olemus tuleb välja juba tema nimest ja üldjuhul võime me eeldada, et funktsiooni tegelik definitsioon on tema nimele vastav. Seetõttu, kui meil on sobivad funktsioonid juba defineeritud, siis saame me programmi põhiosas (või järgmiste funktsioonide defineerimisel) töötada "kõrgemal tasemel", ilma "pisiasjade" pärast muretsemata.
 
 Kuna funktsioonide teema on programmeerimise algkursuses tavaliselt tudengitele kõige hägusam, siis on soovitav lugeda uuesti läbi 5. peatükist vähemalt järgmised osad:
 
@@ -499,7 +499,7 @@ Tingimuslause (ehk ``if``-lause ehk hargnemislause) on oma olemuselt küllalt li
 
 Üks oluline punkt tingimuslause juures on lause päises antud tingimusavaldis. Nagu eelnevalt mainitud, on avaldiste moodustamiseks lõputult võimalusi -- võib kasutada konstante, muutujaid, tehteid, funktsiooni väljakutseid, või kõigi nende kombinatsioone. Tingimusavaldise juures on oluline, et avaldise tüüp oleks tõeväärtus, st. avaldise väärtustamisel saadakse kas ``True`` või ``False``. 
 
-Mitme tingimuse kombineerimiseks saab kasutada operaatoreid ``and`` ja ``or``, tingimuse "ümberpööramiseks" on operaator ``not``. Ärge unustage, et tingimuses saate kasutada ka isetehtud funktsioone, aga need peavad sel juhul tagastama tõeväärtuse.
+Mitme tingimuse kombineerimiseks saab kasutada operaatoreid ``and`` ja ``or``, tingimuse "ümberpööramiseks" on operaator ``not``. Ära unusta, et tingimuses saad kasutada ka isetehtud funktsioone, aga need peavad sel juhul tagastama tõeväärtuse.
 
 
 Korduslaused e. tsüklid
@@ -541,7 +541,7 @@ Selle kirjapildi teine tõsine eelis on see, et see muudab aritmeetiliste avaldi
  
 .. sourcecode:: py3
 
-    print "Sisestage avaldis:"
+    print "Sisesta avaldis:"
     rida = raw_input()
     kasud = rida.split()
 

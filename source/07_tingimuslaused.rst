@@ -51,16 +51,16 @@ Kui programmis on mitmes kohas vaja kontrollida sarnast tingimust, siis võib se
 
 Harjutus 3. Liigaasta tuvastamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``on_liigaasta``, mis võtab argumendiks aastaarvu ning **tagastab tõeväärtuse** vastavalt sellele, kas antud aasta on liigaasta või mitte.
+Kirjuta funktsioon ``on_liigaasta``, mis võtab argumendiks aastaarvu ning **tagastab tõeväärtuse** vastavalt sellele, kas antud aasta on liigaasta või mitte.
 
-Kirjutage programm, mis küsib kasutajalt aastaarvu ning väljastab ekraanile info selle kohta, kas tegemist on liigaastaga või mitte. Liigaasta tuvastamiseks kasutage eelnevalt defineeritud funktsiooni.
+Kirjuta programm, mis küsib kasutajalt aastaarvu ning väljastab ekraanile info selle kohta, kas tegemist on liigaastaga või mitte. Liigaasta tuvastamiseks kasuta eelnevalt defineeritud funktsiooni.
 
 .. hint::
 
     Liigaasta on selline, kus aastaarv jagub 4-ga, välja arvatud juhud, kus aastaarv jagub 100-ga, aga ei jagu 400-ga. Näiteks aastad 2004 ja 2000 on liigaastad aga 1900 mitte.
 
 .. note::
-    Kui programmis läheb mõni lause liiga pikaks, siis võite ta kirjutada mitmele reale, aga sel juhul tuleb rea "murdmise" koht märkida ära langkriipsuga (``\``):
+    Kui programmis läheb mõni lause liiga pikaks, siis võid ta kirjutada mitmele reale, aga sel juhul tuleb rea "murdmise" koht märkida ära langkriipsuga (``\``):
     
     .. sourcecode:: py3
     
@@ -73,17 +73,17 @@ Kirjutage programm, mis küsib kasutajalt aastaarvu ning väljastab ekraanile in
 
 Tingimuslaused
 --------------
-Pythoni tingimuslausega olete juba kokku puutunud, aga vaatame siinkohal mõned punktid veel üle. Lisaks tutvustame "mitmeharulist" tingimuslauset.
+Pythoni tingimuslausega oled juba kokku puutunud, aga vaatame siinkohal mõned punktid veel üle. Lisaks tutvustame "mitmeharulist" tingimuslauset.
 
 Harjutus 4. Päevade arv kuus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``päevade_arv``, mis võtab argumendiks kuu numbri ja aastaarvu ning tagastab mitu päeva on selles kuus. Kasutage abifunktsioonina eelnevalt defineeritud funktsiooni ``on_liigaasta``. (Kirjutage need funktsioonid samasse faili).
+Kirjuta funktsioon ``päevade_arv``, mis võtab argumendiks kuu numbri ja aastaarvu ning tagastab mitu päeva on selles kuus. Kasuta abifunktsioonina eelnevalt defineeritud funktsiooni ``on_liigaasta``. (Kirjuta need funktsioonid samasse faili).
 
 Harjutus 5. Kuupäeva kontrollimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``on_legaalne_kuupäev``, mis võtab argumendiks päeva, kuu ja aasta (arvudena) ning tagastab tõeväärtuse vastavalt sellele, kas argumentidele vastav kuupäev on legaalne või mitte. Kasutage abifunktsioonidena eelmistes ülesannetes defineeritud funktsioone.
+Kirjuta funktsioon ``on_legaalne_kuupäev``, mis võtab argumendiks päeva, kuu ja aasta (arvudena) ning tagastab tõeväärtuse vastavalt sellele, kas argumentidele vastav kuupäev on legaalne või mitte. Kasuta abifunktsioonidena eelmistes ülesannetes defineeritud funktsioone.
 
-Testige loodud funktsiooni järgnevate avaldistega:
+Testi loodud funktsiooni järgnevate avaldistega:
 
     - ``on_legaalne_kuupäev(31, 1, 2001)``
     - ``on_legaalne_kuupäev(29, 2, 2001)``
@@ -136,9 +136,9 @@ Näide: Hinde arvutamise programm
 
 Harjutus 6. Kuu esitamine sõnena
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``kuu_nimi``, mis võtab argumendiks kuu numbri ning tagastab vastava kuu nime. Kui argumendi väärtus on väiksem kui 1 või suurem kui 12, siis tagastatakse sõne ``'Vigane kuu number'``.
+Kirjuta funktsioon ``kuu_nimi``, mis võtab argumendiks kuu numbri ning tagastab vastava kuu nime. Kui argumendi väärtus on väiksem kui 1 või suurem kui 12, siis tagastatakse sõne ``'Vigane kuu number'``.
 
-Testige oma funktsiooni!
+Testi oma funktsiooni!
 
 
 Tingimusavaldis
@@ -178,11 +178,11 @@ Tingimusavaldise asemel saab alati kasutada tingimuslauset ...
 
 .. note:: 
 
-    Ärge ajage segamini ka tingimusavaldist ja loogilist avaldist. Loogiline avaldis on avaldis, mille tüüp on ``bool``. Tingimusavaldis on avaldis, milles on kasutatud äsja tutvustatud valikuskeemi, tingimusavaldise tüüp tavaliselt *ei ole* ``bool``.
+    Ära aja segamini ka tingimusavaldist ja loogilist avaldist. Loogiline avaldis on avaldis, mille tüüp on ``bool``. Tingimusavaldis on avaldis, milles on kasutatud äsja tutvustatud valikuskeemi, tingimusavaldise tüüp tavaliselt *ei ole* ``bool``.
 
 .. note::
 
-    Kui teile siiski tundub, et tingimusavaldis teeb teie jaoks asjad liiga segaseks, siis võite seda rahumeeli ignoreerida. Alati saab hakkama ka ainult tingimuslausega. Mitmes populaarses programmeerimiskeeles isegi pole tingimusavaldist.
+    Kui sulle siiski tundub, et tingimusavaldis teeb sinu jaoks asjad liiga segaseks, siis võid seda rahumeeli ignoreerida. Alati saab hakkama ka ainult tingimuslausega. Mitmes populaarses programmeerimiskeeles isegi pole tingimusavaldist.
 
 Erijuhtude käsitlemine
 ----------------------------
@@ -192,7 +192,7 @@ TODO
 
 Alamülesannete tuvastamine ja alamprogrammide loomine
 ---------------------------------------------------------
-Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli teil tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks teilt praegu, millise eesmärgiga on teie programmis mingi konkreetne rida või plokk, siis ilmselt peaksite enne vastamist omajagu süvenema.
+Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli sul tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks sult praegu, millise eesmärgiga on sinu programmis mingi konkreetne rida või plokk, siis ilmselt peaksid enne vastamist omajagu süvenema.
 
 Kuna enamus praktikas kasutatavaid programme on palju keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
 
@@ -206,7 +206,7 @@ Programmeerimises nimetatakse alamülesande lahendust **alamprogrammiks** (see o
 
     Erinevalt teistest siiani tutvustatud Pythoni põhikonstruktsioonidest (hargnemine ja tsükkel), ei ole alamprogrammid tehniliselt võttes programmeerimisel hädavajalikud -- kõik programmid on teoreetiliselt võimalik kirjutada kasutades vaid väikest hulka sisseehitatud käske. Taoliselt kirjutatud praktilised programmid aga läheksid peagi nii suureks ja keeruliseks, et ka parimad programmeerijad ei suudaks neid enam hallata.
 
-Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui teil on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). 
+Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui sul on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). 
 
 Toome siinkohal ära ühe võimaliku lahenduse, kus pole alamprogramme kasutatud:
 
@@ -415,9 +415,9 @@ Teiseks, me **defineerisime funktsiooni ühekordselt, aga saime seda kasutada mi
 
 Harjutus 1. Liigu nurka
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Lisage vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
+Lisa vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
 
-Kasutage seda funktsiooni programmis sobival kohal.
+Kasuta seda funktsiooni programmis sobival kohal.
 
 
 Ülesanded
@@ -425,27 +425,27 @@ Kasutage seda funktsiooni programmis sobival kohal.
 
 1. Kuupäeva esitamine sõnena
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu ja aasta (arvudena) ning tagastab sõne, mis esitab kuupäeva kujul *<päev>. <kuu nimi> <aasta>* (nt. *24. veebruar 1918*).
+Kirjuta funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu ja aasta (arvudena) ning tagastab sõne, mis esitab kuupäeva kujul *<päev>. <kuu nimi> <aasta>* (nt. *24. veebruar 1918*).
 
-Seejärel kirjutage programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta. Kui neile vastav kuupäev on legaalne, siis kuvada ekraanile vastav kuupäev sõnena, vastasel juhul kuvada ``'Viga: mittelegaalne kuupäev'``.
+Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta. Kui neile vastav kuupäev on legaalne, siis kuvada ekraanile vastav kuupäev sõnena, vastasel juhul kuvada ``'Viga: mittelegaalne kuupäev'``.
 
-Kasutage abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 3-6).
+Kasuta abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 3-6).
 
 2. Täisnurkne kolmnurk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja tagastab ``True`` või ``False`` vastavalt sellele, kas tegemist oli täisnurkse kolmnurgaga või mitte.
+Kirjuta funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja tagastab ``True`` või ``False`` vastavalt sellele, kas tegemist oli täisnurkse kolmnurgaga või mitte.
 
 .. note:: 
 
-    Lihtsustamise mõttes võite esialgu eeldada, et pikim külg antakse alati kolmanda argumendina. Kui saate esialgse variandi tööle, siis muutke programmi selliselt, et küljepikkuseid võib anda suvalises järjekorras.
+    Lihtsustamise mõttes võid esialgu eeldada, et pikim külg antakse alati kolmanda argumendina. Kui saad esialgse variandi tööle, siis muutke programmi selliselt, et küljepikkuseid võib anda suvalises järjekorras.
 
 .. note::
     
-    Ärge unustage, et mitte igast küljepikkuste komplektist ei saa moodustada kolmnurka! Soovitame kirjutada abifunktsiooni, mis ütleb, kas antud küljepikkused üldse sobivad kolmnurgale.
+    Ära unusta, et mitte igast küljepikkuste komplektist ei saa moodustada kolmnurka! Soovitame kirjutada abifunktsiooni, mis ütleb, kas antud küljepikkused üldse sobivad kolmnurgale.
     
 .. note::
 
-    Ärge unustage, et ujukomaarvud on pisut ebatäpsed, seega võib olla vajalik võrdsuse kontrollimise asemel kontrollida sarnasust:
+    Ära unusta, et ujukomaarvud on pisut ebatäpsed, seega võib olla vajalik võrdsuse kontrollimise asemel kontrollida sarnasust:
     
     .. sourcecode :: py3
     
@@ -454,10 +454,10 @@ Kirjutage funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja ta
 
 .. hint::
 
-    Tuletage jälle meelde see vana hea koolimatemaatika teoreem.
+    Tuleta jälle meelde see vana hea koolimatemaatika teoreem.
 
 
-Kasutage loodud funktsiooni, küsides kasutajalt kolmnurga 3 külje pikkused ja väljastades info selle kohta, kas antud kolmnurk on täisnurkne või mitte. Kui küljepikkused ei sobi kolmnurgale, siis tuleks ka seda öelda.
+Kasuta loodud funktsiooni, küsides kasutajalt kolmnurga 3 külje pikkused ja väljastades info selle kohta, kas antud kolmnurk on täisnurkne või mitte. Kui küljepikkused ei sobi kolmnurgale, siis tuleks ka seda öelda.
 
 3. Klaveri mahutamine
 ~~~~~~~~~~~~~~~~~~~~~
@@ -465,13 +465,13 @@ Kasutage loodud funktsiooni, küsides kasutajalt kolmnurga 3 külje pikkused ja 
 
 4. Pitsapood
 ~~~~~~~~~~~~
-Kirjutage programm, mis küsib kasutajalt infot tellitava pitsa suuruse, komponentide ja kättetoimetamise detailide kohta. Igal sammul tuleks esitada kasutajale võimalikud valikud koos vastavate koodidega, nt:
+Kirjuta programm, mis küsib kasutajalt infot tellitava pitsa suuruse, komponentide ja kättetoimetamise detailide kohta. Igal sammul tuleks esitada kasutajale võimalikud valikud koos vastavate koodidega, nt:
 
 .. sourcecode:: none
 
     ...
     ...
-    Millise suurusega pitsat soovite? Valikud on:
+    Millise suurusega pitsat soovid? Valikud on:
       1 - väike (18cm)
       2 - keskmine (25cm)
       3 - suur (35cm)
@@ -499,7 +499,7 @@ Tkinter'i Canvas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eelmises peatükis tutvustasime mõningaid tkinter'i võimalusi graafiliste kasutajaliideste loomisel. Seal demonstreerisime põhiliste "standardvidinate", nagu nuppude ja tekstisisestuskastide kasutamist. Seekord uurime ühte väga paindlikku vidinat, mille nimi on *Canvas* (tõlkes *lõuend*). *Canvase* peale saab joonistada kujundeid, laadida pilte, neid pilte ja kujundeid saab liigutada, nendele klõpsamist on võimalik registreerida jne.
 
-Salvestage endale järgnev näiteprogramm. Enne käivitamist salvestage samasse kausta ka fail :download:`juku.gif <downloads/juku.gif>`.
+Salvesta endale järgnev näiteprogramm. Enne käivitamist salvesta samasse kausta ka fail :download:`juku.gif <downloads/juku.gif>`.
 
 .. sourcecode:: py3
 
@@ -555,6 +555,6 @@ Salvestage endale järgnev näiteprogramm. Enne käivitamist salvestage samasse 
 
     raam.mainloop()
 
-Käivitage programm, vajutage nooleklahve, klõpsake hiirega kriipsujukul.
+Käivita programm, vajuta nooleklahve, klõpsa hiirega kriipsujukul.
 
-See näiteprogramm oli siinkohal mõeldud vaid "isuäratajana" -- selleks, et sellest aru saada, lugege esmalt lihtsamate Canvase programmide selgitusi õpiku lisast *tkinter*, jaotusest :ref:`canvas`.
+See näiteprogramm oli siinkohal mõeldud vaid "isuäratajana" -- selleks, et sellest aru saada, loe esmalt lihtsamate Canvase programmide selgitusi õpiku lisast *tkinter*, jaotusest :ref:`canvas`.

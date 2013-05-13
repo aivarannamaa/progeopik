@@ -31,7 +31,7 @@ Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema priorite
     * ``and``
     * ``or``
 
-Kahtluse korral kasutage soovitud tehete järjekorra määramiseks sulge.
+Kahtluse korral kasuta soovitud tehete järjekorra määramiseks sulge.
 
 
 
@@ -73,7 +73,7 @@ Funktsioonide tööpõhimõte
 
 TODO: Intuitsioon vs. mehhanism -- ka peale arvutile asjade õpetamist jäävad tema teadmised ikkagi mehhaaniliseks. Loll masin.
 
-On vaja mõista, et arvuti/Python tegutsevad vaid etteantud reeglite järgi, neil pole initsiatiivi ega mingisugust arukust. Kujutage ette kõige mõnda teie arvates rumalat, tähenärijalikku aga agarat ja täpset inimest -- Python on temast palju rumalam, agaram ja täpsem. Üllataval kombel annab just Pythoni rumalus ja tähenärimine programmidele üheseltmõistetavuse ja konkreetsuse. Programmeerimise oskus on ühelt poolt tehniline (tuleb tunda teatud komplekti mõistetest ja konstruktsioonidest, mida Python mõistab), aga ennekõike on see oskus mõista lahendatava ülesande olemust ja panna lahendusidee kirja sellisel kujul, et ka sedavõrd rumal olevus nagu arvuti suudaks neid käske järgida. Programmeerimise protsess ei ole lineaarne -- probleemi parem mõistmine ja lahenduse kirjapanek käivad vaheldumisi. Alles siis, kui me peame oma teadmise või idee sõnadesse panema (nt. eesti keeles, aga eriti mõnes programmeerimiskeeles) avastame, et teatud kohad meie idees on jäänud häguseks. Kõige paremini õpib õpetades ja programmeerimine on arvuti õpetamine. 
+On vaja mõista, et arvuti/Python tegutsevad vaid etteantud reeglite järgi, neil pole initsiatiivi ega mingisugust arukust. Kujuta ette kõige mõnda sinu arvates rumalat, tähenärijalikku aga agarat ja täpset inimest -- Python on temast palju rumalam, agaram ja täpsem. Üllataval kombel annab just Pythoni rumalus ja tähenärimine programmidele üheseltmõistetavuse ja konkreetsuse. Programmeerimise oskus on ühelt poolt tehniline (tuleb tunda teatud komplekti mõistetest ja konstruktsioonidest, mida Python mõistab), aga ennekõike on see oskus mõista lahendatava ülesande olemust ja panna lahendusidee kirja sellisel kujul, et ka sedavõrd rumal olevus nagu arvuti suudaks neid käske järgida. Programmeerimise protsess ei ole lineaarne -- probleemi parem mõistmine ja lahenduse kirjapanek käivad vaheldumisi. Alles siis, kui me peame oma teadmise või idee sõnadesse panema (nt. eesti keeles, aga eriti mõnes programmeerimiskeeles) avastame, et teatud kohad meie idees on jäänud häguseks. Kõige paremini õpib õpetades ja programmeerimine on arvuti õpetamine. 
 
 Taoline detailne mõtlemine võib tunduda algul väga ebaloomulik, aga kui me soovime oma mõtteid täpselt ja ühetähenduslikult kirja panna, siis on see ainuke võimalus
 

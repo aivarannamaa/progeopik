@@ -108,11 +108,11 @@ Jätame hetkeks kilpkonna kõrvale ja vaatleme ühte väga lihtsat näidet funkt
 
 Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
 
-Proovige seda kolmerealist programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
+Proovi seda kolmerealist programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
 
-Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida olete siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
+Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida oled siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
 
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega e. programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovige järgmist, täiendatud programmi:
+Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega e. programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovi järgmist, täiendatud programmi:
 
 .. sourcecode:: python
 
@@ -132,16 +132,16 @@ Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulg
     Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud *tühjad* sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
 
     
-Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovige programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
+Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovi programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
 
 .. note:: 
 
-    Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustutage ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovige siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
+    Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustuta ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovi siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
 
 Harjutus 11. Ruudu joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde.
-Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasutage seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
+Kirjuta funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasuta seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
 
 .. note::
 
@@ -160,7 +160,7 @@ Kirjutage funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkus
 
 .. note::
 
-    Kui kilpkonna rahulik tempo teid ärritab, siis andke talle käsk ``speed(10)``.
+    Kui kilpkonna rahulik tempo sind ärritab, siis anna talle käsk ``speed(10)``.
 
 
 
@@ -188,7 +188,7 @@ Funktsiooni kehas võib võtta kasutusele abimuutujaid, justnagu me oleme siiani
     exitonclick()
 
 
-Kuidas oleks, kui me üritaksime peale funktsiooni ``ruut`` väljakutsumist kontrollida, milline oli ikkagi muutuja ``joonistatud_kylgi`` viimane väärtus? Proovige järgmist, veidi muudetud programmi:
+Kuidas oleks, kui me üritaksime peale funktsiooni ``ruut`` väljakutsumist kontrollida, milline oli ikkagi muutuja ``joonistatud_kylgi`` viimane väärtus? Proovi järgmist, veidi muudetud programmi:
 
 .. sourcecode:: py3
     :emphasize-lines: 13
@@ -209,7 +209,7 @@ Kuidas oleks, kui me üritaksime peale funktsiooni ``ruut`` väljakutsumist kont
     exitonclick()
 
 
-Ilmselt saite programmi käivitamisel Pythonilt veateate (``"NameError: name 'joonistatud_kylgi' is not defined"``). Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on *lokaalsed*, st nad "elavad" täielikult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni käivitamisel ja nad kaovad, kui funktsioon oma tööga lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
+Ilmselt said programmi käivitamisel Pythonilt veateate (``"NameError: name 'joonistatud_kylgi' is not defined"``). Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on *lokaalsed*, st nad "elavad" täielikult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni käivitamisel ja nad kaovad, kui funktsioon oma tööga lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
 
 Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees defineeritud muutuja ``x`` ei mõjuta kuidagi programmi põhiosas defineeritud samanimelist muutujat, tegemist on kahe eraldi muutujaga, millele on juhtumisi sama nimi (justnagu kahel erineval inimesel võib olla sama nimi):
 
@@ -258,15 +258,15 @@ Funktsiooni ``tere`` definitsiooni päises on lisaks funktsiooni nimele näidatu
     Koos parameetritega räägitakse enamasti ka **argumentidest**. Argumendiks nimetakse funktsiooni väljakutses sulgudes antud avaldise väärtust, millest saab vastava parameetri väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
 
     
-    `Parameetri` vs. `argumendi` asemel võite mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
+    `Parameetri` vs. `argumendi` asemel võid mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
 
 Harjutus 2. Parameetriseeritud ``ruut``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Täiustage 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasutage loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
+Täiusta 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasuta loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
 
 .. note::
 
-    Järgnevas vihjes on antud harjutuse näitelahendus, ärge seda enne vaadake, kui olete ise proovinud!
+    Järgnevas vihjes on antud harjutuse näitelahendus, ära seda enne vaata, kui oled ise proovinud!
 
 .. hint::
     
@@ -325,14 +325,14 @@ Täiustage 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu k�
             
         See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Kõlab sarnaselt sektsioonile "Lokaalsed muutujad"? Tegemist ongi sama teemaga -- nagu juba korra mainitud, käsitletakse ka parameetreid justkui (lokaalseid) muutujaid.
         
-        Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab teid ennast segadusse, siis võite kasutada alati erinevaid muutujanimesid.
+        Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab sind ennast segadusse, siis võid kasutada alati erinevaid muutujanimesid.
 
 
 
 
 Mitu parameetrit
 ~~~~~~~~~~~~~~~~
-Parameetreid (ja vastavaid argumente) võib olla ka rohkem kui üks. Proovige näiteks järgmist programmi:
+Parameetreid (ja vastavaid argumente) võib olla ka rohkem kui üks. Proovi näiteks järgmist programmi:
 
 .. sourcecode:: python
 
@@ -342,7 +342,7 @@ Parameetreid (ja vastavaid argumente) võib olla ka rohkem kui üks. Proovige n�
 	
     tere("Kalle", 3)
 
-Nagu näete, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras nagu on vastavad  parameetrid funktsiooni definitsioonis. Teisisõnu, argumendi *positsioon* määrab, millisele parameetrile tema väärtus omistatakse.
+Nagu näed, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras nagu on vastavad  parameetrid funktsiooni definitsioonis. Teisisõnu, argumendi *positsioon* määrab, millisele parameetrile tema väärtus omistatakse.
 
 .. note::
 
@@ -365,10 +365,10 @@ Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele ar
 
 .. note::
 
-    Soovi korral vaadake täpsemat infot siit:
+    Soovi korral vaata täpsemat infot siit:
     http://docs.python.org/py3k/library/turtle.html#turtle.color
 
-Lisage funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katsetage.
+Lisa funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta.
 
 .. index::
     single: funktsioon; tagastamine
@@ -379,7 +379,7 @@ Väärtuse tagastamine
 -----------------------
 .. admonition:: Probleem
 
-    Kolmanda peatüki pere sissetuleku ülesandes kordasite tõenäoliselt netopalga arvutamise valemit kahes kohas -- ema ja isa netopalga arvutamisel. (Kui teil jäi see ülesanne tegemata, siis on väga soovitav see praegu, enne edasi lugemist ära teha). 
+    Kolmanda peatüki pere sissetuleku ülesandes kordasite tõenäoliselt netopalga arvutamise valemit kahes kohas -- ema ja isa netopalga arvutamisel. (Kui sul jäi see ülesanne tegemata, siis on väga soovitav see praegu, enne edasi lugemist ära teha). 
     
     Siin polnud õnneks tegemist eriti keerulise valemiga ning copy-paste'ga oli võimalik topelt tippimise vaeva vältida. Aga kui netopalga arvutamise valem peaks muutuma, siis peab olema meeles programmi muuta kõigis kohtades, kus seda valemit on kasutatud. 
 
@@ -410,9 +410,9 @@ Väärtusega funktsioonide puhul on oluline *võtmesõna* ``return`` -- sellele 
 
 Harjutus 4. Topelt
 ~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon, mis võtab argumendiks ühe arvu ning tagastab selle arvu kahega korrutatuna.
+Kirjuta funktsioon, mis võtab argumendiks ühe arvu ning tagastab selle arvu kahega korrutatuna.
 
-Demonstreerige loodud funktsiooni tööd, kirjutades programmi ka mõned funktsiooni väljakutsed erinevate argumentidega. NB! tulemuse ekraanile kuvamine tuleks korraldada funktsiooni väljakutse juures, mitte funktsiooni definitsioonis!
+Demonstreeri loodud funktsiooni tööd, kirjutades programmi ka mõned funktsiooni väljakutsed erinevate argumentidega. NB! tulemuse ekraanile kuvamine tuleks korraldada funktsiooni väljakutse juures, mitte funktsiooni definitsioonis!
 
 .. topic:: ``return`` lõpetab funktsiooni töö
 
@@ -464,15 +464,15 @@ Demonstreerige loodud funktsiooni tööd, kirjutades programmi ka mõned funktsi
 Harjutus 5. Tollid ja sentimeetrid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
-    Selle ülesandega saate harjutada ühte levinud võtet uute funktsioonide loomiseks
+    Selle ülesandega saad harjutada ühte levinud võtet uute funktsioonide loomiseks
 
-#. Kirjutage funktsioon, mis võtab argumendiks pikkuse tollides ning tagastab pikkuse sentimeetrites. Salvestage esialgu faili vaid funktsiooni definitsioon, ilma väljakutseta.
-#. Testige loodud funktsiooni käsureal (käivitage programm IDLE-ga, ning kirjutage mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeerige definitsiooni ja proovige uuesti.
-#. Lõpuks kasutage funktsiooni programmis, mis küsib kasutajalt tema pikkuse tollides ja väljastab ekraanile vastava pikkuse sentimeetrites ning tema nn. "ideaalkaalu" (so. pikkus sentimeetrites - 100, nt. kui pikkus on 185cm, siis ideaalkaal on 85kg).
+#. Kirjuta funktsioon, mis võtab argumendiks pikkuse tollides ning tagastab pikkuse sentimeetrites. Salvesta esialgu faili vaid funktsiooni definitsioon, ilma väljakutseta.
+#. Testi loodud funktsiooni käsureal (käivita programm IDLE-ga, ning kirjuta mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeeri definitsiooni ja proovi uuesti.
+#. Lõpuks kasuta funktsiooni programmis, mis küsib kasutajalt tema pikkuse tollides ja väljastab ekraanile vastava pikkuse sentimeetrites ning tema nn. "ideaalkaalu" (so. pikkus sentimeetrites - 100, nt. kui pikkus on 185cm, siis ideaalkaal on 85kg).
 
 Harjutus 6. Sõne dubleerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab selle sõne dubleerituna niimitu korda, kui mitu tähte on esialgses sõnes:
+Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab selle sõne dubleerituna niimitu korda, kui mitu tähte on esialgses sõnes:
 
 .. sourcecode:: py3
 
@@ -631,13 +631,13 @@ Moodulid ja ``import``
 ----------------------
 Pythoniga tuleb kaasa tuhandeid erinevaid funktsioone, lisaks kirjutavad Pythoni programmeerijad üle maailma igapäevaselt tuhandeid funktsioone juurde. Sellises situatsioonis on täiesti loomulik, et mitmele erinevale funktsioonile pannakse sama nimi. Selleks, et erinevatel funktsioonidel oleks siiski võimalik vahet teha, jagatakse need **moodulitesse**.
 
-Eelmistes peatükkides kohtusite juba moodulitega ``math`` ja ``turtle``, ning nägite, et mooduli sisu muutub kättesaadavaks ``import`` käsuga, nt:
+Eelmistes peatükkides kohtusite juba moodulitega ``math`` ja ``turtle``, ning nägid, et mooduli sisu muutub kättesaadavaks ``import`` käsuga, nt:
 
 .. sourcecode:: py3
 
     from math import *
 
-Selline variant ``import`` käsust on tegelikult soovitav vaid siis, kui teil on vaja moodulist palju erinevaid funktsioone. Kui te teate, et teil läheb moodulist tarvis vaid mõnda funktsiooni (nt. ``math`` moodulist funktsioone ``sin`` ja ``cos``), siis on soovitav kasutada ``import`` käsu varianti, kus näidatakse ära konkreetsed funktsioonide (või konstantide) nimed, mida tahetakse kasutada: 
+Selline variant ``import`` käsust on tegelikult soovitav vaid siis, kui sul on vaja moodulist palju erinevaid funktsioone. Kui sa tead, et sul läheb moodulist tarvis vaid mõnda funktsiooni (nt. ``math`` moodulist funktsioone ``sin`` ja ``cos``), siis on soovitav kasutada ``import`` käsu varianti, kus näidatakse ära konkreetsed funktsioonide (või konstantide) nimed, mida tahetakse kasutada: 
 
 .. sourcecode:: py3
 
@@ -660,7 +660,7 @@ Ka selle variandi puhul ei pea oma muutujate nimede valimisel muretsema, kui imp
 
 .. topic:: Moodulite loomine
 
-    Kõikide selle kursuse ülesannete puhul on aktsepteeritav, kui teie enda programm koosneb ainult ühest failist. Samas, reaalsete programmide juures on peaaegu alati tarvilik organiseerida programmi jaoks loodud funktsioonid eraldi moodulitesse.
+    Kõikide selle kursuse ülesannete puhul on aktsepteeritav, kui sinu enda programm koosneb ainult ühest failist. Samas, reaalsete programmide juures on peaaegu alati tarvilik organiseerida programmi jaoks loodud funktsioonid eraldi moodulitesse.
     
     Uue mooduli loomine on Pythonis imelihtne -- funktsioonide definitsioonid tuleb lihtsalt salvestada tavalisse *py*-laiendiga faili. Mooduli nimeks saab seejuures tema failinimi ilma *py*-laiendita. Selleks, et neid funktsioone saaks kasutada teistes failides, tuleb seal teha sobiv ``import``, justkui ``math`` või ``turtle`` mooduli puhul. 
     
@@ -690,7 +690,7 @@ Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite pu
 
 Veateated ja funktsioonid
 ---------------------------
-Esimeses peatükis soovitasime pikkade veateadete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovige käivitada järgnevat programmi:
+Esimeses peatükis soovitasime pikkade veateadete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovi käivitada järgnevat programmi:
 
 .. sourcecode:: py3
 
@@ -701,7 +701,7 @@ Esimeses peatükis soovitasime pikkade veateadete puhul keskenduda veateate viim
     print("Kuupalk on", arvuta_kuupalk(aastapalk))    
 
 
-Kui sisestate nõutud palganumbri, siis saate umbes taolise veateate:
+Kui sisestad nõutud palganumbri, siis saad umbes taolise veateate:
 
 .. sourcecode:: none
 
@@ -730,7 +730,7 @@ Kokkuvõte
     
 1. Ristkülik 
 ~~~~~~~~~~~~
-Kirjutage funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja joonistab kilpkonnaga neile vastava ristküliku. Joonistage loodud funktsiooni kasutades järgnev kujund:
+Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja joonistab kilpkonnaga neile vastava ristküliku. Joonista loodud funktsiooni kasutades järgnev kujund:
 
 .. image:: images/rist.png
 
@@ -744,13 +744,13 @@ Kirjutage funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust 
 
 2. Kolmnurga pindala
 ~~~~~~~~~~~~~~~~~~~~
-Kirjutage funktsioon ``kolmnurga_pindala``, mis võtab argumentideks kolmnurga külgede pikkused, ning tagastab vastava kolmnurga pindala. Eeldame, et argumentide väärtused sobivad kolmnurga küljepikkusteks.
+Kirjuta funktsioon ``kolmnurga_pindala``, mis võtab argumentideks kolmnurga külgede pikkused, ning tagastab vastava kolmnurga pindala. Eeldame, et argumentide väärtused sobivad kolmnurga küljepikkusteks.
 
 .. hint::
 
     http://en.wikipedia.org/wiki/Heron%27s_formula
 
-Lisage programmi lõppu (peale funktsiooni definitsiooni) järgmised laused:
+Lisa programmi lõppu (peale funktsiooni definitsiooni) järgmised laused:
 
 .. sourcecode:: py3
 
@@ -758,7 +758,7 @@ Lisage programmi lõppu (peale funktsiooni definitsiooni) järgmised laused:
     print("a: 3, b: 2, c: 2,      pindala: " + str(kolmnurga_pindala(3, 2, 2)))
     print("a: 3, b: 4, c: 5,      pindala: " + str(kolmnurga_pindala(3, 4, 5)))
     
-Veenduge, et programmi käivitamisel saate järgmised tulemused:
+Veendu, et programmi käivitamisel saad järgmised tulemused:
 
 .. sourcecode:: none
 
@@ -770,16 +770,16 @@ NB! tulemused võivad õige pisut ka erineda, sest erinevad Pythoni versioonid �
 
 3. Kodulaen
 ~~~~~~~~~~~
-Kirjutage funktsioon, mis võtab argumentideks ostetava kinnisvara hinna, sissemakse suuruse ja laenuperioodi aastates ning tagastab intresside kogusumma, mis tuleb ostjal selle laenu eest pangale maksta. Lihtsuse mõttes eeldame, et igal aastal arvestatakse intress algse laenusumma põhjal.
+Kirjuta funktsioon, mis võtab argumentideks ostetava kinnisvara hinna, sissemakse suuruse ja laenuperioodi aastates ning tagastab intresside kogusumma, mis tuleb ostjal selle laenu eest pangale maksta. Lihtsuse mõttes eeldame, et igal aastal arvestatakse intress algse laenusumma põhjal.
 
-Esimeses versioonis kasutage fikseeritud intressi -- 4% aastas.
+Esimeses versioonis kasuta fikseeritud intressi -- 4% aastas.
 
 Seejärel muutke funktsiooni selliselt, et kui sissemakse on väiksem kui 30% kinnisvara hinnast, siis on intress hoopis 6% aastas.
 
-Lõpuks rakendage loodud funktsiooni programmis, mis küsib kasutajalt soovitud algandmed ja
+Lõpuks rakenda loodud funktsiooni programmis, mis küsib kasutajalt soovitud algandmed ja
 väljastab antud kinnisvara soetamise kogukulu (sissemakse + laenusumma + intressid) ning eraldi ka intresside kogusumma.
 
-Testige oma programmi ja kontrollige, kas saate järgnevad tulemused:
+Testi oma programmi ja kontrolli, kas saad järgnevad tulemused:
 
     * hind: 10000, sissemakse: 3000, aastaid: 10; kogusumma: 12800, intressid: 2800
     * hind: 10000, sissemakse: 2900, aastaid: 10; kogusumma: 14260, intressid: 4260
@@ -805,11 +805,11 @@ TODO, tee graafikuid?
 
 Projekt: Graafilised programmid
 ------------------------------------
-Praeguseks tunnete Pythonit juba piisavalt, et alustada graafiliste programmide loomisega. Kõik vajalikud funktsioonid selleks asuvad moodulis ``tkinter`` (ja selle alammoodulites).
+Praeguseks tunned Pythonit juba piisavalt, et alustada graafiliste programmide loomisega. Kõik vajalikud funktsioonid selleks asuvad moodulis ``tkinter`` (ja selle alammoodulites).
 
-Graafiliste programmide loomisel kasutatakse samu baaskonstruktsioone, mida olete siiani õppinud -- avaldised, laused (tingimuslause, tsükkel), funktsioonid. Oluline erinevus on see, et kasutusele võetakse uued, spetsiifilisemad andmetüübid, mis esitavad kasutajaliides komponente (nupud, sisestuskastid jne). Nendega toimetamine nõuab omajagu tähelepanu ja teadmisi detailide osas -- näiteks kuidas mingit nuppu paigutada ekraanil õigesse kohta. Seetõttu tuleb ka arvestada, et graafilised programmid kipuvad olema nende detailide tõttu pikemad kui tekstipõhised programmid.
+Graafiliste programmide loomisel kasutatakse samu baaskonstruktsioone, mida oled siiani õppinud -- avaldised, laused (tingimuslause, tsükkel), funktsioonid. Oluline erinevus on see, et kasutusele võetakse uued, spetsiifilisemad andmetüübid, mis esitavad kasutajaliides komponente (nupud, sisestuskastid jne). Nendega toimetamine nõuab omajagu tähelepanu ja teadmisi detailide osas -- näiteks kuidas mingit nuppu paigutada ekraanil õigesse kohta. Seetõttu tuleb ka arvestada, et graafilised programmid kipuvad olema nende detailide tõttu pikemad kui tekstipõhised programmid.
 
-Nagu ikka, on mõttekas alustada millestki lihtsast. Vaadake üle järgnev näiteprogramm ja katsetage seda:
+Nagu ikka, on mõttekas alustada millestki lihtsast. Vaata üle järgnev näiteprogramm ja katseta seda:
 
 .. sourcecode:: py3
 
@@ -848,21 +848,21 @@ Nagu ikka, on mõttekas alustada millestki lihtsast. Vaadake üle järgnev näit
     raam.mainloop()
     
 
-Loodetavasti ilmus teie ekraanile aken, kus oli võimalik sisestada mingi tekst ja vajutada nupule. Peale nupuvajutust pidi ilmuma uus väike aken tervitusega.
+Loodetavasti ilmus sinu ekraanile aken, kus oli võimalik sisestada mingi tekst ja vajutada nupule. Peale nupuvajutust pidi ilmuma uus väike aken tervitusega.
 
 Kuigi see programm on suhteliselt lihtne ja lühike, illustreerib ta küllalt hästi graafiliste programmide põhimõtteid:
 
     * kuskil on olemas funktsioonid ja andmetüübid, mis oskavad ekraanile manada nuppe jms. (antud juhul moodulid ``tkinter`` ja ``tkinter.ttk``)
     * erinevaid kasutajaliidese komponente (e. "vidinaid") saab paigutada üksteise sisse (antud näites ``silt``, ``nimi`` ja ``nupp`` asuvad ``raam``-i sees)
-    * vidinate juures saab ära näidata, millised funktsioonid tuleb käivitada mingi kasutaja tegevuse korral (``... command=tervita ...``). Vastavates funktsioonides võite teha mida iganes oskate -- lugeda ja kirjutada faile, tõmmata midagi internetist, muuta teiste vidinate sisu või välimust jne.
+    * vidinate juures saab ära näidata, millised funktsioonid tuleb käivitada mingi kasutaja tegevuse korral (``... command=tervita ...``). Vastavates funktsioonides võid teha mida iganes oskad -- lugeda ja kirjutada faile, tõmmata midagi internetist, muuta teiste vidinate sisu või välimust jne.
     * vidinate omadusi saab määrata nende loomisel (``... text="Tervita!" ...) või ka hiljem (``nupp.place(...)``). 
     * peale kasutajaliidese paikasättimist pannakse programm kasutaja tegevusi ootama (``raam.mainloop()``).
     
-Järgmine samm oleks uurida välja, milliseid erinevaid kasutajaliidese komponente ``tkinter`` toetab ja kuidas neid kasutada. Kui teil on juba olemas projektiidee, mis vajab graafilist kasutajaliidest, siis tehke oma tulevase programmi väljanägemisest lihtne visand ja proovige seda realiseerida ``tkinter``-i abil.
+Järgmine samm oleks uurida välja, milliseid erinevaid kasutajaliidese komponente ``tkinter`` toetab ja kuidas neid kasutada. Kui sul on juba olemas projektiidee, mis vajab graafilist kasutajaliidest, siis tehke oma tulevase programmi väljanägemisest lihtne visand ja proovi seda realiseerida ``tkinter``-i abil.
 
 Veel selgitusi, näiteprogramme ja linke lisainformatsioonile leiate õpiku lisast (:ref:`tkinter`).
 
-Soovitame uurida ka järgnevaid linke, mis tutvustavad ``tkinter``-i erinevaid vidinaid (valige lehekülje paremalt servast `Show: Python`, siis näidatakse näiteid ainult keeles Python):
+Soovitame uurida ka järgnevaid linke, mis tutvustavad ``tkinter``-i erinevaid vidinaid (vali lehekülje paremalt servast `Show: Python`, siis näidatakse näiteid ainult keeles Python):
 
     * http://www.tkdocs.com/tutorial/widgets.html
     * http://www.tkdocs.com/tutorial/morewidgets.html

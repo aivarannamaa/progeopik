@@ -16,7 +16,7 @@ TODO: Arvude tuvastamise “jaga ja valitse” lahendus peaks olema õpikus, fun
 
 Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame juba läbitud teemasid veidi teise nurga alt.
 
-Peale antud teema läbimist oskate:
+Peale antud teema läbimist oskad:
 
     * selgitada algoritmi mõistet;
     * lihtsamate ülesannete korral esitada probleemi täpse püstituse, st välja selgitada algandmed ja nõutava tulemuse;
@@ -26,14 +26,14 @@ Peale antud teema läbimist oskate:
 
 Ülesanded ja nende lahendamine
 --------------------------------------
-Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab teie lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (nt. Mis on elu mõte?). 
+Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (nt. Mis on elu mõte?). 
 
-Vaatame nüüd mõnesid ülesandeid, millega võite kokku puutuda.
+Vaatame nüüd mõnesid ülesandeid, millega võid kokku puutuda.
 
 
 Näide 1. Dokumentideta võõras linnas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kujutlege end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde avastate, et ühiselamu võti, ID-kaart ja mobiiltelefon on kadunud. Kuidas lahendada olukord?
+Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde avastad, et ühiselamu võti, ID-kaart ja mobiiltelefon on kadunud. Kuidas lahendada olukord?
 
 .. admonition:: Kommentaar 
 
@@ -301,9 +301,9 @@ Harjutus 5. Põranda värvimine triibuliseks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Oletame, et kilpkonnal on lisaks veel käsk ``värvi()``, mille saamisel värvib ta selle ruudu, kus ta parasjagu asub, tumedaks. Programmi alguses asub kilpkonn juhuslikul ruudul näoga põhja suunas. Ruudustik on ristkülikukujuline, ilma takistusteta. Ruudustiku täpne suurus pole teada.
 
-Koostage plokkskeem, mis paneb kilpkonna värvima põrandat põhja-lõuna suunas triibuliseks -- alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne.
+Koosta plokkskeem, mis paneb kilpkonna värvima põrandat põhja-lõuna suunas triibuliseks -- alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne.
 
-NB! proovige programmi läbi mängida nii paaritu- kui paarisarvulise laiusega ruudustiku korral.
+NB! proovi programmi läbi mängida nii paaritu- kui paarisarvulise laiusega ruudustiku korral.
 
 Olge valmis, et see plokkskeem tuleb eelmistest omajagu suurem.
 

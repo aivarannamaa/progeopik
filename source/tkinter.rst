@@ -55,7 +55,7 @@ Alustuseks toome ära ühe lihtsa ``tkinter``-i programmi:
     # ilmutame akna ekraanile
     raam.mainloop()
 
-Seda programmi käivitades peaksite saama ühe väikese akna, milles on tekstikast nime sisestamiseks ning nupp, mida vajutades saate nimelise tervituse.
+Seda programmi käivitades peaksite saama ühe väikese akna, milles on tekstikast nime sisestamiseks ning nupp, mida vajutades saad nimelise tervituse.
 
 Hakkame nüüd selle programmi sisu analüüsima:
 
@@ -78,12 +78,12 @@ Hakkame nüüd selle programmi sisu analüüsima:
 
 
  
-Punktid 1-5 on üldjuhul olemas igaks ``tkinter``-i programmis. Programmi sisuline olemus sõltub sellest, milliseid vidinaid aknasse paigutatakse (punkt 4) ning kuidas kasutaja tegevustele reageeritakse (punkt 2). Võimalike vidinate valimiseks uurige alustuseks lehekülge aadressil http://www.tkdocs.com/tutorial/widgets.html. Kasutaja tegevustele reageerimisel saate rakendada kogu oma programmeerimisvõtete arsenali.
+Punktid 1-5 on üldjuhul olemas igaks ``tkinter``-i programmis. Programmi sisuline olemus sõltub sellest, milliseid vidinaid aknasse paigutatakse (punkt 4) ning kuidas kasutaja tegevustele reageeritakse (punkt 2). Võimalike vidinate valimiseks uuri alustuseks lehekülge aadressil http://www.tkdocs.com/tutorial/widgets.html. Kasutaja tegevustele reageerimisel saad rakendada kogu oma programmeerimisvõtete arsenali.
 
 
 Parem viis vidinate paigutamiseks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Eelmist näiteprogrammi käivitades ei olnud te võibolla rahul vidinate paigutusega ja proovisite korrigeerida etteantud koordinaate ja mõõtmeid, et kasutajaliides tuleks ilusam. Paraku on selline pikslihaaval timmimine tänamatu töö, kuna mõnes teises op-süsteemis (või ka teiste seadetega arvutis) ei pruugi teie poolt seatud paigutus sobida. Samuti võis häirida teid see, et akna suurendamisel jäid vidinad ühte nurka pidama.
+Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutusega ja proovisid korrigeerida etteantud koordinaate ja mõõtmeid, et kasutajaliides tuleks ilusam. Paraku on selline pikslihaaval timmimine tänamatu töö, kuna mõnes teises op-süsteemis (või ka teiste seadetega arvutis) ei pruugi sinu poolt seatud paigutus sobida. Samuti võis häirida sind see, et akna suurendamisel jäid vidinad ühte nurka pidama.
 
 Õnneks on võimalik määrata vidinate paigutust ka natuke üldisemalt kui pikslite tasemel, lubades sellega Tk-l valida vastavalt olukorrale kõige parem konkreetne paigutus. Järgnevas programmis on vidinate paigutamiseks kasutatud ``place`` meetodi asemel ``grid`` meetodit, mis jagab kasutajaliidese mõtteliselt ruudustikuks ning paigutab iga vidina soovitud lahtrisse vastavalt argumentidele ``column`` ja ``row``.
 
@@ -128,11 +128,11 @@ Eelmist näiteprogrammi käivitades ei olnud te võibolla rahul vidinate paigutu
 
 .. note::
 
-    Lisaks meetoditele ``place`` ja ``grid`` võite kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry
+    Lisaks meetoditele ``place`` ja ``grid`` võid kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry
 
 Harjutus 1. Täiendatud tervitaja
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Täiendage eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
+Täienda eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
 
 .. _canvas:
 
@@ -188,7 +188,7 @@ Lisainfot ``canvas``-e kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/t
 Harjutus 2. Bahama lipp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Koostage programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saarte lipp" ja joonistab sinna Bahama lipu.
+Koosta programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saarte lipp" ja joonistab sinna Bahama lipu.
 
 .. image:: images/bahama.png
 
@@ -234,11 +234,11 @@ Järgnev näiteprogramm püüab teha *y=sin(x)* graafikut:
 
     raam.mainloop()
 
-Kas saadud graafik on korrektne? Miks? Leidke ja parandage viga.
+Kas saadud graafik on korrektne? Miks? Leidke ja paranda viga.
 
 Piltide esitamine
 ~~~~~~~~~~~~~~~~~~
-Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite proovimiseks salvestage programmiga samasse kausta järgmised failid:  :download:`pall.gif <downloads/pall.gif>`,
+Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite proovimiseks salvesta programmiga samasse kausta järgmised failid:  :download:`pall.gif <downloads/pall.gif>`,
 :download:`avatud.gif <downloads/avatud.gif>`,
 :download:`suletud.gif <downloads/suletud.gif>`
 
@@ -364,7 +364,7 @@ Järgmise sammuna loome funktsiooni, mis loeb jooksvalt aega ja uuendab sekundio
         # ootame 1 sekundi ja siis uuendame kellaaega uuesti
         raam.after(1000, uuenda)
 
-Kutsuge funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
+Kutsu funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
 
 .. sourcecode:: py3
 
@@ -372,17 +372,17 @@ Kutsuge funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
     tahvel.pack()
     raam.mainloop()
 
-Pange kood kokku ja käivitage rakendus.
+Pange kood kokku ja käivita rakendus.
 
 Harjutus 3. Täiendatud kell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Täiendage kella. Lisage minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
+Täienda kella. Lisa minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
 
 
 
 Kasutaja tegevusele reageerimine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Järgmine näide demonstreerib, kuidas uuendada tahvli sisu vastavalt kasutaja tegevusele (näite proovimiseks salvestage samasse kausta :download:`juku.gif <downloads/juku.gif>`):
+Järgmine näide demonstreerib, kuidas uuendada tahvli sisu vastavalt kasutaja tegevusele (näite proovimiseks salvesta samasse kausta :download:`juku.gif <downloads/juku.gif>`):
 
 .. sourcecode:: py3
 
@@ -448,7 +448,7 @@ Mõned lisanipid
 -----------------
 Paljude objektide genereerimine tsüklis ning hiirekliki seostamine konkreetse objektiga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole "ligi pääseda", salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvestage samasse kausta :download:`juku.gif <downloads/juku.gif>`.
+Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole "ligi pääseda", salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvesta samasse kausta :download:`juku.gif <downloads/juku.gif>`.
 
 .. sourcecode:: py3
 
@@ -517,7 +517,7 @@ Tsüklis genereerimist võib kasutada ka siis kui on vaja palju nuppe või tekst
 
 Pildi vahetamine
 ~~~~~~~~~~~~~~~~~~~~
-Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvestage samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
+Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvesta samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
 
 .. sourcecode:: py3
 
