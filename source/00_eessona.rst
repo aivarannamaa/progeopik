@@ -1,5 +1,10 @@
 Eessõna
 =============
+
+.. todo::
+
+    Demonstreeri ka seda, et programmeerimine on lahe iseenesest st. ürita tekitada sisemist motivat
+
 Oletame, et sa külastad regulaarselt ühte veebilehte, kus muu teksti hulgas on tabel sulle oluliste andmetega (näiteks lindude vaatlusandmete kokkuvõtted), mille põhjal on sul vaja teha mingi analüüs (näiteks, kuidas edeneb kihlvedu sõbraga, kes väidab, et tema kodukülas loendatakse käesoleval aastal rohkem sookurgi kui kogu Haaslava vallas). Sa võid a) ise veebilehe brauseris avada, otsida leheküljelt üles õige koht, kopeerida vajalikud andmed Excelisse ja need seal filtreerida ning summeerida või b) kirjutada lühikese programmi, mis annab soovitud ülevaate ühe hiireklõpsuga.
 
 Programmeerimisest on kasu ka matemaatika õppimisel. Oletame, et õpid parasjagu elementaarset hulgateooriat, aga üksteist lõikavate ringide joonistamine on sind juba ära tüüdanud. Selleks, et hulkade vahe mõistet näha uue pilguga, võiksid proovida kirjutada programmi, mis leiab kaustast ``d:\vana_lapaka_stuff\`` need `mp3`-d, mida pole veel kaustas ``c:\musa\``.
@@ -28,10 +33,12 @@ Mida sult oodatakse?
 Lugemise juhis
 ----------------
 * soovitav lugeda järjest
+* jäta skriptid alles, sest sama programmi tuleb mõnikord täiendada mitmes peatükis
 
 Peatüki struktuur
 ---------------------
 TODO
+* teksti sees on nõmedad näited (võibolla)
 * näiteid on vähe, võta ülesandeid kui näiteid
 * esimesed peatükid on teksti ja ülesannete arvu poolest mahukamad, aga teemad ja ülesanded on lihtsamad
 * kõik ülesanded pole praktilised, võta mõnesid kui nuputusülesandeid

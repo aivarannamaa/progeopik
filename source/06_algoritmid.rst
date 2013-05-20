@@ -1,6 +1,11 @@
 6. Algoritm ja plokkskeem
 ==========================
 
+
+.. admonition:: Õpinipp:: Ära karda raskeid ülesandeid!
+
+    TODO
+
 .. todo::
 
     * tutvusta alternatiivsete lahenduste ja elegantsi/loetavuse teemat 

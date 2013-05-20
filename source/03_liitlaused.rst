@@ -6,19 +6,8 @@
     * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
     * ASCII ja kilpkonna tulpdiagrammid
     
-    .. sourcecode:: none
-    
-             _________
-            /        /\
-           /        /  \
-          /________/    \
-          \        \    /
-           \        \  /
-            \________\/    
 
-.. index::
-    single: tingimuslaused
-    single: tingimuslaused; if-lause
+TODO: meeldetuletuseks üks näide eelmisest peatükist
 
 Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu -- programmi käik oli täielikult ette ennustatav. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul. 
 
@@ -32,6 +21,10 @@ Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame
     
     Teisisõnu, eelista värsket mõttetoitu -- see annab parema vormi, kui juba läbimälutud tarkuseterad! 
 
+
+.. index::
+    single: tingimuslaused
+    single: tingimuslaused; if-lause
 
 
 Tingimuslause e. ``if``-lause
@@ -128,9 +121,11 @@ Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides
     Tegelikult pole enamasti vaja IDLE-s isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
 
 
-Harjutus 2. Eurokalkulaator
+Harjutus 2. Eurokalkulaator, vol. 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta programm, mis küsib kasutajalt rahasumma ja selle, kas ta soovib teisendada Eesti kroone eurodeks või vastupidi. Seepeale kuvab programm teisenduse tulemuse ekraanile. 
+Eelmises peatükis oli ülesanne, kus tuli kirjutada eurokalkulaator, mis teisendas kroone eurodeks.
+
+Täienda seda programmi nüüd nii, et see küsiks kasutajalt lisaks rahasummale ka selle, kas ta soovib teisendada Eesti kroone eurodeks või vastupidi.
 
 .. hint::
 
@@ -184,9 +179,19 @@ Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui ting
     if x == y:
         print("... järelikult on nad võrdsed")
 
-Harjutus
-~~~~~~~~~~~~~~
-TODO
+Harjutus. Miks on ronk nagu kirjutuslaud?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga et seal kasutataks vaid üheharulist ``if`` lauset:
+
+.. sourcecode:: py3
+
+    vastus = input("Miks on ronk nagu kirjutuslaud? ")
+    
+    if vastus.lower() == 'ei tea':
+        print("Hmm ...")
+        print("Ma ka ei tea!")
+    else:
+        print("Hmm ...")
 
 
 Tingimuslaused üksteise sees
@@ -212,9 +217,9 @@ Põhimõte on sama nagu lihtlausete "allutamisel" -- alluvuse tähistamiseks lis
 
     Nüüd peaks olema ka näha, miks treppimist nimetatakse treppimiseks -- kui joondamine toimub mitmel tasemel, siis paistab nagu programmi tekst paikneks trepiastmetel.
 
-Harjutus
-~~~~~~~~~~~~~~~~ 
-TODO
+Harjutus. Tiitlid
+~~~~~~~~~~~~~~~~~~~~~  
+Kirjuta programm, mis küsib kasutajalt tema nime, perekonnaseisu (vallaline või abielus), sugu ja vanust. Väljasta nende andmete põhjal sobiv tervitus (nt. abielus naiste puhul kasuta tiitlit *proua*, teatud vanusest vanemate meeste puhul *härra* jne.)
 
 
 Tingimusega korduslause e. ``while``-lause
@@ -291,11 +296,11 @@ Antud näites genereerisime muutujale ``joonistatud_kylgi`` uue väärtuse tema 
         
     .. sourcecode:: py3
     
-        >>> tervitus = '  tere  '
-        >>> tervitus.strip()
-        'tere'
-        >>> tervitus
-        '  tere  '
+        >>> sõna = '  kala  '
+        >>> sõna.strip()
+        'kala'
+        >>> sõna
+        '  kala  '
         
     .. sourcecode:: py3
     
@@ -406,7 +411,7 @@ Harjutus 6. Algandmete kontrollimine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
 
-Kirjuta ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata (koos selgitusega, miks eelmine sisend ei sobinud).
+Kirjuta ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata.
 
 
 Käsk ``break``
@@ -463,7 +468,7 @@ Kirjuta programm, mis väljastab iga ENTER vajutuse järel (st. tühisõne sises
 
 Harjutus 8. Algandmete kontrollimine ja ``break``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta algandmete kontrollimise ülesande lahendus ümber nii, et ``input`` käsku on programmis kasutatud vaid ühes kohas.
+Kui sa enne kasutasid algandmete kontrollimise ülesandes ``input`` käsku mitmes kohas, siis proovi nüüd kirjutada lahendus ümber nii, et programmis on vaid üks ``input`` käsk.
 
 Summa arvutamine tsüklis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -515,7 +520,7 @@ Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mit
     
     f.close()
 
-.. admonition:: Veaotsingust
+.. admonition:: Veaotsingu nipp
 
     Selles näites kasutasime ``strip`` meetodit seepärast, et failist ridade lugemisel jäetakse rea lõppu ka reavahetuse sümbol. Selline nüanss aga ei pruugi alati meelde tulla ja sel juhul programm lihtsalt ei tööta õigesti.
     
@@ -860,6 +865,12 @@ Harjutus. Pykkari ülesanne
 Mõtle ise välja üks Pykkari ülesanne, mille lahendamine tundub sulle praegu pisut liiga raske. Järgmiste teemade õppimisel mõtle, kuidas need aitaksid seda ülesannet lahendada.
 
 
+Suur näide
+--------------
+TODO tulp-graafiku joonistamine kilpkonnaga
+
+Kontrolli, kas on tegemist ainult kasvamisega?
+
 
 Kokkuvõte
 ----------
@@ -928,26 +939,16 @@ Kirjuta programm, mis lahendab esimese ülesande aadressilt http://projecteuler.
 
 5. Ringi joonistamise funktsioon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta *funktsioon* ``ring()``, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva ringitaolise kujundi. Ringi suurus pole praegu oluline. Lisa programmi ka selle funktsiooni väljakutse.
+Kirjuta programm, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva ringitaolise kujundi. Ringi suurus pole praegu oluline.
 
 .. hint::
 
-    Sarnane ülesanne on ülalpool juba antud, aga natuke teises sõnastuses. Nüüd on aga vaja lahendus vormistada funktsioonina.
+    Sarnane ülesanne on ülalpool juba antud, aga natuke teises sõnastuses.
 
-6. Kujundid
+6. Kolmnurk
 ~~~~~~~~~~~~
 
 Kirjuta programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kujundid järgneva skeemi järgi:
-
-.. sourcecode:: none
-
-    # # # # # # #
-    #           #
-    #           #
-    #           #
-    #           #
-    #           #
-    # # # # # # #
 
 
 .. sourcecode:: none
@@ -964,6 +965,22 @@ Kirjuta programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile va
     
     Tuleta meelde, mida tähendab ``'Tere' * 4``
 
+
+7. Kuubik
+~~~~~~~~~~~~~~~
+Kirjutage programm, mis kuvab kasutaja antud mõõtmete põhjal umbes sellise kujundi:
+
+.. sourcecode:: none
+
+         ___________
+        /          /\
+       /          /  \
+      /__________/    \
+      \          \    /
+       \          \  /
+        \__________\/    
+
+    
 
 
 7. Kivi-paber-käärid
@@ -994,6 +1011,10 @@ Kirjuta programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikul
             else:
                 ...
 
+Pentagramm vol. 2
+~~~~~~~~~~~~~~~~~~~~~
+Kui lahendasid eelmises peatükis pentagrammi ülesande, siis proovi nüüd oma programmi tsükli abil lühemaks teha.
+
 8. Raskem: Redeli asendid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülesandeks on genereerida Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonista redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
@@ -1015,6 +1036,7 @@ Kirjuta programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisonta
 
 Ülesanne. mp3
 ~~~~~~~~~~~~~~~~~~~~
+TODO
 Loe mp3 metadatat
 mingi olemasoleva parseriga / ise parsides vt. struct module
 
@@ -1096,7 +1118,7 @@ Katsetamine erinevate katsete arvudega (10,100,1000,...,1000000) peaks veenma, e
 
 .. admonition:: Graafiline versioon
 
-    Kui selle lahenduskäigu põhimõte jäi hägusaks, siis lae alla järgnev programm, mis demonstreerib sama asja graafiliselt: :download:`pi_demo.py <downloads/pi_demo.py>`. Juhuslike täppide genereerimiseks tehke programmi aknas hiireklõpse (hiirekursori asukoht pole tähtis). Iga uue täpi lisandumisel korrigeeritakse arvutatud pi väärtust vastavalt sellele, kas täpp sattus ringi sisse või mitte. Jooksvat tulemust näidatakse käsurea aknas.
+    Kui selle lahenduskäigu põhimõte jäi hägusaks, siis lae alla järgnev programm, mis demonstreerib sama asja graafiliselt: :download:`pi_demo.py <downloads/pi_demo.py>`. Juhuslike täppide genereerimiseks tee programmi aknas hiireklõpse (hiirekursori asukoht pole tähtis). Iga uue täpi lisandumisel korrigeeritakse arvutatud pi väärtust vastavalt sellele, kas täpp sattus ringi sisse või mitte. Jooksvat tulemust näidatakse käsurea aknas.
 
 Selliseid arvutusmeetodeid nimetatakse Monte Carlo meetoditeks (kuulsa kasiinolinna järgi Monakos). Antud näide on taas pigem illustratiivne – praktikas kasutatakse seda reeglina ülesannete puhul, mida muud moodi lahendada ei osata. π arvutamiseks teatakse aga palju teisi ja oluliselt paremaid meetodeid.
 

@@ -368,7 +368,7 @@ Harjutus 3. Sudoku tabeli sisselugemine
 Kirjuta programm, mis loeb etteantud failist (:download:`sudoku.txt <downloads/sudoku.txt>`) arvud kahemõõtmelisse järjendisse.
 
 .. note:: 
-    Kui jääte jänni, siis uuri järgmist punkti, aga enne kindlasti ürita ise! Kõik selle ülesande lahendamiseks vajalikud teadmised on sul juba olemas!
+    Kui jääd jänni, siis uuri järgmist punkti, aga enne kindlasti ürita ise! Kõik selle ülesande lahendamiseks vajalikud teadmised on sul juba olemas!
 
 
 

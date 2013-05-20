@@ -1,47 +1,12 @@
 1. Sissejuhatus
 ===============
-Esimese peatüki põhieesmärgiks on tutvustada Python põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
-
-.. admonition:: Õpinipp: Katseta!
-
-    Programmeerimine nõuab täpsust, aga programmeerimise õppimine 
-    TODO: Soovitav on teha ka väikeseid muudatusi ning ennustada, kuidas need tulemust mõjutavad.
-    TODO: Olge julge. proovi Pythonit "pange" ajada
-    
-
-Programmeerimine ja Python
-----------------------------
 Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmeerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
 
-Mis on programm?
-~~~~~~~~~~~~~~~~~~~~~~~~
-`Programm`, nii nagu me seda selles õpikus mõistame, on mingi tegevuse kirjeldus. Selle poolest on programmi mõiste väga sarnane teatris ja kinos kasutatavale `käsikirja` e. `stsenaariumi` mõistele (inglise keeles saab kasutada mõlema mõiste kohta lausa sama sõna -- `script`).
+Esimese peatüki põhieesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
 
-Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad ja rangemad, kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest), seetõttu on võimalik neid keeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil.
+.. todo::
 
-Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist.
-
-
-Mis on programmeerimine?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned olulised inimlikud aspektid.
-
-Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
-
-Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on sinu arvates juba valmis.
-
-Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
-
-Mis on Python?
-~~~~~~~~~~~~~~
-Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keeles Python kirjutatud programme. Pythoni interpretaatori kasutamisest tuleb varsti juttu.
-
-.. note::
-
-    Mõnede programmeerimiskeelte puhul (nt. `C` või `C++`) `tõlgitakse` e. `kompileeritakse` programmid enne käivitamist `masinkoodi` (st. "arvuti keelde"). Selliselt ettevalmistatud programmide käivitamiseks pole eraldi interpretaatorprogrammi tarvis -- arvuti ise on interpretaator.
-    
-    Taolisel lähenemisel on omad eelised ja omad puudused, aga on leitud, et vähemalt programmeerimise õppimisel on interpreteeritava keele (nt. Python) kasutamine mugavam.
-    
+    arutulusega programmi kirjapanek ülesande püstitusest alustades
 
 
 .. index::
@@ -49,7 +14,7 @@ Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keele
 
 Pythoni installeerimine
 --------------------------
-Pythoni enda arvutisse installeerimiseks lae alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/. Vali sealt versioon `3.2`, 32-bitine variant (see töötab igas arvutis, 64-bitise OP-süsteemi korral võid valida ka 64-bitise variandi).
+Pythoni enda arvutisse installeerimiseks lae alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/. Vali sealt versioon `3.3`, 32-bitine variant (*x86*) -- see töötab igas arvutis. (64-bitise OP-süsteemi korral võid valida ka 64-bitise variandi.)
 
 Mac'is on tavaliselt Python küll olemas aga see on Python 2. Python 3 installimiseks Intel Mac'i jaoks vali Pythoni lehelt `Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
 
@@ -57,7 +22,7 @@ Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketih
 
 .. note::
 
-    Pythoni versioon ei pea olema tingimata just 3.2, on oluline, et versiooni number algab 3-ga, olgu see `3.2`, `3.1` vms. Seevastu versioonid, mis algavad 2-ga, ei sobi meile, kuna seal töötavad mõned asjad pisut teisiti, kui on kirjeldatud selles õpikus.
+    Pythoni versioon ei pea olema tingimata just 3.3, on oluline, et versiooni number algab 3-ga, olgu see `3.2`, `3.1` vms. Seevastu versioonid, mis algavad 2-ga, ei sobi meile, kuna seal töötavad mõned asjad pisut teisiti, kui on kirjeldatud selles õpikus.
     
 
 
@@ -66,6 +31,10 @@ Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketih
 
 IDLE ja esimene programm
 ----------------------------
+.. note::
+
+    Selles peatükis anname programmidele väga põgusad selgitused. Kõikide konstruktsioonide täpsed tähendused ja kasutusjuhised toome välja järgnevates peatükkides.
+
 Alustuseks kirjutame ühe väga lihtsa programmi, mis ei tee muud, kui kirjutab ekraanile ``Tere maailm!`` (vt. ka http://en.wikipedia.org/wiki/Hello_world_program). 
 
 Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
@@ -74,7 +43,7 @@ Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üld
 
 .. note::
 
-    Kuna arvutiklassides on installeeritud nii Python 2, kui Python 3, tuleb jälgida, et kasutad õiget versiooni. Käsurea aknas on Pythoni versioon näidatud esimesel real. Versiooni saab kontrollida ka menüüst `Help -> About IDLE`
+    Kui arvutis on installeeritud nii Python 2, kui Python 3, tuleb jälgida, et kasutad õiget versiooni. Käsurea aknas on Pythoni versioon näidatud esimesel real. Versiooni saab kontrollida ka menüüst `Help -> About IDLE`
 
 
 **Uue programmi kirjutamiseks** vali `File` menüüst `New window`. Ilmub uus aken pealkirjaga "Untitled", kuhu saab hakata kirjutama Python programmi. Esimeseks katsetuseks kirjuta või kopeeri redaktorisse järgnev üherealine programmitekst:
@@ -92,9 +61,11 @@ Selgitused:
     * nagu võid järeldada, tähendab ``print`` Pythoni jaoks teksti ekraanile kuvamist, mitte printerisse saatmist
     * selleks, et Python suudaks teha vahet käskudel ja tavalisel tekstil, kirjutatakse tekst jutumärkide vahele
 
-.. note::
+.. admonition:: Õpinipp: Eksperimenteeri!
 
-    Selles peatükis anname programmidele väga põgusad selgitused. Kõikide konstruktsioonide täpsed tähendused ja kasutusjuhised toome välja järgnevates peatükkides.
+    Programmeerimise õppimisel on kasulik võtta uudishimulik hoiak. Kui õpik ütleb, et selle ja selle jaoks tuleb teha nii ja nii, siis küsi endalt "aga mis siis, kui ..." ja proovi järele.
+    
+
 
 Kasutajaga suhtlemine
 -----------------------------
@@ -115,7 +86,7 @@ Selgitused:
 
 Harjutus 1. Programmi muutmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tehke programmis mineid muudatusi, salvesta ja käivita. Katseta ka selliseid muudatusi, mis võiksid sinu arvates Pythoni segadusse ajada.
+Tee programmis mingeid muudatusi, salvesta ja käivita. Katseta ka selliseid muudatusi, mis võiksid sinu arvates Pythoni segadusse ajada.
 
 .. note:: 
 
@@ -176,7 +147,7 @@ Proovi kirjutada eelnevate näidete põhjal programm, mis küsib kasutaja käest
 
 
 .. note::
-    Kui jääte veateadetega hätta, siis kontrolli kõigepealt, kas sul on sulud `balansis`, st. iga alustava sulu jaoks on õiges kohas ka lõpetav sulg.
+    Kui jääd veateadetega hätta, siis kontrolli kõigepealt, kas sul on sulud `balansis`, st. iga alustava sulu jaoks on õiges kohas ka lõpetav sulg.
 
 .. index::
     single: turtle
@@ -228,7 +199,16 @@ Harjutus 3. Ruut
 Kirjuta skript, mis joonistab kilpkonnaga ruudu.
 
 
-Harjutus 4. Ümbrik
+Kontrollküsimus
+~~~~~~~~~~~~~~~~~~~~
+Mida joonistab järgmine programm? Proovige vastata enne programmi käivitamist!
+
+.. sourcecode:: py3
+
+    TODO
+
+
+Harjutus 5. Ümbrik
 ~~~~~~~~~~~~~~~~~~
 Kirjuta skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbriku. 
 
@@ -237,7 +217,7 @@ Kirjuta skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbr
 
 .. hint::
     
-    Diagonaali pikkuse leidmiseks tuleta meelde üht tuntud koolimatemaatika teoreemi. Kui jääte sellega hätta, siis proovi leida paras pikkus katsetamise teel.
+    Diagonaali pikkuse leidmiseks tuleta meelde üht tuntud koolimatemaatika teoreemi. Kui jääd sellega hätta, siis proovi leida paras pikkus katsetamise teel.
 
 .. index::
     single: veaotsing
@@ -316,7 +296,7 @@ Arve saab "mällu" salvestada samamoodi nagu skriptis:
     >>> a + b + 2
     9
 
-Ka matemaatiliste funktsioonide `importimine` toimib samal põhimõttel nagu skripti puhul:
+Ka matemaatiliste funktsioonide importimine toimib samal põhimõttel nagu skripti puhul:
 
 .. sourcecode:: py3
 
@@ -327,7 +307,7 @@ Ka matemaatiliste funktsioonide `importimine` toimib samal põhimõttel nagu skr
     3.141592653589793
 
 
-Harjutus 6. `math` moodul
+Harjutus 6. Ruutjuur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #. Uuri Pythoni matemaatikamooduli dokumentatsiooni aadressilt http://docs.python.org/py3k/library/math.html
 #. Proovi saada aru, kuidas arvutatakse Pythonis ruutjuurt
@@ -359,7 +339,7 @@ Nagu sa ehk eelnevaid ülesandeid lahendades juba märkasid, annab Pythoni märk
 
     Veateate põhjust on kergem leida, kui sa kirjutad programmi järk-järgult ja katsetad poolikut lahendust iga täienduse järel. Kui programm töötas korralikult enne viimase rea lisamist, siis tõenäoliselt on viga viimases reas ja sa ei pea tervet programmi läbi vaatama.
 
-Veateateid näed sa oma programmeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtu sellest, et iga veateade on mõeldud programmeerija abistamiseks -- loe teate tekst alati hoolikalt läbi ja mõtle, milles võis probleem olla. Nii märkad varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks informatsiooniks.
+Veateateid näed sa oma programmeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtu sellest, et iga veateade on mõeldud programmeerija abistamiseks -- loe teate tekst alati hoolikalt läbi ja mõtle, milles võis probleem olla. Nii märkad varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks ja kasulikuks informatsiooniks.
 
 Semantilised vead
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -377,9 +357,53 @@ Leidke järgnevast näiteprogrammist semantiline viga:
     
     print("Sinu kiirus oli " + str(kiirus) + " km/h")
 
+TODO: Näide koos arutlusega
+--------------------------------
+TODO: Video!
+
+Programmeerimisest üldisemalt
+------------------------------
+Vahetame nüüd korraks perspektiivi ning vaatame üle mõningad üldisemad programmeerimisega seotud küsimused.
+
+Mis on programm?
+~~~~~~~~~~~~~~~~~~~~~~~~
+`Programm`, nii nagu me seda selles õpikus mõistame, on mingi tegevuse kirjeldus. Selle poolest on programmi mõiste väga sarnane teatris ja kinos kasutatavale `käsikirja` e. `stsenaariumi` mõistele (inglise keeles saab kasutada mõlema mõiste kohta lausa sama sõna -- `script`).
+
+Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad ja rangemad, kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest), seetõttu on võimalik neid keeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil.
+
+Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist.
+
+
+Mis on programmeerimine?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned olulised inimlikud aspektid.
+
+Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
+
+Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on sinu arvates juba valmis.
+
+Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
+
+Mis on Python?
+~~~~~~~~~~~~~~
+Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keeles Python kirjutatud programme. Pythoni interpretaatori kasutamisest tuleb varsti juttu.
+
+.. note::
+
+    Mõnede programmeerimiskeelte puhul (nt. `C` või `C++`) `tõlgitakse` e. `kompileeritakse` programmid enne käivitamist `masinkoodi` (st. "arvuti keelde"). Selliselt ettevalmistatud programmide käivitamiseks pole eraldi interpretaatorprogrammi tarvis -- arvuti ise on interpretaator.
+    
+    Taolisel lähenemisel on omad eelised ja omad puudused, aga on leitud, et vähemalt programmeerimise õppimisel on interpreteeritava keele (nt. Python) kasutamine mugavam.
+    
+
+Mõtteharjutus
+~~~~~~~~~~~~~~~~~~~
+Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? Kas tulevikus saab programmeerida eesti või inglise keeles? Millised takistused tuleks selleks ületada?
+
+
+
 Programmeerimise õppimine
 ------------------------------
-Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks mahutada ühele A4-le, ei piisa nende meeldejätmisest, sest võimalusi nende reeglite *kombineerimiseks* on lõputult. Lisaks reeglite teadmisele tuleb osata näha ülesande "sisse", märgata selle nüansse, kujutleda otsitavat lahendust ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab samaaegselt loovust ja täpsust, üldistusvõimet ja konkreetsust. 
+Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks mahutada ühele A4-le, ei piisa ainult nende meeldejätmisest, sest võimalusi nende reeglite *kombineerimiseks* on lõputult. Lisaks reeglite teadmisele tuleb osata näha ülesande "sisse", märgata selle nüansse, kujutleda otsitavat lahendust ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab samaaegselt loovust ja täpsust, üldistusvõimet ja konkreetsust. 
 
 Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) ülesannete puhul, on vaja harjutada järjest raskemate ülesannetega, ainult teooria lugemisest ja näiteülesannete läbiproovimisest ei piisa. Seetõttu on järgnevates peatükkides hulgaliselt ülesandeid, mis nõuavad äsja loetud materjali loomingulist kasutamist.
 
@@ -387,20 +411,39 @@ Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) �
 
     Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
 
-Kui sa tunned, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis tea, et see on taotluslik -- need ülesanded õpetavad sulle tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovi taolist ülesannet enda jaoks ümber sõnastada, otsi seoseid ja sarnasusi teiste ülesannetega, lihtsusta ülesannet, otsi abi internetist, võtke väike puhkepaus, vaata ülesannet värske pilguga ja proovi jälle. Läbi raskuste saavutatud kogemused ja oskused on sulle edaspidi kõige rohkem abiks!
+Kui sa tunned, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis tea, et see on taotluslik -- need ülesanded õpetavad sulle tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovi taolist ülesannet enda jaoks ümber sõnastada, otsi seoseid ja sarnasusi teiste ülesannetega, lihtsusta ülesannet, otsi abi internetist, võta väike puhkepaus, vaata ülesannet värske pilguga ja proovi jälle. Läbi raskuste saavutatud kogemused ja oskused on sulle edaspidi kõige rohkem abiks!
 
 Programmeerimiseks vajalikku ettevalmistust on mõnel inimesel rohkem ja teisel vähem, aga harjutamisega on kõigil võimalik end selles osas arendada!
 
 
 Programmeerimine vs. maagia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb rituaali korras "sõnuda" (st. oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
 
-Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb rituaali korras "sõnuda" (oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
+On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid praegu sinu jaoks segaseks või lausa "müstiliseks" -- peatüki eesmärk oli anda lihtsalt esimene ettekujutus Pythoni programmidest. Tegelikult pole programmeerimises aga midagi müstilist, iga programmilõigu tööpõhimõtet on võimalik alati täielikult ära seletada.
 
-On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid *praegu* sinu jaoks segaseks või lausa "müstiliseks" -- peatüki eesmärk oli anda lihtsalt esimene ettekujutus programmeerimisest. Tegelikult pole programmeerimises aga midagi müstilist, iga programmilõigu tööpõhimõtet on võimalik alati täielikult ära seletada.
+Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid siis, kui sa saad programmist lõpuni aru. Seetõttu *on oluline, et järgmisest peatükist alates mõistaksid sa enda kirjutatud programmides iga sümboli otstarvet ja tähendust*.  Kui sa lepid sellega, et mingi koht programmis jääbki segaseks, siis tõenäoliselt raskendab see ka järgnevate teemade mõistmist. Vajaduselt küsi julgelt nõu kaaslaste või juhendajate käest, aga *ära pea oma tööd lõpetatuks, kui su programmis on mõni rida, mille tähendust sa täpselt ei mõista! Katse/eksitus meetodil (e. lotomängija stiilis) programmeerimine on tupiktee!*
 
-Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid siis, kui sa saad programmist lõpuni aru. Seetõttu *on oluline, et järgmisest peatükist alates mõistaksid sa enda kirjutatud programmides iga sümboli otstarvet ja tähendust*.  Kui sa lepid sellega, et mingi koht programmis jääbki segaseks, siis tõenäoliselt raskendab see ka järgnevate teemade mõistmist. Vajaduselt küsi julgelt nõu kaaslaste või juhendajate käest, aga **ära kirjuta oma programmidesse ühtegi rida, mille tähendust sa täpselt ei mõista! Katse/eksitus meetodil programmeerimine on tupiktee!**
+.. note::
+    
+    Viimase lause juurde võiks siiski lisada väikese möönduse: katsetamine on OK, kui su eesmärk on katsetamise teel asja põhimõttest aru saada. Peaasi, et sa ei loeks oma tööd lõpetatuks enne, kui sa tunned, et saad programmist väga hästi aru.
 
+Mõtlemise stiilid
+~~~~~~~~~~~~~~~~~~~~~~  
+Osad inimesed (sh. suur osa programmeerijatest) eelistavad õppida ja mõelda abstraktselt -- nad ei tunne ennast kindlalt enne, kui nad on suutnud käsitletava teema formuleerida enda peas võimalikult üldiselt. Sellise mõtlemisstiili märksõnadeks on loogika, ratsionaalsus, abstraktsus, formaalsus ja üldistamine. Nende märksõnadega seotud mõtteprotsessid pidavat toimuma peamiselt vasakus ajupooles.
+
+Teistele (nt. suurele osale kunstnikest) lähevad rohkem korda konkreetsed situatsioonid või kombinatsioonid. Uue teema õppimisel ei tunne nad ennast kindlalt enne, kui nad on suutnud selle seostada millegi konkreetse või elulisega. Öeldakse, et nemad suudavad paremini kasutada oma paremat ajupoolt, mis pidavat muuhulgas vastutama intuitsiooni ja loova mõtlemise eest.
+
+Kuigi tavapäraselt rõhutatakse programmeerimise juures abstraktse mõtlemise vajalikkust, peab edukas programmeerija kasutama siiski tervet oma aju. Keeruliste süsteemide haldamine nõuab tõepoolest head üldistamisvõimet, aga parimad programmiideed sünnivad tihti hoopis konkreetsetest, elulistest või täiesti mitteratsionaalsest mõtetest ja tunnetest.
+
+Loomulikult ei ole kõik must ja valge -- sama inimene mõtleb erinevates situatsioonides erinevalt ning erinevaid mõtlemise stiile on võimalik arendada. Siiski on erinevatel inimestel programmeerimise õppimisel erinevad lähtepositsioonid ja erinevad väljakutsed. Kui sa ei tunne ennast abstraktsete teemadega mugavalt, siis ilmselt tuleb sul lihtsalt rohkem konkreetseid ülesandeid lahendada, enne kui õnnestub mingist teemast üldistatud ettekujutust saada. Neil, kes kalduvad abstraktsust eelistama, on mõtet iga teema juures võtta endale lisaaega märkamaks võimalikke seoseid igapäevase eluga.
+
+
+Mõtteharjutus
+~~~~~~~~~~~~~~~~~~~
+* Kas sa eelistad mõelda pigem abstraktselt või konkreetselt? Miks sa nii arvad?
+* Millised oma tugevaid külgi saaksid sa programmeerimisel rakendada? Tähelepanelikkust? Loovust? Järjekindlust? Täpsust? Julgust väljakutseid vastu võtta? Head üldistusvõimet? Uudishimu? Korrektsust? Seoste ja mustrite märkamise oskust?
+* Milliseid nimetatud omadustest pead sa veel arendama?
 
 
 Kokkuvõte
@@ -426,13 +469,15 @@ Iga peatüki lõpus on soovitav teha iseenda jaoks mõttes (või kirjalikult) ol
 
     Peatükkide lõpus olevad ülesanded on mahukamad, kui teksti sees antud ülesanded ja õpetavad seega paremini probleemi lahendamise oskust. Praktikumide korralduses on eeldatud, et need ülesanded on lahendatud (või proovitud lahendada) enne praktikumi tulemist. Esimeses peatükis on soenduseks vaid üks ülesanne, edaspidi tuleb neid rohkem.
     
-1. Kilpkonna joonistus
+1. Maja
 ~~~~~~~~~~~~~~~~~~~~~~ 
 Kirjuta programm, mis joonistab kilpkonnaga lihtsa otsevaates maja (võib olla ka "pseudo-3d" vaatega). 
 
 .. hint::
 
     Vaja võib minna kilpkonna käske ``up()`` ja ``down()``. Vaata nende tähendust ülaltpoolt.
+
+
 
 Projekt
 ----------
@@ -534,4 +579,4 @@ Taolistest pakendajatest tundub hetkel kõige parem *cx_Freeze*. Selle allalaadi
 ~~~~~~~~~~~~~~~~~~~~
 Üks mugav viis, kuidas Windowsis avada olemasolevaid Pythoni faile IDLE-s, on teha `Windows Explorer`-is soovitud failil paremklõps ning valida `Edit with IDLE`.
     
-Kuna arvutiklassides on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab kasutaja määrata, millise programmiga peaks mingi failitüüp avanema. (Kui antud aadressilt ei õnnestu seda programmi laadida, siis kasuta aadressi http://courses.cs.ut.ee/2011/programmeerimine/uploads/DefaultProgramsEditor.zip)
+Kui arvutis on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul võib olla abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab määrata, millise programmiga peaks mingi failitüüp avanema.

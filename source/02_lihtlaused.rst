@@ -425,7 +425,7 @@ TODO: näitelahendus
 
 Kontrollküsimus. Tehted sõnedega
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kuidas väärtustab Python järgnevad avaldised?
+Mis on järgnevate avaldiste väärtused?
 
 * ``len(Kosmoselaev)``
 * ``len(KoSMoSeElaev.upper())``
@@ -433,7 +433,7 @@ Kuidas väärtustab Python järgnevad avaldised?
 * ``Kosmoselaev.count(u)``
 * ``len(karu + ott)``
 
-NB! Kontrolli oma oletusi käsureal!
+NB! Kontrolli kindlasti oma oletusi Pythoni käsureal!
 
 .. hint::
 
@@ -502,7 +502,7 @@ Eelnev harjutus näitas, et muutujate abil saame teatud kohti programmis kirja p
 
 Muutujaid kasutatakse tihti samal põhjusel, nagu loomuliku keele tekstides kasutakse mingite spetsiifiliste mõistete definitsioone -- see võimaldab mingi (potentsiaalselt keerulise) asja panna kirja ühekordselt ning viidata sellele edaspidi erinevates kohtades kasutades vaid ühte sõna. Oleks ju üpris tüütu kirjutada trigonomeetrilistes avaldistes alati ``3.141592653589793``. Selle asemel saame importida moodulist ``math`` muutuja ``pi``, (mille väärtuseks on mooduli loojad juhtumisi omistanud `3.141592653589793`) ning kasutada oma arvutustes seda.
 
-Vaatame ühte näiteprogrammi, mis väljastab 60.25 cm raadiusega ringi diameetri, ümbermõõdu ja pindala. Esimese versiooni kirjutame ilma muutujaid kasutamata:
+Vaatame nüüd ühte näiteprogrammi, mis väljastab 60.25 cm raadiusega ringi diameetri, ümbermõõdu ja pindala. Esimese versiooni kirjutame ilma muutujaid kasutamata:
 
 .. sourcecode:: py3
 
@@ -714,6 +714,23 @@ Kasutajalt andmete küsimiseks ongi kõige lihtsam viis käsk ``input``, mis kõ
 
 See versioon on väga sarnane eelmisele versioonile -- viimasel kolmel real ei pidanud me midagi muutma. Erinevus on vaid selles, kuidas saab muutuja ``raadius`` oma väärtuse. Abimuutuja ``raadius_tekstina`` viitab sellele, et ``input`` annab sisestatud info alati teksti kujul. Enne kui me saame sisestatud andmeid kasutada numbrilistes arvutustes, tuleb sisestatud tekst teisendada arvuks (antud juhul ujukomaarvuks, kasutades käsku ``float``).
 
+Harjutus 2. Kasutaja tervitamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nüüd peaks olema täiesti arusaadav eelmises peatükis esitatud tervitamise programm:
+
+.. sourcecode:: py3
+
+    nimi = input("Palun sisesta oma nimi ja vajuta ENTER: ")
+    print("Tere " + nimi + "!")
+
+Muutke seda programmi nii, et see küsiks eraldi kasutaja eesnime ja perekonnanime, ning tervitaks teda tema täisnimega.
+
+Harjutus. Eurokalkulaator
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjuta programm, mis küsib kasutajalt rahasumma kroonides ja väljastab sellele vastava rahasumma eurodes.
+
+
+
 
 Kontrollküsimus. Avaldis või lause?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -723,9 +740,11 @@ Kas eelneva näiteprogrammi fragment ``input('Sisesta ringi raadius: ')`` on ava
 
     Tuleta meelde, millest koosnes omistuslause.
 
-.. hint:: Vastus
+.. hint:: 
 
-    Mainitud fragment on avaldis, kuna ta genereerib mingi väärtuse. Pealegi, omistuslause parem pool on alati avaldis. Siiski, tegemist on üpris omamoodi avaldisega, kuna tema väärtus võib olla igal korral erinev.
+    Vastus: Mainitud fragment on avaldis, kuna ta genereerib mingi väärtuse. Pealegi, omistuslause parem pool on alati avaldis. Siiski, tegemist on üpris omamoodi avaldisega, kuna tema väärtus võib olla igal korral erinev.
+    
+    Terve rida ``raadius_tekstina = input('Sisesta ringi raadius: ')`` moodustab aga lause.
 
 Andmete teisendamine sisendi ja väljundi kasutamisel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -747,18 +766,6 @@ Teema kinnistamiseks uuri veel ühte näidet muutujate, ``input``-i ja teksti te
     Ära unusta, et avaldis ``int(tekst1)`` mitte ei muuda muutujat ``tekst1`` arvuks, vaid genereerib vastava *uue* arvulise väärtuse.
 
 
-Harjutus 2. Kasutaja tervitamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Nüüd peaks olema täiesti arusaadav eelmises peatükis esitatud tervitamise programm:
-
-.. sourcecode:: py3
-
-    nimi = input("Palun sisesta oma nimi ja vajuta ENTER: ")
-    print("Tere " + nimi + "!")
-
-Muutke seda programmi nii, et see küsiks eraldi kasutaja eesnime ja perekonnanime, ning tervitaks teda tema täisnimega.
-
-
 Harjutus 3. Celsius-Fahrenheit teisendus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vastavate kraadide arvu Fahrenheiti skaalas.
@@ -772,7 +779,7 @@ Kirjuta programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vastava
 
 Failide lugemine reakaupa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Nüüd õpime ära ühe viisi tekstifailidest sisendi lugemiseks. Alustuseks koosta ja salvesta tekstifail nimega `andmed.txt`, mille esimesel real on inimese nimi, teisel real vanus (täisarvuna) ning kolmandal real e-maili aadress (lihtsuse mõttes ära praegu täpitähti kasuta). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvesta loodud failiga *samasse kausta* järgnev skript, ning käivita see. NB! tühikud ``print`` käskude ees on olulised!
+Nüüd õpime ära ühe viisi tekstifailidest sisendi lugemiseks. Alustuseks koosta ja salvesta tekstifail nimega `andmed.txt`, mille esimesel real on inimese nimi, teisel real vanus (täisarvuna) ning kolmandal real e-maili aadress (lihtsuse mõttes ära praegu täpitähti kasuta). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvesta loodud failiga *samasse kausta* järgnev skript, ning käivita see. 
 
 .. sourcecode:: py3
 
@@ -856,16 +863,6 @@ Selgituseks:
 * erinevalt ``print`` käsust, ei tekita faili meetod ``write`` automaatselt reavahetust. Selleks, et saada eri andmeid eri ridadele, lisasime reavahetuse sümboli käsitsi.
 
 
-Harjutus. Failide teisendamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-Kirjuta programm, mis küsib kasutajalt kaks failinime. Esimene neist peaks tähistama mingit olemasolevat tekstifaili. Teine failinimi võib olla uus, st. selle nimega faili ei pruugi eksisteerida.
-
-Programmi ülesandeks on võtta esimese faili sisu, teisendada see suurtähtedesse ning kirjutada teise faili. Ekraanile tuleks kuvada teisendatud failis olevate tähemärkide arv.
-
-.. todo::
-
-    anna vihjed
-
 .. index::
     single: kommentaarid
     
@@ -912,8 +909,6 @@ TODO
 
 .. note ::
     Nurksulud Pythoni funktsioonide dokumentatsioonis näitavad, et sellele parameetrile ei pea väljakutsel tingimata väärtust andma, sest tal on olemas vaikeväärtus. Nt. kui meetodi kirjeldus on kujul ``str.center(width[, fillchar])``, siis see tähendab, et seda võib kasutada kas 1 argumendiga (nt. ``kliendi_nimi.center(80)``) või 2 argumendiga (``kliendi_nimi.center(80, '~')``).
-
-
 
 2. Pangaarve intress
 ~~~~~~~~~~~~~~~~~~~~~
@@ -972,6 +967,47 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
             >>> x[2:4]
             're'
         
+7. Kujund
+~~~~~~~~~~~~~~
+Täienda järgnevat programmi selliselt, et tema käivitamisel ilmuks ekraanile järgnev kujund, kus ridades ja veergudes olev ``#`` sümbolite arv sõltub kasutaja sisendist. Kui võimalik, siis kirjuta kolme punkti asemele üksainus avaldis, kui vaja, siis võid ka uusi lauseid lisada.
+
+Poolik programm:
+
+.. sourcecode:: py3
+
+    x = int(input("Palun sisesta 2-st suurem täisarv: "))
+    print(...)
+
+
+
+Ekraanile kuvatav kujund, kui kasutaja sisestab ``7``:
+
+.. sourcecode:: none
+
+    # # # # # # #
+    #           #
+    #           #
+    #           #
+    #           #
+    #           #
+    # # # # # # #
+
+.. hint::
+    
+    Tuleta meelde, mida tähendab ``'Tere' * 4``
+
+Failide teisendamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Kirjuta programm, mis küsib kasutajalt kaks failinime. Esimene neist peaks tähistama mingit olemasolevat tekstifaili. Teine failinimi võib olla uus, st. selle nimega faili ei pruugi eksisteerida.
+
+Programmi ülesandeks on võtta esimese faili sisu, teisendada see suurtähtedesse ning kirjutada teise faili. Ekraanile tuleks kuvada teisendatud failis olevate tähemärkide arv.
+
+.. todo::
+
+    anna vihjed
+
+
+
 
 5. Redeli pikkus
 ~~~~~~~~~~~~~~~~~~
@@ -985,6 +1021,41 @@ Kirjuta programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrguse
 .. hint::
 
     Selleks, et arvutused ei läheks liiga keeruliseks, on soovitav vahetulemused salvestada abimuutujatesse.
+
+6. Pentagramm
+~~~~~~~~~~~~~~~~
+Kirjuta programm, mis küsib kasutajalt positiivse arvu vahemikus 10 .. 300 ja joonistab kilpkonna abil vastava diagonaalipikkusega pentagrammi:
+
+.. image:: images/pentagramm.png
+
+.. hint::
+
+    Kuna iga haru tipus on vaja pöörata sama palju, siis on soovitav arvutada pöördenurk ühekordselt, salvestada see muutujasse, ning kasutada hiljem seda muutujat:
+
+    .. sourcecode:: py3
+
+        from turtle import *
+        
+        ...
+        ...
+        tipunurk = ... 
+        pöördenurk = ... tipunurk ...
+        ...
+        ...
+        right(pöördenurk)
+        ...
+        ...
+        
+        exitonclick()
+
+.. hint::
+    Mõned abistavad küsimused, juhuks, kui jäid hätta nurkade arvutamisega:
+    
+    * Kui sa peaksid joonistama ainult kujundi keskel olevat viisnurka, mitu kraadi peaks kilpkonn iga nurga juures pöörama? Mitu kraadi ta peaks 5 nurga peale kokku pöörama?
+    * Mitu kraadi on pentagrammi igas harus oleva kolmnurga nurgad? Eelmine punkt aitab leida joonise keskmesse jäävate nurkade suurused.
+    * Mitu kraadi on kolmnurga kolmas nurk, kui on teada kahe nurga suurused?
+    * Mitu kraadi peab kilpkonn iga haru tipus pöörama?
+
 
 Projekt
 ---------------
