@@ -86,7 +86,7 @@ Kirjuta programm, mis küsib kasutajalt kaks arvu ning vastab, kas esimene arv j
     0
 
 Treppimine
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 ``if``-lause kasutamisel on vaja pöörata tähelepanu tühikutele -- tühikutega joondamine e. *treppimine* määrab, millised käsud kuuluvad tingimuslause alla ja millised mitte: 
 
 .. sourcecode:: py3
@@ -194,8 +194,8 @@ Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga e
         print("Hmm ...")
 
 
-Tingimuslaused üksteise sees
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Näide. Tingimuslaused üksteise sees
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tingimuslauseid võib panna üksteise sisse:
 
 .. sourcecode:: py3
@@ -333,8 +333,9 @@ Kirjuta ruudu näite põhjal programm, mis joonistab *n*-küljega hulknurga (*n*
 .. hint::
     Iga nurga juures peab kilpkonn pöörama 360/n kraadi.
     
-Tsükli ja tingimuslause kombineerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+Näide. Tsükli ja tingimuslause kombineerimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni lausetest. Järelikult võib panna ka ``if``-lause ``while``-lause sisse (ja vastupidi):
 
 .. sourcecode:: py3
@@ -470,8 +471,8 @@ Harjutus 8. Algandmete kontrollimine ja ``break``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kui sa enne kasutasid algandmete kontrollimise ülesandes ``input`` käsku mitmes kohas, siis proovi nüüd kirjutada lahendus ümber nii, et programmis on vaid üks ``input`` käsk.
 
-Summa arvutamine tsüklis
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Näide. Summa arvutamine tsüklis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Tegelikult ei ole Pythonil mingit põhjust piirata, kuidas me muutuja väärtust suurendame (või vähendame). Uuri ja proovi mõista järgmist näidet: 
 
 .. sourcecode:: py3
@@ -498,8 +499,64 @@ Kirjuta programm, mis arvutab etteantud arvu faktoriaali.
 
     Kuidas käitub sinu programm negatiivse arvu korral?
 
-Failist lugemine tsükliga
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Näide. Kahekordne tsükkel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nii, nagu me võime ``while``-lause kehas kasutada ``if``-lauseid, võime seal kasutada ka ``while``-lauseid. Järgnev programm kasutab kahekordset tsüklit korrutustabeli kuvamiseks:
+
+.. sourcecode:: py3
+
+    # välimine tsükkel teeb ühe korduse iga rea jaoks
+    rea_nr = 1
+    while rea_nr < 10:
+        
+        # sisemine tsükkel genereerib arvud käesolevasse ritta
+        veeru_nr = 1 # iga uue rea puhul alustame jälle veerust nr. 1
+        while veeru_nr < 10:
+            korrutis = rea_nr * veeru_nr
+            print(str(korrutis) + " ", end="") # end="" abil väldime väljundisse reavahetuse panemist
+            
+            # suurendame veeru numbrit
+            veeru_nr += 1 
+        
+        # reavahetuse paneme alles siis, kui kõik käesoleva rea numbrid on väljastatud
+        print() 
+        
+        # suurendame rea numbrit
+        rea_nr += 1
+
+.. note::
+
+    Ära muretse, kui see programm tundub hetkel liiga keeruline! Mitmekordsete tsüklitega hakkame tõsisemalt tegelema alles mitme peatüki pärast. Praegu on oluline vaid meelde jätta, et Python ei sea kitsendusi sellele, mida võib ``while`` või ``if``-lause sisse panna.
+
+Ülesanne. Korrutustabeli korrastamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Eelmise näiteprogrammi väljund jäi natuke kipakas, sest osad korrutised olid ühekohalised, osad kahekohalised ja seetõttu ei jäänud veerud kohakuti. Täienda nüüd programmi nii, et see väljastaks umbes taolise tabeli: 
+
+.. sourcecode:: none
+
+     1  2  3  4  5  6  7  8  9 
+     2  4  6  8 10 12 14 16 18 
+     3  6  9 12 15 18 21 24 27 
+     4  8 12 16 20 24 28 32 36 
+     5 10 15 20 25 30 35 40 45 
+     6 12 18 24 30 36 42 48 54 
+     7 14 21 28 35 42 49 56 63 
+     8 16 24 32 40 48 56 64 72 
+     9 18 27 36 45 54 63 72 81     
+        
+
+.. hint::
+
+    Üks võimalus on teatud *tingimusel* printida korrutise ette üks lisatühik.
+
+.. hint::
+
+    Teine võimalus on kasutada ühte sõneoperatsiooni, mille kohta on näide vastavas tabelis 2. peatükis.
+    
+
+Näide. Failist lugemine tsükliga
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mitu rida antud failis on. Praktikas tuleb aga palju sagedamini ette situatsioone, kus faili ridade arv pole teada. Järgnev näide demonstreerib faili kõikide ridade lugemist:
 
 .. sourcecode:: py3
@@ -705,10 +762,6 @@ Kirjuta järgneva avaldisega samaväärne avaldis, milles poleks kasutatud ``not
     not (x < 0 and x > 100)
     
 
-Erindid
-----------
-TODO
-
 
 Pykkar
 -----------------------
@@ -817,29 +870,31 @@ NB! Maailmas on ruumu vaid ühele Pykkarile, st. kaardile on võib valida ``^``,
 
 Pykkar saab aru järgnevatest käskudest:
 
-+------------------+-----------------------------------------------------------------------------------------------+
-| Käsk             | Tähendus                                                                                      |
-+==================+===============================================================================================+
-| ``step()``       | Liigu üks samm edasi                                                                          |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``right()``      | Pööra 90° paremale                                                                            |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``take()``       | Korja üles järgmisel ruudul olev torbik. Pykkar suudab liikuda koos ühe torbikuga             |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``put()``        | Pane ülesvõetud torbik maha järgmisele ruudule (seal võib olla juba kuni 8 torbikut ees)      |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``push()``       | Lükka järgmisel ruudul olevat kasti või torbikut                                              |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``paint()``      | Värvi enda all olev ruut tumedaks                                                             |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``is_wall()``    | Ütle, kas ees on sein (vastab ``True`` või ``False``)                                         |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``is_cone()``    | Ütle, kas ees on torbik                                                                       |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``is_box()``     | Ütle, kas ees on kast                                                                         |
-+------------------+-----------------------------------------------------------------------------------------------+
-| ``is_painted()`` | Ütle, kas enda all olev ruut on tume                                                          |
-+------------------+-----------------------------------------------------------------------------------------------+
++---------------------+-----------------------------------------------------------------------------------------------+
+| Käsk                | Tähendus                                                                                      |
++=====================+===============================================================================================+
+| ``step()``          | Liigu üks samm edasi                                                                          |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``right()``         | Pööra 90° paremale                                                                            |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``take()``          | Korja üles järgmisel ruudul olev torbik. Pykkar suudab liikuda koos ühe torbikuga             |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``put()``           | Pane ülesvõetud torbik maha järgmisele ruudule (seal võib olla juba kuni 8 torbikut ees)      |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``push()``          | Lükka järgmisel ruudul olevat kasti või torbikut                                              |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``paint()``         | Värvi enda all olev ruut tumedaks                                                             |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``is_wall()``       | Ütle, kas ees on sein (vastab ``True`` või ``False``)                                         |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``is_cone()``       | Ütle, kas ees on torbik                                                                       |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``is_box()``        | Ütle, kas ees on kast                                                                         |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``is_painted()``    | Ütle, kas enda all olev ruut on tume                                                          |
++---------------------+-----------------------------------------------------------------------------------------------+
+| ``get_direction()`` | Ütle, millisesse suunda oled hetkel pööratud (vastab ``'N'``, ``'E'``, ``'S'`` või ``'W'``)   |
++---------------------+-----------------------------------------------------------------------------------------------+
 
 NB! Pykkar ei oska tõepoolest vasakule pöörata!
 
@@ -860,9 +915,6 @@ NB! Programm peaks töötama ka laiemate ja kitsamate maailmade korral.
     Vihjed!
 
 
-Harjutus. Pykkari ülesanne
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mõtle ise välja üks Pykkari ülesanne, mille lahendamine tundub sulle praegu pisut liiga raske. Järgmiste teemade õppimisel mõtle, kuidas need aitaksid seda ülesannet lahendada.
 
 
 Suur näide
@@ -888,10 +940,6 @@ Kõikide nimetatud programmikonstruktsioonide kohta andsime selles peatükis vai
 Ülesanded
 -------------------
 
-.. todo::
-
-    Pykkari harjutus, mis nõuaks vasakule pööramist ja mitu korda seinani kõndimist
-
 1. Paaris või paaritu
 ~~~~~~~~~~~~~~~~~~~~~
 Koosta tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjuta programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
@@ -900,13 +948,9 @@ Koosta tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjuta programm, 
 ~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 20€ kuus.) 
 
-Esialgu võid eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum. (Siiamaani saaksite selle ülesande lahendada ka ilma selle peatüki vahenditeta).
+Esialgu võid eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum. (Siiamaani saaksid selle ülesande lahendada ka ilma selle peatüki vahenditeta).
 
 Lõpuks korralda nii, et programm töötab õigesti ka siis, kui ema või isa brutopalk on maksuvabast miinimumist väiksem.
-
-.. note::
-
-    Kui sulle tundub, et selle ülesande juures oleks kasu funktsioonidest, siis oled täiesti õigel teel. Paraku tuleks sissetuleku funktsiooni defineerimisel kasutada teatud lisavigureid, mida selles peatükis polnud mahti tutvustada. Seega, praegu soovitame selle ülesande lahendada ilma uusi funktsioone defineerimata (aga soovi korral võid muidugi vajalikud vigurid juba välja uurida).
 
 3. Busside logistika
 ~~~~~~~~~~~~~~~~~~~~~
@@ -921,6 +965,43 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 * inimeste arv: 40, kohtade arv: 40
 
 Ürita mõista, miks valiti taolised testiandmed.
+
+.. admonition:: Küsimus
+
+    Kas seda ülesannet saab lahendada ka ilma ``if``-lauset kasutamata? Kui jah, siis kuidas?
+
+5. Liigu nurka
+~~~~~~~~~~~~~~~~~~~~ 
+Kirjuta Pykkari programm, mis suvalise ristkülikukujulise maailma puhul liigutab Pykkari loodenurka. Programm võib eeldada, et robot vaatab alguses lõunasse, aga tema algne asukoht võib olla suvaline. Katseta programmi näiteks selliste algseisudega:
+
+.. sourcecode:: none
+
+    ########
+    #      #
+    #      #
+    #    v #
+    #      #
+    #      #
+    ########    
+
+ja
+
+.. sourcecode:: none
+
+    ##########
+    #        #
+    #        #
+    #        #
+    # v      #
+    ##########
+
+Kas su programm töötab õigesti ka siis, kui Pykkar juba on loodenurgas?
+
+.. admonition:: Väljakutse
+
+    Muuda programmi nii, et ka roboti algse suuna kohta ei eeldata midagi.
+
+
 
 4. projecteuler.net, problem 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -937,7 +1018,7 @@ Kirjuta programm, mis lahendab esimese ülesande aadressilt http://projecteuler.
 
     Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teete endale seal konto, siis saad oma progressi salvestada ja tulemusi kontrollida.
 
-5. Ringi joonistamise funktsioon
+5. Ringi joonistamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva ringitaolise kujundi. Ringi suurus pole praegu oluline.
 
@@ -966,8 +1047,8 @@ Kirjuta programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile va
     Tuleta meelde, mida tähendab ``'Tere' * 4``
 
 
-7. Kuubik
-~~~~~~~~~~~~~~~
+7. Raskem. Risttahukas
+~~~~~~~~~~~~~~~~~~~~~~~~  
 Kirjutage programm, mis kuvab kasutaja antud mõõtmete põhjal umbes sellise kujundi:
 
 .. sourcecode:: none
@@ -975,10 +1056,10 @@ Kirjutage programm, mis kuvab kasutaja antud mõõtmete põhjal umbes sellise ku
          ___________
         /          /\
        /          /  \
-      /__________/    \
-      \          \    /
-       \          \  /
-        \__________\/    
+      /__________/   /
+      \          \  /  
+       \__________\/    
+    
 
     
 
@@ -1015,6 +1096,9 @@ Pentagramm vol. 2
 ~~~~~~~~~~~~~~~~~~~~~
 Kui lahendasid eelmises peatükis pentagrammi ülesande, siis proovi nüüd oma programmi tsükli abil lühemaks teha.
 
+
+
+
 8. Raskem: Redeli asendid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülesandeks on genereerida Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonista redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
@@ -1032,6 +1116,7 @@ Kirjuta programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisonta
 .. topic:: Lisaülesande lisa
     
     Uuri kilpkonna dokumentatsioonist, kuidas värvida soovitud ala (http://docs.python.org/py3k/library/turtle.html). Seejärel proovi joonistada malelaud.
+
     
 
 Ülesanne. mp3

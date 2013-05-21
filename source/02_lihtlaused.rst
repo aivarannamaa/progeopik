@@ -671,7 +671,7 @@ Käsule ``print`` võib anda ka mitu argumenti, sel juhul trükitakse samale rea
 
 Eraldi argumentidega variant on küll lühem kirja panna (eriti mugav on see, et arve ei pea ise ``str`` käsuga sõneks teisendama), aga mõnikord see siiski ei sobi, näiteks kui me ei soovi väljundis argumentide vahele tühikut.
     
-.. topic:: Lisainfo
+.. topic:: ``print`` ilma reavahetuseta
 
     Vaikimisi lisab ``print`` väljundi lõppu alati ka reavahetuse. Kui sa seda ei soovi, siis tuleks seda näidata lisaargumendiga ``end``:
 
@@ -768,7 +768,7 @@ Teema kinnistamiseks uuri veel ühte näidet muutujate, ``input``-i ja teksti te
 
 Harjutus 3. Celsius-Fahrenheit teisendus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab vastavate kraadide arvu Fahrenheiti skaalas.
+Kirjuta programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab sellele vastava temperatuuri Fahrenheiti skaalas.
 
 
 .. index::

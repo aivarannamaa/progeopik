@@ -1,5 +1,6 @@
-7. Programmi käigu juhtimine
+7. Programmeerija valikud
 =======================================
+
 
 .. todo::
 
@@ -418,6 +419,13 @@ Harjutus 1. Liigu nurka
 Lisa vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
 
 Kasuta seda funktsiooni programmis sobival kohal.
+
+
+Erindid
+----------
+TODO
+
+
 
 
 Ülesanded

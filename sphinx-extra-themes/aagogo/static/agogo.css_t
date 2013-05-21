@@ -538,3 +538,8 @@ table.docutils th, table.docutils td {
 p.admonition {
     font-size: 13px;
 }
+
+
+div.highlight-none pre {
+    line-height: 120%;
+}

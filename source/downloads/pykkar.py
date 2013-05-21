@@ -125,7 +125,8 @@ class World():
             (sys.executable, '-u', '-m', 'pykkar',  repr(layout_str)),
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
+            stderr=subprocess.PIPE,
+            bufsize=0
         )
 
         # Check initialization result

@@ -315,7 +315,52 @@ Olge valmis, et see plokkskeem tuleb eelmistest omajagu suurem.
 .. hint::
 
     Ülesande lahendamiseks tuleks valida kõigepealt strateegia, kuidas robotkilpkonn liigub ruudustikul. Üheks võimaluseks on variant, kus kilpkonn värvib ühe triibu ja liigub tuldud teed tagasi. Ta kordab värvimist järgmisel värvitaval veerul (üks veerg tuleb jätta vahele, et tulemus oleks triibuline). 
+
+.. todo::
+
+    Näide. Põranda värvimine triibuliseks
     
+    .. note:: Varu selle ülesande lahendamiseks piisavalt aega. Kui jääd hätta, siis vaata näitelahendust viimase vihje alt!
+
+    Kirjuta programm, mis paneb Pykkari värvima põrandat põhja-lõuna suunas triibuliseks – alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne. 
+
+    NB! Programm peab töötama suvalise ristkülikukujulise, ilma takistusteta maailma korral. Pykkari esialgne asukoht pole teada, aga võib eeldada, et ta on alguses näoga põhja suunas. Soovitame katsetada oma programmi vähemalt selliste algseisudega:
+
+    .. sourcecode:: none
+
+        ########
+        #      #
+        #      #
+        #  ^   #
+        #      #
+        #      #
+        ########    
+
+    ja
+
+    .. sourcecode:: none
+
+        ##########
+        #        #
+        #        #
+        #        #
+        # ^      #
+        ##########
+
+    .. hint::
+
+        Selles programmis on vaja panna üks tsükkel teise sisse:
+        
+        .. sourcecode:: py3
+        
+            ...
+            while ...: 
+                ...
+                # võta käsile uus veerg
+                
+
+
+        
 
 Alaprogrammid plokkskeemis
 ----------------------------------
