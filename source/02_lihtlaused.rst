@@ -15,9 +15,9 @@ Avaldised ja väärtused
 
     Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
     
-Pythoni tutvustuse juures käisid läbi Pythoni laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Saite teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhitermineid. 
+Pythoni tutvustuse juures käisid läbi laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhitermineid. 
 
-Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas erinevat liiki avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere maailm!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
+Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas vägagi erinevate kujudega avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere maailm!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
 
 Nüüd võib tekkida kohe järgmine küsimus: miks ilmus lause ``print(2 + 3)`` käivitamisel ekraanile ``5`` mitte ``2 + 3``? Asi on selles, et arvutustehte kujul avaldiste kasutamisel arvutab Python ilma küsimata tulemuse välja ja kasutab siis seda esialgse avaldise asemel. Arvutuse tulemust nimetatakse **väärtuseks** (ing.k. `value`) ning arvutusprotsessi avaldise **väärtustamiseks** (ing.k. `evaluation`).
 
@@ -127,7 +127,7 @@ Ujukomaarvude literaalid võivad esineda järgmistel kujudel:
 Tehted arvudega
 ~~~~~~~~~~~~~~~~~~~~~~
 +--------------------+----------+---------------------------------------------------------+
-| Avaldis            | Väärtus  | Kommentaar                                              |
+| Avaldis            | Väärtus  | Selgitus                                                |
 +====================+==========+=========================================================+
 | ``6 / 3``          | ``2.0``  | Tavalise jagamise tulemus on alati ujukomaarv           |
 +--------------------+----------+---------------------------------------------------------+
@@ -351,7 +351,7 @@ Tehted sõnedega
 
 
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| Avaldis                             | Väärtus            | Kommentaar                                                          |
+| Avaldis                             | Väärtus            | Selgitus                                                            |
 +=====================================+====================+=====================================================================+
 | ``'Tere' + 'Madis!'``               |``'TereMadis!'``    | ``+`` loob kahe sõne põhjal uue sõne                                |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
@@ -365,9 +365,9 @@ Tehted sõnedega
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'5' + '3'``                       | ``'53'``           | Sõnena esitatud arve ei käsitleta arvudena                          |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``int('5')``                        | ``5``              | Annab sõnele vastava täisarvu                                       |
+| ``int('5')``                        | ``5``              | ``int`` annab sõnele vastava täisarvu                               |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``float('5.3')``                    | ``5.3``            | Annab sõnele vastava ujukomaarvu                                    |
+| ``float('5.3')``                    | ``5.3``            | ``float`` annab sõnele vastava ujukomaarvu                          |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'xo' * 3``                        | ``'xoxoxo'``       | Sõne dubleerimine                                                   |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
@@ -425,7 +425,7 @@ TODO: näitelahendus
 
 Kontrollküsimus. Tehted sõnedega
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mis on järgnevate avaldiste väärtused?
+Mis on järgnevate avaldiste väärtused? Proovi algul vastata ilma Pythoni abita, aga lõpuks kontrolli oma oletused üle ka Pythoni käsureal.
 
 * ``len(Kosmoselaev)``
 * ``len(KoSMoSeElaev.upper())``
@@ -433,11 +433,9 @@ Mis on järgnevate avaldiste väärtused?
 * ``Kosmoselaev.count(u)``
 * ``len(karu + ott)``
 
-NB! Kontrolli kindlasti oma oletusi Pythoni käsureal!
-
 .. hint::
 
-    Ilmselt said kõigile neile avaldistele vastuseks veateate, sest Python pidas kasutatud sõnu (``Kosmoselaev``, ``ott`` jt) muutujateks, aga selliste nimedega muutujaid ei olnud defineeritud. Sõneliteraalidel on alati ümber ülakomad või jutumärgid!
+    Ilmselt andis käsurida kõigile neile avaldistele vastuseks veateate, sest Python pidas kasutatud sõnu (``Kosmoselaev``, ``ott`` jt) muutujateks, aga selliste nimedega muutujaid ei olnud defineeritud. Sõneliteraalidel on alati ümber ülakomad või jutumärgid!
 
 .. index::
     single: muutujad
@@ -591,7 +589,7 @@ Mida tuleks käsureale eelnevalt sisestada, et avaldis ``kapsas * 9`` annaks vea
 
 Avaldiste kombineerimine
 ------------------------------
-Me oleme nüüdseks kasutanud mitut viisi Pythoni maailma "asjade" e. väärtuste kirjeldamiseks. Konkreetse väärtuse puhul on kõige lihtsam see panna kirja *literaalina* (nt. ``2.5`` või ``"Tere!"``). Mõnikord on mugavam väärtusele viidata hoopis läbi *muutuja* (nt. ``x``). Enamasti aga on meil programmi kirjutamise ajal väärtuse asemel teada hoopis selle leidmise "valem", mille me paneme kirja Pythoni *tehte* e. *operatsioonina* (nt. ``sin(x) * 2 - 1`` või ``nimi.upper()``). Kõik need viisid kannavad ühist nimetust *avaldis*.
+Me oleme nüüdseks kasutanud mitut viisi Pythoni maailma "asjade" e. väärtuste kirjeldamiseks. Konkreetsed väärtused pannakse kirja *literaalina* (nt. ``2.5`` või ``"Tere!"``). Mõnikord on mugavam väärtusele viidata hoopis läbi *muutuja* (nt. ``x``). Enamasti aga on meil programmi kirjutamise ajal väärtuse asemel teada hoopis selle leidmise "valem", mille me paneme kirja Pythoni *tehte* e. *operatsioonina* (nt. ``sin(x) * 2 - 1`` või ``nimi.upper()``). Kõik need viisid kannavad ühist nimetust *avaldis*.
 
 Kahtlemata on neist kolmest avaldise liigist kõige põnevam arvutustehe -- on ju arvutamine üks põhjus miks programme üldse kirjutatakse. Loodetavasti märkasid, et Pythoni arvutustehetel on üks oluline omadus, mis tõstab ta peajagu kõrgemale taskukalkulaatoritest -- tehete komponentideks võivad olla suvalist liiki avaldised, st. mitte ainult konkreetsed väärtused vaid ka muutujad või mingid muud tehted, mis võivad omakorda koosneda konkreetsetest väärtustest, muutujatest või tehetest, mis võivad omakorda ... jne. Seetõttu nimetatakse tehete komponente vahel üldistavalt *alamavaldisteks*.
 
@@ -671,23 +669,24 @@ Käsule ``print`` võib anda ka mitu argumenti, sel juhul trükitakse samale rea
 
 Eraldi argumentidega variant on küll lühem kirja panna (eriti mugav on see, et arve ei pea ise ``str`` käsuga sõneks teisendama), aga mõnikord see siiski ei sobi, näiteks kui me ei soovi väljundis argumentide vahele tühikut.
     
-.. topic:: ``print`` ilma reavahetuseta
+``print`` ilma reavahetuseta
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Vaikimisi lisab ``print`` väljundi lõppu alati ka reavahetuse. Kui sa seda ei soovi, siis tuleks seda näidata lisaargumendiga ``end``:
+Vaikimisi lisab ``print`` väljundi lõppu alati ka reavahetuse. Kui sa seda ei soovi, siis tuleks kasutada lisaargumenti ``end``:
 
-    .. sourcecode:: py3
+.. sourcecode:: py3
 
-        print('Vastus on: ', end='')    
-        print(32 * 57)                  
-        
-
-    ``end`` on "peidetud" argument, mis määrab, mida kuvatakse väljundi lõppu. Vaikimisi on selle argumendi väärtuseks reavahetus (``'\n'``), aga meie seadsime selle väärtuseks *tühja sõne*, seetõttu kuvatakse antud näite väljund ühel real (mis lõpeb siiski reavahetusega, sest teine ``print`` käsk toimib ikka tavapäraselt).
+    print('Vastus on: ', end='')    
+    print(32 * 57)                  
     
-    Tegelikult oleks saanud sama tulemuse ka lihtsamalt:
-    
-    .. sourcecode:: py3
 
-        print('Vastus on: ' + str(32 * 57))    
+``end`` on "peidetud" argument, mis määrab, mida kuvatakse väljundi lõppu. Vaikimisi on selle argumendi väärtuseks reavahetus (``'\n'``), aga meie seadsime selle väärtuseks *tühja sõne*, seetõttu kuvatakse antud näite väljund ühel real (mis lõpeb siiski reavahetusega, sest teine ``print`` käsk toimib ikka tavapäraselt).
+
+Tegelikult oleks saanud sama tulemuse ka lihtsamalt:
+
+.. sourcecode:: py3
+
+    print('Vastus on: ' + str(32 * 57))    
 
 .. index::
     single: sisend
@@ -862,13 +861,57 @@ Selgituseks:
 * kui antud fail juba eksisteerib, siis ``open(..., "w")`` teeb selle tühjaks.
 * erinevalt ``print`` käsust, ei tekita faili meetod ``write`` automaatselt reavahetust. Selleks, et saada eri andmeid eri ridadele, lisasime reavahetuse sümboli käsitsi.
 
+.. admonition:: Kapoti all: *stdin* ja *stdout*
+
+    Ilmselt märkasid teatud sarnasust ``print`` ja ``write`` ning ``input`` ja ``readline`` vahel. Tegelikult on nende kahe käsupaari seosed palju tihedamad, kui paistab. Nimelt käsitletakse operatsioonisüsteemi tasemel kasutaja sisendit justkui mingit virtuaalset faili, millesse tekivad uued read kasutaja sisendi põhjal -- seda faili nimetatakse *stdin*-iks e. *standarsisendiks*. Analoogselt on olemas virtuaalne fail, kuhu kirjutades ilmuvad read kasutaja konsoolile -- seda faili nimetatakse *stdout*-iks e. *standarväljundiks*. Need failid ei asu tegelikult failisüsteemis ja viited neile organiseeritakse igale programmile operatsioonisüsteemi poolt, seetõttu pole neid kunagi vaja ise avada ega sulgeda. 
+    
+    Pythonis saab viited neile failidele kätte moodulist ``sys`` ja nende kasutamist demonstreerib järgnev näide:
+    
+    .. sourcecode:: py3
+
+        from sys import stdout, stdin
+
+        stdout.write("Palun sisesta oma nimi ja vajuta ENTER: ")
+        nimi = stdin.readline().strip()
+        stdout.write("Tere " + nimi + "!")
+
+    Käsud ``print`` ja ``input`` ongi lihtsalt mugavam viis nende failide kasutamiseks.
+
+
+Koodiridade murdmine
+---------------------
+Pythoni koodis on reavahetus tavaliselt kahe lause eraldajaks. Mõnikord aga lähevad laused nii pikaks, et ei mahu enam hästi redaktori ekraanile ära. Sel juhul on võimalik ridu "murda", st. kirjutada ühe lause kood mitmele reale. Selleks, et Python saaks aru, et lause jätkub järgmisel real, tuleks rea lõppu kirjutada langkriips (``\``):
+
+.. sourcecode:: py3
+    
+    ...
+    sissetulek = palk + preemia + alimendid + pension + autoritasud + intressid \
+               + kingitused + taskuraha + stipendiumid + lotovõidud + maast_leitud_raha \
+               + ämma_käest_saadud_raha
+    ...
+    
+Jätkuread on kombeks nihutada pisut paremale.
+
+Langkriipsu võib ära jätta, kui reamurdmise koht jääb sulgude sisse:
+
+.. sourcecode:: py3
+
+    ...
+    print(palk, preemia, alimendid, pension, autoritasud, intressid,
+          kingitused, taskuraha, stipendiumid, lotovõidud, maast_leitud_raha,
+          ämma_käest_saadud_raha)
+    ...
+    
+NB! Ka käsureal eeldab Python, et sulgemata sulgude korral sisestus veel jätkub, seega jääb ta ootama käsu lõpetamist ka siis, kui sa lihtsalt unustasid lõpetava sulu sisestamata.
+
+
 
 .. index::
     single: kommentaarid
     
 Kommentaarid
 ------------
-Lisaks Pythoni jaoks mõeldud käskudele, saab programmi kirjutada `kommentaare`, mis on mõeldud vaid programmi lugemise hõlbustamiseks:
+Lisaks Pythoni jaoks mõeldud käskudele, saab programmi kirjutada `kommentaare`, mis on mõeldud vaid programmi lugemise hõlbustamiseks. Järgnevas näites kasutatakse kommentaare koodi osade "pealkirjadena":
 
 .. sourcecode:: py3
     
@@ -879,14 +922,12 @@ Lisaks Pythoni jaoks mõeldud käskudele, saab programmi kirjutada `kommentaare`
     print('No tere ' + nimi)
     print('Kuidas läheb?')
     
-Kommentaar esitatakse ``#`` sümboliga -- Python ignoreerib kogu teksti, mis kirjutatakse sellest sümbolist kuni rea lõpuni.
+    # Praktikas keegi nii lihtsa programmi puhul tegelikult
+    # kommentaare ei kasutaks :p
+    
+Kommentaar esitatakse sümboliga ``#`` -- Python ignoreerib kogu teksti, mis kirjutatakse sellest sümbolist kuni rea lõpuni.
 
-Kommenteerida tuleks neid kohti programmis, mis võivad jääda lugejale segaseks. 
-
-.. note ::
-    Programmi loetavuse seisukohast on tegelikult kõige olulisemad hästi valitud muutuja- ja funktsiooninimed. Kommentaaride põhiprobleem on see, et kuna Python nende vastu huvi ei tunne, siis võivad nad programmi arenedes "vananeda", st. programmeerija muudab programmi sisu aga unustab vastava kommentaari uuendada.
-
-Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu.
+Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu, mis mõjuvad justkui lõiguvahed tavalise teksti puhul.
 
 Suur näide
 --------------
@@ -941,13 +982,9 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
         >>> "pEEteR".capitalize()
         'Peeter'
     
-.. note::
-
-    Praegu on aktsepteeritav, kui programm ei esita sidekriipsuga nimesid ootuspäraselt (nt. kui kasutaja sisestas eesnimeks `Mari-Liis`, siis on OK, kui programm muudab selle `Mari-liis`-iks).
-    
 .. admonition:: Väljakutse
 
-    Kui see ülesanne oli sinu jaoks liiga lihtne, siis proovi muuta programmi selliselt, et nt. `Mari-Liis`, `mari-liis` ja `mAri-liiS` muudetakse kõik `Mari-Liis`-iks.
+    Praegu on aktsepteeritav, kui programm ei esita sidekriipsuga nimesid ootuspäraselt (nt. kui kasutaja sisestas eesnimeks `Mari-Liis`, siis on OK, kui programm muudab selle `Mari-liis`-iks). Aga kui see ülesanne oli sinu jaoks liiga lihtne, siis proovi kirjutada programmist ka selline variant, mis töötaks õigesti nimede puhul, mis sisaldavad ühte sidekriipsu, st. mis muudaks nt. `Mari-Liis`, `mari-liis` ja `mAri-liiS` kõik `Mari-Liis`-iks.
     
     .. hint::
     
@@ -966,10 +1003,12 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
             'te'
             >>> x[2:4]
             're'
-        
+
+    Kui oled ka sellega hakkama saanud, siis proovi kaks programmi varianti ühendada, st. uus programm peaks töötama nii lihtsate, kui liitnimedega. Selle jaoks on tõenäoliselt vaja ühte Pythoni konstruktsiooni, mida selles peatükis ei käsitletud, aga mis käis läbi esimese peatüki näidetes.
+    
 7. Kujund
 ~~~~~~~~~~~~~~
-Täienda järgnevat programmi selliselt, et tema käivitamisel ilmuks ekraanile järgnev kujund, kus ridades ja veergudes olev ``#`` sümbolite arv sõltub kasutaja sisendist. Kui võimalik, siis kirjuta kolme punkti asemele üksainus avaldis, kui vaja, siis võid ka uusi lauseid lisada.
+Täienda järgnevat poolikut programmi selliselt, et selle käivitamisel ilmuks ekraanile järgnev kujund, kus ridades ja veergudes olev ``#`` sümbolite arv sõltub kasutaja sisendist. Kui võimalik, siis kirjuta kolme punkti asemele üksainus avaldis, kui vaja, siis võid ka uusi lauseid lisada.
 
 Poolik programm:
 

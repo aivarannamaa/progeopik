@@ -660,7 +660,7 @@ Tõeväärtustehted
 Kuigi tõeväärtustüübis on vaid kaks väärtust ``True`` ja ``False``, on olemas palju erinevaid viise nende genereerimiseks. Järgnev tabel demonstreerib mõnesid neist:
 
 +----------------------------------+---------+---------------------------------------------------------------------+
-| Avaldis                          | Väärtus | Kommentaar                                                          |
+| Avaldis                          | Väärtus | Selgitus                                                            |
 +==================================+=========+=====================================================================+
 | ``2 == 2.0``                     |``True`` | ``==`` sobib nii sõnede, kui arvude võrduse kontrollimiseks         |
 +----------------------------------+---------+                                                                     +
@@ -1049,7 +1049,7 @@ Kirjuta programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile va
 
 7. Raskem. Risttahukas
 ~~~~~~~~~~~~~~~~~~~~~~~~  
-Kirjutage programm, mis kuvab kasutaja antud mõõtmete põhjal umbes sellise kujundi:
+Kirjuta programm, mis kuvab kasutaja antud mõõtmete põhjal umbes sellise kujundi:
 
 .. sourcecode:: none
 
