@@ -15,25 +15,33 @@ Selle õpiku abil on sul võimalus õppida algtasemel programmeerima. Ära alahi
 
 Mis Sind ees ootab?
 ----------------------
+TODO
 * algul keele õppimine
 * siis keele kasutamine mõtlemise arendamiseks
 * siis varia
 
 Mida sult oodatakse?
 -------------------------
+TODO
+
 * aktiivsust, initsiatiivi
 * järelemõtlemist, 
 * püsivust?
-* work smarter, not harder (küsi abi, jne)
-    * eriti kui sul on aega vähe (nt. töötad)
+* work smarter, not harder (küsi abi, jne), eriti kui sul on aega vähe (nt. töötad)
 * julgust -- ka siis kui ülesanne tundub raske, haara ikkagi härjal sarvist
 * kogukonda panustamist?
 * (NB! mõni tahab käsku täita)
+* Kui sulle põhiülesanded tunduvad lihtsad, siis keskendu raskematele või otsi ise!
 
 Lugemise juhis
 ----------------
+TODO
+
+* on mitu rada läbi õpiku, järgi oma uudishimu (peatükkides on lingid). Programmeerimine on mitmekesine, seda ei tea ette, kus kellelgi silm särama läheb.
 * soovitav lugeda järjest
 * jäta skriptid alles, sest sama programmi tuleb mõnikord täiendada mitmes peatükis
+* mõned ülesanded on nö. "tillikad", treenivad tähelepanelikkust
+* on uute konstruktsioonide harjutused (nt. sinised) ja probleemilahenduse harjutused (nt. punased); ning harjutused(tumedad) ja näited (heledad).
 
 Peatüki struktuur
 ---------------------

@@ -1,4 +1,4 @@
-7. Programmi loetavus
+7. Alternatiivsed lahendused
 =======================================
 
 

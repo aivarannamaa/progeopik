@@ -1,5 +1,10 @@
 1. Sissejuhatus
 ===============
+
+.. todo::
+
+    Näita, et programmeerimine ei ole kellelegi üle mõistuse. Proovi demonstreerida, et ka need, kes arvavad, et ei oska, siiski oskavad.
+
 Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmeerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
 
 Esimese peatüki põhieesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.

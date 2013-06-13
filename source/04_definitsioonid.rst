@@ -2,11 +2,15 @@
 ====================================
 
 
+
 .. todo::
+    
+    * lisa kombinatoorika ülesandeid
+    * lisa samaväärsuse küsimusi
+
 
     * omistamise += kuju üle korrata?
-    * TODO: muutujate juurde
-    * Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
+    * TODO: muutujate juurde: Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
     * TODO: Wikipedia sirvimise näide funktsiooni väljakutsete mõistmiseks
     * TODO: **näited** selle kohta, et ühte funktsiooni saab välja kutsuda mitu korda
     * TODO: väljakutse, meetod, argument
@@ -23,51 +27,66 @@
     * roles of functions: utility functions, reuse, division, documentation, encapsulation
     * paralleelid muutujate ja funktsioonide vahel -> tadaa
     
-    
+
+Eelmises peatükis vaatasime, kuidas lasta Pythonil teha mingit tegevust mitu korda järjest. Kuidas käituda aga siis, kui mingit keerulist tegevust on vaja teha mitu korda, aga mitte järjest, vaid erinenevates programmi osades ja võibolla ka teatud variatsioonidega?
+
+Selles peatükis uurimegi, kuidas pakendada mingi programmijupp *funktsiooniks* ja kuidas seda hiljem erinevates kohtades kasutada saab. Teisiti öeldes, me hakkame looma uusi Pythoni käske. Alustuseks aga vaatame üle mida me Pythoni käskude kohta juba teame.
+
+Mis on funktsioon?
+-------------------
+Siiani olnud juttu mitmetest erinevatest Pythoni "käskudest", nagu näiteks ``input``, ``sin``, ``right``, ``is_wall``, ``int``, ``readline``, ``upper``, ``print``. Tegelikult on korrektsem termin nende kohta *funktsioon*.
+
+Kuigi paljudel juhtudel saab tõmmata paralleelid Pythoni funktsioonide ja matemaatikast tuntud funktsioonide vahele, on Pythoni jaoks funktsiooni mõiste siiski veidi avaram. Alustuseks ütleme lihtsalt, et funktsioon (e. mitteformaalselt *käsk*) on mingi Pythoni maailma "tegelane", millel on (tavaliselt) nimi ja mis oskab midagi arvutada või teha. 
+
 
 Funktsioonide kasutamine
 -----------------------------
-Funktsioonid on need Pythoni objektid, mille abil saab midagi arvutada või teha. Me oleme siiani näinud hulka erinevaid funktsioone, nt ``sin``, ``cos``, ``int``, ``input``, ``print``.
+Toome meeldetuletuseks mõned näited programmifragmentidest, kus on kasutatud funktsioone:
 
-Funktsiooni kasutamiseks e. `rakendamiseks` tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem `argumenti` so. miski, mida funktsioon oma töös kasutab. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni rakendamine (e. `funktsiooni applikatsiooni`).
+* ``nimi = input("Sisesta oma nimi: ")``
+* ``vanus_arvuna = int(sisestatud_vanus)``
+* ``if is_wall(): ...``
+* ``print(sqrt(sin(0.5)))``
 
-Mõned funktsioonid (nt. ``sin`` ja ``int``) on olemuselt küllalt sarnased matemaatikast tuntud funktsioonidele, kuna nad "võtavad" ühe väärtuse ja "annavad vastu" mingi teise väärtuse. Nt ``int("3")`` võtab sõne tüüpi väärtuse ``"3"`` ning annab vastu täisarvu tüüpi väärtuse ``3``. See võimaldab nende funktsioonide kasutamist avaldistes.
+Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem **argumenti** so. miski, millega me saame funktsiooni tööd kuidagi mõjutada. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni **rakendamine** (e. *väljakutse* või *aplikatsioon*). Argumendid võivad olla mingid konkreetsed väärtused, muutujad või mingid muud avaldised (sh. funktsioonide rakendused).
 
-Lisaks sellele, et funktsiooni rakendamist võib kasutada mingi avaldise komponendina, võib ka funktsiooni argument olla ükskõik kui keeruline avaldis, sh. funktsiooni rakendamine:
+Teatud funktsioonide (nt. ``upper``) rakendamiseks tuleb kirjutada üks argument funktsiooni nime ette (nt. ``'tere'.upper()``) -- selliseid funktsioone nimetatakse **meetoditeks**. Sedalaadi funktsioonide defineerimist me ei vaata, aga oma olemuselt ei erine need väga palju tavalistest funktsioonidest.
 
-.. sourcecode:: py3
+Arvutamine vs. "tegemine"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni rakendus (nt. ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause?
 
-    >>> x = 4
-    >>> round(cos(sin(float("0" + "." + str(x)) + 4)), 2)
-    0.58
+Mõned funktsioonid (nt. ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatilistele funktsioonidele, kuna nad "võtavad" ühe väärtuse, arvutavad natuke ja "annavad vastu" e. *tagastavad* mingi teise väärtuse (nt. avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide rakendused on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. 
+
+Siia gruppi loeme ka need funktsioonid, mille rakendus võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
+
+Teiste funktsioonide rakendamisel (nt. ``print('Tere')``, ``right(90)``, ``step()``) huvitab meid see, mida nad *teevad* -- me tahame, et midagi *juhtuks* (nt. et ekraanile ilmuks uus tekstijupp või robot liigutaks ennast). Selliste funktsioonide rakendusi loeme me lauseteks ja seetõttu esinevad nad programmides omaette real. Funktsioonide defineerimise õppimist alustame just seda tüüpi funktsioonidega.
 
 
+.. note::
 
-Funktsioonidest tuleb edaspidi veel palju juttu, seepärast me praegu nendel pikemalt ei peatu.
+    Mõnedes keeltes kasutatakse tegevusele orienteeritud funktsioonide jaoks eraldi terminit *protseduur*.
 
 
 
 Funktsioonide defineerimine
 -----------------------------------------
-.. note::
+Enne, kui funktsiooni saab kasutada, tuleb ta *defineerida*. Meile tuttavad funktsioonid on defineeritud Pythoni loojate poolt, seepärast ei pidanud me siiani selle peale mõtlema. Paraku pole alati võimalik ette ennustada, milliseid funktsioone võiks programmeerijatel vaja minna, seepärast lubab Pythonis neid ka programmeerijatel ise defineerida.
 
-    Siin on tegemist väga põgusa sissejuhatusega funktsioonide defineerimisest. Sellel teemal tuleb edaspidi palju rohkem juttu.
-    
-Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas üleval-vasakul ja teisest natuke allpool. Mitu rida läheks sellise programmi kirjutamiseks vaja? Kas programmi lühendamiseks oleks abi tsüklist, mis teeb 3 kordust ja joonistab igal kordusel ühe ruudu?
+Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas üleval-vasakul ja teisest natuke allpool. 
 
 Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu joonistamise kood kolmes kohas:
 
 .. sourcecode:: py3
 
+    # "Jõuga" programmeeritud variant
     from turtle import *
 
-    küljepikkus = 30
-
-    i = 0
-    while i < 4:
-        forward(küljepikkus)
+    joonistatud_külgi = 0
+    while joonistatud_külgi < 4:
+        forward(30)
         left(90)
-        i += 1 
+        joonistatud_külgi += 1 
 
     up()
     forward(100)
@@ -75,26 +94,84 @@ Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu jooni
     forward(100)
     down()
 
-    i = 0
-    while i < 4:
-        forward(küljepikkus)
+    joonistatud_külgi = 0
+    while joonistatud_külgi < 4:
+        forward(30)
         left(90)
-        i += 1 
+        joonistatud_külgi += 1 
 
     up()
     left(90)
     forward(200)
     down()
 
-    i = 0
-    while i < 4:
-        forward(küljepikkus)
+    joonistatud_külgi = 0
+    while joonistatud_külgi < 4:
+        forward(30)
         left(90)
-        i += 1 
+        joonistatud_külgi += 1 
 
     exitonclick()    
 
-Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi käsk. ``turtle`` moodulis sellist käsku küll pole, aga õnneks võimaldab Python programmeerijal uusi käske e. *funktsioone* ise *defineerida*.
+Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi funktsioon. ``turtle`` moodulis sellist ei leidu, aga me võime selle ise *defineerida* ja seejärel kasutada justkui iga teist Pythoni funktsiooni:
+
+.. sourcecode:: py3
+    :emphasize-lines: 4-9,11,19,26    
+    
+    # Kavalam variant
+    from turtle import *
+    
+    def ruut():
+        joonistatud_kylgi = 0               
+        while joonistatud_kylgi < 4:
+            forward(30)
+            left(90)
+            joonistatud_kylgi += 1
+    
+    ruut()
+    
+    up()
+    forward(100)
+    left(90)
+    forward(100)
+    down()
+    
+    ruut()
+    
+    up()
+    left(90)
+    forward(200)
+    down()
+    
+    ruut()
+    
+    exitonclick()
+
+
+Ilmselt juba taipasid, et funktsioonide defineerimisega on seotud konstruktsioon, mis algab võtmesõnaga ``def``. Selle konstruktsiooni päises antakse funktsioonile nimi ja kehas näidatakse need laused, mida tuleks käivitada funktsiooni rakendamisel. Antud juhul kopeerisime funktsiooni kehasse algsest programmist ruudu joonistamise koodi. Seejuures pidime muidugi selle pisut paremale nihutama, et oleks aru saada, et see kuulub ``def`` lause alla. Pärast ``def`` lause käivitamist on Pythonil üks käsk juures, mida saab rakendada samal põhimõttel nagu sisseehitatud funktsioone. (Erinevus on selles, et uus funktsioon kehtib ainult sama programmi piires -- kui tahad seda kasutada ka järgmistes programmides, siis tuleb see uuesti defineerida.)
+
+.. admonition:: NB!
+
+    ``def`` konstruktsioon jätab enda kehas olevad laused lihtsalt meelde, need käivitatakse alles siis, kui defineeritud funktsiooni rakendatakse.
+    
+
+Kontrollküsimus: Mitu kala?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? NB! proovi vastata ilma programmi käivitamata! Kui oled vastanud, siis kontrolli oma vastust Pythoni abil.
+
+.. sourcecode:: py3
+
+    def a():
+        print("kala")
+        print("kala")
+    
+    def b():
+        a()
+        print("kala")
+        a()
+
+    b()
+    b()
 
 Funktsiooni defineerimine ja kasutamine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -390,10 +467,6 @@ Väärtuse tagastamine
 Funktsioone ``ruut`` ja ``print`` kasutame käskudena -- meid huvitab see **tegevus**, mida see funktsioon teeb (kilpkonna liigutamine või ekraanile kirjutamine). Seevastu funktsioonide ``sin`` ning ``sqrt`` kasutusviis on hoopis erinev -- meid huvitab hoopis vastava funktsiooni rakendamisel saadav **väärtus**.
 
 Nii ``sin`` kui ``sqrt`` teevad argumentidega mingi arvutuse, ning **tagastavad** saadud väärtuse, mida võime nt. kasutada avaldises, salvestada muutujasse või vaadata käsureal. Taolisi funktsioone nimetame **väärtusega funktsioonideks**.
-
-.. note ::
-
-    Mõnedes keeltes nimetatakse alamprogramme, mis teevad midagi, *protseduurideks* ning väärtusega funktsioone lihtsalt *funktsioonideks*
 
 Järgnev näide defineerib funktsiooni, mis arvutab ja tagastab ristküliku pindala. Seejärel kasutatakse seda funktsiooni konkreetsete argumentidega:
 
@@ -714,6 +787,12 @@ Kui sisestad nõutud palganumbri, siis saad umbes taolise veateate:
 
 Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr. 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas kutsuti mida välja.
 
+
+Funktsioonid vs. muutujad
+------------------------------
+TODO: Räägi siin ka importimisest
+
+
 Kokkuvõte
 --------------
 
@@ -793,6 +872,15 @@ Testi oma programmi ja kontrolli, kas saad järgnevad tulemused:
 
 Võtke aluseks kolmanda peatüki Ülesanne "Pere sissetulek". Muutke lahendust selliselt, et netopalga valem oleks programmis kirja pandud vaid ühes kohas.
 
+
+Üks ülesanne segatud ülesannete pangast
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+TODO:
+
+
+Üks ülesanne projecteulerist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+TODO:
 
 Lisalugemine
 -----------------

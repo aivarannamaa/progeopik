@@ -1,6 +1,20 @@
-6. Algoritm ja plokkskeem
+6. Algoritmid
 ==========================
 
+TODO: mitteformaalne näiteülesanne, mida on raske formaliseerida
+
+TODO: programmeerimine on arvuti õpetamine, see nõuab paremat arusaamist
+
+
+| *Sa arvad, et sa tead, kui sa õpid,*
+| *oled kindlam, kui suudad kirja panna,*
+| *veel enam, kui suudad seda õpetada,*
+| *aga veendunud, kui suudad programmeerida.*
+|
+| *Alan Perlis*
+
+
+TODO: formaalsus aitab täpselt mõelda, mõtteid korrastada
 
 .. admonition:: Õpinipp:: Ära karda raskeid ülesandeid!
 

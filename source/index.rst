@@ -11,12 +11,13 @@ Sisukord
    04_definitsioonid
    05_pythoni_pohimotted
    06_algoritmid
-   07_loetavus
+   07_alternatiivid
    08_jarjendid1
    09_jarjendid2
    10_mustrid
    11_andmestruktuurid
    12_rekursioon
+   13_jarelsona
    tkinter
    python2
 

@@ -1,21 +1,38 @@
 2. Avaldised ja lihtlaused
 ================================
+.. todo::
+
+    lisa mõned samaväärsuse küsimused
+
 Esimeses peatükis nägid ja katsetasite mitmeid erinevaid Pythoni programme. Millest need programmid koosnesid? Millest koosnevad mõnes loomulikus keeles (nt. eesti keeles) kirjutatud tekstid? 
 
 .. topic:: Õpinipp: Võta aega mõtlemiseks!
 
     Programmeerimise õppimiseks läheb Sul vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. Mõtteharjutused, nagu eelnevas lõigus, on antud õpiku oluline osa, ära libise neist üle! **On täiesti normaalne, kui kulutad loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.**
 
+TODO: kas järgnev lõik on siin oluline? Peaks ehk olema vähem tseremoniaalne?
+
 Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selles peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. Esimese asjana, enne praktilise osa juurde minemist, paneme paika mõned terminid.
     
 
 Avaldised ja väärtused
 -------------------------
+.. todo::
+
+    Kas siinne üldistamine on selles faasis vajalik?
+
 .. note::
 
     Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
     
 Pythoni tutvustuse juures käisid läbi laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhitermineid. 
+
+.. todo::
+
+    * Too veel näiteid erinevatest avaldistest erinevates kontekstides
+    * Võibolla ka programmi skeem, kus on ära märgitud laused ja avaldised
+    * Või lihtsalt soenduseks üks suurem näide ja selgitus, millised on need mõõtmed, kus on võimalik programmi muuta
+    * **Või tõsta suurem osa sellest tekstist 5. ptk?** ja kirjutada selle asemel siia väga lakoonilised ja mitteformaalsed definitsioonid?
 
 Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas vägagi erinevate kujudega avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere maailm!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
 
@@ -228,6 +245,11 @@ Väärtusta järgnevad aritmeetilised avaldised Pythoni käsureal:
     Teise ülesande vastus peaks olema ``8.54572989502183``.
 
     Kui viimase avaldisega tekib probleeme, siis mõtle, milliste argumentide korral on arkuskoosinus üldse defineeritud. Veateade ``math domain error`` tähendab, et funktsiooni kasutati ebasobiva argumendiga. Muutke avaldist nii, et ``acos`` saab sobiva argumendi ja proovi uuesti.
+
+Harjutus. Maksimaalne väärtus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjuta 5 sümboli pikkune Pythoni avaldis, mis annaks väärtustamisel võimalikult suure arvu. 
+
 
 
 Kas ``2`` või ``2.0``?
@@ -624,6 +646,9 @@ TODO: kirjuta mitmesammuline arvutus üheks avaldiseks
 
 
 
+Kontrollküsimus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO: lugemiskontroll (mingi ilma tähenduseta programm, mille tulemust peab ennustama, justkui eksamil)
 
 
 
@@ -877,6 +902,9 @@ Selgituseks:
 
     Käsud ``print`` ja ``input`` ongi lihtsalt mugavam viis nende failide kasutamiseks.
 
+``import``-lause
+-------------------
+TODO
 
 Koodiridade murdmine
 ---------------------
@@ -935,6 +963,10 @@ Suur näide
 
     Siin ja edasipidi proovi kõigepealt ise lahenduseni jõuda. Mõnikord see õnnestub, mõnikord mitte, aga alati treenib see sinu probleemilahendamise oskust.
 
+TODO
+
+Kokkuvõte
+----------- 
 TODO
 
 Ülesanded
@@ -1094,6 +1126,13 @@ Kirjuta programm, mis küsib kasutajalt positiivse arvu vahemikus 10 .. 300 ja j
     * Mitu kraadi on pentagrammi igas harus oleva kolmnurga nurgad? Eelmine punkt aitab leida joonise keskmesse jäävate nurkade suurused.
     * Mitu kraadi on kolmnurga kolmas nurk, kui on teada kahe nurga suurused?
     * Mitu kraadi peab kilpkonn iga haru tipus pöörama?
+
+TODO: mitme tärniga ülesanded
+
+Üks ülesanne segatud ülesannete pangast
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+TODO:
+
 
 
 Projekt

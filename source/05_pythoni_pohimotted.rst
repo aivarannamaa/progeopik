@@ -1,6 +1,9 @@
 5. Pythoni põhimõtted
 ========================
 
+TODO Ülesanded
+* counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
+
 Kood vs. runtime
 --------------------
 

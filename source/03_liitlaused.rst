@@ -1,12 +1,6 @@
 3. Tingimus- ja korduslaused
 ============================================
 
-.. todo::
-
-    * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
-    * ASCII ja kilpkonna tulpdiagrammid
-    
-
 TODO: meeldetuletuseks üks näide eelmisest peatükist
 
 Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu -- programmi käik oli täielikult ette ennustatav. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul. 
@@ -399,15 +393,6 @@ Harjutus 5. Kolmeaastase lapse simulaator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga sisestuse peale "Aga miks?" niikaua, kuni kasutaja sisestab mingi kindla "võlusõna".
 
-.. note::
-
-    Proovi kirjutada ka kahe küsimusega terapeudi variant: 
-        
-        - "Millest sa veel sooviksid rääkida?"
-        - ...
-        - "Milliseid tundeid see sinus tekitab?"
-        - ...
-        
 Harjutus 6. Algandmete kontrollimine tsükliga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
@@ -592,6 +577,9 @@ Kirjuta programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja vä
     Ära unusta, et ``readline`` tagastab sõne. Arvutamiseks on vaja see teisendada arvuks.
 
 
+Kontrollküsimus
+~~~~~~~~~~~~~~~~~~~~
+TODO: lugemiskontroll
 
 
 
@@ -761,6 +749,11 @@ Kirjuta järgneva avaldisega samaväärne avaldis, milles poleks kasutatud ``not
 
     not (x < 0 and x > 100)
     
+Kontrollküsimus
+~~~~~~~~~~~~~~~~~~~~
+TODO: lugemiskontroll
+
+
 
 
 Pykkar
@@ -914,6 +907,11 @@ NB! Programm peaks töötama ka laiemate ja kitsamate maailmade korral.
 
     Vihjed!
 
+Kontrollküsimus
+~~~~~~~~~~~~~~~~~~~~
+TODO: mida teeb järgmine Pykkari programm?
+
+
 
 
 
@@ -1007,13 +1005,6 @@ Kas su programm töötab õigesti ka siis, kui Pykkar juba on loodenurgas?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis lahendab esimese ülesande aadressilt http://projecteuler.net/problems.
 
-.. hint::
-
-    .. sourcecode:: py3
-    
-        if esimene_tingimus or teine_tingimus:
-            ...
-
 .. note::
 
     Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teete endale seal konto, siis saad oma progressi salvestada ja tulemusi kontrollida.
@@ -1026,11 +1017,11 @@ Kirjuta programm, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva 
 
     Sarnane ülesanne on ülalpool juba antud, aga natuke teises sõnastuses.
 
+
 6. Kolmnurk
 ~~~~~~~~~~~~
 
-Kirjuta programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kujundid järgneva skeemi järgi:
-
+Kirjutage programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kolmnurga:
 
 .. sourcecode:: none
 
@@ -1044,7 +1035,35 @@ Kirjuta programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile va
 
 .. hint::
     
-    Tuleta meelde, mida tähendab ``'Tere' * 4``
+    Tuletage meelde, mida tähendab ``'Tere' * 4``
+
+
+6. Horisontaalsed tulbad
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kirjuta programm, mis kuvaks failis olevate arvude põhjal tekstilisi, horisontaalsete tulpadega tulpdiagramme. Näiteks, kui faili sisu on
+
+.. sourcecode:: none
+
+    3
+    2
+    13
+    6
+    9
+    4
+    7
+
+siis ekraanile peaks ilmuma
+
+.. sourcecode:: none
+
+    * * * 
+    * * 
+    * * * * * * * * * * * * * 
+    * * * * * *  
+    * * * * * * * * *  
+    * * * * 
+    * * * * * * * 
 
 
 7. Raskem. Risttahukas
@@ -1124,6 +1143,13 @@ Kirjuta programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisonta
 TODO
 Loe mp3 metadatat
 mingi olemasoleva parseriga / ise parsides vt. struct module
+
+
+Üks ülesanne segatud ülesannete pangast
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+TODO:
+
+
 
 Praktilisi näpunäiteid
 ------------------------
