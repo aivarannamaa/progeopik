@@ -558,7 +558,7 @@ Lisa funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta.
     
 Väärtuse tagastamine
 -----------------------
-Eelmise peatüki pere sissetuleku ülesandes tuli sul tõenäoliselt korrata netopalga arvutamise valemit kahes kohas -- ema ja isa netopalga arvutamisel. (Kui sul jäi see ülesanne tegemata, siis on väga soovitav see praegu, enne edasi lugemist ära teha). 
+Eelmise peatüki pere sissetuleku ülesandes (TODO: viide) tuli sul tõenäoliselt korrata netopalga arvutamise valemit kahes kohas -- ema ja isa netopalga arvutamisel. (Kui sul jäi see ülesanne tegemata, siis on väga soovitav see praegu, enne edasi lugemist ära teha). 
     
 Õnneks polnud tegemist eriti keerulise valemiga ning copy-paste'ga oli võimalik topelt tippimise vaeva vältida. Aga päris õige see asi siiski ei tundu -- näiteks kui netopalga arvutamise valem peaks kunagi muutuma, siis peab olema meeles programmi muuta kõigis kohtades, kus seda valemit on kasutatud. 
 
