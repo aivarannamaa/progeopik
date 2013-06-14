@@ -3,6 +3,8 @@
 
 TODO: meeldetuletuseks üks näide eelmisest peatükist
 
+TODO: Kas pykkari osa valmistab ette pinnase funktsioonideks? Kas on kindel, et lugeja teeb siin piisavalt vasakule pööramisi ja seinani kõndimisi?
+
 Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu -- programmi käik oli täielikult ette ennustatav. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul. 
 
 Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame oma arsenali kahe uue lausetüübiga, mille abil on võimalik määrata mingite teiste lausete käivitamise tingimused.
@@ -889,7 +891,7 @@ Pykkar saab aru järgnevatest käskudest:
 | ``get_direction()`` | Ütle, millisesse suunda oled hetkel pööratud (vastab ``'N'``, ``'E'``, ``'S'`` või ``'W'``)   |
 +---------------------+-----------------------------------------------------------------------------------------------+
 
-NB! Pykkar ei oska tõepoolest vasakule pöörata!
+NB! Pykkar ei oska tõepoolest vasakule pöörata! Õnneks on võimalik sama effekt siiski saavutada. Kuidas?
 
 Harjutus. Torbiku kandmine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -970,7 +972,7 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 
 5. Liigu nurka
 ~~~~~~~~~~~~~~~~~~~~ 
-Kirjuta Pykkari programm, mis suvalise ristkülikukujulise maailma puhul liigutab Pykkari loodenurka. Programm võib eeldada, et robot vaatab alguses lõunasse, aga tema algne asukoht võib olla suvaline. Katseta programmi näiteks selliste algseisudega:
+Kirjuta Pykkari programm, mis suvalise ristkülikukujulise maailma puhul liigutab Pykkari loodenurka (NW). Programm võib eeldada, et robot vaatab alguses lõunasse, aga tema algne asukoht võib olla suvaline. Katseta programmi näiteks selliste algseisudega:
 
 .. sourcecode:: none
 

@@ -40,7 +40,7 @@ Kuigi paljudel juhtudel saab tõmmata paralleelid Pythoni funktsioonide ja matem
 
 
 Funktsioonide kasutamine
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 Toome meeldetuletuseks mõned näited programmifragmentidest, kus on kasutatud funktsioone:
 
 * ``nimi = input("Sisesta oma nimi: ")``
@@ -48,19 +48,17 @@ Toome meeldetuletuseks mõned näited programmifragmentidest, kus on kasutatud f
 * ``if is_wall(): ...``
 * ``print(sqrt(sin(0.5)))``
 
-Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem **argumenti** so. miski, millega me saame funktsiooni tööd kuidagi mõjutada. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni **rakendamine** (e. *väljakutse* või *aplikatsioon*). Argumendid võivad olla mingid konkreetsed väärtused, muutujad või mingid muud avaldised (sh. funktsioonide rakendused).
+Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem **argumenti** so. miski, millega me saame funktsiooni tööd kuidagi mõjutada. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni **väljakutse** e. **rakendamine**  (öeldakse ka *aplikatsioon*). Argumendid võivad olla mingid konkreetsed väärtused, muutujad või mingid muud avaldised (sh. funktsioonide rakendused).
 
-Teatud funktsioonide (nt. ``upper``) rakendamiseks tuleb kirjutada üks argument funktsiooni nime ette (nt. ``'tere'.upper()``) -- selliseid funktsioone nimetatakse **meetoditeks**. Sedalaadi funktsioonide defineerimist me ei vaata, aga oma olemuselt ei erine need väga palju tavalistest funktsioonidest.
+Teatud funktsioonide (nt. ``upper``) välja kutsumiseks (e. rakendamiseks) tuleb justkui kirjutada üks argument funktsiooni nime ette (nt. ``'tere'.upper()``) -- selliseid funktsioone nimetatakse **meetoditeks**. Sedalaadi funktsioonide defineerimist me ei vaata, aga oma olemuselt ei erine need väga palju tavalistest funktsioonidest.
 
 Arvutamine vs. "tegemine"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni rakendus (nt. ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause?
+Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni väljakutse (nt. ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause? Tuleb välja, et sellele ei saagi lühidalt vastata.
 
-Mõned funktsioonid (nt. ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatilistele funktsioonidele, kuna nad "võtavad" ühe väärtuse, arvutavad natuke ja "annavad vastu" e. *tagastavad* mingi teise väärtuse (nt. avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide rakendused on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. 
+Mõned funktsioonid (nt. ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatilistele funktsioonidele, kuna nad "võtavad" ühe väärtuse, arvutavad natuke ja "annavad vastu" e. **tagastavad** mingi teise väärtuse (nt. avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide väljakutsed on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. Siia gruppi loeme ka need funktsioonid, mille väljakutse võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
 
-Siia gruppi loeme ka need funktsioonid, mille rakendus võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
-
-Teiste funktsioonide rakendamisel (nt. ``print('Tere')``, ``right(90)``, ``step()``) huvitab meid see, mida nad *teevad* -- me tahame, et midagi *juhtuks* (nt. et ekraanile ilmuks uus tekstijupp või robot liigutaks ennast). Selliste funktsioonide rakendusi loeme me lauseteks ja seetõttu esinevad nad programmides omaette real. Funktsioonide defineerimise õppimist alustame just seda tüüpi funktsioonidega.
+Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step()``) huvitab meid see, mida nad **teevad** -- me tahame, et midagi *juhtuks* (nt. et ekraanile ilmuks uus tekstijupp või robot liigutaks ennast). Mingit huvitavat tagastusväärtust nad meile ei paku. Selliste funktsioonide väljakutseid loeme me lauseteks ja seetõttu esinevad nad programmides omaette real. Funktsioonide defineerimise õppimist alustame just seda tüüpi funktsioonidega.
 
 
 .. note::
@@ -71,16 +69,19 @@ Teiste funktsioonide rakendamisel (nt. ``print('Tere')``, ``right(90)``, ``step(
 
 Funktsioonide defineerimine
 -----------------------------------------
-Enne, kui funktsiooni saab kasutada, tuleb ta *defineerida*. Meile tuttavad funktsioonid on defineeritud Pythoni loojate poolt, seepärast ei pidanud me siiani selle peale mõtlema. Paraku pole alati võimalik ette ennustada, milliseid funktsioone võiks programmeerijatel vaja minna, seepärast lubab Pythonis neid ka programmeerijatel ise defineerida.
+Enne, kui funktsiooni saab kasutada, tuleb ta *defineerida*. Meile tuttavad funktsioonid on defineeritud Pythoni loojate poolt, seepärast ei pidanud me siiani selle peale mõtlema. Paraku pole võimalik ette valmistada kõiki funktsioone, mida kellelgi võiks vaja minna, seepärast lubab Python neid ka programmeerijal ise defineerida.
 
-Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas üleval-vasakul ja teisest natuke allpool. 
+Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas natuke vasakul ja allpool. 
 
-Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu joonistamise kood kolmes kohas:
+Kui vastav programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu joonistamise kood kolmes kohas:
 
 .. sourcecode:: py3
+    :emphasize-lines: 4-9,16-20,27-31    
 
     # "Jõuga" programmeeritud variant
     from turtle import *
+
+    forward(50)
 
     joonistatud_külgi = 0
     while joonistatud_külgi < 4:
@@ -113,7 +114,7 @@ Kui see programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu jooni
 
     exitonclick()    
 
-Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi funktsioon. ``turtle`` moodulis sellist ei leidu, aga me võime selle ise *defineerida* ja seejärel kasutada justkui iga teist Pythoni funktsiooni:
+Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas spetsiaalne funktsioon. ``turtle`` moodulis sellist ei leidu, aga me võime selle ise *defineerida* ja seejärel seda kasutada justkui iga teist Pythoni funktsiooni:
 
 .. sourcecode:: py3
     :emphasize-lines: 4-9,11,19,26    
@@ -148,124 +149,193 @@ Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas eraldi funkt
     exitonclick()
 
 
-Ilmselt juba taipasid, et funktsioonide defineerimisega on seotud konstruktsioon, mis algab võtmesõnaga ``def``. Selle konstruktsiooni päises antakse funktsioonile nimi ja kehas näidatakse need laused, mida tuleks käivitada funktsiooni rakendamisel. Antud juhul kopeerisime funktsiooni kehasse algsest programmist ruudu joonistamise koodi. Seejuures pidime muidugi selle pisut paremale nihutama, et oleks aru saada, et see kuulub ``def`` lause alla. Pärast ``def`` lause käivitamist on Pythonil üks käsk juures, mida saab rakendada samal põhimõttel nagu sisseehitatud funktsioone. (Erinevus on selles, et uus funktsioon kehtib ainult sama programmi piires -- kui tahad seda kasutada ka järgmistes programmides, siis tuleb see uuesti defineerida.)
+Kui sa arvad, et funktsiooni defineerimisega on seotud koodijupp, mis algab võtmesõnaga ``def``, siis on sul täiesti õigus.
 
-.. admonition:: NB!
+Selle konstruktsiooni *päises* antakse funktsioonile nimi, mille järgi saab teda hiljem kasutada. Tühjad sulud nime järel näitavad, et antud funktsioon on mõeldud kasutamiseks ilma argumentideta.
 
-    ``def`` konstruktsioon jätab enda kehas olevad laused lihtsalt meelde, need käivitatakse alles siis, kui defineeritud funktsiooni rakendatakse.
-    
+Konstruktsiooni *kehas* tuuakse välja need laused, mida soovitakse käivitada funktsiooni rakendamisel. Antud juhul kopeerisime funktsiooni kehasse algsest programmist ruudu joonistamise koodi. Seejuures pidime muidugi read pisut paremale nihutama, et oleks aru saada, et need kuuluvad ``def``-konstruktsiooni alla.
+
+Päis ja keha kokku moodustavad *funktsiooni definitsiooni* e. ``def``-lause. Pärast selle lause käivitamist on Pythonil üks käsk juures, mida saab edaspidi rakendada samal põhimõttel nagu sisseehitatud funktsioone. (Erinevus on selles, et uus funktsioon kehtib ainult sama programmi piires -- kui tahad seda kasutada ka mõnes muus programmis, siis tuleb see seal uuesti defineerida.)
+
+Pane tähele, et ``def``-konstruktsioon ise ei tee muud, kui jätab enda kehas olevad laused meelde. Laused käivituvad alles funktsiooni rakendamisel.
 
 Kontrollküsimus: Mitu kala?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? NB! proovi vastata ilma programmi käivitamata! Kui oled vastanud, siis kontrolli oma vastust Pythoni abil.
+Küllap oled juba märkanud, et Python ei soovi programmeerija vabadust piirata, seetõttu on loomulik, et ühes programmis võib defineerida ükskõik kui palju uusi funktsioone ja need võivad ka üksteist kasutada. 
+
+Nüüd küsimus: Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? NB! proovi vastata ilma Pythoni abita, programmi enda peas "läbi mängides"! Lõpuks kontrolli oma vastust Pythoni abil.
 
 .. sourcecode:: py3
 
-    def a():
+    def fun1():
         print("kala")
         print("kala")
     
-    def b():
-        a()
+    def fun2():
+        fun1()
         print("kala")
-        a()
+        fun1()
 
-    b()
-    b()
+    fun2()
+    fun2()
 
-Funktsiooni defineerimine ja kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Jätame hetkeks kilpkonna kõrvale ja vaatleme ühte väga lihtsat näidet funktsioonide defineerimisest. Järgnevas näiteprogrammis defineeritakse funktsioon nimega ``tere``:
+.. hint::
 
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-
-Esimest rida, mis algab ``def``-iga, nimetame funktsiooni **päiseks**, järgnevad read, mis on tühikutega paremale nihutatud, moodustavad funktsiooni **keha**. 
-
-Proovi seda kolmerealist programmi käivitada. Kui kõik läks õigesti, ei ilmu ekraanile midagi. Nimelt on programmis antud juhul toodud vaid teatud tegevuse kirjeldus, kuid seal pole käsku seda (ega ühtegi teist) tegevust täita.
-
-Sisuliselt me defineerisime uue käsu ``tere``, mille rakendamisel peab Python käivitama laused ``print("Tere")`` ja ``print("Kuidas läheb?")``. Kõik need "käsud", mida oled siiani kasutanud (nt. ``print`` ja ``sin``) on samuti kuskil funktsioonidena defineeritud. Edaspidi kasutame sõna `käsk` asemel põhiliselt sõna `funktsioon`. 
-
-Nagu ikka, tuleb funktsiooni (käsu) kasutamiseks kirjutada selle nimi koos sulgudega e. programmeerijate kõnepruugis: funktsioon tuleb **välja kutsuda** (või *rakendada*). Proovi järgmist, täiendatud programmi:
-
-.. sourcecode:: python
-
-    def tere():
-        print("Tere")
-        print("Kuidas läheb?")
-    
-    # funktsiooni defineerimise ja väljakutse vahel võib olla
-    # ükskõik kui palju muid lauseid
-    print("blaa, blaa, blaa")
-    # ...
-    
-    tere() # funktsiooni väljakutse e. rakendamine
-
-.. note::
-
-    Antud näites on nii funktsiooni definitsioonis, kui ka väljakutses kirjutatud *tühjad* sulud, kuna see funktsioon *ei võta argumente*. Argumentidega funktsioonidest tuleb juttu alamprogrammide peatükis.
-
-    
-Tavaliselt pannakse funktsioonidesse need laused, mida on vaja käivitada rohkem, kui ühel korral. Proovi programmi, kus funktsiooni ``tere`` on kaks korda välja kutsutud. Programmi käivitamisel peaks nüüd tulema kaks järjestikust tervitust.
-
-.. note:: 
-
-    Samamoodi nagu ``if`` ja ``while`` lausete puhul, on ka funktsiooni kehas ridade ees olevad tühikud olulised -- selle järgi saab Python aru, kus lõpeb funktsiooni definitsioon ja algavad järgmised laused. Selles veendumiseks kustuta ``print("Kuidas läheb?")`` rea eest tühikud ära ning proovi siis programmi uuesti käivitada. Miks ilmusid laused ekraanile sellises järjekorras?
-
-Harjutus 11. Ruudu joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Nüüd on paras aeg tulla tagasi selle teema alguses käsitletud probleemi juurde.
-Kirjuta funktsioon ``ruut``, mis joonistaks kilpkonna abil ruudu (küljepikkusega 30).  Kasuta seda funktsiooni mitu korda, joonistades ruute erinevatesse kohtadesse.
-
-.. note::
-
-    Justnagu tsükli või tingimuslause kehas, saab ka funktsiooni kehas kasutada ükskõik kui keerulisi ``if``- või ``while`` lauseid (ja nende kombinatsioone):
+    Kui sulle jäi segaseks, miks tulemus tuli selline nagu ta tuli, siis uuri veidi muudetud, aga enam-vähem sama struktuuriga programmi käitumist:
     
     .. sourcecode:: py3
     
-        def mitu_teret():
-            n = 0
-            
-            while n < 10:
-                print("Tere!")
-                n += 1
+        def fun1():
+            print("fun1 esimene rida")
+            print("fun1 teine rida")
         
-        mitu_teret()
+        def fun2():
+            print("fun2 algus")
+            fun1()
+            print("fun2 keskmine rida")
+            fun1()
+            print("fun2 lõpp")
 
-.. note::
+        print("kogu eksperimendi algus")
+        fun2()
+        print("----------------")
+        fun2()
+        print("kogu eksperimendi lõpp")
 
-    Kui kilpkonna rahulik tempo sind ärritab, siis anna talle käsk ``speed(10)``.
 
+Harjutus. Täidetud ruudud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Täienda eespool toodud 3 ruudu joonistamise programmi nii, et kõik 3 ruutu oleksid seest värviga täidetud.
 
-
-
-.. _lokaalsed-muutujad:
- 
-Lokaalsed muutujad
----------------------
-Funktsiooni kehas võib võtta kasutusele abimuutujaid, justnagu me oleme siiani neid kasutanud funktsioonidest väljaspool. Toome siinkohal uuesti ära 3. peatükist tuttava ruudu joonistamise funktsiooni:
+Värviga täitmine käib Pythoni kilpkonna puhul nii:
 
 .. sourcecode:: py3
+
+    ...
+    begin_fill()
+    ...
+    # joonista mingi kujund
+    ...
+    end_fill()
+    ....
+
+
+.. hint::
+
+    Antud ülesannet saab lahendada mitmel moel.
+     
+    Esimeses variandis lisame täitmise käsud otse funktsiooni ``ruut`` definitsiooni:
     
-    from turtle import *
-    
-    def ruut():
-        # selle muutuja abil peame arvet, mitu külge on juba joonistatud
-        joonistatud_kylgi = 0               
+    .. sourcecode:: py3
+        :emphasize-lines: 5, 11
         
-        while joonistatud_kylgi < 4:
-            forward(100)
-            left(90)
-            joonistatud_kylgi = joonistatud_kylgi + 1   # suurendame muutuja väärtust
+        # Kavalam variant
+        from turtle import *
+        
+        def ruut():
+            begin_fill()
+            joonistatud_kylgi = 0               
+            while joonistatud_kylgi < 4:
+                forward(30)
+                left(90)
+                joonistatud_kylgi += 1
+            end_fill()
+            
+        ruut()
+        
+        up()
+        forward(100)
+        left(90)
+        forward(100)
+        down()
+        
+        ruut()
+        
+        up()
+        left(90)
+        forward(200)
+        down()
+        
+        ruut()
+        
+        exitonclick()
+
+    Kui me leiame, et definitsioon ``ruut`` peaks siiski jääma täitmise küsimustest sõltumatuks, siis on mõttekam mainida täitmist iga ruudu joonistamise juures eraldi:
+
+    .. sourcecode:: py3
+        :emphasize-lines: 11,13,21,23,30,32
+        
+        # Kavalam variant
+        from turtle import *
+        
+        def ruut():
+            joonistatud_kylgi = 0               
+            while joonistatud_kylgi < 4:
+                forward(30)
+                left(90)
+                joonistatud_kylgi += 1
+            
+        begin_fill()
+        ruut()
+        end_fill()
+        
+        up()
+        forward(100)
+        left(90)
+        forward(100)
+        down()
+        
+        begin_fill()
+        ruut()
+        end_fill()
+        
+        up()
+        left(90)
+        forward(200)
+        down()
+        
+        begin_fill()
+        ruut()
+        end_fill()
+        
+        exitonclick()
+
+    See lähenemine annab meile suurema paindlikkuse (vajadusel saame joonistada ka täitmata ruute), aga samas teeb meie programmi pisut pikemaks (esimeses variandis lisasime vaid 2 uut rida).
+
+.. hint::
+
+    Kui soovid täitmise värvi ise valida, siis uuri kilpkonna dokumentatsiooni: http://docs.python.org/3/library/turtle.html
+
+
+
+Harjutus. Pööre vasakule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Eelmises peatükis Pykkari käske tutvustades tuli välja, et Pykkaril pole sisseehitatud käsku vasakule pööramiseks. Õnneks oli võimalik saavutada sama effekt pöörates 3 korda paremale.
+
+Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi selliselt, et vasakule pööramised näeksid koodis natuke loomulikumad välja. 
+
+.. hint::
+
+    .. sourcecode:: py3
     
-    ruut()
-    exitonclick()
+        from pykkar import *
+        
+        ...
+        
+        def left():
+            ...
+            ...
+            ...
+        
+        
+        ...
+        left()
+        ...
 
 
-Kuidas oleks, kui me üritaksime peale funktsiooni ``ruut`` väljakutsumist kontrollida, milline oli ikkagi muutuja ``joonistatud_kylgi`` viimane väärtus? Proovi järgmist, veidi muudetud programmi:
+Lokaalsed muutujad
+---------------------
+Nagu nägime funktsiooni ``ruut`` definitsioonist, võib definitsiooni kehas kasutada ka abimuutujaid (meie näites ``joonistatud_külgi``). Teeme nüüd väikese eksperimendi -- joonistame funktsiooni kasutades ühe ruudu ning üritame seejärel väljastada muutuja ``joonistatud_külgi`` viimase väärtuse:
 
 .. sourcecode:: py3
     :emphasize-lines: 13
@@ -273,20 +343,22 @@ Kuidas oleks, kui me üritaksime peale funktsiooni ``ruut`` väljakutsumist kont
     from turtle import *
     
     def ruut():
-        # selle muutuja abil peame arvet, mitu külge on juba joonistatud
-        joonistatud_kylgi = 0               
+        joonistatud_külgi = 0               
         
-        while joonistatud_kylgi < 4:
+        while joonistatud_külgi < 4:
             forward(100)
             left(90)
-            joonistatud_kylgi = joonistatud_kylgi + 1   # suurendame muutuja väärtust
+            joonistatud_külgi += 1
     
     ruut()
-    print(joonistatud_kylgi)
+    
+    print(joonistatud_külgi)
+    
     exitonclick()
 
+Programmi käivitades saime oodatud ``4`` asemel hoopis veateate ``NameError: name 'joonistatud_külgi' is not defined``.
 
-Ilmselt said programmi käivitamisel Pythonilt veateate (``"NameError: name 'joonistatud_kylgi' is not defined"``). Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on *lokaalsed*, st nad "elavad" täielikult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni käivitamisel ja nad kaovad, kui funktsioon oma tööga lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
+Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on **lokaalsed**, st nad "elavad" täielikult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni käivitamisel ja nad kaovad, kui funktsiooni väljakutse oma tööga lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
 
 Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees defineeritud muutuja ``x`` ei mõjuta kuidagi programmi põhiosas defineeritud samanimelist muutujat, tegemist on kahe eraldi muutujaga, millele on juhtumisi sama nimi (justnagu kahel erineval inimesel võib olla sama nimi):
 
@@ -305,14 +377,14 @@ Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees de
 
 .. note::
 
-    Programmi põhiosa muutujate (neid nimetakse ka *globaalseteks muutujateks*) ning funktsiooni kehas defineeritud muutujate (e. lokaalsete muutujate) eraldatus ei ole päris samaväärne -- kuigi programmi põhiosal pole ligipääsu funktsiooni muutujatele, saab funktsioonis vajadusel siiski kasutada programmi põhiosa muutujaid. Sellest võimalusest tuleb täpsemalt juttu ühes hilisemas peatükis.
+    Programmi põhiosa muutujate (neid nimetakse ka *globaalseteks muutujateks*) ning funktsiooni kehas defineeritud muutujate (e. lokaalsete muutujate) eraldatus ei ole päris samaväärne -- kuigi programmi põhiosal pole ligipääsu funktsiooni muutujatele, saab funktsioonis vajadusel siiski kasutada programmi põhiosa muutujaid. Sellest tuleb täpsemalt juttu ühes hilisemas peatükis.
 
 
 
     
 Parameetrid
 -----------
-Täpselt sama tegevuse kordamist on tegelikult vaja siiski üpris harva. Tavaliselt on tarvis igal korral teha midagi sarnast, kuid mingi väikese nüansiga. Sellise nüansi väljatoomiseks kasutatakse programmeerimisel **parameetreid**. Järgnevas näiteprogrammis on defineeritud funktsioon kasutaja tervitamiseks. Selleks muutuvaks nüansiks on siinkohal kasutaja nimi:
+Nagu näha, on funktsioonid suureks abiks, kui sama käskude komplekti tahetakse programmis käivitada mitmes kohas. Samas, täpselt sama tegevuse kordamist on vaja siiski üpris harva. Tihemini on vaja teha midagi sarnast, kuid teatud väikese nüansiga, mis võib erinevatel kordadel varieeruda. Sellise nüansi väljatoomiseks on võimalik funktsioonile lisada **parameetreid**. Järgnevas näiteprogrammis on defineeritud funktsioon kasutaja tervitamiseks. Varieeruvaks nüansiks e. parameetriks on antud juhul tervitatava nimi:
 
 .. sourcecode:: python
 
@@ -323,19 +395,20 @@ Täpselt sama tegevuse kordamist on tegelikult vaja siiski üpris harva. Tavalis
     tere("Kalle")
     tere("Malle")
     
-Funktsiooni ``tere`` definitsiooni päises on lisaks funktsiooni nimele näidatud ära ka üks *parameeter* nimega "nimi". Parameetri näol on sisuliselt tegu spetsiaalse *lokaalse muutujaga*, millele Python annab konkreetse väärtuse funktsiooni väljakutsel. Konkreetsed väärtused (nt. ``"Kalle"``) kirjutatakse väljakutsel funktsiooni nime järel olevatesse sulgudesse. Antud juhul on parameetri ``nimi`` väärtuseks esimesel väljakutsel "Kalle" ning teisel väljakutsel "Malle". Funktsioon töötab aga mõlemal juhul samamoodi – ta võtab parameetri väärtuse ning lisab selle tervitusele. Kuna aga väärtused on kahel juhul erinevad, on ka tulemus erinev.
+Funktsiooni ``tere`` definitsiooni päises on lisaks funktsiooni nimele näidatud ära ka üks *parameeter* nimega "nimi". Parameetri näol on sisuliselt tegu spetsiaalse *lokaalse muutujaga*, mille väärtus sõltub sellest, kuidas funktsioon parasjagu välja kutsuti. Antud näites, kui funktsioon kutsutakse välja avaldisega ``tere("Kalle")``, siis saab muutuja ``nimi`` väärtuseks ``"Kalle"``, ``tere("Malle")`` puhul on väärtuseks ``"Malle"``. Funktsiooni sisemine masinavärk töötab mõlemal juhul samamoodi – ta võtab parameetri väärtuse (misiganes see juhtub olema) ning lisab selle tervitusele. Kuna aga väärtused on kahel juhul erinevad, on ka tulemus erinev.
 
+Parameetritega saab teha funktsiooni universaalsemaks -- teatud detailid jäetakse funktsiooni väljakutsuja otsustada. Ilma parameetriteta funktsioon on justkui rätsep, kes teeb alati samasuguseid ülikondi, parameetreid võiks aga võrrelda tellija mõõtudega ja muude soovidega, mida rätsep oma tegevuses arvesse võtab.
 
 .. index::
     single: funktsioon; argumendid
     single: argumendid; funktsiooni argumendid
 
-.. admonition:: Terminoloogia: Parameetrid ja argumendid
+Kas sõnad *parameeter* ja *argument* on sünonüümid?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Mitte päris. Parameetrid ja argumendid on ühe mündi kaks erinevat poolt. *Argument* on funktsiooni väljakutses antud avaldis, millest saab vastava *parameetri* väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Parameetrid on üldised, argumendid on konkreetsed. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
 
-    Koos parameetritega räägitakse enamasti ka **argumentidest**. Argumendiks nimetakse funktsiooni väljakutses sulgudes antud avaldise väärtust, millest saab vastava parameetri väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
-
-    
-    `Parameetri` vs. `argumendi` asemel võid mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
+.. note::    
+    `Parameetri` vs. `argumendi` asemel võib mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
 
 Harjutus 2. Parameetriseeritud ``ruut``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -372,37 +445,38 @@ Täiusta 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu kül
 
 
 .. _param-vs-input:
-.. topic:: Parameetrid vs. ``input``
 
-    Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``input`` käsku -- mõlemal juhul on konkreetsed sisendandmed teadmata. Erinevus on selles, et kui ``input`` puhul on teada, et sisendandmed küsitakse kasutajalt, siis parameetrite kasutamisel jäetakse (funktsiooni seisukohast vaadatuna) sisendi saamise viis lahtiseks. Eelnevas näites andsime funktsiooni väljakutsel parameetri väärtuseks sõneliteraalid, kuid seal oleks võinud kasutada ka muutujat:
+Parameetrid vs. ``input``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``input`` käsku -- mõlemal juhul on konkreetsed sisendandmed teadmata. Erinevus on selles, et kui ``input`` puhul on teada, et sisendandmed küsitakse kasutajalt, siis parameetrite kasutamisel jäetakse (funktsiooni seisukohast vaadatuna) sisendi saamise viis lahtiseks. Eelnevas näites andsime funktsiooni väljakutsel parameetri väärtuseks sõneliteraali, kuid seal oleks võinud kasutada ka muutujat:
 
+.. sourcecode:: py3
+
+    def tere(nimi):
+        print("Tere " + nimi)
+        print("Kuidas läheb?")
+        
+    sisestatud_nimi = input("Kuidas on sinu nimi? ")
+    tere(sisestatud_nimi)
+
+See näide demonstreerib parameetritega funktsioonide universaalsust -- vastavalt vajadusele võime taolist funktsiooni kasutada literaaliga või mõne muutujaga (mille väärtus võib olla saadud ``input``-ist) või ka mingil keerulisemal kujul oleva avaldisega.
+
+.. note::
+
+    Pange tähele, et eelviimasel real defineeritud muutuja nimeks oleksime võinud panna ka lihtsalt ``nimi``:
+    
     .. sourcecode:: py3
 
         def tere(nimi):
             print("Tere " + nimi)
             print("Kuidas läheb?")
             
-        sisestatud_nimi = input("Kuidas on sinu nimi? ")
-        tere(sisestatud_nimi)
-
-    See näide demonstreerib parameetritega funktsioonide universaalsust -- vastavalt vajadusele võime taolist funktsiooni kasutada literaaliga või mõne muutujaga (mille väärtus võib olla saadud ``input``-ist) või ka mingil keerulisemal kujul oleva avaldisega.
-
-    .. note::
-
-        Pange tähele, et eelviimasel real defineeritud muutuja nimeks oleksime võinud panna ka lihtsalt ``nimi``:
+        nimi = input("Kuidas on sinu nimi? ")
+        tere(nimi)
         
-        .. sourcecode:: py3
-
-            def tere(nimi):
-                print("Tere " + nimi)
-                print("Kuidas läheb?")
-                
-            nimi = input("Kuidas on sinu nimi? ")
-            tere(nimi)
-            
-        See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Kõlab sarnaselt sektsioonile "Lokaalsed muutujad"? Tegemist ongi sama teemaga -- nagu juba korra mainitud, käsitletakse ka parameetreid justkui (lokaalseid) muutujaid.
-        
-        Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab sind ennast segadusse, siis võid kasutada alati erinevaid muutujanimesid.
+    See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Kõlab sarnaselt sektsioonile "Lokaalsed muutujad"? Tegemist ongi sama teemaga -- nagu juba korra mainitud, käsitletakse ka parameetreid justkui (lokaalseid) muutujaid.
+    
+    Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiate, et see ajab sind ennast segadusse, siis võid kasutada alati erinevaid muutujanimesid.
 
 
 
