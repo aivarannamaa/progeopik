@@ -570,7 +570,7 @@ Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust:
 .. note::
 
     | ``format`` meetodi teiste võimalustega saab tutvuda aadressil:    
-    | http://docs.python.org/py3k/library/string.html#format-examples
+    | http://docs.python.org/3/library/string.html#format-examples
 
 
 
@@ -622,7 +622,7 @@ Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle
 
 .. image:: images/varvid.png
 
-Võite proovida ka paigutada värvid hõredamalt ja kirjutada iga värvi juurde tema nime (vt. http://docs.python.org/py3k/library/turtle.html#turtle.write).
+Võite proovida ka paigutada värvid hõredamalt ja kirjutada iga värvi juurde tema nime (vt. http://docs.python.org/3/library/turtle.html#turtle.write).
 
 Otsi võimalusi rakendada selle peatüki uusi teemasid (``for``, ``split``).
 
@@ -631,7 +631,7 @@ NB! ülesande saab lahendada ilma mingi rutiinse "käsitööta"!
 
 .. hint::
 
-    http://docs.python.org/py3k/library/turtle.html#turtle.pencolor
+    http://docs.python.org/3/library/turtle.html#turtle.pencolor
 
 .. hint::
 

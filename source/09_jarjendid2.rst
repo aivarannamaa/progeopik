@@ -518,7 +518,7 @@ Järjendeid saab programmi "sisse kirjutada", koostada teiste järjendite põhja
 
 Kust saab rohkem infot?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kes soovib läbitud teemade kohta rohkem detaile või lihtsalt teist vaatenurka, siis soovitame lugeda läbi Pythoni ametliku `tutoriali`: http://docs.python.org/py3k/tutorial/.
+Kes soovib läbitud teemade kohta rohkem detaile või lihtsalt teist vaatenurka, siis soovitame lugeda läbi Pythoni ametliku `tutoriali`: http://docs.python.org/3/tutorial/.
 
 Mis ootab ees?
 ~~~~~~~~~~~~~~

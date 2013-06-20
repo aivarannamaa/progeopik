@@ -283,8 +283,8 @@ Kirjuta programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamka
 
 Abiks on järgnevad Pythoni funktsioonid:
 
-* http://docs.python.org/py3k/library/os.path.html#os.path.isdir
-* http://docs.python.org/py3k/library/os.html#os.listdir
+* http://docs.python.org/3/library/os.path.html#os.path.isdir
+* http://docs.python.org/3/library/os.html#os.listdir
 
 Järgnev programmilõik demonstreerib nende kasutamist:
 

@@ -22,7 +22,7 @@ Süntaks
 ----------------------
 
 Operaatorid
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema prioriteediga tehted on ülalpool, samal real olevad operaatorid on sama prioriteediga):
 
     * ``**``
@@ -131,5 +131,6 @@ Selle peatüki programmide puhul saame programmi iga rida nimetada **lauseks**. 
 Kuna nende lauseliikide korral kulub iga lause jaoks täpselt üks rida, nimetatakse neid *lihtlauseteks*. Keerulisematest lausetest tuleb juttu järgmises peatükis. 
 
 
-
+TODO:
+Nüüdseks oleme üle vaadanud peaaegu kõik olulisemad programmeerimise konstruktsioonid -- järjendite käsitlus jäi paraku liiga põgusaks, aga selle võtame peagi ette eraldi teemana.
 

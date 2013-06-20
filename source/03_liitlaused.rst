@@ -1,5 +1,5 @@
 3. Tingimus- ja korduslaused
-============================================
+============================
 
 TODO: meeldetuletuseks üks näide eelmisest peatükist
 
@@ -9,7 +9,7 @@ Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esi
 
 Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame oma arsenali kahe uue lausetüübiga, mille abil on võimalik määrata mingite teiste lausete käivitamise tingimused.
 
-
+ 
 
 .. admonition:: Õpinipp: Ole aktiivne!
 
@@ -24,7 +24,7 @@ Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame
 
 
 Tingimuslause e. ``if``-lause
--------------------------------
+------------------------------
 Praktiliselt kõikides mittetriviaalsetes programmides tuleb mingil hetkel teha valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad panna kirja **tingimuslause** e. **valikulause** e. **if-lause** abil.
 
 Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
@@ -944,8 +944,11 @@ Kõikide nimetatud programmikonstruktsioonide kohta andsime selles peatükis vai
 ~~~~~~~~~~~~~~~~~~~~~
 Koosta tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjuta programm, mis loeb antud failist ükshaaval arve ning kuvab iga arvu kohta ekraanile info, kas tegemist oli paaris või paaritu arvuga.
 
+.. _pere_sissetulek_vol1:
+
 2. Pere sissetulek
 ~~~~~~~~~~~~~~~~~~
+
 Kirjuta programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 20€ kuus.) 
 
 Esialgu võid eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum. (Siiamaani saaksid selle ülesande lahendada ka ilma selle peatüki vahenditeta).
@@ -1136,7 +1139,7 @@ Kirjuta programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisonta
 
 .. topic:: Lisaülesande lisa
     
-    Uuri kilpkonna dokumentatsioonist, kuidas värvida soovitud ala (http://docs.python.org/py3k/library/turtle.html). Seejärel proovi joonistada malelaud.
+    Uuri kilpkonna dokumentatsioonist, kuidas värvida soovitud ala (http://docs.python.org/3/library/turtle.html). Seejärel proovi joonistada malelaud.
 
     
 

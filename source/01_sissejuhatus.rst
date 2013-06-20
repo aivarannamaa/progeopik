@@ -314,7 +314,7 @@ Ka matemaatiliste funktsioonide importimine toimib samal põhimõttel nagu skrip
 
 Harjutus 6. Ruutjuur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#. Uuri Pythoni matemaatikamooduli dokumentatsiooni aadressilt http://docs.python.org/py3k/library/math.html
+#. Uuri Pythoni matemaatikamooduli dokumentatsiooni aadressilt http://docs.python.org/3/library/math.html
 #. Proovi saada aru, kuidas arvutatakse Pythonis ruutjuurt
 #. Arvuta Pythoni käsureal, kui pikk on ristkülikukujulise maatüki diagonaal, mille mõõtmed on 50m x 75m.
 
@@ -568,7 +568,7 @@ Kui käivitad Pythoni interpretaatori ilma programmi argumendita, siis avaneb Py
 
 .. note::
 
-    Kui soovid ka Windowsis käivitada Pythoni interpretaatorit ilma tema asukohta mainimata (olgu interaktiivselt või skripti jooksutamiseks), siis loe edasisi juhiseid siit: http://docs.python.org/py3k/using/windows.html#configuring-python.
+    Kui soovid ka Windowsis käivitada Pythoni interpretaatorit ilma tema asukohta mainimata (olgu interaktiivselt või skripti jooksutamiseks), siis loe edasisi juhiseid siit: http://docs.python.org/3/using/windows.html#configuring-python.
     
     Windowsis saab Pythoni skripte käivitada ka nagu tavalisi programme, nt. topeltklõpsuga `Windows Exploreris`.
 
