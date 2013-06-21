@@ -54,6 +54,8 @@ Toome meeldetuletuseks mõned koodijupid, kus on kasutatud funktsioone nimedega 
 
 Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem **argumenti** so. miski, millega me saame funktsiooni tööd kuidagi mõjutada. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni **väljakutse** e. **rakendamine**  (öeldakse ka *aplikatsioon*). Argumendid võivad olla mingid konkreetsed väärtused, muutujad või mingid muud avaldised (sh. funktsioonide rakendused).
 
+TODO: skeem: funktsioon, argument ja väljakutse
+
 Teatud funktsioonide (nt. ``upper``) välja kutsumiseks (e. rakendamiseks) tuleb justkui kirjutada üks argument funktsiooni nime ette (nt. ``'tere'.upper()``) -- selliseid funktsioone nimetatakse **meetoditeks**. Sedalaadi funktsioonide defineerimist me ei vaata, aga oma olemuselt ei erine need väga palju tavalistest funktsioonidest.
 
 Arvutamine vs. "tegemine"
@@ -79,9 +81,13 @@ Funktsioonide defineerimine
 -----------------------------------------
 Enne, kui funktsiooni saab kasutada, tuleb ta *defineerida*. Meile tuttavad funktsioonid on defineeritud Pythoni loojate poolt, seepärast ei pidanud me siiani selle peale mõtlema. Paraku pole võimalik ette valmistada kõiki funktsioone, mida kellelgi võiks vaja minna, seepärast lubab Python neid ka programmeerijal ise defineerida.
 
-Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: esimene ruut ekraani keskel, teine üleval-paremal, kolmas natuke vasakul ja allpool. 
+Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: 
 
-Kui vastav programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu joonistamise kood kolmes kohas:
+.. image:: images/3_ruutu.png
+
+Võiks ju proovida joonistada ruudud kolme kordusega tsüklis, aga ilmselt jääksime hätta, sest tsükkel teeb igal kordusel sama asja, kuid meil on vaja iga ruudu joonistamise eel liikuda erinevasse kohta.
+
+Kui vastav programm kirjutada "jõumeetodil", siis sisalduks ruudu joonistamise kood kolmes kohas:
 
 .. sourcecode:: py3
     :emphasize-lines: 5-9,19-23,32-36 
@@ -125,7 +131,7 @@ Kui vastav programm kirjutada "jõumeetodil", siis sisalduks programmis ruudu jo
 
     exitonclick()    
 
-Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas spetsiaalne funktsioon. ``turtle`` moodulis sellist ei leidu, aga me võime selle ise *defineerida* ja seejärel seda kasutada justkui iga teist Pythoni funktsiooni (muudetud kohad on näidatud kollasega):
+Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas spetsiaalne funktsioon. ``turtle`` moodulis sellist ei leidu, aga me võime selle ise *defineerida* ja seejärel kasutada seda justkui iga teist Pythoni funktsiooni:
 
 .. sourcecode:: py3
     :emphasize-lines: 4-9,12,22,31    
@@ -167,7 +173,7 @@ Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas spetsiaalne 
 
 Kui sa nüüd arvad, et funktsiooni defineerimisega on seotud see koodijupp, mis algab võtmesõnaga ``def``, siis on sul täiesti õigus.
 
-Selle konstruktsiooni *päises* antakse funktsioonile nimi, mille järgi saab teda hiljem kasutada. Tühjad sulud nime järel näitavad, et antud funktsioon on mõeldud kasutamiseks ilma argumentideta.
+``def``-konstruktsiooni *päises* antakse funktsioonile nimi, mille järgi saab teda hiljem kasutada. Tühjad sulud nime järel näitavad, et antud funktsioon on mõeldud kasutamiseks ilma argumentideta.
 
 Konstruktsiooni *kehas* tuuakse välja need laused, mida soovitakse käivitada funktsiooni rakendamisel. Antud juhul kopeerisime funktsiooni kehasse algsest programmist ruudu joonistamise koodi. Seejuures pidime muidugi read pisut paremale nihutama, et oleks aru saada, et need kuuluvad ``def``-konstruktsiooni alla.
 
@@ -378,7 +384,7 @@ Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi 
 
 Lokaalsed muutujad
 ---------------------
-Nagu nägime funktsiooni ``ruut`` definitsioonist, võib ka definitsiooni kehas kasutada abimuutujaid (meie näites ``joonistatud_külgi``). Teeme nüüd väikese eksperimendi -- joonistame funktsiooni kasutades ühe ruudu ning üritame seejärel väljastada muutuja ``joonistatud_külgi`` viimase väärtuse:
+Nagu nägime juba funktsiooni ``ruut`` definitsioonist, võib definitsiooni kehas kasutada abimuutujaid (meie näites ``joonistatud_külgi``). Teeme nüüd väikese eksperimendi -- joonistame funktsiooni kasutades ühe ruudu ning üritame seejärel väljastada muutuja ``joonistatud_külgi`` viimase väärtuse:
 
 .. sourcecode:: py3
     :emphasize-lines: 13
@@ -638,25 +644,21 @@ Kirjuta funktsioon ``kahest_suurim``, mis tagastab kahest argumendiks antud arvu
 
 Programmi põhiosas küsi kasutajalt *kolm* arvu, ning kuva ekraanile neist suurim. Proovi seejuures delegeerida võimalikult palju tööd funktsioonile.
 
-Harjutus: Programmi teisendamine
+Funktsioonide testimine käsureal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta järgmine programm ümber nii, et arvude summeerimine toimuks funktsioonis ``summa``, aga kasutaja seisukohast töötaks kõik samamoodi.
+Väärtusega funktsioone on mugav testida IDLE'i käsureal. Selleks piisab, kui skriptis on kirjas ainult funktsiooni definitsioon -- taolise skripti jooksutamisel küll esialgu midagi ekraanile ei ilmu, aga käsureal on võimalik funktsiooni kasutada. Näiteks, kui skripti sisu on selline:
 
 .. sourcecode:: py3
 
-    def esimeste_naturaalarvude_summa(n):
-    
-    summa = 0
-    i = 0
-    
-    while i <= n:
-        summa += i
-        i += 1
-    n = int(input("Sisesta naturaalarv: "))
-    
-    print(n, "esimese naturaalarvu summa on", summa)
+    TODO:
 
-TODO: näitelahendus 
+siis peale selle IDLE'is käivitamist on võimalik käsureal teha nii:
+
+.. sourcecode:: py3
+
+    TODO:
+
+  
 
 
 .. _return-vs-print:

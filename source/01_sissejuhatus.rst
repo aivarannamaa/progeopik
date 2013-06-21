@@ -434,7 +434,7 @@ Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid si
     Viimase lause juurde võiks siiski lisada väikese möönduse: katsetamine on OK, kui su eesmärk on katsetamise teel asja põhimõttest aru saada. Peaasi, et sa ei loeks oma tööd lõpetatuks enne, kui sa tunned, et saad programmist väga hästi aru.
 
 Mõtlemise stiilid
-~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~
 Osad inimesed (sh. suur osa programmeerijatest) eelistavad õppida ja mõelda abstraktselt -- nad ei tunne ennast kindlalt enne, kui nad on suutnud käsitletava teema formuleerida enda peas võimalikult üldiselt. Sellise mõtlemisstiili märksõnadeks on loogika, ratsionaalsus, abstraktsus, formaalsus ja üldistamine. Nende märksõnadega seotud mõtteprotsessid pidavat toimuma peamiselt vasakus ajupooles.
 
 Teistele (nt. suurele osale kunstnikest) lähevad rohkem korda konkreetsed situatsioonid või kombinatsioonid. Uue teema õppimisel ei tunne nad ennast kindlalt enne, kui nad on suutnud selle seostada millegi konkreetse või elulisega. Öeldakse, et nemad suudavad paremini kasutada oma paremat ajupoolt, mis pidavat muuhulgas vastutama intuitsiooni ja loova mõtlemise eest.
@@ -475,7 +475,7 @@ Iga peatüki lõpus on soovitav teha iseenda jaoks mõttes (või kirjalikult) ol
     Peatükkide lõpus olevad ülesanded on mahukamad, kui teksti sees antud ülesanded ja õpetavad seega paremini probleemi lahendamise oskust. Praktikumide korralduses on eeldatud, et need ülesanded on lahendatud (või proovitud lahendada) enne praktikumi tulemist. Esimeses peatükis on soenduseks vaid üks ülesanne, edaspidi tuleb neid rohkem.
     
 1. Maja
-~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis joonistab kilpkonnaga lihtsa otsevaates maja (võib olla ka "pseudo-3d" vaatega). 
 
 .. hint::
