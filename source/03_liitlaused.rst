@@ -162,34 +162,6 @@ Proovi kirjutada sellest programmist kaks varianti erinevate kitsendustega:
 .. index:: 
     single: tsükkel
 
-Üheharuline ``if``-lause
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui tingimuse mittekehtimise puhul ei ole vaja midagi spetsiifilist teha:
-
-.. sourcecode:: py3
-
-    x = int(input("Sisesta esimene arv: "))
-    y = int(input("Sisesta teine arv: "))
-    
-    print("Arvude erinevus on " + str(abs(x-y)))
-    if x == y:
-        print("... järelikult on nad võrdsed")
-
-Harjutus. Miks on ronk nagu kirjutuslaud?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga et seal kasutataks vaid üheharulist ``if`` lauset:
-
-.. sourcecode:: py3
-
-    vastus = input("Miks on ronk nagu kirjutuslaud? ")
-    
-    if vastus.lower() == 'ei tea':
-        print("Hmm ...")
-        print("Ma ka ei tea!")
-    else:
-        print("Hmm ...")
-
-
 Näide. Tingimuslaused üksteise sees
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tingimuslauseid võib panna üksteise sisse:
@@ -214,9 +186,148 @@ Põhimõte on sama nagu lihtlausete "allutamisel" -- alluvuse tähistamiseks lis
     Nüüd peaks olema ka näha, miks treppimist nimetatakse treppimiseks -- kui joondamine toimub mitmel tasemel, siis paistab nagu programmi tekst paikneks trepiastmetel.
 
 Harjutus. Tiitlid
-~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib kasutajalt tema nime, perekonnaseisu (vallaline või abielus), sugu ja vanust. Väljasta nende andmete põhjal sobiv tervitus (nt. abielus naiste puhul kasuta tiitlit *proua*, teatud vanusest vanemate meeste puhul *härra* jne.)
 
+
+Lisavõimalus. Üheharuline ``if``-lause
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui tingimuse mittekehtimise puhul ei ole vaja midagi teha:
+
+.. sourcecode:: py3
+
+    x = int(input("Sisesta esimene arv: "))
+    y = int(input("Sisesta teine arv: "))
+    
+    print("Arvude erinevus on " + str(abs(x-y)))
+    if x == y:
+        print("... järelikult on nad võrdsed")
+
+Harjutus. Miks on ronk nagu kirjutuslaud?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga et seal kasutataks vaid üheharulist ``if`` lauset:
+
+.. sourcecode:: py3
+
+    vastus = input("Miks on ronk nagu kirjutuslaud? ")
+    
+    if vastus.lower() == 'ei tea':
+        print("Hmm ...")
+        print("Ma ka ei tea!")
+    else:
+        print("Hmm ...")
+
+
+Lisavõimalus: Mitmeharuline ``if``-lause
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Üritame panna kirja programmi, mis küsib kasutajalt kuu numbri ja väljastab sellele vastava kuu nime:
+
+.. sourcecode:: py3
+
+    kuu = int(input("Sisesta kuu number: "))
+    
+    if kuu == 1:
+        print("jaanuar")
+    else:
+        if kuu == 2:
+            print("veebruar")
+        else:
+            if kuu == 3:
+                print("märts")
+            else:
+                if kuu == 4:
+                    print("aprill")
+                else:
+                    if kuu == 5:
+                        print("mai")
+                    else:
+                        if kuu == 6:
+                            print("juuni")
+                        else:
+                            if kuu == 7:
+                                print("juuli")
+                            else:
+                                if kuu == 8:
+                                    print("august")
+                                else:
+                                    if kuu == 9:
+                                        print("september")
+                                    else:
+                                        if kuu == 10:
+                                            print("oktoober")
+                                        else:
+                                            if kuu == 11:
+                                                print("november")
+                                            else:
+                                                if kuu == 12:
+                                                    print("detsember")
+                                                else:
+                                                    print("vale kuu number!")
+
+
+Selles koodis kõik õige ja loogiline, aga nii kaugele trepitud koodiga on ebamugav toimetada. Õnneks on Pythonis taoliste juhtumite jaoks olemas altenatiivne esitusviis:
+
+.. sourcecode:: py3
+
+    kuu = int(input("Sisesta kuu number: "))
+    
+    if kuu == 1:
+        print("jaanuar")
+    elif kuu == 2:
+        print("veebruar")
+    elif kuu == 3:
+        print("märts")
+    elif kuu == 4:
+        print("aprill")
+    elif kuu == 5:
+        print("mai")
+    elif kuu == 6:
+        print("juuni")
+    elif kuu == 7:
+        print("juuli")
+    elif kuu == 8:
+        print("august")
+    elif kuu == 9:
+        print("september")
+    elif kuu == 10:
+        print("oktoober")
+    elif kuu == 11:
+        print("november")
+    elif kuu == 12:
+        print("detsember")
+    else:
+        print("vale kuu number!")
+
+Appi tuli võtmesõna ``elif``, mis on nii kirjapildi, kui tähenduse poolest kombinatsioon ``else``-st ja talle järgnevast ``if``-ist.
+
+Kogu ``if-elif-...-else`` konstruktsioon moodustab Pythoni jaoks ühe terviku -- niipea, kui ülevalt alla liikudes leitakse tingimus, mis kehtib, täidetakse vastav haru ja sellega on ka kogu konstruktsioon täidetud. Teisisõnu, ``if-elif-...-else``-s täidetakse alati täpselt üks haru, just nagu ``if-else`` puhul. (Kui ``else`` haru kirjutamata jätta, siis võib muidugi juhtuda, et ei täideta ühtegi haru.) 
+
+.. note::
+
+    Kuigi antud näites on igas ``elif`` plokis ainult üks lause, võib seal olla ükskõik kui keeruline kood, just nagu ``if`` või ``else`` plokis. 
+ 
+
+Harjutus. Hinde arvutamine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ülikoolis on tavaks panna hindeid järgmise skeemi järgi:
+
++---------------+--------+
+| Tulemus (%)   | Hinne  |
++===============+========+
+| >90 .. 100    | A      |
++---------------+--------+
+| >80 .. 90     | B      |
++---------------+--------+
+| >70 .. 80     | C      |
++---------------+--------+
+| >60 .. 70     | D      |
++---------------+--------+
+| >50 .. 60     | E      |
++---------------+--------+
+| <=50          | F      |
++---------------+--------+
+
+Kirjuta programm, mis küsib kasutajalt mitu punkti võis aines saada ning mitu punkti tudeng sai, ning väljastab vastava hinde.
 
 Tingimusega korduslause e. ``while``-lause
 -----------------------------------------------
@@ -402,15 +513,16 @@ Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisend
 Kirjuta ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata.
 
 
-Käsk ``break``
-~~~~~~~~~~~~~~
+Lisavõimalus: Käsk ``break``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tsükli lõpetamise määrab tavaliselt tsükli päises olev tingimus. Sellele lisaks on Pythonis veel üks võimalus tsükli töö lõpetamiseks -- selleks tuleb tsükli kehas anda sobival hetkel käsk ``break``.
 
 Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõpetamise tingimust (arvu ära arvamine) kontrollitakse tsükli päises ning teist tingimust (10 ebaõnnestunud arvamist) kontrollitakse tsükli kehas:
 
 .. sourcecode:: py3
+    :emphasize-lines: 14 
 
-    from random import randint 
+    from random import randint
     
     arv = randint(1,999) # randint annab juhusliku täisarvu näidatud vahemikust
     arvamus = int(input("Arva, millist tuhandest väiksemat arvu ma mõtlen: "))
@@ -423,12 +535,12 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
             print("Minu arv on väiksem!")
             
         if arvamise_kordi == 10:
-            break # lõpetab tsükli töö
+            break 
         
         arvamus = int(input("Arva veelkord: "))
         arvamise_kordi += 1 # lühem kirjapilt muutuja väärtuse suurendamiseks
     
-    # kuna tsükkel võis lõppeda ka ebaedukalt, siis peame enne kiitmist kontrollima...
+    # kuna tsükkel võis lõppeda ka edutult, siis peame enne kiitmist kontrollima...
     if arv == arvamus:
         print("Ära arvasid! Tubli!")
     else:
@@ -539,7 +651,7 @@ Eelmise näiteprogrammi väljund jäi natuke kipakas, sest osad korrutised olid 
 
 .. hint::
 
-    Teine võimalus on kasutada ühte sõneoperatsiooni, mille kohta on näide vastavas tabelis 2. peatükis.
+    Teine võimalus on kasutada ühte sõneoperatsiooni, mille kohta on ühes 2. peatüki tabelis.
     
 
 Näide. Failist lugemine tsükliga
@@ -760,7 +872,7 @@ TODO: lugemiskontroll
 
 Pykkar
 -----------------------
-Nagu eespool veendusime, saab robotkilpkonna juhtimisel tsüklitega teha päris lahedaid asju. Nüüd tutvustame aga järgmist programmeeritavat tegelast, kes lisaks käskude vastuvõtmisele annab ka infot teda ümbritseva keskkonna kohta. Saage tuttavaks, Pykkar!
+Nagu eespool veendusime, saab robotkilpkonna juhtimisel tsüklitega teha päris lahedaid asju (TODO: kas oli ikka lahe?). Nüüd tutvustame aga järgmist programmeeritavat tegelast, kes lisaks käskude vastuvõtmisele annab ka infot teda ümbritseva keskkonna kohta. Saage tuttavaks, Pykkar!
 
 Pykkar on virtuaalne robot, kes tegutseb oma virtuaalses maailmas. Ta oskab liikuda, värvida, asju kanda ja tal on ka sensorid, mis suudavad näiteks anda märku kui otse ees asub sein. See omadus sobib antud peatükki oivaliselt, sest sensoritelt saadud info ning ``if`` ja ``while``-lausete abil saame panna Pykkari tegevuse sõltuma konkreetsest situatsioonist.
 
@@ -1104,17 +1216,6 @@ Kirjuta programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikul
     >>> randint(1,3)
     1
 
-.. hint::
-
-    .. sourcecode:: py3
-    
-        if ...:
-            ...
-        else:
-            if ...:
-                ...
-            else:
-                ...
 
 Pentagramm vol. 2
 ~~~~~~~~~~~~~~~~~~~~~

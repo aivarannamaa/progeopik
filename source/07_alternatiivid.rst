@@ -1,17 +1,20 @@
 7. Alternatiivsed lahendused
 =======================================
 
+sisuliselt refactoring, samaväärsus
 
 .. todo::
 
     * koodi lühendamine: 0-kordusega tsüklid
     * maini uuesti alternatiivsete lahenduste teemat (nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks)
     * conditional vs alternative execution ???
-    * chained & nested conditionals
+    * chained & nested conditionals (st. keele poolt pakutavad mugavus-alternatiivid)
+    * if-harudes toimingu kordamine eri argumendiga vs. muutujasse salvestamine ja pärast toimingu tegemine muutujaga
     * Harjutus loogiliste avaldiste samaväärsuse kontrollimiseks (õpeta ka testima)
     * Harjutus "wrap this code in a function"
     * tabelite genereerimine
     * kilpkonnaga rooma numbrite joonistamine
+    * funktsiooni sissetoomine
     * kalendri printimine
     * etteantud 2-3 muutujaga tõeväärtustabeli põhjal avaldise kirjutamine
     
@@ -427,6 +430,9 @@ Erindid
 TODO
 
 
+Erineva efektiivsusega samaväärsed programmid
+----------------------------------------------
+TODO:
 
 
 Ülesanded

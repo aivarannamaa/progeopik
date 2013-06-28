@@ -1,5 +1,5 @@
 4. Funktsioonid
-====================================
+===============
 
 
 
@@ -44,7 +44,7 @@ Paljudel juhtudel saab tõmmata selged paralleelid Pythoni funktsioonide ja mate
 
 
 Funktsioonide kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 Toome meeldetuletuseks mõned koodijupid, kus on kasutatud funktsioone nimedega ``input``, ``int``, ``is_wall``, ``print``, ``sqrt`` ja ``sin``:
 
 * ``sisestatud_vanus = input("Sisesta oma vanus: ")``
@@ -56,10 +56,13 @@ Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema ni
 
 TODO: skeem: funktsioon, argument ja väljakutse
 
-Teatud funktsioonide (nt. ``upper``) välja kutsumiseks (e. rakendamiseks) tuleb justkui kirjutada üks argument funktsiooni nime ette (nt. ``'tere'.upper()``) -- selliseid funktsioone nimetatakse **meetoditeks**. Sedalaadi funktsioonide defineerimist me ei vaata, aga oma olemuselt ei erine need väga palju tavalistest funktsioonidest.
+Nimelised argumendid
+~~~~~~~~~~~~~~~~~~~~~~
+TODO: print'i näitel
+
 
 Arvutamine vs. "tegemine"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni väljakutse (nt. ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause? Tuleb välja, et sellele ei saagi lühidalt vastata.
 
 Mõned funktsioonid (nt. ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatilistele funktsioonidele, kuna nad "võtavad" ühe väärtuse, arvutavad natuke ja "annavad vastu" e. **tagastavad** mingi teise väärtuse (nt. avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide väljakutsed on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. Siia gruppi loeme ka need funktsioonid, mille väljakutse võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
@@ -76,9 +79,28 @@ Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step(
     Kui nüüd päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``step``. Need funktsioonid, mille põhieesmärgiks on mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata. Õnneks ta meid ka ei sega, seega võime teda vabalt ignoreerida.
 
 
+.. index::
+    single: meetodid
+
+Meetodid
+~~~~~~~~~~~~
+Teises peatükis nägime, et sõnede puhul kirjutati mõne funktsiooni nimi (nt. ``count``) sõne ja argumentide vahele, nt:
+
+.. sourcecode:: py3
+
+    sõna = "kukununnu"
+    u_tähtede_arv = sõna.count("u")
+
+Jääb mulje, et mingil põhjusel on üks funktsiooni argumentidest (antud näites ``sõna``) lihtsalt esile tõstetud. Tuleb välja, et Python seda umbes nii ka käsitleb.
+
+Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite puhul kirjutame esimese argumendi meetodi nime ette, on neil tavaliste funktsioonidega võrreldes veel mõningaid erinevusi, millel me praegu ei peatu. Meetod on väga tähtis mõiste *objekt-orienteeritud programmeerimises*.
+
+.. note::
+    Meetodeid ei ole vaja kunagi ``import``-ida.
+
 
 Funktsioonide defineerimine
------------------------------------------
+---------------------------
 Enne, kui funktsiooni saab kasutada, tuleb ta *defineerida*. Meile tuttavad funktsioonid on defineeritud Pythoni loojate poolt, seepärast ei pidanud me siiani selle peale mõtlema. Paraku pole võimalik ette valmistada kõiki funktsioone, mida kellelgi võiks vaja minna, seepärast lubab Python neid ka programmeerijal ise defineerida.
 
 Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: 
@@ -183,7 +205,7 @@ Pane tähele, et ``def``-konstruktsioon ise ei tee muud, kui jätab enda kehas o
 
 
 Harjutus. Täidetud ruudud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Täienda eespool toodud 3 ruudu joonistamise programmi nii, et kõik 3 ruutu oleksid seest värviga täidetud.
 
 .. note::
@@ -288,7 +310,7 @@ Täienda eespool toodud 3 ruudu joonistamise programmi nii, et kõik 3 ruutu ole
     Kui soovid täitmise värvi ise valida, siis uuri kilpkonna dokumentatsiooni: http://docs.python.org/3/library/turtle.html
 
 Kontrollküsimus: Mitu kala?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Küllap oled juba märkanud, et Python ei soovi programmeerija vabadust piirata, seetõttu on loomulik, et ühes programmis võib defineerida ükskõik kui palju uusi funktsioone ja need võivad ka üksteist kasutada. 
 
 Nüüd küsimus: Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? NB! proovi vastata ilma Pythoni abita, programmi enda peas "läbi mängides"! Lõpuks kontrolli oma vastust Pythoni abil.
@@ -332,7 +354,7 @@ Nüüd küsimus: Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? N
 
 
 Kontrollküsimus: Mitu tärni?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mitu tärni ilmub ekraanile järgmise programmi käivitamisel? Paku vastus ja siis kontrolli.
 
 .. sourcecode:: py3
@@ -353,7 +375,7 @@ Mitu tärni ilmub ekraanile järgmise programmi käivitamisel? Paku vastus ja si
 
 
 Harjutus. Pööre vasakule
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 Eelmises peatükis Pykkari käske tutvustades tuli välja, et Pykkaril pole sisseehitatud käsku vasakule pööramiseks. Õnneks oli võimalik saavutada sama effekt pöörates 3 korda paremale.
 
 Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi selliselt, et vasakule pööramised näeksid koodis natuke loomulikumad välja. 
@@ -383,7 +405,7 @@ Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi 
 
 
 Lokaalsed muutujad
----------------------
+~~~~~~~~~~~~~~~~~~
 Nagu nägime juba funktsiooni ``ruut`` definitsioonist, võib definitsiooni kehas kasutada abimuutujaid (meie näites ``joonistatud_külgi``). Teeme nüüd väikese eksperimendi -- joonistame funktsiooni kasutades ühe ruudu ning üritame seejärel väljastada muutuja ``joonistatud_külgi`` viimase väärtuse:
 
 .. sourcecode:: py3
@@ -453,7 +475,7 @@ Parameetritega saab teha funktsiooni universaalsemaks -- teatud detailid jäetak
     single: argumendid; funktsiooni argumendid
 
 Harjutus 2. Parameetriseeritud ``ruut``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Täiusta 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasuta loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
 
 .. note::
@@ -488,7 +510,7 @@ Täiusta 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu kül
 
 
 Kas sõnad *parameeter* ja *argument* on sünonüümid?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mitte päris. Parameetrid ja argumendid on ühe mündi kaks erinevat poolt. *Argument* on funktsiooni väljakutses antud avaldis, millest saab vastava *parameetri* väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Parameetrid on üldised, argumendid on konkreetsed. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
 
 .. note::    
@@ -498,7 +520,7 @@ Mitte päris. Parameetrid ja argumendid on ühe mündi kaks erinevat poolt. *Arg
 .. _param-vs-input:
 
 Parameetrid vs. ``input``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``input`` käsku -- mõlemal juhul on konkreetsed sisendandmed teadmata. Erinevus on selles, et kui ``input`` puhul on teada, et sisendandmed küsitakse kasutajalt, siis parameetrite kasutamisel jäetakse (funktsiooni seisukohast vaadatuna) sisendi saamise viis lahtiseks. Eelnevas näites andsime funktsiooni väljakutsel parameetri väärtuseks sõneliteraali, kuid seal oleks võinud kasutada ka muutujat:
 
 .. sourcecode:: py3
@@ -547,7 +569,7 @@ Parameetreid (ja vastavaid argumente) võib olla ka rohkem kui üks. Proovi näi
 Nagu näed, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras nagu on vastavad  parameetrid funktsiooni definitsioonis. Teisisõnu, argumendi *positsioon* määrab, millisele parameetrile tema väärtus omistatakse.
 
 Harjutus 3. Värviline ruut
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele argumendiks sõne ingliskeelse värvinimega, nt. ``color('red')``. Peale seda teeb kilpkonn järgmised jooned nõutud värviga. 
 
 .. note::
@@ -560,7 +582,7 @@ Lisa funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta.
 
 
 Vaikeväärtusega parameetrid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mõnede funktsioonide puhul on ühe parameetri väärtus tavaliselt sama ja seda on vaja vaid harvadel juhtudel muuta. Sellisel juhul on võimalik see "tavaline" väärtus funktsiooni definitsioonis ära mainida. Kui funktsiooni väljakutsel sellele parameetrile väärtust ei anta, kasutatakse lihtsalt seda vaikeväärtust. Seda võimalust demonstreerime eelmise näite modifikatsiooniga:
 
 .. sourcecode:: python
@@ -588,7 +610,7 @@ Ilmselt juba aimad, et taolise kordamise vältimiseks on jälle abiks funktsioon
 Kuidas aga saada funktsiooni käest vastust kätte? Võid proovida lisada funktsiooni lõppu vastava ``print`` lause, aga see ei aita, kui tahame tulemust järgmistes arvutustes kasutada. Võiks proovida salvestada tulemuse kuhugi muutujasse, aga milline muutuja valida? Kas ``isa_sissetulek`` või ``ema_sissetulek``?
 
 ``return``-lause
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``return`` lause. Demonstreerime selle kasutamist netopalga arvutamise funktsioonis:
 
 .. sourcecode:: py3
@@ -604,7 +626,7 @@ Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``re
     
     ema_bruto = float(input('Sisesta ema palk: '))
     isa_bruto = float(input('Sisesta isa palk: '))
-    laste_arv = int(input('Sisesta alaealsite laste arv: '))
+    laste_arv = int(input('Sisesta alaealiste laste arv: '))
     ühe_lapse_toetus = 20 
     sissetulek = neto(ema_bruto) + neto(isa_bruto) + laste_arv * ühe_lapse_toetus
     print('Pere sissetulek kuus on', sissetulek, 'eurot.')
@@ -638,33 +660,63 @@ Vaatame selle idee kinnistamiseks ka ühte lihtsamat näidet -- defineerime funk
 Eespool jagasime funktsioonid kahte leeri -- ühed teevad midagi (neid kasutame me lausetena) ja teised arvutavad midagi (neid kasutame avaldistes). Funktsiooni defineerimise vaatenurgast tuleneb see erinevus justnimelt ``return``-lause kasutamisest -- kõikides funktsioonides, mida me soovime avaldistes kasutada, on vaja kasutada ``return``-i.
 
 
-Harjutus 7. Kahest suurim => kolmest suurim
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta funktsioon ``kahest_suurim``, mis tagastab kahest argumendiks antud arvust suurima.
 
-Programmi põhiosas küsi kasutajalt *kolm* arvu, ning kuva ekraanile neist suurim. Proovi seejuures delegeerida võimalikult palju tööd funktsioonile.
 
-Funktsioonide testimine käsureal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Harjutus 6. Sõne dubleerimine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab selle sõne dubleerituna niimitu korda, kui mitu tähte on esialgses sõnes:
+
+.. sourcecode:: py3
+
+    >>> dubleeri('xo')
+    'xoxo'
+    >>> dubleeri('Tere')
+    'TereTereTereTere'
+
+.. hint::
+
+    Abiks on funktsioon ``len`` ja operaator ``*``
+
+
+Nipp: Funktsioonide testimine käsureal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Väärtusega funktsioone on mugav testida IDLE'i käsureal. Selleks piisab, kui skriptis on kirjas ainult funktsiooni definitsioon -- taolise skripti jooksutamisel küll esialgu midagi ekraanile ei ilmu, aga käsureal on võimalik funktsiooni kasutada. Näiteks, kui skripti sisu on selline:
 
 .. sourcecode:: py3
 
-    TODO:
+    def liida(a,b):
+        return a + b
+    
+    def korruta(a,b):
+        return a * b
 
 siis peale selle IDLE'is käivitamist on võimalik käsureal teha nii:
 
 .. sourcecode:: py3
 
-    TODO:
-
+    >>> liida(223, 6)
+    229
+    >>> korruta(456, 987)
+    450072
+ 
   
 
 
 .. _return-vs-print:
 
+Harjutus 5. Tollid ja sentimeetrid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. **Kirjuta funktsioon** ``cm``, mis võtab argumentideks pikkuse jalgades ja tollides (st. esimene argument tähistab jalgu ja teine tolle) ning tagastab pikkuse sentimeetrites (nt. ``cm(6, 1)`` peaks tagastama umbes ``187.96``). Salvesta esialgu faili vaid funktsiooni definitsioon, ilma väljakutseta.
+#. **Testi loodud funktsiooni** käsureal (käivita programm, ning kirjuta mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeeri definitsiooni ja proovi uuesti.
+#. Lõpuks **kirjuta programmi põhiosa**, mis küsib kasutajalt tema pikkuse tollides ja väljastab ekraanile vastava pikkuse sentimeetrites ning tema nn. "ideaalkaalu" (so. pikkus sentimeetrites - 100, nt. kui pikkus on 185cm, siis ideaalkaal on 85kg).
+
+.. note::
+
+    Taolist programmi kirjutamise stiili, kus alguses tehakse valmis mõned abifunktsioonid ja alles peale nende testimist kirjutatakse programmi põhiosa, nimetatakse "alt üles programmeerimiseks". 
+
 ``return`` vs. ``print``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 Eelnevalt märkisime, et nii funktsiooni parameetrid kui ``input`` on olemuselt sarnased, kuna mõlemad on seotud sisendi saamisega, kuid parameetrid on paindlikumad, kuna täpne sisendi saamise viis jäetakse lahtiseks.
 
 Analoogselt võime võrrelda ``print`` ja ``return`` käsku -- mõlemad on seotud väljundi andmisega, kuid ``return`` on paindlikum, kuna *täpne tulemuse kasutamise viis jäetakse lahtiseks*.
@@ -689,10 +741,18 @@ Kuna antud juhul soovisime arvutuse tulemust näidata ekraanil, siis tehniliselt
     
     Antud teemas võib segadus tekkida Pythoni käsurea kasutamisel -- kui kirjutada sinna avaldis ``sqrt(2)``, siis tulemus ilmub ikkagi ekraanile, kuigi me ei kasutanud ``print`` käsku. Kas see tähendab, et ka funktsioon ``sqrt`` kuvab vastuse ekraanile? Ei, tegelikult kuvab Pythoni käsurida ``sqrt`` käest saadud vastuse ekraanile omal algatusel, ``sqrt`` ei tea sellest midagi. 
 
+Harjutus. Kuu nimed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _kuu_nime_funktsioon:
+.. container:: autotest
+
+    .. include:: exercises/kuu_nime_funktsioon.py
+        :start-after: """
+        :end-before: """  
 
 
 ``return`` lõpetab funktsiooni töö
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Senistes näidetes oli ``return``-lause funktsiooni kehas kõige viimane lause (või siis viimane lause ``if``-lause harus). Tegelikult ei pea ``return`` olema tingimata funktsiooni lõpus. Järgnevas absoluutväärtuse arvutamise funktsiooni näites kasutatakse ``return``-i kahes kohas -- funktsiooni lõpus ja tingimuslause sees:
 
 .. sourcecode:: py3
@@ -711,86 +771,16 @@ Selline võimalus kasutada ``return``-i funktsiooni keskel ei ole tegelikult eri
 
     ``return``-lausest on olemas ka variatsioon, kus avaldise osa on hoopis ära jäetud, st. kogu lause koosneb ainult võtmesõnast ``return``. Seda varianti kasutatakse siis, kui tahetakse funktsiooni töö lõpetada ilma mingit väärtust tagastamata.
 
+Harjutus 7. Kahest suurim => kolmest suurim
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kirjuta funktsioon ``kahest_suurim``, mis tagastab kahest argumendiks antud arvust suurima.
+
+Programmi põhiosas küsi kasutajalt *kolm* arvu, ning kuva ekraanile neist suurim. Proovi seejuures delegeerida võimalikult palju tööd funktsioonile.
 
 
-
-
-Harjutus. Parametriseerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ex2 http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#exercises
-
-
-Harjutus 5. Tollid ja sentimeetrid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. note::
-    Selle ülesandega saad harjutada ühte levinud võtet uute funktsioonide loomiseks
-
-#. Kirjuta funktsioon, mis võtab argumendiks pikkuse tollides ning tagastab pikkuse sentimeetrites. Salvesta esialgu faili vaid funktsiooni definitsioon, ilma väljakutseta.
-#. Testi loodud funktsiooni käsureal (käivita programm IDLE-ga, ning kirjuta mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeeri definitsiooni ja proovi uuesti.
-#. Lõpuks kasuta funktsiooni programmis, mis küsib kasutajalt tema pikkuse tollides ja väljastab ekraanile vastava pikkuse sentimeetrites ning tema nn. "ideaalkaalu" (so. pikkus sentimeetrites - 100, nt. kui pikkus on 185cm, siis ideaalkaal on 85kg).
-
-Harjutus 6. Sõne dubleerimine
+Näide: Tõeväärtusfunktsioonid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab selle sõne dubleerituna niimitu korda, kui mitu tähte on esialgses sõnes:
-
-.. sourcecode:: py3
-
-    >>> dubleeri('xo')
-    'xoxo'
-    >>> dubleeri('Tere')
-    'TereTereTereTere'
-
-.. hint::
-
-    Abiks on funktsioon ``len`` ja operaator ``*``
-
-
-
-
-"Mugavusfunktsioonid"
-~~~~~~~~~~~~~~~~~~~~~
-Python'i ``math`` mooduli ``log`` funktsioon arvutab vaikimisi naturaallogaritmi. Selleks, et arvutada logaritmi mõne teise alusega, tuleb alus anda teiseks argumendiks, nt. ``log(8, 2)``. Kui meil on tihti tarvis arvutada just kahendlogaritmi, siis võime defineerida selle jaoks uue funktsiooni, mis kasutab oma definitsioonis tavalist ``log`` funktsiooni:
-
-.. sourcecode:: py3
-
-    from math import *
-
-    def log2(x):
-        return log(x, 2)
-
-Nüüd on meil eraldi kahendlogaritmi arvutamise funktsioon, millele peame andma vaid ühe argumendi, nt. ``log2(8)``. Antud näites ei võitnud me sellega just palju, kuid keerulisemate funktsioonide väljakutsete puhul võib taoline trikk teha koodi märgatavalt lühemaks ja selgemaks.
-
-
-
-Funktsiooni keha sisu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Nagu juba 3. peatükis mainitud, võib funktsiooni definitsioonis (olgu väärtusega või ilma) kasutada ükskõik milliseid lausetüüpe (sh. tingimuslaused ja tsükleid). Järgnev näide esitab absoluutväärtuse arvutamise funktsiooni:
-
-.. sourcecode:: py3
-
-    def abs_vaartus(arv):
-        if arv < 0:
-            tulemus = -arv
-        else:
-            tulemus = arv
-        
-        return tulemus
-
-Kui võrdlete seda funktsiooni kolmandas peatükis näidatud absoluutväärtuse arvutamise programmiga, siis märkate, et erinevus on vaid sisendandmete saamises (parameeter vs. ``input``) ning tulemuse esitamises (``return`` vs. ``print``).
-
-.. note:: 
-
-    Tingimuslausega funktsioonis on mõnikord mugavam kasutada mitut ``return`` lauset. Sama funktsiooni saaksime panna kirja ka järgnevalt:
-    
-    .. sourcecode:: py3
-
-        def abs_vaartus(arv):
-            if arv < 0:
-                return -arv
-            else:
-                return arv
-
-
+TODO:
 
 .. _milleks-funktsioonid:
 
@@ -809,6 +799,22 @@ Kui taoline programm oleks reaalses kasutuses, siis nt. tulumaksuvaba miinimumi 
 
 Tuleb välja, et funktsioonid sobivad suurepäraselt *DRY*-printsiibi rakendamiseks -- selle asemel, et samasugust koodi kirjutada erinevatesse kohtadesse, saab selle koodi esitada funktsioonina, ning edaspidi piisab selle kasutamiseks vaid funktsiooni nime mainimisest. Kui midagi on vaja muuta, siis tehakse muudatus vaid funktsiooni kehas ja see mõjub igalpool, kus funktsiooni on kasutatud.
 
+TODO: näide tõeväärtusega funktsioonist
+
+"Mugavusfunktsioonid"
+~~~~~~~~~~~~~~~~~~~~~
+Python'i ``math`` mooduli ``log`` funktsioon arvutab vaikimisi naturaallogaritmi. Selleks, et arvutada logaritmi mõne teise alusega, tuleb alus anda teiseks argumendiks, nt. ``log(8, 2)``. Kui meil on tihti tarvis arvutada just kahendlogaritmi, siis võime defineerida selle jaoks uue funktsiooni, mis kasutab oma definitsioonis tavalist ``log`` funktsiooni:
+
+.. sourcecode:: py3
+
+    from math import *
+
+    def log2(x):
+        return log(x, 2)
+
+Nüüd on meil eraldi kahendlogaritmi arvutamise funktsioon, millele peame andma vaid ühe argumendi, nt. ``log2(8)``. Antud näites ei võitnud me sellega just palju, kuid keerulisemate funktsioonide väljakutsete puhul võib taoline trikk teha koodi märgatavalt lühemaks ja selgemaks.
+
+
 .. index::
     single: abstraktsioon
     
@@ -816,12 +822,21 @@ Tuleb välja, et funktsioonid sobivad suurepäraselt *DRY*-printsiibi rakendamis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt. ühel juhul arvutame netopalka ema, aga teisel juhul isa brutopalga põhjal), siis tulevad appi parameetrid, mis võimaldavad meil funktsiooni kehas jätta mõned detailid lahtiseks. Teisiti öeldes -- funktsiooni parameetrid võimaldavad meil kirjutada üldisema e. **abstraktsema** lahenduse, mida saab hiljem konkreetsete argumentidega täpsustada. Nt. netopalga arvutamise funktsioonis saame brutopalga esitada parameetrina, millele antakse väärtus alles konkreetse arvutuse käivitamisel.
 
+
+
+"Let's wrap it in a function for easier use"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ex2 http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#exercises
+
+TODO:
+
+
 .. index::
     single: modulaarsus
     single: must kast
     
 Modulaarsus ja *musta kasti* metafoor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kolmas oluline põhjus tuleb paremini esile suuremate programmide puhul. Kui me koondame teatud alamülesande lahendamiseks vajalikud laused ühte funktsiooni (e. alamprogrammi), siis programmi põhiosas saame selle alamülesande kirja panna vaid vastava funktsiooni nime mainides. Eeldades, et funktsioonide nimed on hoolikalt valitud, piisab meile programmi põhiidee mõistmiseks vaid kasutatud funktsioonide nimede lugemisest -- funktsiooni sisu võime esialgu ignoreerida. Teisiti öeldes: me võime funktsioone soovi korral käsitleda maagiliste **mustade kastidena**, mis *kuidagimoodi* teevad seda, mis nende nimest võib välja lugeda.
 
 Taolisi "musti kaste", mida on võimalik kasutada ilma nende täpset sisu teadmata, nimetatakse tihti *mooduliteks*, ning programme, mis on jagatud alamprogrammideks nimetatakse vastavalt **modulaarseteks**. Kuna Pythonis on sõnal *moodul* spetsiifilisem tähendus, siis meie seda terminit alamprogrammi jaoks ei kasuta.
@@ -830,21 +845,19 @@ Keskendumine vaid "mustade kastide" *tähendusele*, ignoreerides nende *ehitust*
 
 Kui *DRY*-printsiibi juures rõhutasime seda, et funktsioonid aitavad sama koodi kasutada korduvalt, siis modulaarsuse põhiidee on selles, et me saame funktsiooni kasutada ilma selle täpse sisu peale mõtlemata, toetudes vaid ta nimele. Seetõttu on uue funktsiooni loomine põhjendatud tihti ka siis, kui seda kasutatakse vaid ühes kohas.
 
+TODO: näide, kus funktsiooni nime järgi saab asjast aimu
+
+.. admonition:: Nimede tähtsus
+
+    TODO: Tee näiteprogramm, kus muutujanimed on a,b,c,x,y,z ja lase lugejal arvata, mida see programm teeb, pärast näita nimedega varianti. peab olema meeldejääv, sest seda on tarvis tagasi viidata
+
 
 .. index::
     single: import
     single: moodulid
 
-Muutujad vs funktsioonid
-----------------------------
-TODO
-
-Nimede tähtsus
-------------------
-TODO: Tee näiteprogramm, kus muutujanimed on a,b,c,x,y,z ja lase lugejal arvata, mida see programm teeb, peab olema meeldejääb, sest seda on tarvis tagasi viidata
-
 ``import``-lause
---------------------
+----------------
 Pythoni `standardteegis` (so. funktsioonide ja teiste programmielementide kogum) on väga palju funktsioone (ja teisi Pythoni objekte). Nende paremaks organiseerimiseks on nad jaotatud teemade kaupa gruppidesse, mida nimetatakse `mooduliteks`. ``import`` lause teeb moodulis olevad funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
 
 .. sourcecode:: py3
@@ -886,7 +899,7 @@ Moodulid ja ``import``
 ----------------------
 Pythoniga tuleb kaasa tuhandeid erinevaid funktsioone, lisaks kirjutavad Pythoni programmeerijad üle maailma igapäevaselt tuhandeid funktsioone juurde. Sellises situatsioonis on täiesti loomulik, et mitmele erinevale funktsioonile pannakse sama nimi. Selleks, et erinevatel funktsioonidel oleks siiski võimalik vahet teha, jagatakse need **moodulitesse**.
 
-Eelmistes peatükkides kohtusite juba moodulitega ``math`` ja ``turtle``, ning nägid, et mooduli sisu muutub kättesaadavaks ``import`` käsuga, nt:
+Eelmistes peatükkides kohtusid juba moodulitega ``math`` ja ``turtle``, ning nägid, et mooduli sisu muutub kättesaadavaks ``import`` käsuga, nt:
 
 .. sourcecode:: py3
 
@@ -913,9 +926,9 @@ Ka selle variandi puhul ei pea oma muutujate nimede valimisel muretsema, kui imp
 .. note:: 
     ``import``-laused tuleks panna programmi algusesse. See pole Pythoni poolt range nõue, vaid lihtsalt tava --  nii on hea näha, milliste teemadega antud programm tegeleb.
 
-.. topic:: Moodulite loomine
+.. topic:: Oma mooduli loomine
 
-    Kõikide selle kursuse ülesannete puhul on aktsepteeritav, kui sinu enda programm koosneb ainult ühest failist. Samas, reaalsete programmide juures on peaaegu alati tarvilik organiseerida programmi jaoks loodud funktsioonid eraldi moodulitesse.
+    Kõikide selle õpiku ülesannete puhul piisab, kui su programm koosneb ainult ühest failist. Samas, reaalsete programmide juures on peaaegu alati tarvilik organiseerida programmi jaoks loodud funktsioonid eraldi moodulitesse.
     
     Uue mooduli loomine on Pythonis imelihtne -- funktsioonide definitsioonid tuleb lihtsalt salvestada tavalisse *py*-laiendiga faili. Mooduli nimeks saab seejuures tema failinimi ilma *py*-laiendita. Selleks, et neid funktsioone saaks kasutada teistes failides, tuleb seal teha sobiv ``import``, justkui ``math`` või ``turtle`` mooduli puhul. 
     
@@ -923,28 +936,11 @@ Ka selle variandi puhul ei pea oma muutujate nimede valimisel muretsema, kui imp
 
     NB! Erinevalt standardmoodulitest, peab enda moodul olema üldjuhul samas kaustas, kus seda kasutav programm (täpsem info siit: http://docs.python.org/3/tutorial/modules.html#the-module-search-path)
 
-.. index::
-    single: meetodid
     
 
-Meetodid
---------
-Teises peatükis nägime, et sõnede puhul kirjutati mõne funktsiooni nimi (nt. ``count``) sõne ja argumentide vahele, nt:
-
-.. sourcecode:: py3
-
-    sõna = "kukununnu"
-    u_tähtede_arv = sõna.count("u")
-
-Jääb mulje, et mingil põhjusel on üks funktsiooni argumentidest (antud näites ``sõna``) lihtsalt esile tõstetud. Tuleb välja, et Python seda umbes nii ka käsitleb.
-
-Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite puhul kirjutame esimese argumendi meetodi nime ette, on neil tavaliste funktsioonidega võrreldes veel mõningaid erinevusi, millel me praegu ei peatu. Meetod on väga tähtis mõiste *objekt-orienteeritud programmeerimises*.
-
-.. note::
-    Meetodeid ei ole vaja kunagi ``import``-ida.
 
 Veateated ja funktsioonid
----------------------------
+-------------------------
 Esimeses peatükis soovitasime pikkade veateadete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovi käivitada järgnevat programmi:
 
 .. sourcecode:: py3
@@ -971,31 +967,31 @@ Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis
 
 
 Funktsioonid vs. muutujad
-------------------------------
+-------------------------
 TODO: Räägi siin ka importimisest
 
 
 Kokkuvõte
---------------
+---------
 
 **Funktsiooni definitsiooni** kehas olevad laused jäetakse esialgu lihtsalt meelde. Neid saab hiljem käivitada kirjutades definitsiooni päises antud nime koos sulgudega -- seda nimetatakse *funktsiooni väljakutseks* e. rakendamiseks. Funktsioonid võimaldavad keerulise programmilõigu panna kirja vaid ühekordselt, aga kasutada seda mitmes erinevas kohas.
 
 
 
 
-Ülesanded 
--------------
+Ülesanded
+---------
 .. note::
 
     Kursuse kodulehel loetletud kontrollülesannete all on mõeldud just selle ploki ülesandeid.
 
 Harjutus: Kahe punkti kaugus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon, mis võtab argumentideks kahe tasandipunkti koordinaadid ja tagastab nende punktide kauguse üksteisest.
 
 
     
-1. Ristkülik 
+1. Ristkülik
 ~~~~~~~~~~~~
 Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja joonistab kilpkonnaga neile vastava ristküliku. Joonista loodud funktsiooni kasutades järgnev kujund:
 
@@ -1013,9 +1009,13 @@ Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja
 ~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon ``kolmnurga_pindala``, mis võtab argumentideks kolmnurga külgede pikkused, ning tagastab vastava kolmnurga pindala. Eeldame, et argumentide väärtused sobivad kolmnurga küljepikkusteks.
 
-.. hint::
+.. note:: Kuidas arvutada?
 
     http://en.wikipedia.org/wiki/Heron%27s_formula
+
+.. note::
+
+    Kui valem läheb liiga kirjuks, siis kaalu (lokaalsete) abimuutujate kasutamist! 
 
 Lisa programmi lõppu (peale funktsiooni definitsiooni) järgmised laused:
 
@@ -1035,6 +1035,8 @@ Veendu, et programmi käivitamisel saad järgmised tulemused:
 
 NB! tulemused võivad õige pisut ka erineda, sest erinevad Pythoni versioonid ümardavad erineva täpsusega.
 
+TODO: tulemuse kasutamine arvutamises
+
 3. Kodulaen
 ~~~~~~~~~~~
 Kirjuta funktsioon, mis võtab argumentideks ostetava kinnisvara hinna, sissemakse suuruse ja laenuperioodi aastates ning tagastab intresside kogusumma, mis tuleb ostjal selle laenu eest pangale maksta. Lihtsuse mõttes eeldame, et igal aastal arvestatakse intress algse laenusumma põhjal.
@@ -1052,35 +1054,26 @@ Testi oma programmi ja kontrolli, kas saad järgnevad tulemused:
     * hind: 10000, sissemakse: 2900, aastaid: 10; kogusumma: 14260, intressid: 4260
     * hind: 10000, sissemakse: 2900, aastaid: 0; kogusumma: 10000, intressid: 0
 
-4. Pere sissetulek, ver.2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. note::
-
-    See ülesanne demonstreerib väga hästi *DRY*-printsiibi ning abstraktsiooni olemust.
-
-Võtke aluseks kolmanda peatüki Ülesanne "Pere sissetulek". Muutke lahendust selliselt, et netopalga valem oleks programmis kirja pandud vaid ühes kohas.
-
-
 Üks ülesanne segatud ülesannete pangast
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO:
 
 
 Üks ülesanne projecteulerist
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO:
 
 Lisalugemine
------------------
+------------
 Matemaatilised funktsioonid vs. Pythoni funktsioonid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO, tee graafikuid?
 
 
 
 
 Projekt: Graafilised programmid
-------------------------------------
+-------------------------------
 Praeguseks tunned Pythonit juba piisavalt, et alustada graafiliste programmide loomisega. Kõik vajalikud funktsioonid selleks asuvad moodulis ``tkinter`` (ja selle alammoodulites).
 
 Graafiliste programmide loomisel kasutatakse samu baaskonstruktsioone, mida oled siiani õppinud -- avaldised, laused (tingimuslause, tsükkel), funktsioonid. Oluline erinevus on see, et kasutusele võetakse uued, spetsiifilisemad andmetüübid, mis esitavad kasutajaliides komponente (nupud, sisestuskastid jne). Nendega toimetamine nõuab omajagu tähelepanu ja teadmisi detailide osas -- näiteks kuidas mingit nuppu paigutada ekraanil õigesse kohta. Seetõttu tuleb ka arvestada, et graafilised programmid kipuvad olema nende detailide tõttu pikemad kui tekstipõhised programmid.
