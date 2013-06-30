@@ -24,7 +24,7 @@ Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame
 
 
 Tingimuslause e. ``if``-lause
-------------------------------
+-----------------------------
 Praktiliselt kõikides mittetriviaalsetes programmides tuleb mingil hetkel teha valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad panna kirja **tingimuslause** e. **valikulause** e. **if-lause** abil.
 
 Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
@@ -59,7 +59,7 @@ Tingimusi saab (muuhulgas) moodustada järgmiste operaatoritega:
     Ära unusta, et üksikut võrdusmärki (``=``) kasutatakse Pythonis muutujale väärtuse omistamiseks, seetõttu on võrdsuse kontrollimiseks ette nähtud topeltvõrdusmärk (``==``).
 
 Harjutus 1. Jaguvus
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib kasutajalt kaks arvu ning vastab, kas esimene arv jagub teisega või mitte.
 
 .. hint::
@@ -82,7 +82,7 @@ Kirjuta programm, mis küsib kasutajalt kaks arvu ning vastab, kas esimene arv j
     0
 
 Treppimine
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 ``if``-lause kasutamisel on vaja pöörata tähelepanu tühikutele -- tühikutega joondamine e. *treppimine* määrab, millised käsud kuuluvad tingimuslause alla ja millised mitte: 
 
 .. sourcecode:: py3
@@ -118,7 +118,7 @@ Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides
 
 
 Harjutus 2. Eurokalkulaator, vol. 2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eelmises peatükis oli ülesanne, kus tuli kirjutada eurokalkulaator, mis teisendas kroone eurodeks.
 
 Täienda seda programmi nüüd nii, et see küsiks kasutajalt lisaks rahasummale ka selle, kas ta soovib teisendada Eesti kroone eurodeks või vastupidi.
@@ -163,7 +163,7 @@ Proovi kirjutada sellest programmist kaks varianti erinevate kitsendustega:
     single: tsükkel
 
 Näide. Tingimuslaused üksteise sees
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Tingimuslauseid võib panna üksteise sisse:
 
 .. sourcecode:: py3
@@ -186,7 +186,7 @@ Põhimõte on sama nagu lihtlausete "allutamisel" -- alluvuse tähistamiseks lis
     Nüüd peaks olema ka näha, miks treppimist nimetatakse treppimiseks -- kui joondamine toimub mitmel tasemel, siis paistab nagu programmi tekst paikneks trepiastmetel.
 
 Harjutus. Tiitlid
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib kasutajalt tema nime, perekonnaseisu (vallaline või abielus), sugu ja vanust. Väljasta nende andmete põhjal sobiv tervitus (nt. abielus naiste puhul kasuta tiitlit *proua*, teatud vanusest vanemate meeste puhul *härra* jne.)
 
 
@@ -204,7 +204,7 @@ Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui ting
         print("... järelikult on nad võrdsed")
 
 Harjutus. Miks on ronk nagu kirjutuslaud?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga et seal kasutataks vaid üheharulist ``if`` lauset:
 
 .. sourcecode:: py3
@@ -308,7 +308,7 @@ Kogu ``if-elif-...-else`` konstruktsioon moodustab Pythoni jaoks ühe terviku --
  
 
 Harjutus. Hinde arvutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülikoolis on tavaks panna hindeid järgmise skeemi järgi:
 
 +---------------+--------+
@@ -330,7 +330,7 @@ Harjutus. Hinde arvutamine
 Kirjuta programm, mis küsib kasutajalt mitu punkti võis aines saada ning mitu punkti tudeng sai, ning väljastab vastava hinde.
 
 Tingimusega korduslause e. ``while``-lause
------------------------------------------------
+------------------------------------------
 Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et programmi tuleb lihtsalt kirjutada laused lihtsalt mitmekordselt, nagu järgmises programmis, mis joonistab kilpkonnaga ruudu:
 
 .. sourcecode:: py3
@@ -382,7 +382,7 @@ Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstrukt
 Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas olema midagi, mis mõjutab tingimuse kehtivust -- antud näites on selleks lause ``joonistatud_kylgi = joonistatud_kylgi + 1``. Kuju poolest on siin tegemist täiesti tavalise omistuslausega, ainuke veider asi on see, et paremal pool mainitakse sedasama muutujat, mida parasjagu defineeritakse. Kas siin ei lähe miskit "sõlme"?
 
 Muutuja muutmine
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 Pythoni muutujate süsteem on ehitatud selliselt, et muutuja väärtust on võimalik *üle defineerida* või lihtsamalt öeldes *muuta*. Iga muutuja viitab tegelikult ühele pesale või lahtrile kuskil Pythoni sisemuses olevas tabelis, ja selles lahtri sisu on võimalik omistuslausega muuta.
     
 Antud näites genereerisime muutujale ``joonistatud_kylgi`` uue väärtuse tema eelmise väärtuse põhjal. Selles pole Pythoni jaoks midagi erilist -- nagu eelmises peatükis mainitud, väärtustab Python omistuslause käivitamisel kõigepealt parema poole ja salvestab saadud tulemuse vasakul pool näidatud muutujasse. Seega, kui ``joonistatud_kylgi`` väärtuseks oli ``0``, siis kõigepealt arvutati välja parema poole väärtus ``1`` ning alles seejärel uuendati muutuja sisu.
@@ -420,7 +420,7 @@ Antud näites genereerisime muutujale ``joonistatud_kylgi`` uue väärtuse tema 
 
 
 Lühem kirjapilt muutuja kasvatamiseks / kahandamiseks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muutuja väärtuse suurendamist mingi arvu võrra saab Pythonis ka lühemalt kirjutada: ``x = x + 1`` asemel võime kirjutada ``x += 1``. Muutuja väärtuse vähendamiseks võib analoogselt kirjutada ``x -= 1``. 
 
 .. admonition:: Terminoloogia
@@ -434,7 +434,7 @@ Muutuja väärtuse suurendamist mingi arvu võrra saab Pythonis ka lühemalt kir
 
 
 Harjutus 3. Programm *n*-nurga joonistamiseks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta ruudu näite põhjal programm, mis joonistab *n*-küljega hulknurga (*n* väärtus ja küljepikkus küsitakse kasutajalt). 
 
 .. hint::
@@ -503,7 +503,7 @@ Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui j
 
 
 Harjutus 5. Kolmeaastase lapse simulaator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga sisestuse peale "Aga miks?" niikaua, kuni kasutaja sisestab mingi kindla "võlusõna".
 
 Harjutus 6. Algandmete kontrollimine tsükliga
@@ -563,15 +563,15 @@ Mõnikord on mugav tsükli lõpetamise tingimust kontrollida *ainult* tsükli ke
             print("Selle arvu ruut on", arv * arv)
 
 Harjutus 7. Juhuslikud arvud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis väljastab iga ENTER vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
 
 Harjutus 8. Algandmete kontrollimine ja ``break``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kui sa enne kasutasid algandmete kontrollimise ülesandes ``input`` käsku mitmes kohas, siis proovi nüüd kirjutada lahendus ümber nii, et programmis on vaid üks ``input`` käsk.
 
 Näide. Summa arvutamine tsüklis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Tegelikult ei ole Pythonil mingit põhjust piirata, kuidas me muutuja väärtust suurendame (või vähendame). Uuri ja proovi mõista järgmist näidet: 
 
 .. sourcecode:: py3
@@ -591,7 +591,7 @@ Antud juhul suurendasime igal tsükli kordusel ühe muutuja väärtust teise muu
 
 
 Harjutus 9. Faktoriaali arvutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis arvutab etteantud arvu faktoriaali.
 
 .. note:: 
@@ -600,7 +600,7 @@ Kirjuta programm, mis arvutab etteantud arvu faktoriaali.
 
 
 Näide. Kahekordne tsükkel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Nii, nagu me võime ``while``-lause kehas kasutada ``if``-lauseid, võime seal kasutada ka ``while``-lauseid. Järgnev programm kasutab kahekordset tsüklit korrutustabeli kuvamiseks:
 
 .. sourcecode:: py3
@@ -655,7 +655,7 @@ Eelmise näiteprogrammi väljund jäi natuke kipakas, sest osad korrutised olid 
     
 
 Näide. Failist lugemine tsükliga
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mitu rida antud failis on. Praktikas tuleb aga palju sagedamini ette situatsioone, kus faili ridade arv pole teada. Järgnev näide demonstreerib faili kõikide ridade lugemist:
 
 .. sourcecode:: py3
@@ -683,7 +683,7 @@ Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mit
     Kui tekib selline situatsioon, kus programm ei tööta nii nagu sa soovid, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu sa arvasid. Antud programmis võiks tsüklis esimese asjana (enne tingimuslauset) kuvada ekraanile loetud nime. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
 
 Harjutus 10. Failis olevate temperatuuride teisendamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja väljastab ekraanile vastavad temperatuurid Celsiuse skaalas.
 
 .. hint::
@@ -692,7 +692,7 @@ Kirjuta programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja vä
 
 
 Kontrollküsimus
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 TODO: lugemiskontroll
 
 
@@ -758,7 +758,7 @@ Pole kokkusattumus, et me käsitleme seda andmetüüpi just tingimuslausete peat
 
 
 Tõeväärtustehted
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 Kuigi tõeväärtustüübis on vaid kaks väärtust ``True`` ja ``False``, on olemas palju erinevaid viise nende genereerimiseks. Järgnev tabel demonstreerib mõnesid neist:
 
 +----------------------------------+---------+---------------------------------------------------------------------+
@@ -802,7 +802,7 @@ Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
 
 
 Harjutus x. Mitte-tõstutundlik sõnede võrdlemine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO
 
 
@@ -856,7 +856,7 @@ Keerulisemate loogiliste avaldiste puhul tuleb arvestada, et ``not`` on kõrgema
 Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on madalama prioriteediga (tehakse viimasena), seega ``a > b and b > c`` tähendab ``(a > b) and (b > c)``.
 
 Harjutus 2. Samaväärne loogiline avaldis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta järgneva avaldisega samaväärne avaldis, milles poleks kasutatud ``not`` tehet:
 
 .. sourcecode:: none
@@ -864,14 +864,14 @@ Kirjuta järgneva avaldisega samaväärne avaldis, milles poleks kasutatud ``not
     not (x < 0 and x > 100)
     
 Kontrollküsimus
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 TODO: lugemiskontroll
 
 
 
 
 Pykkar
------------------------
+------
 Nagu eespool veendusime, saab robotkilpkonna juhtimisel tsüklitega teha päris lahedaid asju (TODO: kas oli ikka lahe?). Nüüd tutvustame aga järgmist programmeeritavat tegelast, kes lisaks käskude vastuvõtmisele annab ka infot teda ümbritseva keskkonna kohta. Saage tuttavaks, Pykkar!
 
 Pykkar on virtuaalne robot, kes tegutseb oma virtuaalses maailmas. Ta oskab liikuda, värvida, asju kanda ja tal on ka sensorid, mis suudavad näiteks anda märku kui otse ees asub sein. See omadus sobib antud peatükki oivaliselt, sest sensoritelt saadud info ning ``if`` ja ``while``-lausete abil saame panna Pykkari tegevuse sõltuma konkreetsest situatsioonist.
@@ -908,7 +908,7 @@ Loodetavasti nägid programmi käivitamisel umbes sellist pilti, millele järgne
 .. image:: images/pykkar.png
 
 Harjutus. Maksimaalselt 4 sammu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muutke eelmist näidet selliselt, et Pykkar üritab kõndida 4 sammu, aga kui sein tuleb varem vastu, siis jääb ta seisma seina ääres. Lõpuks pöörab ta ennast ümber.
 
 Programm peaks töötama suvalise maailma ja suvalise Pykkari alguspositsiooni korral.
@@ -1006,7 +1006,7 @@ Pykkar saab aru järgnevatest käskudest:
 NB! Pykkar ei oska tõepoolest vasakule pöörata! Õnneks on võimalik sama effekt siiski saavutada. Kuidas?
 
 Harjutus. Torbiku kandmine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis loob allolevale pildile vastava maailma:
 
 .. image:: images/pykkar_move_single_cone.png
@@ -1022,7 +1022,7 @@ NB! Programm peaks töötama ka laiemate ja kitsamate maailmade korral.
     Vihjed!
 
 Kontrollküsimus
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 TODO: mida teeb järgmine Pykkari programm?
 
 
@@ -1030,14 +1030,14 @@ TODO: mida teeb järgmine Pykkari programm?
 
 
 Suur näide
---------------
+----------
 TODO tulp-graafiku joonistamine kilpkonnaga
 
 Kontrolli, kas on tegemist ainult kasvamisega?
 
 
 Kokkuvõte
-----------
+---------
 Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käskude jada, mida täidetakse üksteise järel kuni jõutakse programmi lõppu. Vaatlesime kolme programmikonstruktsiooni, millel kõigil on **päis** ja tühikutega veidi paremale nihutatud **keha**, kusjuures kehas olevate lausete täitmise viis on kõigil kolmel juhul erinev:
 
     * **Tingimuslause** e. ``if``-lause peaharus olevad laused täidetakse ainult siis, kui päises esitatud tingimus kehtib. Kui tingimuslauses on olemas ka ``else`` haru, siis seal olevad laused täidetakse siis, kui tingimus *ei* kehti. Sellise konstruktsiooniga saab muuta programme paindlikumaks, pannes selle käituma üht- või teistmoodi vastavalt olukorrale.
@@ -1050,7 +1050,7 @@ Taolist lausete üksteise sisse panemist esitatakse Pythonis **treppimisega** --
 Kõikide nimetatud programmikonstruktsioonide kohta andsime selles peatükis vaid kõige olulisema info, neist kõigist tuleb edaspidi veel palju juttu.
 
 Ülesanded
--------------------
+---------
 
 1. Paaris või paaritu
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1068,7 +1068,7 @@ Esialgu võid eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maks
 Lõpuks korralda nii, et programm töötab õigesti ka siis, kui ema või isa brutopalk on maksuvabast miinimumist väiksem.
 
 3. Busside logistika
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjuta programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
 
     
@@ -1127,7 +1127,7 @@ Kirjuta programm, mis lahendab esimese ülesande aadressilt http://projecteuler.
     Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teete endale seal konto, siis saad oma progressi salvestada ja tulemusi kontrollida.
 
 5. Ringi joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva ringitaolise kujundi. Ringi suurus pole praegu oluline.
 
 .. hint::
@@ -1136,7 +1136,7 @@ Kirjuta programm, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva 
 
 
 6. Kolmnurk
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 Kirjutage programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kolmnurga:
 
@@ -1156,7 +1156,7 @@ Kirjutage programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile 
 
 
 6. Horisontaalsed tulbad
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kirjuta programm, mis kuvaks failis olevate arvude põhjal tekstilisi, horisontaalsete tulpadega tulpdiagramme. Näiteks, kui faili sisu on
 
@@ -1201,7 +1201,7 @@ Kirjuta programm, mis kuvab kasutaja antud mõõtmete põhjal umbes sellise kuju
 
 
 7. Kivi-paber-käärid
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikult valitud sõna loetelust "kivi", "paber", "käärid". Programmi töö lõpetamiseks tuleb kasutajal enne ENTERi vajutamist sisestada "aitab".
 
 .. hint::
@@ -1218,14 +1218,14 @@ Kirjuta programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikul
 
 
 Pentagramm vol. 2
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 Kui lahendasid eelmises peatükis pentagrammi ülesande, siis proovi nüüd oma programmi tsükli abil lühemaks teha.
 
 
 
 
 8. Raskem: Redeli asendid
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülesandeks on genereerida Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonista redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
 
 .. hint::
@@ -1233,7 +1233,7 @@ Kui lahendasid eelmises peatükis pentagrammi ülesande, siis proovi nüüd oma 
     Abiks võib olla ``turtle`` käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
 
 9. Raskem: Ruudustik
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal, ning joonistab kilpkonna abil vastava ruudustiku, nt:
 
 .. image:: images/ruudustik.png
@@ -1245,7 +1245,7 @@ Kirjuta programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisonta
     
 
 Ülesanne. mp3
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 TODO
 Loe mp3 metadatat
 mingi olemasoleva parseriga / ise parsides vt. struct module
@@ -1258,16 +1258,16 @@ TODO:
 
 
 Praktilisi näpunäiteid
-------------------------
+----------------------
 Veaotsingust
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 Esimeses peatükis sai juba veidi tutvustatud Pythoni veateadete hingeelu. (Kuna nüüd oled veateateid juba rohkem näinud, on soovitav see osa uuesti, uue pilguga üle lugeda.)
 
 Nagu ilmselt juba oled kogenud, on kõige problemaatilisemad vead aga need, mille kohta Python veateadet ei taipa anda. Selleks, et taolisi vigu väiksema närvikuluga avastada, soovitame lugeda läbi lihtsad ja kasulikud retseptid järgnevalt aadressilt: http://openbookproject.net/thinkcs/python/english3e/app_a.html
 
 
 Lisalugemine
------------------
+------------
 
 .. admonition:: Matemaatika ja programmeerimine
 
@@ -1301,8 +1301,12 @@ Olgu meil antud arv `y`. Otsime sellist `x` et `x * x = y`. Siis aga `x = y / x`
 
 ``while True`` tähendab lõpmatut kordust. Tsükli kehas on aga siiski ``if``-lause, mille täidetuse korral kordus break-käsuga lõpetatakse. ``if``-lause kontrollib sisuliselt seda, kas eelmise lähendi ja uue lähendi erinevus on väiksem, kui 0,0000001. Peale natukest katsetamist peaks olema selge, et enamasti jõutakse sellise täpsuseni väga väheste korduste arvuga. Võiksite kontrollimise huvides võrrelda selle programmi ja näiteks ``math.sqrt`` tulemusi. Sellist lähendi leidmise meetodit nimetatakse Newtoni iteratsioonimeetodiks, inglise matemaatiku ja füüsiku Isaac Newtoni auks.
 
+.. admonition:: Katsetamise teel arvutamine
+
+   Ruutjuure leidmise ülesande võiksime me panna kirja ka võrrandina, nt. `x² = 762`. Nagu eelnevast selgus, saame arvuti abil lahendada taolise võrrandi ka lihtsalt proovides `x` asemele erinevaid väärtusi. Kas sellise taktikaga saaks lahendada suvalisi võrrandeid? 
+
 π leidmine
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 Järgmisena kirjeldaksime aga hästi kavalat viisi kuidas leida π (ringi ümbermõõdu ja diameetri vahelise suhte) väärtust. Kui joonistada ruut ja selle sisse ring, siis kui ringi raadius on `r`, on ruudu pindala `(2*r)*(2*r) = 4*r**2` ja ringi pindala `pi*r**2`. Seega ringi pindala moodustab `pi/4` kogu ruudu pindalast. Seega, valides juhusliku punkti ruudu seest, asub ta ringi sees tõenäosusega `pi/4`. Seega, kui valida juhuslikult palju punkte ruudu seest, peaks ligikaudu `pi/4` osa neist olema ringi sees. Neid kokku lugedes saame seega hinnata `pi/4` väärtust suhtega `ringi sees olevate arv` / `katsete koguarv`.
 
 Teame, et ringi moodustavad kõik punktid, mis on tema keskpunktile lähemal kui raadius. Seega, kui keskpunkt on (0,0), siis on ringi sees täpselt need punktid (x,y) mille korral 
@@ -1340,5 +1344,5 @@ Katsetamine erinevate katsete arvudega (10,100,1000,...,1000000) peaks veenma, e
 Selliseid arvutusmeetodeid nimetatakse Monte Carlo meetoditeks (kuulsa kasiinolinna järgi Monakos). Antud näide on taas pigem illustratiivne – praktikas kasutatakse seda reeglina ülesannete puhul, mida muud moodi lahendada ei osata. π arvutamiseks teatakse aga palju teisi ja oluliselt paremaid meetodeid.
 
 Collatzi jada
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 TODO
