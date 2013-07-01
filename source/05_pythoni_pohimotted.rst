@@ -1,11 +1,11 @@
 5. Pythoni põhimõtted
-========================
+=====================
 
 TODO Ülesanded
 * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
 
 Kood vs. runtime
---------------------
+----------------
 
 igal tüübil on literaali süntaks ja operatsioonid/tähendus
 code vs. data
@@ -19,10 +19,10 @@ Toetu mingile näitele eelmisest ptkst selle duaalsuse kirjutamisel!!!
 
 
 Süntaks
-----------------------
+-------
 
 Operaatorid
-~~~~~~~~~
+~~~~~~~~~~~
 Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema prioriteediga tehted on ülalpool, samal real olevad operaatorid on sama prioriteediga):
 
     * ``**``
@@ -40,22 +40,22 @@ Kahtluse korral kasuta soovitud tehete järjekorra määramiseks sulge.
 
 
 Python vs. Scratch vs. Java
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Laused vs. avaldised
------------------------
+--------------------
 
 Arvutusmudel
---------------
+------------
 
 Avaldised vs. väärtused
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 väärtused e. objektid
 
 igalpool kus kasutad muutujat/literaali võib kasutada ka teisi avaldise vorme, sest lõppkokkuvõttes muudetakse kõik väärtuseks.
 
 Mälu ja muutujad
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 .. _milleks-muutujad:
     
 Milleks muutujad?
@@ -66,13 +66,13 @@ Milleks muutujad?
  
 
 Moodulid
-~~~~~~~~~~~~
+~~~~~~~~
 
 Sisend ja väljund
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Funktsioonide tööpõhimõte
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TODO: Intuitsioon vs. mehhanism -- ka peale arvutile asjade õpetamist jäävad tema teadmised ikkagi mehhaaniliseks. Loll masin.
 
@@ -81,9 +81,9 @@ On vaja mõista, et arvuti/Python tegutsevad vaid etteantud reeglite järgi, nei
 Taoline detailne mõtlemine võib tunduda algul väga ebaloomulik, aga kui me soovime oma mõtteid täpselt ja ühetähenduslikult kirja panna, siis on see ainuke võimalus
 
 Kokkuvõte
----------------
+---------
 Väärtused ja avaldised
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksematele, aga samas ka kõige tähtsamatele elementidele, millest ei saa üle ega ümber. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib tekitada segadust, seepärast vaatame nende tähendused veelkord üle:
 
     * **Väärtus** (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi", millega tehakse midagi (nt. kuvatakse ekraanile, kombineeritakse teiste väärtustega, võrreldakse, salvestatakse mällu vms). Väärtusi nimetatakse ka *andmeteks*.
@@ -105,7 +105,7 @@ Konkreetsetest andmetüüpidest vaatlesime *täisarve*, *ujukomaarve* ja *sõnes
     * Enamik sõneoperatsioone on Pythonis realiseeritud `meetoditena` (nt. ``nimi.lower()``)
 
 Sisend ja väljund
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 Et programmi käivitamisel midagi üldse juhtuks, on vaja programmi kirjutada ka mingi *tegevus*, näiteks kasutajaga (või failisüsteemiga) suhtlemine:
 
     * ``print`` kuvab etteantud väärtuse ekraanile
@@ -113,7 +113,7 @@ Et programmi käivitamisel midagi üldse juhtuks, on vaja programmi kirjutada ka
     * faili lugemiseks ja kirjutamiseks tuleb fail kõigepealt *avada* (``f = open("andmed.txt")`` või ``f2 = open("andmed2.txt", mode="w")``). Lugemiseks saab kasutada failimeetodit ``readline`` (nt ``print(f.readline())``), kirjutamiseks meetodit ``write`` (nt ``f2.write(nimi + "\n")``).
     
 Importimine
-~~~~~~~~~~~~
+~~~~~~~~~~~
 Kuna Pythonis standardteegis (ja teiste arendajate teekides) eksisteerib väga palju funktsioone, on nad organiseeritud *moodulitesse*. Moodulis olevatele funktsioonidele ligipääsemiseks on vaja kasutada *import lauset*. Sellel lausel on 3 erinevat varianti:
 
     * ``from math import sin, cos`` -- üksikute funktsioonide importimine
@@ -121,7 +121,7 @@ Kuna Pythonis standardteegis (ja teiste arendajate teekides) eksisteerib väga p
     * ``import math`` -- mooduli enda importimine. Sel juhul tuleb funktsiooni nimi kirjutada koos mooduli nimega (``math.sin(0.5)``)
 
 Avaldised vs. laused
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 Selle peatüki programmide puhul saame programmi iga rida nimetada **lauseks**. Pythoni programm polegi muud, kui lausete jada. Avaldisi kasutatakse vaid lausete koosseisus. Need lauseliigid mida me kohtasime olid:
 
     * import-lause, nt. ``from math import sin``
