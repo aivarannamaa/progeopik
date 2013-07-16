@@ -1,10 +1,11 @@
 7. Alternatiivsed lahendused
-=======================================
+============================
 
 sisuliselt refactoring, samaväärsus
 
 .. todo::
 
+    * loe kokku, mitu tingimusele vastavat elementi on listis (counter vs len . filter)
     * koodi lühendamine: 0-kordusega tsüklid
     * maini uuesti alternatiivsete lahenduste teemat (nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks)
     * conditional vs alternative execution ???
@@ -97,7 +98,7 @@ Testi loodud funktsiooni järgnevate avaldistega:
     
 
 ``elif`` konstruktsioon e. mitmeharuline tingimuslause
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ülalpool toodud arvude võrdlemise näite saab kirjutada ümber kasutades ``elif`` konstruktsiooni (tuleb sõnadest *else if*):
 
 .. sourcecode:: py3
@@ -147,7 +148,7 @@ Testi oma funktsiooni!
 
 
 Tingimusavaldis
------------------
+---------------
 Lisaks ``if``-*lausele* on Pythonis olemas ka ``if``-*avaldis* e. *tingimusavaldis*. Selle olemust on kõige lihtsam selgitada näitega:
 
 .. sourcecode:: py3
@@ -190,13 +191,13 @@ Tingimusavaldise asemel saab alati kasutada tingimuslauset ...
     Kui sulle siiski tundub, et tingimusavaldis teeb sinu jaoks asjad liiga segaseks, siis võid seda rahumeeli ignoreerida. Alati saab hakkama ka ainult tingimuslausega. Mitmes populaarses programmeerimiskeeles isegi pole tingimusavaldist.
 
 Erijuhtude käsitlemine
-----------------------------
+----------------------
 TODO
 
 
 
 Alamülesannete tuvastamine ja alamprogrammide loomine
----------------------------------------------------------
+-----------------------------------------------------
 Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli sul tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks sult praegu, millise eesmärgiga on sinu programmis mingi konkreetne rida või plokk, siis ilmselt peaksid enne vastamist omajagu süvenema.
 
 Kuna enamus praktikas kasutatavaid programme on palju keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
@@ -419,24 +420,24 @@ Teiseks, me **defineerisime funktsiooni ühekordselt, aga saime seda kasutada mi
     
 
 Harjutus 1. Liigu nurka
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 Lisa vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
 
 Kasuta seda funktsiooni programmis sobival kohal.
 
 
 Erindid
-----------
+-------
 TODO
 
 
 Erineva efektiivsusega samaväärsed programmid
-----------------------------------------------
+---------------------------------------------
 TODO:
 
 
 Ülesanded
--------------
+---------
 
 1. Kuupäeva esitamine sõnena
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -447,7 +448,7 @@ Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta.
 Kasuta abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 3-6).
 
 2. Täisnurkne kolmnurk
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja tagastab ``True`` või ``False`` vastavalt sellele, kas tegemist oli täisnurkse kolmnurgaga või mitte.
 
 .. note:: 
@@ -509,9 +510,9 @@ Kirjuta programm, mis küsib kasutajalt infot tellitava pitsa suuruse, komponent
 Pitsakatte komponente peaks saama valida ükskõik kui palju. Aadressi küsida ainult siis, kui kasutaja ei soovi ise järele tulla. Kogutud andmed salvestada tekstifaili.
 
 Projekt
-------------
+-------
 Tkinter'i Canvas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 Eelmises peatükis tutvustasime mõningaid tkinter'i võimalusi graafiliste kasutajaliideste loomisel. Seal demonstreerisime põhiliste "standardvidinate", nagu nuppude ja tekstisisestuskastide kasutamist. Seekord uurime ühte väga paindlikku vidinat, mille nimi on *Canvas* (tõlkes *lõuend*). *Canvase* peale saab joonistada kujundeid, laadida pilte, neid pilte ja kujundeid saab liigutada, nendele klõpsamist on võimalik registreerida jne.
 
 Salvesta endale järgnev näiteprogramm. Enne käivitamist salvesta samasse kausta ka fail :download:`juku.gif <downloads/juku.gif>`.
