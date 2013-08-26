@@ -1,11 +1,21 @@
 6. Algoritmid
 =============
 
+* Ülesande arvutile õpetamine nõuab, et sa saaks sellest täpselt aru (võrdle seda
+* Loetavus
+* Samaväärsused
+
 See ptk. tegeleb lahenduseni jõudmise ja lahenduse kirjapaneku küsimustega.
+
+TODO: ära käsitle seda liiga täispuhutult ja tähtsalt, räägi põhiasjad ära ja too näiteid, harjutusi.
 
 TODO: mitteformaalne näiteülesanne, mida on raske formaliseerida
 
 TODO: programmeerimine on arvuti õpetamine, see nõuab paremat arusaamist
+
+TODO: arvutiteadlased ei ürita lihtsalt konkreetsele probleemile vastust leida, nad üritavad leida algoritmi, mis sobib kõigile seda tüüpi probleemidele 
+
+TODO: Pólya, "A great discovery solves a great problem ..."
 
 
 | *Sa arvad, et sa tead, kui sa õpid,*

@@ -3,11 +3,20 @@
 
 .. todo::
 
+    quotes: http://www.marcofolio.net/tips/27_inspiring_top_notch_programming_quotes.html
+    http://quotes.cat-v.org/programming/
+
+.. todo::
+
     Näita, et programmeerimine ei ole kellelegi üle mõistuse. Proovi demonstreerida, et ka need, kes arvavad, et ei oska, siiski oskavad.
+    
+.. todo::
+
+    Soovita näited ümber *tippida*, et treenida tähelepanelikkust?
 
 Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmeerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
 
-Esimese peatüki põhieesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
+Esimese peatüki eesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
 
 .. todo::
 
@@ -374,13 +383,17 @@ Mis on programm?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 `Programm`, nii nagu me seda selles õpikus mõistame, on mingi tegevuse kirjeldus. Selle poolest on programmi mõiste väga sarnane teatris ja kinos kasutatavale `käsikirja` e. `stsenaariumi` mõistele (inglise keeles saab kasutada mõlema mõiste kohta lausa sama sõna -- `script`).
 
-Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad ja rangemad, kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest), seetõttu on võimalik neid keeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil.
+Oluline erinevus teatri käsikirja ning programmi vahel on see, et programm pannakse kirja mingis `programmeerimiskeeles` (nt. `Python` või `Java`), mitte `loomulikus keeles` (nt. eesti või inglise keel). Programmeerimiskeeled on palju primitiivsemad ja rangemad, kui loomulikud keeled (seda nii sõnavara, kui reeglite poolest), seetõttu on võimalik neid keeli "õpetada" ka arvutile. See omakorda võimaldab meil lasta oma "käsikirja" (programmi) "etendada" (`käivitada` või `jooksutada`) arvutil. 
 
-Kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist.
+Tavapärases kirjas või kõnes on iga mõte tavaliselt väljendatud liiaga -- kui mõnes lauses on kirjaviga või keelevääratus, siis järgnevad sõnad ja laused aitavad mõttest siiski õigesti aru saada. Programmeerimiskeeles kirjutatud tekstid on seevastu "tihedad", seal ei ole midagi üleliigset, mille abil saaks vigaselt väljendatud mõtet õigesti mõista -- kui programmeerija kirjutab kasvõi ühe tähe valesti, on tulemuseks vigane või vale tähendusega programm. See tähendab, et *programmides mängivad pisikesed detailid palju suuremat rolli, kui loomulikus kõnes või kirjas*.
+
+Veel üks erinevus: kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka publikut, on etenduse kulg enamasti siiski ette teada. Programmidesse on seevastu peaaegu alati sisse kirjutatud ka "publikuga" (kasutajaga) suhtlemine, mis võib edasist programmi käiku väga oluliselt mõjutada. Lisaks kasutajalt saadud infole (mis on edastatud nt. hiire või klaviatuuri kaudu) võib programm hankida infot ka näiteks kõvakettalt või internetist.
 
 
 Mis on programmeerimine?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO: kunst? teadus? inseneritöö?
+
 Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned olulised inimlikud aspektid.
 
 Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
@@ -389,9 +402,17 @@ Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse ühe
 
 Kokkuvõtteks võib öelda, et *programmeerimine on mitmekesine protsess*, kuhu on muuhulgas põimitud ülesande analüüsimine, lahenduse kirjapanek, selle kontrollimine ja parandamine.
 
+.. todo:: 
+
+    Kas programmeerimine on "kuiv"? Kas on olemas 1 õige lahendus?
+
+.. todo::
+
+    Esimene kirjutis ei pea olema lõplik
+
 Mis on Python?
 ~~~~~~~~~~~~~~
-Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keeles Python kirjutatud programme. Pythoni interpretaatori kasutamisest tuleb varsti juttu.
+Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keeles Python kirjutatud programme. 
 
 .. note::
 
@@ -402,36 +423,23 @@ Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keele
 
 Mõtteharjutus
 ~~~~~~~~~~~~~~~~~~~
-Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? Kas tulevikus saab programmeerida eesti või inglise keeles? Millised takistused tuleks selleks ületada?
+Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? Kas tulevikus saab programmeerida eesti või inglise keeles? Millised takistused tuleks selleks ületada? Kas kunagi hakkavad arvutid arvestama sellega, et programmeerija võib teha vigu? ("Hmm... siin on küll kirjas ``2 / x`` aga see ei klapi siin mitte, küllap ta mõtles ``x / 2``").
 
 
 
 Programmeerimise õppimine
 ------------------------------
-Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks mahutada ühele A4-le, ei piisa ainult nende meeldejätmisest, sest võimalusi nende reeglite *kombineerimiseks* on lõputult. Lisaks reeglite teadmisele tuleb osata näha ülesande "sisse", märgata selle nüansse, kujutleda otsitavat lahendust ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab samaaegselt loovust ja täpsust, üldistusvõimet ja konkreetsust. 
+Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks vabalt mahutada ühele A4-le, ei piisa ainult nende meeldejätmisest, sest võimalusi nende reeglite *kombineerimiseks* on lõputult. Lisaks reeglite teadmisele tuleb osata näha ülesande "sisse", märgata selle nüansse, kujutleda otsitavat lahendust ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab samaaegselt loovust ja täpsust, üldistusvõimet ja konkreetsust. 
 
-Et suuta taolist protsessi oma peas läbi viia ka raskemate (st. huvitavamate) ülesannete puhul, on vaja harjutada järjest raskemate ülesannetega, ainult teooria lugemisest ja näiteülesannete läbiproovimisest ei piisa. Seetõttu on järgnevates peatükkides hulgaliselt ülesandeid, mis nõuavad äsja loetud materjali loomingulist kasutamist.
+Et suuta taolist protsessi oma peas läbi viia ka raskete (st. huvitavate) ülesannete puhul, on vaja *harjutada* järjest raskemate ülesannetega, ainult teooria lugemisest ja näiteülesannete läbiproovimisest ei piisa. Seetõttu on järgnevates peatükkides hulgaliselt ülesandeid, mis nõuavad äsja loetud materjali praktilist rakendamist.
 
 .. admonition:: NB!
 
-    Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et lahendus tuleks panna kirja ka siis, kui suudate selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik ja/või vigane.
+    Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et ülesande lahendus tuleks panna kirja isegi siis, kui sa suudad selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik või vigane.
 
-Kui sa tunned, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis tea, et see on taotluslik -- need ülesanded õpetavad sulle tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovi taolist ülesannet enda jaoks ümber sõnastada, otsi seoseid ja sarnasusi teiste ülesannetega, lihtsusta ülesannet, otsi abi internetist, võta väike puhkepaus, vaata ülesannet värske pilguga ja proovi jälle. Läbi raskuste saavutatud kogemused ja oskused on sulle edaspidi kõige rohkem abiks!
+Kui sa tunned, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis tea, et see on taotluslik -- need ülesanded õpetavad sulle tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovi taolist ülesannet enda jaoks ümber sõnastada, otsi seoseid ja sarnasusi teiste ülesannetega, lihtsusta ülesannet, otsi abi internetist või kaaslastelt, võta väike puhkepaus, vaata ülesannet värske pilguga ja proovi jälle. Läbi raskuste saavutatud kogemused ja oskused on sulle edaspidi kõige rohkem abiks!
 
 Programmeerimiseks vajalikku ettevalmistust on mõnel inimesel rohkem ja teisel vähem, aga harjutamisega on kõigil võimalik end selles osas arendada!
-
-
-Programmeerimine vs. maagia
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb rituaali korras "sõnuda" (st. oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
-
-On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid praegu sinu jaoks segaseks või lausa "müstiliseks" -- peatüki eesmärk oli anda lihtsalt esimene ettekujutus Pythoni programmidest. Tegelikult pole programmeerimises aga midagi müstilist, iga programmilõigu tööpõhimõtet on võimalik alati täielikult ära seletada.
-
-Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid siis, kui sa saad programmist lõpuni aru. Seetõttu *on oluline, et järgmisest peatükist alates mõistaksid sa enda kirjutatud programmides iga sümboli otstarvet ja tähendust*.  Kui sa lepid sellega, et mingi koht programmis jääbki segaseks, siis tõenäoliselt raskendab see ka järgnevate teemade mõistmist. Vajaduselt küsi julgelt nõu kaaslaste või juhendajate käest, aga *ära pea oma tööd lõpetatuks, kui su programmis on mõni rida, mille tähendust sa täpselt ei mõista! Katse/eksitus meetodil (e. lotomängija stiilis) programmeerimine on tupiktee!*
-
-.. note::
-    
-    Viimase lause juurde võiks siiski lisada väikese möönduse: katsetamine on OK, kui su eesmärk on katsetamise teel asja põhimõttest aru saada. Peaasi, et sa ei loeks oma tööd lõpetatuks enne, kui sa tunned, et saad programmist väga hästi aru.
 
 Mõtlemise stiilid
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -439,7 +447,7 @@ Osad inimesed (sh. suur osa programmeerijatest) eelistavad õppida ja mõelda ab
 
 Teistele (nt. suurele osale kunstnikest) lähevad rohkem korda konkreetsed situatsioonid või kombinatsioonid. Uue teema õppimisel ei tunne nad ennast kindlalt enne, kui nad on suutnud selle seostada millegi konkreetse või elulisega. Öeldakse, et nemad suudavad paremini kasutada oma paremat ajupoolt, mis pidavat muuhulgas vastutama intuitsiooni ja loova mõtlemise eest.
 
-Kuigi tavapäraselt rõhutatakse programmeerimise juures abstraktse mõtlemise vajalikkust, peab edukas programmeerija kasutama siiski tervet oma aju. Keeruliste süsteemide haldamine nõuab tõepoolest head üldistamisvõimet, aga parimad programmiideed sünnivad tihti hoopis konkreetsetest, elulistest või täiesti mitteratsionaalsest mõtetest ja tunnetest.
+Kuigi tavapäraselt rõhutatakse programmeerimise juures abstraktse mõtlemise vajalikkust, peab edukas programmeerija kasutama siiski tervet oma aju. Keeruliste süsteemide haldamine nõuab tõepoolest head üldistamisvõimet, aga parimad programmiideed sünnivad tihti hoopis konkreetsetest, elulistest või ka täiesti mitteratsionaalsest mõtetest ja tunnetest.
 
 Loomulikult ei ole kõik must ja valge -- sama inimene mõtleb erinevates situatsioonides erinevalt ning erinevaid mõtlemise stiile on võimalik arendada. Siiski on erinevatel inimestel programmeerimise õppimisel erinevad lähtepositsioonid ja erinevad väljakutsed. Kui sa ei tunne ennast abstraktsete teemadega mugavalt, siis ilmselt tuleb sul lihtsalt rohkem konkreetseid ülesandeid lahendada, enne kui õnnestub mingist teemast üldistatud ettekujutust saada. Neil, kes kalduvad abstraktsust eelistama, on mõtet iga teema juures võtta endale lisaaega märkamaks võimalikke seoseid igapäevase eluga.
 
@@ -450,6 +458,22 @@ Mõtteharjutus
 * Millised oma tugevaid külgi saaksid sa programmeerimisel rakendada? Tähelepanelikkust? Loovust? Järjekindlust? Täpsust? Julgust väljakutseid vastu võtta? Head üldistusvõimet? Uudishimu? Korrektsust? Seoste ja mustrite märkamise oskust?
 * Milliseid nimetatud omadustest pead sa veel arendama?
 
+
+Programmeerimine vs. maagia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO: ära jäta muljet, et katsetamine on halb!!!!!
+
+TODO: viita tagasi mõtlemise stiilidele
+
+Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb rituaali korras "sõnuda" (st. oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
+
+On täiesti loomulik, kui mõned selle peatüki näited või ülesanded jäid praegu sinu jaoks segaseks või lausa "müstiliseks". Pole hullu, peatüki eesmärk oli anda lihtsalt esimene ettekujutus Pythoni programmidest. Tegelikult pole programmeerimises aga midagi müstilist -- iga programmilõigu tööpõhimõtet on võimalik alati täielikult ära seletada.
+
+Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid siis, kui sa saad programmist lõpuni aru. Seetõttu *on oluline, et järgmisest peatükist alates mõistaksid sa enda kirjutatud programmides iga sümboli otstarvet ja tähendust*.  Kui sa lepid sellega, et mingi koht programmis jääbki segaseks, siis tõenäoliselt raskendab see ka järgnevate teemade mõistmist. Vajaduselt küsi julgelt nõu kaaslaste või juhendajate käest, aga *ära pea oma tööd lõpetatuks, kui su programmis on mõni rida, mille tähendust sa täpselt ei mõista! Katse/eksitus meetodil (e. lotomängija stiilis) programmeerimine on tupiktee!*
+
+.. note::
+    
+    Viimase lause juurde võiks siiski lisada väikese möönduse: katsetamine on OK, kui su eesmärk on katsetamise teel asja põhimõttest aru saada. Peaasi, et sa ei loeks oma tööd lõpetatuks enne, kui sa tunned, et saad programmist väga hästi aru.
 
 Kokkuvõte
 -------------
@@ -472,7 +496,7 @@ Iga peatüki lõpus on soovitav teha iseenda jaoks mõttes (või kirjalikult) ol
 ------------
 .. note ::
 
-    Peatükkide lõpus olevad ülesanded on mahukamad, kui teksti sees antud ülesanded ja õpetavad seega paremini probleemi lahendamise oskust. Praktikumide korralduses on eeldatud, et need ülesanded on lahendatud (või proovitud lahendada) enne praktikumi tulemist. Esimeses peatükis on soenduseks vaid üks ülesanne, edaspidi tuleb neid rohkem.
+    Peatükkide lõpus olevad ülesanded on mahukamad, kui teksti sees antud ülesanded ja õpetavad seega paremini probleemi lahendamise oskust. Esimeses peatükis on soenduseks vaid üks ülesanne, edaspidi tuleb neid rohkem.
     
 1. Maja
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -546,8 +570,8 @@ Programmi käivitamiseks avame kõigepealt süsteemi käsurea ja liigume selless
 
 Õigesse kausta liikumiseks sisesta ``cd``, tühik ja täielik kausta nimi. Näiteks, kui sinu programmeerimise kaust asub sinu kodukaustas, siis võiks kausta vahetamise käsk näha välja midagi sellist:
 
-    * ``cd c:\Users\Peeter\Documents\progemine`` (Windows 7 ja Vista)
-    * ``cd "c:\Documents and Settings\Peeter\My Documents\progemine"`` (Windows XP. Kui kausta nimes esineb tühikuid, tuleb see ümbritseda jutumärkidega)
+    * ``cd C:\Users\Peeter\Documents\progemine`` (Windows 7 ja Vista)
+    * ``cd "C:\Documents and Settings\Peeter\My Documents\progemine"`` (Windows XP. Kui kausta nimes esineb tühikuid, tuleb see ümbritseda jutumärkidega)
     * ``cd ~/progemine`` (Mac ja Linux)
 
 Programmi käivitamiseks tuleb pöörduda Pythoni interpretaatori poole, öeldes talle jooksutatava programmi nime: 

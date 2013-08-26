@@ -43,8 +43,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Programmeerimise algkursus'
-copyright = u'2011, ATI'
+project = 'Programmeerimise õpik'
+copyright = '2011, ATI'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -109,7 +109,7 @@ html_theme_options = {'textalign': 'left'}
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "Programmeerimise algkursus"
+html_title = "Programmeerimise õpik"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -185,8 +185,8 @@ htmlhelp_basename = 'ProgrammeerimineMTAT03100doc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'ProgrammeerimineMTAT03100.tex', u'Programmeerimine (MTAT.03.100) Documentation',
-   u'ATI', 'manual'),
+  ('index', 'ProgrammeerimineMTAT03100.tex', 'Programmeerimise õpik',
+   'ATI', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -218,18 +218,18 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'programmeeriminemtat03100', u'Programmeerimine (MTAT.03.100) Documentation',
-     [u'ATI'], 1)
+    ('index', 'programmeeriminemtat03100', 'Programmeerimise õpik',
+     ['ATI'], 1)
 ]
 
 
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Programmeerimine (MTAT.03.100)'
-epub_author = u'ATI'
-epub_publisher = u'ATI'
-epub_copyright = u'2011, ATI'
+epub_title = 'Programmeerimise õpik'
+epub_author = 'ATI'
+epub_publisher = 'ATI'
+epub_copyright = '2011, ATI'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

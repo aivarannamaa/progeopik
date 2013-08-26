@@ -3,6 +3,8 @@
 
 TODO Ülesanded
 * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
+* märgi ära or'i ja and'i shortcut evaluation
+* ülesanded kombineeritavuse kohta (sh. tõeväärtusavaldised, samaväärsused)
 
 Kood vs. runtime
 ----------------
