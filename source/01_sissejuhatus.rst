@@ -12,7 +12,7 @@
     
 .. todo::
 
-    Soovita näited ümber *tippida*, et treenida tähelepanelikkust?
+    Soovita näited ümber *tippida*, et treenida tähelepanelikkust ja et konstruktsioonidega lähemalt tuttavaks saada.
 
 Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmeerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
 

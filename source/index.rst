@@ -8,16 +8,15 @@ Sisukord
    01_sissejuhatus
    02_lihtlaused
    03_liitlaused
-   04_definitsioonid
-   05_pythoni_pohimotted
+   04_funktsioonid
+   05_kokkuvote1
    06_algoritmid
-   07_alternatiivid
-   08_jarjendid1
-   09_jarjendid2
-   10_mustrid
-   11_andmestruktuurid
-   12_rekursioon
-   13_jarelsona
+   07_listid
+   08_muteerimine
+   09_andmestruktuurid
+   10_rekursioon
+   11_kokkuvote2
+   12_jarelsona
    tkinter
    python2
 
