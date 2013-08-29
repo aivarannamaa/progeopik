@@ -1,0 +1,58 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+	background-image:url('back.jpg');
+	margin: 0px;
+	padding: 0px;
+}
+
+#page {
+    margin:0px;
+    
+    max-width:60em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    
+    box-shadow: 7px 10px 5px #888888, -5px 10px 5px #888888;
+}
+
+#header {
+	padding: 2em;
+}
+
+#header h1 {
+	margin: 0px;
+	color: white;
+}
+
+#header a {
+	color: white;
+}
+
+#header {
+	background-image:url('bgtop.png');
+	
+}
+#main {
+	padding: 2em;
+}
+
+#toc {
+	float: right;
+	width: 30%;
+}
+
+
+#content {
+	float: left;
+	width:70%;
+}
+
+#footer {
+	clear: both;
+}

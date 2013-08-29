@@ -1,10 +1,10 @@
-11. Andmestruktuurid
-=============================================
+9. Andmestruktuurid
+===================
 Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni oled tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi, ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
 
 
 Hulgad
-----------
+------
 Pythoni *hulga* (ing.k *set*) andmetüüp on küllalt sarnane listile -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttavas hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elementi (jällegi, sarnaselt matemaatilisele hulgale).
 
 Konkreetse hulga kirjapanekuks kasutatakse loogelisi sulge. Järgnev käsurea näide demonstreerib eelpoolmainitud hulkade omadusi:
@@ -85,7 +85,7 @@ Just nagu järjendite puhul, saab ka hulga kõiki elemente saab "läbi käia" ka
 Täpsemat infot Pythoni hulkade kohta saab aadressilt http://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset.
 
 Harjutus 1. Hulkade vahe
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon, mis võtab argumendiks kaks hulka ja tagastab esimese ja teise hulga vahe, st. hulga, mis sisaldab kõiki neid esimese hulga elemente, mis ei sisaldu teises hulgas.
 
 .. admonition:: NB!
@@ -139,7 +139,7 @@ Justnagu järjendite puhul, saab kõiki sõnastiku elemente läbi vaadata kasuta
 Kui sa proovisid seda näidet käivitada, siis võis juhtuda, et telefoninumbrid väljastati teistsuguses järjekorras, kui sõnastiku loomisel. Põhjus on selles, et just nagu hulkade puhul, ei pea ka sõnastiku puhul Python elementide omavahelist järjekorda oluliseks ja võib neid programmi efektiivsuse huvides ümber tõsta (aga ühe elemendi võti ja väärtus jäävad siiski alati omavahel seotuks).
 
 Sõnastiku täiendamine elementhaaval
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Justnagu järjendeid ja hulki, saab ka sõnastikke programmi töö käigus täiendada, aga seejuures ei kasutata mitte meetodeid ``append`` või ``add``, vaid võtme järgi omistamist kujul ``sõnastik[võti] = väärtus``:
 
 .. sourcecode:: py3
@@ -190,7 +190,7 @@ Sõnastiku elemendi väärtuse muutmine käib samasuguse süntaksiga nagu elemen
 
 
 Harjutus 2. Telefoniraamat
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Muuda ülalpool toodud telefoniraamatu näidet selliselt, et andmed loetakse sisse tekstifailist ja programm võimaldab kasutajal küsida telefoninumbrit omaniku nime järgi.
 
 Mitmemõõtmelised andmestruktuurid
@@ -266,7 +266,7 @@ Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset
 
 
 Mitmemõõtmeliste järjendite läbimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Taoliste andmestruktuuride kasutamiseks ei ole tarvis mingisuguseid erivõtteid -- tuleb lihtsalt pidada meeles, millist tüüpi elementidega meil mingil tasemel tegemist on.
 
 Üritame näiteks kuvada ekraanile kahemõõtmelises järjendis sisalduvat infot *(NB! enne selle programmi käivitamist käi tsüklid ise mõttes läbi ja ennusta, milline tuleb programmi väljund!)*:
@@ -313,7 +313,7 @@ Kuigi tsüklit tsükli sees oled ka juba eespool kohanud, võib see siiski tundu
 
 
 Mitmemõõtmeliste järjendite indekseerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Eelnevates näidetes põhinesid tsüklid otse järjenditel, aga nagu teate, võib järjendeid läbida ka indeksite abil:
 
 .. sourcecode:: py3
@@ -351,7 +351,7 @@ Viimasel real oleva ``print``-i argumendi tähendus saab võibolla selgemaks, ku
 Nüüd on ilusti näha, et sulgudes olev avaldis kujutab endast ``i``-ndat elementi ``arvujärjendite_järjend``-ist (ehk siis ühte arvujärjendit) ning sellest omakorda võetakse element indeksiga ``j``, seega on tulemuseks mingi arv.
 
 Kokkuvõtteks: Mitmemõõtmeliste andmestruktuuride kasutamise põhimõte
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pythonis ei ole tehniliselt võttes eraldi konstruktsiooni "kahemõõtmeline järjend". On järjendid ja järjendite elemendid võivad olla suvalist tüüpi (sh. järjenditüüpi). Mõistet "kahemõõtmeline järjend" kasutatakse vaid selleks, et anda lugejale/kuulajale veidi lisainfot vaadeldava järjendi sisu/kuju kohta.
 
 Olgu meil ühe-, kahe- või 100-mõõtmeline järjend, tegemist on alati ikkagi järjendiga ja sedasi tuleb talle ka läheneda. Vaja on lihtsalt arvestada, millised on tema elemendid (vastavalt lihttüüpi väärtused, ühemõõtmelised järjendid või 99-mõõtmelised järjendid).
@@ -364,7 +364,7 @@ Sama põhimõte kehtib ka "järjendite ennikute" ja "hulkade sõnastike ennikute
 
 
 Harjutus 3. Sudoku tabeli sisselugemine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis loeb etteantud failist (:download:`sudoku.txt <downloads/sudoku.txt>`) arvud kahemõõtmelisse järjendisse.
 
 .. note:: 
@@ -373,7 +373,7 @@ Kirjuta programm, mis loeb etteantud failist (:download:`sudoku.txt <downloads/s
 
 
 Näide: Mitmemõõtmelise järjendi koostamine jupphaaval
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mitmemõõtmelise järjendi loomisel ``append`` meetodiga tuleb jällegi mõelda, millised peavad olema järjendi elemendid. Järgnev näide on üks võimalik lahendus eelnevale ülesandele (kui ülesanne jäi sulle liiga raskeks, siis analüüsi seda näitelahendust eriti hoolikalt):
 
 .. sourcecode:: py3
@@ -398,7 +398,7 @@ Mitmemõõtmelise järjendi loomisel ``append`` meetodiga tuleb jällegi mõelda
 
 
 Näide: Eksami statistika
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 Õppejõud koostas eksami, milles oli 7 ülesannet. Iga ülesannet eest võis saada kuni 10 punkti. Eksami tulemused on kirjas failis :download:`eksam.txt<downloads/eksam.txt>`.
 
 Leida iga tudengi eksamipunktide kogusumma.
@@ -456,7 +456,7 @@ Leida iga tudengi eksamipunktide kogusumma.
 
 
 Harjutus 4. Keskmine tulemus ülesannete kaupa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Täienda eelnevat näiteprogrammi nii, et see näitaks millised ülesanded olid üldiselt raskemad ja millised kergemad. Selleks väljasta keskmised tulemused ülesannete kaupa (st. eraldi kõigi tudengite 1. ülesande eest saadud punktide keskmine jne).
 
 .. hint::
@@ -469,7 +469,7 @@ Kahekordsed tsüklid ühemõõtmelisel järjendil
 Vahel läheb mitmekordseid tsükleid tarvis ka ühemõõtmeliste järjendite töötlemiseks.
 
 Näide: Libisev keskmine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 Antud on fail (:download:`aktsiad.txt <downloads/aktsiad.txt>`), kus on antud ühe aktsia hinnad järjestikustel päevadel. Küsida kasutajalt päevade arv *k* ning väljastada järjest iga päeva kohta sellele eelnenud *k* päeva keskmine aktsiahind.
 
 .. sourcecode:: py3
@@ -529,7 +529,7 @@ Koosta funktsioon ``kõik_erinevad``, mis tagastab ``True`` või ``False`` vasta
     
     
 Harjutus 6. Mõistatuslik teisendus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Proovi ennustada, mida teeb järgmine funktsioon: 
 
 .. sourcecode:: py3
@@ -555,7 +555,7 @@ Sisemise tsükli viimasel real on tegemist kahe elemendi väärtuse vahetamisega
 
 
 Andmestruktuurid
---------------------
+----------------
 Peatüki pealkirjaks on andmestruktuurid, nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab :)
 
 Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad nö "atomaarseid" või "jagamatuid" väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisut segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks, kui liittüübiks).
@@ -576,10 +576,10 @@ Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- 
 
 
 Ülesanded
----------------
+---------
 
 1. Teksti analüüs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust eesti- vs. ingliskeelsetes tekstides.
 
 .. hint::
@@ -604,7 +604,7 @@ Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust ees
 
 
 2. Eksami statistika, 2. osa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. note::
 
     Praktikumiks ettevalmistamiseks piisab, kui lahendate allolevatest alamülesannetest vaid ühe. Samas, harjutamise mõttes on kindlasti kasulik kõik ära lahendada.
@@ -629,7 +629,7 @@ NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tul
 
 
 3. Kaugeimad punktid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leida punktid, mis asuvad teineteisest kõige kaugemal. Väljastada ekraanile ka nende punktide koordinaadid.
 
 .. hint::
@@ -641,7 +641,7 @@ Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide 
     Punktide omavahelise kauguse arvutamisel on abi *Pythagorase teoreemist*. Vajadusel visanda skeem koordinaatteljestiku ja kahe punktiga ning otsi pildilt täisnurkset kolmnurka.
 
 4. Sudoku lahenduse kontrollimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Kirjuta programm, mis kontrollib, kas etteantud failis (:download:`sudoku.txt <downloads/sudoku.txt>`) on korrektne Sudoku lahendus. Mittekorrektse lahenduse korral tuleb öelda, millises veerus, reas või 3x3 ruudus probleem esineb.
 
@@ -711,7 +711,7 @@ NB! testi oma programmi nii korrektse kui ka mittekorrektse lahendusega!
 
     
 5. SKP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
 *See ülesanne on antud koos näitelahendusega, aga enne selle vaatamist ürita ise lahenduseni jõuda!*
 
 Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nimed ja nende SKP-d semikooloniga eraldatult (miljonites USA dollarites, 2009. aasta seisuga). Küsida kasutajalt, kui suur SKP teda huvitab ning leida kolm sisestatud arvule kõige lähema SKP-ga riiki.
@@ -768,9 +768,9 @@ Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nime
 
 
 Projekt
-----------
+-------
 Pythoni andmestruktuuride salvestamine ja sisselugemine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Selleks, et "järjendikujulist" infot failis hoida, oleme seni kasutanud mingit lihtsat tekstilist formaati, mida on mugav näiteks tsükli ja ``split``-i abil töödelda. Selle lähenemise eelis on see, et taolist tekstiformaati saab vabalt ka suvalises tekstiredaktoris lugeda või koostada.
 
 Keerulisemate andmestruktuuride ja nende kombinatsioonide (nt. sõnastike või mitmemõõtmeliste järjendite) puhul võib sobiva formaadi väljatöötamine ja kasutamine olla küllalt suur töö. Seetõttu on Pythonis olemas vahendid, mis seda tööd lihtsustavad.
@@ -808,7 +808,7 @@ Tegelikult sobib ``eval`` suvalise sõnena esitatud Pythoni avaldise väärtusta
 Lisalugemine
 ------------
 Keerukus
-~~~~~~~~~~
+~~~~~~~~
 Üldiselt on üht ja sama ülesannet võimalik tihti lahendada mitmel väga erineval moel. Näiteks sobib "Libisev keskmine" lahenduses keskmiste leidmiseks ka järgmine programmijupp:
 
 .. sourcecode:: py3

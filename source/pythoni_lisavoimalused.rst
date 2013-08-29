@@ -1,5 +1,5 @@
-Lisa. Pythoni lisavõimalused
-==============================
+Pythoni lisavõimalused
+======================
 
 
 Tingimusavaldis

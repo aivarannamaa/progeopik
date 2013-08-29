@@ -18,7 +18,8 @@ body {
   font-family: {{ theme_bodyfont }};
   line-height: 140%;
   color: black;
-  background-color: {{ theme_bgcolor }};
+  _background-color: {{ theme_bgcolor }};
+  background: url(back.jpeg) !important;
 }
 
 
@@ -31,10 +32,17 @@ div.header, div.content, div.footer {
   margin-right: auto;
 }
 
+div.header {
+  background: url(bgtop.png) top left repeat-x;
+	
+}
+
+/*
 div.header-wrapper {
   background: {{ theme_headerbg }};
   border-bottom: 3px solid #2e3436;
 }
+*/
 
 
 /* Default body styles */
@@ -281,7 +289,11 @@ div.side_toc ul {
   list-style-type: none;
 }
 
-div.side_toc li.toctree-l1 a {
+div.side_toc li.toctree-l1 {
+	margin-top: 1em;
+}
+
+div.side_toc li.toctree-l2 a {
   display: block;
   padding: 1px;
   border: 1px solid #dddddd;
@@ -291,29 +303,37 @@ div.side_toc li.toctree-l1 a {
   color: #2e3436;
 }
 
-div.side_toc li.toctree-l2 a {
+div.side_toc li.toctree-l2 ul {
+	display: none;
+}
+
+div.side_toc li.toctree-l2.current ul {
+	display: block;
+}
+
+div.side_toc li.toctree-l3 a {
   background-color: transparent;
   border: none;
   margin-left: 1em;
   border-bottom: 1px solid #dddddd;
 }
 
-div.side_toc li.toctree-l3 a {
+div.side_toc li.toctree-l4 a {
   background-color: transparent;
   border: none;
   margin-left: 2em;
   border-bottom: 1px solid #dddddd;
 }
 
-div.side_toc li.toctree-l2:last-child a {
+div.side_toc li.toctree-l3:last-child a {
   border-bottom: none;
 }
 
-div.side_toc li.toctree-l1.current a {
+div.side_toc li.toctree-l2.current a {
   border-right: 5px solid {{ theme_headerlinkcolor }};
 }
 
-div.side_toc li.toctree-l1.current li.toctree-l2 a {
+div.side_toc li.toctree-l2.current li.toctree-l3 a {
   border-right: none;
 }
 

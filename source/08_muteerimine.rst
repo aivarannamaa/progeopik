@@ -1,5 +1,5 @@
-9. Järjendite muteerimine
-=======================================
+8. Järjendite muteerimine
+=========================
 
 Selle peatüki põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.
 
@@ -57,7 +57,7 @@ Antud näite puhul oli tsükli aluseks kasutaja tegevused. Samahästi võiksime 
     print('Arvude 1..9 ruudud on: ' + str(ruudud))
 
 Harjutus 1. Failist järjendisse
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nagu juba teate, võib ``for``-tsükli aluseks olla ka mingi tekstifail.
 
 Kirjuta programm, mis loeb tekstifailist ükshaaval ridu (eeldame, et igal real on üks arv) ning koostab selle käigus järjendi, mis sisaldab failist leitud paarisarve. Koostatud järjend kuvada ekraanile.
@@ -114,7 +114,7 @@ Kirjuta eelneva programmi näitel funktsioon ``sõned_arvudeks``, mis võtab arg
 
 
 Järjendi filtreerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhjal uue järjendi, milles sisalduvad teatud tingimustele vastavad väärtused algsest järjendist. Uuri ja katseta järgnevat näidet:
 
 .. sourcecode:: py3
@@ -130,11 +130,11 @@ Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhja
     print (paarisarvud([1,2,3,4,5,6,7]))
 
 Harjutus 4. Arvude tuvastamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon ``naturaal_sõned``, mis võtab argumendiks sõnede järjendi ning tagastab uue sõnede järjendi, milles sisalduvad vaid need esialgse järjendi väärtused, mis kujutavad naturaalarve (st. ``sõne.isnumeric() == True``). NB! Sõnede teisendamist arvudeks pole selles ülesandes tarvis.
 
 Harjutus 5. Arvude tuvastamine koos teisendamisega
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede järjendi ning tagastab täisarvude järjendi, mis vastab esialgse järjendi nendele elementidele, mis kujutavad täisarve. Näide selle funktsiooni kasutamisest:
 
 .. sourcecode:: py3
@@ -148,7 +148,7 @@ Kirjuta funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede jä
     
 
 Järjendite ühend
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 Järgnevas näites võtab funktsioon ``ühend`` argumendiks kaks järjendit ning tagastab uue järjendi, mis sisaldab mõlema argumentjärjendi erinevaid väärtusi ühekordselt:
 
 .. sourcecode:: py3
@@ -247,7 +247,7 @@ Nagu ikka, võib ka siin kasutada indeksina mingit täisarvulist muutujat.
 
 
 Harjutus 8. Täringuvisete statistika
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Genereeri 100 täringuviske tulemust (kasutades eelpool defineeritud funktsiooni ``juhuslik_järjend``) ning salvesta tulemus muutujasse.
 
 Koosta 6-elemendiline järjend ``statistika``, mis sisaldab täringuvisete statistikat -- avaldis ``statistika[0]`` peaks näitama, mitu korda tuli täringuviske tulemuseks 1, ``statistika[1]`` peaks näitama kahtede sagedust jne.
@@ -260,7 +260,7 @@ Kuva statistika ekraanile.
 
 
 Muudetavate andmetüüpide omapärad
-----------------------------------
+---------------------------------
 Järjendi muutmisel (nii ``append`` kui ``a[i] = x`` puhul) tuleb arvestada ühe omapäraga, mis tuleb ilmsiks siis, kui sama järjend on omistatud mitmele muutujale. Uuri järgnevat näidet ning ennusta, mida antakse selle programmi käivitamisel väljundiks:
 
 .. sourcecode:: py3
@@ -305,7 +305,7 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovid parameetrin
 
 
 Ülesanded
--------------
+---------
 
 1. Tagasivaade
 ~~~~~~~~~~~~~~
@@ -313,7 +313,7 @@ Loe läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`
 
 
 2. Lausegeneraator
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 * Defineeri funktsioon ``lause``, mis **võtab argumendiks** 3 sõna (sõnena), ning **tagastab** neist kombineeritud lause (muuhulgas lisab tühikud ja punkti).
 
 * Loo 3 tekstifaili -- ``alus.txt``, ``oeldis.txt`` ning ``sihitis.txt``. Kirjuta igasse neist 10 sõna eraldi ridadele:
@@ -344,7 +344,7 @@ Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real
     * keskmised vanused eraldi neile, kes teenivad keskmise palgast vähem (või samapalju) ning neile, kes teenivad keskmisest palgast rohkem
 
 4. Eesti-Inglise sõnaraamat
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Lae alla Eesti-Inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
 Kirjuta programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võid ise valida)
@@ -354,7 +354,7 @@ Kirjuta programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid era
     Antud sõnastiku fail on veidi modifitseeritud variant Eesti Keele Instituudi poolt jagatavast failist (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt).
 
 5. minu_shuffle
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 Pythoni ``random`` moodulis on funktsioon ``shuffle``, mis ajab argumendiks antud järjendis elementide järjekorra juhuslikult segamini:
 
 .. sourcecode:: py3
@@ -397,7 +397,7 @@ Kirjuta ise analoogne funktsioon ``minu_shuffle``, mis teeb sama (seejuures pole
     
 
 6. Eesti filmide statistika (raskem)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Veebisait http://www.imdb.com kogub ja jagab informatsiooni filmide kohta. Aadressilt ftp://ftp.funet.fi/pub/mirrors/ftp.imdb.com/pub/ saab IMDB poolt kogutud infot alla laadida pakitud tekstifailidena.
 
 Fail :download:`filmid.zip (4.5MB) <downloads/filmid.zip>` on koostatud faili "countries.list.gz" põhjal, ning see sisaldab filmide (ja telesaadete) loetelu koos riigi nime ning valmimise aastaga. Lae see fail alla ning paki lahti.
@@ -437,10 +437,10 @@ Failis ``filmid.txt`` on ühe filmi andmed ühel real, kujul *<nimi><tühik>(<aa
 .. _tagasivaade_1-8:
 
 *Tagasivaade peatükkidele 1-8*
----------------------------------
+------------------------------
 On teada, et mingi teema valdamiseks tuleb tegelda vaheldumisi nii teooria, kui praktikaga. Praeguseks oled harjutanud läbi kõik olulisemad Python keele võimalused ja nüüd on paras aeg astuda samm tagasi ning vaada juba läbitud materjalile uue, veidi kogenuma pilguga.
 
-Avaldised vs. laused 
+Avaldised vs. laused
 ~~~~~~~~~~~~~~~~~~~~
 Kõik eelpool käsitletud Python keele elemendid saame jaotada kahte suurde gruppi: *avaldised* ja *laused*.
 
@@ -503,13 +503,13 @@ Mitme tingimuse kombineerimiseks saab kasutada operaatoreid ``and`` ja ``or``, t
 
 
 Korduslaused e. tsüklid
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 Pythonis on kaks erinevat korduslauset -- ``while``-tsükkel, mis on väga paindlik ning ``for``-tsükkel, mis on lihtsam, aga mis ei sobi kõigil juhtumitel.
 
 ``for``-tsükli juures on oluline mõista, et tema tööpõhimõte on ``while``'ist kaunis erinev. Kui ``while``-tsükli kordused põhinevad mingil tingimusel, siis ``for``-tsükli kordused põhinevad mingil järjendil (või järjendisarnasel asjal, nt. failil või vahemikul).
 
 Järjendid
-~~~~~~~~~~
+~~~~~~~~~
 Järjendite abil saame koondada mingi hulga andmeid ühe nime alla.
 
 Järjendid on vajalikud neil juhtudel, kus programmi kirjutades pole võimalik öelda, mitme "andmejupiga" peab programm töötama (vastasel juhul võiksime iga andmejupi jaoks võtta programmis kasutusele ühe muutuja).
@@ -517,7 +517,7 @@ Järjendid on vajalikud neil juhtudel, kus programmi kirjutades pole võimalik �
 Järjendeid saab programmi "sisse kirjutada", koostada teiste järjendite põhjal või lugeda failist. Kui järjendeid on vaja ükshaaval järjest läbi vaadata, siis on selleks kõige mugavam kasutada ``for``-tsüklit, kui on vaja lugeda järjendist mingit konkreetset elementi, siis tuleks kasutada indekseerimist.
 
 Kust saab rohkem infot?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 Kes soovib läbitud teemade kohta rohkem detaile või lihtsalt teist vaatenurka, siis soovitame lugeda läbi Pythoni ametliku `tutoriali`: http://docs.python.org/3/tutorial/.
 
 Mis ootab ees?
@@ -526,9 +526,9 @@ Järgmistes peatükkides tulevad küll mõned uued teemad aga põhiliselt kesken
 
 
 Lisalugemine
-----------------
+------------
 Pööratud Poola notatsioon
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Tänapäeval oleme harjunud kirjutama matemaatilisi avaldisi nõndanimetatud infiksnotatsioonis, kus tehtemärk on nende kahe arvu vahel, millega ta töötab. See tekitab tegelikult aga igasuguseid probleeme, seoses sellega, et vahel on raske öelda, mis järjestuses tehteid tegema peab. Koolis õpetatakse meile, et kõigepealt tuleb teha astendamised, siis korrutamised ja jagamised ning alles siis liitmised ja lahutamised. Kui tehteid tuleb mingis muus järjestuses teha, saab kasutada sulge.
 
 Tegelikult on aga juba ammusest olnud tuntud viise avaldiste kirjutamiseks nii, et sulge pole vaja, kuid kõik tehete tegemise järjestused oleks ometi kirjeldatavad. Ehk tuntuim neist on nõndanimetatud postfiksnotatsioon ehk pööratud Poola notatsioon (Poola notatsioon on nii nimetatud, sest selle põhiline propageerija oli poola matemaatik Jan Łukasiewicz ja ta pakkus selle välja 1920. aastal; pööratud Poola notatsiooni pakkusid välja F. L. Bauer ja E. W. Dijkstra kuuekümnendates).

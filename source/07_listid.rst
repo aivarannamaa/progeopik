@@ -8,8 +8,8 @@
     * http://www.openbookproject.net/thinkcs/python/english2e/ch11.html#exercises
 
 
-8. Järjendid ja ``for``-tsükkel
-=================================
+7. Järjendid ja ``for``-tsükkel
+===============================
 
 Meie senistes programmides on iga andmejupp kuskil eraldi ära mainitud (nt. muutujana). Kui mõelda reaalsete programmide peale (nt. firma raamatupidamissüsteem), siis üldjuhul ei ole võimalik kõiki asjassepuutuvaid objekte (nt. töötajad või arved) programmis üksikult ära mainida, kuna selliste objektide hulk pole piiratud.
 
@@ -87,7 +87,7 @@ Järgnev tabel demonstreerib olulisimaid järjendioperatsioone:
 NB! Nagu viimastest ridadest selgub, võib järjendis olla korduvaid väärtusi, ning elementide järjekord on oluline.
     
 Harjutus 1. Järjendiavaldiste kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Olgu meil defineeritud järgnevad järjendimuutujad:
 
     * ``a = [2, 3, 1, 5]``
@@ -176,7 +176,7 @@ Sellise töötlemise juures kasutatakse enamasti abimuutujat, mida nimetatakse *
 Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad etteantud järjendi kohta mingit infot. Näiteks funktsioon ``max`` teeb sama, mis meie eelmise näite funktsioon. Selles peatükis aga üritame taolisi funktsioone ise "leiutada", et õppida järjendeid ning ``for``-tsüklit paremini tundma.
 
 Harjutus 2. Elementide summa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon ``elementide_summa``, mis võtab argumendiks arvujärjendi ning tagastab kõigi elementide summa. (Selle jaoks on küll Pythonis juba olemas funktsioon ``sum``, aga ära praegu seda kasuta).
 
 NB! Erinevalt suurima elemendi leidmise funktsioonist, peaks summa funktsioon töötama ka tühja järjendiga, st. ``elementide_summa([])`` peaks andma vastuseks ``0``.
@@ -189,7 +189,7 @@ Lõpuks kontrolli, kas sinu funktsioon annab samade järjendite puhul sama tulem
     
 
 Failist lugemine
------------------
+----------------
 Tuleb välja, et ``for``-tsükkel on väga mugav ka failist lugemiseks:
 
 .. sourcecode:: py3
@@ -255,7 +255,7 @@ Nüüd peaks olema selge, miks meie ``for``-tsükli näide sedasi käitus -- ``r
 
 
 Harjutus 3. Kilpkonn tsüklis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Proovi ennustada, mida joonistab järgmine programm:
 
 .. sourcecode:: python
@@ -314,7 +314,7 @@ Harjutus 4. Kolmega jaguvad arvud
 Kirjuta ``for``-tsükkel koos sobiva ``range`` variandiga, mis kuvab ekraanile kõik 3-ga jaguvad arvud vahemikus 10 kuni 100.
 
 Harjutus 5. ``range`` avaldis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
  ``[100, 93, 86, 79, 72, 65, 58, 51, 44, 37, 30, 23, 16]``
@@ -447,7 +447,7 @@ Koolonist vasakule tuleb kirjutada see indeks, millest alates tuleb elemente tul
 Mida võiks tähendada ``s[:]``?
 
 Valed indeksid
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 Proovi läbi järgnev näide, et sa tunneksid saadud veateate edaspidi ära:
 
 .. sourcecode:: py3
@@ -463,7 +463,7 @@ Kirjuta funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle s
 
 
 Ennikud
----------------------
+-------
 Ennik (ing.k. *tuple*) on Pythoni andmetüüp, mis on väga sarnane järjendile. Ainsaks sisuliseks erinevusteks on see, et ennikut ei saa muuta -- st. ennikusse ei saa ``append`` meetodiga elemente lisada ega olemasolevaid elemente muuta. Ennikud kirjutatakse ümarsulgude vahele, aga nende indekseerimiseks kasutatakse siiski nurksulge:
 
 .. sourcecode:: py3
@@ -534,7 +534,7 @@ Näite lõpp näitab, et enniku komponente saab omistamise süntaksi abil salves
 
 
 *Vahepala: Sõnede ja väljundi formaatimine*
----------------------------------------------
+-------------------------------------------
 Seni oleme sõnede ja teiste andmetüüpide kombineerimisel kasutanud komponentide ühendamiseks operatsiooni ``+`` ning teisendamiseks funktsiooni ``str``. Nüüd vaatame alternatiivset viisi selle toimingu tegemiseks.
 
 Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatele sõnekujudele. Selle meetodi põhiolemust demonstreerib järgnev käsurea näide:
@@ -578,21 +578,21 @@ Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust:
 
 
 Ülesanded
--------------
+---------
 
 1. Paarisarvude loendamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Kirjuta funktsioon, mis võtab argumendiks täisarvude listi, ning tagastab, mitu elementi antud listis olid paarisarvud.
 
 Testi oma funktsiooni erinevate listidega (sh. tühja listiga).
 
 
 2. Ruudud
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 Kirjuta programm, mis küsib sisendiks täisarvu ning väljastab ``for``-tsükli abil kõikide arvude ruudud alates 1-st kuni sisestatud arvuni (kaasaarvatud) ja lõpuks ka kõigi nende ruutude summa.
 
 3. Teksti esitamine
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 Kirjuta programm, mis küsib kasutajalt failinime ning ``for``-tsüklit kasutades kuvab faili sisu ekraanile.
 
 Seejärel täienda programmi sedasi, et teksti näidatakse 20 rea kaupa -- st. iga kord peale 20 rea näitamist jääb programm ootama kasutajapoolset ENTER-i vajutust (vihje: ``input()``).
@@ -617,7 +617,7 @@ Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuup
 
 
 5. Värvid
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võid lihtsuse mõttes ignoreerida). Kirjuta programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
 
 .. image:: images/varvid.png
@@ -647,7 +647,7 @@ NB! ülesande saab lahendada ilma mingi rutiinse "käsitööta"!
             ...
 
 6. Keskmise hinde leidmine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Olgu meil fail nimega ``hinded.txt``, kus on igal real üks hinne (vahemikus 1 kuni 5). Kirjuta programm, mis arvutab nende hinnete keskmise. (Ära unusta, et failist ridade sisselugemisel antakse read sõnedena, mitte arvudena).
 
 Kui oled programmi tööle saanud, siis muutke programmi põhiosa funktsiooniks, mis **võtab argumendiks** failinime ning **tagastab** failis olevate hinnete keskmise.

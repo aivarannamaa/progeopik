@@ -1,67 +1,34 @@
-{% extends "basic/layout.html" %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
-{% block content %}
-    <div class="content-wrapper">
-      <div class="content">
-        <div class="document">
-          {%- block document %}
-            {{ super() }}
-          {%- endblock %}
-        </div>
-        <div class="side_toc">
-          {%- block sidebartoc %}
-          <h3>{{ _('Table Of Contents') }}</h3>
-          {{ toctree(collapse=False, includehidden=True) }}
-          {%- endblock %}
-          
-        </div>
-        <div class="clearer"></div>
-      </div>
-    </div>
-{% endblock %}
-
-{% block footer %}
-    <div class="footer-wrapper">
-      <div class="footer">
-        <div class="left">
-          {%- for rellink in rellinks|reverse %}
-          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
-             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
-          {%- if not loop.last %}{{ reldelim2 }}{% endif %}
-          {%- endfor %}
-          <!--
-          {%- if show_source and has_source and sourcename %}
-            <br/>
-            <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
-               rel="nofollow">{{ _('Show Source') }}</a>
-          {%- endif %}
-          -->
-        </div>
-
-        <div class="right">
-          {{ super() }}
-        </div>
-        <div class="clearer"></div>
-      </div>
-    </div>
-    
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-234927-3']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-    
-{% endblock %}
-
-</div>
-
-{% block relbar1 %}{% endblock %}
-{% block relbar2 %}{% endblock %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="_static/programmeerimine.css">
+  </head>
+  
+<body> 
+<div id="page">
+	
+	<div id="header">
+		<h1>Programmeerimise õpik</h1>
+		<div class="header-subtitle"><a href="http://www.cs.ut.ee">http://www.cs.ut.ee</a></div>
+	</div>
+	
+	<div id="main">
+		<div id="toc">
+			SISUKORD 
+    		{{ toctree(collapse=False, includehidden=True) }}
+  		</div>
+		
+		<div id="content">	  		
+			{% block body %} {% endblock %}
+		</div>
+	</div>
+	
+  	<div id="footer">
+  		footer text
+  	</div>	
+</div>  	
+</body>
+</html>

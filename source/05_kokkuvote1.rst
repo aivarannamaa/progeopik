@@ -1,5 +1,5 @@
-5. Pythoni põhimõtted
-=====================
+5. I osa kokkuvõte
+==================
 
 TODO Ülesanded
 * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
@@ -293,3 +293,16 @@ Kirjuta programm, mis küsib kasutajalt infot tellitava pitsa suuruse, komponent
     ...
     
 Pitsakatte komponente peaks saama valida ükskõik kui palju. Aadressi küsida ainult siis, kui kasutaja ei soovi ise järele tulla. Kogutud andmed salvestada tekstifaili.
+
+
+Lisalugemine
+------------
+
+Midagi programmeerimiskeelte kohta
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO
+
+
+Python tutorial
+~~~~~~~~~~~~~~~
+sh. tour of std library 
