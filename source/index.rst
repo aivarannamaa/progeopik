@@ -1,5 +1,6 @@
 Sisukord
 ===========================================================
+Lisaselgitus
   
 .. toctree::
    :maxdepth: 2
@@ -17,8 +18,11 @@ Sisukord
    10_rekursioon
    11_kokkuvote2
    12_jarelsona
+   erindid
+   pythoni_lisavoimalused
    tkinter
-   python2
+   vork
+   python_3_vs_2
 
 * :ref:`search`
 

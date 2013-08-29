@@ -3,7 +3,10 @@
 
 * Ülesande arvutile õpetamine nõuab, et sa saaks sellest täpselt aru (võrdle seda
 * Loetavus
-* Samaväärsused
+
+* nipid: koodi lühendamine: 0-kordusega tsüklid
+* funktsiooni sissetoomine
+
 
 See ptk. tegeleb lahenduseni jõudmise ja lahenduse kirjapaneku küsimustega.
 
@@ -482,6 +485,34 @@ Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll sü
 Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
 
 
+Alternatiivid
+-----------------
+
+* nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks
+* Samaväärsused
+
+
+``elif`` konstruktsioon e. mitmeharuline tingimuslause
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ülalpool toodud arvude võrdlemise näite saab kirjutada ümber kasutades ``elif`` konstruktsiooni (tuleb sõnadest *else if*):
+
+.. sourcecode:: py3
+    
+    arv1 = int(input("Sisesta esimene arv: "))
+    arv2 = int(input("Sisesta teine arv: "))
+    
+    if arv1 > arv2:
+        print("Esimene arv on suurem")
+    elif arv2 > arv1:
+        print("Teine arv on suurem")
+    else:
+        print("Arvud on võrdsed")
+
+Pange tähele, et ``elif`` algab samast veerust, kus ``if`` ja ``else`` -- viimased 6 rida antud näites moodustavad üheainsa tingimuslause. ``if``-i ja ``else`` vahele võib kirjutada ka mitu ``elif`` osa.
+
+``elif`` on kasulik siis, kui meil on vaja kontrollida mitut alternatiivset tingimust. ``elif``-i asemel saaks alati kasutada ka üksteise sisse pandud tingimuslauseid, aga siis võib treppimine minna liiga keeruliseks.
+
+NB! Ühes tingimuslauses täidetakse ühel käivitamisel vaid üks haru (ning kui ``else`` osa puudub, siis võib juhtuda, et ei täideta ühtegi haru). Tingimusi hakatakse kontrollima ülevalt alla -- kui leitakse esimene kehtiv tingimus, siis täidetakse selle juurde kuuluvad laused ja järgnevaid harusid ning nende tingimusi enam ei vaadata.
 
 
 

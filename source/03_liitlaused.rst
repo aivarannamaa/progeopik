@@ -329,6 +329,30 @@ Harjutus. Hinde arvutamine
 
 Kirjuta programm, mis küsib kasutajalt mitu punkti võis aines saada ning mitu punkti tudeng sai, ning väljastab vastava hinde.
 
+.. hint::
+    
+    Näitelahendus
+    
+    .. sourcecode:: py3
+    
+        punkte = int(input("Sisesta punktide arv"))
+        
+        if punkte > 90:
+            hinne = 'A'
+        elif punkte > 80:
+            hinne = 'B'
+        elif punkte > 70:
+            hinne = 'C'
+        elif punkte > 60:
+            hinne = 'D'
+        elif punkte > 50:
+            hinne = 'E'
+        else:
+            hinne = 'F'
+    
+        print("Nende punktidega saab hindeks " + hinne)
+
+
 Tingimusega korduslause e. ``while``-lause
 ------------------------------------------
 Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et programmi tuleb lihtsalt kirjutada laused lihtsalt mitmekordselt, nagu järgmises programmis, mis joonistab kilpkonnaga ruudu:
