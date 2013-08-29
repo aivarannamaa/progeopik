@@ -1,50 +1,5 @@
-{#
-    agogo/layout.html
-    ~~~~~~~~~~~~~~~~~
-
-    Sphinx layout template for the agogo theme, originally written
-    by Andi Albrecht.
-
-    :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
-    :license: BSD, see LICENSE for details.
-#}
 {% extends "basic/layout.html" %}
 
-{% block extrahead %}
-<script type="text/javascript" src="_static/jquery.js"></script>
-
-<script type="text/javascript">
-$(function() {
-    $(".admonition.hint").addClass("hidden");
-
-    $(".admonition.hint .admonition-title").click(function(e){
-        $(e.target.parentNode).toggleClass("hidden");
-    });
-});
-</script>
-{% endblock %}
-
-{% block header %}
-    <div class="header-wrapper">
-      <div class="header">
-        {%- if logo %}
-          <p class="logo"><a href="{{ pathto(master_doc) }}">
-            <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
-          </a></p>
-        {%- endif %}
-        {%- block headertitle %}
-        <h1><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a></h1>
-        {%- endblock %}
-        <div class="rel">
-          {%- for rellink in rellinks|reverse %}
-          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
-             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
-          {%- if not loop.last %}{{ reldelim2 }}{% endif %}
-          {%- endfor %}
-        </div>
-       </div>
-    </div>
-{% endblock %}
 
 {% block content %}
     <div class="content-wrapper">
@@ -57,20 +12,9 @@ $(function() {
         <div class="side_toc">
           {%- block sidebartoc %}
           <h3>{{ _('Table Of Contents') }}</h3>
-          {{ toctree() }}
+          {{ toctree(collapse=False, includehidden=True) }}
           {%- endblock %}
-          {%- block sidebarsearch %}
-          <h3 style="margin-top: 1.5em;">{{ _('Search') }}</h3>
-          <form class="search" action="{{ pathto('search') }}" method="get">
-            <input type="text" name="q" size="18" />
-            <input type="submit" value="{{ _('Go') }}" />
-            <input type="hidden" name="check_keywords" value="yes" />
-            <input type="hidden" name="area" value="default" />
-          </form>
-          <p class="searchtip" style="font-size: 90%">
-            {{ _('Enter search terms or a module, class or function name.') }}
-          </p>
-          {%- endblock %}
+          
         </div>
         <div class="clearer"></div>
       </div>
@@ -86,11 +30,13 @@ $(function() {
              {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
           {%- if not loop.last %}{{ reldelim2 }}{% endif %}
           {%- endfor %}
+          <!--
           {%- if show_source and has_source and sourcename %}
             <br/>
             <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
                rel="nofollow">{{ _('Show Source') }}</a>
           {%- endif %}
+          -->
         </div>
 
         <div class="right">
@@ -114,6 +60,8 @@ $(function() {
 </script>
     
 {% endblock %}
+
+</div>
 
 {% block relbar1 %}{% endblock %}
 {% block relbar2 %}{% endblock %}
