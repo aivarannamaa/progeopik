@@ -4,20 +4,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="_static/programmeerimine.css">
+    <link rel="stylesheet" type="text/css" href="_static/reset.css" />
+    <link rel="stylesheet" type="text/css" href="_static/programmeerimine.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
   </head>
   
 <body> 
 <div id="page">
 	
 	<div id="header">
-		<h1>Programmeerimise õpik</h1>
-		<div class="header-subtitle"><a href="http://www.cs.ut.ee">http://www.cs.ut.ee</a></div>
+		<div class="title">Programmeerimise õpik</div>
+		<div class="subtitle"><a href="http://www.cs.ut.ee">http://www.cs.ut.ee</a></div>
 	</div>
 	
 	<div id="main">
-		<div id="toc">
-			SISUKORD 
+		<div id="side_toc">
     		{{ toctree(collapse=False, includehidden=True) }}
   		</div>
 		

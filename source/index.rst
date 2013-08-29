@@ -4,6 +4,8 @@ Eessõna
    :maxdepth: 3
    :hidden: 
    
+   osa1
+   osa2
    osa3
 
 .. todo::
