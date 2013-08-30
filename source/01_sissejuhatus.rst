@@ -28,7 +28,9 @@ Esimese peatüki eesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning
 
 Pythoni installeerimine
 -----------------------
-Pythoni enda arvutisse installeerimiseks lae alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/. Vali sealt versioon `3.3`, 32-bitine variant (*x86*) -- see töötab igas arvutis. (64-bitise OP-süsteemi korral võid valida ka 64-bitise variandi.)
+Pythoni enda arvutisse installeerimiseks lae alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/.
+
+Windowsi jaoks vali sealt versioon `3.3`, 32-bitine variant (*x86*) -- see töötab igas arvutis. (64-bitise OP-süsteemi korral võid valida ka 64-bitise variandi.)
 
 Mac'is on tavaliselt Python küll olemas aga see on Python 2. Python 3 installimiseks Intel Mac'i jaoks vali Pythoni lehelt `Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
 
