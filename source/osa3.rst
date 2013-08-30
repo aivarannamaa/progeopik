@@ -8,6 +8,7 @@ Selle osa ülesanne, blaa, blaaa
 .. toctree::
    :maxdepth: 2
    
+   jarelsona
    erindid
    pythoni_lisavoimalused
    tkinter
