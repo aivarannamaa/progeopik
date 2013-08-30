@@ -1,5 +1,5 @@
-@import "https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600";
-@import "https://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,700italic,400,700";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,700italic,400,700");
 
 html {
     margin: 0;
@@ -7,15 +7,26 @@ html {
 }
 body {
     background-image: url("back.jpg");
-    font-family: Calibri,Garamond,Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-family: Open Sans, Calibri,Garamond,Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size: 10pt;
     margin: 0;
-    padding: 0.5em 0 1em;
+    padding: 0;
+    
 }
+
+.download tt {
+    font-family: Open Sans, Calibri,Garamond,Verdana,Geneva,Arial,Helvetica,sans-serif;
+}
+
+a {
+	color: #204A87;
+}
+
 #page {
     background-color: #FFFFFF;
     box-shadow: 7px 10px 5px #888888, -5px 10px 5px #888888;
     margin: 0 auto;
-    max-width: 60em;
+    max-width: 65em;
 }
 #header {
     padding: 1em 2em;
@@ -31,9 +42,17 @@ body {
     font-family: 'Roboto Condensed',sans-serif;
     font-size: 0.8em;
 }
+
 #header a {
     color: #FFFFFF;
+    text-decoration: none;
 }
+
+#header a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
 #header {
     background-image: url("bgtop.png");
 }
@@ -42,12 +61,11 @@ body {
 }
 #side_toc {
     float: right;
-    width: 25%;
+    width: 24%;
 }
 #content {
     float: left;
-    padding-right: 1em;
-    width: 70%;
+    width: 72%;
 }
 #footer {
     clear: both;
@@ -60,6 +78,7 @@ body {
 }
 #side_toc a {
     text-decoration: none;
+    display: block;
 }
 #side_toc a:hover, div.header a:hover {
     text-decoration: underline;
@@ -72,7 +91,7 @@ body {
 }
 #side_toc li, #side_toc li {
     font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 0.85em;
+    font-size: 0.9em;
 }
 #side_toc li.toctree-l1 {
     margin-top: 1em;
@@ -90,7 +109,7 @@ body {
     display: block;
     font-weight: normal;
     margin-bottom: 0.4em;
-    padding: 0.4em;
+    padding: 0.35em;
 }
 #side_toc li.toctree-l2 ul {
     display: none;
@@ -137,15 +156,27 @@ h2 {
     padding-top: 1em;
 }
 p {
-    line-height: 110%;
-    margin-bottom: 1em;
+    line-height: 130%;
+    margin-top: 0.4em;
+    margin-bottom: 1.4em;
 }
 pre, tt {
-    font-family: Consolas,Courier New,Courier;
+    font-family: Consolas, Courier New, Courier;
 }
+
+
 div.highlight pre {
-    font-size: 0.8em;
+    font-size: 0.9em;
+    padding: 0.2em;
+    border-color: #eaeae9;
+    border-style: solid;
+    border-width: 1px;
 }
+
+div.highlight {
+	background-color: #eaeaea;
+}
+
 a.headerlink {
     color: #DDDDDD;
     padding-left: 0.3em;
@@ -153,4 +184,94 @@ a.headerlink {
 }
 h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink, dt:hover > a.headerlink {
     visibility: visible;
+}
+
+
+
+
+
+div.admonition, div.topic, div.sidebar {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 2px 7px 1px 7px;
+  border-left: 0.2em solid gray;
+  font-size: 0.9em;
+  _line-height: 16px;
+  background-color: #f3f3f3
+}
+
+p.admonition-title,  p.topic-title, p.sidebar-title {
+  margin: 0px 0px 0px 0px;
+  font-weight: bold;
+  color: gray;
+}
+
+
+.admonition p, .topic p {
+	margin-top: 3px;
+    margin-bottom: 7px;
+}
+
+.centered img.math {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* HINT MANAGEMENT */
+.admonition.hint .admonition-title {
+    cursor: pointer;
+    text-decoration: underline;
+    display: block !important;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.admonition.hint.hidden * {
+    display: none;
+}
+
+.admonition.hint.hidden  p.admonition-title:after {
+    content: " ...";
+}
+
+.admonition-tegemata, .admonition-todo, .admonition-teha,
+.admonition-tegemata *, .admonition-todo *, .admonition-teha * {
+    background-color:pink ! important;
+}
+
+.admonition.warning, .admonition.warning * {
+	background-color:#FF9900 ! important;
+}
+
+div.highlight-py3 * {
+    line-height: 140% ! important;
+}
+
+
+table.docutils {
+    border-collapse: collapse;
+}
+
+table.docutils th {
+    background-color: #f3f3f3;
+    color: #444444;
+}
+
+table.docutils th, table.docutils td {
+	font-size: 90%;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    padding: 2px 4px;
+}
+
+
+div.highlight-none pre {
+    line-height: 120%;
 }

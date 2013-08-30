@@ -1,24 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+ 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="_static/reset.css" />
+	<script type="text/javascript" src="_static/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/programmeerimine.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    
+    <script type="text/javascript">
+		$(function() {
+		    $(".admonition.hint").addClass("hidden");
+		
+		    $(".admonition.hint .admonition-title").click(function(e){
+		        $(e.target.parentNode).toggleClass("hidden");
+		    });
+		});
+	</script> 
   </head>
   
-<body> 
+<body>
 <div id="page">
 	
 	<div id="header">
-		<div class="title">Programmeerimise õpik</div>
+		<div class="title"><a href="./index.html">Programmeerimise õpik</a></div>
 		<div class="subtitle"><a href="http://www.cs.ut.ee">http://www.cs.ut.ee</a></div>
 	</div>
 	
-	<div id="main">
+	<div id="main"> 
 		<div id="side_toc">
     		{{ toctree(collapse=False, includehidden=True) }}
   		</div>
@@ -29,8 +39,22 @@
 	</div>
 	
   	<div id="footer">
-  		footer text
+  		---
   	</div>	
 </div>  	
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-234927-3']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
 </body>
 </html>

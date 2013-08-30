@@ -3,7 +3,7 @@
 .. todo::
 
     lisa mõned samaväärsuse küsimused
-
+ 
 Esimeses peatükis katsetasid sa mitmeid erinevaid Pythoni programme. Millest need programmid koosnesid? Millest koosnevad mõnes loomulikus keeles (nt. eesti keeles) kirjutatud tekstid? 
 
 .. topic:: Õpinipp: Võta aega mõtlemiseks!

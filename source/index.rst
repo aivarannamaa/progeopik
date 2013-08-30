@@ -1,5 +1,5 @@
-Eessõna
-=======
+Tere tulemast!
+==============
 .. toctree::
    :maxdepth: 3
    :hidden: 
@@ -7,10 +7,6 @@ Eessõna
    osa1
    osa2
    osa3
-
-.. todo::
-
-    Demonstreeri ka seda, et programmeerimine on lahe iseenesest st. ürita tekitada sisemist motivatsiooni
 
 Selle õpiku abil on sul võimalus õppida algtasemel programmeerima. Ära alahinda sõna `algtase` -- see käib ennekõike raamatu läbitöötamisel saadava kogemustepagasi kohta. Kuna kasutatav programmeerimiskeel Python on oma põhiolemuselt lihtne, aga võimas, on pakutavad teemad täesti piisavad kõikide sinu programmiideede realiseerimiseks. [TODO tulu sõltub pühendumisest]
 
