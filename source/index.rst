@@ -13,7 +13,7 @@ Selle õpiku abil on sul võimalus õppida algtasemel programmeerima. Samas, är
 
 
 Õpiku ülesehitus
-----------------
+========================================================================
 Nagu paremal olevast sisukorrast näha, on materjal jaotud kolmeks osaks.
 
 Esimene osa ülesandeks on kõige tähtsamate programmeerimismõistete tutvustamine. Selles osas on ülesanded suhteliselt lihtsad, ainsaks väljakutseks on see, et sinu partner, Python, ei saa aru eesti keelest (ja on lisaks suur tähenärija). See võib olla esialgu ärritav, kuid püüdes tema vaatenurka mõista suudad sa varsti temaga lihtsamatel teemadel pingevabalt suhelda.
@@ -23,7 +23,7 @@ Teine osa keskendub keerulisematele probleemidele, kus mõnikord ei oskaks detai
 Kui esimesed kaks osa on üpris üldise iseloomuga, siis kolmandasse osasse on koondatud erinevaid teemasid, mis võivad ühe ülesande puhul olla vajalikud ja teise puhul mitte. Muuhulgas on siin tutvustatud Pythoni vahendeid graafiliste kasutajaliideste tegemiseks ja serverite kirjutamiseks.  
 
 Tagasiside
-----------
+========================================================================
 Kui leiad õpikus vigu või soovid lihtsalt midagi kommenteerida, siis kirjuta aadressil aivar.annamaa@ut.ee
 
 Edu!

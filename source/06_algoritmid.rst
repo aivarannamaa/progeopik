@@ -60,14 +60,14 @@ Peale antud teema läbimist oskad:
 
 
 Ülesanded ja nende lahendamine
-------------------------------
+========================================================================
 Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (nt. Mis on elu mõte?). 
 
 Vaatame nüüd mõnesid ülesandeid, millega võid kokku puutuda.
 
 
 Näide 1. Dokumentideta võõras linnas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde avastad, et ühiselamu võti, ID-kaart ja mobiiltelefon on kadunud. Kuidas lahendada olukord?
 
 .. admonition:: Kommentaar 
@@ -75,7 +75,7 @@ Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde ava
     Antud ülesande püstitus tekitab palju küsimusi: kuhu need asjad võisid kaduda? Kas nad kadusid korraga? Millal nad viimati olemas olid? Kas ülikooli ruumidesse pääseb veel sisse, et neid sinna otsima minna? Selliseid küsimusi saab esitada veel ja seetõttu oleks väga raske lahendust üheselt määrata. Me võiksime ju proovida formuleerida kaotatud asjade leidmiseks mingi "retsepti" aga tõenäoliselt nõuab selle situatsiooni lahendamine ka *loovust*, st. oskust toimida ettenägematus olukorras.
 
 Näide 2. Ruut ja ring
-~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala. 
 
 .. image:: images/ring_ruut1.png
@@ -93,7 +93,7 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala.
         :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
 
 Näide 3. Hundi, kitse ja kapsa üle jõe viimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal, kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
 
 Leida ülesandele vähemalt üks lahendus.
@@ -104,7 +104,7 @@ Leida ülesandele vähemalt üks lahendus.
 
 
 Näide 4. Pascal'i kolmnurk
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Joonisel on esitatud Pascal'i arvude kolmnurk
 
 .. image:: images/l04_fig4.png
@@ -136,7 +136,7 @@ peale valemi lahtikirjutamist?
 .. _algoritm:    
 
 Algoritm
---------
+========================================================================
 Ülalpool toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. Arvutiteaduses tegeleme me probleemidega, mille lahendust saab esitada `algoritmina`. 
 
 **Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehhaaniliselt* (st. ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
@@ -158,7 +158,7 @@ Algoritme kasutatakse erinevate elukutsete juures. Näiteks kokk järgib algorit
 
 
 Algoritm ja arvuti
-~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja seega saab neid vajadusel käivitada arvutil. Sellest vaatenurgast võiksime anda algoritmile ka järgneva, veidi kitsama definitsiooni:
 
 *Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, millele antakse sisendina ette mingi väärtus või väärtuste hulk ja mis leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.* 
@@ -167,7 +167,7 @@ Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida
 
 
 Algoritmi loomine
-~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Iga algoritmi saab kergesti kohandada selliseks, et tema *rakendamiseks* sobib masin. Seevastu algoritmide *loomiseks* on vaja midagi enamat.
 
 Esimeses peatükis oli juttu programmeerimise olemusest. Sama kehtib ka algoritmide loomise juures -- tegemist on loomingulise protsessiga, kus läheb vaja samaaegselt konkreetsust (täpsust) ja üldistusvõimet (abstraktset mõtlemist). Algoritmide loomine on üks põhilisi tegevusi programmeerimise juures. Piisavalt täpselt formuleeritud algoritmi esitamine arvutiprogrammina on küllaltki lihtne, tuleb vaid jälgida vastava programmeerimiskeele sõnavara ja reegleid. 
@@ -185,7 +185,7 @@ Kaasaegsetes programmeerimiskeeltes (nt Python) ei ole masina nüanssidele eriti
 .. _plokkskeem:    
 
 Plokkskeem
-----------
+========================================================================
 Üks levinud graafiline notatsioon algoritmide esitamiseks on *plokkskeem*. Vaatleme järgnevalt plokkskeemis kasutatavaid kujundeid:
 
 .. index::
@@ -196,7 +196,7 @@ Plokkskeem
 
 
 Kartulisalati tegemise plokkskeem
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
 
 .. image:: images/l05_fig1.png
@@ -240,7 +240,7 @@ Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilus
 
 
 Ülesande lahendamise protsess
------------------------------
+========================================================================
 Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
 
     #. Algoritmi koostamine ja esitamine.
@@ -272,7 +272,7 @@ Teeme need etapid läbi ringi pindala ülesande näitel:
     #. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
 
 Robotkilpkonn
--------------
+========================================================================
 
 .. image:: images/l04_fig10.png 
 
@@ -285,7 +285,7 @@ Kilpkonn oskab sooritada järgmiseid tegevusi:
  .. image:: images/l04_fig12.png  
  
 Harjutus 1. Kolm sammu edasi ja ümberpöörd
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
  Robotkilpkonn asub näoga seina poole selliselt, et seinani on vähemalt 3 sammu. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber).   
 
 .. image:: images/l04_fig13.png  
@@ -295,7 +295,7 @@ Lahenduse võib esitada järgmise plokkskeemina:
 .. image:: images/l04_fig14.png  
 
 Harjutus 2. Kui võimalik, kolm sammu  edasi ja ümberpöörd
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Robotkilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber). Kui seinani on vähem kui kolm sammu, siis liikuda seinani ja pöörata ümber. 
 
 .. image:: images/l04_fig15.png  
@@ -305,13 +305,13 @@ Nüüd on lahendus juba veidi keerulisem:
 .. image:: images/l04_fig16.png  
 
 Harjutus 3. Ring ümber mänguväljaku
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  
 
 .. image:: images/l04_fig17.png  
 
 Harjutus 4. Liikumine takistusest mööda
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Kilpkonnal on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on. Koostada plokkskeem.  
 
 .. hint:: 
@@ -331,7 +331,7 @@ Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul
 .. _triibuliseks:
 
 Harjutus 5. Põranda värvimine triibuliseks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Oletame, et kilpkonnal on lisaks veel käsk ``värvi()``, mille saamisel värvib ta selle ruudu, kus ta parasjagu asub, tumedaks. Programmi alguses asub kilpkonn juhuslikul ruudul näoga põhja suunas. Ruudustik on ristkülikukujuline, ilma takistusteta. Ruudustiku täpne suurus pole teada.
 
 Koosta plokkskeem, mis paneb kilpkonna värvima põrandat põhja-lõuna suunas triibuliseks -- alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne.
@@ -391,7 +391,7 @@ Olge valmis, et see plokkskeem tuleb eelmistest omajagu suurem.
         
 
 Alaprogrammid plokkskeemis
---------------------------
+========================================================================
 Alamprogramme saab defineerida ka plokkskeemides. Selleks eraldatakse lihtsalt skeemil üks eraldiolev ala alamprogrammi jaoks (näiteks ümbritsetakse kastiga) ning kirjutatakse selle juurde alamprogrammi nimi.
 
 Proovime nüüd koostada mõned alamprogrammide skeemid põranda värvimise plokkskeemi jaoks. NB! siin jaotame ülesande osadeks veidi teistest kohtadest, kui Pythoni näites, sellega demonstreerime, et alamülesannete väljaeraldamise viis on alati programmeerija valiku küsimus.
@@ -442,7 +442,7 @@ Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokksk
 
 
 Parameetrid plokkskeemis
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 .. note:: 
 
     Järgnevates plokkskeemides on parameetritega koos antud ka parameetri tüüp. Sellist lähenemist kasutatakse mitmetes programmeerimiskeeltes (nt. Java), aga mitte Pythonis.
@@ -477,7 +477,7 @@ Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks s
 
 
 Väärtusega alamprogrammid plokkskeemis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
 
 
@@ -487,14 +487,14 @@ Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis
 
 
 Alternatiivid
--------------
+========================================================================
 
 * nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks
 * Samaväärsused
 
 
 ``elif`` konstruktsioon e. mitmeharuline tingimuslause
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Ülalpool toodud arvude võrdlemise näite saab kirjutada ümber kasutades ``elif`` konstruktsiooni (tuleb sõnadest *else if*):
 
 .. sourcecode:: py3
@@ -518,7 +518,7 @@ NB! Ühes tingimuslauses täidetakse ühel käivitamisel vaid üks haru (ning ku
 
 
 Lisalugemist
-------------
+========================================================================
 
 Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on ülesannete lahendusprotsessi uuritud ka süstemaatiliselt. Üheks selle ala klassikuks võib lugeda Ungari matemaatikut George Pólyat, kes uuris ülesande lahendamise protsessi lähemalt ja avaldas oma kuulsa raamatu "Kuidas seda lahendada?". Oma raamatus toob ta välja neli etappi, millega ülesande lahendajal tuleb kokku puutuda. Esitame siinkohal tema kuulsa tsitaadi:
 
@@ -534,13 +534,13 @@ George Pólya:
 George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soovitame ka antud kursuse ülesannete korral hoolikalt järgida. 
 
 1. Ülesandest arusaamine
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 * Mis on otsitavaks? Mis on antud? Milles seisnevad ülesande tingimused?
 * Kas tingimusi on võimalik üldse rahuldada? Kas tingimused on otsitava tulemi määramiseks piisavad? Kas nende hulgas on ülearuseid? Kas tingimused on vastuolulised?
 * Valmista joonis. Võta kasutusele sobiv tähistus.
 
 2. Lahendamise idee ja sellele vastava plaani koostamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 * Kas tead mõnd teist antud ülesandega seonduvat ülesannet?
 * Vaatle otsitavat! Püüa meenutada mõnda tuntud ülesannet, milles on sama või sarnane otsitav.
 * Kas on võimalik seda ülesannet ära kasutada? Kas peab sisse tooma mingi abielemendi, mis võimaldaks varem lahendatud ülesannet ära kasutada?
@@ -549,11 +549,11 @@ George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soo
 * Kas kasutasid kõiki andmeid? Kas kasutasid kõiki tingimusi? Kas arvestasid kõiki ülesandes sisalduvaid mõisteid?
 
 3. Lahendusplaani täitmine
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 * Veendu iga sammu õigsuses.
 
 4. Tagasivaade
-~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 * Kas saad kontrollida tulemust? Kas saad kontrollida lahenduskäiku?
 * Kas saad tulemust teisiti leida?
 * Kas tulemus või lahenduskäik on kasutatav mõne teise ülesande korral?
@@ -562,24 +562,24 @@ George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soo
 
 
 Plokkskeemi ülesanded
----------------------
+========================================================================
 
 .. note::
 
     Neid ülesandeid praktikumis ei kontrollita, aga need on soovitav siiski lahendada. Ülesandeid 1,2,3,4,6 saab lahendada ka Pykkariga.
 
 1. Ring ümber mänguväljaku
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  Kasutada eelmise ülesande alamprotseduuri. 
  
 2. Seinani ja tagasi
-~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda seinani, pöörata ümber ja liikuda tagasi samasse kohta algasendisse. Koostada plokkskeem.  
 
 
 3. Liigu ettenähtud kohta
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 Kilpkonn asub seinaga ümbritsetud ja ilmakaarte järgi orienteeritud ruudustiku mingil ruudul, ninaga itta. Kirjutada plokkskeemi kujul protseduurid, millega kilpkonn
 a) liigub ruudustiku kirdenurka ja jääb seal pidama;
@@ -589,7 +589,7 @@ c) liigub ruudustiku äärele ja hakkab äärt pidi päripäeva ringiratast liik
 
 
 4. Loe tumedad laigud
-~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul funktsioon, mis loendab ruudustikul asuvad tumedad laigud. Ruudustiku mõõtmed pole teada. Kilpkonna juhtimiseks on lisaks veel operatsioon
 
 ``KasTumeLaik()`` - Kilpkonn kontrollib, kas ruut, millel asub kilpkonn, on tume.
@@ -604,7 +604,7 @@ Koostada abistavaid alamprotseduure.
 
 
 5. Istuta lilli
-~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis istutab ruudustikule lilli. Ruudustiku mõõtmed pole teada. Lill ei kasva äärel ega kontaktis teise lillega. Kilpkonna juhtimiseks on lisaks lille istutamise operatsioon:
 
 ``Istuta()`` - Kilpkonn istutab lille samale ruudule, kus ta parajasti asub, kusjuures kilpkonna orientatsioon pole oluline. 
@@ -614,14 +614,14 @@ Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduur
 Koostada abistavaid alamprotseduure.
 
 6. Malelaud
-~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
 
 .. image:: images/l05_fig21.png
 
 7. Bankett
-~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt paigutatud pika banketilaua ääres on iga koha juures tool. Kilpkonn seisab banketilaua põhjapoolses otsas. Laua pikkus on talle teadmata. Toolid peavad olema iga ruudu juures, ka laua põhja ja lõunaotsas. Kilpkonna juhtimiseks on lisaks järgmised operatsioonid: 
 

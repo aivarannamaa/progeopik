@@ -6,7 +6,7 @@ tkinter
 Käesolevas lisas vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Seejärel demonstreerime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
 
 Tk ja ``tkinter``
------------------
+========================================================================
 Moodul ``tkinter`` (koos alammooduliga ``tkinter.ttk``) kuulub Pythoni "standardvarustusse" ja seetõttu on kõige mugavam vahend graafiliste kasutajaliideste loomiseks Pythonis. Nimetatud moodulid põhinevad levinud teegil nimega *Tk*, mida kasutatakse ka teistes programmeerimiskeeltes.
 
 Käesolevas materjalis eeldame Python 3-ga kaasas olevat ``tkinter``-i versiooni 8.5. Selle versiooni olulisimaks eeliseks vanemate versioonide võrreldes on see, et ta võimaldab luua kasutajaliideseid, mis võtavad erinevates op-süsteemides (Windows, Mac OS, Linux) vastavale platvormile omase välimuse.
@@ -21,7 +21,7 @@ Käesolevas materjalis eeldame Python 3-ga kaasas olevat ``tkinter``-i versiooni
 
 
 Standardsed kasutajaliidese komponendid
----------------------------------------
+========================================================================
 Alustuseks toome ära ühe lihtsa ``tkinter``-i programmi:
 
 .. sourcecode:: py3
@@ -83,7 +83,7 @@ Punktid 1-5 on üldjuhul olemas igaks ``tkinter``-i programmis. Programmi sisuli
 
 
 Parem viis vidinate paigutamiseks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutusega ja proovisid korrigeerida etteantud koordinaate ja mõõtmeid, et kasutajaliides tuleks ilusam. Paraku on selline pikslihaaval timmimine tänamatu töö, kuna mõnes teises op-süsteemis (või ka teiste seadetega arvutis) ei pruugi sinu poolt seatud paigutus sobida. Samuti võis häirida sind see, et akna suurendamisel jäid vidinad ühte nurka pidama.
 
 Õnneks on võimalik määrata vidinate paigutust ka natuke üldisemalt kui pikslite tasemel, lubades sellega Tk-l valida vastavalt olukorrale kõige parem konkreetne paigutus. Järgnevas programmis on vidinate paigutamiseks kasutatud ``place`` meetodi asemel ``grid`` meetodit, mis jagab kasutajaliidese mõtteliselt ruudustikuks ning paigutab iga vidina soovitud lahtrisse vastavalt argumentidele ``column`` ja ``row``.
@@ -132,13 +132,13 @@ Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutu
     Lisaks meetoditele ``place`` ja ``grid`` võid kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry
 
 Harjutus 1. Täiendatud tervitaja
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Täienda eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
 
 .. _canvas:
 
 Tahvel (``canvas``)
--------------------
+========================================================================
 Üks põnevamaid Tk vidinaid on *tahvel* (ing. k *canvas*). Tegemist on alaga, kuhu on võimalik joonistada erinevaid kujundeid, paigutada pilte vms. Järgnev näiteprogramm demonstreerib mõningaid tahvli kasutamise võimalusi:
 
 .. sourcecode:: py3
@@ -187,7 +187,7 @@ Tahvel (``canvas``)
 Lisainfot ``canvas``-e kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/tkinter/canvas.html
 
 Harjutus 2. Bahama lipp
-~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 Koosta programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saarte lipp" ja joonistab sinna Bahama lipu.
 
@@ -195,7 +195,7 @@ Koosta programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saart
 
 
 Keerulisemad kujundid
-~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Miski ei keela tahvlile kujundite joonistamiseks kasutada tsükleid või muid Pythoni vahendeid.
 
 Kuigi *Tkinter* sobib hästi graafikute joonistamiseks, tekitab mõningast ebamugavust teistmoodi koordinaatide süsteem -- oleme ju harjunud, et *y* kasvab ülespoole, mitte aga alla. Et sellest probleemist lahti saada, võtame abiks tahvli meetodi ``move``, mis võimaldab tahvlil olevaid objekte horisontaalset ja vertikaalset telge mööda ümber tõsta. Seega paigutame kõik objektid harilikku koordinaadistikku ja siis rakendame funktsiooni ``move``. 
@@ -238,7 +238,7 @@ Järgnev näiteprogramm püüab teha *y=sin(x)* graafikut:
 Kas saadud graafik on korrektne? Miks? Leidke ja paranda viga.
 
 Piltide esitamine
-~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite proovimiseks salvesta programmiga samasse kausta järgmised failid:  :download:`pall.gif <downloads/pall.gif>`,
 :download:`avatud.gif <downloads/avatud.gif>`,
 :download:`suletud.gif <downloads/suletud.gif>`
@@ -265,7 +265,7 @@ Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite p
     raam.mainloop()
 
 Animatsioon
-~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Olgu ülesandeks joonistada osutitega kell, mis ennast aja jooksul värskendaks.
 
 Võrreldes eelmiste ülesannetega, kus tegemist oli sisuliselt staatiliste kujutistega, on meie praeguseks eesmärgiks uurida, kuidas võib muuta graafikaobjektide olekuid rakenduse töö ajal.
@@ -376,13 +376,13 @@ Kutsu funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
 Pange kood kokku ja käivita rakendus.
 
 Harjutus 3. Täiendatud kell
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Täienda kella. Lisa minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
 
 
 
 Kasutaja tegevusele reageerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Järgmine näide demonstreerib, kuidas uuendada tahvli sisu vastavalt kasutaja tegevusele (näite proovimiseks salvesta samasse kausta :download:`juku.gif <downloads/juku.gif>`):
 
 .. sourcecode:: py3
@@ -446,9 +446,9 @@ Selles näites liigutasime me kasutaja tegevusele vastavalt pildi asukohta aga s
     Aadressil http://www.tkdocs.com/tutorial/canvas.html on näide, kuidas tuvastada hiirekursori liikumist ja kasutada seda infot vaba käega joonistamise võimaldamiseks.
 
 Mõned lisanipid
----------------
+========================================================================
 Paljude objektide genereerimine tsüklis ning hiirekliki seostamine konkreetse objektiga
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole "ligi pääseda", salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvesta samasse kausta :download:`juku.gif <downloads/juku.gif>`.
 
 .. sourcecode:: py3
@@ -517,7 +517,7 @@ Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades sellek
 Tsüklis genereerimist võib kasutada ka siis kui on vaja palju nuppe või tekstikaste vms.
 
 Pildi vahetamine
-~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvesta samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
 
 .. sourcecode:: py3
@@ -555,7 +555,7 @@ Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hii
     raam.mainloop()
     
 Hiirerullile reageerimine ja objektide *zoom*-imine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutamist ning kuidas muuta tahvli objektide suurust.
 
 .. sourcecode:: py3

@@ -18,7 +18,7 @@ Tehniliselt võttes ei õpi sa selles peatükis Pythoni kui programmeerimiskeele
 
 
 Rekursiivsed funktsioonid
--------------------------
+========================================================================
 Programmeerimises nimetatakse rekursiooniks tavaliselt situatsiooni, kus funktsiooni definitsioonis on kasutatud parasjagu defineeritavat funktsiooni. Kõige lihtsam rekursiivne funktsioon oleks selline:
 
 .. sourcecode:: py3
@@ -29,14 +29,14 @@ Programmeerimises nimetatakse rekursiooniks tavaliselt situatsiooni, kus funktsi
 Kui sellist funktsiooni Pythonis välja kutsuda, siis vastavalt definitsioonile tuleb kutsuda seesama funktsioon uuesti välja, see omakorda põhjustab jälle selle funktsiooni väljakutsumise jne. Pythoni puhul lõpeb taoline ahel veateatega, mis ütleb, et alustatud, aga mitte lõpule jõudnud väljakutsete limiit sai täis. (Mõne teise keele puhul võib see protsess lõputult käima jääda.)
 
 Rekursiooni *baas* ja *samm*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Et rekursioon mingil hetkel lõppeks, peab rekursiivses funktsioonis toimuma hargnemine sõltuvalt funktsiooni argumentidest. Vähemalt üks haru peab olema ilma rekursiivse väljakutseta – seda nimetatakse rekursiooni **baasiks**. Seda haru, mis kutsub funktsiooni rekursiivselt välja, nimetatakse rekursiooni **sammuks**.
 
 Rekursiooni samm lahendab tavaliselt ülesande "vähendatud koopia", e. mingi alamülesande (kasutades selleks sedasama funktsiooni) ning koostab saadud tulemuse põhjal terve ülesande lahenduse. Aga kui alamülesanne on piisavalt väike, siis käsitletakse seda *baasjuhuna* ja vastus antakse ilma rekursiivse väljakutseta.
 
 
 Näide: Faktoriaal
-~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Faktoriaali definitsiooni järgi on `0! = 1`. Iga teise naturaalarvu puhul on `n!` võrdne arvude `1` .. `n` korrutisega. Nt.
 
     * 4! = 1 × 2 × 3 × 4
@@ -54,14 +54,14 @@ Nagu näha, on `5!` arvutus väga sarnane `4!` arvutusele -- selleks, et arvutad
 
 
 Harjutus 1. Faktoriaali algoritmi analüüs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 * Väärtusta *mõttes* ülaltoodud definitsiooni järgides avaldis ``fact(3)``.
 * Milline osa antud näites on rekursiooni baas? Milline on samm? Kuidas jõutakse alamülesande lahendusest terve ülesande lahenduseni?
 * Kuidas käitub antud funktsioon negatiivsete (või reaalarvuliste) argumentide korral? Kuidas võiks seda probleemi lahendada?
 
 
 Näide: Stardiloendus
-~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Rekursiivne funktsioon ei pea alati midagi tagastama:
 
 .. sourcecode:: py3
@@ -97,7 +97,7 @@ Kui antud funktsiooni definitsiooni rahulikult lugeda, siis peaks selle tähendu
     * ``stardiloendus`` argumendiga `3` lõpetab oma töö
 
 Harjutus 2. Modifitseeritud stardiloendus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunud sekundeid, st. ``uus_stardiloendus(3)`` peaks andma väljundi:
 
 .. sourcecode:: none
@@ -111,11 +111,11 @@ Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunu
     3
 
 Harjutus 3. Spiraali joonistamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta rekursiivne funktsioon, mis joonistaks kilpkonna abil kandilise spiraali, alustades etteantud küljepikkusest ning vähendades küljepikkust igal ringil mingi väärtuse võrra, kuni see jõuab nulli.  (Analoogse ülesande lahendasime ühes varasemas peatükis tsükliga.)
 
 Harjutus 4. Eukleidese algoritm
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Eukleidese algoritm leiab kahe naturaalarvu suurima ühisteguri.
 
 Algoritm on järgmine:
@@ -127,7 +127,7 @@ Algoritm on järgmine:
 Realiseeri Eukleidese algoritm rekursiivse funktsioonina.
 
 Rekursioon järjenditel
-----------------------
+========================================================================
 Nagu ülalpool mainitud, on rekursiooni põhimõte teha ülesanne pisut "väiksemaks" alamülesandeks, lahendada see uus ülesanne (sama meetodiga) ning lõpuks jõuda alamülesande lahendusest algse ülesande lahenduseni.
 
 Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- so. kõik elemendid peale esimest elementi). Uuri näiteks järjendi elementide loendamise funktsiooni:
@@ -164,12 +164,12 @@ Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korral
     print(loenda([1,2,3,2,2], 8))
 
 Harjutus 5
-~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st. elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
 
 
 Mitmeharuline rekursioon e. *puurekursioon*
--------------------------------------------
+========================================================================
 Rekursiivses funktsioonis võib olla mitu rekursiivset väljakutset. Sellist *rekursiooniskeemi* nimetatakse *puurekursiooniks*, kuna selle graafilises esituses moodustub funktsiooni väljakutseid tähistavatest nooltest puutaoline kujutis. 
 
 Järgnev funktsioon annab Fibonacci arvujada *n*-da liikme. Funktsiooni definitsioon põhineb otseselt Fibonacci jada definitsioonil (http://en.wikipedia.org/wiki/Fibonacci_number).
@@ -185,7 +185,7 @@ Järgnev funktsioon annab Fibonacci arvujada *n*-da liikme. Funktsiooni definits
             return fib(n-1) + fib(n-2)
 
 Harjutus 6. Fraktal
-~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Fraktalid on graafilised kujundid, milles kordub sama motiiv üha väiksemal kujul (loodetavasti paistab siit seos rekursiooniga).
 
 Kirjuta rekursiivne funktsioon, mis vastavalt etteantud tasemele joonistab vastava kujundi järgmiselt skeemilt (esimene kujund on tasemega 0, teine tasemega 1 jne):
@@ -200,13 +200,13 @@ Selle fraktali joonistamise mitteformaalne juhis: 0 tasemega fraktali joonistami
 
 
 Harjutus 7. Kuulujutt
-~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Keegi laseb lahti kuulujutu, rääkides seda 3 inimesele. Iga tunni jooksul räägivad kõik, kes kuulujuttu juba teavad, selle edasi 3 inimesele, kes seda veel ei teadnud. Mitu inimest teavad kuulujuttu 10 tunni pärast?
 
 Kirjuta rekursiivne funktsioon, mis annab selle ülesande vastuse suvalise tundide arvu korral.
 
 Harjutus 8. Küülikud
-~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Üks XIII sajandi matemaatik tundis huvi küülikute paljunemise vastu. Ta koostas sellise ülesande: 
 
     * alguses on meil üks äsjasündinud emane ja üks äsjasündinud isane küülik
@@ -220,7 +220,7 @@ Kirjuta üldisem funktsioon, mis annab vastuse suvalise arvu kuude kohta.
     
 
 Näide: Argumentideta rekursioon
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Enamasti käib rekursioon muutuja järgi, mida edastatakse funktsiooni argumendina. Kui lõpetamistingimus on esitatud muul moel, võib rekursioon toimuda ka ilma väärtusi edastamata. Järgmine funktsioon laseb kasutajal arvata mündivisete tulemusi, kuni ta mõne neist õigesti arvab:
 
 .. sourcecode:: py3
@@ -242,7 +242,7 @@ Enamasti käib rekursioon muutuja järgi, mida edastatakse funktsiooni argumendi
 
 
 Rekursiivsed andmestruktuurid
------------------------------
+========================================================================
 Eelmises peatükis vaatasime, kuidas järjendeid üksteise sisse pannes luua keerulisemaid andmestruktuure. Selle juures me aga alati arvestasime, mitu taset meie andmestruktuurides on. 
 
 Alati pole tasemete arvu võimalik ette teada -- näiteks failisüsteemi puhul pole kaustade sügavus süsteemi poolt (otseselt) piiratud. Ilmneb, et rekursioon sobib ideaalselt taoliste andmestruktuuride töötlemiseks.
@@ -278,7 +278,7 @@ Kuna me ei teadnud, kas mingil tasemel on meil järjendis veel järjendeid, või
     Kas oskaksite kirjutada funktsiooni taoliselt esitatud naturaalarvude liitmiseks?
 
 Harjutus 9. Kaustade läbimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 Kirjuta programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamkaustadest *mp3* faile ja kuvab nende nimed ekraanile.
 
@@ -307,10 +307,10 @@ Järgnev programmilõik demonstreerib nende kasutamist:
 
 
 Ülesanded
----------
+========================================================================
 
 1. Kaustad ja järjendid
-~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta funktsioon, mis etteantud kaustanime põhjal moodustab ja tagastab mitmemõõtmelise järjendi, kus iga alamkaust on omakorda esindatud järjendina ja failid on esindatud vastavas järjendis olevate sõnedena. Kui meil on näiteks selline kataloog:
 
 * Muusika
@@ -324,12 +324,12 @@ siis funktsioon peaks tagastama sellise järjendi:
     * ``[['kaelakee_hääl.mp3', 'Bemmi kummid.mp3'], 'miami_vice_theme.mp3']``
 
 2. Arvamismäng
-~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Realiseeri 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
 
 
 3. Cesaro fraktal
-~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri, ning joonistab kilpkonnaga vastava taseme Cesaro fraktali.
 
 Järgneval pildid on Cesaro fraktali tasemed 1, 2, 3 ja 4:
@@ -355,13 +355,13 @@ Järgneval pildid on Cesaro fraktali tasemed 1, 2, 3 ja 4:
     Erijuht (baas) on tase 0, kus tuleb joonistada lihtsalt kriips
 
 4. Kuulujutt ver.2
-~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Lahenda ülalpool toodud kuulujutu ülesandest ümberpööratud variant:
 
 Antud on linnakese elanike arv *n*. Leida mitme tunni pärast teavad kuulujuttu kõik selle linnakese elanikud.
 
 5. Vokaalide eemaldamine
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja tagastab sellest sõnest uue variandi, kus kõik vokaalid on eemaldatud, nt. ``konsonandid("kapitalist")`` peaks tagastama sõne ``"kptlst"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata.
 
 .. hint::
@@ -369,7 +369,7 @@ Kirjuta rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja 
     Tuleta meelde ülaltpool esitatud näitefunktsiooni ``loenda``. Seal koguti rekursiivsete väljakutsete tulemused kokku üheks täisarvuks. Siin on vaja korjata tulemused kokku üheks sõneks.
 
 6. Tagurpidi
-~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi ja tagastab selle elemendid uue järjendina vastupidises järjestuses. Nt. ``tagurpidi("stressed")`` peaks tagastama sõne ``"desserts"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata. NB! see funktsioon peaks töötama ka tühja järjendi puhul!
 
 .. hint::
@@ -378,7 +378,7 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi j
 
 
 7. Efektiivsem Fibonacci
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 .. note::
 
@@ -392,11 +392,11 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks järjendi j
 
 
 8. Projecteuler.net
-~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 http://projecteuler.net/index.php?section=problems&id=15
 
 9. Sugupuu
-~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 .. note::
 
     Sarnane ülesanne oli antud ka praktikumiks. Nüüd aga tuleks see lahendada rekursiooniga. 
@@ -412,10 +412,10 @@ Kirjuta rekursiivne funktsioon ``on_eellane``, mis võtab argumentideks kahe ini
     A on B eellane, kui ta on B ema/isa või kui ta on B ema/isa eellane.
 
 Lisalugemine
-------------
+========================================================================
 
 Rekursioon, müstika, huumor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Mõned viited rekursiooniga seotud koomiksitele, piltidele, mõistetele:
 
 * http://en.wikipedia.org/wiki/Ouroboros
@@ -440,7 +440,7 @@ Mitmetes programmeerimiskeelte õpikutes on terminoloogia osas taoline fragment:
 
 
 Aritmeetilise avaldise väärtustaja
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 
 .. note::
     See näide demonstreerib ühte ilusat rekursiivset algoritmi. Nagu rekursiivsete algoritmide puhul tavaline, võib see alguses aju "sõlme keerata" -- varu endale selle teema läbitöötamiseks piisavalt aega!
@@ -564,7 +564,7 @@ Selle plaani põhjal on kirjutatud järgnev programm, mis toetub rekursiivsetele
     Miks ei võiks me alustada märkide järjendi läbimist algusest?
 
 Labürintide genereerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Üks huvitav näide rekursiooni kasutamisest on juhuslike labürintide genereerimine.
 
 Kujutame ette, et meil on suur plokk betooni, kuhu me hakkame uuristama ploki külgedega paralleelseid ja aeg-ajalt täisnurga all pööravaid, mõnikord ka hargnevaid käike. Igal sammul on meil mitu võimalust, kuhupoole edasi uuristada. Üks võimalus probleemile läheneda, on uuristada üks juhuslik labürint otse ette, teine labürint vasakule ja kolmas paremale, aga selle, millisest "alam-labürindist" me alustame, valime juhuslikult. Selleks, et labürint ei tuleks triviaalne, jälgime, et me ei puuriks läbi seda seina, mille taga vahetult on juba üks käik uuristatud -- see tingimus tagab selle, et iga järgmise alam-labürindi võimalik ala on järjest väiksem (ilmselt märkate siin juba viidet rekursiooni põhimõtetele).

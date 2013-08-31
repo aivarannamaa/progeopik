@@ -17,7 +17,7 @@ Meie senistes programmides on iga andmejupp kuskil eraldi ära mainitud (nt. muu
 Selles peatükis õpite, kuidas käsitleda mitut objekti ühe kogumina ning mida taolise kogumiga Pythonis teha saab.
 
 Järjendid
----------
+========================================================================
 Järjend (ing.k. *list*) on andmetüüp loetelude esitamiseks. Järjendi loomiseks on kõige lihtsam viis kirjutada järjendisse kuuluvad väärtused (e. järjendi *elemendid*) komadega eraldatult nurksulgude vahele: 
 
 .. sourcecode:: py3
@@ -30,7 +30,7 @@ Me salvestasime muutujasse ``pikad_kuud`` ühe arvujärjendi (31-päevaliste kuu
 .. TODO: skeem, kus järjendi elemendid on nummerdatud kastikesed
 
 Operatsioonid järjenditega
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kui me oleme järjendi kirja pannud, siis tekib loomulikult küsimus, mida sellega teha saab? Mõningaid põhioperatsioone demonstreerib järgnev programm:
 
 .. sourcecode:: py3
@@ -88,7 +88,7 @@ Järgnev tabel demonstreerib olulisimaid järjendioperatsioone:
 NB! Nagu viimastest ridadest selgub, võib järjendis olla korduvaid väärtusi, ning elementide järjekord on oluline.
     
 Harjutus 1. Järjendiavaldiste kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Olgu meil defineeritud järgnevad järjendimuutujad:
 
     * ``a = [2, 3, 1, 5]``
@@ -98,7 +98,7 @@ Koosta muutujaid ``a`` ja ``b`` ning järjendioperatsioone kasutades avaldis, mi
 
 
 Järjendi elementide küsimine e. indekseerimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Nagu esimeses näites juba mainitud, võimaldab Python küsida järjendimuutujast mingil konkreetsel positsioonil olevat elementi, kirjutades järjendi nime taga olevatesse nurksulgudesse soovitud elemendi positsiooni e. **indeksi** :
 
 .. sourcecode:: py3
@@ -133,7 +133,7 @@ Sellel teemal me praegu pikemalt ei peatu, sest tuleb välja, et elementide üks
 
 
 ``for``-tsükkel
----------------
+========================================================================
 Lisaks ``while``-tsüklile on Pythonis veel üks tsüklitüüp -- ``for``-tsükkel, mis on oma olemuselt väga tihedalt seotud järjenditega.
 
 Käivita järgnev näiteprogramm, mis koosneb ühest lihtsast ``for``-tsüklist:
@@ -148,7 +148,7 @@ Nagu näed, sarnaneb ``for``-tsükkel kuju poolest ``while``-tsüklile -- esimes
 ``for``-tsükli kordused põhinevad mingil etteantud järjendil -- antud näites on selleks kolme linna nimest koosnev järjend. Igal kordusel küsitakse järjendist üks element, salvestatakse tema väärtus *tsüklimuutujasse* (antud näites ``linn``) ning seejärel käivitatakse tsükli kehas olevad laused. Elemente loetakse järjendist järjekorras, st. esimesel kordusel esimene element jne. Kui kõik elemendid on sedasi läbi käidud, siis on tsükli töö tehtud -- seega käivitatakse tsükli keha niipalju kordi kui on järjendis elemente.
 
 Järjendite töötlemine
----------------------
+========================================================================
 Paljude ülesannete puhul on vaja antud järjend elementhaaval läbi vaadata ning koguda sealjuures mingit infot. Järgnevas näites on defineeritud funktsioon, mis leiab etteantud arvujärjendi elementide hulgast suurima:
 
 .. sourcecode:: py3
@@ -177,7 +177,7 @@ Sellise töötlemise juures kasutatakse enamasti abimuutujat, mida nimetatakse *
 Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad etteantud järjendi kohta mingit infot. Näiteks funktsioon ``max`` teeb sama, mis meie eelmise näite funktsioon. Selles peatükis aga üritame taolisi funktsioone ise "leiutada", et õppida järjendeid ning ``for``-tsüklit paremini tundma.
 
 Harjutus 2. Elementide summa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta funktsioon ``elementide_summa``, mis võtab argumendiks arvujärjendi ning tagastab kõigi elementide summa. (Selle jaoks on küll Pythonis juba olemas funktsioon ``sum``, aga ära praegu seda kasuta).
 
 NB! Erinevalt suurima elemendi leidmise funktsioonist, peaks summa funktsioon töötama ka tühja järjendiga, st. ``elementide_summa([])`` peaks andma vastuseks ``0``.
@@ -190,7 +190,7 @@ Lõpuks kontrolli, kas sinu funktsioon annab samade järjendite puhul sama tulem
     
 
 Failist lugemine
-----------------
+========================================================================
 Tuleb välja, et ``for``-tsükkel on väga mugav ka failist lugemiseks:
 
 .. sourcecode:: py3
@@ -211,7 +211,7 @@ Selle näidet kommenteerides võiks lihtsustatult öelda, et:
 Tegelikult ei ole muutujas ``f`` siiski mitte järjend, vaid natuke keerulisem väärtus. Õnneks oskab ``for``-tsükkel käsitleda seda väärtust justkui järjendit, seetõttu ei pea me muretsema, kuidas need faili read on tegelikult esitatud.
 
 Harjutus 4. Temperatuuride lugemine failist
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
 
 .. hint:: 
@@ -219,7 +219,7 @@ Kirjuta programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud te
 
 
 Funktsioon ``range``
---------------------
+========================================================================
 Vaatame nüüd pisut teistsuguse ilmega ``for``-tsükli näidet:
 
 .. sourcecode:: py3
@@ -256,7 +256,7 @@ Nüüd peaks olema selge, miks meie ``for``-tsükli näide sedasi käitus -- ``r
 
 
 Harjutus 3. Kilpkonn tsüklis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Proovi ennustada, mida joonistab järgmine programm:
 
 .. sourcecode:: python
@@ -286,7 +286,7 @@ Proovi ennustada, mida joonistab järgmine programm:
 Katseta erinevaid pööramise nurki ning erinevaid teepikkusi. Proovi joonistada kuuekandiline spiraal!
 
 ``range``'i variandid
-~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Funktsiooni ``range`` saab kasutada ka 2 või 3 argumendiga. Järgnevas käsurea näites kasutame jälle ``list`` funktsiooni, et näha, mida mingi ``range`` variant tähendab:
 
 .. sourcecode:: py3
@@ -311,11 +311,11 @@ Kommentaarid:
     * kolme argumendi puhul näitab kolmas argument väärtuste kasvamise sammu
 
 Harjutus 4. Kolmega jaguvad arvud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta ``for``-tsükkel koos sobiva ``range`` variandiga, mis kuvab ekraanile kõik 3-ga jaguvad arvud vahemikus 10 kuni 100.
 
 Harjutus 5. ``range`` avaldis
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
  ``[100, 93, 86, 79, 72, 65, 58, 51, 44, 37, 30, 23, 16]``
@@ -324,7 +324,7 @@ Kirjuta avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
 
 ``for`` vs. ``while``
----------------------
+========================================================================
 Tegelikult saaks ``for``-tsükli asemel alati kasutada ka ``while``-tsüklikt, aga tulemus poleks alati nii selge. Võrdleme omavahel samaväärseid ``while`` ja ``for``-tsükleid:
 
 +----------------------------------+-----------------------------------+
@@ -348,11 +348,11 @@ Samas, mõnede probleemide lahendamisel ei piisa ``for``-tsüklist. Näiteks kol
 
 
 Veel järjendioperatsioone
--------------------------
+========================================================================
     
 
 Sõne kui järjend
-~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Nagu eespool juba mainitud, saab sõnet käsitleda justkui sümbolite järjendit:
 
 .. sourcecode:: py3
@@ -371,7 +371,7 @@ Selleks, et sõnet muuta päris järjendiks, saab kasutada funktsiooni ``list``:
     ['T', 'e', 'r', 'e']
 
 Meetodid ``split`` ja ``join``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Tihti on tarvis teha mingi sõne pisut suuremateks juppideks kui üksikud tähed -- näiteks võib olla vaja jagada sõnena esitatud lause eraldi sõnadeks. Selle jaoks saab kasutada sõnemeetodit ``split``:
 
 .. sourcecode:: py3
@@ -393,11 +393,11 @@ Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
     'CY2X44;3;66;T'
 
 Harjutus 6. Kuupäeva "lahtiharutamine"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta funktsioon ``kuu``, mis võtab argumendiks sõne kujul *<päev>. <kuu> <aasta>* (nt. ``'24. veebruar 1918'`` ning tagastab vastava kuu nime.
 
 Negatiivsed indeksid
-~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Järjendeid (ja sõnesid) saab indekseerida ka negatiivsete indeksitega, sel juhul hakatakse lugema järjendi lõpust:
 
 .. sourcecode:: py3
@@ -415,7 +415,7 @@ Järjendeid (ja sõnesid) saab indekseerida ka negatiivsete indeksitega, sel juh
 Avaldis ``järjend[-0]`` tähistab siiski esimest elementi, sest *-0 = 0*.
 
 Järjendite "viilutamine"
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 .. todo::
 
     tee skeem, kus indeksid asuvad tähtede vahel. vt. http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#string-slices
@@ -448,7 +448,7 @@ Koolonist vasakule tuleb kirjutada see indeks, millest alates tuleb elemente tul
 Mida võiks tähendada ``s[:]``?
 
 Valed indeksid
-~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Proovi läbi järgnev näide, et sa tunneksid saadud veateate edaspidi ära:
 
 .. sourcecode:: py3
@@ -458,13 +458,13 @@ Proovi läbi järgnev näide, et sa tunneksid saadud veateate edaspidi ära:
 
 
 Harjutus 7. Sõne viilutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle sõne 3 viimast tähte. Kui sõnes on vähem kui 3 tähte, siis tagastada terve sõne.
 
 
 
 Ennikud
--------
+========================================================================
 Ennik (ing.k. *tuple*) on Pythoni andmetüüp, mis on väga sarnane järjendile. Ainsaks sisuliseks erinevusteks on see, et ennikut ei saa muuta -- st. ennikusse ei saa ``append`` meetodiga elemente lisada ega olemasolevaid elemente muuta. Ennikud kirjutatakse ümarsulgude vahele, aga nende indekseerimiseks kasutatakse siiski nurksulge:
 
 .. sourcecode:: py3
@@ -487,7 +487,7 @@ Ennikuid võiks eelistada siis, kui meil on mingi kindel komplekt elemente, mida
     Mingit 3-elemendilist kogumit nimetatakse tavaliselt *kolmikuks*, 4-elemendilist *nelikuks* jne. Enniku nimi on tulnud selle skeemi üldistamisest: *n*-elemendilist kogumit nimetatakse *ennikuks*.
 
 Mitme väärtuse tagastamine funktsioonist
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Ennikuid kasutatakse tihti siis, kui funktsioonist on vaja tagastada mitut väärtust:
 
 .. sourcecode:: py3
@@ -535,7 +535,7 @@ Näite lõpp näitab, et enniku komponente saab omistamise süntaksi abil salves
 
 
 *Vahepala: Sõnede ja väljundi formaatimine*
--------------------------------------------
+========================================================================
 Seni oleme sõnede ja teiste andmetüüpide kombineerimisel kasutanud komponentide ühendamiseks operatsiooni ``+`` ning teisendamiseks funktsiooni ``str``. Nüüd vaatame alternatiivset viisi selle toimingu tegemiseks.
 
 Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatele sõnekujudele. Selle meetodi põhiolemust demonstreerib järgnev käsurea näide:
@@ -579,21 +579,21 @@ Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust:
 
 
 Ülesanded
----------
+========================================================================
 
 1. Paarisarvude loendamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta funktsioon, mis võtab argumendiks täisarvude listi, ning tagastab, mitu elementi antud listis olid paarisarvud.
 
 Testi oma funktsiooni erinevate listidega (sh. tühja listiga).
 
 
 2. Ruudud
-~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta programm, mis küsib sisendiks täisarvu ning väljastab ``for``-tsükli abil kõikide arvude ruudud alates 1-st kuni sisestatud arvuni (kaasaarvatud) ja lõpuks ka kõigi nende ruutude summa.
 
 3. Teksti esitamine
-~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Kirjuta programm, mis küsib kasutajalt failinime ning ``for``-tsüklit kasutades kuvab faili sisu ekraanile.
 
 Seejärel täienda programmi sedasi, et teksti näidatakse 20 rea kaupa -- st. iga kord peale 20 rea näitamist jääb programm ootama kasutajapoolset ENTER-i vajutust (vihje: ``input()``).
@@ -601,7 +601,7 @@ Seejärel täienda programmi sedasi, et teksti näidatakse 20 rea kaupa -- st. i
 Testimiseks võib alla laadida nt. "Alice in Wonderland" teksti aadressilt http://www.gutenberg.org/files/11/11.txt.
 
 4. Kuupäevade töötlemine
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 .. note::
 
     Selle ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.
@@ -618,7 +618,7 @@ Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuup
 
 
 5. Värvid
-~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võid lihtsuse mõttes ignoreerida). Kirjuta programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
 
 .. image:: images/varvid.png
@@ -648,16 +648,16 @@ NB! ülesande saab lahendada ilma mingi rutiinse "käsitööta"!
             ...
 
 6. Keskmise hinde leidmine
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Olgu meil fail nimega ``hinded.txt``, kus on igal real üks hinne (vahemikus 1 kuni 5). Kirjuta programm, mis arvutab nende hinnete keskmise. (Ära unusta, et failist ridade sisselugemisel antakse read sõnedena, mitte arvudena).
 
 Kui oled programmi tööle saanud, siis muutke programmi põhiosa funktsiooniks, mis **võtab argumendiks** failinime ning **tagastab** failis olevate hinnete keskmise.
 
 
 Lisalugemine
-------------
+========================================================================
 Paroolide murdmine
-~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------------------------------
 Järgnev näide demonstreerib jõumeetodil paroolide murdmise põhiideed.
 
 Turvalisuse huvides salvestatakse infosüsteemides kasutajate paroolide asemel ühesuunalise krüpteerimismeetodiga saadud *räsikoode*. Kuigi räsikoodist pole otseselt võimalik parooli tuletada, tuleks seda siiski võõraste eest kaitsta, sest pahalane võib proovida krüptida sama meetodiga palju erinevaid paroole ning kui tulemuseks on sama räsikood, siis on ka parool teada.
@@ -695,7 +695,7 @@ Tegelikkuses ei lähe paroolide murdmine siiski nii libedalt -- esiteks piirasim
 
 
 Kilpkonna keel ja interpretaator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+-------------------------------------------------------------------------------------------------------    
 Kilpkonnaga Pythoni käsureal joonistamine on üpris lõbus, kuid muutub pikkade käskude tõttu kähku tüütuks. Arvutid on aga just mõeldud tüütute ülesannete automatiseerimiseks ja lihtsustamiseks. See motiveerib ka järgnevat ülesannet.
 
 Antud on fail, kus igal real on kilpkonna käsk – täht ja selle järel number, näiteks:
