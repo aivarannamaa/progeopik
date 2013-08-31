@@ -1,5 +1,6 @@
+*************
 6. Algoritmid
-=============
+*************
 
 * Ülesande arvutile õpetamine nõuab, et sa saaks sellest täpselt aru (võrdle seda
 * Loetavus
@@ -486,7 +487,7 @@ Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis
 
 
 Alternatiivid
------------------
+-------------
 
 * nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks
 * Samaväärsused

@@ -1,7 +1,8 @@
 .. _tkinter:
 
+*******
 tkinter
-=======
+*******
 Käesolevas lisas vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Seejärel demonstreerime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
 
 Tk ja ``tkinter``

@@ -1,5 +1,6 @@
+**************************
 2. Avaldised ja lihtlaused
-==========================
+**************************
 .. todo::
 
     lisa mõned samaväärsuse küsimused
@@ -15,87 +16,6 @@ TODO: kas järgnev lõik on siin oluline? Peaks ehk olema vähem tseremoniaalne?
 Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selles peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. Esimese asjana, enne praktilise osa juurde minemist, paneme paika mõned terminid.
     
 
-Avaldised ja väärtused
-----------------------
-.. todo::
-
-    Kas siinne üldistamine on selles faasis vajalik?
-
-.. note::
-
-    Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
-    
-Pythoni tutvustuse juures käisid läbi laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhitermineid. 
-
-.. todo::
-
-    * Too veel näiteid erinevatest avaldistest erinevates kontekstides
-    * Võibolla ka programmi skeem, kus on ära märgitud laused ja avaldised
-    * Või lihtsalt soenduseks üks suurem näide ja selgitus, millised on need mõõtmed, kus on võimalik programmi muuta
-    * **Või tõsta suurem osa sellest tekstist 5. ptk?** ja kirjutada selle asemel siia väga lakoonilised ja mitteformaalsed definitsioonid?
-
-Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas vägagi erinevate kujudega avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere maailm!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
-
-Nüüd võib tekkida kohe järgmine küsimus: miks ilmus lause ``print(2 + 3)`` käivitamisel ekraanile ``5`` mitte ``2 + 3``? Asi on selles, et arvutustehte kujul avaldiste kasutamisel arvutab Python ilma küsimata tulemuse välja ja kasutab siis seda esialgse avaldise asemel. Arvutuse tulemust nimetatakse **väärtuseks** (ing.k. `value`) ning arvutusprotsessi avaldise **väärtustamiseks** (ing.k. `evaluation`).
-
-.. index::
-    single: väärtus
-    
-Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on need reaalsed andmed, mida programm oma töö käigus kasutab, loob, arvutab, teisendab vms. Võib öelda, et avaldised *tähistavad* mingisuguseid asju programmi tekstis, aga väärtused *on* need asjad programmi jooksutamise ajal. *Väärtustamine* genereerib avaldisele vastava väärtuse.
-
-.. index::
-    single: andmetüüp; tüüp
-    single: tüüp
-    
-.. index::
-    single: tehe; operatsioon
-    single: operatsioon
-
-Andmetüübid, literaalid ja tehted
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**.
-
-Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" väärtusi nimetatakse **literaalideks**.
-
-Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid tehteid.
-
-Avaldised käsureal
-~~~~~~~~~~~~~~~~~~
-Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi väärtustada ka ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate tehete katsetamiseks. Kuna antud peatüki esimeses pooles keskendumegi just avaldiste ja väärtuste teemale, siis eelistame skripti koostamise asemel kasutada käsurida.
-
-Terminoloogia kokkuvõte
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-Selle teema kokkuvõtteks analüüsime järgmist lihtsat käsurea näidet:
-
-.. sourcecode:: py3
-
-    >>> 2 + 3
-    5
-
-Antud juhul teostas Python liitmisoperatsiooni arvudega *2* ja *3*, mille tulemusena konstrueeriti uus väärtus *5*. Programmeerimise terminitega saame seda näidet kirjeldada järgnevalt:
-
-.. index::
-    single: operaator
-    single: argumendid; operaatori argumendid
-    single: operaator; operaatori argumendid
-    single: avaldis; avaldise väärtustamine
-    single: avaldis
-    single: literaalid
-    
-    
-* ``2 + 3`` on **avaldis**
-*  ``+`` on **operaator**
-* ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`). Antud juhul on mõlemad argumendid **literaalid** (st. konkreetsed väärtused)
-* `5` on antud **avaldise väärtus**
-* toiming, mille käigus ``2 + 3``-st saadakse `5`, on **avaldise väärtustamine**
-
-Harjutus. Mis on mis?
-~~~~~~~~~~~~~~~~~~~~~
-Proovi oma sõnadega selgitada mõistete *väärtus* ja *avaldis* põhiolemust. Mille poolest on nad erinevad? Mille poolest sarnased?
-
-.. note::
-    
-    Isegi kui praegu tunduvad need mõisted veidi abstraktsed ja hägusad, siis pole põhjust muretsemiseks -- järgneva mõistmiseks piisab tegelikult ka umbkaudsest ettekujutusest. Täielik selgus saabub töö käigus.
 
 Arvud
 -----
@@ -613,48 +533,6 @@ Järgnev on väljavõte ühest käsurea katsetusest:
 
 Mida tuleks käsureale eelnevalt sisestada, et avaldis ``kapsas * 9`` annaks veateate asemel tulemuseks ``18.0``?
 
-Avaldiste kombineerimine
-------------------------
-Me oleme nüüdseks kasutanud mitut viisi Pythoni maailma "asjade" e. väärtuste kirjeldamiseks. Konkreetsed väärtused pannakse kirja *literaalina* (nt. ``2.5`` või ``"Tere!"``). Mõnikord on mugavam väärtusele viidata hoopis läbi *muutuja* (nt. ``x``). Enamasti aga on meil programmi kirjutamise ajal väärtuse asemel teada hoopis selle leidmise "valem", mille me paneme kirja Pythoni *tehte* e. *operatsioonina* (nt. ``sin(x) * 2 - 1`` või ``nimi.upper()``). Kõik need viisid kannavad ühist nimetust *avaldis*.
-
-Kahtlemata on neist kolmest avaldise liigist kõige põnevam arvutustehe -- on ju arvutamine üks põhjus miks programme üldse kirjutatakse. Loodetavasti märkasid, et Pythoni arvutustehetel on üks oluline omadus, mis tõstab ta peajagu kõrgemale taskukalkulaatoritest -- tehete komponentideks võivad olla suvalist liiki avaldised, st. mitte ainult konkreetsed väärtused vaid ka muutujad või mingid muud tehted, mis võivad omakorda koosneda konkreetsetest väärtustest, muutujatest või tehetest, mis võivad omakorda ... jne. Seetõttu nimetatakse tehete komponente vahel üldistavalt *alamavaldisteks*.
-
-Kokkuvõttes, **igal pool, kus saab kasutada mingit konkreetset väärtust, saab kasutada ka muutujat või mingit tehet**, või veel üldisemalt, **igal pool, kus saab kasutada ühte avaldise liiki, saab kasutada ka teisi**. Siit tuleb ka välja miks me literaale, muutujaid ja tehteid koos vaatasime ning miks neile on välja mõeldud ühine nimetus -- hoolimata nende erinevast iseloomust kuuluvad nad Pythoni jaoks ühte perekonda.
-
-Toome järgnevalt mõned näited avaldistest mis koosnevad erinevatest alamavaldistest:
-
-TODO: näide
-
-Tehniliselt võttes ühendab erinevaid avaldise liike see, et neil kõigil on *väärtus* -- literaalide puhul on väärtus otseselt kirja pandud, muutuja kasutamisel vaatab Python järele selle defineerimisel antud väärtuse, tehete väärtuse leidmiseks tuleb teha vastavad arvutused. Asjaolu, et Python suudab genereerida igale avaldisele väärtuse ja et reaalne arvutamine (nt. liitmine) toimub justnimelt väärtustega, ongi see, mis võimaldab meil erinevat liiki avaldisi nii vabalt kombineerida.
-
-Harjutus x
-~~~~~~~~~~
-TODO: sõne- ja arvavaldise kombineerimine
-
-
-Abimuutujate kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~~ 
-See, et meil on võimalik kirjutada väga keerulisi arvutusi ühe avaldisena, ei tähenda, et seda tuleks tingimata teha -- tihti on lihtsam jagada arvutus *abimuutujate* abil mitmeks sammuks:
-
-TODO: näide
-
-Taoline sammukaupa arvutamine võimaldab ka kergemini leida üles viga, kui ilmneb, et arvutuse tulemus ei ole õige, selleks tuleb iga sammu järel kuvada vahetulemus ekraanile, mispeale peaks olema lihtne tuvastada, millises sammus viga sisse tuli.
-
-Harjutus x
-~~~~~~~~~~
-TODO: kirjuta arvutus lahti mitmeks sammuks
-
-Harjutus x
-~~~~~~~~~~
-TODO: kirjuta mitmesammuline arvutus üheks avaldiseks
-
-
-
-Kontrollküsimus
-~~~~~~~~~~~~~~~
-TODO: lugemiskontroll (mingi ilma tähenduseta programm, mille tulemust peab ennustama, justkui eksamil)
-
-
 
 Sisend ja väljund
 -----------------
@@ -961,6 +839,136 @@ Kommentaar esitatakse sümboliga ``#`` -- Python ignoreerib kogu teksti, mis kir
 
 Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ridu, mis mõjuvad justkui lõiguvahed tavalise teksti puhul.
 
+
+Kokkuvõte
+---------
+.. todo::
+
+    Kas siinne üldistamine on selles faasis vajalik?
+
+.. note::
+
+    Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
+    
+Pythoni tutvustuse juures käisid läbi laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhitermineid. 
+
+.. todo::
+
+    * Too veel näiteid erinevatest avaldistest erinevates kontekstides
+    * Võibolla ka programmi skeem, kus on ära märgitud laused ja avaldised
+    * Või lihtsalt soenduseks üks suurem näide ja selgitus, millised on need mõõtmed, kus on võimalik programmi muuta
+    * **Või tõsta suurem osa sellest tekstist 5. ptk?** ja kirjutada selle asemel siia väga lakoonilised ja mitteformaalsed definitsioonid?
+
+Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas vägagi erinevate kujudega avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere maailm!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
+
+Nüüd võib tekkida kohe järgmine küsimus: miks ilmus lause ``print(2 + 3)`` käivitamisel ekraanile ``5`` mitte ``2 + 3``? Asi on selles, et arvutustehte kujul avaldiste kasutamisel arvutab Python ilma küsimata tulemuse välja ja kasutab siis seda esialgse avaldise asemel. Arvutuse tulemust nimetatakse **väärtuseks** (ing.k. `value`) ning arvutusprotsessi avaldise **väärtustamiseks** (ing.k. `evaluation`).
+
+.. index::
+    single: väärtus
+    
+Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on need reaalsed andmed, mida programm oma töö käigus kasutab, loob, arvutab, teisendab vms. Võib öelda, et avaldised *tähistavad* mingisuguseid asju programmi tekstis, aga väärtused *on* need asjad programmi jooksutamise ajal. *Väärtustamine* genereerib avaldisele vastava väärtuse.
+
+.. index::
+    single: andmetüüp; tüüp
+    single: tüüp
+    
+.. index::
+    single: tehe; operatsioon
+    single: operatsioon
+
+Andmetüübid, literaalid ja tehted
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**.
+
+Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" väärtusi nimetatakse **literaalideks**.
+
+Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid tehteid.
+
+Avaldised käsureal
+~~~~~~~~~~~~~~~~~~
+Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi väärtustada ka ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate tehete katsetamiseks. Kuna antud peatüki esimeses pooles keskendumegi just avaldiste ja väärtuste teemale, siis eelistame skripti koostamise asemel kasutada käsurida.
+
+
+Avaldiste kombineerimine
+------------------------
+Me oleme nüüdseks kasutanud mitut viisi Pythoni maailma "asjade" e. väärtuste kirjeldamiseks. Konkreetsed väärtused pannakse kirja *literaalina* (nt. ``2.5`` või ``"Tere!"``). Mõnikord on mugavam väärtusele viidata hoopis läbi *muutuja* (nt. ``x``). Enamasti aga on meil programmi kirjutamise ajal väärtuse asemel teada hoopis selle leidmise "valem", mille me paneme kirja Pythoni *tehte* e. *operatsioonina* (nt. ``sin(x) * 2 - 1`` või ``nimi.upper()``). Kõik need viisid kannavad ühist nimetust *avaldis*.
+
+Kahtlemata on neist kolmest avaldise liigist kõige põnevam arvutustehe -- on ju arvutamine üks põhjus miks programme üldse kirjutatakse. Loodetavasti märkasid, et Pythoni arvutustehetel on üks oluline omadus, mis tõstab ta peajagu kõrgemale taskukalkulaatoritest -- tehete komponentideks võivad olla suvalist liiki avaldised, st. mitte ainult konkreetsed väärtused vaid ka muutujad või mingid muud tehted, mis võivad omakorda koosneda konkreetsetest väärtustest, muutujatest või tehetest, mis võivad omakorda ... jne. Seetõttu nimetatakse tehete komponente vahel üldistavalt *alamavaldisteks*.
+
+Kokkuvõttes, **igal pool, kus saab kasutada mingit konkreetset väärtust, saab kasutada ka muutujat või mingit tehet**, või veel üldisemalt, **igal pool, kus saab kasutada ühte avaldise liiki, saab kasutada ka teisi**. Siit tuleb ka välja miks me literaale, muutujaid ja tehteid koos vaatasime ning miks neile on välja mõeldud ühine nimetus -- hoolimata nende erinevast iseloomust kuuluvad nad Pythoni jaoks ühte perekonda.
+
+Toome järgnevalt mõned näited avaldistest mis koosnevad erinevatest alamavaldistest:
+
+TODO: näide
+
+Tehniliselt võttes ühendab erinevaid avaldise liike see, et neil kõigil on *väärtus* -- literaalide puhul on väärtus otseselt kirja pandud, muutuja kasutamisel vaatab Python järele selle defineerimisel antud väärtuse, tehete väärtuse leidmiseks tuleb teha vastavad arvutused. Asjaolu, et Python suudab genereerida igale avaldisele väärtuse ja et reaalne arvutamine (nt. liitmine) toimub justnimelt väärtustega, ongi see, mis võimaldab meil erinevat liiki avaldisi nii vabalt kombineerida.
+
+Harjutus x
+~~~~~~~~~~
+TODO: sõne- ja arvavaldise kombineerimine
+
+
+Abimuutujate kasutamine
+~~~~~~~~~~~~~~~~~~~~~~~
+See, et meil on võimalik kirjutada väga keerulisi arvutusi ühe avaldisena, ei tähenda, et seda tuleks tingimata teha -- tihti on lihtsam jagada arvutus *abimuutujate* abil mitmeks sammuks:
+
+TODO: näide
+
+Taoline sammukaupa arvutamine võimaldab ka kergemini leida üles viga, kui ilmneb, et arvutuse tulemus ei ole õige, selleks tuleb iga sammu järel kuvada vahetulemus ekraanile, mispeale peaks olema lihtne tuvastada, millises sammus viga sisse tuli.
+
+Harjutus x
+~~~~~~~~~~
+TODO: kirjuta arvutus lahti mitmeks sammuks
+
+Harjutus x
+~~~~~~~~~~
+TODO: kirjuta mitmesammuline arvutus üheks avaldiseks
+
+
+
+Kontrollküsimus
+~~~~~~~~~~~~~~~
+TODO: lugemiskontroll (mingi ilma tähenduseta programm, mille tulemust peab ennustama, justkui eksamil)
+
+
+
+
+Terminoloogia kokkuvõte
+~~~~~~~~~~~~~~~~~~~~~~~
+Selle teema kokkuvõtteks analüüsime järgmist lihtsat käsurea näidet:
+
+.. sourcecode:: py3
+
+    >>> 2 + 3
+    5
+
+Antud juhul teostas Python liitmisoperatsiooni arvudega *2* ja *3*, mille tulemusena konstrueeriti uus väärtus *5*. Programmeerimise terminitega saame seda näidet kirjeldada järgnevalt:
+
+.. index::
+    single: operaator
+    single: argumendid; operaatori argumendid
+    single: operaator; operaatori argumendid
+    single: avaldis; avaldise väärtustamine
+    single: avaldis
+    single: literaalid
+    
+    
+* ``2 + 3`` on **avaldis**
+*  ``+`` on **operaator**
+* ``2`` ja ``3`` on selle operaatori **argumendid** (öeldakse ka `operandid`). Antud juhul on mõlemad argumendid **literaalid** (st. konkreetsed väärtused)
+* `5` on antud **avaldise väärtus**
+* toiming, mille käigus ``2 + 3``-st saadakse `5`, on **avaldise väärtustamine**
+
+Mõtteharjutus. Mis on mis?
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Proovi oma sõnadega selgitada mõistete *väärtus* ja *avaldis* põhiolemust. Mille poolest on nad erinevad? Mille poolest sarnased?
+
+.. note::
+    
+    Isegi kui praegu tunduvad need mõisted veidi abstraktsed ja hägusad, siis pole põhjust muretsemiseks -- järgneva mõistmiseks piisab tegelikult ka umbkaudsest ettekujutusest. Täielik selgus saabub töö käigus.
+
+
+
 Suur näide
 ----------
 .. note::
@@ -1134,7 +1142,7 @@ Kirjuta programm, mis küsib kasutajalt positiivse arvu vahemikus 10 .. 300 ja j
 TODO: mitme tärniga ülesanded
 
 Üks ülesanne segatud ülesannete pangast
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO:
 
 

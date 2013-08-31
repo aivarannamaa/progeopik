@@ -1,5 +1,6 @@
+**************
 Tere tulemast!
-==============
+**************
 .. toctree::
    :maxdepth: 3
    :hidden: 
@@ -12,7 +13,7 @@ Selle õpiku abil on sul võimalus õppida algtasemel programmeerima. Samas, är
 
 
 Õpiku ülesehitus
---------------------
+----------------
 Nagu paremal olevast sisukorrast näha, on materjal jaotud kolmeks osaks.
 
 Esimene osa ülesandeks on kõige tähtsamate programmeerimismõistete tutvustamine. Selles osas on ülesanded suhteliselt lihtsad, ainsaks väljakutseks on see, et sinu partner, Python, ei saa aru eesti keelest (ja on lisaks suur tähenärija). See võib olla esialgu ärritav, kuid püüdes tema vaatenurka mõista suudad sa varsti temaga lihtsamatel teemadel pingevabalt suhelda.

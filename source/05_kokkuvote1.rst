@@ -1,5 +1,6 @@
+******************
 5. I osa kokkuvõte
-==================
+******************
 
 TODO Ülesanded
 * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))

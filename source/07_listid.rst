@@ -1,3 +1,7 @@
+*******************************
+7. Järjendid ja ``for``-tsükkel
+*******************************
+
 .. todo::
 
     * Ül: Kirjuta funkts on_palindroom näidete järgi
@@ -7,9 +11,6 @@
     * http://www.openbookproject.net/thinkcs/python/english2e/ch10.html#exercises
     * http://www.openbookproject.net/thinkcs/python/english2e/ch11.html#exercises
 
-
-7. Järjendid ja ``for``-tsükkel
-===============================
 
 Meie senistes programmides on iga andmejupp kuskil eraldi ära mainitud (nt. muutujana). Kui mõelda reaalsete programmide peale (nt. firma raamatupidamissüsteem), siis üldjuhul ei ole võimalik kõiki asjassepuutuvaid objekte (nt. töötajad või arved) programmis üksikult ära mainida, kuna selliste objektide hulk pole piiratud.
 

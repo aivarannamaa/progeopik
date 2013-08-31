@@ -1,5 +1,6 @@
+***************
 4. Funktsioonid
-===============
+***************
 
 
 
@@ -57,7 +58,7 @@ Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema ni
 TODO: skeem: funktsioon, argument ja väljakutse
 
 Nimelised argumendid
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 TODO: print'i näitel
 
 
@@ -83,7 +84,7 @@ Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step(
     single: meetodid
 
 Meetodid
-~~~~~~~~~~~~
+~~~~~~~~
 Teises peatükis nägime, et sõnede puhul kirjutati mõne funktsiooni nimi (nt. ``count``) sõne ja argumentide vahele, nt:
 
 .. sourcecode:: py3
@@ -742,7 +743,7 @@ Kuna antud juhul soovisime arvutuse tulemust näidata ekraanil, siis tehniliselt
     Antud teemas võib segadus tekkida Pythoni käsurea kasutamisel -- kui kirjutada sinna avaldis ``sqrt(2)``, siis tulemus ilmub ikkagi ekraanile, kuigi me ei kasutanud ``print`` käsku. Kas see tähendab, et ka funktsioon ``sqrt`` kuvab vastuse ekraanile? Ei, tegelikult kuvab Pythoni käsurida ``sqrt`` käest saadud vastuse ekraanile omal algatusel, ``sqrt`` ei tea sellest midagi. 
 
 Harjutus. Kuu nimed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 .. _kuu_nime_funktsioon:
 .. container:: autotest
 
@@ -1058,7 +1059,7 @@ Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt. ühel ju
 
 
 "Let's wrap it in a function for easier use"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ex2 http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#exercises
 
 TODO:
