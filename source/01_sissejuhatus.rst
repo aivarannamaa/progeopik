@@ -10,13 +10,7 @@
 
     Näita, et programmeerimine ei ole kellelegi üle mõistuse. Proovi demonstreerida, et ka need, kes arvavad, et ei oska, siiski oskavad.
     
-.. todo::
-
-    Soovita näited ümber *tippida*, et treenida tähelepanelikkust ja et konstruktsioonidega lähemalt tuttavaks saada.
-
-Selle õpiku põhieesmärk on õpetada `programmeerimise` universaalseid põhimõtteid, mis kehtivad kõigi populaarsete `programmeerimiskeelte` puhul. Konkreetne keel, mille abil seda tehakse, on `Python`. 
-
-Esimese peatüki eesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu kursuse edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
+Esimese peatüki eesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning anda pealiskaudne ülevaade programmeerimise olemusest ja võimalustest. Uurime ka mõningaid keerulisemaid näiteprogramme, kuid need on mõeldud vaid andmaks aimu õpiku edasisest käigust -- täpsemad selgitused ning süstemaatilise harjutamise jätame järgmistesse peatükkidesse.
 
 .. todo::
 
@@ -28,17 +22,15 @@ Esimese peatüki eesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning
 
 Pythoni installeerimine
 =======================
-Pythoni enda arvutisse installeerimiseks lae alla vajalikud failid Pythoni ametlikult leheküljelt http://www.python.org/download/.
+Pythoni paigaldamiseks Windowsiga arvutisse lae leheküljelt http://www.python.org/download/ alla fail `Python 3.3.2 Windows x86 MSI Installer` ja käivita see.
 
-Windowsi jaoks vali sealt versioon `3.3`, 32-bitine variant (*x86*) -- see töötab igas arvutis. (64-bitise OP-süsteemi korral võid valida ka 64-bitise variandi.)
+Mac'is on tavaliselt Python küll olemas aga see on Python 2. Python 3 installimiseks pakutakse mainitud leheküljel faili `Python 3.3.2 Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
 
-Mac'is on tavaliselt Python küll olemas aga see on Python 2. Python 3 installimiseks Intel Mac'i jaoks vali Pythoni lehelt `Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
-
-Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketihalduri abil. Vajaminevad paketid on populaarsemates distrotes nimedega `python3`, `python3-tk` ja `idle3`.
+Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketihalduri abil. Vajaminevad paketid on populaarsemates distrotes nimedega `python3`, `python3-tk` ja `idle3`. Nt. Ubuntus piisab installimiseks käsust ``sudo apt-get install idle3`` (`idle3` installimine peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
 
 .. note::
 
-    Pythoni versioon ei pea olema tingimata just 3.3, on oluline, et versiooni number algab 3-ga, olgu see `3.2`, `3.1` vms. Seevastu versioonid, mis algavad 2-ga, ei sobi meile, kuna seal töötavad mõned asjad pisut teisiti, kui on kirjeldatud selles õpikus.
+    Pythoni versioon ei pea olema tingimata 3.3.2, on oluline, et versiooni number algab 3-ga, olgu see `3.2`, `3.1` vms. Versioonid, mis algavad 2-ga, meile ei sobi, kuna seal töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
     
 
 
@@ -47,10 +39,6 @@ Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketih
 
 IDLE ja esimene programm
 ========================
-.. note::
-
-    Selles peatükis anname programmidele väga põgusad selgitused. Kõikide konstruktsioonide täpsed tähendused ja kasutusjuhised toome välja järgnevates peatükkides.
-
 Alustuseks kirjutame ühe väga lihtsa programmi, mis ei tee muud, kui kirjutab ekraanile ``Tere maailm!`` (vt. ka http://en.wikipedia.org/wiki/Hello_world_program). 
 
 Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
@@ -100,8 +88,8 @@ Selgitused:
     * konstruktsioon ``nimi = ...`` salvestab selle teksti mällu. Edaspidi saab sellele tekstile viidata kirjutades lihtsalt ``nimi``
     * konstruktsioon ``Tere " + nimi + "!"`` kombineerib etteantud tekstijupid ja kasutaja nime uueks tekstiks
 
-Harjutus 1. Programmi muutmine
-------------------------------
+Harjutus. Programmi muutmine
+----------------------------
 Tee programmis mingeid muudatusi, salvesta ja käivita. Katseta ka selliseid muudatusi, mis võiksid sinu arvates Pythoni segadusse ajada.
 
 .. note:: 
@@ -141,6 +129,12 @@ Selgitused:
     * ``print`` käsule võib ette anda mitu asja korraga
     * konstruktsioon ``if-else`` valib täitmisele minevad käsud vastavalt etteantud tingimustele 
 
+.. note::
+
+    Selles peatükis anname programmidele väga põgusad selgitused. Kõikide konstruktsioonide täpsed tähendused ja kasutusjuhised toome välja järgnevates peatükkides.
+
+
+
 Matemaatilised funktsioonid
 ---------------------------
 Python tunneb ka matemaatilisi funktsioone ja konstante, nagu näiteks ``sin`` ja ``pi``. Kuna paljudes programmides neid vaja ei lähe, on nad esialgu "peidetud". Nende kasutamiseks tuleb neid ``import`` lause abil eraldi küsida:
@@ -157,8 +151,8 @@ Python tunneb ka matemaatilisi funktsioone ja konstante, nagu näiteks ``sin`` j
     print(x)
     print(round(x,2))
 
-Harjutus 2. Puu läbimõõdu arvutamine
-------------------------------------
+Harjutus. Puu läbimõõdu arvutamine
+----------------------------------
 Proovi kirjutada eelnevate näidete põhjal programm, mis küsib kasutaja käest puu ümbermõõdu ning teatab selle peale puu läbimõõdu.
 
 
@@ -181,11 +175,11 @@ Demonstreerimaks käskude kombineerimist, toome siinkohal sisse ühe pedagoogili
 
 Kilpkonn Pythonis
 -----------------
-Kilpkonna juhtimiseks kasutame 6 erinevat käsku:
+Kilpkonna juhtimiseks kasutame 5 erinevat käsku:
 
-* ``forward(n)``, ``backward(n)`` – edasi või tagasi `n` sammu
-* ``left(d)``, ``right(d)`` – vasakule või paremale `d` kraadi
-* ``up()``, ``down()`` - pliiatsi üles tõstmine ja langetamine
+* ``forward(n)`` – liigu edasi `n` sammu
+* ``left(d)``, ``right(d)`` – pööra vasakule / paremale `d` kraadi
+* ``up()``, ``down()`` - tõsta pliiats üles / langeta pliiats vastu paberit
 
 Esimese käskluse andmisel avaneb uus aken, kus kilpkonna tähistab väike nooleke.
 
@@ -195,7 +189,7 @@ Proovi järgnevat näiteskripti, mis joonistab kilpkonna abil kolmnurga:
 
 .. note::
     
-    Ära pange oma skripti nimeks `turtle.py` -- see ajab Pythoni `import` käsu segadusse.
+    Ära pane oma skripti nimeks `turtle.py` -- see ajab Pythoni `import` käsu segadusse.
     
 .. sourcecode:: py3
     
@@ -210,22 +204,42 @@ Proovi järgnevat näiteskripti, mis joonistab kilpkonna abil kolmnurga:
     
     exitonclick() # see võimaldab akna sulgemist hiireklõpsuga
 
-Harjutus 3. Ruut
-----------------
+Harjutus. Ruut
+--------------
 Kirjuta skript, mis joonistab kilpkonnaga ruudu.
 
 
-Kontrollküsimus
----------------
-Mida joonistab järgmine programm? Proovige vastata enne programmi käivitamist!
+Kontrollküsimus. Mis see on?
+----------------------------
+Mida joonistab järgmine programm? NB! Proovi vastata enne programmi käivitamist! Vajadusel mängi programm paberi ja pliiatsiga läbi. 
 
 .. sourcecode:: py3
 
-    TODO
+    from turtle import *
+    
+    forward(100)
+    right(90)
+    forward(20)
+    
+    left(120)
+    forward(60)
+    left(120)
+    forward(60)
+    left(120)
+    
+    forward(20)
+    right(90)
+    forward(100)
+    
+    left(90)
+    forward(20)
+    
+    exitonclick()
+    
 
 
-Harjutus 5. Ümbrik
-------------------
+Harjutus. Ümbrik
+----------------
 Kirjuta skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbriku. 
 
 
@@ -270,8 +284,8 @@ Kui sul on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saad avada men
 
 
 
-Harjutus 5. Interaktiivne programmeerimine
-------------------------------------------
+Harjutus. Interaktiivne programmeerimine
+----------------------------------------
 Katseta erinevaid siiani nähtud käske ka käsureal. Proovi muuhulgas ka Pythoni mälu kasutamist. (Paraku võib kilpkonna juhtimine käsurealt ebaõnnestuda, see sõltub IDLE'i seadetest.)
 
 Python kui kalkulaator
@@ -323,8 +337,8 @@ Ka matemaatiliste funktsioonide importimine toimib samal põhimõttel nagu skrip
     3.141592653589793
 
 
-Harjutus 6. Ruutjuur
---------------------
+Harjutus. Ruutjuur
+------------------
 #. Uuri Pythoni matemaatikamooduli dokumentatsiooni aadressilt http://docs.python.org/3/library/math.html
 #. Proovi saada aru, kuidas arvutatakse Pythonis ruutjuurt
 #. Arvuta Pythoni käsureal, kui pikk on ristkülikukujulise maatüki diagonaal, mille mõõtmed on 50m x 75m.
@@ -361,8 +375,8 @@ Semantilised vead
 -----------------
 Programmeerimises on veel üks liik vigasid, mis on kõige ohtlikumad ja mida nimetatakse **semantilisteks vigadeks** või ka lihtsalt **loogikavigadeks**. Nende vigade puhul võib kõik olla Pythoni seisukohast korrektne (st. mingit veateadet ei tule), aga programm ei tee seda, mis programmeerija silmas pidas.
 
-Harjutus 7. Semantiline viga
-----------------------------
+Harjutus. Semantiline viga
+--------------------------
 Leidke järgnevast näiteprogrammist semantiline viga:
 
 .. sourcecode:: py3
@@ -373,9 +387,11 @@ Leidke järgnevast näiteprogrammist semantiline viga:
     
     print("Sinu kiirus oli " + str(kiirus) + " km/h")
 
-TODO: Näide koos arutlusega
-===========================
-TODO: Video!
+
+.. todo::
+
+    TODO: Näide koos arutlusega
+    TODO: Video!
 
 Programmeerimisest üldisemalt
 =============================

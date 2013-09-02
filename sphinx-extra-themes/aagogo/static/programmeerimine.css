@@ -14,6 +14,15 @@ body {
     
 }
 
+
+tt.literal:not(.download) {
+	border: 1px solid #E1E1E8;
+	background-color: #EEEEEC;
+	border-radius: 2px 2px 2px 2px;
+	padding-left: 2pt;
+	padding-right: 2pt;
+} 
+
 .download tt {
     font-family: Open Sans, Calibri,Garamond,Verdana,Geneva,Arial,Helvetica,sans-serif;
 }
@@ -24,7 +33,7 @@ a {
 
 #page {
     background-color: #FFFFFF;
-    box-shadow: 7px 10px 5px #888888, -5px 10px 5px #888888;
+    box-shadow: 7px 10px 5px #888888, -3px 10px 5px #888888;
     margin: 0 auto;
     max-width: 65em;
 }
@@ -246,7 +255,12 @@ p.admonition-title,  p.topic-title, p.sidebar-title {
 }
 
 .admonition.warning, .admonition.warning * {
-	background-color:#FF9900 ! important;
+	background-color:#FFCC80 ! important;
+}
+
+.admonition.warning .admonition-title:after,
+.admonition.attention .admonition-title:after {
+    content: "!";
 }
 
 div.highlight-py3 * {

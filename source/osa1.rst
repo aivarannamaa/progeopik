@@ -2,9 +2,6 @@
 I osa: Keel
 ###########
 
-Selle osa ülesanne, blaa, blaaa
-
-
 .. toctree::
    :maxdepth: 2
    

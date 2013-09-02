@@ -2,14 +2,17 @@
 5. I osa kokkuvõte
 ******************
 
-TODO Ülesanded
-* counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
-* märgi ära or'i ja and'i shortcut evaluation
-* ülesanded kombineeritavuse kohta (sh. tõeväärtusavaldised, samaväärsused)
+.. attention::
+
+    Selle peatüki materjali veel täiendatakse
+
 
 
 .. todo::
 
+    * counting digits (algul anna vigane variant (töötab vigaselt 0 ja -x puhul))
+    * märgi ära or'i ja and'i shortcut evaluation
+    * ülesanded kombineeritavuse kohta (sh. tõeväärtusavaldised, samaväärsused)
     * conditional vs alternative execution ???
     * chained & nested conditionals (st. keele poolt pakutavad mugavus-alternatiivid)
     * if-harudes toimingu kordamine eri argumendiga vs. muutujasse salvestamine ja pärast toimingu tegemine muutujaga
@@ -23,7 +26,7 @@ TODO Ülesanded
 
 
 Kood vs. runtime
-========================================================================
+================
 
 igal tüübil on literaali süntaks ja operatsioonid/tähendus
 code vs. data
@@ -37,10 +40,10 @@ Toetu mingile näitele eelmisest ptkst selle duaalsuse kirjutamisel!!!
 
 
 Süntaks
-========================================================================
+=======
 
 Operaatorid
--------------------------------------------------------------------------------------------------------
+-----------
 Järgnev loetelu võtab kokku tähtsamate tehete prioriteedid (kõrgema prioriteediga tehted on ülalpool, samal real olevad operaatorid on sama prioriteediga):
 
     * ``**``
@@ -58,39 +61,39 @@ Kahtluse korral kasuta soovitud tehete järjekorra määramiseks sulge.
 
 
 Python vs. Scratch vs. Java
--------------------------------------------------------------------------------------------------------
+---------------------------
 
 Laused vs. avaldised
-========================================================================
+====================
 
 Arvutusmudel
-========================================================================
+============
 
 Avaldised vs. väärtused
--------------------------------------------------------------------------------------------------------
+-----------------------
 väärtused e. objektid
 
 igalpool kus kasutad muutujat/literaali võib kasutada ka teisi avaldise vorme, sest lõppkokkuvõttes muudetakse kõik väärtuseks.
 
 Mälu ja muutujad
--------------------------------------------------------------------------------------------------------
+----------------
 .. _milleks-muutujad:
     
 Milleks muutujad?
--------------------------------------------------------------------------------------------------------
+-----------------
 .. _operatsioonid-muutujatega:
     
 
  
 
 Moodulid
--------------------------------------------------------------------------------------------------------
+--------
 
 Sisend ja väljund
--------------------------------------------------------------------------------------------------------
+-----------------
 
 Funktsioonide tööpõhimõte
--------------------------------------------------------------------------------------------------------
+-------------------------
 
 TODO: Intuitsioon vs. mehhanism -- ka peale arvutile asjade õpetamist jäävad tema teadmised ikkagi mehhaaniliseks. Loll masin.
 
@@ -99,7 +102,7 @@ On vaja mõista, et arvuti/Python tegutsevad vaid etteantud reeglite järgi, nei
 Taoline detailne mõtlemine võib tunduda algul väga ebaloomulik, aga kui me soovime oma mõtteid täpselt ja ühetähenduslikult kirja panna, siis on see ainuke võimalus
 
 Loogiliste avaldiste samaväärsus
--------------------------------------------------------------------------------------------------------
+--------------------------------
 Tihti on teatud tähendusega tõeväärtusavaldist võimalik kirjutada mitmel erineval kujul, näiteks:
 
     * ``not (x or y)`` on sama, mis ``(not x) and (not y)``
@@ -110,7 +113,7 @@ Samaväärsetest variantidest tuleks valida selline, mis toob avaldise mõtte pa
 
 
 Tõeväärtusega funktsioonid
--------------------------------------------------------------------------------------------------------
+--------------------------
 Kui programmis on mitmes kohas vaja kontrollida sarnast tingimust, siis võib selle tingimuse panna kirja funktsioonina, mis tagastab tõeväärtuse. Järgnev programm  demonstreeribki tõeväärtusega funktsiooni loomist ja kasutamist:
 
 .. sourcecode:: py3
@@ -125,7 +128,7 @@ Kui programmis on mitmes kohas vaja kontrollida sarnast tingimust, siis võib se
         print("Arv pole positiivne või pole paaris")
 
 Harjutus 3. Liigaasta tuvastamine
--------------------------------------------------------------------------------------------------------
+---------------------------------
 Kirjuta funktsioon ``on_liigaasta``, mis võtab argumendiks aastaarvu ning **tagastab tõeväärtuse** vastavalt sellele, kas antud aasta on liigaasta või mitte.
 
 Kirjuta programm, mis küsib kasutajalt aastaarvu ning väljastab ekraanile info selle kohta, kas tegemist on liigaastaga või mitte. Liigaasta tuvastamiseks kasuta eelnevalt defineeritud funktsiooni.
@@ -149,11 +152,11 @@ Kirjuta programm, mis küsib kasutajalt aastaarvu ning väljastab ekraanile info
 
 
 Harjutus 4. Päevade arv kuus
--------------------------------------------------------------------------------------------------------
+----------------------------
 Kirjuta funktsioon ``päevade_arv``, mis võtab argumendiks kuu numbri ja aastaarvu ning tagastab mitu päeva on selles kuus. Kasuta abifunktsioonina eelnevalt defineeritud funktsiooni ``on_liigaasta``. (Kirjuta need funktsioonid samasse faili).
 
 Harjutus 5. Kuupäeva kontrollimine
--------------------------------------------------------------------------------------------------------
+----------------------------------
 Kirjuta funktsioon ``on_legaalne_kuupäev``, mis võtab argumendiks päeva, kuu ja aasta (arvudena) ning tagastab tõeväärtuse vastavalt sellele, kas argumentidele vastav kuupäev on legaalne või mitte. Kasuta abifunktsioonidena eelmistes ülesannetes defineeritud funktsioone.
 
 Testi loodud funktsiooni järgnevate avaldistega:
@@ -167,9 +170,9 @@ Testi loodud funktsiooni järgnevate avaldistega:
 
 
 Kokkuvõte
-========================================================================
+=========
 Väärtused ja avaldised
--------------------------------------------------------------------------------------------------------
+----------------------
 Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksematele, aga samas ka kõige tähtsamatele elementidele, millest ei saa üle ega ümber. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib tekitada segadust, seepärast vaatame nende tähendused veelkord üle:
 
     * **Väärtus** (nt. tekst `tere` või arv `3`) on mingi Pythoni maailma "asi", millega tehakse midagi (nt. kuvatakse ekraanile, kombineeritakse teiste väärtustega, võrreldakse, salvestatakse mällu vms). Väärtusi nimetatakse ka *andmeteks*.
@@ -182,7 +185,7 @@ Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksemate
     * Avaldisele vastava väärtuse väljaarvutamist nimetatakse **avaldise väärtustamiseks**. Avaldiste väärtustamine on üks Pythoni põhilistest tööülesannetest programmide jooksutamisel.
 
 Arvud ja sõned
--------------------------------------------------------------------------------------------------------
+--------------
 Konkreetsetest andmetüüpidest vaatlesime *täisarve*, *ujukomaarve* ja *sõnesid*:
 
     * Täisarvude suurus pole Pythonis piiratud
@@ -191,7 +194,7 @@ Konkreetsetest andmetüüpidest vaatlesime *täisarve*, *ujukomaarve* ja *sõnes
     * Enamik sõneoperatsioone on Pythonis realiseeritud `meetoditena` (nt. ``nimi.lower()``)
 
 Sisend ja väljund
--------------------------------------------------------------------------------------------------------
+-----------------
 Et programmi käivitamisel midagi üldse juhtuks, on vaja programmi kirjutada ka mingi *tegevus*, näiteks kasutajaga (või failisüsteemiga) suhtlemine:
 
     * ``print`` kuvab etteantud väärtuse ekraanile
@@ -199,7 +202,7 @@ Et programmi käivitamisel midagi üldse juhtuks, on vaja programmi kirjutada ka
     * faili lugemiseks ja kirjutamiseks tuleb fail kõigepealt *avada* (``f = open("andmed.txt")`` või ``f2 = open("andmed2.txt", mode="w")``). Lugemiseks saab kasutada failimeetodit ``readline`` (nt ``print(f.readline())``), kirjutamiseks meetodit ``write`` (nt ``f2.write(nimi + "\n")``).
     
 Importimine
--------------------------------------------------------------------------------------------------------
+-----------
 Kuna Pythonis standardteegis (ja teiste arendajate teekides) eksisteerib väga palju funktsioone, on nad organiseeritud *moodulitesse*. Moodulis olevatele funktsioonidele ligipääsemiseks on vaja kasutada *import lauset*. Sellel lausel on 3 erinevat varianti:
 
     * ``from math import sin, cos`` -- üksikute funktsioonide importimine
@@ -207,7 +210,7 @@ Kuna Pythonis standardteegis (ja teiste arendajate teekides) eksisteerib väga p
     * ``import math`` -- mooduli enda importimine. Sel juhul tuleb funktsiooni nimi kirjutada koos mooduli nimega (``math.sin(0.5)``)
 
 Avaldised vs. laused
--------------------------------------------------------------------------------------------------------
+--------------------
 Selle peatüki programmide puhul saame programmi iga rida nimetada **lauseks**. Pythoni programm polegi muud, kui lausete jada. Avaldisi kasutatakse vaid lausete koosseisus. Need lauseliigid mida me kohtasime olid:
 
     * import-lause, nt. ``from math import sin``
@@ -223,10 +226,10 @@ Nüüdseks oleme üle vaadanud peaaegu kõik olulisemad programmeerimise konstru
 
 
 Ülesanded
-========================================================================
+=========
 
 1. Kuupäeva esitamine sõnena
--------------------------------------------------------------------------------------------------------
+----------------------------
 Kirjuta funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu ja aasta (arvudena) ning tagastab sõne, mis esitab kuupäeva kujul *<päev>. <kuu nimi> <aasta>* (nt. *24. veebruar 1918*).
 
 Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta. Kui neile vastav kuupäev on legaalne, siis kuvada ekraanile vastav kuupäev sõnena, vastasel juhul kuvada ``'Viga: mittelegaalne kuupäev'``.
@@ -234,7 +237,7 @@ Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta.
 Kasuta abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 3-6).
 
 2. Täisnurkne kolmnurk
--------------------------------------------------------------------------------------------------------
+----------------------
 Kirjuta funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja tagastab ``True`` või ``False`` vastavalt sellele, kas tegemist oli täisnurkse kolmnurgaga või mitte.
 
 .. note:: 
@@ -262,11 +265,11 @@ Kirjuta funktsioon, mis võtab argumentideks kolmnurga külgede pikkused ja taga
 Kasuta loodud funktsiooni, küsides kasutajalt kolmnurga 3 külje pikkused ja väljastades info selle kohta, kas antud kolmnurk on täisnurkne või mitte. Kui küljepikkused ei sobi kolmnurgale, siis tuleks ka seda öelda.
 
 3. Klaveri mahutamine
--------------------------------------------------------------------------------------------------------
+---------------------
 Ülikool on ostnud endale uue klaveri peahoone aula tarbeks. Paraku unustati  kontrollida, kas see klaver üldse välisuksest sisse mahub. Kirjutada programm, mis küsib kasutajalt klaverit sisaldava kasti kolm mõõdet (pikkus, laius, kõrgus) ning ukse laiuse ja kõrguse ning vastab, kas klaver on võimalik aulasse sisse toimetada.
 
 4. Pitsapood
--------------------------------------------------------------------------------------------------------
+------------
 Kirjuta programm, mis küsib kasutajalt infot tellitava pitsa suuruse, komponentide ja kättetoimetamise detailide kohta. Igal sammul tuleks esitada kasutajale võimalikud valikud koos vastavate koodidega, nt:
 
 .. sourcecode:: none
@@ -297,13 +300,13 @@ Pitsakatte komponente peaks saama valida ükskõik kui palju. Aadressi küsida a
 
 
 Lisalugemine
-========================================================================
+============
 
 Midagi programmeerimiskeelte kohta
--------------------------------------------------------------------------------------------------------
+----------------------------------
 TODO
 
 
 Python tutorial
--------------------------------------------------------------------------------------------------------
+---------------
 sh. tour of std library 

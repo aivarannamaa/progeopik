@@ -2,9 +2,6 @@
 II osa: Tehnika
 ###############
 
-Selle osa ülesanne, blaa, blaaa
-
-
 .. toctree::
    :maxdepth: 2
    

@@ -9,21 +9,21 @@ Tere tulemast!
    osa2
    osa3
 
-Selle õpiku abil on sul võimalus õppida algtasemel programmeerima. Samas, ära alahinda sõna `algtase` -- kuna kasutatav programmeerimiskeel Python on oma põhiolemuselt lihtne, aga võimas, on pakutavad teemad täesti piisavad kõikide sinu programmiideede realiseerimiseks.
+Selle õpiku põhieesmärk on õpetada programmeerimise universaalseid põhimõtteid, mis kehtivad kõigi populaarsete programmeerimiskeelte puhul. Konkreetne keel, mida selleks kasutame, on `Python`. Lisaks fundamentaalsetele teemadele tutvustatakse veidi ka Pythoni "värvilist" poolt -- nii saab näiteks aimu, kuidas kirjutatakse graafilisi programme või kuidas võiks realiseerida ühe lihtsa veebiserveri.
 
 
 Õpiku ülesehitus
-========================================================================
+================
 Nagu paremal olevast sisukorrast näha, on materjal jaotud kolmeks osaks.
 
-Esimene osa ülesandeks on kõige tähtsamate programmeerimismõistete tutvustamine. Selles osas on ülesanded suhteliselt lihtsad, ainsaks väljakutseks on see, et sinu partner, Python, ei saa aru eesti keelest (ja on lisaks suur tähenärija). See võib olla esialgu ärritav, kuid püüdes tema vaatenurka mõista suudad sa varsti temaga lihtsamatel teemadel pingevabalt suhelda.
+Esimene osa tutvustab kõige tähtsamaid programmeerimismõisteid. Siin on ülesanded suhteliselt lihtsad, ainsaks väljakutseks on see, et sinu uus partner, Python, ei saa aru eesti keelest ja on harukordne tähenärija. See võib olla esialgu kaunis ärritav, kuid püüa tema vaatenurka mõista -- nii suudate varsti pingevabalt suhelda.
 
-Teine osa keskendub keerulisematele probleemidele, kus mõnikord ei oskaks detailset lahendusplaani ka eesti keeles kirjeldada. Taolistest probleemidest jagu saamiseks tutvustatakse selles osas levinud programmeerimisvõtteid ja pakutakse järjest raskemaid harjutusülesandeid.
+Teine osa keskendub keerulisematele ülesannetele, kus mõnikord ei oskaks detailset lahendusplaani ka eesti keeles kirjeldada. Taolistest probleemidest jagu saamiseks tutvustatakse levinud programmeerimisvõtteid ja pakutakse järjest raskemaid harjutusi.
 
-Kui esimesed kaks osa on üpris üldise iseloomuga, siis kolmandasse osasse on koondatud erinevaid teemasid, mis võivad ühe ülesande puhul olla vajalikud ja teise puhul mitte. Muuhulgas on siin tutvustatud Pythoni vahendeid graafiliste kasutajaliideste tegemiseks ja serverite kirjutamiseks.  
+Kui esimesed kaks osa on üpris üldise iseloomuga, siis kolmandasse osasse on koondatud erinevaid teemasid, mis võivad ühe ülesande puhul olla vajalikud ja teise puhul mitte. Muuhulgas on siin tutvustatud Pythoni vahendeid graafiliste kasutajaliideste tegemiseks.  
 
 Tagasiside
-========================================================================
+==========
 Kui leiad õpikus vigu või soovid lihtsalt midagi kommenteerida, siis kirjuta aadressil aivar.annamaa@ut.ee
 
 Edu!

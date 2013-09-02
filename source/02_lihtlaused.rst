@@ -1,12 +1,17 @@
 **************************
 2. Avaldised ja lihtlaused
 **************************
+
+.. attention::
+
+    Selle peatüki materjali veel täiendatakse
+
 .. todo::
 
     lisa mõned samaväärsuse küsimused
 
 
-TODO: tee avatekst ümber
+    TODO: tee avatekst ümber
  
 Esimeses peatükis katsetasid sa mitmeid erinevaid Pythoni programme. Millest need programmid koosnesid? Millest koosnevad mõnes loomulikus keeles (nt. eesti keeles) kirjutatud tekstid? 
 
@@ -14,12 +19,15 @@ Esimeses peatükis katsetasid sa mitmeid erinevaid Pythoni programme. Millest ne
 
     Programmeerimise õppimiseks läheb Sul vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. Mõtteharjutused, nagu eelnevas lõigus, on antud õpiku oluline osa, ära libise neist üle! **On täiesti normaalne, kui kulutad loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.**
 
-TODO: kas järgnev lõik on siin oluline? Peaks ehk olema vähem tseremoniaalne?
+Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selles peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. 
 
-Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selles peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. TODO: võibolla kasutajale on tähtsamad arvud ja sõned?
+.. todo::
+
+    Soovita näited ümber *tippida*, et treenida tähelepanelikkust ja et konstruktsioonidega lähemalt tuttavaks saada.
+
     
 
-TODO: vaata üle, kas saab kogu terminoloogiat jätta lõppu
+
 
 Arvud
 =====
@@ -111,8 +119,6 @@ Lisa järgnevatesse võrdustesse allkriipsude (``_``) asemele sobivad tehtemärg
 * ``14 _ 7 == 0``
 * ``3 _ 2 == 1`` (3 varianti)
 * ``(6 _ 4) _ 8 == 256``
-
-TODO: näitelahendus
 
 Harjutus x. Tundide lugemine
 ------------------------------------------------------------------------------------------------------- 
@@ -367,8 +373,6 @@ Kirjuta iga allpool toodud sõne kohta võimalikult lühike avaldis, kus seda s�
 | ``'koerpoiss'``       | ``'poisskoer'``              | 
 +-----------------------+------------------------------+
 
-TODO: näitelahendus
-
 Kontrollküsimus. Tehted sõnedega
 --------------------------------
 Mis on järgnevate avaldiste väärtused? Proovi algul vastata ilma Pythoni abita, aga lõpuks kontrolli oma oletused üle ka Pythoni käsureal.
@@ -496,7 +500,7 @@ Siin on konkreetset raadiust mainitud vaid ühes kohas -- muutuja ``raadius`` de
         print('Ma tahaksin seista mäetipul ja hüüda "' + nimi.upper() + '!!!!"')
         print('ning kuulda, kuidas kaja vastab: "' + ((nimi.lower() + ' ') * 3) + '..."')
         
-    Ilmselt nõustute, et sellise programmi puhul oleks maitsetu küsida kasutajalt tema nime mitu korda.
+    Ilmselt nõustud, et sellise programmi puhul oleks maitsetu küsida kasutajalt tema nime mitu korda.
 
 
 Harjutus x. Nime analüüs
