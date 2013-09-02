@@ -377,7 +377,7 @@ Programmeerimises on veel üks liik vigasid, mis on kõige ohtlikumad ja mida ni
 
 Harjutus. Semantiline viga
 --------------------------
-Leidke järgnevast näiteprogrammist semantiline viga:
+Leia järgnevast näiteprogrammist semantiline viga:
 
 .. sourcecode:: py3
 
@@ -410,7 +410,10 @@ Veel üks erinevus: kuigi kaasaegses teatris kaasatakse mõnikord etendusse ka p
 
 Mis on programmeerimine?
 ------------------------
-TODO: kunst? teadus? inseneritöö?
+
+.. todo::
+
+    TODO: kunst? teadus? inseneritöö?
 
 Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned olulised inimlikud aspektid.
 
@@ -479,9 +482,11 @@ Mõtteharjutus
 
 Programmeerimine vs. maagia
 ---------------------------
-TODO: ära jäta muljet, et katsetamine on halb!!!!!
 
-TODO: viita tagasi mõtlemise stiilidele
+.. todo::
+
+    TODO: ära jäta muljet, et katsetamine on halb!!!!!
+    TODO: viita tagasi mõtlemise stiilidele
 
 Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, ning neid tuleb rituaali korras "sõnuda" (st. oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt. http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
 
