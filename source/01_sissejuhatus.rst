@@ -177,7 +177,7 @@ Kilpkonn Pythonis
 -----------------
 Kilpkonna juhtimiseks kasutame 5 erinevat käsku:
 
-* ``forward(n)`` – liigu edasi `n` pisikese sammu võrra
+* ``forward(n)`` – liigu edasi `n` pisikese sammu võrra (ühe sammu pikkus on 1 *piksel*)
 * ``left(d)``, ``right(d)`` – pööra vasakule / paremale `d` kraadi
 * ``up()``, ``down()`` - tõsta pliiats üles / langeta pliiats vastu paberit
 
