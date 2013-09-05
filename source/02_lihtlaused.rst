@@ -1,32 +1,99 @@
-**************************
-2. Avaldised ja lihtlaused
-**************************
-
 .. attention::
 
     Selle peatüki materjali veel täiendatakse
 
+
+**************************
+2. Avaldised ja lihtlaused
+**************************
+
+Esimeses peatükis nägid sa mitmeid erinevaid Pythoni programme. Katsu meenutada:
+
+* Milliseid erinevaid tegevusi nendes programmides tehti? Teisisõnu, mida Python oskab teha?
+* Millest need programmid koosnesid? Teisisõnu, kui sa peaksid neid programmitekste jaotama väiksemateks osadeks, siis kuidas sa seda teeksid?
+
+.. admonition:: NB! 
+
+    Need on tegelikult päris olulised küsimused. Võta aeg maha, vaata mõned programmid uuesti üle ja paku välja oma vastus!
+    
+
+
 .. todo::
+
+    maini, et liigume alt üles
 
     lisa mõned samaväärsuse küsimused
 
 
     TODO: tee avatekst ümber
  
-Esimeses peatükis katsetasid sa mitmeid erinevaid Pythoni programme. Millest need programmid koosnesid? Millest koosnevad mõnes loomulikus keeles (nt. eesti keeles) kirjutatud tekstid? 
+See peatükk tegeleb just nende kahe küsimusega.
 
-.. topic:: Õpinipp: Võta aega mõtlemiseks!
-
-    Programmeerimise õppimiseks läheb Sul vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. Mõtteharjutused, nagu eelnevas lõigus, on antud õpiku oluline osa, ära libise neist üle! **On täiesti normaalne, kui kulutad loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.**
-
-Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selle peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. 
+Pythoni oskustest uurime me kõigepealt "välismaailmaga" suhtlemist -- teksti kuvamist ekraanile, failide lugemist jms. Seejärel vaatame lähemalt erinevaid "sisemisi" toiminguid nagu arvutamine, teisendamine, meelespidamine jms. Programmi komponentideks jaotamist käsitleme sarnaselt filoloogidele, kes jagavad teksti lauseteks ja laused omakorda fraasideks.
 
 .. todo::
 
     Soovita näited ümber *tippida*, et treenida tähelepanelikkust ja et konstruktsioonidega lähemalt tuttavaks saada.
 
-    
 
+Praktiline soendus
+==================
+TODO    
+
+
+Avaldised, väärtused, tüübid
+============================
+
+.. todo::
+
+    Kas säänne üldistamine on selles faasis vajalik?
+
+.. note::
+
+    Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
+    
+Pythoni tutvustuse juures käisid läbi laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhimõisteid. 
+
+.. todo::
+
+    * Too veel näiteid erinevatest avaldistest erinevates kontekstides
+    * Võibolla ka programmi skeem, kus on ära märgitud laused ja avaldised
+    * Või lihtsalt soenduseks üks suurem näide ja selgitus, millised on need mõõtmed, kus on võimalik programmi muuta
+    * **Või tõsta suurem osa sellest tekstist 5. ptk?** ja kirjutada selle asemel siia väga lakoonilised ja mitteformaalsed definitsioonid?
+
+Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas vägagi erinevate kujudega avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere maailm!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
+
+
+.. todo:: tekstiga saab teha muudki, kui ekraanile näidata
+
+.. todo:: konkreetsemalt -- print väärtustab ja omistamine väärtustab? 
+
+Nüüd võib tekkida kohe järgmine küsimus: miks ilmus lause ``print(2 + 3)`` käivitamisel ekraanile ``5`` mitte ``2 + 3``? Asi on selles, et arvutustehte kujul avaldiste kasutamisel arvutab Python ilma küsimata tulemuse välja ja kasutab siis seda esialgse avaldise asemel. Arvutuse tulemust nimetatakse **väärtuseks** (ing.k. `value`) ning arvutusprotsessi avaldise **väärtustamiseks** (ing.k. `evaluation`).
+
+.. index::
+    single: väärtus
+    
+Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on need reaalsed andmed, mida programm oma töö käigus kasutab, loob, arvutab, teisendab vms. Võib öelda, et avaldised *tähistavad* mingisuguseid asju programmi tekstis, aga väärtused *on* need asjad programmi jooksutamise ajal. *Väärtustamine* genereerib avaldisele vastava väärtuse.
+
+.. index::
+    single: andmetüüp; tüüp
+    single: tüüp
+    
+.. index::
+    single: tehe; operatsioon
+    single: operatsioon
+
+Andmetüübid, literaalid ja tehted
+---------------------------------
+Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**.
+
+Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" väärtusi nimetatakse **literaalideks**.
+
+Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid tehteid.
+
+Avaldised käsureal
+------------------
+Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi väärtustada ka ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate tehete katsetamiseks. Kuna antud peatüki esimeses pooles keskendumegi just avaldiste ja väärtuste teemale, siis eelistame skripti koostamise asemel kasutada käsurida.
 
 
 Arvud
@@ -121,14 +188,14 @@ Lisa järgnevatesse võrdustesse allkriipsude (``_``) asemele sobivad tehtemärg
 * ``(6 _ 4) _ 8 == 256``
 
 Harjutus x. Tundide lugemine
-------------------------------------------------------------------------------------------------------- 
+----------------------------
 Juku läks magama kell 23:00 ja pani väsinud peaga äratuse helisema 88 tunni pärast. Mis kell kostab äratushelin (eeldades, et Juku vahepeal äratust ei tühista)?
 
 Vastuse saab kätte ühe Pythoni avaldisega.
 
 
 Moodul ``math``
--------------------------------------------------------------------------------------------------------     
+---------------
 Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, kui need importida moodulist nimega ``math``:
 
 .. sourcecode:: py3
@@ -183,7 +250,7 @@ Kirjuta 5 sümboli pikkune Pythoni avaldis, mis annaks väärtustamisel võimali
 
 
 Kas ``2`` või ``2.0``?
-------------------------------------------------------------------------------------------------------- 
+----------------------
 Kas Pythoni literaalid ``2`` ja ``2.0`` tähistavad sama väärtust? Jah ja ei (aga pigem ei). Pythoni aritmeetika vaatenurgast on nad võrdsed -- selles veendumiseks sisesta käsureale ``2 == 2.0`` (topeltvõrdusmärk tähistab Pythonis võrdsust). Samas teeb Python neil siiski vahet: võrrelge kasvõi programme ``print(2)`` ja ``print(2.0)`` -- üks neist kuvab ekraanile 1 märgi, teine 3 märki. 
 
 Matemaatikast on teada, et iga täisarv on ühtlasi ka reaalarv, miks ei võiks siis programmeerimisel kasutada ainult ujukomaarve?
@@ -449,7 +516,7 @@ Ilmselt on sulle tuttav valem :math:`c = \sqrt{a^2 + b^2}`, mis näitab ära tä
 Üks võimalus selle valemi kasutamiseks oleks enne tehte Pythonis kirjapanekut asendada `a` ja `b` asemele nõutud arvud (*2* ja *3*), aga sel juhul ei oleks programmile peale vaadates enam nii ilmne, et tegu on Pythagorase teoreemi rakendamisega. Seetõttu proovi muutujaid kasutades säilitada enda programmis valemi üldine kuju!
 
 Milleks muutujad?
-------------------------------------------------------------------------------------------------------- 
+-----------------
 Eelnev harjutus näitas, et muutujate abil saame teatud kohti programmis kirja panna *üldisemalt*, aga see pole ainus põhjus nende kasutamiseks.
 
 Muutujaid kasutatakse tihti samal põhjusel, nagu loomuliku keele tekstides kasutakse mingite spetsiifiliste mõistete definitsioone -- see võimaldab mingi (potentsiaalselt keerulise) asja panna kirja ühekordselt ning viidata sellele edaspidi erinevates kohtades kasutades vaid ühte sõna. Oleks ju üpris tüütu kirjutada trigonomeetrilistes avaldistes alati ``3.141592653589793``. Selle asemel saame importida moodulist ``math`` muutuja ``pi``, (mille väärtuseks on mooduli loojad juhtumisi omistanud `3.141592653589793`) ning kasutada oma arvutustes seda.
@@ -647,7 +714,7 @@ Kirjuta programm, mis küsib kasutajalt rahasumma kroonides ja väljastab sellel
 
 
 Kontrollküsimus. Avaldis või lause?
-------------------------------------------------------------------------------------------------------- 
+-----------------------------------
 Kas eelneva näiteprogrammi fragment ``input('Sisesta ringi raadius: ')`` on avaldis või lause?
 
 .. hint::
@@ -692,7 +759,7 @@ Kirjuta programm, mis küsib kraadide arvu Celsiuse järgi ja väljastab sellele
 .. _sisendi-lugemine-failist:
 
 Failide lugemine reakaupa
--------------------------------------------------------------------------------------------------------  
+-------------------------
 Nüüd õpime ära ühe viisi tekstifailidest sisendi lugemiseks. Alustuseks koosta ja salvesta tekstifail nimega `andmed.txt`, mille esimesel real on inimese nimi, teisel real vanus (täisarvuna) ning kolmandal real e-maili aadress (lihtsuse mõttes ära praegu täpitähti kasuta). NB! see peab olema *plain-text* kujul, st. Wordi fail ei sobi. Seejärel salvesta loodud failiga *samasse kausta* järgnev skript, ning käivita see. 
 
 .. sourcecode:: py3
@@ -730,7 +797,7 @@ Harjutus 4. Reavahetuste eemaldamine
 Tuleta meelde, mida tegi sõnemeetod ``strip()``. Modifitseeri eelnevat näiteprogrammi selliselt, et programmi väljundisse ei tekiks üleliigseid reavahetusi.
 
 Faili sisu lugemine ühekorraga
-------------------------------------------------------------------------------------------------------- 
+------------------------------
 Koosta veel üks mitmerealine, suvalise sisuga tekstifail ning salvesta see nimega *tekst.txt*. Seejärel käivita (samas kaustas) järgnev näiteprogramm:
 
 .. sourcecode:: py3
@@ -850,52 +917,11 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
 
 Kokkuvõte
 =========
-.. todo::
 
-    Kas siinne üldistamine on selles faasis vajalik?
+.. topic:: Õpinipp: Võta aega mõtlemiseks!
 
-.. note::
-
-    Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
-    
-Pythoni tutvustuse juures käisid läbi laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhitermineid. 
-
-.. todo::
-
-    * Too veel näiteid erinevatest avaldistest erinevates kontekstides
-    * Võibolla ka programmi skeem, kus on ära märgitud laused ja avaldised
-    * Või lihtsalt soenduseks üks suurem näide ja selgitus, millised on need mõõtmed, kus on võimalik programmi muuta
-    * **Või tõsta suurem osa sellest tekstist 5. ptk?** ja kirjutada selle asemel siia väga lakoonilised ja mitteformaalsed definitsioonid?
-
-Neid osi programmitekstist, mis tähistavad mingit "asja", nimetatakse **avaldisteks**. On olemas vägagi erinevate kujudega avaldisi -- ühed tähistavad mingit konkreetset arvu või tekstijuppi (nt. ``9``, ``4.25`` või ``'Tere maailm!'``), teised mingit arvutustehet (nt. ``2 + 3``), kolmandad viitavad mingile eespool antud *definitsioonile* (nt. ``pi`` või ``nimi``) jne. 
-
-Nüüd võib tekkida kohe järgmine küsimus: miks ilmus lause ``print(2 + 3)`` käivitamisel ekraanile ``5`` mitte ``2 + 3``? Asi on selles, et arvutustehte kujul avaldiste kasutamisel arvutab Python ilma küsimata tulemuse välja ja kasutab siis seda esialgse avaldise asemel. Arvutuse tulemust nimetatakse **väärtuseks** (ing.k. `value`) ning arvutusprotsessi avaldise **väärtustamiseks** (ing.k. `evaluation`).
-
-.. index::
-    single: väärtus
-    
-Väärtused (nt. arv 4.25, arv *5*, arv *3.141592653589793*, tekst *Tere!*) on need reaalsed andmed, mida programm oma töö käigus kasutab, loob, arvutab, teisendab vms. Võib öelda, et avaldised *tähistavad* mingisuguseid asju programmi tekstis, aga väärtused *on* need asjad programmi jooksutamise ajal. *Väärtustamine* genereerib avaldisele vastava väärtuse.
-
-.. index::
-    single: andmetüüp; tüüp
-    single: tüüp
-    
-.. index::
-    single: tehe; operatsioon
-    single: operatsioon
-
-Andmetüübid, literaalid ja tehted
--------------------------------------------------------------------------------------------------------  
-Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**.
-
-Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" väärtusi nimetatakse **literaalideks**.
-
-Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid tehteid.
-
-Avaldised käsureal
-------------------
-Üldjuhul ei ole eraldiseisev avaldis (nt. ``2 + 3``) Pythoni jaoks mõistlik lause (justnagu eesti keeles ei saa üksikut fraasi, nt. "suur mets", pidada lauseks) -- avaldised on harilikult mingi lause komponendiks (nt. ``print(2 + 3)``). Pythoni käsurida aga võimaldab avaldisi väärtustada ka ilma neid mingi lause konteksti panemata -- see on mugav viis erinevate tehete katsetamiseks. Kuna antud peatüki esimeses pooles keskendumegi just avaldiste ja väärtuste teemale, siis eelistame skripti koostamise asemel kasutada käsurida.
-
+    Programmeerimise õppimiseks läheb Sul vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. **On täiesti normaalne, kui kulutad loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.**
+ 
 
 Avaldiste kombineerimine
 ========================
@@ -986,17 +1012,17 @@ Suur näide
 TODO
 
 Kokkuvõte
-======================================================================== 
+=========
 TODO
 
 Ülesanded
-========================================================================
+=========
 .. note::
     Kuigi mõned järgnevad ülesanded nõuavad programmi vormistamist koos kasutajalt sisendi küsimisega, on soovitav esialgu kirjutada ``input`` käskude asemele mingid konkreetsed väärtused -- sedasi läheb võimalike arvutusvalemite katsetamine kiiremini. Kui oled saanud kätte õige valemi, siis asenda need ajutised algandmed ``input`` käskudega.
 
 
 1. Pythoni dokumentatsioon
--------------------------------------------------------------------------------------------------------
+--------------------------
 * Uuri jällegi Pythoni dokumentatsioonist ``math`` mooduli kohta käivat infot (http://docs.python.org/3/library/math.html). Otsi välja käskude ``floor`` ja ``ceil`` tähendus -- neid võib edaspidi ülesannete lahendamisel tarvis minna.
 * Vaata üle ka sõnemeetodite dokumentatsioon (http://docs.python.org/3/library/stdtypes.html#string-methods). 
 
@@ -1004,7 +1030,7 @@ TODO
     Nurksulud Pythoni funktsioonide dokumentatsioonis näitavad, et sellele parameetrile ei pea väljakutsel tingimata väärtust andma, sest tal on olemas vaikeväärtus. Nt. kui meetodi kirjeldus on kujul ``str.center(width[, fillchar])``, siis see tähendab, et seda võib kasutada kas 1 argumendiga (nt. ``kliendi_nimi.center(80)``) või 2 argumendiga (``kliendi_nimi.center(80, '~')``).
 
 2. Pangaarve intress
--------------------------------------------------------------------------------------------------------
+--------------------
 Kirjuta programm, mis küsib kasutajalt tema pangaarvel olevat summat ning intressi protsenti, mida pank talle igal aastal maksab. Vastuseks peab programm väljastama pangaarvel oleva summa 5 aasta pärast.
 
 **Testi** oma programmi erinevate summa ja intressi kombinatsioonidega!
@@ -1014,7 +1040,7 @@ Kirjuta programm, mis küsib kasutajalt tema pangaarvel olevat summat ning intre
     Kui oled saanud õige valemi paika, siis modifitseeri oma programmi nii, et kasutajalt küsitakse vaid intressi protsent ja algsumma loetakse tekstifailist.
 
 3. Küpsisetort
--------------------------------------------------------------------------------------------------------
+--------------
 Küpsisetordi tegemisel laotakse küpsised ristkülikukujulisele kandikule ja seda mitmes kihis, nii, et igas kihis on sama palju küpsiseid. Küsida kasutajalt, mitu küpsist mahub kandikule laiuses ja mitu pikkuses ning kui mitme kihilist torti ta teha soovib. Seejärel küsida, kui mitu küpsist on ühes pakis.
 
 Lõpuks väljastada, mitu küpsisepakki tuleb sellise tordi tegemiseks osta. NB! Eeldame, et poolikut küpsisepakki osta ei saa.
@@ -1022,7 +1048,7 @@ Lõpuks väljastada, mitu küpsisepakki tuleb sellise tordi tegemiseks osta. NB!
 **Testi** oma programmi! Vali vähemalt üks komplekt algandmeid nii, et küpsistest jätkub täpselt ja vähemalt üks komplekt nii, et osa ostetud küpsiseid jääb üle.
 
 4. Nimede korrastamine
--------------------------------------------------------------------------------------------------------
+----------------------
 Modifitseeri veelkord kasutaja tervitamise programmi, kus kasutaja sisestab eraldi ees- ja perenime ning programm tervitab teda täisnimega. 
 
 Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi algavad suure tähega ja ülejäänud tähed on väikesed, hoolimata sellest, kuidas nimi sisestati (olgu ainult väikeste tähtedega, ainult suurtega või segamini).
@@ -1059,7 +1085,7 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
     Kui oled ka sellega hakkama saanud, siis proovi kaks programmi varianti ühendada, st. uus programm peaks töötama nii lihtsate, kui liitnimedega. Selle jaoks on tõenäoliselt vaja ühte Pythoni konstruktsiooni, mida selles peatükis ei käsitletud, aga mis käis läbi esimese peatüki näidetes.
     
 7. Kujund
--------------------------------------------------------------------------------------------------------
+---------
 Täienda järgnevat poolikut programmi selliselt, et selle käivitamisel ilmuks ekraanile järgnev kujund, kus ridades ja veergudes olev ``#`` sümbolite arv sõltub kasutaja sisendist. Kui võimalik, siis kirjuta kolme punkti asemele üksainus avaldis, kui vaja, siis võid ka uusi lauseid lisada.
 
 Poolik programm:
@@ -1088,7 +1114,7 @@ Ekraanile kuvatav kujund, kui kasutaja sisestab ``7``:
     Tuleta meelde, mida tähendab ``'Tere' * 4``
 
 Failide teisendamine
-------------------------------------------------------------------------------------------------------- 
+--------------------
 Kirjuta programm, mis küsib kasutajalt kaks failinime. Esimene neist peaks tähistama mingit olemasolevat tekstifaili. Teine failinimi võib olla uus, st. selle nimega faili ei pruugi eksisteerida.
 
 Programmi ülesandeks on võtta esimese faili sisu, teisendada see suurtähtedesse ning kirjutada teise faili. Ekraanile tuleks kuvada teisendatud failis olevate tähemärkide arv.
@@ -1101,7 +1127,7 @@ Programmi ülesandeks on võtta esimese faili sisu, teisendada see suurtähtedes
 
 
 5. Redeli pikkus
--------------------------------------------------------------------------------------------------------
+----------------
 Kirjuta programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrgusele ronimiseks. Programm peaks küsima kasutajalt soovitud kõrguse ning väljastama minimaalse ja maksimaalse pulkade arvu, mis peaks sobival redelil olema. Arvestame, et:
  
     * redeli alumine ja ülemine pulk on redeli otstest 15cm kaugusel
@@ -1113,8 +1139,8 @@ Kirjuta programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrguse
 
     Selleks, et arvutused ei läheks liiga keeruliseks, on soovitav vahetulemused salvestada abimuutujatesse.
 
-6. Pentagramm
--------------------------------------------------------------------------------------------------------
+6. Pentagramm (raskem)
+----------------------
 Kirjuta programm, mis küsib kasutajalt positiivse arvu vahemikus 10 .. 300 ja joonistab kilpkonna abil vastava diagonaalipikkusega pentagrammi:
 
 .. image:: images/pentagramm.png
@@ -1150,13 +1176,13 @@ Kirjuta programm, mis küsib kasutajalt positiivse arvu vahemikus 10 .. 300 ja j
 TODO: mitme tärniga ülesanded
 
 Üks ülesanne segatud ülesannete pangast
--------------------------------------------------------------------------------------------------------
+---------------------------------------
 TODO:
 
 
 
 Projekt
-========================================================================
+=======
 Kuna sinu projektiidee jaoks võib minna vaja vahendeid, mille jaoks Pythoni standardteegis moodulit ei leidu, vaatame siinkohal järgi, kuidas võtta kasutusele internetist leitud mooduleid.
 
 .. index::
@@ -1164,7 +1190,7 @@ Kuna sinu projektiidee jaoks võib minna vaja vahendeid, mille jaoks Pythoni sta
     single: moodulid; kolmanda osapoole moodulid
 
 Kolmandate osapoolte moodulid
--------------------------------------------------------------------------------------------------------
+-----------------------------
 Neid mooduleid, mis ei kuulu Pythoni standardteeki ja mida sa pole ise kirjutanud, vaid internetist alla laadinud, nimetatakse tavaliselt *kolmandate osapoolte* mooduliteks (ing. k `third party modules`).  Siinkohal demonstreerime ühe lihtsa kolmanda osapoole mooduli kasutamist.
 
 Lae alla moodul :download:`bingtrans <downloads/bingtrans.py>`, mis võimaldab kasutada Microsoft Bing tõlketeenust (NB! salvesta ta nimega ``bingtrans.py``). Seejärel salvesta samasse kausta järgnev programm ja katseta seda:

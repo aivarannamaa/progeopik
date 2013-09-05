@@ -24,13 +24,13 @@ Pythoni installeerimine
 =======================
 Pythoni paigaldamiseks Windowsiga arvutisse lae leheküljelt http://www.python.org/download/ alla fail `Python 3.3.2 Windows x86 MSI Installer` ja käivita see.
 
-Mac'is on tavaliselt Python küll olemas aga see on Python 2. Python 3 installimiseks pakutakse mainitud leheküljel faili `Python 3.3.2 Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
+Mac'is on tavaliselt Python küll olemas aga see on Python 2, mis meile ei sobi. Python 3 installimiseks pakutakse mainitud leheküljel faili `Python 3.3.2 Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
 
-Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketihalduri abil. Vajaminevad paketid on populaarsemates distrotes nimedega `python3`, `python3-tk` ja `idle3`. Nt. Ubuntus piisab installimiseks käsust ``sudo apt-get install idle3`` (`idle3` installimine peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
+Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketihalduri abil. Vajaminevad paketid on populaarsemates distrotes nimedega `python3`, `python3-tk` ja `idle3`. Nt. Ubuntus piisab installimiseks käsust ``sudo apt-get install idle3`` (see peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
 
 .. note::
 
-    Pythoni versioon ei pea olema tingimata 3.3.2, on oluline, et versiooni number algab 3-ga, olgu see `3.2`, `3.1` vms. Versioonid, mis algavad 2-ga, meile ei sobi, kuna seal töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
+    Pythoni versioon ei pea olema tingimata 3.3.2, on oluline, et versiooni number algab 3-ga, olgu see `3.2`, `3.1` vms. Versioonides, mis algavad 2-ga töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
     
 
 
@@ -43,7 +43,7 @@ Alustuseks kirjutame ühe väga lihtsa programmi, mis ei tee muud, kui kirjutab 
 
 Pythoni programme võiks vabalt kirjutada näiteks Notepad'i või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
 
-**IDLE käivitamiseks** Windowsis vali `Start -> All Programs -> Python 3.2 -> IDLE (Python GUI)`. Mac'is ja Linuxis tuleks sisestada terminalis käsk ``idle3``. Tõenäoliselt ilmub kõigepealt IDLE *käsurea* aken (pealkirjaga "Python shell"), mida kasutatakse juba käivitatud programmidega (või Pythoni endaga) suhtlemiseks.
+**IDLE käivitamiseks** Windowsis vali `Start -> All Programs -> Python 3.2 -> IDLE (Python GUI)`. Mac'is ja Linuxis tuleks sisestada terminalis käsk ``idle3``. Tõenäoliselt ilmub kõigepealt IDLE *käsurea* aken (pealkirjaga "Python shell"), mida kasutatakse juba käivitatud programmidega või Pythoni endaga suhtlemiseks.
 
 .. note::
 
@@ -317,7 +317,7 @@ Nagu nägid, oskab Python arvutada, seega saaks Pythoni käsurida kasutada võim
     
 
 
-Arve saab "mällu" salvestada samamoodi nagu skriptis:
+Arve saab mällu salvestada samamoodi nagu skriptis:
 
 .. sourcecode:: py3
 
@@ -339,6 +339,11 @@ Ka matemaatiliste funktsioonide importimine toimib samal põhimõttel nagu skrip
 
 Harjutus. Ruutjuur
 ------------------
+.. todo::
+
+    See peaks olema enne ümbrikku
+
+
 #. Uuri Pythoni matemaatikamooduli dokumentatsiooni aadressilt http://docs.python.org/3/library/math.html
 #. Proovi saada aru, kuidas arvutatakse Pythonis ruutjuurt
 #. Arvuta Pythoni käsureal, kui pikk on ristkülikukujulise maatüki diagonaal, mille mõõtmed on 50m x 75m.
@@ -361,23 +366,23 @@ Nagu sa ehk eelnevaid ülesandeid lahendades juba märkasid, annab Python märku
 
 .. note::
 
-    Täitmisaegses veateates on tavaliselt mitme rea jagu infot, mis on abiks kogenud programmeerijale, aga võivad algajal silme eest kirjuks võtta. Sellest ei tasu lasta ennast heidutada -- enamasti piisab vaid veateate viimase rea lugemisest. Lisaks probleemi kirjeldusele on veateates alati ka reanumber, mis viitab vea tekitanud reale programmi tekstis. (Käsureal töötades on aktiivse käsu reanumber alati 1).
+    Täitmisaegses veateates on tavaliselt mitme rea jagu infot, mis on abiks kogenud programmeerijale, aga võib algajal silme eest kirjuks võtta. Sellest ei tasu lasta ennast heidutada -- enamasti piisab vaid veateate viimase rea lugemisest. Lisaks probleemi kirjeldusele on veateates alati ka reanumber, mis viitab vea tekitanud reale programmi tekstis. (Käsureal töötades on aktiivse käsu reanumber alati 1).
 
-    Paraku tuleb algajatel vahel ka veateate viimase rea üle pead murda -- hea näide on see, kui sulle öeldakse käsu ``cos(pi)`` peale ``NameError: name "cos" not defined``. Sisuline põhjus pole siin mitte see, et käsk ``cos`` vale oleks, vaid see, et unustasite eelnevalt ``cos`` funktsiooni importida. (Ei, Python ei soovi segaste teadetega algajaid kiusata -- kui õpid tundma Pythoni peamiseid tööpõhimõtteid, siis paistab ka sulle antud veateate sõnastus täiesti loomulik).
+    Paraku tuleb algajatel vahel ka veateate viimase rea üle pead murda -- hea näide on see, kui sulle öeldakse käsu ``cos(pi)`` peale ``NameError: name "cos" not defined``. Sisuline põhjus pole siin mitte see, et käsk ``cos`` vale oleks, vaid see, et sa unustasid eelnevalt ``cos`` funktsiooni importida. (Ei, Python ei soovi programmeerijaid segaste teadetega kiusata -- kui õpid tundma Pythoni tööpõhimõtteid, siis paistab ka sulle antud veateate sõnastus täiesti loomulik).
 
 .. note::
 
-    Veateate põhjust on kergem leida, kui sa kirjutad programmi järk-järgult ja katsetad poolikut lahendust iga täienduse järel. Kui programm töötas korralikult enne viimase rea lisamist, siis tõenäoliselt on viga viimases reas ja sa ei pea tervet programmi läbi vaatama.
+    Veateate põhjust on kergem leida, kui sa kirjutad programmi järk-järgult ja katsetad poolikut lahendust iga täienduse järel. Kui programm töötas korralikult enne viimase rea lisamist, ja nüüd annab veateate, siis tõenäoliselt on viga viimases reas ja sa ei pea tervet programmi läbi vaatama.
 
-Veateateid näed sa oma programmeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtu sellest, et iga veateade on mõeldud programmeerija abistamiseks -- loe teate tekst alati hoolikalt läbi ja mõtle, milles võis probleem olla. Nii märkad varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks ja kasulikuks informatsiooniks.
+Veateateid näed sa oma programmeerimise karjääri jooksul väga palju, seega ei maksa neid karta. Lähtu sellest, et iga veateade on mõeldud programmeerija abistamiseks -- loe teate tekst (või vähemalt viimane rida) alati hoolikalt läbi ja mõtle, milles võis probleem olla. Nii märkad varsti, et Pythoni veateadete "salakiri" on muutunud arusaadavaks ja kasulikuks informatsiooniks.
 
-Semantilised vead
------------------
-Programmeerimises on veel üks liik vigasid, mis on kõige ohtlikumad ja mida nimetatakse **semantilisteks vigadeks** või ka lihtsalt **loogikavigadeks**. Nende vigade puhul võib kõik olla Pythoni seisukohast korrektne (st. mingit veateadet ei tule), aga programm ei tee seda, mis programmeerija silmas pidas.
+Loogikavead
+-----------
+Programmeerimises on veel üks liik vigasid, mis on kõige raskemini avastatavad -- need on **loogikavead**. Nende vigade puhul võib kõik olla Pythoni seisukohast korrektne (st. mingit veateadet ei tule), aga programm ei tee seda, mis programmeerija silmas pidas.
 
-Harjutus. Semantiline viga
---------------------------
-Leia järgnevast näiteprogrammist semantiline viga:
+Harjutus. Loogikaviga
+---------------------
+Leia järgnevast näiteprogrammist loogikaviga:
 
 .. sourcecode:: py3
 
@@ -395,7 +400,7 @@ Leia järgnevast näiteprogrammist semantiline viga:
 
 Programmeerimisest üldisemalt
 =============================
-Vahetame nüüd korraks perspektiivi ning vaatame üle mõningad üldisemad programmeerimisega seotud küsimused.
+Astume nüüd sammu tagasi ja vaatame üle mõningad üldisemad programmeerimisega seotud küsimused.
 
 Mis on programm?
 ----------------
@@ -415,9 +420,9 @@ Mis on programmeerimine?
 
     TODO: kunst? teadus? inseneritöö?
 
-Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned olulised inimlikud aspektid.
+Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned inimlikud aspektid.
 
-Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ja kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
+Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõnede fragmentidega, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ning programmi kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
 
 Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st. juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on sinu arvates juba valmis.
 
@@ -448,6 +453,7 @@ Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? 
 
 
 
+
 Programmeerimise õppimine
 =========================
 Programmeerimist ei saa "ära õppida" selles mõttes nagu saab selgeks õppida teatud hulka võõrkeelseid väljendeid. Kuigi kõik Pythonis programmeerimise reeglid saaks vabalt mahutada ühele A4-le, ei piisa ainult nende meeldejätmisest, sest võimalusi nende reeglite *kombineerimiseks* on lõputult. Lisaks reeglite teadmisele tuleb osata näha ülesande "sisse", märgata selle nüansse, kujutleda otsitavat lahendust ning lõpuks "tõlkida" oma nägemus programmeerimiskeelde. See on protsess, mis nõuab samaaegselt loovust ja täpsust, üldistusvõimet ja konkreetsust. 
@@ -458,7 +464,7 @@ Et suuta taolist protsessi oma peas läbi viia ka raskete (st. huvitavate) üles
 
     Eespool mainitud täpsuse ja konkreetsuse aspekt ütleb muuhulgas seda, et ülesande lahendus tuleks panna kirja isegi siis, kui sa suudad selle oma peas valmis konstrueerida. Keel, mida me kasutame mõtlemiseks, on palju hägusam ja vähem range kui programmeerimiskeeled, seetõttu on alati võimalus, et pealtnäha korralik lahendus meie peas on tegelikult puudulik või vigane.
 
-Kui sa tunned, et mõne ülesande lahendamiseks pole antud piisavalt juhtnööre, siis tea, et see on taotluslik -- need ülesanded õpetavad sulle tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovi taolist ülesannet enda jaoks ümber sõnastada, otsi seoseid ja sarnasusi teiste ülesannetega, lihtsusta ülesannet, otsi abi internetist või kaaslastelt, võta väike puhkepaus, vaata ülesannet värske pilguga ja proovi jälle. Läbi raskuste saavutatud kogemused ja oskused on sulle edaspidi kõige rohkem abiks!
+Kui sa tunned, et mõne antud õpiku ülesande lahendamiseks pole antud piisavalt juhtnööre, siis tea, et see on taotluslik -- need ülesanded õpetavad sulle tehniliste probleemide lahendamist kõige üldisemal tasemel. Proovi taolist ülesannet enda jaoks ümber sõnastada, otsi seoseid ja sarnasusi teiste ülesannetega, lihtsusta ülesannet, otsi abi internetist või kaaslastelt, võta väike puhkepaus, vaata ülesannet värske pilguga ja proovi jälle. Läbi raskuste saavutatud kogemused ja oskused on sulle edaspidi kõige rohkem abiks!
 
 Programmeerimiseks vajalikku ettevalmistust on mõnel inimesel rohkem ja teisel vähem, aga harjutamisega on kõigil võimalik end selles osas arendada!
 
@@ -468,7 +474,7 @@ Osad inimesed (sh. suur osa programmeerijatest) eelistavad õppida ja mõelda ab
 
 Teistele (nt. suurele osale kunstnikest) lähevad rohkem korda konkreetsed situatsioonid või kombinatsioonid. Uue teema õppimisel ei tunne nad ennast kindlalt enne, kui nad on suutnud selle seostada millegi konkreetse või elulisega. Öeldakse, et nemad suudavad paremini kasutada oma paremat ajupoolt, mis pidavat muuhulgas vastutama intuitsiooni ja loova mõtlemise eest.
 
-Kuigi tavapäraselt rõhutatakse programmeerimise juures abstraktse mõtlemise vajalikkust, peab edukas programmeerija kasutama siiski tervet oma aju. Keeruliste süsteemide haldamine nõuab tõepoolest head üldistamisvõimet, aga parimad programmiideed sünnivad tihti hoopis konkreetsetest, elulistest või ka täiesti mitteratsionaalsest mõtetest ja tunnetest.
+Kuigi tavapäraselt rõhutatakse programmeerimise juures abstraktse mõtlemise vajalikkust, peab edukas programmeerija kasutama siiski tervet oma aju. Keeruliste süsteemide loomine nõuab tõepoolest head üldistamisvõimet, aga parimad programmiideed sünnivad tihti hoopis konkreetsetest, elulistest või ka täiesti mitteratsionaalsest mõtetest ja tunnetest.
 
 Loomulikult ei ole kõik must ja valge -- sama inimene mõtleb erinevates situatsioonides erinevalt ning erinevaid mõtlemise stiile on võimalik arendada. Siiski on erinevatel inimestel programmeerimise õppimisel erinevad lähtepositsioonid ja erinevad väljakutsed. Kui sa ei tunne ennast abstraktsete teemadega mugavalt, siis ilmselt tuleb sul lihtsalt rohkem konkreetseid ülesandeid lahendada, enne kui õnnestub mingist teemast üldistatud ettekujutust saada. Neil, kes kalduvad abstraktsust eelistama, on mõtet iga teema juures võtta endale lisaaega märkamaks võimalikke seoseid igapäevase eluga.
 
@@ -573,8 +579,8 @@ Sinu enda projekt
 Vali välja mõned esialgsed programmiideed, mida sa sooviksid Pythonis realiseerida. Uute teemade õppimisel mõtle, kas ja kuidas sa saaksid antud teemat rakendada enda programmi juures.
 
 
-Praktilisi näpunäiteid
-======================
+Lisalugemine
+============
     
 Pythoni kasutamine süsteemi käsureal
 ------------------------------------
@@ -587,7 +593,7 @@ Ava Notepad (või mõni muu tekstiredaktor, mis salvestab *plain text*-i). Kopee
     
 .. note::
 
-    Notepad on laiendite osas kangekaelne -- kui sa panete laiendiks ``.py``, siis lisatakse tõenäoliselt salvestamisel sinna otsa veel ``.txt``. Selle vältimiseks pange salvestusdialoogis failinime ümber veel jutumärgid, nt. ``"teremaailm.py"``. See annab Notepad'ile märku, et sa tõesti soovid sellist failinime ja ei midagi muud.
+    Notepad on laiendite osas kangekaelne -- kui sa paned laiendiks ``.py``, siis lisatakse tõenäoliselt salvestamisel sinna otsa veel ``.txt``. Selle vältimiseks pane salvestusdialoogis failinime ümber veel jutumärgid, nt. ``"teremaailm.py"``. See annab Notepad'ile märku, et sa tõesti soovid just sellist failinime.
 
 Programmi käivitamiseks avame kõigepealt süsteemi käsurea ja liigume sellesse kausta, kus meie programm asub. Windows Vista ja Windows 7 puhul ava *Start-menüü*, sisesta otsingulahtrisse *cmd.exe* ja vajuta ENTER. Windows XP's tuleb Start-menüüst kõigepealt valida *Run* ja seejärel sisestada *cmd.exe* ja ENTER. Mac OS X's ja Linuxis tuleb avada *Terminal*.
 
