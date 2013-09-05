@@ -260,7 +260,7 @@ Kirjuta skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbr
 
 Pythoni käsurida
 ================
-Võibolla imestasid, miks tuleb IDLE käivitamisel kõigepelt ette käsurea aken. Põhjus on selles, et programmeerida saab ka käsureal, ilma, et programmi peaks skriptina salvestamata. Selline programmeerimise viis sobib väiksemate ülesanne lahendamiseks ning Pythoni võimaluste katsetamiseks. Kuna käske antakse ühekaupa ja tulemus näidatakse kohe järgmisel real, nimetatakse seda ka *interaktiivseks programmeerimiseks*. 
+Võibolla imestasid, miks tuleb IDLE käivitamisel kõigepelt ette käsurea aken. Põhjus on selles, et programmeerida saab ka käsureal, ilma, et programmi peaks skriptina salvestamata. Selline programmeerimise viis sobib väiksemate ülesannete lahendamiseks ning Pythoni võimaluste katsetamiseks. Kuna käske antakse ühekaupa ja tulemus näidatakse kohe järgmisel real, nimetatakse seda ka *interaktiivseks programmeerimiseks*. 
 
 Kui sul on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saad avada menüüvalikuga `Windows -> Python shell`. Käsuviip ``>>>`` näitab kohta, kuhu saab kirjutada Pythoni käsu, vajutades ENTER, see käsk täidetakse. Järgnev näide on kopeeritud IDLE'i käsurealt, kuhu sisestati 2 käsku ``print("Tere maailm!")`` ja ``print(23*454)``:
 
@@ -292,7 +292,7 @@ Python kui kalkulaator
 ----------------------
 .. note::
     
-    Siin ja edaspidi on käsurea näidete juures soovitav ise järgi katsetada mõned sarnased, aga mitte samad näiteid (kui proovid täpselt samu näiteid, siis usu, sa saad ka samad tulemused.) Ürita Pythonit (või iseennast) üllatada!
+    Siin ja edaspidi on käsurea näidete juures soovitav ise järgi katsetada mõned sarnased, aga mitte samad näited (kui proovid täpselt samu näiteid, siis usu, sa saad ka samad tulemused.) Ürita Pythonit (või iseennast) üllatada!
 
 
 
@@ -353,7 +353,7 @@ Harjutus. Ruutjuur
 
 Vigadest
 ========
-Nagu sa ehk eelnevaid ülesandeid lahendades juba märkasid, annab Pythoni märku, kui sa tema arvates midagi valesti oled teinud. Veateateid võiks kõige üldisemalt jaotada kahte liiki:
+Nagu sa ehk eelnevaid ülesandeid lahendades juba märkasid, annab Python märku, kui sa tema arvates midagi valesti oled teinud. Veateateid võiks kõige üldisemalt jaotada kahte liiki:
 
 **Süntaksivea** (ing. k *syntax error*) korral ei saa Python programmi tekstist aru ja seetõttu ei hakka ta programmi üldse käivitama. Veateate ütleb Python selle rea kohta, kus ta enam edasi lugeda ei osanud, tegelik vea põhjus on tihti hoopis eelneval real. Üks tüüpilisemaid süntaksivigu on puuduv lõpetav sulg -- kuigi iga programmeerija saab aru, mida on mõeldud lausega ``x = 3 + (4 * 5``, on see Pythoni jaoks täiesti mõttetu tekst, sest see ei vasta Pythoni reeglitele. Teisiti öeldes, Python (nagu ka iga teine programmeerimiskeel) on suur tähenärija ning sellega tuleb arvestada -- programmi kirjutamisel tuleb olla täpne!
 
@@ -570,7 +570,7 @@ Siin on tegemist "vabas vormis" graafilise kasutajaliidesega, mis sobib hästi j
 
 Sinu enda projekt
 -----------------
-Vali välja mõned esialgsed programmiideed, mida sa sooviksid Pythonis realiseerida. Uute teemade õppimisel mõtle, kas ja kuidas sa saaksite antud teemat rakendada enda programmi juures.
+Vali välja mõned esialgsed programmiideed, mida sa sooviksid Pythonis realiseerida. Uute teemade õppimisel mõtle, kas ja kuidas sa saaksid antud teemat rakendada enda programmi juures.
 
 
 Praktilisi näpunäiteid

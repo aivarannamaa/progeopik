@@ -19,7 +19,7 @@ Esimeses peatükis katsetasid sa mitmeid erinevaid Pythoni programme. Millest ne
 
     Programmeerimise õppimiseks läheb Sul vaja väga vähe infot, aga see info on pungil tähendust ja võimalusi. Mõtteharjutused, nagu eelnevas lõigus, on antud õpiku oluline osa, ära libise neist üle! **On täiesti normaalne, kui kulutad loetu peale mõtlemiseks mitu korda rohkem aega, kui lugemisele endale.**
 
-Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selles peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. 
+Tuleb välja, et just nagu eesti keeles, on ka programmeerimisel tähelepanu keskmes *laused*, mis koosnevad "sõnadest" ja "fraasidest". Selle peatüki ülesandeks ongi tutvustada kõige olulisemaid Pythoni sõnu ning fraaside ja lihtsamate lausete moodustamise reegleid. 
 
 .. todo::
 
