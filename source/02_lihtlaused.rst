@@ -10,7 +10,7 @@
 Esimeses peatükis nägid sa mitmeid erinevaid Pythoni programme. Katsu meenutada:
 
 * Milliseid erinevaid tegevusi nendes programmides tehti? Teisisõnu, mida Python oskab teha?
-* Millest need programmid koosnesid? Teisisõnu, kui sa peaksid neid programmitekste jaotama väiksemateks osadeks, siis kuidas sa seda teeksid?
+* Millest need programmid koosnesid? Teisisõnu, kui sa peaksid mingi programmiteksti jaotama väiksemateks osadeks, siis kuidas sa seda teeksid?
 
 .. admonition:: NB! 
 
@@ -41,7 +41,7 @@ Praktiline soendus
 TODO    
 
 
-Avaldised, väärtused, tüübid
+Väärtused, tüübid, avaldised
 ============================
 
 .. todo::
@@ -51,8 +51,15 @@ Avaldised, väärtused, tüübid
 .. note::
 
     Kuigi allpool toodud terminid kõlavad tähtsalt, on sisuliselt tegemist lihtsate mõistetega – neid tuleb lihtsalt teada, et programmeerijate kõnepruugist aru saada. 
-    
-Pythoni tutvustuse juures käisid läbi laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhimõisteid. 
+
+Siin on mõned eelmise peatüki programmidest nopitud laused:
+
+* ``print("Tere " + nimi + "!")``
+* ``print("Tere maailm!")``
+* ``a = float(input("Palun sisesta esimene arv: "))``
+* ``x = sin(4)``
+
+ läbi järgnevad laused ``print('Tere maailm!')`` ja ``print(2 + 3)``. Said teada, et ``print`` käsk kuvab sulgudes oleva "asja" ekraanile. Aga mis see "asi" ikkagi on? Milliseid "asju" veel on olemas, mida sinna sulgudesse võib panna? Siin ongi paras koht tutvustada mõningaid programmeerimise põhimõisteid. 
 
 .. todo::
 
