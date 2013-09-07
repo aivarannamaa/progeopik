@@ -171,6 +171,52 @@ Testi loodud funktsiooni järgnevate avaldistega:
 
 Kokkuvõte
 =========
+
+Avaldiste kombineerimine
+========================
+Me oleme nüüdseks kasutanud mitut viisi Pythoni maailma "asjade" e. väärtuste kirjeldamiseks. Konkreetsed väärtused pannakse kirja *literaalina* (nt. ``2.5`` või ``"Tere!"``). Mõnikord on mugavam väärtusele viidata hoopis läbi *muutuja* (nt. ``x``). Enamasti aga on meil programmi kirjutamise ajal väärtuse asemel teada hoopis selle leidmise "valem", mille me paneme kirja Pythoni *tehte* e. *operatsioonina* (nt. ``sin(x) * 2 - 1`` või ``nimi.upper()``). Kõik need viisid kannavad ühist nimetust *avaldis*.
+
+Kahtlemata on neist kolmest avaldise liigist kõige põnevam arvutustehe -- on ju arvutamine üks põhjus miks programme üldse kirjutatakse. Loodetavasti märkasid, et Pythoni arvutustehetel on üks oluline omadus, mis tõstab ta peajagu kõrgemale taskukalkulaatoritest -- tehete komponentideks võivad olla suvalist liiki avaldised, st. mitte ainult konkreetsed väärtused vaid ka muutujad või mingid muud tehted, mis võivad omakorda koosneda konkreetsetest väärtustest, muutujatest või tehetest, mis võivad omakorda ... jne. Seetõttu nimetatakse tehete komponente vahel üldistavalt *alamavaldisteks*.
+
+Kokkuvõttes, **igal pool, kus saab kasutada mingit konkreetset väärtust, saab kasutada ka muutujat või mingit tehet**, või veel üldisemalt, **igal pool, kus saab kasutada ühte avaldise liiki, saab kasutada ka teisi**. Siit tuleb ka välja miks me literaale, muutujaid ja tehteid koos vaatasime ning miks neile on välja mõeldud ühine nimetus -- hoolimata nende erinevast iseloomust kuuluvad nad Pythoni jaoks ühte perekonda.
+
+Toome järgnevalt mõned näited avaldistest mis koosnevad erinevatest alamavaldistest:
+
+TODO: näide
+
+Tehniliselt võttes ühendab erinevaid avaldise liike see, et neil kõigil on *väärtus* -- literaalide puhul on väärtus otseselt kirja pandud, muutuja kasutamisel vaatab Python järele selle defineerimisel antud väärtuse, tehete väärtuse leidmiseks tuleb teha vastavad arvutused. Asjaolu, et Python suudab genereerida igale avaldisele väärtuse ja et reaalne arvutamine (nt. liitmine) toimub justnimelt väärtustega, ongi see, mis võimaldab meil erinevat liiki avaldisi nii vabalt kombineerida.
+
+Harjutus x
+----------
+TODO: sõne- ja arvavaldise kombineerimine
+
+
+Abimuutujate kasutamine
+-----------------------
+See, et meil on võimalik kirjutada väga keerulisi arvutusi ühe avaldisena, ei tähenda, et seda tuleks tingimata teha -- tihti on lihtsam jagada arvutus *abimuutujate* abil mitmeks sammuks:
+
+TODO: näide
+
+Taoline sammukaupa arvutamine võimaldab ka kergemini leida üles viga, kui ilmneb, et arvutuse tulemus ei ole õige, selleks tuleb iga sammu järel kuvada vahetulemus ekraanile, mispeale peaks olema lihtne tuvastada, millises sammus viga sisse tuli.
+
+Harjutus x
+----------
+TODO: kirjuta arvutus lahti mitmeks sammuks
+
+Harjutus x
+----------
+TODO: kirjuta mitmesammuline arvutus üheks avaldiseks
+
+
+
+Kontrollküsimus
+---------------
+TODO: lugemiskontroll (mingi ilma tähenduseta programm, mille tulemust peab ennustama, justkui eksamil)
+
+
+
+
+
 Väärtused ja avaldised
 ----------------------
 Selles peatükis keskendusime põhiliselt Pythoni programmide kõige väiksematele, aga samas ka kõige tähtsamatele elementidele, millest ei saa üle ega ümber. Tegemist on lihtsate mõistetega, aga nende abstraktne olemus võib tekitada segadust, seepärast vaatame nende tähendused veelkord üle:

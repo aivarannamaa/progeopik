@@ -20,13 +20,13 @@ Esimese peatüki eesmärgiks on tutvustada Pythoni põhilisi töövahendeid ning
 .. index::
     single: installeerimine
 
-Pythoni installeerimine
-=======================
+Pythoni paigaldamine
+====================
 Pythoni paigaldamiseks Windowsiga arvutisse lae leheküljelt http://www.python.org/download/ alla fail `Python 3.3.2 Windows x86 MSI Installer` ja käivita see.
 
-Mac'is on tavaliselt Python küll olemas aga see on Python 2, mis meile ei sobi. Python 3 installimiseks pakutakse mainitud leheküljel faili `Python 3.3.2 Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
+Mac'is on tavaliselt Python küll olemas aga see on Python 2, mis meile ei sobi. Python 3 paigaldamiseks pakutakse mainitud leheküljel faili `Python 3.3.2 Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
 
-Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks installida paketihalduri abil. Vajaminevad paketid on populaarsemates distrotes nimedega `python3`, `python3-tk` ja `idle3`. Nt. Ubuntus piisab installimiseks käsust ``sudo apt-get install idle3`` (see peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
+Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks paigaldada paketihalduri abil. Vajaminevad paketid on populaarsemates distrotes nimedega `python3`, `python3-tk` ja `idle3`. Nt. Ubuntus piisab käsust ``sudo apt-get install idle3`` (see peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
 
 .. note::
 
@@ -144,12 +144,13 @@ Python tunneb ka matemaatilisi funktsioone ja konstante, nagu näiteks ``sin`` j
     from math import sin, cos, pi
     
     print(pi)
-    
     print(cos(0.5))
     
-    x = sin(4) 
+    x = sin(4)
     print(x)
-    print(round(x,2))
+    
+    y = 123 
+    print(round(x + y, 2))
 
 Harjutus. Puu läbimõõdu arvutamine
 ----------------------------------
@@ -236,6 +237,29 @@ Mida joonistab järgmine programm? NB! Proovi vastata enne programmi käivitamis
     
     exitonclick()
     
+Näide. Sisendi ja muutujate kasutamine joonistamisel
+----------------------------------------------------
+Tuleta meelde ülalpool toodud kasutaja nime küsimise programmi ja proovi selle põhjal ennustada järgneva näiteprogrammi käitumist:
+
+.. sourcecode:: py3
+
+    from turtle import *
+    
+    nipitiri = int(input("Sisesta mingi täisarv: "))
+    
+    forward(nipitiri)
+    left(120)
+    forward(nipitiri)
+    left(120)
+    forward(nipitiri)
+    left(120)
+    
+    exitonclick() 
+   
+
+Selle programmi katsetamisel tuleb toimetada kahes aknas -- kõigepealt vaja sisestada käsureal küsitud arv ning seejärel jälgida graafikaaknas toimuvat. Proovi käivitada programmi mitu korda, sisestades igal korral erineva arvu.
+
+Nagu näed, joonistatakse alati võrdkülgne kolmnurk, mille küljepikkus sõltub sisestatud arvust. Seda aitab saavutada *muutuja* kasutamine -- 3. real salvestame kasutaja sisestatud arvu muutujasse nimega ``nipitiri`` ja järgnevalt kasutame sama muutujat kolmes kohas, mis annabki kõigile külgedele sama pikkuse. Käsk ``int`` muutuja salvestamise juures teisendab kasutaja poolt sisestatud teksti arvuks (tekst ``"150"`` ja arv ``150`` on Pythoni jaoks täiesti erinevad asjad). 
 
 
 Harjutus. Ümbrik
