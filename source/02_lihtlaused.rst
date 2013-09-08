@@ -961,7 +961,7 @@ Ka veebist teksti lugemine pole eriti raske -- käsu ``open`` asemel tuleb kasut
 
 Harjutus. Teksti asendamine
 ---------------------------
-Täienda eelnevat näiteprogrammi nii, et ekraanile ilmuks ``The Whole Damn Family`` asemel midagi muud (näiteks ``Minu pere`` või mingi tekst, mille programm küsib kasutajalt).
+Täienda eelnevat näiteprogrammi nii, et ekraanile ilmuks kirja ``The Whole Damn Family`` asemel midagi muud (näiteks ``Minu pere`` või mingi tekst, mille programm küsib kasutajalt).
 
 .. hint::
 

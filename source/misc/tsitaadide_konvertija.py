@@ -9,7 +9,7 @@ i = 1
 
 
 def save_file(sisu):
-    fnimi = str(i).rjust(3, "0") + ".txt"
+    fnimi = "tsitaadid/" + str(i).rjust(3, "0") + ".txt"
     f = open(fnimi, mode="w", encoding="utf-8")
     f.write(sisu.strip() + "\n\n-- " + allikas + "\n")
     f.close()
@@ -21,7 +21,7 @@ jupid = sisu.splitlines()
 for jupp in jupid:
     if jupp.strip() == "":
         pass
-    elif jupp[0] == '"':
+    elif jupp[0] == '"' and not jupp.startswith('"Hukkunud Alp'):
         save_file(jupp)
         i += 1
     else:
