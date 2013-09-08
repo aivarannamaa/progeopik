@@ -248,9 +248,6 @@ Juku läks magama kell 23:00 ja pani väsinud peaga äratuse helisema 88 tunni p
 
 Vastuse saab kätte ühe Pythoni avaldisega.
 
-
-
-
 Moodul ``math``
 ---------------
 Suur hulk matemaatilisi funktsioone ja konstante on kättesaadavad peale seda, kui need importida moodulist nimega ``math``:
@@ -311,7 +308,8 @@ Kirjuta 5 sümboli pikkune Pythoni avaldis, mis annaks väärtustamisel võimali
 .. index::
     single: sõne
     single: string; sõne
-    
+
+
 Sõned
 =====
 Programmeerimine pole ainult arvudega manipuleerimine, paljudes programmides on tähtsamal kohal töö *tekstiga* (tuleta meelde näiteks esimese peatüki programmi, mis kuvas ekraanile teksti *Tere maailm!*). Selle tarvis on Pythonis olemas eraldi andmetüüp **sõne** (ing.k `string`, lühend `str`), mida kasutatakse justnimelt teksti esitamiseks.
@@ -1108,7 +1106,166 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
     .. note:: 
     
         Siin ja edasipidi proovi kõigepealt ise lahenduseni jõuda. Mõnikord see õnnestub, mõnikord mitte, aga alati treenib see sinu probleemilahendamise oskust.
+
+Suur näide: Juhuslik tsitaat
+============================
+Aadressil http://programmeerimine.cs.ut.ee/tsitaadid/ on hulk tekstifaile, millest igaüks sisaldab ühte tsitaati mõnest tuntud Eesti filmist. Ma üritan nüüd kirjutada programmi, mis valib juhuslikult ühe neist failidest ja kuvab selle sisu ekraanile. Seejuures ei hüppa ma kohe lõpptulemuse juurde, vaid katsun esitada kogu programmeerimise protsessi koos katsetuste ja ebaõnnestumistega.
+
+Enne päriselt ülesande kallale asumist on vaja teha üks asjakohane kõrvalepõige.
+ 
+.. admonition:: Juhuslikud arvud
+
+    Juhuslike täisarvude genereerimiseks tuleb importida käsk ``randint`` moodulist ``random``. Järgnev lühike programm kuvab ekraanile ühe juhusliku arvu vahemikust 1..100: 
+
+    .. sourcecode:: py3
     
+        from random import randint
+        print(randint(1, 100))
+
+.. admonition:: Väljakutse!
+
+    Nüüd oled sa näinud kõiki Pythoni võimalusi, mida on vaja selle ülesande lahendamiseks. Jah, see ülesanne on pisut keerulisem kui eelnevad, aga proovi siiski ise lahenduseni jõuda! Kui jääd hätta, siis loe edasi.
+    
+
+Enne keerulise ülesande lahendamist on kasulik proovida lahendada ülesande lihtsustatud variant. Antud juhul tahan ma kõigepealt proovida, kas mul õnnestub kuvada ekraanile mingi konkreetne fail. Õnneks on selle kohta ülalpool analoogne näide olemas, seetõttu läheb see samm lihtsalt, vaja muuta vaid ühte rida:
+
+.. sourcecode:: py3
+    :emphasize-lines: 3    
+
+    from urllib.request import urlopen
+    
+    vastus = urlopen("http://programmeerimine.cs.ut.ee/tsitaadid/026.txt")
+    
+    baidid = vastus.read()
+    tekst = baidid.decode()
+    
+    print(tekst)
+    
+    vastus.close()
+
+Isegi, kuigi ma olen täitsa kindel, et see programm töötab õigesti, siis katsetan ta ikkagi praegu järele. Töötab.
+
+Lähen edasi. Kuidas valida nende 119 faili hulgast juhuslikult üks? Käsk ``randint`` annab ainult arvu, samas kui mul on vaja pikemat sõne, mille põhiline sisu on fikseeritud aga üks väike jupp tuleks tekitada juhuslikult. Nagu sõnede plokis demonstreeriti, võimaldab Python sõnesid mitmest jupist kokku panna. Proovin nüüd genereerida ühe uue URL-i, kus tsitaadi number on juhuslikult valitud. Enne, kui hakkan oma skripti muutma, proovin selle järgi käsureal -- nii saan keskenduda just sellele alamülesandele.
+
+.. sourcecode:: py3
+
+    >>> from random import randint
+    >>> "http://programmeerimine.cs.ut.ee/tsitaadid/" + randint(1, 119) + ".txt"
+    Traceback (most recent call last):
+      File "<pyshell#7>", line 1, in <module>
+        "http://programmeerimine.cs.ut.ee/tsitaadid/" + randint(1, 119) + ".txt"
+    TypeError: Can't convert 'int' object to str implicitly
+   
+Nojah, unustasin, et sõnet ja arvu ei saa niisama lihtsalt ühendada, enne on vaja arv teisendada sõneks. Proovin uuesti:
+
+.. sourcecode:: py3
+
+    >>> "http://programmeerimine.cs.ut.ee/tsitaadid/" + str(randint(1, 119)) + ".txt"
+    'http://programmeerimine.cs.ut.ee/tsitaadid/15.txt'
+
+Palju parem! (Sina said tõenäoliselt teise arvu, aga olen kindel, et see jäi siiski vahemikku 1..119).
+
+Nüüd võin selle järgiproovitud avaldise kirjutada skripti:
+
+
+.. sourcecode:: py3
+    :emphasize-lines: 3,4
+
+    from urllib.request import urlopen
+    
+    vastus = urlopen("http://programmeerimine.cs.ut.ee/tsitaadid/" \
+                     + str(randint(1, 119)) + ".txt")
+    
+    baidid = vastus.read()
+    tekst = baidid.decode()
+    
+    print(tekst)
+    
+    vastus.close()
+
+
+Katsetan ja ... saan jälle veateate:
+
+.. sourcecode:: none
+
+    Traceback (most recent call last):
+      File "C:/Users/Aivar/Desktop/kala.py", line 4, in <module>
+        + str(randint(1, 119)) + ".txt")
+    NameError: name 'randint' is not defined
+
+Veateate viimane rida ütleb sisuliselt, et Python ei saa aru käsust ``randint``. Asi selles, et unustasin skripti lisada vastava ``import``-lause. Käsureal tehtud import skriptile ei mõju. Proovin uuesti:
+
+.. sourcecode:: py3
+    :emphasize-lines: 2
+
+    from urllib.request import urlopen
+    from random import randint
+    
+    vastus = urlopen("http://programmeerimine.cs.ut.ee/tsitaadid/" \
+                     + str(randint(1, 119)) + ".txt")
+    
+    baidid = vastus.read()
+    tekst = baidid.decode()
+    
+    print(tekst)
+    
+    vastus.close()
+
+... käivitan ja saan järjekordse veateate, mis lõpeb sõnadega ``urllib.error.HTTPError: HTTP Error 404: Not Found``. (On võimalus, et sina ei saanud siin veateadet. Miks? Loe edasi!) See tähendab, et server ei leidnud küsitud URL-iga resurssi. Selleks, et probleemi edasi uurida, oleks hea, kui ma teaks, millise URL-iga proovitakse, st. ma tahaks sama URL-i kuvada kõigepealt ekraanile ja siis proovida seda avada. Appi tulevad muutujad: 
+
+.. sourcecode:: py3
+    :emphasize-lines: 4-8
+
+    from urllib.request import urlopen
+    from random import randint
+    
+    url = "http://programmeerimine.cs.ut.ee/tsitaadid/" \ 
+        + str(randint(1, 119)) + ".txt"
+        
+    print(url)    
+    vastus = urlopen(url)
+    
+    baidid = vastus.read()
+    tekst = baidid.decode()
+    
+    print(tekst)
+    
+    vastus.close()
+
+Käivitasin ja sain jälle veateate, aga enne seda jõudis programm ekraanile kuvada genereeritud URL-i. Seekord tuli ``http://programmeerimine.cs.ut.ee/tsitaadid/9.txt``. Kopeerin ja proovin seda avada otse brauseris. Sama jama: ``The requested URL /tsitaadid/9.txt was not found on this server``. Vaatan üle tsitaatide nimekirja (http://programmeerimine.cs.ut.ee/tsitaadid/) ja saan aru, milles asi -- õige URL on ``http://programmeerimine.cs.ut.ee/tsitaadid/009.txt`` mitte ``http://programmeerimine.cs.ut.ee/tsitaadid/9.txt``, kõigi ühe- ja kahekohaliste arvude ees on veel null(id). 
+
+Pole hullu, võin URL-i genereerimisel need nullid sinna lisada. Hmm, siin on ebamugav situatsioon -- mõnikord on vaja lisada 1 null, mõnikord 2 tükki ja mõnikord mitte ühtegi. Järgmises peatükis küll tutvustatakse konstruktsiooni, millega saab panna programmi vastavalt mingile tingimusele käituma üht või teistmoodi, aga praegu tahaks ma saada lihtsamalt läbi. Õnneks tuleb mulle meelde üks siia sobiv sõnemeetod, mida tutvustati plokis "Tehted sõnedega".
+
+.. note::
+
+    Proovi enne edasi lugemist leida üles see meetod, millele ma praegu vihjasin!
+
+
+Muudan oma skripti veelkord: 
+
+.. sourcecode:: py3
+    :emphasize-lines: 5
+
+    from urllib.request import urlopen
+    from random import randint
+    
+    url = "http://programmeerimine.cs.ut.ee/tsitaadid/" \ 
+        + str(randint(1, 119)).rjust(3, "0") + ".txt"
+        
+    print(url)    
+    vastus = urlopen(url)
+    
+    baidid = vastus.read()
+    tekst = baidid.decode()
+    
+    print(tekst)
+    
+    vastus.close()
+
+
+... katsetan ja tundub, et asi töötab. Katsetan veel mõned korrad veendumaks, et töötab hoolimata sellest, kas valitud arv on ühe-, kahe- või kolmekohaline. Lõpuks eemaldan lause ``print(url)``, mida ma vajasin vaid programmeerimise ajal. Valmis!
+
+
 
 Ülesanded
 =========
