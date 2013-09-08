@@ -16,7 +16,7 @@
 
 
     * omistamise += kuju üle korrata?
-    * TODO: muutujate juurde: Pange tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
+    * TODO: muutujate juurde: Pane tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
     * TODO: Wikipedia sirvimise näide funktsiooni väljakutsete mõistmiseks
     * TODO: **näited** selle kohta, et ühte funktsiooni saab välja kutsuda mitu korda
     * "Let's wrap it in a function to make it easier to use" -- tee selle kohta näide
@@ -466,7 +466,7 @@ Nagu näha, on funktsioonid suureks abiks, kui sama käskude komplekti tahetakse
 .. sourcecode:: python
 
     def tere(nimi):
-        print("Tere " + nimi)
+        print("Tere " + nimi + "!")
         print("Kuidas läheb?")
         
     tere("Kalle")
@@ -482,7 +482,7 @@ Parameetritega saab teha funktsiooni universaalsemaks -- teatud detailid jäetak
 
 Harjutus 2. Parameetriseeritud ``ruut``
 ---------------------------------------
-Täiusta 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasuta loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
+Täiusta eespool defineeritud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasuta loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
 
 .. note::
 
@@ -517,7 +517,7 @@ Täiusta 3. peatükis mainitud ruudu joonistamise funktsiooni nii, et ruudu kül
 
 Kas sõnad *parameeter* ja *argument* on sünonüümid?
 ---------------------------------------------------
-Mitte päris. Parameetrid ja argumendid on ühe mündi kaks erinevat poolt. *Argument* on funktsiooni väljakutses antud avaldis, millest saab vastava *parameetri* väärtus. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Parameetrid on üldised, argumendid on konkreetsed. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
+Mitte päris. Parameetrid ja argumendid on ühe mündi kaks erinevat poolt. Argument on funktsiooni väljakutses antud *avaldis*, millest saab vastava parameetri *väärtus*. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Parameetrid on üldised, argumendid on konkreetsed. Meie viimases näites on ``nimi`` funktsiooni ``tere`` `parameeter`, aga sõneliteraal ``"Kalle"`` on vastav `argument` funktsiooni väljakutses.
 
 .. note::    
     `Parameetri` vs. `argumendi` asemel võib mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
@@ -538,11 +538,11 @@ Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``i
     sisestatud_nimi = input("Kuidas on sinu nimi? ")
     tere(sisestatud_nimi)
 
-See näide demonstreerib parameetritega funktsioonide universaalsust -- vastavalt vajadusele võime taolist funktsiooni kasutada literaaliga või mõne muutujaga (mille väärtus võib olla saadud ``input``-ist) või ka mingil keerulisemal kujul oleva avaldisega.
+See näide demonstreerib parameetritega funktsioonide universaalsust -- vastavalt vajadusele võime taolist funktsiooni kasutada literaaliga või mõne muutujaga (mille väärtus võib olla saadud ``input``-ist) või ka mingi keerulisema avaldisega.
 
 .. note::
 
-    Pange tähele, et eelviimasel real defineeritud muutuja nimeks oleksime võinud panna ka lihtsalt ``nimi``:
+    Pane tähele, et eelviimasel real defineeritud muutuja nimeks oleksime võinud panna ka lihtsalt ``nimi``:
     
     .. sourcecode:: py3
 

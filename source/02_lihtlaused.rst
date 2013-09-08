@@ -132,7 +132,7 @@ Andmetüübid ja tehted
 ---------------------
 Eelnevatest näidetest tuli välja, et Python oskab kasutada erinevat liiki andmeid e. väärtusi, nagu näiteks teksti, täisarve ja murdarve. Andmete liiki nimetatakse programmeerimisel **andmetüübiks**, või lihtsalt **tüübiks**.
 
-Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. murdarvu esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" konkreetseid väärtusi nimetatakse peenemas keeles **literaalideks**, aga neid võib nimetada ka **konstantideks**.
+Iga andmetüübi juures on esimeseks küsimuseks, kuidas panna kirja selle andmetüübi konkreetseid väärtusi. Siin tuleb lihtsalt teada vastavaid reegleid, nt. kümnendmurru esitamisel tuleb koma asemel kasutada punkti ning tekst tuleb panna ülakomade vahele või jutumärkidesse. Sedasi programmi teksti "sisse kirjutatud" konkreetseid väärtusi nimetatakse peenemas keeles **literaalideks**, aga neid võib nimetada ka **konstantideks**.
 
 Teiseks küsimuseks on, mida antud tüüpi andmetega teha saab. Siin tuleb jällegi teada Pythoni võimalusi -- näiteks arve saab omavahel liita, teksti saab teisendada suurtähtedesse ning kõiki andmetüüpe saab ``print`` käsuga ekraanile kuvada. Selliseid toiminguid nimetatakse **teheteks** e. **operatsioonideks**. Allpool vaatame täpsemalt arvude ja tekstiga tehtavaid tehteid.
 
@@ -225,7 +225,7 @@ Tehted arvudega
     
     Matemaatikast on teada, et iga täisarv on ühtlasi ka reaalarv, miks ei võiks siis programmeerimisel kasutada ainult ujukomaarve?
     
-    Üks põhjustest on väga pragmaatiline: täisarvudega arvutamine on tavapäraste protsessorite jaoks palju lihtsam ja kiirem, kui ujukomaarvudega arvutamine. 
+    Üks põhjustest on pragmaatiline: täisarvudega arvutamine on tavapäraste protsessorite jaoks palju lihtsam ja kiirem, kui ujukomaarvudega arvutamine. 
     
     Teine põhjus on sisuline: teatud suurused, näiteks laste arv konkreetses perekonnas, on alati täisarvulised ning me saame seda rõhutada kirjutades ``2`` (mitte ``2.0``). Samas, kui me räägime näiteks korvpallurite pikkustest meetrites, siis oleks korrektsem kirjutada mõõtmise tulemuseks ``2.0`` (mitte lihtsalt ``2``). Seega, valides täisarvu ja ujukomaarvu vahel tuleks arvestada ka esitatava suuruse olemust. 
     
@@ -316,7 +316,7 @@ Programmeerimine pole ainult arvudega manipuleerimine, paljudes programmides on 
 
 Konkreetsed tekstijupid pannakse programmi tekstis kirja *sõneliteraalidena*. Enamasti piisab sõneliteraali kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt. ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``.
 
-Pange tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde. Demonstreerime seda ``print`` käsu abil, mis toob ekraanile alati sõne tegeliku sisu, hoolimata sellest, kuidas ta programmi tekstis kirja on pandud:
+Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st. piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde. Demonstreerime seda ``print`` käsu abil, mis toob ekraanile alati sõne tegeliku sisu, hoolimata sellest, kuidas ta programmi tekstis kirja on pandud:
 
 .. sourcecode:: py3
 
@@ -1234,7 +1234,7 @@ Veateate viimane rida ütleb sisuliselt, et Python ei saa aru käsust ``randint`
 
 Käivitasin ja sain jälle veateate, aga enne seda jõudis programm ekraanile kuvada genereeritud URL-i. Seekord tuli ``http://programmeerimine.cs.ut.ee/tsitaadid/9.txt``. Kopeerin ja proovin seda avada otse brauseris. Sama jama: ``The requested URL /tsitaadid/9.txt was not found on this server``. Vaatan üle tsitaatide nimekirja (http://programmeerimine.cs.ut.ee/tsitaadid/) ja saan aru, milles asi -- õige URL on ``http://programmeerimine.cs.ut.ee/tsitaadid/009.txt`` mitte ``http://programmeerimine.cs.ut.ee/tsitaadid/9.txt``, kõigi ühe- ja kahekohaliste arvude ees on veel null(id). 
 
-Pole hullu, võin URL-i genereerimisel need nullid sinna lisada. Hmm, siin on ebamugav situatsioon -- mõnikord on vaja lisada 1 null, mõnikord 2 tükki ja mõnikord mitte ühtegi. Järgmises peatükis küll tutvustatakse konstruktsiooni, millega saab panna programmi vastavalt mingile tingimusele käituma üht või teistmoodi, aga praegu tahaks ma saada lihtsamalt läbi. Õnneks tuleb mulle meelde üks siia sobiv sõnemeetod, mida tutvustati plokis "Tehted sõnedega".
+Pole hullu, võin URL-i genereerimisel need nullid sinna lisada. Hmm, siin on ebamugav situatsioon -- mõnikord on vaja lisada 1 null, mõnikord 2 tükki ja mõnikord mitte ühtegi. Järgmises peatükis küll tutvustatakse konstruktsiooni, millega saab panna programmi vastavalt mingile tingimusele käituma üht või teistmoodi, aga praegu tahaks ma saada lihtsamalt läbi. Õnneks tuleb mulle meelde üks sobiv sõnemeetod, mida tutvustati plokis "Tehted sõnedega" olevas tabelis.
 
 .. note::
 
@@ -1264,6 +1264,36 @@ Muudan oma skripti veelkord:
 
 
 ... katsetan ja tundub, et asi töötab. Katsetan veel mõned korrad veendumaks, et töötab hoolimata sellest, kas valitud arv on ühe-, kahe- või kolmekohaline. Lõpuks eemaldan lause ``print(url)``, mida ma vajasin vaid programmeerimise ajal. Valmis!
+
+.. note::
+
+    Näidatud lahenduses on küll vähe lauseid, aga seevastu on mõned avaldised kaunis keerulised. Võibolla sulle sobib paremini, kui teed keerulisemad operatsioonid mitme sammuga, kasutades vahetulemuste salvestamiseks abimuutujaid, nagu järgnevas, eelnevalt näidatud lahendusega samaväärses programmis:
+    
+    .. sourcecode:: py3
+        :emphasize-lines: 4-9
+    
+        from urllib.request import urlopen
+        from random import randint
+        
+        tsitaadi_number = randint(1, 119)
+        tsitaadi_number_tekstina = str(tsitaadi_number)
+        kolmekohaline_number_tekstina = tsitaadi_number_tekstina.rjust(3, "0")
+         
+        url = "http://programmeerimine.cs.ut.ee/tsitaadid/" \ 
+            + kolmekohaline_number_tekstina + ".txt"
+            
+        print(url)    
+        vastus = urlopen(url)
+        
+        baidid = vastus.read()
+        tekst = baidid.decode()
+        
+        print(tekst)
+        
+        vastus.close()
+
+
+    Sellise lähenemise eelis on veel see, et probleemide korral saab iga vahetulemuse ekraanile ``print``-ida, et näha, millise sammu juures viga sisse tuli.     
 
 
 

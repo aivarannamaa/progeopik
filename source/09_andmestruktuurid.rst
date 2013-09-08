@@ -47,7 +47,7 @@ Olulisimad hulgaoperatsioonid on mingi väärtuse hulgas sisalduvuse kontroll (`
     
 Nagu näha, ei pea hulgas olema vaid arvud -- just nagu listis, saab ka hulgas hoida erinevaid Pythoni väärtusi. (Selle väite osas teeme allpool väikese korrektuuri, aga praegu on oluline, et hulgas saab hoida vähemalt täisarve, ujukomaarve, tõeväärtusi ja sõnesid).
 
-Pange tähele, et elemendi hulka lisamiseks on meetod ``add``, mitte ``append`` nagu listide puhul. Põhjus on selles, et sõna *append* viitab justnimelt lõppu lisamisele, aga kuna hulkadel pole elementide järjekord tähtis, siis kasutatakse üldisemat sõna *add*.
+Pane tähele, et elemendi hulka lisamiseks on meetod ``add``, mitte ``append`` nagu listide puhul. Põhjus on selles, et sõna *append* viitab justnimelt lõppu lisamisele, aga kuna hulkadel pole elementide järjekord tähtis, siis kasutatakse üldisemat sõna *add*.
 
 Kui proovisite tühja hulka kirja panna kirjutades ``{}``, siis said sellise "hulga" kasutamisel ilmselt veateate. Põhjus on selles, et sellist tähistust kasutatakse Pythonis ühe teise andmestruktuuri, nimelt tühja sõnastiku tähistamiseks. Tühi hulk tuleb kirjutada kasutades funktsiooni ``set``:
 

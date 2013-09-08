@@ -73,7 +73,7 @@ Hakkame nüüd selle programmi sisu analüüsima:
         
     * Järgmises plokis lõime ja seadsime paika tekstisisestuskasti (``ttk.Entry``). Selle paigutamisel näitasime ära ka soovitud laiuse.
     
-    * Nupu (``ttk.Button``) loomisel määrasime argumendiga ``command`` ära, mida tuleb teha nupule klikkimise korral. Pange tähele, et argumendi väärtuseks on ainult funktsiooni nimi, mitte funktsiooni väljakutse (see oleks olnud koos tühjade sulgudega). Põhjus on selles, et me ei taha seda funktsiooni käivitada mitte nupu loomise ajal, vaid siis kui nuppu klikitakse.
+    * Nupu (``ttk.Button``) loomisel määrasime argumendiga ``command`` ära, mida tuleb teha nupule klikkimise korral. Pane tähele, et argumendi väärtuseks on ainult funktsiooni nimi, mitte funktsiooni väljakutse (see oleks olnud koos tühjade sulgudega). Põhjus on selles, et me ei taha seda funktsiooni käivitada mitte nupu loomise ajal, vaid siis kui nuppu klikitakse.
 
 #. Viimaks käivitasime lause ``raam.mainloop()``, mis manab loodud akna ekraanile ja jääb ootama kasutaja tegevusi.
 
@@ -373,7 +373,7 @@ Kutsu funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
     tahvel.pack()
     raam.mainloop()
 
-Pange kood kokku ja käivita rakendus.
+Pane kood kokku ja käivita rakendus.
 
 Harjutus 3. Täiendatud kell
 -------------------------------------------------------------------------------------------------------

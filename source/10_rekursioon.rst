@@ -470,7 +470,7 @@ Viimases kahes näites kasutasime avaldise struktuuri kirjelduses mõistet *aval
 Enne edasi minemist defineerime abimõisted erinevatel kujudel avaldiste tähistamiseks:
 
     * `faktor` -- arv või sulgudes olev avaldis, nt. ``3`` või ``( 2 * 3 + ( 4 / 6 ) )``
-    * `term` -- faktor või korrutis/jagatis, nt ``3``, ``( 2 * 3 + ( 4 / 6 ) )`` või ``2 * ( 3 + 4 )``. Pange tähele, et korrutise/jagatise vasak argument võib olla term aga parem argument on faktor (mõtle ``8 / 2 / 2`` struktuuri peale). 
+    * `term` -- faktor või korrutis/jagatis, nt ``3``, ``( 2 * 3 + ( 4 / 6 ) )`` või ``2 * ( 3 + 4 )``. Pane tähele, et korrutise/jagatise vasak argument võib olla term aga parem argument on faktor (mõtle ``8 / 2 / 2`` struktuuri peale). 
     * `avaldis` -- term või liitmine/lahutamine. Liitmise/lahutamise vasak argument võib olla avaldis, aga parem argument on term.
     
 Paneme samad mõisted kirja ka spetsiaalses notatsioonis, mida kasutatakse *grammatikate* esitamiseks (``|`` võib lugeda kui sõna *või*):
