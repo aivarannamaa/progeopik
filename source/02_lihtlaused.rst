@@ -446,9 +446,11 @@ Tehted sõnedega
 +-------------------------------------+--------------------+                                                                     |
 | ``'jäääär'.count('ä')``             | ``4``              |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``'tere'.rjust(10)``                | ``'      tere'``   | Sõne paigutamine etteantud "ruumi", see on abiks tabelite           |
-+-------------------------------------+--------------------+ moodustamisel                                                       +
-| ``'terekest'.rjust(10)``            | ``'  terekest'``   |                                                                     |
+| ``'tere'.rjust(10)``                | ``'      tere'``   | Sõne paigutamine etteantud "ruumi", see on abiks nt. tabelite       |
++-------------------------------------+--------------------+ moodustamisel. Selle meetodi paariliseks on ``ljust``, katseta ise  |
+| ``'terekest'.rjust(10)``            | ``'  terekest'``   | järgi, mida see teeb!                                               |
++-------------------------------------+--------------------+ Teise argumendiga saab määrata, millist sümbolit ruumi täitmiseks   | 
+| ``'terekest'.rjust(10, '~')``       | ``'~~terekest'``   | kasutatakse.                                                        |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``' tere '.strip()``                | ``'tere'``         | Meetod ``strip`` annab sõne ilma alguses ja lõpus olevate tühikute  |
 +-------------------------------------+--------------------+ ja reavahetusteta                                                   +
@@ -458,7 +460,7 @@ Tehted sõnedega
 +-------------------------------------+--------------------+ *alamsõned* on asendatud millegi muuga                              |
 | ``'tere'.replace('a', 'b')``        | ``'tere'``         |                                                                     |
 +-------------------------------------+--------------------+                                                                     |
-| ``'mu isa'.replace('isa', 'ema')``  | ``'mu ema'``       |                                                                     |
+| ``'isamaa'.replace('isa', 'ema')``  | ``'emamaa'``       |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'abc'[0]``                        | ``'a'``            | Kirjutades sõne järele kantsulgudesse mingi numbri, antakse         |
 +-------------------------------------+--------------------+ vastuseks vastava järjekorranumbriga e. *indeksiga* täht.           +
@@ -667,12 +669,12 @@ Kirjuta programm, mis küsib kasutaja käest tema nime ja vastab mitu sulghääl
 
 Kontrollküsimus. Puuduv avaldis
 -------------------------------
-Järgneva käsureasessiooni väljavõtte esimesel real on puudu omistamise parem pool. Milline avaldis peaks seal olema?
+Järgneva käsureasessiooni esimesel real on puudu omistamise parem pool. Milline avaldis peaks seal olema?
 
 
 .. sourcecode:: py3
 
-    >>> s = ...
+    >>> s = _______
     >>> len(s)
     3
     >>> str(len(s)) * 2

@@ -781,7 +781,9 @@ Harjutus 7. Kahest suurim => kolmest suurim
 -------------------------------------------
 Kirjuta funktsioon ``kahest_suurim``, mis tagastab kahest argumendiks antud arvust suurima.
 
-Programmi põhiosas küsi kasutajalt *kolm* arvu, ning kuva ekraanile neist suurim. Proovi seejuures delegeerida võimalikult palju tööd funktsioonile.
+Programmi põhiosas küsi kasutajalt *kolm* arvu, ning kuva ekraanile neist suurim. Proovi seejuures delegeerida võimalikult palju tööd äsja loodud funktsioonile.
+
+TODO: näitelahendus
 
 
 Näide: Tõeväärtusfunktsioonid

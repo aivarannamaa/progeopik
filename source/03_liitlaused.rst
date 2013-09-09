@@ -682,7 +682,7 @@ Eelmise näiteprogrammi väljund jäi natuke kipakas, sest osad korrutised olid 
 
 .. hint::
 
-    Teine võimalus on kasutada ühte sõneoperatsiooni, mille kohta on ühes 2. peatüki tabelis.
+    Teine võimalus on kasutada ühte sõneoperatsiooni, mille kohta näide on ühes 2. peatüki tabelis.
     
 
 Näide. Failist lugemine tsükliga
