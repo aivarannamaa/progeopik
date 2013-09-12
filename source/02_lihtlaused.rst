@@ -1143,7 +1143,7 @@ Enne keerulise ülesande lahendamist on kasulik proovida lahendada ülesande lih
     
     vastus.close()
 
-Isegi, kuigi ma olen täitsa kindel, et see programm töötab õigesti, siis katsetan ta ikkagi praegu järele. Töötab.
+Kuigi ma olen täitsa kindel, et see programm töötab õigesti, siis katsetan ta ikkagi praegu järele. Töötab.
 
 Lähen edasi. Kuidas valida nende 119 faili hulgast juhuslikult üks? Käsk ``randint`` annab ainult arvu, samas kui mul on vaja pikemat sõne, mille põhiline sisu on fikseeritud aga üks väike jupp tuleks tekitada juhuslikult. Nagu sõnede plokis demonstreeriti, võimaldab Python sõnesid mitmest jupist kokku panna. Proovin nüüd genereerida ühe uue URL-i, kus tsitaadi number on juhuslikult valitud. Enne, kui hakkan oma skripti muutma, proovin selle järgi käsureal -- nii saan keskenduda just sellele alamülesandele.
 
@@ -1341,6 +1341,10 @@ Seekord peaks programm vastama alati selliselt, et nii eesnimi, kui perenimi alg
     
         >>> "pEEteR".capitalize()
         'Peeter'
+
+.. todo::
+
+    "Väljakutset" on liiga lihtne lahendada str.title-ga.
     
 .. admonition:: Väljakutse
 
