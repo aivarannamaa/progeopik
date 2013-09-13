@@ -492,34 +492,33 @@ Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll sü
 Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
 
 
-Alternatiivid
-=============
+Samaväärsed programmid
+======================
 
 * nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks
-* Samaväärsused
+* Samaväärsused: et asja panna kirja lühemalt; et teha asja efektiivsemaks
 
+Harjutus: Kuu nimi, vol2
+------------------------
+Kolmandas peatükis demonstreeriti :ref:`kahte samaväärset programmi <elif_kuu_nimi>`, mis väljastavad etteantud kuu numbrile vastava kuu nime. Leidsime, et teine viis on esimesest parem, kuna teda on lihtsam kirjutada ja lugeda.
 
-``elif`` konstruktsioon e. mitmeharuline tingimuslause
-------------------------------------------------------
-Ülalpool toodud arvude võrdlemise näite saab kirjutada ümber kasutades ``elif`` konstruktsiooni (tuleb sõnadest *else if*):
+Mõlemad näidatud viisid sunnivad Pythonit halvimal juhul tegema kuni 12 võrdlemist (kui sisestatud arv oli `12`). Kirjuta veel üks nende kahega samaväärne lahendus, mis saab alati hakkama väiksema arvu võrdlustega.
 
-.. sourcecode:: py3
-    
-    arv1 = int(input("Sisesta esimene arv: "))
-    arv2 = int(input("Sisesta teine arv: "))
-    
-    if arv1 > arv2:
-        print("Esimene arv on suurem")
-    elif arv2 > arv1:
-        print("Teine arv on suurem")
-    else:
-        print("Arvud on võrdsed")
+.. hint::
 
-Pane tähele, et ``elif`` algab samast veerust, kus ``if`` ja ``else`` -- viimased 6 rida antud näites moodustavad üheainsa tingimuslause. ``if``-i ja ``else`` vahele võib kirjutada ka mitu ``elif`` osa.
+    Lahendust on võimalik panna kirja nii, et Python ei pea õige vastuseni jõudmiseks tegema kunagi rohkem kui 4 võrdlust.
 
-``elif`` on kasulik siis, kui meil on vaja kontrollida mitut alternatiivset tingimust. ``elif``-i asemel saaks alati kasutada ka üksteise sisse pandud tingimuslauseid, aga siis võib treppimine minna liiga keeruliseks.
+.. hint:: 
 
-NB! Ühes tingimuslauses täidetakse ühel käivitamisel vaid üks haru (ning kui ``else`` osa puudub, siis võib juhtuda, et ei täideta ühtegi haru). Tingimusi hakatakse kontrollima ülevalt alla -- kui leitakse esimene kehtiv tingimus, siis täidetakse selle juurde kuuluvad laused ja järgnevaid harusid ning nende tingimusi enam ei vaadata.
+    Siin on parem kasutada ainult tavalisi, üksteise sisse pandud ``if-else``-sid (st. mitte kasutada ``elif``-i).
+
+.. hint::
+    Pane tähele, et ühe ``if-else`` võime me paigutada teise ``if-else`` sisse kahel moel -- kas ``then`` harusse või ``else`` harusse.
+
+.. hint::
+
+    Mõtle sellele, kuidas sa otsid mingit sõna sõnaraamatust. Kas hakkad sõnastiku algusest lehitsema, kuni jõuad otsitava sõnani või kasutad mingit kavalamat viisi?     
+
 
 
 

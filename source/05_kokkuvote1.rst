@@ -22,6 +22,7 @@
     * kilpkonnaga rooma numbrite joonistamine
     * kalendri printimine
     * etteantud 2-3 muutujaga tõeväärtustabeli põhjal avaldise kirjutamine
+    * Kuidas Python paneb sulge rohkem kui 1 operatsiooni korral
     
 
 
