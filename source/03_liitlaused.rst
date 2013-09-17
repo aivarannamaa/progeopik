@@ -704,7 +704,7 @@ Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mit
 
     Selles näites kasutasime ``strip`` meetodit seepärast, et failist ridade lugemisel jäetakse rea lõppu ka reavahetuse sümbol. Selline nüanss aga ei pruugi alati meelde tulla ja sel juhul programm lihtsalt ei tööta õigesti.
     
-    Kui tekib selline situatsioon, kus programm ei tööta nii nagu sa soovid, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu sa arvasid. Antud programmis võiks tsüklis esimese asjana (enne tingimuslauset) kuvada ekraanile loetud nime. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
+    Kui tekib selline situatsioon, kus programm ei tööta nii nagu sa soovid, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu sa arvasid. Antud programmis võiks tsüklis esimese asjana peale rea sisselugemist kuvada selle ekraanile. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
 
 Harjutus: Failis olevate temperatuuride teisendamine
 ----------------------------------------------------
@@ -1047,7 +1047,7 @@ Pykkar saab aru järgnevatest käskudest:
 +---------------------+-----------------------------------------------------------------------------------------------+
 | ``right()``         | Pööra 90° paremale                                                                            |
 +---------------------+-----------------------------------------------------------------------------------------------+
-| ``take()``          | Korja üles järgmisel ruudul olev torbik. Pykkar suudab liikuda koos ühe torbikuga             |
+| ``take()``          | Korja üles üks järgmisel ruudul olev torbik. Pykkar suudab transportida ühte torbikut korraga |
 +---------------------+-----------------------------------------------------------------------------------------------+
 | ``put()``           | Pane ülesvõetud torbik maha järgmisele ruudule (seal võib olla juba kuni 8 torbikut ees)      |
 +---------------------+-----------------------------------------------------------------------------------------------+
@@ -1153,7 +1153,7 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 
 4. Liigu nurka
 --------------
-Kirjuta Pykkari programm, mis suvalise ristkülikukujulise maailma puhul liigutab Pykkari kirdenurka (NE). Programm võib eeldada, et robot vaatab alguses lõunasse, aga tema algne asukoht võib olla suvaline. Programmi lõpuks peab Pykkari olema näoga põhjasuunas.
+Kirjuta Pykkari programm, mis suvalise ristkülikukujulise maailma puhul liigutab Pykkari kirdenurka (NE). Programm võib eeldada, et robot vaatab alguses lõunasse, aga tema algne asukoht võib olla suvaline. Programmi lõpuks peab Pykkar olema näoga põhjasuunas.
 
 Katseta programmi näiteks selliste algseisudega:
 
@@ -1178,7 +1178,7 @@ ja
     # v      #
     ##########
 
-Kas su programm töötab õigesti ka siis, kui Pykkar juba on loodenurgas?
+Kas su programm töötab õigesti ka siis, kui Pykkar juba on kirdenurgas?
 
 .. admonition:: Väljakutse
 
