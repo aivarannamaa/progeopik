@@ -175,6 +175,9 @@ def paint():
 def get_heading():
     return world.execute("get_heading")
     
+def get_direction():
+    return world.execute("get_direction")
+    
 def get_speed():
     return world.execute("get_speed")
     
@@ -219,6 +222,9 @@ class Pykkar:
         
     def get_heading(self):
         return self._world.execute("get_heading")
+        
+    def get_direction(self):
+        return self._world.execute("get_direction")
         
     def get_speed(self):
         return self._world.execute("get_speed")
@@ -570,6 +576,18 @@ class _WorldProper:
     
     def _cmd_get_heading(self):
         return self._get_current_tile().pykkar_heading
+    
+    def _cmd_get_direction(self):
+        heading = self._cmd_get_heading()
+        if heading == N:
+            return "N"
+        elif heading == E:
+            return "E"
+        elif heading == S:
+            return "S"
+        else:
+            assert heading == W
+            return "W"
     
     def _cmd_set_speed(self, value):
         self._speed = int(value)

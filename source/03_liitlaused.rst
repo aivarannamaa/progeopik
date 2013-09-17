@@ -333,17 +333,19 @@ Kirjuta programm, mis küsib kasutajalt mitu punkti võis aines saada ning mitu 
     
     .. sourcecode:: py3
     
-        punkte = int(input("Sisesta punktide arv"))
+        maks_punkte = int(input("Kui palju punkte oli võimalik saada? "))
+        punkte = int(input("Kui palju punkte tudeng sai? "))
+        protsent = punkte / maks_punkte * 100
         
-        if punkte > 90:
+        if protsent > 90:
             hinne = 'A'
-        elif punkte > 80:
+        elif protsent > 80:
             hinne = 'B'
-        elif punkte > 70:
+        elif protsent > 70:
             hinne = 'C'
-        elif punkte > 60:
+        elif protsent > 60:
             hinne = 'D'
-        elif punkte > 50:
+        elif protsent > 50:
             hinne = 'E'
         else:
             hinne = 'F'
@@ -491,7 +493,7 @@ Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni la
 
 .. note::
 
-    Eelmises peatükis soovitati valida muutujatele nimed, mis kirjeldavad nende tähendust. Selles näites on aga muutuja nimega ``i``, mis ei paista midagi tähedavat. Milles asi?
+    Eelmises peatükis soovitati valida muutujatele nimed, mis kirjeldavad nende tähendust. Selles näites on aga muutuja nimega ``i``, mis ei paista midagi tähendavat. Milles asi?
     
     Asi on selles, et nime ``i`` kasutamine tsüklimuutuja jaoks lihtsalt väga levinud. Nähes muutujat nimega ``i`` kusagil tsükli läheduses, eeldab iga vähegi kogenud programmeerija, et seda muutujat kasvatatakse igal tsükli sammul ühe võrra. Seega ei rikkunud me antud näites tähendusrikka muutujanime reeglit -- sellele  nimele lihtsalt ongi kujunenud oma tähendus.
 
@@ -580,7 +582,7 @@ Mõnikord on mugav tsükli lõpetamise tingimust kontrollida *ainult* tsükli ke
         if tekst == "":  
             print("OK, lõpetan")
             break
-        else: # ei olnud ei arv ega tühisõne
+        else: # ei olnud tühisõne
             arv = float(tekst)
             print("Selle arvu ruut on", arv * arv)
 
@@ -605,11 +607,11 @@ Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Tegel
     
     while i <= n:
         summa += i
-        i += 1
+        i += 2
     
-    print(n, "esimese naturaalarvu summa on", summa)
+    print(n, "esimese paaris naturaalarvu summa on", summa)
 
-Antud juhul suurendasime igal tsükli kordusel ühe muutuja väärtust teise muutuja väärtuse võrra.
+Antud juhul suurendasime igal tsükli kordusel muutuja ``i`` väärtust 2 võrra ja muutu ``summa`` väärtust teise muutuja (``i``) hetkeväärtuse võrra.
 
 
 Harjutus: Faktoriaali arvutamine
@@ -725,7 +727,7 @@ Kirjuta programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja vä
 
 Tõeväärtustüüp ``bool``
 =======================
-Nagu varem mainitud, koosneb iga Pythoni programmi lausetest ja lause komponentideks on avaldised. Tuleb välja, et Python peab ka ``if`` või ``while`` lause päises olevat tingimust avaldiseks. Aga kui igal avaldisel on väärtus, siis millised näevad välja tingimuse väärtused? Proovime järgi:
+Nagu varem mainitud, koosneb iga Pythoni programm lausetest ja lause komponentideks on avaldised. Tuleb välja, et Python peab ka ``if`` või ``while`` lause päises olevat tingimust avaldiseks. Aga kui igal avaldisel on väärtus, siis millised näevad välja tingimuse väärtused? Proovime järgi:
 
 .. sourcecode:: py3
 
@@ -872,7 +874,7 @@ Kirjuta programm, mis küsib kasutajalt positiivse täisarvu ning kontrollib, ka
 
 Tõeväärtuste kombineerimine
 ---------------------------
-Nägime, et tõeväärtused on paljude arvu- ja sõnetehete tulemuseks. Kas on olemas mineid mõistlikke tehteid, mida saab teha tõeväärtuste endiga?
+Nägime, et tõeväärtused on paljude arvu- ja sõnetehete tulemuseks. Kas on olemas mingeid mõistlikke tehteid, mida saab teha tõeväärtuste endiga?
 
 Kõige tähtsamad tehted, mille argumentideks on tõeväärtused, so. **loogilised tehted**, on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järgi proovida:
 
@@ -1034,7 +1036,7 @@ Maailm luuakse käsuga ``create_world``, mille argumendiks on mitmerealine sõne
 | ``B``                      | Kast tumedal põrandal                                  |.. image:: images/pykkar_box_dark.png    |
 +----------------------------+--------------------------------------------------------+-----------------------------------------+
 
-NB! Maailmas on ruumi vaid ühele Pykkarile, st. kaardile on võib valida ``^``, ``>``, ``v``, ``<``, ``N``, ``E``, ``S``, ``W`` hulgast vaid ühe sümboli.
+NB! Maailmas on ruumi vaid ühele Pykkarile, st. kaardile võib valida ``^``, ``>``, ``v``, ``<``, ``N``, ``E``, ``S``, ``W`` hulgast vaid ühe sümboli.
 
 Pykkar saab aru järgnevatest käskudest:
 
@@ -1103,7 +1105,7 @@ NB! Programm peab töötama ka laiemate ja kitsamate maailmade korral.
 
 Kokkuvõte
 =========
-Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käskude jada, mida täidetakse üksteise järel kuni jõutakse programmi lõppu. Vaatlesime kolme programmikonstruktsiooni, millel kõigil on **päis** ja tühikutega veidi paremale nihutatud **keha**, kusjuures kehas olevate lausete täitmise viis on kõigil kolmel juhul erinev:
+Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käskude jada, mida täidetakse üksteise järel kuni jõutakse programmi lõppu. Vaatlesime kahte programmikonstruktsiooni, millel kõigil on **päis** ja tühikutega veidi paremale nihutatud **keha**, kusjuures kehas olevate lausete täitmise viis on mõlemal juhul erinev:
 
 * **Tingimuslause** e. ``if``-lause peaharus olevad laused täidetakse ainult siis, kui päises esitatud tingimus kehtib. Kui tingimuslauses on olemas ka ``else`` haru, siis seal olevad laused täidetakse siis, kui tingimus *ei* kehti. Sellise konstruktsiooniga saab muuta programme paindlikumaks, pannes selle käituma üht- või teistmoodi vastavalt olukorrale.
 * **Korduslause** e. tsükli puhul täidetakse kehas olevad laused 0 või rohkem korda, vastavalt päisele. Selles peatükis vaadeldud ``while``-lause korral kontrollitakse enne kehas olevate lausete täitmist, kas päises antud tingimus kehtib, justnagu tingimuslausegi puhul. Erinevalt tingimuslausest, minnakse peale keha täitmist uuesti tingimust kontrollima ja kui see kehtib endiselt, siis täidetakse kehas olevad laused uuesti jne. Seda protsessi korratakse niikaua, kuni tingimus enam ei kehti. Korduslausega saame kirjeldada protsesse, kus sama toimingut tuleb teha mitu korda järjest (ja seejuures ei pruugi me korduste arvu programmi kirjutamisel ette teada).
