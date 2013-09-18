@@ -139,6 +139,7 @@ class World():
             return
         
         self.proc.stdin.write((command_str + "\n").encode())
+        self.proc.stdin.flush()
         result_str = self.proc.stdout.readline().decode()
         if result_str == "":
             return
