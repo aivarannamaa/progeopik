@@ -609,7 +609,7 @@ Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Tegel
         summa += i
         i += 2
     
-    print(n, "esimese paaris naturaalarvu summa on", summa)
+    print(n, "esimese naturaalarvu hulgas olevate paarisarvude summa on", summa)
 
 Antud juhul suurendasime igal tsükli kordusel muutuja ``i`` väärtust 2 võrra ja muutu ``summa`` väärtust teise muutuja (``i``) hetkeväärtuse võrra.
 
