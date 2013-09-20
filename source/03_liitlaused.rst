@@ -1151,6 +1151,8 @@ Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv k
 
     Kas seda ülesannet saab lahendada ka ilma ``if``-lauset kasutamata? Kui jah, siis kuidas?
 
+.. _liigu_nurka:
+
 4. Liigu nurka
 --------------
 Kirjuta Pykkari programm, mis suvalise ristkülikukujulise maailma puhul liigutab Pykkari kirdenurka (NE). Programm võib eeldada, et robot vaatab alguses lõunasse, aga tema algne asukoht võib olla suvaline. Programmi lõpuks peab Pykkar olema näoga põhjasuunas.

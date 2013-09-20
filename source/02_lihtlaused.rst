@@ -967,6 +967,8 @@ Täienda eelnevat näiteprogrammi nii, et ekraanile ilmuks kirja ``The Whole Dam
 
     Selle ülesande jaoks läheb vaja ühte sõnemeetodit, mille kasutamist on demonstreeritud plokis "Tehted sõnedega".
 
+.. _import_lause:
+
 ``import``-lause
 ================
 Ilmselt oled nüüdseks juba saanud intuitiivse ettekujutuse ``import`` käsu olemusest, aga vaatame kindluse mõttes asja siiski üle.

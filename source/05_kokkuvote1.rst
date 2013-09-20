@@ -23,6 +23,7 @@
     * kalendri printimine
     * etteantud 2-3 muutujaga tõeväärtustabeli põhjal avaldise kirjutamine
     * Kuidas Python paneb sulge rohkem kui 1 operatsiooni korral
+    * fact defineerimine rekursiivselt (ilma rekursiooni mainimata?)
     
 
 
@@ -274,14 +275,6 @@ Nüüdseks oleme üle vaadanud peaaegu kõik olulisemad programmeerimise konstru
 
 Ülesanded
 =========
-
-1. Kuupäeva esitamine sõnena
-----------------------------
-Kirjuta funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu ja aasta (arvudena) ning tagastab sõne, mis esitab kuupäeva kujul *<päev>. <kuu nimi> <aasta>* (nt. *24. veebruar 1918*).
-
-Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta. Kui neile vastav kuupäev on legaalne, siis kuvada ekraanile vastav kuupäev sõnena, vastasel juhul kuvada ``'Viga: mittelegaalne kuupäev'``.
-
-Kasuta abifunktsioonidena ülalpood loodud funktsioone (vt. harjutusi 3-6).
 
 2. Täisnurkne kolmnurk
 ----------------------

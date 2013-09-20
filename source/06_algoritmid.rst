@@ -201,6 +201,238 @@ Plokkskeem
 .. image:: images/l04_fig9.png 
 
 
+Alamülesannete tuvastamine ja alamprogrammide loomine
+=====================================================
+Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli sul tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks sult praegu, millise eesmärgiga on sinu programmis mingi konkreetne rida või plokk, siis ilmselt peaksid enne vastamist omajagu süvenema.
+
+Kuna enamus praktikas kasutatavaid programme on palju keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
+
+
+
+Tuleb välja, et programmeerimises kasutatakse keeruliste ülesannete lahendamisel sama nippi nagu "päris elus" -- esmalt jaotatakse ülesanne parajateks osadeks e. alamülesanneteks, seejärel lahendatakse alamülesanded (keskendudes korraga vaid ühele) ning lõpuks kombineeritakse alamülesannete lahendused. Seejuures juhtub küllalt tihti (nii programmeerimises, kui päris elus), et mõni alamülesanne on juba mingi teise probleemi kontekstis varem lahendatud, sel juhul saab vastavat lahendust taaskasutada.
+
+Programmeerimises nimetatakse alamülesande lahendust **alamprogrammiks** (see on üldisem nimetus) või ka **funktsiooniks** (Pythoni programmeerijad eelistavad seda nimetust). Pythoni funktsioonide defineerimist sai tegelikult juba liitlausete peatükis veidi tutvustatud (vt. Uute käskude loomine), aga selles peatükis käsitleme funktsioonide kasutusvõimalusi palju sügavamalt ja laiemalt.
+
+.. note::
+
+    Erinevalt teistest siiani tutvustatud Pythoni põhikonstruktsioonidest (hargnemine ja tsükkel), ei ole alamprogrammid tehniliselt võttes programmeerimisel hädavajalikud -- kõik programmid on teoreetiliselt võimalik kirjutada kasutades vaid väikest hulka sisseehitatud käske. Taoliselt kirjutatud praktilised programmid aga läheksid peagi nii suureks ja keeruliseks, et ka parimad programmeerijad ei suudaks neid enam hallata.
+
+Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui sul on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). 
+
+Toome siinkohal ära ühe võimaliku lahenduse, kus pole alamprogramme kasutatud:
+
+.. sourcecode:: py3
+
+    from pykkar import *
+
+    create_world("""
+    ########
+    #      #
+    #      #
+    #  ^   #
+    #      #
+    #      #
+    ########
+    """)
+
+    # eeldame, et robot alustab alati näoga põhjasuunas
+
+    # liigu põhjaseinani
+    while not is_wall():
+        step()
+
+    # pööra läänesuunda
+    right()
+    right()
+    right()
+
+    # liigu lääneseinani
+    while not is_wall():
+        step()
+
+    # pööra lõunasuunda
+    right()
+    right()
+    right()
+
+    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
+    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
+    while True:
+
+        # allaminek ja värvimine
+        paint()
+        while not is_wall():
+            step()
+            paint()
+
+        # liigu järgmisele veerule (kui võimalik)
+        right()
+        right()
+        right()
+        
+        if is_wall():
+            # rohkem veerge pole
+            break
+
+        # kui jõudsime siia, siis on järelikult veel veerge
+        step()
+        # pööra nina põhjasuunda
+        right()
+        right()
+        right()
+
+        # liigu üles
+        while not is_wall():
+            step()
+
+        # proovime liikuda järgmisele (värvitavale) veerule
+        right()
+        if is_wall():
+            # pole rohkem veerge
+            break
+
+        step()
+        # pöörame õigesse suunda
+        right()
+
+        
+        
+
+    
+
+
+Nagu juba varem mainitud, oskab meie robot pöörata vaid paremale. Seetõttu on näitekoodis koht, kus 90° võrra vasakule pööramise saavutamiseks on antud 3 korda järjest käsklus ``paremale()``. See on üks koht, mis võib programmi lugejale esmapilgul segadust tekitada. Kasutame võimalust ja defineerime uue alamprogrammi (e. funktsiooni või "käsu") vasakule pööramiseks. Selleks lisame esialgse programmi algusse uue *funktsiooni definitsiooni*:
+
+.. sourcecode:: py3
+
+    from pykkar import *
+
+    def left():
+        right()
+        right()
+        right()
+    
+    ...
+
+
+
+Sisuliselt defineerisime ühe uue roboti juhtimise käsu ja me võime algses programmis kolmekordse paremale pööramise asendada käsuga ``left()``. Nii ei jäta me koodi lugejale enam kahtlust, mida me soovime kolmekordse pööramisega saavutada.
+
+Teine korduv motiiv esialgses programmis on seinani liikumine. Ka selle saame vormistada funktsioonina:
+
+.. sourcecode:: py3
+
+    ...
+    
+    def move_to_wall():
+        while not is_wall():
+            step()
+    
+    ...
+
+Kui nüüd mõlemaid uusi käske programmis kasutada, saame juba omajagu lihtsama tulemuse:
+
+.. sourcecode:: py3
+
+    from pykkar import *
+
+    def left():
+        right()
+        right()
+        right()
+
+    def move_to_wall():
+        while not is_wall():
+            step()
+
+    create_world("""
+    ########
+    #      #
+    #      #
+    #  ^   #
+    #      #
+    #      #
+    ########
+    """)
+
+    # eeldame, et robot alustab alati näoga põhjasuunas
+
+    # liigu põhjaseinani
+    move_to_wall()
+
+    # pööra läänesuunda
+    left()
+
+    # liigu lääneseinani
+    move_to_wall()
+
+    # pööra lõunasuunda
+    left()
+
+    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
+    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
+    while True:
+
+        # allaminek ja värvimine
+        paint()
+        while not is_wall():
+            step()
+            paint()
+
+        # liigu järgmisele veerule (kui võimalik)
+        left()
+        
+        if is_wall():
+            # rohkem veerge pole
+            break
+
+        # kui jõudsime siia, siis on järelikult veel veerge
+        step()
+        # pööra nina põhjasuunda
+        left()
+
+        # liigu üles
+        move_to_wall()
+        
+        # proovime liikuda järgmisele (värvitavale) veerule
+        right()
+        if is_wall():
+            # pole rohkem veerge
+            break
+
+        step()
+        # pöörame õigesse suunda
+        right()
+
+
+Nende funktsioonide loomine ja kasutuselevõtt tuli kasuks kahel moel. Esiteks, funktsiooni defineerimisega **andsime (potentsiaalselt) keerulisele programmilõigule selgitava nime** ning võisime programmi põhiosas mainida ainult nime -- nii muutsime programmi põhiosa veidi lihtsamaks. Nüüd on meil võimalus analüüsida seda värjaeraldatud koodi põhiprogrammist eraldi ja samuti on võimalik analüüsida põhiprogrammi ilma, et peaks muretsema detailide pärast. Näiteks, põhiprogrammi uurides piisab meile teadmisest, et robot pöörab mingis kohas vasakule, me ei pea muretsema selle pärast, kuidas ta seda teeb. Samas, kui meid detailid siiski huvitavad, siis saame alati otsida üles vastava funktsiooni definitsiooni.
+
+Teiseks, me **defineerisime funktsiooni ühekordselt, aga saime seda kasutada mitmes kohas**, seega hoidsime kokku tippimise vaeva.
+
+.. note::
+
+    Alamprogrammide defineerimine on tihti mõistlik ka siis, kui väljaeraldatud koodi on kasutatud vaid ühes kohas, aga ta on piisavalt keeruline, et programmi mõistmist raskendada. Meie näite puhul võiksime eraldi funktsiooni luua veel kuni seinani värvimise kohta:
+    
+    .. sourcecode:: py3
+    
+        def paint_until_wall():
+            paint()
+            while not is_wall():
+                step()
+                paint()
+    
+    Selle funktsiooni kasutamisega saaksime lahti ka kahekordsest tsüklist (tsükkel tsükli sees), mis võib mõnele programmi lugejale tunduda keeruline.
+    
+
+Harjutus 1. Liigu nurka
+-----------------------
+Lisa vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
+
+Kasuta seda funktsiooni programmis sobival kohal.
+
+
+
+
 Kartulisalati tegemise plokkskeem
 ---------------------------------
 Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:

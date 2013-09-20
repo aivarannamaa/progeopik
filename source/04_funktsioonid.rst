@@ -2,21 +2,12 @@
 4. Funktsioonid
 ***************
 
-.. attention::
-
-    Selle peatüki materjali veel täiendatakse
-
-
-
 
 .. todo::
     
     * lisa kombinatoorika ülesandeid
     * lisa samaväärsuse küsimusi
 
-
-    * omistamise += kuju üle korrata?
-    * TODO: muutujate juurde: Pane tähele, et Python salvestas muutujasse ``x`` justnimelt avaldise *väärtuse* (st. `5`), mitte avaldise ``2 + 3`` enda. See nüanss muutub oluliseks edaspidi, kui hakkame muutujate väärtusi muutma.
     * TODO: Wikipedia sirvimise näide funktsiooni väljakutsete mõistmiseks
     * TODO: **näited** selle kohta, et ühte funktsiooni saab välja kutsuda mitu korda
     * "Let's wrap it in a function to make it easier to use" -- tee selle kohta näide
@@ -36,15 +27,13 @@ Eelmise peatüki :ref:`pere sissetuleku ülesandes <pere_sissetulek_vol1>` tuli 
     
 Õnneks polnud tegemist eriti keerulise valemiga ning copy-paste'ga oli võimalik topelt tippimise vaeva vältida. Aga päris õige see asi siiski ei tundunud -- näiteks kui netopalga arvutamise valem peaks kunagi muutuma, siis peab olema meeles programmi muuta kõigis kohtades, kus seda valemit on kasutatud. 
 
-Tsüklid küll võimaldavad ühekordselt kirja pandud koodi mitu korda käivitada, aga nad teevad oma kordused alati järjest, seega antud ülesandes, kus sarnast koodi oli vaja erinevates programmi kohtades, neist abi ei ole.
-
 Kahtlemata oleks pere sissetulekut palju lihtsam arvutada, kui Pythonis oleks olemas spetsiaalne käsk netopalga arvutamiseks. Samas, kust teavad Pythoni loojad, milliseid käske kellegi vaja võib minna?
 
 Selles peatükis uurime, kuidas "pakendada" mingi programmijupp *funktsiooniks* ja kuidas seda hiljem erinevates kohtades kasutada. Teisiti öeldes, me hakkame looma uusi Pythoni käske. Alustuseks aga võtame kokku selle, mida me Pythoni käskude kohta juba teame.
 
 Käsud e. funktsioonid
 =====================
-Siiani olnud juttu mitmetest erinevatest Pythoni "käskudest", nagu näiteks ``input``, ``sin``, ``right``, ``is_wall``, ``int``, ``readline``, ``upper``, ``print``. Tegelikult on ametlik termin nende kohta *funktsioon*.
+Siiani on olnud juttu mitmetest erinevatest Pythoni "käskudest", nagu näiteks ``input``, ``sin``, ``right``, ``is_wall``, ``int``, ``readline``, ``upper``, ``print``. Tegelikult on ametlik termin nende kohta *funktsioon*.
 
 Paljudel juhtudel saab tõmmata selged paralleelid Pythoni funktsioonide ja matemaatikast tuntud funktsioonide vahele, samas on mõnede Pythoni funktsioonide olemus hoopis erinev. Alustuseks ütleme lihtsalt, et funktsioon (e. mitteformaalselt *käsk*) on mingi Pythoni maailma "asi", millel on (tavaliselt) nimi ja *mis oskab midagi arvutada või teha*.
 
@@ -60,7 +49,10 @@ Toome meeldetuletuseks mõned koodijupid, kus on kasutatud funktsioone nimedega 
 
 Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem **argumenti** so. miski, millega me saame funktsiooni tööd kuidagi mõjutada. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni **väljakutse** e. **rakendamine**  (öeldakse ka *aplikatsioon*). Argumendid võivad olla mingid konkreetsed väärtused, muutujad või mingid muud avaldised (sh. funktsioonide rakendused).
 
-TODO: skeem: funktsioon, argument ja väljakutse
+
+.. todo::
+
+    TODO: skeem: funktsioon, argument ja väljakutse
 
 Nimelised argumendid
 --------------------
@@ -480,7 +472,7 @@ Parameetritega saab teha funktsiooni universaalsemaks -- teatud detailid jäetak
     single: funktsioon; argumendid
     single: argumendid; funktsiooni argumendid
 
-Harjutus 2. Parameetriseeritud ``ruut``
+Harjutus. Parameetriseeritud ``ruut``
 ---------------------------------------
 Täiusta eespool defineeritud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasuta loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
 
@@ -574,7 +566,7 @@ Parameetreid (ja vastavaid argumente) võib olla ka rohkem kui üks. Proovi näi
 
 Nagu näed, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras nagu on vastavad  parameetrid funktsiooni definitsioonis. Teisisõnu, argumendi *positsioon* määrab, millisele parameetrile tema väärtus omistatakse.
 
-Harjutus 3. Värviline ruut
+Harjutus. Värviline ruut
 --------------------------
 Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele argumendiks sõne ingliskeelse värvinimega, nt. ``color('red')``. Peale seda teeb kilpkonn järgmised jooned nõutud värviga. 
 
@@ -587,11 +579,11 @@ Lisa funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta.
 
 
 
-Vaikeväärtusega parameetrid
----------------------------
+Lisavõimalus: Vaikeväärtusega parameetrid
+---------------------------------------------------
 Mõnede funktsioonide puhul on ühe parameetri väärtus tavaliselt sama ja seda on vaja vaid harvadel juhtudel muuta. Sellisel juhul on võimalik see "tavaline" väärtus funktsiooni definitsioonis ära mainida. Kui funktsiooni väljakutsel sellele parameetrile väärtust ei anta, kasutatakse lihtsalt seda vaikeväärtust. Seda võimalust demonstreerime eelmise näite modifikatsiooniga:
 
-.. sourcecode:: python
+.. sourcecode:: py3
 
     def tere(nimi, aeg = "mitu"):
         print("Tere, " + nimi)
@@ -602,10 +594,39 @@ Mõnede funktsioonide puhul on ühe parameetri väärtus tavaliselt sama ja seda
 
 Eespool juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (so. reavahetus). See on põhjus, miks ``print`` vaikimisi kuvab teksti koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st. seda ei saa anda positsiooniliselt.
 
+Lisavõimalus: Nimelised argumendid
+----------------------------------
+Mõnele funktsioonile saab anda palju argumente ja sel juhul võib olla tülikas järge pidada, kas kõik argumendid anti õigel positsioonil. Taolise probleemi leevendamiseks lubab Python funktsiooni väljakutses anda argumente koos vastava parameetri nimega, sel juhul argumendi positsioon ei ole oluline:
+
+.. sourcecode:: py3 
+
+    def f(a, b, c):
+        print(a, b, c)
+    
+    # järgnevad 2 väljakutset on samaväärsed:
+    f(1, 2, 3)
+    f(c=3, a=1, b=2) 
+    
+Nimelised argumendid on eriti kasulikud siis, kui funktsioonil on mitu vaikeväärtusega parameetrit ja sa tahad ise väärtuse ette anda vaid mõnele neist:
+
+.. sourcecode:: py3 
+
+    def f(a=1, b=2, c=3):
+        print(a, b, c)
+    
+    # järgnevad 2 väljakutset on samaväärsed:
+    f(1, 22, 3)
+    f(b=22) 
+    
+
+
 .. index::
     single: funktsioon; tagastamine
     single: väärtusega funktsioon
     single: return
+
+
+
     
 Väärtusega funktsioonid
 =======================
@@ -669,7 +690,7 @@ Eespool jagasime funktsioonid kahte leeri -- ühed teevad midagi (neid kasutame 
 
 
 
-Harjutus 6. Sõne dubleerimine
+Harjutus. Sõne dubleerimine
 -----------------------------
 Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab selle sõne dubleerituna niimitu korda, kui mitu tähte on esialgses sõnes:
 
@@ -711,7 +732,7 @@ siis peale selle IDLE'is käivitamist on võimalik käsureal teha nii:
 
 .. _return-vs-print:
 
-Harjutus 5. Tollid ja sentimeetrid
+Harjutus. Tollid ja sentimeetrid
 ----------------------------------
 #. **Kirjuta funktsioon** ``cm``, mis võtab argumentideks pikkuse jalgades ja tollides (st. esimene argument tähistab jalgu ja teine tolle) ning tagastab pikkuse sentimeetrites (nt. ``cm(6, 1)`` peaks tagastama umbes ``187.96``). Salvesta esialgu faili vaid funktsiooni definitsioon, ilma väljakutseta.
 #. **Testi loodud funktsiooni** käsureal (käivita programm, ning kirjuta mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeeri definitsiooni ja proovi uuesti.
@@ -777,7 +798,7 @@ Selline võimalus kasutada ``return``-i funktsiooni keskel ei ole tegelikult eri
 
     ``return``-lausest on olemas ka variatsioon, kus avaldise osa on hoopis ära jäetud, st. kogu lause koosneb ainult võtmesõnast ``return``. Seda varianti kasutatakse siis, kui tahetakse funktsiooni töö lõpetada ilma mingit väärtust tagastamata.
 
-Harjutus 7. Kahest suurim => kolmest suurim
+Harjutus. Kahest suurim => kolmest suurim
 -------------------------------------------
 Kirjuta funktsioon ``kahest_suurim``, mis tagastab kahest argumendiks antud arvust suurima.
 
@@ -791,239 +812,6 @@ Näide: Tõeväärtusfunktsioonid
 TODO:
 
 .. _milleks-funktsioonid:
-
-
-Alamülesannete tuvastamine ja alamprogrammide loomine
-=====================================================
-Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli sul tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks sult praegu, millise eesmärgiga on sinu programmis mingi konkreetne rida või plokk, siis ilmselt peaksid enne vastamist omajagu süvenema.
-
-Kuna enamus praktikas kasutatavaid programme on palju keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
-
-
-
-Tuleb välja, et programmeerimises kasutatakse keeruliste ülesannete lahendamisel sama nippi nagu "päris elus" -- esmalt jaotatakse ülesanne parajateks osadeks e. alamülesanneteks, seejärel lahendatakse alamülesanded (keskendudes korraga vaid ühele) ning lõpuks kombineeritakse alamülesannete lahendused. Seejuures juhtub küllalt tihti (nii programmeerimises, kui päris elus), et mõni alamülesanne on juba mingi teise probleemi kontekstis varem lahendatud, sel juhul saab vastavat lahendust taaskasutada.
-
-Programmeerimises nimetatakse alamülesande lahendust **alamprogrammiks** (see on üldisem nimetus) või ka **funktsiooniks** (Pythoni programmeerijad eelistavad seda nimetust). Pythoni funktsioonide defineerimist sai tegelikult juba liitlausete peatükis veidi tutvustatud (vt. Uute käskude loomine), aga selles peatükis käsitleme funktsioonide kasutusvõimalusi palju sügavamalt ja laiemalt.
-
-.. note::
-
-    Erinevalt teistest siiani tutvustatud Pythoni põhikonstruktsioonidest (hargnemine ja tsükkel), ei ole alamprogrammid tehniliselt võttes programmeerimisel hädavajalikud -- kõik programmid on teoreetiliselt võimalik kirjutada kasutades vaid väikest hulka sisseehitatud käske. Taoliselt kirjutatud praktilised programmid aga läheksid peagi nii suureks ja keeruliseks, et ka parimad programmeerijad ei suudaks neid enam hallata.
-
-Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui sul on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). 
-
-Toome siinkohal ära ühe võimaliku lahenduse, kus pole alamprogramme kasutatud:
-
-.. sourcecode:: py3
-
-    from pykkar import *
-
-    create_world("""
-    ########
-    #      #
-    #      #
-    #  ^   #
-    #      #
-    #      #
-    ########
-    """)
-
-    # eeldame, et robot alustab alati näoga põhjasuunas
-
-    # liigu põhjaseinani
-    while not is_wall():
-        step()
-
-    # pööra läänesuunda
-    right()
-    right()
-    right()
-
-    # liigu lääneseinani
-    while not is_wall():
-        step()
-
-    # pööra lõunasuunda
-    right()
-    right()
-    right()
-
-    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
-    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
-    while True:
-
-        # allaminek ja värvimine
-        paint()
-        while not is_wall():
-            step()
-            paint()
-
-        # liigu järgmisele veerule (kui võimalik)
-        right()
-        right()
-        right()
-        
-        if is_wall():
-            # rohkem veerge pole
-            break
-
-        # kui jõudsime siia, siis on järelikult veel veerge
-        step()
-        # pööra nina põhjasuunda
-        right()
-        right()
-        right()
-
-        # liigu üles
-        while not is_wall():
-            step()
-
-        # proovime liikuda järgmisele (värvitavale) veerule
-        right()
-        if is_wall():
-            # pole rohkem veerge
-            break
-
-        step()
-        # pöörame õigesse suunda
-        right()
-
-        
-        
-
-    
-
-
-Nagu juba varem mainitud, oskab meie robot pöörata vaid paremale. Seetõttu on näitekoodis koht, kus 90° võrra vasakule pööramise saavutamiseks on antud 3 korda järjest käsklus ``paremale()``. See on üks koht, mis võib programmi lugejale esmapilgul segadust tekitada. Kasutame võimalust ja defineerime uue alamprogrammi (e. funktsiooni või "käsu") vasakule pööramiseks. Selleks lisame esialgse programmi algusse uue *funktsiooni definitsiooni*:
-
-.. sourcecode:: py3
-
-    from pykkar import *
-
-    def left():
-        right()
-        right()
-        right()
-    
-    ...
-
-
-
-Sisuliselt defineerisime ühe uue roboti juhtimise käsu ja me võime algses programmis kolmekordse paremale pööramise asendada käsuga ``left()``. Nii ei jäta me koodi lugejale enam kahtlust, mida me soovime kolmekordse pööramisega saavutada.
-
-Teine korduv motiiv esialgses programmis on seinani liikumine. Ka selle saame vormistada funktsioonina:
-
-.. sourcecode:: py3
-
-    ...
-    
-    def move_to_wall():
-        while not is_wall():
-            step()
-    
-    ...
-
-Kui nüüd mõlemaid uusi käske programmis kasutada, saame juba omajagu lihtsama tulemuse:
-
-.. sourcecode:: py3
-
-    from pykkar import *
-
-    def left():
-        right()
-        right()
-        right()
-
-    def move_to_wall():
-        while not is_wall():
-            step()
-
-    create_world("""
-    ########
-    #      #
-    #      #
-    #  ^   #
-    #      #
-    #      #
-    ########
-    """)
-
-    # eeldame, et robot alustab alati näoga põhjasuunas
-
-    # liigu põhjaseinani
-    move_to_wall()
-
-    # pööra läänesuunda
-    left()
-
-    # liigu lääneseinani
-    move_to_wall()
-
-    # pööra lõunasuunda
-    left()
-
-    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
-    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
-    while True:
-
-        # allaminek ja värvimine
-        paint()
-        while not is_wall():
-            step()
-            paint()
-
-        # liigu järgmisele veerule (kui võimalik)
-        left()
-        
-        if is_wall():
-            # rohkem veerge pole
-            break
-
-        # kui jõudsime siia, siis on järelikult veel veerge
-        step()
-        # pööra nina põhjasuunda
-        left()
-
-        # liigu üles
-        move_to_wall()
-        
-        # proovime liikuda järgmisele (värvitavale) veerule
-        right()
-        if is_wall():
-            # pole rohkem veerge
-            break
-
-        step()
-        # pöörame õigesse suunda
-        right()
-
-
-Nende funktsioonide loomine ja kasutuselevõtt tuli kasuks kahel moel. Esiteks, funktsiooni defineerimisega **andsime (potentsiaalselt) keerulisele programmilõigule selgitava nime** ning võisime programmi põhiosas mainida ainult nime -- nii muutsime programmi põhiosa veidi lihtsamaks. Nüüd on meil võimalus analüüsida seda värjaeraldatud koodi põhiprogrammist eraldi ja samuti on võimalik analüüsida põhiprogrammi ilma, et peaks muretsema detailide pärast. Näiteks, põhiprogrammi uurides piisab meile teadmisest, et robot pöörab mingis kohas vasakule, me ei pea muretsema selle pärast, kuidas ta seda teeb. Samas, kui meid detailid siiski huvitavad, siis saame alati otsida üles vastava funktsiooni definitsiooni.
-
-Teiseks, me **defineerisime funktsiooni ühekordselt, aga saime seda kasutada mitmes kohas**, seega hoidsime kokku tippimise vaeva.
-
-.. note::
-
-    Alamprogrammide defineerimine on tihti mõistlik ka siis, kui väljaeraldatud koodi on kasutatud vaid ühes kohas, aga ta on piisavalt keeruline, et programmi mõistmist raskendada. Meie näite puhul võiksime eraldi funktsiooni luua veel kuni seinani värvimise kohta:
-    
-    .. sourcecode:: py3
-    
-        def paint_until_wall():
-            paint()
-            while not is_wall():
-                step()
-                paint()
-    
-    Selle funktsiooni kasutamisega saaksime lahti ka kahekordsest tsüklist (tsükkel tsükli sees), mis võib mõnele programmi lugejale tunduda keeruline.
-    
-
-Harjutus 1. Liigu nurka
------------------------
-Lisa vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
-
-Kasuta seda funktsiooni programmis sobival kohal.
-
-
-
 
 Milleks funktsioonid?
 =====================
@@ -1097,87 +885,7 @@ TODO: näide, kus funktsiooni nime järgi saab asjast aimu
     single: import
     single: moodulid
 
-``import``-lause
-================
-Pythoni `standardteegis` (so. funktsioonide ja teiste programmielementide kogum) on väga palju funktsioone (ja teisi Pythoni objekte). Nende paremaks organiseerimiseks on nad jaotatud teemade kaupa gruppidesse, mida nimetatakse `mooduliteks`. ``import`` lause teeb moodulis olevad funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
 
-.. sourcecode:: py3
-
-    from math import sin, cos
-    
-    print(sin(0.3))
-    print(cos(sin(0.3)))
-
-Kui soovime moodulist kõiki funktsioone, siis võime kasutada import lauses funktsiooninime(de) asemel tärni:
-
-.. sourcecode:: py3
-
-    from turtle import *
-    
-    forward(100)
-    left(90)
-    forward(100)
-
-    
-Mõned funktsioonid, nagu näiteks ``int`` ja ``float``, on alati kättesaadavad, neid pole vaja importida.
-
-.. note::
-
-    Importida saab ka moodulit ennast, sel juhul tuleb soovitava funktsiooni nimi kirjutada koos mooduli nimega:
-    
-    .. sourcecode:: py3
-    
-        >>> import math
-        >>> print(math.sin(0.5))
-        0.479425538604203
-        >>> print(math.cos(0.5))
-        0.8775825618903728    
-
-
-
-
-Moodulid ja ``import``
-======================
-Pythoniga tuleb kaasa tuhandeid erinevaid funktsioone, lisaks kirjutavad Pythoni programmeerijad üle maailma igapäevaselt tuhandeid funktsioone juurde. Sellises situatsioonis on täiesti loomulik, et mitmele erinevale funktsioonile pannakse sama nimi. Selleks, et erinevatel funktsioonidel oleks siiski võimalik vahet teha, jagatakse need **moodulitesse**.
-
-Eelmistes peatükkides kohtusid juba moodulitega ``math`` ja ``turtle``, ning nägid, et mooduli sisu muutub kättesaadavaks ``import`` käsuga, nt:
-
-.. sourcecode:: py3
-
-    from math import *
-
-Selline variant ``import`` käsust on tegelikult soovitav vaid siis, kui sul on vaja moodulist palju erinevaid funktsioone. Kui sa tead, et sul läheb moodulist tarvis vaid mõnda funktsiooni (nt. ``math`` moodulist funktsioone ``sin`` ja ``cos``), siis on soovitav kasutada ``import`` käsu varianti, kus näidatakse ära konkreetsed funktsioonide (või konstantide) nimed, mida tahetakse kasutada: 
-
-.. sourcecode:: py3
-
-    from math import sin, cos
-
-Sellise variandi puhul ei teki segadust, kui tahate mõnd ``math`` moodulis defineeritud nime (nt. ``e``) kasutada mõne enda muutuja nimena.    
-
-``import`` käsust on olemas veel üks variant, mis võimaldab moodulis olevaid funktsioone kasutada ainult koos mooduli nimega:
-
-.. sourcecode:: py3
-
-    >>> import math
-    >>> math.sqrt(9)
-    3.0
-    
-Ka selle variandi puhul ei pea oma muutujate nimede valimisel muretsema, kui imporditud moodulis on juba sama nime kasutatud -- antud näites võiksime vabalt luua uue muutuja nimega ``sqrt`` ja see ei läheks segamini funktsiooniga ``math.sqrt``.
-
-.. note:: 
-    ``import``-laused tuleks panna programmi algusesse. See pole Pythoni poolt range nõue, vaid lihtsalt tava --  nii on hea näha, milliste teemadega antud programm tegeleb.
-
-.. topic:: Oma mooduli loomine
-
-    Kõikide selle õpiku ülesannete puhul piisab, kui su programm koosneb ainult ühest failist. Samas, reaalsete programmide juures on peaaegu alati tarvilik organiseerida programmi jaoks loodud funktsioonid eraldi moodulitesse.
-    
-    Uue mooduli loomine on Pythonis imelihtne -- funktsioonide definitsioonid tuleb lihtsalt salvestada tavalisse *py*-laiendiga faili. Mooduli nimeks saab seejuures tema failinimi ilma *py*-laiendita. Selleks, et neid funktsioone saaks kasutada teistes failides, tuleb seal teha sobiv ``import``, justkui ``math`` või ``turtle`` mooduli puhul. 
-    
-    Siit tuleb ka välja, miks esimeses peatükis märgiti, et omaloodud faili nimeks ei tohiks panna `turtle.py`. Kui panna, siis hakatakse ``import turtle`` puhul funktsioone ``left()``, ``right()`` jt otsime uuest failist, kus neid aga pole.
-
-    NB! Erinevalt standardmoodulitest, peab enda moodul olema üldjuhul samas kaustas, kus seda kasutav programm (täpsem info siit: http://docs.python.org/3/tutorial/modules.html#the-module-search-path)
-
-    
 
 
 Veateated ja funktsioonid
@@ -1222,19 +930,36 @@ Kokkuvõte
 
 Ülesanded
 =========
-.. note::
 
-    Kursuse kodulehel loetletud kontrollülesannete all on mõeldud just selle ploki ülesandeid.
 
-Harjutus: Kahe punkti kaugus
+1. Kahe punkti kaugus
 ----------------------------
 Kirjuta funktsioon, mis võtab argumentideks kahe tasandipunkti koordinaadid ja tagastab nende punktide kauguse üksteisest.
 
+.. hint::
 
+    .. image:: images/kaugus.png
     
-1. Ristkülik
+
+Funktsiooni kasutamiseks küsi kasutajalt kolme punkti koordinaadid ja vasta millised neist on omavahel kõige lähemal.   
+
+
+2. Kuupäeva esitamine sõnena
+----------------------------
+Kirjuta funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu ja aasta (arvudena) ning tagastab sõne, mis esitab kuupäeva kujul *<päev>. <kuu nimi> <aasta>* (nt. *24. veebruar 1918*).
+
+.. hint::
+
+    See funktsioon saab ühe toimingu delegeerida ühele eespool harjutusena defineeritud funktsioonile.
+
+
+Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta ning kuvab ekraanile vastava kuupäeva sõnena.
+
+
+
+3. Ristkülik
 ------------
-Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja joonistab kilpkonnaga neile vastava ristküliku. Joonista loodud funktsiooni kasutades järgnev kujund:
+Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja joonistab kilpkonnaga neile vastava ristküliku. Seejärel joonista järgnev kujund, delegeerides võimalikult palju tööd äsja loodud funktsioonile:
 
 .. image:: images/rist.png
 
@@ -1246,9 +971,17 @@ Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja
 
     Segaduse vältimiseks on soovitav funktsiooni töö lõppedes pöörata kilpkonn tagasi algsesse suunda.
 
-2. Kolmnurga pindala
+
+4. Liigu nurka ver.2
+---------------------------
+Eelmises peatükis oli :ref:`ülesanne <liigu_nurka>`, kus Pykkar tuli juhatada maailma kirdenurka. Ilmselt pidid sa selleks kirjutama kaks korda samalaadse tsükli, mis liigutas Pykkari ees oleva seinani.
+
+Muuda nüüd oma programmi selliselt, et seinani kõndimise tsükkel oleks programmis kirjas vaid ühes kohas.
+
+
+4. Kolmnurga pindala
 --------------------
-Kirjuta funktsioon ``kolmnurga_pindala``, mis võtab argumentideks kolmnurga külgede pikkused, ning tagastab vastava kolmnurga pindala. Eeldame, et argumentide väärtused sobivad kolmnurga küljepikkusteks.
+Kirjuta funktsioon ``kolmnurga_pindala``, mis võtab argumentideks kolmnurga külgede pikkused, ning tagastab vastava kolmnurga pindala või -1, kui argumentide väärtused ei sobi kolmnurga küljepikkusteks.
 
 .. note:: Kuidas arvutada?
 
@@ -1265,6 +998,8 @@ Lisa programmi lõppu (peale funktsiooni definitsiooni) järgmised laused:
     print("a: 1, b: 1, c: 2**0.5, pindala: " + str(kolmnurga_pindala(1, 1, 2**0.5)))
     print("a: 3, b: 2, c: 2,      pindala: " + str(kolmnurga_pindala(3, 2, 2)))
     print("a: 3, b: 4, c: 5,      pindala: " + str(kolmnurga_pindala(3, 4, 5)))
+    print("a: 3, b: 4, c: -1,     pindala: " + str(kolmnurga_pindala(3, 4, -1)))
+    print("a: 3, b: 4, c: 10,     pindala: " + str(kolmnurga_pindala(3, 4, 10)))
     
 Veendu, et programmi käivitamisel saad järgmised tulemused:
 
@@ -1273,12 +1008,13 @@ Veendu, et programmi käivitamisel saad järgmised tulemused:
     a: 1, b: 1, c: 2**0.5, pindala: 0.49999999999999983
     a: 3, b: 2, c: 2,      pindala: 1.984313483298443
     a: 3, b: 4, c: 5,      pindala: 6.0
+    a: 3, b: 4, c: -1,     pindala: -1
+    a: 3, b: 4, c: 10,     pindala: -1
 
 NB! tulemused võivad õige pisut ka erineda, sest erinevad Pythoni versioonid ümardavad erineva täpsusega.
 
-TODO: tulemuse kasutamine arvutamises
 
-3. Kodulaen
+5. Kodulaen
 -----------
 Kirjuta funktsioon, mis võtab argumentideks ostetava kinnisvara hinna, sissemakse suuruse ja laenuperioodi aastates ning tagastab intresside kogusumma, mis tuleb ostjal selle laenu eest pangale maksta. Lihtsuse mõttes eeldame, et igal aastal arvestatakse intress algse laenusumma põhjal.
 
@@ -1295,20 +1031,61 @@ Testi oma programmi ja kontrolli, kas saad järgnevad tulemused:
     * hind: 10000, sissemakse: 2900, aastaid: 10; kogusumma: 14260, intressid: 4260
     * hind: 10000, sissemakse: 2900, aastaid: 0; kogusumma: 10000, intressid: 0
 
-Üks ülesanne segatud ülesannete pangast
----------------------------------------
-TODO:
-
-
-Üks ülesanne projecteulerist
-----------------------------
-TODO:
 
 Lisalugemine
 ============
-Matemaatilised funktsioonid vs. Pythoni funktsioonid
-----------------------------------------------------
-TODO, tee graafikuid?
+
+
+Moodulite loomine
+-----------------
+Kõikide selle õpiku ülesannete puhul piisab, kui terve su programm koosneb ainult ühest failist. Samas, suuremate programmide juures on mõistlik organiseerida programmi jaoks loodud funktsioonid teemade kaupa eraldi *moodulitesse*, samamoodi nagu Pythoniga kaasatulevad funktsioonid on jaotatud eraldi moodulitesse. 
+
+Uue mooduli loomine on Pythonis imelihtne -- funktsioonide (või muutujate) definitsioonid tuleb lihtsalt salvestada tavalisse *.py*-laiendiga faili. Mooduli nimeks saab seejuures tema failinimi ilma *.py*-laiendita. Selleks, et neid funktsioone saaks kasutada teistes failides, tuleb seal teha sobiv ``import``, just nagu sa tegid ``math`` või ``turtle`` mooduli kasutamiseks. 
+
+.. note::
+ 
+    Siit tuleb ka välja, miks esimese peatüki kilpkonna ülesannete juures märgiti, et oma faili nimeks ei tohiks panna `turtle.py` -- sellega varjaks sa ära Pythoni enda mooduli nimega ``turtle``.
+
+
+
+Eelneva jutu demonstreerimiseks loome ühe lihtsa mooduli (nimega ``minumoodul``) ja ühe skripti, kus me seda moodulit kasutame.
+
+.. sourcecode:: py3
+
+    # eeldan, et see kood asub failis nimega minumoodul.py
+    
+    def suramura(x):
+        return x * 34 - 123
+    
+    nipitiri = 888776
+
+
+.. sourcecode:: py3
+
+    # See on peaskript, e. see, mida käivitatakse
+    # Selle faili nimi pole tähtis, aga oletame, et see on minuskript.py
+    
+    from minumoodul import suramura, nipitiri
+    
+    spunk = suramura(45) 
+    print(nipitiri)
+    print(spunk)
+
+
+Kui need failid on salvestatud samasse kausta, siis peaskripti käivitamisel (täpsemalt lause ``from minumoodul import suramura, nipitiri`` täitmisel) otsib Python üles ka faili ``minumoodul.py``, käivitab selle ja teeb seal defineeritud funktsiooni ``suramura`` ja muutuja ``nipitiri`` programmi põhiosas kättesaadavaks.
+
+.. admonition:: Lisavõimalus
+
+    Kui sa oled loonud mingi üldise otstarbega mooduli ja soovid seda kasutada erinevate programmide juures, siis sa võibolla ei viitsi seda alati iga uue programmi kausta kopeerida. Sel juhul tuleks moodul kopeerida ühte spetsiaalsesse kausta, kuhu Python alati vaatab, kui ``import`` lauses mainitud moodulit programmi kaustas pole. Vaata täpsemalt siit: http://docs.python.org/3/tutorial/modules.html#the-module-search-path.
+
+
+
+
+.. todo::
+
+    Matemaatilised funktsioonid vs. Pythoni funktsioonid
+
+    TODO, tee graafikuid?
 
 
 
