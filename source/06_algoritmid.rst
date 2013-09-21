@@ -65,6 +65,7 @@ Peale antud teema läbimist oskad:
     * esitada lihtsamate ülesannete lahendust plokkskeemina.
 
 
+
 Ülesanded ja nende lahendamine
 ==============================
 Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (nt. Mis on elu mõte?). 

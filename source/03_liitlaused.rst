@@ -466,7 +466,7 @@ Kirjuta ruudu näite põhjal programm, mis joonistab *n*-küljega hulknurga (*n*
     
     
 Näide. Tsükli ja tingimuslause kombineerimine
-------------------------------------------------------------------------------------------------------- 
+---------------------------------------------
 Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni lausetest. Järelikult võib panna ka ``if``-lause ``while``-lause sisse (ja vastupidi):
 
 .. sourcecode:: py3

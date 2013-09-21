@@ -174,6 +174,17 @@ Testi loodud funktsiooni järgnevate avaldistega:
 Kokkuvõte
 =========
 
+
+Funktsioonid vs. muutujad
+=========================
+TODO: Räägi siin ka importimisest
+
+.. admonition:: Nimede tähtsus
+
+    TODO: Tee näiteprogramm, kus muutujanimed on a,b,c,x,y,z ja lase lugejal arvata, mida see programm teeb, pärast näita nimedega varianti. peab olema meeldejääv, sest seda on tarvis tagasi viidata
+
+
+
 Avaldiste kombineerimine
 ========================
 Me oleme nüüdseks kasutanud mitut viisi Pythoni maailma "asjade" e. väärtuste kirjeldamiseks. Konkreetsed väärtused pannakse kirja *literaalina* (nt. ``2.5`` või ``"Tere!"``). Mõnikord on mugavam väärtusele viidata hoopis läbi *muutuja* (nt. ``x``). Enamasti aga on meil programmi kirjutamise ajal väärtuse asemel teada hoopis selle leidmise "valem", mille me paneme kirja Pythoni *tehte* e. *operatsioonina* (nt. ``sin(x) * 2 - 1`` või ``nimi.upper()``). Kõik need viisid kannavad ühist nimetust *avaldis*.
@@ -350,3 +361,52 @@ TODO
 Python tutorial
 ---------------
 sh. tour of std library 
+
+Moodulite loomine
+-----------------
+Kõikide selle õpiku ülesannete puhul piisab, kui terve su programm koosneb ainult ühest failist. Samas, suuremate programmide juures on mõistlik organiseerida programmi jaoks loodud funktsioonid teemade kaupa eraldi *moodulitesse*, samamoodi nagu Pythoniga kaasatulevad funktsioonid on jaotatud eraldi moodulitesse. 
+
+Uue mooduli loomine on Pythonis imelihtne -- funktsioonide (või muutujate) definitsioonid tuleb lihtsalt salvestada tavalisse *.py*-laiendiga faili. Mooduli nimeks saab seejuures tema failinimi ilma *.py*-laiendita. Selleks, et neid funktsioone saaks kasutada teistes failides, tuleb seal teha sobiv ``import``, just nagu sa tegid ``math`` või ``turtle`` mooduli kasutamiseks. 
+
+.. note::
+ 
+    Siit tuleb ka välja, miks esimese peatüki kilpkonna ülesannete juures märgiti, et oma faili nimeks ei tohiks panna `turtle.py` -- sellega varjaks sa ära Pythoni enda mooduli nimega ``turtle``.
+
+
+
+Eelneva jutu demonstreerimiseks loome ühe lihtsa mooduli (nimega ``minumoodul``) ja ühe skripti, kus me seda moodulit kasutame.
+
+.. sourcecode:: py3
+
+    # eeldan, et see kood asub failis nimega minumoodul.py
+    
+    def suramura(x):
+        return x * 34 - 123
+    
+    nipitiri = 888776
+
+
+.. sourcecode:: py3
+
+    # See on peaskript, e. see, mida käivitatakse
+    # Selle faili nimi pole tähtis, aga oletame, et see on minuskript.py
+    
+    from minumoodul import suramura, nipitiri
+    
+    spunk = suramura(45) 
+    print(nipitiri)
+    print(spunk)
+
+
+Kui need failid on salvestatud samasse kausta, siis peaskripti käivitamisel (täpsemalt lause ``from minumoodul import suramura, nipitiri`` täitmisel) otsib Python üles ka faili ``minumoodul.py``, käivitab selle ja teeb seal defineeritud funktsiooni ``suramura`` ja muutuja ``nipitiri`` programmi põhiosas kättesaadavaks.
+
+.. admonition:: Lisavõimalus
+
+    Kui sa oled loonud mingi üldise otstarbega mooduli ja soovid seda kasutada erinevate programmide juures, siis sa võibolla ei viitsi seda alati iga uue programmi kausta kopeerida. Sel juhul tuleks moodul kopeerida ühte spetsiaalsesse kausta, kuhu Python alati vaatab, kui ``import`` lauses mainitud moodulit programmi kaustas pole. Vaata täpsemalt siit: http://docs.python.org/3/tutorial/modules.html#the-module-search-path.
+
+
+
+Näide: Tõeväärtusfunktsioonid
+-----------------------------
+TODO:
+

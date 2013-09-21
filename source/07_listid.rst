@@ -626,7 +626,7 @@ Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuup
 
 5. Värvid
 ---------
-Aadressilt http://wiki.tcl.tk/16166 leiate loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võid lihtsuse mõttes ignoreerida). Kirjuta programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
+Aadressilt http://wiki.tcl.tk/16166 leiad loetelu värvinimedest, mida ``turtle`` moodul tunnistab (mitmesõnalised värvinimed on pandud loogeliste sulgude vahele, neid võid lihtsuse mõttes ignoreerida). Kirjuta programm, mis kilpkonna abil näitab võimalikult suurt osa neist värvidest, näiteks värvid antud loetelu keskosast, kus pole mitmesõnalisi nimesid:
 
 .. image:: images/varvid.png
 
