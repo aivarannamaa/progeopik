@@ -313,7 +313,7 @@ Täienda eespool toodud 3 ruudu joonistamise programmi nii, et kõik 3 ruutu ole
 
 Kontrollküsimus: Mitu kala?
 ---------------------------
-Küllap oled juba märkanud, et Python ei soovi programmeerija vabadust piirata, seetõttu on loomulik, et ühes programmis võib defineerida ükskõik kui palju uusi funktsioone ja need võivad ka üksteist kasutada. 
+Küllap oled juba märganud, et Python ei soovi programmeerija vabadust piirata, seetõttu on loomulik, et ühes programmis võib defineerida ükskõik kui palju uusi funktsioone ja need võivad ka üksteist kasutada. 
 
 Nüüd küsimus: Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? NB! proovi vastata ilma Pythoni abita, programmi enda peas "läbi mängides"! Lõpuks kontrolli oma vastust Pythoni abil.
 
@@ -996,24 +996,27 @@ Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja
 ---------------------
 Kirjuta funktsioon, mis võtab argumentideks kahe tasandipunkti koordinaadid ja tagastab nende punktide kauguse üksteisest.
 
+Funktsiooni kasutamiseks küsi kasutajalt kolme punkti koordinaadid ja vasta millised kaks neist on üksteisele kõige lähemal.   
+
 .. hint::
 
+    Kuidas arvutada kahe punkti kaugust:
+    
     .. image:: images/kaugus.png
     
 
-Funktsiooni kasutamiseks küsi kasutajalt kolme punkti koordinaadid ja vasta millised kaks neist on üksteisele kõige lähemal.   
 
 
 4. Kuupäeva esitamine sõnena
 ----------------------------
 Kirjuta funktsioon ``kuupäev_sõnena``, mis võtab argumentideks päeva, kuu ja aasta (arvudena) ning tagastab sõne, mis esitab kuupäeva kujul *<päev>. <kuu nimi> <aasta>* (nt. *24. veebruar 1918*).
 
+Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta ning kuvab ekraanile vastava kuupäeva sõnena.
+
 .. hint::
 
-    See funktsioon saab ühe toimingu delegeerida ühele eespool harjutusena defineeritud funktsioonile.  
+    ``kuupäev_sõnena`` saab ühe toimingu delegeerida ühele eespool harjutusena defineeritud funktsioonile.  
 
-
-Seejärel kirjuta programm, mis küsib kasutajalt arvudena päeva, kuu ja aasta ning kuvab ekraanile vastava kuupäeva sõnena.
 
 
 5. Kolmnurga pindala

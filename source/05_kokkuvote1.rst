@@ -6,6 +6,9 @@
 
     Selle peatüki materjali veel täiendatakse
 
+.. todo::
+   
+   veid formaalsem lähenemine, kui teistes peatükkides
 
 
 .. todo::

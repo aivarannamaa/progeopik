@@ -1504,6 +1504,6 @@ Tavaliselt on kolmandate osapoolte moodulid pakendatud koos installeerimisskript
 
     Proovi leida internetist Pythoni moodul (või moodulite kogum e. `pakett`, ing. k `package`), mille abil saab Twitteri sõnumeid kirjutada ja lugeda. Ürita selle abil midagi postitada.
     
-    NB! varu piisavalt aega ja kannatust, et võimalike tehniliste katsumustega hakkama saada. Võibolla peate valitud paketi installimiseks töötama ka käsureal (selle kohta leiab juhiseid eelmise peatüki lisalugemises). Samas, läbi taolise "mässamise" saab oma OP-süsteemi kõige paremini tundma õppida.
+    NB! varu piisavalt aega ja kannatust, et võimalike tehniliste katsumustega hakkama saada. Võibolla pead valitud paketi installimiseks töötama ka käsureal (selle kohta leiab juhiseid eelmise peatüki lisalugemises). Samas, läbi taolise "mässamise" saab oma OP-süsteemi kõige paremini tundma õppida.
 
 
