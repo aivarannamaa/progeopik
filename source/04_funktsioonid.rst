@@ -5,6 +5,15 @@
 
 .. todo::
     
+    Lisa antipatternite osa ?!! Nt. funktsioon, mis teeb liiga palju või prindib või roundib.
+
+.. todo::
+
+    Too näide, kus funktsiooni kasutatakse mitmes programmis. Praegu osad kipuvad nägema funktsiooni rolli vaid konkreetse ülesande vaatenurgast.
+
+
+.. todo::
+    
     * lisa kombinatoorika ülesandeid
     * lisa samaväärsuse küsimusi
 
@@ -808,6 +817,10 @@ Uurige kahte järgnevat programmi, mis töötavad kasutaja seisukohast samamoodi
     
 Kuna antud juhul soovisime arvutuse tulemust näidata ekraanil, siis tehniliselt võttes pole vahet, kas me teeme ``print``-i funktsiooni sees või väljaspool. Erinevus tuleb sisse, kui me peaksime programmi täiendama veel mingite lisaarvutustega, kus meil läheb pindala tarvis -- meie esimeses programmis olev funktsioon siis enam ei sobi. Teises variandis on funktsioon defineeritud üldisemana, ja seetõttu saab seda kasutada rohkemates situatsioonides.
 
+.. todo::
+
+    Kaugus: Kuidas sulle meeldiks see, kui sa tahad arvutada sin(0.5) ja selle asemel, et Python tagastaks 0.479425538604203, kirjutab ta su ekraanile "Selle arvu siinus on 0.479425538604203"? Ilmselt on sin funktsiooni praegusel kujul siiski kasulikum. Samamoodi oleks kasulikum, kui sinu funktsioon "kaugus", mitte ei prindiks ekraanile mingi jutu, vaid tagastaks ainult selle arvu mida küsitakse. Küsija ise siis vaatab, mis ta tulemusega edasi teeb -- võibolla prindib ekraanile, võibolla teeb midagi muud.
+
 
 .. note::
     
@@ -952,11 +965,15 @@ Selleks, et funktsiooni saaks kasutada avaldises, peab ta arvutatud väärtuse *
 Ülesanded
 =========
 
+.. todo::
+
+    Lisada Pykkarile käsk set_direction
+
 1. Liigu nurka ver.2
 --------------------
-Eelmises peatükis oli :ref:`ülesanne <liigu_nurka>`, kus Pykkar tuli juhatada maailma kirdenurka. Ilmselt pidid sa selleks kirjutama kaks korda samalaadse tsükli, mis kummalgi korral liigutas Pykkari tema ees oleva seinani.
+Eelmises peatükis oli :ref:`ülesanne <liigu_nurka>`, kus Pykkar tuli juhatada maailma kirdenurka. Ilmselt pidid sa selleks kirjutama kaks korda samalaadse tsükli, mis kummalgi korral liigutas Pykkari tema ees oleva seinani. Miks ei võiks Pykkaril olla eraldi käsk, mis paneb ta kõndima kuni seinani? 
 
-Muuda nüüd oma programmi selliselt, et seinani kõndimise tsükkel oleks programmis kirjas vaid ühes kohas.
+Lisa oma eelmises peatükis tehtud programmi funktsiooni definitsioon (nt. nimega ``liigu_seinani``), mis lisab Pykkarile just sellise uue käsu. Muuda ka programmi põhiosa nii, et see delegeeriks seinani kõndimise sammud äsja loodud funktsioonile.
 
 
 
@@ -984,7 +1001,7 @@ Kirjuta funktsioon, mis võtab argumentideks kahe tasandipunkti koordinaadid ja 
     .. image:: images/kaugus.png
     
 
-Funktsiooni kasutamiseks küsi kasutajalt kolme punkti koordinaadid ja vasta millised neist on omavahel kõige lähemal.   
+Funktsiooni kasutamiseks küsi kasutajalt kolme punkti koordinaadid ja vasta millised kaks neist on üksteisele kõige lähemal.   
 
 
 4. Kuupäeva esitamine sõnena
