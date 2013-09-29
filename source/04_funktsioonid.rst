@@ -5,7 +5,13 @@
 
 .. todo::
     
-    Lisa antipatternite osa ?!! Nt. funktsioon, mis teeb liiga palju või prindib või roundib.
+    * Lisa antipatternite osa ?!! Nt. funktsioon, mis teeb liiga palju või prindib või roundib.
+    * pipeline'i näide, kus mitut funktsiooni saab (mitmel moel?) kombineerida
+    * oma teegi tegemine
+        * kuupäevadega seonduv
+        * pikselgraafika
+        * turtle
+    * kodu- või praksiülesannete komplekt, mis moodustab ühe terviku ja sisaldab moodulit funktsioonidega
 
 .. todo::
 

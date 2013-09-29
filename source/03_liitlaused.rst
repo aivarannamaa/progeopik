@@ -2,6 +2,11 @@
 3. Tingimus- ja korduslaused
 ****************************
 
+.. todo::
+
+    * siin võiks olla sõne läbimise ülesanne, valmistamaks ette listide peatükki.
+    * võibolla ka listide läbimise sissejuhatus siia??????!!!!!!!!!!!!!!!!
+
 Eelmise peatüki programmidega töötas Python täiesti "tuimalt" -- alustas esimesel real oleva lausega, iga rea täitmise järel võttis ette järgmise rea, kuni jõudis programmi lõppu -- programmi käik oli täielikult ette ennustatav. Taolisest lähenemisest piisab paraku vaid väga lihtsate ülesannete puhul. 
 
 Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame oma arsenali kahe uue lausetüübiga, mille abil on võimalik määrata mingite teiste lausete käivitamise tingimused.

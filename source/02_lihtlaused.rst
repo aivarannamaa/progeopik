@@ -2,6 +2,11 @@
 2. Avaldised ja lihtlaused
 **************************
 
+.. todo::
+
+    * konstantsete listide kasutamine siia (kuu nimed, nädalapäevade nimed)
+
+
 Tuleta meelde eelmises peatükis nähtud programme:
 
 * Millest need programmid koosnesid? Teisisõnu, kui sa peaksid mingi programmiteksti jaotama väiksemateks osadeks, siis kuidas sa seda teeksid?
