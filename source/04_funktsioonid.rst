@@ -661,8 +661,8 @@ Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``re
             maksustatav = bruto - maksuvaba
             return maksustatav * 0.79 + maksuvaba
     
-    ema_bruto = float(input('Sisesta ema palk: '))
-    isa_bruto = float(input('Sisesta isa palk: '))
+    ema_bruto = float(input('Sisesta ema brutopalk: '))
+    isa_bruto = float(input('Sisesta isa brutopalk: '))
     laste_arv = int(input('Sisesta alaealiste laste arv: '))
     ühe_lapse_toetus = 20 
     sissetulek = neto(ema_bruto) + neto(isa_bruto) + laste_arv * ühe_lapse_toetus
