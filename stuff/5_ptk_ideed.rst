@@ -319,3 +319,147 @@ Nüüdseks oleme üle vaadanud peaaegu kõik olulisemad programmeerimise konstru
 
 
 
+
+
+Ülesanded
+=========
+
+
+2. Kuupäeva kontrollimine
+-------------------------
+Täienda oma eelmise peatüki kuupäeva kuvamise programmi lisades sinna kuupäeva kontrollimise. Kirjuta selleks funktsioon ``on_legaalne_kuupäev``, mis võtab argumentideks päeva, kuu ja aasta numbrid ja tagastab ``True`` või ``False`` vastavalt sellele, kas antud komponentidest saab moodustada kuupäeva või mitte. 
+
+Soovitav on luua ka kaks abifunktsiooni: 1) ``on_liigaasta``, mis tagastab ``True``, kui etteantud aasta on liigaasta ja ``False`` muudel juhtudel, ning 2) ``päevade_arv``, mis etteantud kuu ja aasta numbri kohta ütleb, mitu päeva selles kuus on.
+
+Lõpuks muuda funktsiooni ``kuupäev_sõnena`` nii, et kui ette antakse mittelegaalsed kuupäeva komponendid (nt. ``kuupäev_sõnena(29, 2, 2013)`` või ``kuupäev_sõnena(14, 13, 2000)``), siis tagastatakse vastav veateade.
+
+Loodud funktsioone peaks saama kasutada näiteks nii:
+
+.. sourcecode:: py3
+
+    >>> on_liigaasta(1900)
+    False
+    >>> on_liigaasta(1904)
+    True
+    >>> on_liigaasta(2000)
+    True
+    >>> on_liigaasta(2013)
+    False
+    >>> päevade_arv(1, 2012)
+    31
+    >>> päevade_arv(2, 2012)
+    29
+    >>> päevade_arv(2, 2013)
+    28
+    >>> on_legaalne_kuupäev(29, 2, 2013)
+    False
+    >>> on_legaalne_kuupäev(22, 2, 2013)
+    True
+    >>> kuupäev_sõnena(29, 2, 2013)
+    'Vigane kuupäev'
+    >>> kuupäev_sõnena(14, 13, 2000)
+    'Vigane kuupäev'
+    >>> kuupäev_sõnena(14, 10, 2013)
+    '14. Oktoober 2013'
+
+
+
+3. Klaveri mahutamine
+---------------------
+Ülikool on ostnud endale uue klaveri peahoone aula tarbeks. Paraku unustati  kontrollida, kas see klaver üldse välisuksest sisse mahub. Kirjutada programm, mis küsib kasutajalt klaverit sisaldava kasti kolm mõõdet (pikkus, laius, kõrgus) ning ukse laiuse ja kõrguse ning vastab, kas klaver on võimalik aulasse sisse toimetada. 
+
+.. note::
+
+    üeldame, et klaverikasti võib ükskõik kuidas keerata, st. ükskõik milline kasti tahk võib jääda peale. Samas võib eeldada, et kasti ei üritata põigiti uksest läbi mahutada.
+
+4. Pitsapood
+------------
+Kirjuta programm, mis küsib kasutajalt infot tellitava pitsa suuruse, komponentide ja kättetoimetamise detailide kohta. Igal sammul tuleks esitada kasutajale võimalikud valikud koos vastavate koodidega, nt:
+
+.. sourcecode:: none
+
+    ...
+    ...
+    Millise suurusega pitsat soovid? Valikud on:
+      1 - väike (18cm)
+      2 - keskmine (25cm)
+      3 - suur (35cm)
+    Palun sisesta oma valik: 2
+    ...
+    ...
+    Mida lisada pitsa peale? 
+      0 - rohkem mitte midagi
+      1 - juust
+      2 - vorst
+      3 - ...   
+      4 - ...   
+    ...
+    ...
+    Kuidas pitsa kohale toimetada? 
+      1 - tulen ise järele
+      2 - sisestan aadressi ja telefoninumbri
+    ...
+    
+Pitsakatte komponente peaks saama valida ükskõik kui palju. Aadressi küsida ainult siis, kui kasutaja ei soovi ise järele tulla. Kogutud andmed salvestada tekstifaili.
+
+
+Lisalugemine
+============
+
+Midagi programmeerimiskeelte kohta
+----------------------------------
+TODO
+
+
+Python tutorial
+---------------
+sh. tour of std library 
+
+Moodulite loomine
+-----------------
+Kõikide selle õpiku ülesannete puhul piisab, kui terve su programm koosneb ainult ühest failist. Samas, suuremate programmide juures on mõistlik organiseerida programmi jaoks loodud funktsioonid teemade kaupa eraldi *moodulitesse*, samamoodi nagu Pythoniga kaasatulevad funktsioonid on jaotatud eraldi moodulitesse. 
+
+Uue mooduli loomine on Pythonis imelihtne -- funktsioonide (või muutujate) definitsioonid tuleb lihtsalt salvestada tavalisse *.py*-laiendiga faili. Mooduli nimeks saab seejuures tema failinimi ilma *.py*-laiendita. Selleks, et neid funktsioone saaks kasutada teistes failides, tuleb seal teha sobiv ``import``, just nagu sa tegid ``math`` või ``turtle`` mooduli kasutamiseks. 
+
+.. note::
+ 
+    Siit tuleb ka välja, miks esimese peatüki kilpkonna ülesannete juures märgiti, et oma faili nimeks ei tohiks panna `turtle.py` -- sellega varjaks sa ära Pythoni enda mooduli nimega ``turtle``.
+
+
+
+Eelneva jutu demonstreerimiseks loome ühe lihtsa mooduli (nimega ``minumoodul``) ja ühe skripti, kus me seda moodulit kasutame.
+
+.. sourcecode:: py3
+
+    # eeldan, et see kood asub failis nimega minumoodul.py
+    
+    def suramura(x):
+        return x * 34 - 123
+    
+    nipitiri = 888776
+
+
+.. sourcecode:: py3
+
+    # See on peaskript, e. see, mida käivitatakse
+    # Selle faili nimi pole tähtis, aga oletame, et see on minuskript.py
+    
+    from minumoodul import suramura, nipitiri
+    
+    spunk = suramura(45) 
+    print(nipitiri)
+    print(spunk)
+
+
+Kui need failid on salvestatud samasse kausta, siis peaskripti käivitamisel (täpsemalt lause ``from minumoodul import suramura, nipitiri`` täitmisel) otsib Python üles ka faili ``minumoodul.py``, käivitab selle ja teeb seal defineeritud funktsiooni ``suramura`` ja muutuja ``nipitiri`` programmi põhiosas kättesaadavaks.
+
+.. admonition:: Lisavõimalus
+
+    Kui sa oled loonud mingi üldise otstarbega mooduli ja soovid seda kasutada erinevate programmide juures, siis sa võibolla ei viitsi seda alati iga uue programmi kausta kopeerida. Sel juhul tuleks moodul kopeerida ühte spetsiaalsesse kausta, kuhu Python alati vaatab, kui ``import`` lauses mainitud moodulit programmi kaustas pole. Vaata täpsemalt siit: http://docs.python.org/3/tutorial/modules.html#the-module-search-path.
+
+
+
+Näide: Tõeväärtusfunktsioonid
+-----------------------------
+TODO:
+
