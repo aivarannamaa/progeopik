@@ -7,6 +7,44 @@
     Selle peatüki materjali veel täiendatakse
 
 .. todo::
+    Ptk. ülesanne
+        
+        * panna mõtlema algoritmiliste probleemide üle
+            * tutvustada mõnesid raskeid probleeme ja näidata, et need on lahenduvad
+        * tutvustada üldisi probleemilahenduse tehnikaid
+        * anda järgnevate peatükkide eelvaade
+
+
+    Outline:
+        * millised probleemid esinevad
+        * mis selles osas ees ootab
+
+
+    Pane siia need asjad, millele sa tahad hiljem tagasi viidata
+    Üldistused sobiks paremini kokkuvõtte peatükki
+    Mõni asi võibolla ka 5. ptk
+
+    * computational thinking http://en.wikipedia.org/wiki/Computational_thinking
+    * a computational problem (Matrix, lk3 all)
+    * mida arvutada (funktsioon, probleem) vs. kuidas (protseduur, algoritm)
+    * probleemilahenduse võtted
+        - jaga ja valitse (def)
+        - visualiseeri (plokkskeem)
+        - üldista (parameetrid)
+        - defineeri (def ja var)
+        - lihtsusta, refaktoriseeri
+        - vali õige andmestruktuur
+
+    * Algoritm
+    * Arvutatavus
+    * Deklaratiivne progemine?
+    * olek
+    * andmestruktuurid
+    * top-down vs. bottom-up (vt. Zelle ch. 9)
+    * Ülesanded:
+        * topelttsüklid
+        * samaväärsused
+        * alamprogrammid
 
     * Ülesande arvutile õpetamine nõuab, et sa saaks sellest täpselt aru (võrdle seda
     * Loetavus

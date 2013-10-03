@@ -5,6 +5,8 @@
 
 .. todo::
     
+    * Function must make sense on its own
+    * Võrdlus mat funktsioonidega    
     * Lisa antipatternite osa ?!! Nt. funktsioon, mis teeb liiga palju või prindib või roundib.
     * pipeline'i näide, kus mitut funktsiooni saab (mitmel moel?) kombineerida
     * oma teegi tegemine

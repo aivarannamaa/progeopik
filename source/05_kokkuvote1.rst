@@ -2,6 +2,11 @@
 5. I osa kokkuvõte
 ******************
 
+.. todo::
+
+    * Otsi üldistavat lähenemist Evansi "Introduction to Computing"-ust
+    * Lisalugemine formaalsetest keeltest
+
 
 Väärtused ja avaldised
 ----------------------
