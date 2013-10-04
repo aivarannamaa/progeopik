@@ -229,17 +229,6 @@ Kaasaegsetes programmeerimiskeeltes (nt Python) ei ole masina nüanssidele eriti
     
 .. _plokkskeem:    
 
-Plokkskeem
-==========
-Üks levinud graafiline notatsioon algoritmide esitamiseks on *plokkskeem*. Vaatleme järgnevalt plokkskeemis kasutatavaid kujundeid:
-
-.. index::
-    single: plokkskeem
-    
-
-.. image:: images/l04_fig9.png 
-
-
 Alamülesannete tuvastamine ja alamprogrammide loomine
 =====================================================
 Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli sul tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks sult praegu, millise eesmärgiga on sinu programmis mingi konkreetne rida või plokk, siis ilmselt peaksid enne vastamist omajagu süvenema.
@@ -472,6 +461,49 @@ Kasuta seda funktsiooni programmis sobival kohal.
 
 
 
+
+Ülesande lahendamise protsess
+=============================
+Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
+
+    #. Algoritmi koostamine ja esitamine.
+    #. Programmi koostamine mingis konkreetses programmeerimiskeeles.
+    #. Programmi sisestamine arvutisse.
+    #. Programmi testimine ja silumine.
+    #. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
+
+Teeme need etapid läbi ringi pindala ülesande näitel:
+
+    #. Esitame algoritmi plokkskeemina:
+
+        .. image:: images/l04_fig20.png 
+
+        Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
+
+    #. Koostame programmi, kasutades programmeerimiskeelt Python:
+
+        .. sourcecode:: py3
+
+            from math import *
+
+            a = int(input("Sisesta külje pikkus a: "))
+            S = pi*a*a/2
+            print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
+
+    #. Enamasti me teostame sammud 2 ja 3 korraga, st programmi koostamise käigus sisestame selle ka arvutisse.
+    #. Selgub, et meie programm jääb hätta siis kui kasutaja ei sisesta midagi või sisestab külje pikkuse asemel midagi muud, nt "kuus". Seega saab öelda, et antud programm töötab vaid korrektse arvulise sisendi korral, vigase sisendi korral programmi töö lõpeb veaga.   
+    #. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
+
+Plokkskeem
+==========
+Üks levinud graafiline notatsioon algoritmide esitamiseks on *plokkskeem*. Vaatleme järgnevalt plokkskeemis kasutatavaid kujundeid:
+
+.. index::
+    single: plokkskeem
+    
+
+.. image:: images/l04_fig9.png 
+
 Kartulisalati tegemise plokkskeem
 ---------------------------------
 Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
@@ -516,37 +548,6 @@ Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilus
 .. image:: images/l05_fig6.png
 
 
-Ülesande lahendamise protsess
-=============================
-Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
-
-    #. Algoritmi koostamine ja esitamine.
-    #. Programmi koostamine mingis konkreetses programmeerimiskeeles.
-    #. Programmi sisestamine arvutisse.
-    #. Programmi testimine ja silumine.
-    #. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
-
-Teeme need etapid läbi ringi pindala ülesande näitel:
-
-    #. Esitame algoritmi plokkskeemina:
-
-        .. image:: images/l04_fig20.png 
-
-        Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
-
-    #. Koostame programmi, kasutades programmeerimiskeelt Python:
-
-        .. sourcecode:: py3
-
-            from math import *
-
-            a = int(input("Sisesta külje pikkus a: "))
-            S = pi*a*a/2
-            print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
-
-    #. Enamasti me teostame sammud 2 ja 3 korraga, st programmi koostamise käigus sisestame selle ka arvutisse.
-    #. Selgub, et meie programm jääb hätta siis kui kasutaja ei sisesta midagi või sisestab külje pikkuse asemel midagi muud, nt "kuus". Seega saab öelda, et antud programm töötab vaid korrektse arvulise sisendi korral, vigase sisendi korral programmi töö lõpeb veaga.   
-    #. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
 
 Robotkilpkonn
 =============
@@ -763,8 +764,8 @@ Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll sü
 Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
 
 
-Samaväärsed programmid
-======================
+Alternatiivsed lahendused
+=========================
 
 * nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks
 * Samaväärsused: et asja panna kirja lühemalt; et teha asja efektiivsemaks
