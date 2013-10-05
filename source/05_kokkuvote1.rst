@@ -4,6 +4,8 @@
 
 .. todo::
 
+    * Maini, et siiani tutvustati kahte liiki asju: universaalsed ja spetsiifilised. Olulised on universaalsed. Ei ole vaja eraldi meetodit 3 arvu kokku liitmiseks, kui on meetod 2 arvu kokku liitmiseks ja avaldiste kombineerimiseks. St. Pythoni reeglid on kavalalt valitud, et asjad universaalsete asjadega saaks teha spetsiifilisi asju. 
+    
     * Otsi üldistavat lähenemist Evansi "Introduction to Computing"-ust
     * Lisalugemine formaalsetest keeltest
 
@@ -64,7 +66,7 @@ Taolist lausete üksteise sisse panemist esitatakse Pythonis **treppimisega** --
 
 
 Tõeväärtused
----------------------
+------------
 Üks oluline punkt nii ``if``- kui ``while``-lause juures on lause päises antud tingimusavaldis. Nagu eelnevalt mainitud, on avaldiste moodustamiseks lõputult võimalusi -- võib kasutada konstante, muutujaid, tehteid, funktsiooni väljakutseid, või kõigi nende kombinatsioone. Tingimuse juures on oluline, et avaldise tüüp oleks tõeväärtus, st. avaldise väärtustamisel saadakse kas ``True`` või ``False``. Mitme tingimuse kombineerimiseks saab kasutada operaatoreid ``and`` ja ``or``, tingimuse "ümberpööramiseks" on operaator ``not``. Tingimuses saab kasutada ka isetehtud funktsioone, aga need peavad sel juhul tagastama tõeväärtuse.
 
 

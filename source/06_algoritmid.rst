@@ -1,10 +1,6 @@
-*************
-6. Algoritmid
-*************
-
-.. attention::
-
-    Selle peatüki materjali veel täiendatakse
+**********************************
+6. II osa sissejuhatus. Algoritmid
+**********************************
 
 .. todo::
     Ptk. ülesanne
@@ -15,9 +11,6 @@
         * anda järgnevate peatükkide eelvaade
 
 
-    Outline:
-        * millised probleemid esinevad
-        * mis selles osas ees ootab
 
 
     Pane siia need asjad, millele sa tahad hiljem tagasi viidata
@@ -36,15 +29,34 @@
         - vali õige andmestruktuur
 
     * Algoritm
+        * masin, reeglid, arvutusmudel
     * Arvutatavus
     * Deklaratiivne progemine?
     * olek
     * andmestruktuurid
+    * kompromiss elegantsi ja kiiruse vahel
+        * loetavus
+        * alternatiivsed lahendused
     * top-down vs. bottom-up (vt. Zelle ch. 9)
+    * Algoritmi arendamise näide koos refaktoriseerimisega
+    * Algoritmi analüüsimise näide
+    * Andmestruktuurid
+        * Järjendid, Puud, Graafid???
+        
+    * Liigid:
+        * 
     * Ülesanded:
+        * kahendotsing kuude nimedes
         * topelttsüklid
         * samaväärsused
         * alamprogrammid
+        * Suurima arvu leidmine failist !!!!!!!!!!!!!!!!!!!!!
+            * listid võimaldavad seda üldistada
+        * Eukleidese algoritm
+        * Ruutjuure leidmise algoritm
+        * Liitmise algoritm
+        * Analüüs (mitu sammu 10 sisendi korral, mitu 20, kuidas üldisemalt öelda?)
+        
 
     * Ülesande arvutile õpetamine nõuab, et sa saaks sellest täpselt aru (võrdle seda
     * Loetavus
@@ -71,44 +83,57 @@
     TODO The skill of programming is in translating a dynamic algorithm into a static text. (http://www.i-programmer.info/professional-programmer/i-programmer/5180-trouble-at-code-school.html) The first step in programming isn't thinking up complex algorithms, it is in seeing the connection between simple algorithms and the equivalent text.
     
     TODO: Arvude tuvastamise “jaga ja valitse” lahendus peaks olema õpikus, funktsioonide juures. Võibolla mingi pikema arutluse (case-study?) vormis.
+    
+    Õpinipp:: Ära karda raskeid ülesandeid!
 
+    TODO: formaalsus aitab täpselt mõelda, mõtteid korrastada
+    
 
-
-| *Sa arvad, et sa tead, kui sa õpid,*
-| *oled kindlam, kui suudad kirja panna,*
-| *veel enam, kui suudad seda õpetada,*
-| *aga veendunud, kui suudad programmeerida.*
-|
-| *Alan Perlis*
-
-
-TODO: formaalsus aitab täpselt mõelda, mõtteid korrastada
-
-.. admonition:: Õpinipp:: Ära karda raskeid ülesandeid!
-
-    TODO
 
 .. todo::
 
-    * tutvusta alternatiivsete lahenduste ja elegantsi/loetavuse teemat 
+    Outline:
+        * millised probleemid esinevad
+            * hägusad
+            * mittelahenduvad
+            * raskesti lahenduvad
+        * algoritm
+            * arvutusmudel/-masin ja keel
+            * andmestruktuur
+        * alternatiivsed lahendused            
+        * probleemi lahendus
+        * mis selles osas ees ootab
 
 
-Selles peatükis teeme väikese pausi uute Pythoni konstruktsioonide õppimisse ning vaatame juba läbitud teemasid veidi teise nurga alt.
 
-Peale antud teema läbimist oskad:
+Õpiku esimeses osas tutvustatud programmeerimise mõisted ja vahendid (arvud, sõned, avaldised, muutujad, tingimuslause, korduslause, sisend ja väljund) on teatud nurga alt vaadates kõik, mida programmeerimise kohta on vaja teada. Kui oleksime nõus spetsiifiliste sisend/väljund seadmetega suhtlemise taandama ``input`` ja ``print`` käskudele, siis hea tahtmise juures saaksime praeguseks tuttavate vahendite abil lahendada suvalise programmeerimisülesande. Samas, kui mõtled "päris" programmidele, mida sa igapäevaselt kasutad, siis ilmselt nõustud, et miskit jääb veel puudu.
 
-    * selgitada algoritmi mõistet;
-    * lihtsamate ülesannete korral esitada probleemi täpse püstituse, st välja selgitada algandmed ja nõutava tulemuse;
-    * leida antud ülesande lahendamiseks kohased põhitegevused ja esitada nende täitmise järjekorra;
-    * esitada lihtsamate ülesannete lahendust plokkskeemina.
+Üheks probleemiks, nagu juba vihjatud, on erinevate spetsiifiliste seadmete juhtimine -- ükskõik kuidas me ``if``-lauseid ja ``while``-tsükleid ei kombineeriks, ei õnnestuks meil arvuti kõlaritesse ühtki piuksu saata ilma vastavaid käske teadmata. Taolistest probleemidest saab harilikult kergesti üle -- tuleb vaid järgi uurida, millistes moodulites millised funktsioonid soovitud effekti annavad, ning lasta programmil neid lihtsalt õigel ajal ja õigete argumentidega välja kutsuda. Mõnede selliste probleemide osas leiab näpunäiteid õpiku lisadest.
+
+Suuremaks probleemiks on ülesanded, mille puhul pole kohe selge, kuidas üldse jõuda sisendist väljundini. Mõnikord tundub ülesande mitteformaalne lahendus küll triviaalne, aga sama lahendust Pythoni programmina vormistades satume raskustesse. 
+
+Oletame, et meil on tekstifail, kus igal real kirjas on ühe inimese nimi ja ülesandeks on leida sellest loetelust kõige pikem nimi. Kui nimekiri pole väga pikk, siis ülesande käsitsi lahendamiseks piisab faili Notepadis avamisest ja pilguga üle ridade käimisest, võibolla on vaja ka mõned pikemad nimed üksteise alla kopeerida, et nende pikkust täpsemalt võrrelda. Kui üritame sama strateegiat Pythoni programmina kirja panna, siis see tõenäoliselt enam nii lihtne ei tundu, kuigi kõik selleks vajalikud vahendid on meile tuttavad.
+
+Käesolevas õpiku osas keskendumegi programmeerimise sellele osale, mis jääb sisendi ja väljundi vahele ning uurime standardseid võtteid tüüpiliste programmeerimisprobleemide lahendamiseks. 
+
+.. todo::
+
+    Ütle midagi ka andmestruktuuride kohta
+
+
+Selles peatükis astume sammu tagasi ja vaatame üle mõned üldised programmeerimisega seotud küsimused:
+    
+    * Milliseid ülesandeid saab lahendada arvuti abil?
+    * Kas kaks erinevat programmi, mis annavad sama tulemuse, on sama head?
+    * Kuidas keerulistele programmeerimisülesannetele lahendusi leida?
 
 
 
-Ülesanded ja nende lahendamine
-==============================
-Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima. Mõned probleemid tunduvad huvitavana, mõned mitte. Ülesanded varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (nt. Mis on elu mõte?). 
+Näited probleemidest
+====================
+Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima, seejuures mõned lahendamata ülesanded tunduvad huvitavana, mõned mitte. Probleemid varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (Mis on elu mõte?). 
 
-Vaatame nüüd mõnesid ülesandeid, millega võid kokku puutuda.
+Vaatame nüüd mõnesid ülesandeid, millega võid kokku puutuda. Enne ülesande kommentaari lugemist mõtle, kuidas tuleks sellele ülesandele läheneda ja kas selle lahendamiseks (või lahendamise abistamiseks) saaks kirjutada arvutiprogrammi.
 
 
 Näide 1. Dokumentideta võõras linnas
@@ -119,9 +144,21 @@ Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde ava
 
     Antud ülesande püstitus tekitab palju küsimusi: kuhu need asjad võisid kaduda? Kas nad kadusid korraga? Millal nad viimati olemas olid? Kas ülikooli ruumidesse pääseb veel sisse, et neid sinna otsima minna? Selliseid küsimusi saab esitada veel ja seetõttu oleks väga raske lahendust üheselt määrata. Me võiksime ju proovida formuleerida kaotatud asjade leidmiseks mingi "retsepti" aga tõenäoliselt nõuab selle situatsiooni lahendamine ka *loovust*, st. oskust toimida ettenägematus olukorras.
 
-Näide 2. Ruut ja ring
+Näide 2. Hundi, kitse ja kapsa üle jõe viimine
+----------------------------------------------
+Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal, kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
+
+Leida ülesandele vähemalt üks lahendus.
+
+.. admonition:: Kommentaar
+    
+    Seda ülesannet on arvatavasti oma peaga lihtsam lahendada, kui arvutiga, aga võime siiski kujutada ette arvutiprogrammi, mis proovib läbi kõikvõimalikud sõidud ja väljastab tulemuseks need, kus lõpuks on kõik tegelased teiselpool jõge ja vahepeal ei jäänud kordagi kits kapsaga ega hunt kitsega omapead.
+    
+    Samas, me võime seda ülesannet vaadata ka teiselt tasemelt -- kui me oleme välja mõelnud sobiva üleveo skeemi, siis võiksime selle põhjal kirjutada programmi robotpaadile, mis tõstab õiged tegelased õigel ajal paati ja viib üle jõe. 
+
+Näide 3. Ruut ja ring
 ---------------------
-Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala. 
+Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida valem, mis esitab ringi pindala. 
 
 .. image:: images/ring_ruut1.png
 
@@ -137,43 +174,36 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida ringi pindala.
         :math:`d=\sqrt{a^2+a^2}=\sqrt{2}a`
         :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
 
-Näide 3. Hundi, kitse ja kapsa üle jõe viimine
-----------------------------------------------
-Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal, kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
+    Justnagu paadisõidu ülesandes, on ka siin võimalik saadud tulemust kasutada ära teisel tasemel -- nimelt ülesandes, mis nõuab valemi rakendamist etteantud sisendandmetega. Selle ülesande lahendamiseks on programmi kirjutamine väga sobiv valik. Samas, valemini jõudmine nõudis loovust ja seega seda osa arvutile me delegeerida ei oleks saanud. 
 
-Leida ülesandele vähemalt üks lahendus.
 
-.. admonition:: Kommentaar
+.. todo::
+
+    Näide 4. Pascal'i kolmnurk
     
-    Seda tüüpi ülesanne sisaldab loogikat. Tulemuseks ei ole arvutatav väärtus nagu ülesandes 2, vaid rida käike, mis esitavad üleminekut algseisundist (kõik tegelased on ühel pool jõge) lõppseisundisse (kõik tegelased on teisel pool jõge). 
-
-
-Näide 4. Pascal'i kolmnurk
---------------------------
-Joonisel on esitatud Pascal'i arvude kolmnurk
-
-.. image:: images/l04_fig4.png
-
-Äärmistel kohtadel on arv 1. Ülejäänute korral on väärtuseks kahe lähima arvu summa arvule vahetult ülemisel real. Kuidas arvutada kombinatsioonide arvu *n* elemendist *k* kaupa
-
-.. centered::
-    :math:`C_{k}^n=\frac {n!(n - k)!}{k!}`
+    Joonisel on esitatud Pascal'i arvude kolmnurk
     
-
-kus 
-
-.. centered::
-    :math:`n!=1\cdot 2 \cdot 3 \cdot \ldots \cdot n`
-
-kasutades Pascali kolmnurka?
-Kuidas on Pascali kolmnurga arvud seotud kordajatega valemis  
-
-.. centered::
-    :math:`(x + y)^n`
-
-peale valemi lahtikirjutamist?  
-
-
+    .. image:: images/l04_fig4.png
+    
+    Äärmistel kohtadel on arv 1. Ülejäänute korral on väärtuseks kahe lähima arvu summa arvule vahetult ülemisel real. Kuidas arvutada kombinatsioonide arvu *n* elemendist *k* kaupa
+    
+    .. centered::
+        :math:`C_{k}^n=\frac {n!(n - k)!}{k!}`
+        
+    
+    kus 
+    
+    .. centered::
+        :math:`n!=1\cdot 2 \cdot 3 \cdot \ldots \cdot n`
+    
+    kasutades Pascali kolmnurka?
+    Kuidas on Pascali kolmnurga arvud seotud kordajatega valemis  
+    
+    .. centered::
+        :math:`(x + y)^n`
+    
+    peale valemi lahtikirjutamist?  
+    
 
 .. index::
     single: algoritm
@@ -182,7 +212,7 @@ peale valemi lahtikirjutamist?
 
 Algoritm
 ========
-Ülalpool toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. Arvutiteaduses tegeleme me probleemidega, mille lahendust saab esitada `algoritmina`. 
+Ülalpool toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. Programmeerimisel tegeleme me probleemidega, mille lahendust saab esitada `algoritmina`. 
 
 **Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehhaaniliselt* (st. ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
 
@@ -201,603 +231,207 @@ Algoritme kasutatakse erinevate elukutsete juures. Näiteks kokk järgib algorit
     Sõna *‘algoritm’* on tuletatud 9. sajandi Pärsia matemaatiku Mohammed al-Khowarizmi nimest. Tema nime ladinapärane kuju on *Algorismus*.
 
 
-
-Algoritm ja arvuti
-------------------
 Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja seega saab neid vajadusel käivitada arvutil. Sellest vaatenurgast võiksime anda algoritmile ka järgneva, veidi kitsama definitsiooni:
 
 *Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, millele antakse sisendina ette mingi väärtus või väärtuste hulk ja mis leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.* 
 
 .. image:: images/l04_fig8.png 
 
-
-Algoritmi loomine
------------------
-Iga algoritmi saab kergesti kohandada selliseks, et tema *rakendamiseks* sobib masin. Seevastu algoritmide *loomiseks* on vaja midagi enamat.
-
-Esimeses peatükis oli juttu programmeerimise olemusest. Sama kehtib ka algoritmide loomise juures -- tegemist on loomingulise protsessiga, kus läheb vaja samaaegselt konkreetsust (täpsust) ja üldistusvõimet (abstraktset mõtlemist). Algoritmide loomine on üks põhilisi tegevusi programmeerimise juures. Piisavalt täpselt formuleeritud algoritmi esitamine arvutiprogrammina on küllaltki lihtne, tuleb vaid jälgida vastava programmeerimiskeele sõnavara ja reegleid. 
-
-Kuidas aga formuleerida algoritmi? Mõned ütlevad, et programmeerimine ja algoritmide loomine ongi üks ja sama. Tavapärases kõnepruugis siiski tehakse algoritmil ja programmil vahet: algoritm esitab mingi ülesande lahenduskäiku ilma tehnilistesse detailidesse laskumata (aga siiski ühetähenduslikult), programm on aga tavaliselt mõeldud mingi konkreetse masina (sh virtuaalse masina) juhtimiseks ja seetõttu võib sisaldada nüansse, mis on olulised vaid selle masina kasutamise korral.
+Mõned ütlevad, et programmeerimine ja algoritmide loomine ongi üks ja sama. Tavapärases kõnepruugis siiski tehakse algoritmil ja programmil vahet: algoritm esitab mingi ülesande lahenduskäiku ilma tehnilistesse detailidesse laskumata (aga siiski ühetähenduslikult), programm on aga tavaliselt mõeldud mingi konkreetse masina (sh virtuaalse masina) juhtimiseks ja seetõttu võib sisaldada nüansse, mis on olulised vaid selle masina kasutamise korral.
 
 Kaasaegsetes programmeerimiskeeltes (nt Python) ei ole masina nüanssidele eriti vaja mõelda, seetõttu kasutatakse programmeerimiskeeli juba algoritmide väljatöötamise faasis. Vahel on aga siiski mugavam panna algoritm esialgu kirja kuidagi teisiti, näiteks *pseudokoodina* (so. loomuliku keele ja matemaatiliste sümbolite segu) või mingi visuaalse *skeemina*. Järgnevalt uurimegi lähemalt ühte algoritmide skemaatilise esitamise viisi.
 
-   
-
-
-.. index::
-    single: algoritmi esitus plokkskeemina
-    
-.. _plokkskeem:    
-
-Alamülesannete tuvastamine ja alamprogrammide loomine
-=====================================================
-Eelmise peatüki lõpus läksid mõned programmid võrdlemisi keeruliseks -- näiteks põranda värvimise ülesandes tuli sul tõenäoliselt läbi mõelda ja kirja panna kuidas teha vahet, milline veerg värvida ja milline mitte, kuidas korraldada liikumise ja värvimise vaheldumine, millal ja kuhupoole tuleks pöörata, millal on ülesanne täidetud jne. Kõikide nende probleemide lahendused kokku kirjutatuna võivad esialgu silme eest kirjuks võtta. Kui keegi küsiks sult praegu, millise eesmärgiga on sinu programmis mingi konkreetne rida või plokk, siis ilmselt peaksid enne vastamist omajagu süvenema.
-
-Kuna enamus praktikas kasutatavaid programme on palju keerulisemad kui põranda värvimise programm, peab eksisteerima mingi nipp taolise keerukusega toimetulekuks. Käesolev peatükk ongi mõeldud selle nipi selgitamiseks ja harjutamiseks.
-
-
-
-Tuleb välja, et programmeerimises kasutatakse keeruliste ülesannete lahendamisel sama nippi nagu "päris elus" -- esmalt jaotatakse ülesanne parajateks osadeks e. alamülesanneteks, seejärel lahendatakse alamülesanded (keskendudes korraga vaid ühele) ning lõpuks kombineeritakse alamülesannete lahendused. Seejuures juhtub küllalt tihti (nii programmeerimises, kui päris elus), et mõni alamülesanne on juba mingi teise probleemi kontekstis varem lahendatud, sel juhul saab vastavat lahendust taaskasutada.
-
-Programmeerimises nimetatakse alamülesande lahendust **alamprogrammiks** (see on üldisem nimetus) või ka **funktsiooniks** (Pythoni programmeerijad eelistavad seda nimetust). Pythoni funktsioonide defineerimist sai tegelikult juba liitlausete peatükis veidi tutvustatud (vt. Uute käskude loomine), aga selles peatükis käsitleme funktsioonide kasutusvõimalusi palju sügavamalt ja laiemalt.
-
-.. note::
-
-    Erinevalt teistest siiani tutvustatud Pythoni põhikonstruktsioonidest (hargnemine ja tsükkel), ei ole alamprogrammid tehniliselt võttes programmeerimisel hädavajalikud -- kõik programmid on teoreetiliselt võimalik kirjutada kasutades vaid väikest hulka sisseehitatud käske. Taoliselt kirjutatud praktilised programmid aga läheksid peagi nii suureks ja keeruliseks, et ka parimad programmeerijad ei suudaks neid enam hallata.
-
-Võtame esimeseks näiteks juba mainitud ülesande, kus robot peab värvima põranda triibuliseks (vt. 3. ptk :ref:`triibuliseks`. Kui sul on jäänud see ülesanne lahendamata, siis enne jätkamist on soovitav see ülesanne praeguste teadmiste abil ära teha). 
-
-Toome siinkohal ära ühe võimaliku lahenduse, kus pole alamprogramme kasutatud:
-
-.. sourcecode:: py3
-
-    from pykkar import *
-
-    create_world("""
-    ########
-    #      #
-    #      #
-    #  ^   #
-    #      #
-    #      #
-    ########
-    """)
-
-    # eeldame, et robot alustab alati näoga põhjasuunas
-
-    # liigu põhjaseinani
-    while not is_wall():
-        step()
-
-    # pööra läänesuunda
-    right()
-    right()
-    right()
-
-    # liigu lääneseinani
-    while not is_wall():
-        step()
-
-    # pööra lõunasuunda
-    right()
-    right()
-    right()
-
-    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
-    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
-    while True:
-
-        # allaminek ja värvimine
-        paint()
-        while not is_wall():
-            step()
-            paint()
-
-        # liigu järgmisele veerule (kui võimalik)
-        right()
-        right()
-        right()
-        
-        if is_wall():
-            # rohkem veerge pole
-            break
-
-        # kui jõudsime siia, siis on järelikult veel veerge
-        step()
-        # pööra nina põhjasuunda
-        right()
-        right()
-        right()
-
-        # liigu üles
-        while not is_wall():
-            step()
-
-        # proovime liikuda järgmisele (värvitavale) veerule
-        right()
-        if is_wall():
-            # pole rohkem veerge
-            break
-
-        step()
-        # pöörame õigesse suunda
-        right()
-
-        
-        
-
-    
-
-
-Nagu juba varem mainitud, oskab meie robot pöörata vaid paremale. Seetõttu on näitekoodis koht, kus 90° võrra vasakule pööramise saavutamiseks on antud 3 korda järjest käsklus ``paremale()``. See on üks koht, mis võib programmi lugejale esmapilgul segadust tekitada. Kasutame võimalust ja defineerime uue alamprogrammi (e. funktsiooni või "käsu") vasakule pööramiseks. Selleks lisame esialgse programmi algusse uue *funktsiooni definitsiooni*:
-
-.. sourcecode:: py3
-
-    from pykkar import *
-
-    def left():
-        right()
-        right()
-        right()
-    
-    ...
-
-
-
-Sisuliselt defineerisime ühe uue roboti juhtimise käsu ja me võime algses programmis kolmekordse paremale pööramise asendada käsuga ``left()``. Nii ei jäta me koodi lugejale enam kahtlust, mida me soovime kolmekordse pööramisega saavutada.
-
-Teine korduv motiiv esialgses programmis on seinani liikumine. Ka selle saame vormistada funktsioonina:
-
-.. sourcecode:: py3
-
-    ...
-    
-    def move_to_wall():
-        while not is_wall():
-            step()
-    
-    ...
-
-Kui nüüd mõlemaid uusi käske programmis kasutada, saame juba omajagu lihtsama tulemuse:
-
-.. sourcecode:: py3
-
-    from pykkar import *
-
-    def left():
-        right()
-        right()
-        right()
-
-    def move_to_wall():
-        while not is_wall():
-            step()
-
-    create_world("""
-    ########
-    #      #
-    #      #
-    #  ^   #
-    #      #
-    #      #
-    ########
-    """)
-
-    # eeldame, et robot alustab alati näoga põhjasuunas
-
-    # liigu põhjaseinani
-    move_to_wall()
-
-    # pööra läänesuunda
-    left()
-
-    # liigu lääneseinani
-    move_to_wall()
-
-    # pööra lõunasuunda
-    left()
-
-    # välimine tsükkel käib üle veergude (kaks veergu korraga, üks allaminnes, 
-    # koos värvimisega ja teine üles tulles, ilma värvimiseta)
-    while True:
-
-        # allaminek ja värvimine
-        paint()
-        while not is_wall():
-            step()
-            paint()
-
-        # liigu järgmisele veerule (kui võimalik)
-        left()
-        
-        if is_wall():
-            # rohkem veerge pole
-            break
-
-        # kui jõudsime siia, siis on järelikult veel veerge
-        step()
-        # pööra nina põhjasuunda
-        left()
-
-        # liigu üles
-        move_to_wall()
-        
-        # proovime liikuda järgmisele (värvitavale) veerule
-        right()
-        if is_wall():
-            # pole rohkem veerge
-            break
-
-        step()
-        # pöörame õigesse suunda
-        right()
-
-
-Nende funktsioonide loomine ja kasutuselevõtt tuli kasuks kahel moel. Esiteks, funktsiooni defineerimisega **andsime (potentsiaalselt) keerulisele programmilõigule selgitava nime** ning võisime programmi põhiosas mainida ainult nime -- nii muutsime programmi põhiosa veidi lihtsamaks. Nüüd on meil võimalus analüüsida seda värjaeraldatud koodi põhiprogrammist eraldi ja samuti on võimalik analüüsida põhiprogrammi ilma, et peaks muretsema detailide pärast. Näiteks, põhiprogrammi uurides piisab meile teadmisest, et robot pöörab mingis kohas vasakule, me ei pea muretsema selle pärast, kuidas ta seda teeb. Samas, kui meid detailid siiski huvitavad, siis saame alati otsida üles vastava funktsiooni definitsiooni.
-
-Teiseks, me **defineerisime funktsiooni ühekordselt, aga saime seda kasutada mitmes kohas**, seega hoidsime kokku tippimise vaeva.
-
-.. note::
-
-    Alamprogrammide defineerimine on tihti mõistlik ka siis, kui väljaeraldatud koodi on kasutatud vaid ühes kohas, aga ta on piisavalt keeruline, et programmi mõistmist raskendada. Meie näite puhul võiksime eraldi funktsiooni luua veel kuni seinani värvimise kohta:
-    
-    .. sourcecode:: py3
-    
-        def paint_until_wall():
-            paint()
-            while not is_wall():
-                step()
-                paint()
-    
-    Selle funktsiooni kasutamisega saaksime lahti ka kahekordsest tsüklist (tsükkel tsükli sees), mis võib mõnele programmi lugejale tunduda keeruline.
-    
-
-Harjutus 1. Liigu nurka
------------------------
-Lisa vaadeldud näiteprogrammi veel ühe funktsiooni definitsioon -- ``liigu_nurka`` peaks liigutama kilpkonna temast vasakule-ettepoole jäävasse nurka (võime eeldada ristküliku kujulist põrandat).
-
-Kasuta seda funktsiooni programmis sobival kohal.
-
-
-
-
-
-Ülesande lahendamise protsess
-=============================
-Ülesande lahendamise arvutil võib jagada järgmisteks etappideks:
-
-    #. Algoritmi koostamine ja esitamine.
-    #. Programmi koostamine mingis konkreetses programmeerimiskeeles.
-    #. Programmi sisestamine arvutisse.
-    #. Programmi testimine ja silumine.
-    #. Programmi käivitamine arvutis, andmete sisestamine ja tulemuse saamine arvutist.
-
-Teeme need etapid läbi ringi pindala ülesande näitel:
-
-    #. Esitame algoritmi plokkskeemina:
-
-        .. image:: images/l04_fig20.png 
-
-        Siin ülesande sisendiks on ruudu külje pikkus *a*. Märgime siinjuures, et jätsime vahele diagonaali arvutamise, sest ringi pindala *S* saame arvutada otse otse ruudu külje pikkuse kaudu. 
-
-    #. Koostame programmi, kasutades programmeerimiskeelt Python:
-
-        .. sourcecode:: py3
-
-            from math import *
-
-            a = int(input("Sisesta külje pikkus a: "))
-            S = pi*a*a/2
-            print("Kui ruudu külje pikkus on " + str(a) + ", siis ringi pindala on " +  str(S))
-
-    #. Enamasti me teostame sammud 2 ja 3 korraga, st programmi koostamise käigus sisestame selle ka arvutisse.
-    #. Selgub, et meie programm jääb hätta siis kui kasutaja ei sisesta midagi või sisestab külje pikkuse asemel midagi muud, nt "kuus". Seega saab öelda, et antud programm töötab vaid korrektse arvulise sisendi korral, vigase sisendi korral programmi töö lõpeb veaga.   
-    #. Käivitame programmi konkreetse küljepikkuse jaoks ja leiame ringi pindala.  
-
-Plokkskeem
-==========
-Üks levinud graafiline notatsioon algoritmide esitamiseks on *plokkskeem*. Vaatleme järgnevalt plokkskeemis kasutatavaid kujundeid:
 
 .. index::
     single: plokkskeem
+    single: algoritmi esitus plokkskeemina
     
+.. _plokkskeem:    
+   
+Plokkskeem
+==========
+Üks levinud graafiline notatsioon algoritmide esitamiseks on *plokkskeem*. Plokkskeemis kasutatakse järgmisi elemente:
 
 .. image:: images/l04_fig9.png 
 
-Kartulisalati tegemise plokkskeem
----------------------------------
-Alustame praktilisest näitest - lihtsast kartulisalati valmistamisest, mille võib esitada järgmise plokkskeemina:
+Näide: Kartulisalat
+-------------------
+Plokkskeem sobib hästi kasutamiseks ka arvutikaugetes valdkondades. Proovime näiteks selle abil kirjeldada kartulisalati valmistamist:
 
 .. image:: images/l05_fig1.png
 
-Üksi salatit valmistades on meil võimalik lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
+Kui me tahaksime protsessi täpsemalt kirjeldada, võime lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
 
 .. image:: images/l05_fig2.png
 
 
-Korraldame loendamist pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
+Ka loendamist saame me detailsemalt väljendada, oletame, et me loendame pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
 
 .. image:: images/l05_fig3.png
 
-Arvutis me kasutamine loendamiseks muutujaid, hoides nendes näiteks loendamise jooksvat seisu. Loendamise algul peame loenduri seisu nullima.  
+Näide: Kuni kolm sammu ja ümberpöörd
+------------------------------------
+Proovime plokkskeemiga edasi anda ühe Pykkari liikumisskeemi -- ta peab astuma kolm sammu või kui sein tuleb varem vasti siis seinani ja seejärel ennast ümber pöörama. Kuna plokkskeem on tavaliselt mõeldud vaid lahendusidee edasiandmiseks, siis ei pea me kasutama täpselt samu käske, nagu Pykkari Pythoni moodul ette näeb.
 
-
-.. image:: images/l05_fig4.png
-
-OLetame, et meil on juba olemas käsklused (funktsioonid), mis rakendamisel annavad meile vajaliku asja või toiduaine:
-
-* ``tühiKauss()`` annab tühja kausi, 
-* ``uusHapukurk()`` annab uue hapukurgi, 
-* ``uusKartul()`` annab uue kartuli, 
-* ``splKoort()`` annab supilusikatäie hapukoort,
-* ``noaotsagaSoola()`` annab noa otsatäie soola, 
-* ``maitseSisu()`` annab tagasi soolasuse maitse *m*, mille parajust saab hiljem kontrollida. 
-
-Samuti oletame, et me saame kasutada olemasolevaid protseduure, millele asju ette andes tehakse ära mingi töö:
-
-* ``lisaTükeldatult(a, k)`` lisab  aine *a* tükeldatult kaussi *k*, 
-* ``segaSisu(k)`` segab kausis *k* olevad ained kokku.
-
-Kasutades neid käsklusi, saame kartulisalati tegemise esitada järgmisel kujul:
- 
-.. image:: images/l05_fig5.png
-
-Lihtsustame oma plokkskeemi selliselt, et anname uue kartuli, hapukurgi, supilusikatäie hapukoore ja noaotsatäie soola võtmise otse lisamise käsklustele, sest meil ei ole neid eraldi muutujates vaja rohkem kasutada:
-
-
-.. image:: images/l05_fig6.png
-
-
-
-Robotkilpkonn
-=============
-
-.. image:: images/l04_fig10.png 
-
-Edasiseks harjutamiseks võtame appi ühe virtuaalse robotkilpkonna, mis suudab etteantud keskkonnas liikuda ja reageerida veel mõnedele lihtsatele käskudele. Oletame, et robotkilpkonn liigub ristkülikukujulisel mänguväljakul, mille mõõtmed pole teada:
-
- .. image:: images/l04_fig11.png 
- 
-Kilpkonn oskab sooritada järgmiseid tegevusi:
-
- .. image:: images/l04_fig12.png  
- 
-Harjutus 1. Kolm sammu edasi ja ümberpöörd
-------------------------------------------
- Robotkilpkonn asub näoga seina poole selliselt, et seinani on vähemalt 3 sammu. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber).   
-
-.. image:: images/l04_fig13.png  
-
-Lahenduse võib esitada järgmise plokkskeemina:
-
-.. image:: images/l04_fig14.png  
-
-Harjutus 2. Kui võimalik, kolm sammu  edasi ja ümberpöörd
----------------------------------------------------------
-Robotkilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda kolm sammu edasi ja pöörata näoga tuldud tee suunas (pöörata ümber). Kui seinani on vähem kui kolm sammu, siis liikuda seinani ja pöörata ümber. 
-
-.. image:: images/l04_fig15.png  
-
-Nüüd on lahendus juba veidi keerulisem:  
 
 .. image:: images/l04_fig16.png  
 
-Harjutus 3. Ring ümber mänguväljaku
------------------------------------
-Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  
+Harjutus: Ring ümber mänguväljaku
+---------------------------------
+Pykkar asub ristkülikukujulise maailma vasakus ülemises nurgas näoga paremale. Maailma mõõtmed ei ole teada. Joonista plokkskeem, mis paneb Pykkari seina ääred läbi käima. Lõpuks peab ta jõudma esialgsesse positsiooni tagasi. 
 
-.. image:: images/l04_fig17.png  
+.. note::
 
-Harjutus 4. Liikumine takistusest mööda
----------------------------------------
-Kilpkonn asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Kilpkonnal on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on. Koostada plokkskeem.  
-
-.. hint:: 
-    Antud ülesande korral võib olla olukord, kus takistus asub roboti ees
-
-    .. image:: images/l04_fig18.png  
-
-    või siis ei asu
-
-    .. image:: images/l04_fig19.png  
-
-.. note:: 
-
-    Laadides alla väikese programmi, on võimalik kilpkonna liikumist modelleerivate plokkskeemide koostamist testida ka arvuti abil: http://www.physicsbox.com/indexrobotprogen.html
+    Plokkskeemi võib vabalt käske juurde leiutada -- antud ülesandes kuluks arvatavasti ära käsk muutuja defineerimiseks ja suurendamiseks (aga võib ka tõmmata kriipse kujuteldavale paberile, justnagu kartulisalati näites). 
 
 
 .. _triibuliseks:
 
-Harjutus 5. Põranda värvimine triibuliseks
-------------------------------------------
-Oletame, et kilpkonnal on lisaks veel käsk ``värvi()``, mille saamisel värvib ta selle ruudu, kus ta parasjagu asub, tumedaks. Programmi alguses asub kilpkonn juhuslikul ruudul näoga põhja suunas. Ruudustik on ristkülikukujuline, ilma takistusteta. Ruudustiku täpne suurus pole teada.
-
-Koosta plokkskeem, mis paneb kilpkonna värvima põrandat põhja-lõuna suunas triibuliseks -- alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne.
-
-NB! proovi programmi läbi mängida nii paaritu- kui paarisarvulise laiusega ruudustiku korral.
-
-Olge valmis, et see plokkskeem tuleb eelmistest omajagu suurem.
-
-.. hint::
-
-    Ülesande lahendamiseks tuleks valida kõigepealt strateegia, kuidas robotkilpkonn liigub ruudustikul. Üheks võimaluseks on variant, kus kilpkonn värvib ühe triibu ja liigub tuldud teed tagasi. Ta kordab värvimist järgmisel värvitaval veerul (üks veerg tuleb jätta vahele, et tulemus oleks triibuline). 
-
-.. todo::
-
-    Näide. Põranda värvimine triibuliseks
-    
-    .. note:: Varu selle ülesande lahendamiseks piisavalt aega. Kui jääd hätta, siis vaata näitelahendust viimase vihje alt!
-
-    Kirjuta programm, mis paneb Pykkari värvima põrandat põhja-lõuna suunas triibuliseks – alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne. 
-
-    NB! Programm peab töötama suvalise ristkülikukujulise, ilma takistusteta maailma korral. Pykkari esialgne asukoht pole teada, aga võib eeldada, et ta on alguses näoga põhja suunas. Soovitame katsetada oma programmi vähemalt selliste algseisudega:
-
-    .. sourcecode:: none
-
-        ########
-        #      #
-        #      #
-        #  ^   #
-        #      #
-        #      #
-        ########    
-
-    ja
-
-    .. sourcecode:: none
-
-        ##########
-        #        #
-        #        #
-        #        #
-        # ^      #
-        ##########
-
-    .. hint::
-
-        Selles programmis on vaja panna üks tsükkel teise sisse:
-        
-        .. sourcecode:: py3
-        
-            ...
-            while ...: 
-                ...
-                # võta käsile uus veerg
-                
-
-
-        
-
 Alaprogrammid plokkskeemis
-==========================
+--------------------------
 Alamprogramme saab defineerida ka plokkskeemides. Selleks eraldatakse lihtsalt skeemil üks eraldiolev ala alamprogrammi jaoks (näiteks ümbritsetakse kastiga) ning kirjutatakse selle juurde alamprogrammi nimi.
 
-Proovime nüüd koostada mõned alamprogrammide skeemid põranda värvimise plokkskeemi jaoks. NB! siin jaotame ülesande osadeks veidi teistest kohtadest, kui Pythoni näites, sellega demonstreerime, et alamülesannete väljaeraldamise viis on alati programmeerija valiku küsimus.
+Loome näiteks skeemi, mis paneb Pykkari värvima põrandat põhja-lõuna suunas triibuliseks – alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne. Maailma mõõtmed pole teada, aga teame, et Pykkar on alguses loodenurgas (NW) näoga lõuna suunas.
 
 Loome kõigepealt alamprogrammid järgmistele tegevustele: 
 
-* Ühe triibu värvimine robotkilpkonna liikumisel kuni seinani.
-* Robotkilpkonna tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
-
-Meeldetultuseks käsud, mida kasutasime roboti juhtimiseks plokkskeemis:
-
-    * ``edasi()`` - kilpkonn liigub ühe sammu edasi;
-    * ``paremale()`` - kilpkonn pöörab 90 kraadi võrra paremale;
-    * ``värvi()`` - kilpkonn värvib ruudu, mille peal ta asub;
-    * ``kasSein()``, kilpkonn annab tagasi kas ``jah`` või ``ei``, sõltuvalt sellest, kas vahetult tema ees on sein või mitte. 
-
-Alamprotseduur ``triip()``
-
-Tegevus: Robotkilpkonn värvib triibu kuni seinani.
-
-.. image:: images/l05_fig13.png
+* Ühe triibu värvimine kuni seinani.
+* Tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
 
 
-Alamprotseduur ``tagasi()``
+.. admonition:: Alamprogramm ``triip``
 
-Tegevus: Robotkilpkonn pöörab ümber, liigub seinani ja lõpuks pöörab paremale.
+    .. image:: images/l05_fig13.png
+    
 
-.. image:: images/l05_fig14.png
 
-Koostame nüüd plokkskeemi kogu mänguväljaku värvimiseks triibuliseks, kasutades juba koostatud protseduure:
+.. admonition:: Alamprogramm ``tagasi``
+
+    .. image:: images/l05_fig14.png
+    
+
+Koostame nüüd plokkskeemi kogu maailma värvimiseks triibuliseks, kasutades juba koostatud protseduure:
 
 .. image:: images/l05_fig15.png
 
-Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus kilpkonn ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame veel ühe protseduuri, mille abil kilpkonn pöörab vasakule:
+Selline värvimine annab soovitava tulemuse, kuid lahendus sisaldab ülearust tühjalt liikumist lõunast põhja. Koostame nüüd sellise algoritmi, kus Pykkar ei liigu tühjalt, vaid värvib ruudustikku ka liikumisel lõunast põhja. Selleks kasutame juba olemasolevat protseduuri ``triip`` ja koostame mugavuse jaoks veel ühe alamprogrammi vasakule pööramiseks:
 
-Alamprotseduur ``vasakule()``
+.. admonition:: Alamprogramm ``vasakule``
 
-Tegevus: Robotkilpkonn pöörab vasakule.
+    .. image:: images/l05_fig17.png
 
-.. image:: images/l05_fig17.png
-
-Enne uue triibu värvimist peab kilpkonn lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
+Enne uue triibu värvimist peab Pykkar lõunas pöörama kaks korda vasakule ja põhjas kaks korda paremale. Selle realiseerimiseks võtame appi loenduri *l*, mille abil saame kindlaks teha, kummale poole on vaja pöörata. Kui loendur jagub kahega, siis on vaja pööramisi vasakule, vastasel juhul paremale. Kogu värvimisprotseduur oleks järgmine:
 
 
 .. image:: images/l05_fig18.png
 
-Antud juhul robotkilpkonn liigub ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.  Algoritmi koostamisel tuleb arvestada ülesande püstituses olevaid nõudmisi.
+Antud juhul liigub Pykkar ökonoomsemalt, kuid algoritmile vastav plokkskeem on veidi keerulisem.
 
 
-Parameetrid plokkskeemis
-------------------------
-.. note:: 
+Käivitatavad plokkskeemid
+-------------------------
+On olemas plokkskeemi joonistamise keskkondi, kus skeemi on võimalik arvutis käivitada justkui programmi. Üks selline asub aadressil http://www.physicsbox.com/indexrobotprogen.html.
 
-    Järgnevates plokkskeemides on parameetritega koos antud ka parameetri tüüp. Sellist lähenemist kasutatakse mitmetes programmeerimiskeeltes (nt. Java), aga mitte Pythonis.
-
-Tuleme tagasi eelmises peatükis alustatud kartulisalati teema juurde.
-
-Kogu salatitegemise saame jaotada eraldiseisvateks tegevusteks: kartuli, hapukurgi, hapukoore ja soola lisamine. 
-Kartulite lisamine: 
-
-.. image:: images/l05_fig7.png
-
-Paneme tähele, et kartulite lisamine protseduurile antakse ette nõu *k* ja naturaalarv *n*, mitu kartulit antud nõusse lisada.   
-Järgmiseks protseduuriks on hapukurkide lisamine:
-
-.. image:: images/l05_fig8.png
-
-Hapukoore lisamine:
-
-.. image:: images/l05_fig9.png
-
-Soola lisamine:
-
-.. image:: images/l05_fig10.png
-
-Kasutades neid protseduure, saame kogu ülesande jaoks esialgsele skeemile sarnase skeemi:
-
-.. image:: images/l05_fig11.png
-
-Retseptikogudes antakse ette retsepti täitmise tulemusena valmiva toidu jaoks sööjate arv. Teeme seda siingi, oletades, et esialgne kogus oli mõeldud ühele inimesele ja muudame vastavalt kasutatavate koostisainete kogust. Seega *n* inimese tarbeks kartulisalati valmistamise algoritm näeks välja järgmine: 
-
-.. image:: images/l05_fig12.png
-
-
-Väärtusega alamprogrammid plokkskeemis
---------------------------------------
-Siiani oleme plokkskeemidena esitanud ainult protseduure, mis muudavad küll süsteemi seisundit, aga otseselt midagi väljakutsujale tagasi ei anna. Näitena väärtusega funktsioonist esitame siin varemvaadeldud ülesannet ringi pindalast. Esitame  plokkskeemi funktsioonist, mis saab ette ruudu külje pikkuse ja annab väljakutsujale tagasi ringi pindala:
-
-
-.. image:: images/l05_fig23.png
- 
-Esinevus siin eelmise ringi pindala plokkskeemiga seisneb selles, et lõpuplokis näidatakse tagastatavad andmed. Sisuline erinevus on selles, et nüüd on see alaprogramm universaalsem -- vastavalt soovile võime arvutatud pindala kas väljundisse anda või kasutada mingis avaldises.
 
 
 Alternatiivsed lahendused
 =========================
+Põranda värvimise näite juures andsime kaks alternatiivset lahendust -- üks neist oli lihtsam, teine efektiivsem. Algoritmi efektiivsuse ja lihtsuse vahel valimine on programmeerimisel tihti esinev dilemma.
 
-* nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks
-* Samaväärsused: et asja panna kirja lühemalt; et teha asja efektiivsemaks
+Näide: Pikim sõna
+-----------------
+Oletame, et meil on antud fail, mis sisaldab igal real ühte sõna ja me soovime väljastada kõige pikema sõna või, kui sama pikkusega on mitu sõna, siis kõik need, millest pikemaid ei leidu.
 
-Harjutus: Kuu nimi, vol2
-------------------------
-Kolmandas peatükis demonstreeriti :ref:`kahte samaväärset programmi <elif_kuu_nimi>`, mis väljastavad etteantud kuu numbrile vastava kuu nime. Leidsime, et teine viis on esimesest parem, kuna teda on lihtsam kirjutada ja lugeda.
+Lihtsam lahendus oleks käia fail läbi kaks korda -- esimesel korral leiame kõige suurema sõnapikkuse ja teisel korral väljastame kõik sellele pikkusele vastavad sõnad:
 
-Mõlemad näidatud viisid sunnivad Pythonit halvimal juhul tegema kuni 12 võrdlemist (kui sisestatud arv oli `12`). Kirjuta veel üks nende kahega samaväärne lahendus, mis saab alati hakkama väiksema arvu võrdlustega.
+.. sourcecode:: py3
+    
+    fail = open("sonad.txt", encoding="UTF-8")
+    
+    # selles muutujas hoiame suurimat pikkust, mida oleme kohanud
+    max_pikkus = 0
+    
+    while True:
+        rida = fail.readline()
+        if rida == "":
+            break
+        
+        sõna = rida.strip()
+        if len(sõna) > max_pikkus:
+            # leidsime veel pikema sõna
+            # uuendame vastavat muutujat
+            max_pikkus = len(sõna)
+    
+    # nüüd on meil muutujas max_pikkus olemas pikima failis esineva sõna pikkus
+    
+    # sulgeme faili ja avame uuesti
+    fail.close() 
+    fail = open("sonad.txt", encoding="UTF-8")
+    
+    # väljastame õige pikkusega sõnad
+    while True:
+        rida = fail.readline()
+        if rida == "":
+            break
+        
+        sõna = rida.strip()
+        if len(sõna) == max_pikkus:
+            print(sõna)
+    
+    fail.close()
 
-.. hint::
+Sellel lahendusel on kaks probleemi -- esiteks, kuna failide lugemine on suhteliselt aeglane toiming, võib selle topelt tegemine mõnikord olla lubamatu ajaraiskamine; teiseks, me pidime kirjutama kaks tsüklit.
 
-    Lahendust on võimalik panna kirja nii, et Python ei pea õige vastuseni jõudmiseks tegema kunagi rohkem kui 4 võrdlust.
+Proovime, kas saab paremini. Seekord katsume ühe läbivaatusega pikimad sõnad kohe meelde jätta:
 
-.. hint:: 
+.. sourcecode:: py3
+    :emphasize-lines: 19-29
+    
+    fail = open("sonad.txt", encoding="UTF-8")
+    
+    # selles muutujas hoiame suurimat pikkust, mida oleme kohanud
+    max_pikkus = 0
+    
+    # siin on need sõnad, mis vastavad seni leitud pikimale sõnale
+    pikad_sõnad = ""
+    
+    while True:
+        rida = fail.readline()
+        if rida == "":
+            break
+        
+        sõna = rida.strip()
+        if len(sõna) > max_pikkus:
+            # leidsime veel pikema sõna
+            # uuendame vastavat muutujat
+            max_pikkus = len(sõna)
+            
+            # ... ja kirjutame üle seni kogutud pikad sõnad
+            pikad_sõnad = sõna + "\n"
+            
+        elif len(sõna) == max_pikkus:
+            # leidsime sama pika sõna, kui praegune max_pikkus
+            # lisame ta leitud sõnade hulka
+            pikad_sõnad += sõna + "\n"
+    
+    # kuvame leitud sõnad (eemaldades ebavajaliku reavahetuse lõpust)
+    print(pikad_sõnad.strip())    
+    
+    fail.close()
 
-    Siin on parem kasutada ainult tavalisi, üksteise sisse pandud ``if-else``-sid (st. mitte kasutada ``elif``-i).
-
-.. hint::
-    Pane tähele, et ühe ``if-else`` võime me paigutada teise ``if-else`` sisse kahel moel -- kas ``then`` harusse või ``else`` harusse.
-
-.. hint::
-
-    Mõtle sellele, kuidas sa otsid mingit sõna sõnaraamatust. Kas hakkad sõnastiku algusest lehitsema, kuni jõuad otsitava sõnani või kasutad mingit kavalamat viisi?     
+See variant on natuke lühem, kui esimene, ning ka pisut kiirem, aga kardetavasti vähemalt algajate jaoks raskemini arusaadav. Proffessionaalsed programmeerijad peavad tihti lisaks programmide korrektsusele jälgima ka etteantud efektiivsuse nõudeid ja samal ajal arvestama enda kaastöötajate tasemega -- paratamatult tuleb siin aeg-ajalt teha kompromisse.
 
 
+.. todo::
 
+    * nested if vs keerulisem bool avaldis; bool avaldise kapseldamine funktsiooni; sügava treppimise asendamine funktsiooni väljakutsetega; pika koodi jaotamine mitmeks funktsiooniks
+    * Samaväärsused: et asja panna kirja lühemalt; et teha asja efektiivsemaks
+    
 
-Lisalugemist
-============
+Kuidas seda lahendada?
+======================
 
-Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on ülesannete lahendusprotsessi uuritud ka süstemaatiliselt. Üheks selle ala klassikuks võib lugeda Ungari matemaatikut George Pólyat, kes uuris ülesande lahendamise protsessi lähemalt ja avaldas oma kuulsa raamatu "Kuidas seda lahendada?". Oma raamatus toob ta välja neli etappi, millega ülesande lahendajal tuleb kokku puutuda. Esitame siinkohal tema kuulsa tsitaadi:
+Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on seda uuritud ka süstemaatiliselt. Üheks selle ala klassikuks võib lugeda Ungari matemaatikut George Pólyat, kes uuris ülesande lahendamise protsessi lähemalt ja avaldas oma kuulsa raamatu "Kuidas seda lahendada?". Oma raamatus toob ta välja neli etappi, millega ülesande lahendajal tuleb kokku puutuda. Esitame siinkohal tema kuulsa tsitaadi:
 
 .. index::
     single: Pólya
@@ -838,76 +472,209 @@ George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soo
 
 
 
-Plokkskeemi ülesanded
-=====================
-
-.. note::
-
-    Neid ülesandeid praktikumis ei kontrollita, aga need on soovitav siiski lahendada. Ülesandeid 1,2,3,4,6 saab lahendada ka Pykkariga.
-
-1. Ring ümber mänguväljaku
---------------------------
-
-Kilpkonn asub ruudustiku vasakus ülemises nurgas näoga paremale. Ruutude arv ei ole teada. Kilpkonnal on vaja läbi käia suurim ring ja jõuda esialgsesse positsiooni tagasi. Koostada plokkskeem.  Kasutada eelmise ülesande alamprotseduuri. 
- 
-2. Seinani ja tagasi
---------------------
-Kilpkonn asub näoga seina poole ja ei ole teada, mitu sammu on seinani. Kilpkonnal on vaja liikuda seinani, pöörata ümber ja liikuda tagasi samasse kohta algasendisse. Koostada plokkskeem.  
 
 
-3. Liigu ettenähtud kohta
--------------------------
+Ülesanded
+=========
 
-Kilpkonn asub seinaga ümbritsetud ja ilmakaarte järgi orienteeritud ruudustiku mingil ruudul, ninaga itta. Kirjutada plokkskeemi kujul protseduurid, millega kilpkonn
-a) liigub ruudustiku kirdenurka ja jääb seal pidama;
-b) liigub ruudustiku edelanurka ja jääb seal pidama;
-c) liigub ruudustiku äärele ja hakkab äärt pidi päripäeva ringiratast liikuma.
+1. Põranda värvimine triibuliseks
+---------------------------------
+Kirjuta eespool toodud :ref:`Pykkariga põranda värvimise plokkskeemile <triibuliseks>` vastav Pythoni programm.
+            
+
+2. Liikumine takistusest mööda
+------------------------------
+Pykkar asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Pykkaril on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on.
+
+Katseta vähemalt selliste algseisudega:
+
+.. sourcecode:: none
+
+    ##########
+    #        #
+    #     #  #
+    #  >  #  #
+    #     #  #
+    #        #
+    ##########
+
+ja
+
+.. sourcecode:: none
+
+    ##########
+    #        #
+    #     #  #
+    #     #  #
+    #    >   #
+    ##########
 
 
 
-4. Loe tumedad laigud
----------------------
-Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeemi kujul funktsioon, mis loendab ruudustikul asuvad tumedad laigud. Ruudustiku mõõtmed pole teada. Kilpkonna juhtimiseks on lisaks veel operatsioon
-
-``KasTumeLaik()`` - Kilpkonn kontrollib, kas ruut, millel asub kilpkonn, on tume.
-
-.. image:: images/l05_fig19.png
-
-Koostada abistavaid alamprotseduure.
-
-.. note::
-
-    Pykkari tumeda ruudu kontrollimise funktsioon on ``is_painted()``, tumeda ruudu tekitamiseks maailma kaardil tuleks kasutada sümbolit ``.``.
-
-
-5. Istuta lilli
----------------
-Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis istutab ruudustikule lilli. Ruudustiku mõõtmed pole teada. Lill ei kasva äärel ega kontaktis teise lillega. Kilpkonna juhtimiseks on lisaks lille istutamise operatsioon:
-
-``Istuta()`` - Kilpkonn istutab lille samale ruudule, kus ta parajasti asub, kusjuures kilpkonna orientatsioon pole oluline. 
-
-.. image:: images/l05_fig20.png
-
-Koostada abistavaid alamprotseduure.
-
-6. Malelaud
+3. Malelaud
 -----------
-
-Kilpkonn asub ruudustiku loodenurgas näoga itta. Koostada plokkskeem protseduuri jaoks, mis värvib ruudustiku malelaua sarnaselt ruuduliseks. Ruudustiku mõõtmed pole teada. Koostada abistavaid alamprogramme.
-
-.. image:: images/l05_fig21.png
-
-7. Bankett
-----------
-
-Kilpkonn  peab kontrollima, kas ühe ruudu laiuse,  põhja-lõunasuunaliselt paigutatud pika banketilaua ääres on iga koha juures tool. Kilpkonn seisab banketilaua põhjapoolses otsas. Laua pikkus on talle teadmata. Toolid peavad olema iga ruudu juures, ka laua põhja ja lõunaotsas. Kilpkonna juhtimiseks on lisaks järgmised operatsioonid: 
-
-``KasLaud()`` - Kilpkonn kontrollib, kas kilpkonna nina ees on laud.
-
-``KasTool()`` - Kilpkonn kontrollib, kas sellel ruudul, kus kilpkonn seisab, on tool.
+Joonista plokkskeem, ja kirjuta Pythoni programm, mis mõlemad panevad Pykkarit värvima ristküliku kujulist maailma malelaua stiilis ruuduliseks. 
 
 
-.. image:: images/l05_fig22.png
+4. Efektiivsem kuu nimi
+-----------------------
+Kolmandas peatükis demonstreeriti :ref:`kahte samaväärset programmi <elif_kuu_nimi>`, mis väljastavad etteantud kuu numbrile vastava kuu nime. Leidsime, et teine viis on esimesest parem, kuna teda on lihtsam kirjutada ja lugeda.
 
-Kilpkonn peab töö lõpetama samal ruudul, kust ta alustas. Koostada plokkskeemi kujul funktsioon. Koostada abistavaid alamprogramme.
+Mõlemad näidatud viisid sunnivad Pythonit halvimal juhul tegema kuni 12 võrdlemist (kui sisestatud arv oli `12`). Kirjuta veel üks nende kahega samaväärne lahendus, mis saab alati hakkama väiksema arvu võrdlustega.
+
+.. hint::
+
+    Lahendust on võimalik panna kirja nii, et Python ei pea õige vastuseni jõudmiseks tegema kunagi rohkem kui 4 võrdlust.
+
+.. hint:: 
+
+    Siin on parem kasutada ainult tavalisi, üksteise sisse pandud ``if-else``-sid (st. mitte kasutada ``elif``-i).
+
+.. hint::
+    Pane tähele, et ühe ``if-else`` võime me paigutada teise ``if-else`` sisse kahel moel -- kas ``then`` harusse või ``else`` harusse.
+
+.. hint::
+
+    Mõtle sellele, kuidas sa otsid mingit sõna sõnaraamatust. Kas hakkad sõnastiku algusest lehitsema, kuni jõuad otsitava sõnani või kasutad mingit kavalamat viisi?     
+
+5. Firma statistika
+-------------------
+Firma hoiab oma klientide nimekirja failis ``kliendid.txt``, kus igal real on ühe kliendi andmed eraldatuna semikooloniga:
+
+.. sourcecode:: none
+
+    AS Kustukumm; Hiie 34, Tartu
+    FIE Tuudur Tuduur; Kaunase pst 14-11, Tartu
+    AS Aknapesumasin; Raekoja plats 2-001, Tartu
+    MTÜ Unihiir; Juutsina küla, Hopi vald, Pärnumaa
+    ...
+    
+    
+Pakutavate toodete nimekiri asub failis ``tooted.txt``:
+
+.. sourcecode:: none
+
+    Kärbsepiits; 2 EUR
+    Paberlennukid (10tk); 1 EUR
+    Suur ja punane asi; 12 EUR
+    ...
+
+Jooksva aasta müügi nimekiri on failis ``myyk.txt``. Siin on igal real ühe müügitehingu kirjeldus (vabas vormis), semikoolon ja saadud summa eurodes:
+
+.. sourcecode:: none
+    
+    12. mai - arve nr. 12; 1300
+    18. mai - arve nr. 13; 23
+    1. juuni - Jiiihaaaa! Tuudur võttis kõik kärbsepiitsad ära!; 120  
+    12. august - arve nr. 15; 12
+    2. okt - müüsin meie kaubiku kõrvalistme, et saaks elektri ära maksta; 43
+    ... 
+
+Võib eeldada, et tehingu kirjelduses semikoolonit ei esine. 
+
+Viimasel kuul välja makstud palgad on failis ``palgad.txt``:
+
+.. sourcecode:: none
+    
+    Toomas Tuus; 1300
+    Eduard Ennatlik; 899
+    Priit Pätt; 675
+    Adeele; 400
+    ...
+
+Firma käekäigul silma peal hoidmiseks tuleb nüüd kirjutada programm, mis annab käivitamisel kokkuvõtte mainitud 4 faili hetkesisust. Täpsemalt: ekraanile tuleb näidata
+
+    * klientide koguarv,
+    * toodete koguarv,
+    * jooksva aasta müügitehingutest saadud summaarne sissetulek, 
+    * viimasel kuul väljamakstud palkade summa.
+
+
+.. note::
+
+    See ülesanne on senistest mahukam -- reserveeri selle jaoks rohkem aega. Proovi läheneda ülesandele osade kaupa. Vaata, kas erinevate osade vahel on sarnasusi.
+
+
+.. note::
+
+    Sõnest mingi soovitud osa kättesaamise vahendeid on 2. peatükis küll põgusalt mainitud, aga toome nad ka selle ülesande kontekstis ära:
+    
+    .. sourcecode:: py3
+    
+        >>> s = "Eduard Ennatlik; 899"
+        >>> s.find(";")
+        15
+        >>> s[15]
+        ';'
+        >>> i = s.find(";")
+        >>> s[i]
+        ';'
+        >>> s[i:]
+        '; 899'
+        >>> s[i+1:]
+        ' 899'
+        >>> int(s[i+1:])
+        899
+        
+
+.. hint::
+
+    Selles ülesandes on mõistlik defineerida ja kasutada 2-3 abifunktsiooni.
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        def ridu_failis(failinimi):
+            ...
+            ridade_arv = 0
+            ...
+            while ...:
+                ...
+            ...
+            return ridade_arv
+        
+        ...
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        def teise_veeru_summa(failinimi):
+            ...
+            summa = 0
+            ...
+            while ...:
+                ... arv_peale_semikoolonit(...) ...
+                ...
+            ...
+            return summa
+        
+        ...
+
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        def arv_peale_semikoolonit(s):
+            ...
+            return ...
+        
+        ...
+
+    .. sourcecode:: py3
+    
+        >>> arv_peale_semikoolonit("Eduard Ennatlik; 899")
+        899
+
+
+6. Üks asi veel
+---------------
+Kui eelmises ülesandes mainitud programm sai juba valmis, tuli firma juhile meelde, et lisaks viimase kuu palkade summale tahab ta näha ka kuu keskmist palka.
+
+Proovi lisada soovitud funktsionaalsus võimalikult lühikese lisakoodiga, ilma programmi efektiivsuse pärast muretsemata.
+
+ 
+
 
