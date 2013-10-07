@@ -476,9 +476,9 @@ class _WorldProper:
         
         self._update_pykkar_image(cur_tile)
     
-#    def _cmd_with_cone(self):
-#        tile = self._get_current_tile()
-#        return tile.item_kind == 'cone'
+    def _cmd_with_cone(self):
+        tile = self._get_current_tile()
+        return tile.item_kind == 'cone'
     
     def _cmd_take(self):
         cur_tile  = self._get_current_tile()
@@ -574,6 +574,7 @@ class _WorldProper:
             raise Exception("Can't paint when carrying something")
         
         self.canvas.itemconfig(tile.base_image_id, image=self.images['painted_floor'])
+        tile.base_kind = 'painted_floor'
     
     def _cmd_get_heading(self):
         return self._get_current_tile().pykkar_heading
