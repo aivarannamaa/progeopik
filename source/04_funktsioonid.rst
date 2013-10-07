@@ -806,6 +806,13 @@ Kirjuta võimalikult lühike programm, mille käivitamise järgselt saaks Python
 
 ``return`` vs. ``print``
 ------------------------
+
+.. todo::
+
+    Vaata üle, kas see on optimaalne selgitus. Paljudel on sellega ikka probleeme.
+    Äkki selgitad liiga segaselt?
+
+
 Eelnevalt märkisime, et nii funktsiooni parameetrid kui ``input`` on olemuselt sarnased, kuna mõlemad on seotud sisendi saamisega, kuid parameetrid on paindlikumad, kuna täpne sisendi saamise viis jäetakse lahtiseks.
 
 Analoogselt võime võrrelda ``print`` ja ``return`` käsku -- mõlemad on seotud väljundi andmisega, kuid ``return`` on paindlikum, kuna *täpne tulemuse kasutamise viis jäetakse lahtiseks*.
