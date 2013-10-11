@@ -171,7 +171,7 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida valem, mis esit
     ja esitame lahenduse kahe sammuna:
 
     .. centered::
-        :math:`d=\sqrt{a^2+a^2}=\sqrt{2}a`
+        :math:`d=\sqrt{a^2+a^2}=\sqrt{2a^2}`
         :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
 
     Justnagu paadisõidu ülesandes, on ka siin võimalik saadud tulemust kasutada ära teisel tasemel -- nimelt ülesandes, mis nõuab valemi rakendamist etteantud sisendandmetega. Selle ülesande lahendamiseks on programmi kirjutamine väga sobiv valik. Samas, valemini jõudmine nõudis loovust ja seega seda osa arvutile me delegeerida ei oleks saanud. 
@@ -271,7 +271,7 @@ Ka loendamist saame me detailsemalt väljendada, oletame, et me loendame pliiats
 
 Näide: Kuni kolm sammu ja ümberpöörd
 ------------------------------------
-Proovime plokkskeemiga edasi anda ühe Pykkari liikumisskeemi -- ta peab astuma kolm sammu või kui sein tuleb varem vasti siis seinani ja seejärel ennast ümber pöörama. Kuna plokkskeem on tavaliselt mõeldud vaid lahendusidee edasiandmiseks, siis ei pea me kasutama täpselt samu käske, nagu Pykkari Pythoni moodul ette näeb.
+Proovime plokkskeemiga edasi anda ühe Pykkari liikumisskeemi -- ta peab astuma kolm sammu või kui sein tuleb varem vastu siis seinani ja seejärel ennast ümber pöörama. Kuna plokkskeem on tavaliselt mõeldud vaid lahendusidee edasiandmiseks, siis ei pea me kasutama täpselt samu käske, nagu Pykkari Pythoni moodul ette näeb.
 
 
 .. image:: images/l04_fig16.png  
