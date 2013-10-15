@@ -630,7 +630,7 @@ Aadressilt http://wiki.tcl.tk/16166 leiad loetelu värvinimedest, mida ``turtle`
 
 .. image:: images/varvid.png
 
-Võite proovida ka paigutada värvid hõredamalt ja kirjutada iga värvi juurde tema nime (vt. http://docs.python.org/3/library/turtle.html#turtle.write).
+Võid proovida ka paigutada värvid hõredamalt ja kirjutada iga värvi juurde tema nime (vt. http://docs.python.org/3/library/turtle.html#turtle.write).
 
 Otsi võimalusi rakendada selle peatüki uusi teemasid (``for``, ``split``).
 
