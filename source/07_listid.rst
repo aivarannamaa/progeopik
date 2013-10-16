@@ -609,9 +609,6 @@ Testimiseks võib alla laadida nt. "Alice in Wonderland" teksti aadressilt http:
 
 4. Kuupäevade töötlemine
 ------------------------
-.. note::
-
-    Selle ülesande lahendamisel tuleks abifunktsioonidena kasutada 6. peatükis loodud funktsioone.
 
 Kirjuta funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt. ``'24.02.1918'``), ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
 
