@@ -299,12 +299,147 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovid parameetrin
     print(a) # a väärtus on endine
 
 
-.. note:: 
-    Arvude, sõnede ning teiste andmetüüpide puhul, mida pole võimalik muuta, ei pea ülalpool kirjeldatud efekti pärast muretsema.
- 
+
+Viitamisest täpsemalt
+---------------------
+Kas selline situatsioon, et erinevad muutujad viitavad samale objektile, on võimaliku ainult listide korral? Tehniliselt võttes ei -- muutujad ja omistamine toimivad alati samamoodi, hoolimata andmetüübist.
+
+Kõik Pythoni väärtused on programmi käimise ajal esitatud mingite objektidena, mis asuvad kusagil arvuti mälus. Kui käivitatakse lause ``x = 7``, siis luuakse mälus objekt, mis tähistab arvu `7` ja muutujasse ``x`` salvestatakse tegelikult ainult viide sellele objektile. Kui me järgmisena käivitame lause ``y = x``, siis muutujasse ``y`` salvestatakse sama viit, mis on muutujas ``x``, aga uut täisarvu objekti ei looda. Seega nüüd viitavad muutujad ``x`` ja ``y`` samale objektile.
+
+Erinevus listidest tuleb aga sellest, et täisarvu objekti ei ole võimaliku muuta, seetõttu ei ole ilma pingutamata võimalik isegi aru saada, kas need muutujad viitavad samale objektile või erinevatele objektidele, mis tähistavad sama arvu. Seetõttu ei pidanud me ei arvude ega sõnede puhul viitamise teema peale mõtlema.  
+
+Viitamise teema täpsemal uurimisel on abiks funktsioon ``id``, mis tagastab argumendiks antud väärtuse (e. objekti) aadressi arvuti mälus -- see ongi see viide, mida muutujad sisaldavad. Järgnevas näites luuakse kaks samaväärset sõneobjekti, mille kummagi viide salvestatakse erinevasse muutujasse:
+
+.. sourcecode:: py3
+
+    >>> a = "tere hommikust!"
+    >>> b = "tere hommikust!"
+
+Veendume ``id`` abil, et muutujad viitavad erinevatele objektidele:
+
+.. sourcecode:: py3
+
+    >>> id(a)
+    48829968
+    >>> id(b)
+    48830088
+
+.. todo::
+
+    Skeem
 
 
+Nüüd kopeerime ühe viida uude muutujasse:
 
+.. sourcecode:: py3
+
+    >>> c = a
+    >>> id(c)
+    48829968    
+
+Nagu näha, kopeeriti omistamisel muutujasse olemasoleva objekti viit, ja uut objekti ei loodud.
+
+Kui proovisid seda eksperimenti lühemate sõnedega või väikeste arvudega, siis võis juhtuda, et Python vältis juba esimeste omistamiste juures kahe samaväärse objekti loomist ja omistas ``b``-le sama viite nagu ``a``-le. Arvude ja sõnede puhul on tal see vabadus, sest programmi tähendus sellest ei muutu. Listide korral aga on kindel, et järgmised omistamised tekitavad alati kaks uut objekti:
+
+.. sourcecode:: py3
+
+    >>> x = [1,2,3]
+    >>> y = [1,2,3]
+    >>> id(x)
+    47840952
+    >>> id(y)
+    48787328    
+
+Erinev ``id``-väärtus näitab, et tegemist on erinevate objektidega -- kui me ühte neist muteerime (näiteks ``append``-iga), siis teine sellest ei muutu. Kui me aga uue listi loomise asemel kopeerime viida, siis teeme sellega lihtsalt samale objektile uue nime:
+    
+.. sourcecode:: py3
+
+    >>> z = x
+    >>> id(z)
+    47840952
+    >>> z.append(4)
+    >>> z
+    [1, 2, 3, 4]
+    >>> x
+    [1, 2, 3, 4]
+    >>> y
+    [1, 2, 3]
+
+
+Tuleb panna tähele, et muutuja muutmine ei ole sama, mis objekti muteerimine. Kui me omistame ``z``-le uue väärtuse, siis ``z`` lihtsalt kaotab seose eelmise objektiga -- algne objekt sellest ei muutu:
+
+.. sourcecode:: py3
+
+    >>> z = [6,7,8]
+    >>> id(z)
+    48766568
+    >>> x            # x poolt viidatud objekt on sama, mis enne 
+    [1, 2, 3, 4]
+    >>> y
+    [1, 2, 3]
+
+
+Kokkuvõttes: omistamisel salvestatakse muutujasse ainult viit paremal pool näidatud väärtusele. Analoogselt toimib Python ka funktsiooni väljakutsel -- parameetrisse satub vaid viit argumendile. Päris uusi objekte saab luua literaale kasutades (aga nagu eespool mainitud, võib Python mittemuteeritavate andmetüüpide puhul siin ka objekte jagada) või kasutades mingit operatsiooni, mis teadaolevalt loob uue objekti. 
+
+.. topic:: Kopeerimisest
+
+    Nagu eespool põgusalt mainitud, saab listi objekte kopeerida viilutamise süntaksiga:
+    
+    .. sourcecode:: py3
+    
+        >>> x = [1,2,3]
+        >>> y = x[:]
+        >>> id(x)
+        30988928
+        >>> id(y)
+        48829944
+    
+    
+    Alternatiivina saab kasutada meetodit ``copy`` või teisendusfunktsiooni ``list``:
+    
+    .. sourcecode:: py3
+    
+        >>> a = [1,2,3]
+        >>> b = a.copy()
+        >>> c = list(a)
+        >>> id(a)
+        47840952
+        >>> id(b)
+        47844488
+        >>> id(c)
+        48830024
+        
+
+    Kui list sisaldab omakorda liste, siis kopeerimine toimub ainult välimisel tasemel:
+    
+    .. sourcecode:: py3
+    
+        >>> a = [1,2,[3,3]]
+        >>> b = a.copy()
+        >>> id(a[2])
+        47839032
+        >>> id(b[2])
+        47839032
+        >>> a[2].append(4)
+        >>> a
+        [1, 2, [3, 3, 4]]
+        >>> b
+        [1, 2, [3, 3, 4]]
+
+    "Sügava" koopia tegemiseks tuleks kasutada funktsiooni ``deepcopy`` moodulist ``copy``:
+    
+    .. sourcecode:: py3
+    
+        >>> from copy import deepcopy
+        >>> a = [1,2,[3,3]]
+        >>> b = deepcopy(a)
+        >>> a[2].append(4)
+        >>> a
+        [1, 2, [3, 3, 4]]
+        >>> b
+        [1, 2, [3, 3]]
+    
+            
 Ülesanded
 =========
 
