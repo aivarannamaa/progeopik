@@ -544,7 +544,7 @@ Fail :download:`filmid.zip (4.5MB) <downloads/filmid.zip>` on koostatud faili "c
     
 Failis ``filmid.txt`` on ühe filmi andmed ühel real, kujul *<nimi><tühik>(<aasta>)<tabulaator><riik>*. (Notepad2-s saad tühikuid ja tabulaatoreid eristada, kui märgite menüüs *View* valiku *Show whitespace*).
 
-Ülesandeks on kirjutada programm, mis otsib sellest failist üles Eestis valminud filmid (ja telesaadd), ning koostab statistika selle kohta, mitu filmi mingil aastal valmis.
+Ülesandeks on kirjutada programm, mis otsib sellest failist üles Eestis valminud filmid/telesaated, ning koostab statistika selle kohta, mitu filmi/telesaadet mingil aastal valmis.
 
 .. hint::
 
