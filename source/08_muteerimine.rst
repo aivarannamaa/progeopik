@@ -677,13 +677,12 @@ Selle kirjapildi teine tõsine eelis on see, et see muudab aritmeetiliste avaldi
  
 .. sourcecode:: py3
 
-    print "Sisesta avaldis:"
-    rida = raw_input()
+    rida = input("Sisesta avaldis: ")
     kasud = rida.split()
-
+    
     # Töötle avaldis
     loend = []
-
+    
     for kask in kasud :
         # Liitmine
         if kask == "+" :
@@ -691,17 +690,17 @@ Selle kirjapildi teine tõsine eelis on see, et see muudab aritmeetiliste avaldi
             loend[-1] = loend[-2] + loend[-1]
             # eemalda eelviimane element
             loend.pop(-2)
-
+    
         # Lahutamine
         elif kask == "-" :
             loend[-1] = loend[-2] - loend[-1]
             loend.pop(-2)
-
+    
         # Korrutamine
         elif kask == "*" :
             loend[-1] = loend[-2] * loend[-1]
             loend.pop(-2)
-
+    
         # Jagamine
         elif kask == "/" :
             loend[-1] = loend[-2] / loend[-1]
@@ -709,8 +708,8 @@ Selle kirjapildi teine tõsine eelis on see, et see muudab aritmeetiliste avaldi
         else :
             # polegi käsk, seega loodetavasti hoopis number
             loend.append(float(kask))
-     
-    print "Tulemus on: " + str(loend[-1])
+    
+    print("Tulemus on: " + str(loend[-1]))
 
 Tegu on ka asjaga, mis on praktikas täiesti kasutust leidnud. Oma töötlemise lihtsuse tõttu ehitati selline arvutamise süsteem sisse mõningatesse võimsamatesse kalkulaatoritesse, mida kunagi müüdi. Viimase 15 aasta jooksul on see aga arvutusvõimsuse kasvu tõttu vaikselt kalkulaatorites asendunud meile loomulikuma koolis õpitud infiksnotatsiooniga.
 
