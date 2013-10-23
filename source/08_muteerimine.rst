@@ -477,7 +477,7 @@ Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real
     * kõige suurema palgaga töötaja nime ja palga suuruse (vihje: suurima palga otsimisel jätke meelde, milliselt positsioonilt sa selle leidsid)
     * keskmise palga
     * keskmisest palgast rohkem teenijate arvu
-    * keskmised vanused eraldi neile, kes teenivad keskmise palgast vähem (või samapalju) ning neile, kes teenivad keskmisest palgast rohkem
+    * keskmised vanused eraldi neile, kes teenivad keskmisest palgast vähem (või samapalju) ning neile, kes teenivad keskmisest palgast rohkem
 
 4. Eesti-Inglise sõnaraamat
 ---------------------------
@@ -496,10 +496,10 @@ Pythoni ``random`` moodulis on funktsioon ``shuffle``, mis ajab argumendiks antu
 .. sourcecode:: py3
 
     >>> from random import shuffle
-    >>> a = [1,2,3,4,5,6]
+    >>> a = [1, 3, 3, 4, 5, 5, 5, 6, 6]
     >>> shuffle(a)
     >>> a
-    [2, 3, 6, 5, 4, 1]
+    [5, 3, 6, 5, 5, 3, 4, 1, 6]
 
 Kirjuta ise analoogne funktsioon ``minu_shuffle``, mis teeb sama (seejuures pole lubatud kasutada olemasolevat ``shuffle`` funktsiooni).
 
