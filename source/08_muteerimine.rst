@@ -36,7 +36,7 @@ Taolist järjendite elementhaaval "kasvatamist" kasutatakse siis, kui järjendi 
 
     while True:
         sisend = input('Sisesta täisarv (lõpetamiseks vajuta lihtsalt ENTER): ')
-        if sisend.strip() == '':
+        if sisend == '':
             break
         else:
             arv = int(sisend)
