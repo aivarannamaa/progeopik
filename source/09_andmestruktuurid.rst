@@ -6,7 +6,7 @@ Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. S
 
 Hulgad
 ========================================================================
-Pythoni *hulga* (ing.k *set*) andmetüüp on küllalt sarnane listile -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttavas hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elementi (jällegi, sarnaselt matemaatilisele hulgale).
+Pythoni *hulga* (ing.k *set*) andmetüüp on küllalt sarnane listile -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttava hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elemente (jällegi, sarnaselt matemaatilisele hulgale).
 
 Konkreetse hulga kirjapanekuks kasutatakse loogelisi sulge. Järgnev käsurea näide demonstreerib eelpoolmainitud hulkade omadusi:
 
@@ -72,7 +72,7 @@ Funktsiooni ``set`` saab kasutada ka mõnede teiste andmetüüpide teisendamisek
     >>> set([1,2,3])
     {1, 2, 3}
 
-Just nagu järjendite puhul, saab ka hulga kõiki elemente saab "läbi käia" kasutades ``for``-tsüklit:
+Just nagu järjendite puhul, saab ka hulga kõiki elemente "läbi käia" kasutades ``for``-tsüklit:
 
 
 .. sourcecode:: py3
@@ -259,7 +259,7 @@ Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset
 
     Põhjus on selles, et ennikud pole muteeritavad ning seetõttu saab Python kasutada erinevaid lisanippe, et nendega opereerimist (sh nende võrdsuse kontrollimist) piisavalt efektiivselt korraldada.
 
-    *Listid* ei sea mineid piiranguid oma elementide tüübile, sest listi ei huvita elementide võrdsus või mittevõrdsus. Seetõttu pole mingit probleemi koostada Pythonis näiteks hulkade listi.
+    *Listid* ei sea mingeid piiranguid oma elementide tüübile, sest listi ei huvita elementide võrdsus või mittevõrdsus. Seetõttu pole mingit probleemi koostada Pythonis näiteks hulkade listi.
     
     *Sõnastike* puhul on piirangud vaid sõnastiku võtme tüübile -- ka siin nõutakse omadust *hashable* (kuna sõnastikusse ei tohi lubada korduvaid võtmeid). Kirje väärtuse tüübi osas kitsendusi ei seata -- seega saab vabalt luua näiteks sõnastiku, mille võtmetüübiks on sõne ning väärtuse tüübiks arvude list -- justnagu on demonstreeritud ülalpooltoodud näites, kus sõnastikku nimega on kasutatud hinnete loetelu sidumiseks inimese nimega.
 
@@ -400,7 +400,7 @@ Mitmemõõtmelise järjendi loomisel ``append`` meetodiga tuleb jällegi mõelda
 
 Näide: Eksami statistika
 -------------------------------------------------------------------------------------------------------
-Õppejõud koostas eksami, milles oli 7 ülesannet. Iga ülesannet eest võis saada kuni 10 punkti. Eksami tulemused on kirjas failis :download:`eksam.txt<downloads/eksam.txt>`.
+Õppejõud koostas eksami, milles oli 7 ülesannet. Iga ülesande eest võis saada kuni 10 punkti. Eksami tulemused on kirjas failis :download:`eksam.txt<downloads/eksam.txt>`.
 
 Leida iga tudengi eksamipunktide kogusumma.
 
@@ -421,11 +421,11 @@ Leida iga tudengi eksamipunktide kogusumma.
        nimed.append(jupid[0].strip())
 
        # võta ülejäänud osa juppideks
-       jupid = jupid[1].split(",")
+       tulemuste_jupid = jupid[1].split(",")
 
        # Märgi tudengi tulemused tabelisse
        tulemused = []
-       for tulemus in jupid :
+       for tulemus in tulemuste_jupid:
            tulemused.append(int(tulemus))
        tabel.append(tulemused)
 
@@ -571,7 +571,7 @@ Programmeerimise teemad jaotatakse tihti tinglikult kaheks pooleks -- *algoritmi
     
 Algoritmid kehastavad programmide "aktiivset" poolt -- nad kirjeldavad mingit tegevust, arvutamist, valikut, teisendamist vms. Selle poole märksõnad on näiteks ``if``, ``print``, ``while``, ``sin``.
 
-Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- nad kehastavad mineid abstraktseid või konkreetseid asju, seoseid või muud laadi infot ja nad "lihtsalt on". Selleks, et midagi juhtuks, peab mõni algoritm neid manipuleerima või uurima ja saadud info põhjal midagi tegema. Selle poole märksõnadeks on nt. *väärtus*, *tüüp*, *sõne*, *list*.
+Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- nad kehastavad mingeid abstraktseid või konkreetseid asju, seoseid või muud laadi infot ja nad "lihtsalt on". Selleks, et midagi juhtuks, peab mõni algoritm neid manipuleerima või uurima ja saadud info põhjal midagi tegema. Selle poole märksõnadeks on nt. *väärtus*, *tüüp*, *sõne*, *list*.
 
 
 
@@ -782,8 +782,6 @@ Esimese võimalusena uurime käske ``repr`` ja ``eval``:
 
     >>> repr(3)
     '3'
-    >>> repr(3)
-    '3'
     >>> repr("tere")
     "'tere'"
     >>> repr({'a', 'b', 'c'})
@@ -836,7 +834,7 @@ See programm on mingis mõttes keerulisem, kui ülesande algne lahendus, sest ke
 
     a[i-k+1] + a[i-k+2] + ... + a[i] == (a[0]+a[1] + ... + a[i]) – (a[0]+a[1] + ... + a[i-k])
 
-Kui samale ülesandele on kaks lahendust, tekib paratamatult küsimus, kumb neist parem on. Ühest vastust sellele ei ole. Õpetamise kontekstis on näiteks selge, et esimene lahendus sobib kahekordse tsükli illustreerimiseks märksa paremini, sest teine lahendus seda konstruktsiooni isegi ei kasuta. Samuti on esimene programm ehk ka lihtsamini kontrollitav, sest ta on lühem ning leiab need keskmised vahetult summade leidmise kaudu, selle asemel et mineid trikke kasutada.
+Kui samale ülesandele on kaks lahendust, tekib paratamatult küsimus, kumb neist parem on. Ühest vastust sellele ei ole. Õpetamise kontekstis on näiteks selge, et esimene lahendus sobib kahekordse tsükli illustreerimiseks märksa paremini, sest teine lahendus seda konstruktsiooni isegi ei kasuta. Samuti on esimene programm ehk ka lihtsamini kontrollitav, sest ta on lühem ning leiab need keskmised vahetult summade leidmise kaudu, selle asemel et mingeid trikke kasutada.
 
 Teisel lahendusel on esimese ees siiski üks oluline eelis, mis tuleb küll välja alles suuremate andmestike puhul. Kui näiteks aktsiahindu ei vaadata mitte päevade vaid sekundite lõikes, võib neid failis olla mõnekümne asemel miljoneid, ning keskmiseid oleks vaja samuti leida ilmselt üle mitte 10 vaid pigem 100 000 eelmise väärtuse. Sellisel juhul jääks esimene lahendus märkimisväärselt aeglasemaks ja seda väga lihtsal põhjusel: esimene ülesanne teeb iga keskmise leidmiseks k liitmistehet, kuid teine lahendus saab sellega eelnevalt leitud summade abil hakkama vaid ühe lahutamistehtega. Kuigi ka summade leidmiseks kulub aega, on lihtne veenduda, on see kuluv aeg samuti vaid keskmiselt üks liitmine iga i väärtuse jaoks. Kokkuvõttes kulub teisel lahendusel seega iga k-keskmise peale üks liitmine, üks lahutamine samas kui esimene lahendus peab tegema k liitmist.
 
