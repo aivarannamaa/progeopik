@@ -5,9 +5,7 @@ III osa: Lisad
 .. toctree::
    :maxdepth: 2
    
-   jarelsona
-   erindid
    pythoni_lisavoimalused
    tkinter
-   vork
+   pygame
    python3_vs_2
