@@ -331,6 +331,8 @@ Kokku saime nüüd jälle veidi pikema koodijupi:
             break 
     pygame.quit()
 
+.. image:: images/pygame_tekst.png
+
 Harjutus 6:
 -----------
 Joonista ühele varem sisse laetud piltidest peale mingi tekst. Proovi seda pilti omakorda joonistada mitmele kohale ekraanil.
