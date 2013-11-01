@@ -4,7 +4,9 @@ Pygame
 (Kirjutanud Jaan Janno)
 
 Pygame on teek ehk library, mille peamine eesmärk on arvutimängude programmeerimise lihtsustamine. Selle abil on võimalik suhteliselt lihtsasti tekitada graafikat ja heli ning kasutada erinevaid sisendseadmeid nagu näiteks klaviatuurid, hiired ning joystick'id. 
+
 Tema erinevus teiste teekide kõrval, mida kursuse jooksul kasutanud oleme, on see, et Pygame ei ole Python'iga automaatselt kaasas. See tähendab, et on tarvilik teda eraldi installida.
+
 Kuigi Pygame'i põhisuunaks on arvutimängud, on temaga võimalik ka palju muud huvitavat korda saata. Näiteks võib Pygame'i kasutada ka täiesti tavaliste programmide kasutajaliideste loomisel. Samuti on võimalik temaga kaasas olevaid audio-funktsioone edukalt mujal rakendada. See peatükk keskendub aga peamiselt siiski mängude loomisele.
 
 Kuidas Pygame'i installida?
@@ -18,8 +20,12 @@ Linux
 -----
 Pygame'i Linuxi süsteemile installimiseks on tarvilik esmalt mõned pakid alla laadida ning seejärel Pygame'i lähtekood kompileerida. Muretsemiseks pole aga põhjust, sest arvuti teeb enamuse tööst ise, tarvis on vaid mõned käsud terminali kirjutada. 
 Terminalis on tarvis käivitada järgmised käsud:
-NB! Järgnevad käsud on python3.3 jaoks. Kui soovid kasutada mõnd muud versiooni, muuda järgnevates käskudes iga „python3.3“ enda kasutatava pythoni versiooni vastu. 
-NB! Esimene käsk on üks pikk rida, mis tuleks korraga sisestada:
+
+.. note::
+
+    * Järgnevad käsud on python3.3 jaoks. Kui soovid kasutada mõnd muud versiooni, muuda järgnevates käskudes iga „python3.3“ enda kasutatava pythoni versiooni vastu.
+     
+    * Esimene käsk on üks pikk rida, mis tuleks korraga sisestada:
 
 
 
