@@ -1326,6 +1326,10 @@ Nagu ilmselt juba oled kogenud, on kõige problemaatilisemad vead aga need, mill
 Lisalugemine
 ============
 
+.. todo::
+
+    Kas samal viisil võiks leida ka näiteks ruutvõrrandi lahendeid?
+
 .. admonition:: Matemaatika ja programmeerimine
 
     Loodetavasti veendute järgnevat lugedes, et matemaatikat ja programmeerimist (ning matemaatika ja programmeerimise õppimist) saab omavahel väga edukalt siduda. Tegelikult ongi väga kasulik mingi uue matemaatilise mõiste õppimisel proovida väljendada seda mõnes programmeerimiskeeles. Erinevalt tavakeelest peab programmeerimiskeeles väljendama ennast alati absoluutselt täpselt, seetõttu toob taoline harjutus välja need aspektid, mille osas sinu arusaamine antud mõistest on jäänud veidi hägusaks.
