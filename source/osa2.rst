@@ -12,4 +12,3 @@ II osa: Tehnika
    08_muteerimine
    09_andmestruktuurid
    10_rekursioon
-   11_kokkuvote2

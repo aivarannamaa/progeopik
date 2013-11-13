@@ -4,6 +4,9 @@
 
 .. todo::
 
+    * Maini fraktali näites ära, et vaja ka pikkuse parameetrit
+    * Too seal ka näitelahendus välja
+
     * lineaarne rekursioon ei ole tegelikult nii kasulik
     * ei ole tegemist eraldi keelekonstruktsiooniga
     * aluseks on hea funktsiooni väljakutsete mõistmine, võiks alustada selle kordamisest
@@ -197,6 +200,46 @@ Selle fraktali joonistamise mitteformaalne juhis: 0 tasemega fraktali joonistami
 .. hint::
 
     Ülesannet on lihtsam lahendada, kui korraldate nii, et funktsiooni lõpus on kilpkonn samas punktis ja sama suunaga nagu funkstiooni väljakutsel.
+
+.. todo::
+
+    from turtle import *
+    
+    
+    def fraktal(tase, pikkus):
+        if tase >= 0:
+            forward(pikkus)
+            left(90)
+            fraktal(tase-1, pikkus * 0.7)
+            right(180)
+            fraktal(tase-1, pikkus * 0.7)
+            left(90)
+            backward(pikkus)
+            
+            
+    
+    left(90)
+    fraktal(3, 100)
+    
+    
+    """
+    alternatiivne lahendus:
+    
+    def fraktal(tase, pikkus):
+        if tase == 0:
+            forward(pikkus)
+            backward(pikkus)
+        else:
+            forward(pikkus)
+            left(90)
+            fraktal(tase-1, pikkus * 0.7)
+            right(180)
+            fraktal(tase-1, pikkus * 0.7)
+            left(90)
+            backward(pikkus)
+    """
+
+
 
 
 Harjutus 7. Kuulujutt
