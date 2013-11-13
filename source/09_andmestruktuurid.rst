@@ -4,7 +4,9 @@
 
 .. todo::
 
-    Kas nad saavad teada, et kui sul on vaja nt. hulkade listis ühte hulka midagi lisada, siis ei pea seda hulka sealt välja võtma, vaid võid teha kohe lst[i].add("blah") ? 
+    Kas nad saavad teada, et kui sul on vaja nt. hulkade listis ühte hulka midagi lisada, siis ei pea seda hulka sealt välja võtma, vaid võid teha kohe lst[i].add("blah") ?
+    
+    "Listid kui andmebaas" tüüpi ülesanded domineerivad tudengite mõtetes. Võibolla oleks vaja teha rohkem väikeseid, lihtsaid aga mitmekesiseid ülesandeid, enne kui minna suurte, mahukate ülesannete juurde. 
 
 Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni oled tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi, ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
 
