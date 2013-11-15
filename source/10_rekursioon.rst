@@ -4,8 +4,8 @@
 
 .. todo::
 
-    * Maini fraktali näites ära, et vaja ka pikkuse parameetrit
-    * Too seal ka näitelahendus välja
+    * Maini fraktali näites ära, et vaja ka pikkuse parameetrit. Too seal ka näitelahendus välja
+    * Võimalik vääritimõistmine: et rekursiooniahela tipus olev return lõpetab kogu ahela töö ja määrab kogu ahela väärtuse. Selgita, et iga return liigutab fookust vaid 1 frame'i võrra tagasi.
 
     * lineaarne rekursioon ei ole tegelikult nii kasulik
     * ei ole tegemist eraldi keelekonstruktsiooniga
@@ -202,43 +202,45 @@ Selle fraktali joonistamise mitteformaalne juhis: 0 tasemega fraktali joonistami
     Ülesannet on lihtsam lahendada, kui korraldate nii, et funktsiooni lõpus on kilpkonn samas punktis ja sama suunaga nagu funkstiooni väljakutsel.
 
 .. todo::
-
-    from turtle import *
     
+    .. sourcecode:: py3
     
-    def fraktal(tase, pikkus):
-        if tase >= 0:
-            forward(pikkus)
-            left(90)
-            fraktal(tase-1, pikkus * 0.7)
-            right(180)
-            fraktal(tase-1, pikkus * 0.7)
-            left(90)
-            backward(pikkus)
-            
-            
+        from turtle import *
+        
+        
+        def fraktal(tase, pikkus):
+            if tase >= 0:
+                forward(pikkus)
+                left(90)
+                fraktal(tase-1, pikkus * 0.7)
+                right(180)
+                fraktal(tase-1, pikkus * 0.7)
+                left(90)
+                backward(pikkus)
+                
+                
+        
+        left(90)
+        fraktal(3, 100)
+        
+        
+        """
+        alternatiivne lahendus:
+        
+        def fraktal(tase, pikkus):
+            if tase == 0:
+                forward(pikkus)
+                backward(pikkus)
+            else:
+                forward(pikkus)
+                left(90)
+                fraktal(tase-1, pikkus * 0.7)
+                right(180)
+                fraktal(tase-1, pikkus * 0.7)
+                left(90)
+                backward(pikkus)
+        """
     
-    left(90)
-    fraktal(3, 100)
-    
-    
-    """
-    alternatiivne lahendus:
-    
-    def fraktal(tase, pikkus):
-        if tase == 0:
-            forward(pikkus)
-            backward(pikkus)
-        else:
-            forward(pikkus)
-            left(90)
-            fraktal(tase-1, pikkus * 0.7)
-            right(180)
-            fraktal(tase-1, pikkus * 0.7)
-            left(90)
-            backward(pikkus)
-    """
-
 
 
 
@@ -371,13 +373,16 @@ siis funktsioon peaks tagastama sellise järjendi:
 Realiseeri 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel rekursiooni. Programm peaks pidama arvet arvamiste arvu üle ja lõpetama töö, kui kasutaja on juba *n* korda ebaõnnestunult arvanud.
 
 
-3. Cesaro fraktal
+3. Fraktal
 -----------------
-Kirjuta funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri, ning joonistab kilpkonnaga vastava taseme Cesaro fraktali.
-
-Järgneval pildid on Cesaro fraktali tasemed 1, 2, 3 ja 4:
+Järgneval pildid on fraktali tasemed 1, 2, 3 ja 4:
 
 .. image:: images/cesaro.png
+
+
+Kirjuta funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri, ning joonistab kilpkonnaga vastava taseme fraktali.
+
+
 
 .. hint::
 
@@ -423,10 +428,6 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja ta
 7. Efektiivsem Fibonacci
 ------------------------
 
-.. note::
-
-    Kui see ülesanne tundub liiga raske, siis lahenda selle asemel 9. ülesanne
-
 Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjuta funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
 
 .. hint:: 
@@ -436,13 +437,16 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja ta
 
 8. Projecteuler.net
 -------------------
+Lahenda rekursiooni abil järgmine ülesanne:
 http://projecteuler.net/index.php?section=problems&id=15
+
+.. hint::
+
+    * Iga kord, kui sa teed ühe sammu alla või paremale, on su ruudustik (ja probleem) on kohe natuke väiksem.
+    * Baasjuhtumina võib käsitleda situatsiooni, kus ruudustiku kõrgus või laius on 0.
 
 9. Sugupuu
 ----------
-.. note::
-
-    Sarnane ülesanne oli antud ka praktikumiks. Nüüd aga tuleks see lahendada rekursiooniga. 
     
 Antud on fail :download:`sugupuu.txt <downloads/sugupuu.txt>` sugulussidemetega (igal real on inimese nimi, koolon ning tema isa ja ema nimed). 
 
