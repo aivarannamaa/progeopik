@@ -383,6 +383,9 @@ Järgneval pildid on fraktali tasemed 1, 2, 3 ja 4:
 Kirjuta funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri, ning joonistab kilpkonnaga vastava taseme fraktali.
 
 
+.. hint::
+
+    Seda ülesannet on mugav lahendada kahe funktsiooniga, kus mitterekursiivne põhifunktsioon kasutab rekursiivset abifunktsiooni.
 
 .. hint::
 
