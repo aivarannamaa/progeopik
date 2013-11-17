@@ -1,5 +1,5 @@
 Kalle: Teet, Maris
-Maris: Kontstantin, Mari
+Maris: Konstantin, Mari
 Rita: Teet, Maris
 Siim: Teet, Maris
 Mari: Karl, Leeni
