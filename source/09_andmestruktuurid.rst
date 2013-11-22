@@ -3,6 +3,9 @@
 *******************
 
 .. todo::
+    
+    Sõnastikud, kui objektid a la 
+    isik = {'nimi':'Peeter', 'vanus': 19, 'sugu': 'mees'} 
 
     Kas nad saavad teada, et kui sul on vaja nt. hulkade listis ühte hulka midagi lisada, siis ei pea seda hulka sealt välja võtma, vaid võid teha kohe lst[i].add("blah") ?
     
