@@ -141,13 +141,13 @@ Lõpptulemus peaks välja nägema umbes selline:
 
 .. image:: images/pygame_aken.png
 
-Harjutus 1:
------------
+Harjutus. Akna suurus
+----------------------
 Muuda akna suurust selliselt, et tema laius oleks 800 ühikut ning kõrgus 600.
 
 
-Harjutus 2:
------------
+Harjutus. RGB
+-------------
 Uuri järgmiselt lehelt erinevaid RGB(red-green-blue) kujul värve ning muuda akna värv helesiniseks: http://zdoom.org/zdkb/zdoom3.html
 
 Kujundite joonistamine
@@ -196,8 +196,8 @@ Koos joonistatud ristkülikuga peaks meie aken välja nägema selline:
 
 .. image:: images/pygame_ruut.png
 
-Harjutus 3:
------------
+Harjutus. Ristkülikud
+----------------------
 
 Paiguta ristkülik ekraani ülemisse vasakusse nurka ning muuda ta 2 korda suuremaks. Joonista veel teine ristkülik, mis esimese osaliselt kataks. Anna teisele ristkülikule mõni teine värv.
 
@@ -259,13 +259,13 @@ Selle väljund võiks välja näha selline:
 .. image:: images/pygame_pildiga.png
 
 
-Harjutus 4:
------------
+Harjutus. Pildi kuvamine
+------------------------
 Joonista või leia mingi suvaline pildifail, mis on ühes varem mainitud formaatidest ning proovi see sisse laadida ning ekraanile joonistada.
 
-Harjutus 5:
------------
-Lae sisse veel teine pilt. Joonista see otse pildile pilt1.
+Harjutus. Veel üks pilt
+------------------------
+Lae sisse veel teine pilt. Joonista see otse pildile ``pilt1``.
 
 .. hint::
 
@@ -333,6 +333,6 @@ Kokku saime nüüd jälle veidi pikema koodijupi:
 
 .. image:: images/pygame_tekst.png
 
-Harjutus 6:
------------
+Harjutus. Tekst
+----------------
 Joonista ühele varem sisse laetud piltidest peale mingi tekst. Proovi seda pilti omakorda joonistada mitmele kohale ekraanil.

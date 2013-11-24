@@ -56,7 +56,7 @@ Nagu näha, on `5!` arvutus väga sarnane `4!` arvutusele -- selleks, et arvutad
             return fact(n-1) * n
 
 
-Harjutus 1. Faktoriaali algoritmi analüüs
+Harjutus. Faktoriaali algoritmi analüüs
 -----------------------------------------
 * Väärtusta *mõttes* ülaltoodud definitsiooni järgides avaldis ``fact(3)``.
 * Milline osa antud näites on rekursiooni baas? Milline on samm? Kuidas jõutakse alamülesande lahendusest terve ülesande lahenduseni?
@@ -106,7 +106,7 @@ Kui antud funktsiooni definitsiooni rahulikult lugeda, siis peaks selle tähendu
         
     * ``stardiloendus`` argumendiga `3` lõpetab oma töö
 
-Harjutus 2. Modifitseeritud stardiloendus
+Harjutus. Modifitseeritud stardiloendus
 -----------------------------------------
 Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunud sekundeid, st. ``uus_stardiloendus(3)`` peaks andma väljundi:
 
@@ -120,11 +120,11 @@ Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunu
     2
     3
 
-Harjutus 3. Spiraali joonistamine
+Harjutus. Spiraali joonistamine
 ---------------------------------
 Kirjuta rekursiivne funktsioon, mis joonistaks kilpkonna abil kandilise spiraali, alustades etteantud küljepikkusest ning vähendades küljepikkust igal ringil mingi väärtuse võrra, kuni see jõuab nulli.  (Analoogse ülesande lahendasime ühes varasemas peatükis tsükliga.)
 
-Harjutus 4. Eukleidese algoritm
+Harjutus. Eukleidese algoritm
 -------------------------------
 Eukleidese algoritm leiab kahe naturaalarvu suurima ühisteguri.
 
@@ -173,8 +173,8 @@ Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korral
     print(loenda([1,2,3,2,2], 2))
     print(loenda([1,2,3,2,2], 8))
 
-Harjutus 5
-----------
+Harjutus. Pikkus
+----------------
 Kirjuta rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st. elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
 
 
@@ -194,7 +194,7 @@ Järgnev funktsioon annab Fibonacci arvujada *n*-da liikme. Funktsiooni definits
         else:
             return fib(n-1) + fib(n-2)
 
-Harjutus 6. Fraktal
+Harjutus. Fraktal
 -------------------
 Fraktalid on graafilised kujundid, milles kordub sama motiiv üha väiksemal kujul (loodetavasti paistab siit seos rekursiooniga).
 
@@ -251,13 +251,13 @@ Selle fraktali joonistamise mitteformaalne juhis: 0 tasemega fraktali joonistami
 
 
 
-Harjutus 7. Kuulujutt
+Harjutus. Kuulujutt
 ---------------------
 Keegi laseb lahti kuulujutu, rääkides seda 3 inimesele. Iga tunni jooksul räägivad kõik, kes kuulujuttu juba teavad, selle edasi 3 inimesele, kes seda veel ei teadnud. Mitu inimest teavad kuulujuttu 10 tunni pärast?
 
 Kirjuta rekursiivne funktsioon, mis annab selle ülesande vastuse suvalise tundide arvu korral.
 
-Harjutus 8. Küülikud
+Harjutus. Küülikud
 --------------------
 Üks XIII sajandi matemaatik tundis huvi küülikute paljunemise vastu. Ta koostas sellise ülesande: 
 
@@ -329,7 +329,7 @@ Kuna me ei teadnud, kas mingil tasemel on meil järjendis veel järjendeid, või
 
     Kas oskaksite kirjutada funktsiooni taoliselt esitatud naturaalarvude liitmiseks?
 
-Harjutus 9. Kaustade läbimine
+Harjutus. Kaustade läbimine
 -----------------------------
 
 Kirjuta programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamkaustadest *mp3* faile ja kuvab nende nimed ekraanile.

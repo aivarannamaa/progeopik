@@ -95,7 +95,7 @@ Just nagu järjendite puhul, saab ka hulga kõiki elemente "läbi käia" kasutad
 
 Täpsemat infot Pythoni hulkade kohta saab aadressilt http://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset.
 
-Harjutus 1. Hulkade vahe
+Harjutus. Hulkade vahe
 ------------------------
 Kirjuta funktsioon, mis võtab argumendiks kaks hulka ja tagastab esimese ja teise hulga vahe, st. hulga, mis sisaldab kõiki neid esimese hulga elemente, mis ei sisaldu teises hulgas.
 
@@ -206,7 +206,7 @@ Sõnastiku elemendi väärtuse muutmine käib samasuguse süntaksiga nagu elemen
     print("Uuendatud telefoniraamat:", telefonid)
 
 
-Harjutus 2. Telefoniraamat
+Harjutus. Telefoniraamat
 --------------------------
 Muuda ülalpool toodud telefoniraamatu näidet selliselt, et andmed loetakse sisse tekstifailist ja programm võimaldab kasutajal küsida telefoninumbrit omaniku nime järgi.
 
@@ -380,7 +380,7 @@ Sama põhimõte kehtib ka "järjendite ennikute" ja "hulkade sõnastike ennikute
     Proovi panna kirja üks hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastik :)
 
 
-Harjutus 3. Sudoku tabeli sisselugemine
+Harjutus. Sudoku tabeli sisselugemine
 ---------------------------------------
 Kirjuta programm, mis loeb etteantud failist (:download:`sudoku.txt <downloads/sudoku.txt>`) arvud kahemõõtmelisse järjendisse.
 
@@ -472,7 +472,7 @@ Leida iga tudengi eksamipunktide kogusumma.
 
 
 
-Harjutus 4. Keskmine tulemus ülesannete kaupa
+Harjutus. Keskmine tulemus ülesannete kaupa
 ---------------------------------------------
 Täienda eelnevat näiteprogrammi nii, et see näitaks millised ülesanded olid üldiselt raskemad ja millised kergemad. Selleks väljasta keskmised tulemused ülesannete kaupa (st. eraldi kõigi tudengite 1. ülesande eest saadud punktide keskmine jne).
 
@@ -524,7 +524,7 @@ Sisemise tsükli jaoks on valitud väiksem indeksivahemik (``range(i-k, i)``), m
     Tegelikult on seda ülesannet võimalik lahendada ka ilma sisemist tsüklit kasutamata. Sellest, kuidas seda teha, on võimalik lugeda selle peatüki lisas "Keerukus". 
 
 
-Harjutus 5. Erinevad väärtused
+Harjutus. Erinevad väärtused
 ------------------------------
 Koosta funktsioon ``kõik_erinevad``, mis tagastab ``True`` või ``False`` vastavalt sellele, kas etteantud järjendis on kõik väärtused erinevad või mitte.
 
@@ -545,7 +545,7 @@ Koosta funktsioon ``kõik_erinevad``, mis tagastab ``True`` või ``False`` vasta
     
     
     
-Harjutus 6. Mõistatuslik teisendus
+Harjutus. Mõistatuslik teisendus
 ----------------------------------
 Proovi ennustada, mida teeb järgmine funktsioon: 
 

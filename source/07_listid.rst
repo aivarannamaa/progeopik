@@ -94,7 +94,7 @@ Järgnev tabel demonstreerib olulisimaid järjendioperatsioone:
 
 NB! Nagu viimastest ridadest selgub, võib järjendis olla korduvaid väärtusi, ning elementide järjekord on oluline.
     
-Harjutus 1. Järjendiavaldiste kasutamine
+Harjutus. Järjendiavaldiste kasutamine
 ----------------------------------------
 Olgu meil defineeritud järgnevad järjendimuutujad:
 
@@ -183,7 +183,7 @@ Sellise töötlemise juures kasutatakse enamasti abimuutujat, mida nimetatakse *
 
 Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad etteantud järjendi kohta mingit infot. Näiteks funktsioon ``max`` teeb sama, mis meie eelmise näite funktsioon. Selles peatükis aga üritame taolisi funktsioone ise "leiutada", et õppida järjendeid ning ``for``-tsüklit paremini tundma.
 
-Harjutus 2. Elementide summa
+Harjutus. Elementide summa
 ----------------------------
 Kirjuta funktsioon ``elementide_summa``, mis võtab argumendiks arvujärjendi ning tagastab kõigi elementide summa. (Selle jaoks on küll Pythonis juba olemas funktsioon ``sum``, aga ära praegu seda kasuta).
 
@@ -217,7 +217,7 @@ Selle näidet kommenteerides võiks lihtsustatult öelda, et:
 
 Tegelikult ei ole muutujas ``f`` siiski mitte järjend, vaid natuke keerulisem väärtus. Õnneks oskab ``for``-tsükkel käsitleda seda väärtust justkui järjendit, seetõttu ei pea me muretsema, kuidas need faili read on tegelikult esitatud.
 
-Harjutus 4. Temperatuuride lugemine failist
+Harjutus. Temperatuuride lugemine failist
 -------------------------------------------
 Kirjuta programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
 
@@ -262,7 +262,7 @@ Nüüd peaks olema selge, miks meie ``for``-tsükli näide sedasi käitus -- ``r
     Kuigi me muutuja ``i`` väärtust ei kasutanud, siis Pythoni süntaks nõuab ikkagi selle muutuja kirjapanekut.
 
 
-Harjutus 3. Kilpkonn tsüklis
+Harjutus. Kilpkonn tsüklis
 ----------------------------
 Proovi ennustada, mida joonistab järgmine programm:
 
@@ -317,11 +317,11 @@ Kommentaarid:
 * kahe argumendi puhul algab loetelu esimese argumendi väärtusest ja lõpeb *enne* teise argumendini jõudmist
 * kolme argumendi puhul näitab kolmas argument väärtuste kasvamise sammu
 
-Harjutus 4. Kolmega jaguvad arvud
+Harjutus. Kolmega jaguvad arvud
 ---------------------------------
 Kirjuta ``for``-tsükkel koos sobiva ``range`` variandiga, mis kuvab ekraanile kõik 3-ga jaguvad arvud vahemikus 10 kuni 100.
 
-Harjutus 5. ``range`` avaldis
+Harjutus. ``range`` avaldis
 -----------------------------
 Kirjuta avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
@@ -399,7 +399,7 @@ Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
     >>> ';'.join(['CY2X44', '3', '66', 'T'])
     'CY2X44;3;66;T'
 
-Harjutus 6. Kuupäeva "lahtiharutamine"
+Harjutus. Kuupäeva "lahtiharutamine"
 --------------------------------------
 Kirjuta funktsioon ``kuu``, mis võtab argumendiks sõne kujul *<päev>. <kuu> <aasta>* (nt. ``'24. veebruar 1918'`` ning tagastab vastava kuu nime.
 
@@ -464,7 +464,7 @@ Proovi läbi järgnev näide, et sa tunneksid saadud veateate edaspidi ära:
     print(a[66])
 
 
-Harjutus 7. Sõne viilutamine
+Harjutus. Sõne viilutamine
 ----------------------------
 Kirjuta funktsioon ``kaja``, mis võtab argumendiks sõne, ning tagastab selle sõne 3 viimast tähte. Kui sõnes on vähem kui 3 tähte, siis tagastada terve sõne.
 

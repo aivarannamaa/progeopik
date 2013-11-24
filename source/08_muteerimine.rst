@@ -57,7 +57,7 @@ Antud näite puhul oli tsükli aluseks kasutaja tegevused. Samahästi võiksime 
     
     print('Arvude 1..9 ruudud on: ' + str(ruudud))
 
-Harjutus 1. Failist järjendisse
+Harjutus. Failist järjendisse
 -------------------------------
 Nagu juba teate, võib ``for``-tsükli aluseks olla ka mingi tekstifail.
 
@@ -79,7 +79,7 @@ Selle asemel, et harjutustes järjendeid ise sisse toksida, võime kasutada ka j
     
     print(arvud)
 
-Harjutus 2. Juhuslik järjend
+Harjutus. Juhuslik järjend
 ----------------------------
 Kirjuta funktsioon ``juhuslik_järjend``, mis võtab argumendiks järjendi elementide arvu ning kaks argumenti arvuvahemiku määramiseks ning tagastab vastava juhuslikult genereeritud arvujärjendi. (Seda funktsiooni võid edaspidi kasutada alati, kui on tarvis genereerida mingi juhuslik järjend).
 
@@ -108,7 +108,7 @@ Tihti on tarvis teha mingit operatsiooni järjendi iga elemendiga ning salvestad
     
     print(arvud)
 
-Harjutus 3. Sõned arvudeks
+Harjutus. Sõned arvudeks
 --------------------------
 Kirjuta eelneva programmi näitel funktsioon ``sõned_arvudeks``, mis võtab argumendiks sõnede järjendi ning tagastab vastava arvude järjendi. (Võid praegu eeldada, et argumendiks antud järjendis sisalduvad vaid sellised sõned, mida saab arvudeks teisendada).
 
@@ -130,11 +130,11 @@ Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhja
     
     print (paarisarvud([1,2,3,4,5,6,7]))
 
-Harjutus 4. Arvude tuvastamine
+Harjutus. Arvude tuvastamine
 ------------------------------
 Kirjuta funktsioon ``naturaal_sõned``, mis võtab argumendiks sõnede järjendi ning tagastab uue sõnede järjendi, milles sisalduvad vaid need esialgse järjendi väärtused, mis kujutavad naturaalarve (st. ``sõne.isnumeric() == True``). NB! Sõnede teisendamist arvudeks pole selles ülesandes tarvis.
 
-Harjutus 5. Arvude tuvastamine koos teisendamisega
+Harjutus. Arvude tuvastamine koos teisendamisega
 --------------------------------------------------
 Kirjuta funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede järjendi ning tagastab täisarvude järjendi, mis vastab esialgse järjendi nendele elementidele, mis kujutavad täisarve. Näide selle funktsiooni kasutamisest:
 
@@ -169,7 +169,7 @@ Järgnevas näites võtab funktsioon ``ühend`` argumendiks kaks järjendit ning
     
     print(ühend([1, 2, 3, 2], [1, 6, 6]))
 
-Harjutus 6. Järjendite ühisosa
+Harjutus. Järjendite ühisosa
 ------------------------------
 Kirjuta funktsioon ``ühisosa``, mis võtab argumendiks kaks järjendit ning tagastab **uue** järjendi, mis sisaldab (ühekordselt) neid väärtusi, mis esinevad mõlemas järjendis.
 
@@ -224,7 +224,7 @@ Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed faili
 
     Kui me soovime failist loetud (või kasutaja käest küsitud) järjendi põhjal arvutada midagi lihtsat (nt. arvude summat või maksimaalset arvu), siis pole järjendi koostamine tegelikult isegi vajalik -- piisaks ühest abimuutujast, mille väärtust me iga järgmise arvu sisselugemisel sobivalt uuendame. Andmete järjendisse salvestamine on oluline näiteks siis, kui andmeid on vaja mitu korda läbi vaadata, sest järjendi korduv läbivaatamine on palju kiirem, kui faili korduv lugemine.
 
-Harjutus 7. Eksami tulemused
+Harjutus. Eksami tulemused
 ----------------------------
 Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma ja saadud punktide arv (nt. ``Jaan Tamm,24``). Maksimaalne eksami eest saadav punktide arv on 40. Õppejõud soovib näha nende tudengite nimesid ja tulemusi, kes said eksamil vähem, kui 50% punktidest. Kirjuta programm selle probleemi lahendamiseks.
 
@@ -247,7 +247,7 @@ Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde
 Nagu ikka, võib ka siin kasutada indeksina mingit täisarvulist muutujat.
 
 
-Harjutus 8. Täringuvisete statistika
+Harjutus. Täringuvisete statistika
 ------------------------------------
 Genereeri 100 täringuviske tulemust (kasutades eelpool defineeritud funktsiooni ``juhuslik_järjend``) ning salvesta tulemus muutujasse.
 

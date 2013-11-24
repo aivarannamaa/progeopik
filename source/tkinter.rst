@@ -131,7 +131,7 @@ Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutu
 
     Lisaks meetoditele ``place`` ja ``grid`` võid kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry
 
-Harjutus 1. Täiendatud tervitaja
+Harjutus. Täiendatud tervitaja
 --------------------------------
 Täienda eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
 
@@ -186,7 +186,7 @@ Tahvel (``canvas``)
 
 Lisainfot ``canvas``-e kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/tkinter/canvas.html
 
-Harjutus 2. Bahama lipp
+Harjutus. Bahama lipp
 -----------------------
 
 Koosta programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saarte lipp" ja joonistab sinna Bahama lipu.
@@ -375,7 +375,7 @@ Kutsu funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
 
 Pane kood kokku ja käivita rakendus.
 
-Harjutus 3. Täiendatud kell
+Harjutus. Täiendatud kell
 ---------------------------
 Täienda kella. Lisa minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
 
