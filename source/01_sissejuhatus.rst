@@ -62,8 +62,8 @@ Salvesta fail (`Ctrl+S`) kasutades failinime lõpus laiendit `py`, nt. `teremaai
 
 Selgitused:
 
-    * nagu võid järeldada, tähendab ``print`` Pythoni jaoks teksti ekraanile kuvamist, mitte printerisse saatmist
-    * selleks, et Python suudaks teha vahet käskudel ja tavalisel tekstil, kirjutatakse tekst jutumärkide vahele
+* nagu võid järeldada, tähendab ``print`` Pythoni jaoks teksti ekraanile kuvamist, mitte printerisse saatmist
+* selleks, et Python suudaks teha vahet käskudel ja tavalisel tekstil, kirjutatakse tekst jutumärkide vahele
 
 .. admonition:: Õpinipp: Eksperimenteeri!
 
@@ -84,9 +84,9 @@ Salvesta ja käivita programm. Ilmub taas käsurea aken, palvega sisestada oma n
 
 Selgitused:
 
-    * käsk ``input`` võimaldab kasutajal midagi sisestada ning edastab saadud teksti Pythonile
-    * konstruktsioon ``nimi = ...`` salvestab selle teksti mällu. Edaspidi saab sellele tekstile viidata kirjutades lihtsalt ``nimi``
-    * konstruktsioon ``Tere " + nimi + "!"`` kombineerib etteantud tekstijupid ja kasutaja nime uueks tekstiks
+* käsk ``input`` võimaldab kasutajal midagi sisestada ning edastab saadud teksti Pythonile
+* konstruktsioon ``nimi = ...`` salvestab selle teksti mällu. Edaspidi saab sellele tekstile viidata kirjutades lihtsalt ``nimi``
+* konstruktsioon ``Tere " + nimi + "!"`` kombineerib etteantud tekstijupid ja kasutaja nime uueks tekstiks
 
 Harjutus. Programmi muutmine
 ----------------------------
@@ -123,11 +123,11 @@ Järgmine näiteprogramm demonstreerib, et Python tunneb aritmeetikat. Enne kats
     
 Selgitused: 
 
-    * ``input``-i abil saab Python kätte kasutaja poolt sisestatud teksti (justnagu eelmises näites)
-    * ``float`` teisendab saadud teksti arvuks
-    * konstruktsioon ``a = ...`` salvestab saadud arvu mällu, edaspidi saab selle arvu kätte kirjutades lihtsalt ``a``
-    * ``print`` käsule võib ette anda mitu asja korraga
-    * konstruktsioon ``if-else`` valib täitmisele minevad käsud vastavalt etteantud tingimustele 
+* ``input``-i abil saab Python kätte kasutaja poolt sisestatud teksti (justnagu eelmises näites)
+* ``float`` teisendab saadud teksti arvuks
+* konstruktsioon ``a = ...`` salvestab saadud arvu mällu, edaspidi saab selle arvu kätte kirjutades lihtsalt ``a``
+* ``print`` käsule võib ette anda mitu asja korraga
+* konstruktsioon ``if-else`` valib täitmisele minevad käsud vastavalt etteantud tingimustele 
 
 .. note::
 
@@ -591,9 +591,9 @@ Minesweeper
 -----------
 Selle programmi katsetamiseks tuleb alla laadida 3 faili. Kõik need tuleks salvestada samasse kausta:
 
-    * :download:`minesweeper.py <downloads/minesweeper/minesweeper.py>`
-    * :download:`plain_cover.gif <downloads/minesweeper/plain_cover.gif>`
-    * :download:`flagged_cover.gif <downloads/minesweeper/flagged_cover.gif>`
+* :download:`minesweeper.py <downloads/minesweeper/minesweeper.py>`
+* :download:`plain_cover.gif <downloads/minesweeper/plain_cover.gif>`
+* :download:`flagged_cover.gif <downloads/minesweeper/flagged_cover.gif>`
     
 
 Siin on tegemist "vabas vormis" graafilise kasutajaliidesega, mis sobib hästi just mängude tegemiseks. Rohkem selgitusi tuleb järgnevates projektiplokkides ning lisas `tkinter`.
@@ -623,23 +623,23 @@ Programmi käivitamiseks avame kõigepealt süsteemi käsurea ja liigume selless
 
 Õigesse kausta liikumiseks sisesta ``cd``, tühik ja täielik kausta nimi. Näiteks, kui sinu programmeerimise kaust asub sinu kodukaustas, siis võiks kausta vahetamise käsk näha välja midagi sellist:
 
-    * ``cd C:\Users\Peeter\Documents\progemine`` (Windows 7 ja Vista)
-    * ``cd "C:\Documents and Settings\Peeter\My Documents\progemine"`` (Windows XP. Kui kausta nimes esineb tühikuid, tuleb see ümbritseda jutumärkidega)
-    * ``cd ~/progemine`` (Mac ja Linux)
+* ``cd C:\Users\Peeter\Documents\progemine`` (Windows 7 ja Vista)
+* ``cd "C:\Documents and Settings\Peeter\My Documents\progemine"`` (Windows XP. Kui kausta nimes esineb tühikuid, tuleb see ümbritseda jutumärkidega)
+* ``cd ~/progemine`` (Mac ja Linux)
 
 Programmi käivitamiseks tuleb pöörduda Pythoni interpretaatori poole, öeldes talle jooksutatava programmi nime: 
 
-    * ``c:\python32\python teremaailm.py`` (Windowsis, eeldades, et sul on Python 3.2 ja see on paigaldatud vaikimisi määratud kausta)
-    * ``python3 teremaailm.py`` (Mac ja Linux)
+* ``c:\python32\python teremaailm.py`` (Windowsis, eeldades, et sul on Python 3.2 ja see on paigaldatud vaikimisi määratud kausta)
+* ``python3 teremaailm.py`` (Mac ja Linux)
 
 Kui kõik läks kenasti, siis ilmus ekraanile uus rida ``Tere maailm!`` ja selle järel uuesti süsteemi käsuviip. 
 
 Mis selle käsu peale tegelikult toimus:
 
-    * OP-süsteem käivitas Pythoni interpretaatori, andes talle *argumendiks* programmi failinime (*teremaailm.py*)
-    * Pythoni interpretaator luges etteantud faili sisu mällu, vaatas teksti üle (kontrollides muuhulgas, et seal poleks süntaksivigu) ning hakkas käske ükshaaval täitma e. *interpreteerima*. 
-    * Esimene käsk ütles, et ekraanile tuleb kirjutada tekst *Tere maailm!*. Seda interpretaator ka tegi
-    * Kuna selles programmis rohkem käske polnud, siis interpretaator lõpetas töö ning käsurida läks tagasi OP-süsteemi kätte.
+* OP-süsteem käivitas Pythoni interpretaatori, andes talle *argumendiks* programmi failinime (*teremaailm.py*)
+* Pythoni interpretaator luges etteantud faili sisu mällu, vaatas teksti üle (kontrollides muuhulgas, et seal poleks süntaksivigu) ning hakkas käske ükshaaval täitma e. *interpreteerima*. 
+* Esimene käsk ütles, et ekraanile tuleb kirjutada tekst *Tere maailm!*. Seda interpretaator ka tegi
+* Kuna selles programmis rohkem käske polnud, siis interpretaator lõpetas töö ning käsurida läks tagasi OP-süsteemi kätte.
     
 Kui käivitad Pythoni interpretaatori ilma programmi argumendita, siis avaneb Pythoni käsurida, mis on peaaegu identne IDLE'i käsureaga.
 

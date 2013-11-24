@@ -474,10 +474,10 @@ Loe läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`
 ------------------
 Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real on töötaja nimi, tema vanus ja kuupalk. Kirjutada programm mis arvutab ja väljastab antud andmete põhjal:
 
-    * kõige suurema palgaga töötaja nime ja palga suuruse (vihje: suurima palga otsimisel jätke meelde, milliselt positsioonilt sa selle leidsid)
-    * keskmise palga
-    * keskmisest palgast rohkem teenijate arvu
-    * keskmised vanused eraldi neile, kes teenivad keskmisest palgast vähem (või samapalju) ning neile, kes teenivad keskmisest palgast rohkem
+* kõige suurema palgaga töötaja nime ja palga suuruse (vihje: suurima palga otsimisel jätke meelde, milliselt positsioonilt sa selle leidsid)
+* keskmise palga
+* keskmisest palgast rohkem teenijate arvu
+* keskmised vanused eraldi neile, kes teenivad keskmisest palgast vähem (või samapalju) ning neile, kes teenivad keskmisest palgast rohkem
 
 4. Eesti-Inglise sõnaraamat
 ---------------------------
@@ -624,9 +624,9 @@ Tõenäoliselt oskad isegi ilma funktsiooni definitsiooni süvenemata arvata, mi
 
 Kuna funktsioonide teema on programmeerimise algkursuses tavaliselt tudengitele kõige hägusam, siis on soovitav lugeda uuesti läbi 5. peatükist vähemalt järgmised osad:
 
-    * :ref:`Parameetrid vs. input<param-vs-input>`
-    * :ref:`return vs. print <return-vs-print>`
-    * :ref:`milleks-funktsioonid`
+* :ref:`Parameetrid vs. input<param-vs-input>`
+* :ref:`return vs. print <return-vs-print>`
+* :ref:`milleks-funktsioonid`
     
 
 Tingimuslause

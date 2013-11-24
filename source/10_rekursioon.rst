@@ -42,8 +42,8 @@ Näide: Faktoriaal
 -----------------
 Faktoriaali definitsiooni järgi on `0! = 1`. Iga teise naturaalarvu puhul on `n!` võrdne arvude `1` .. `n` korrutisega. Nt.
 
-    * 4! = 1 × 2 × 3 × 4
-    * 5! = 1 × 2 × 3 × 4 × 5
+* 4! = 1 × 2 × 3 × 4
+* 5! = 1 × 2 × 3 × 4 × 5
     
 Nagu näha, on `5!` arvutus väga sarnane `4!` arvutusele -- selleks, et arvutada `5!` võiksime me arvutada `4!` ja korrutada saadud tulemuse `5`-ga. Seda asjaolu arvestades on kirjutatud järgnev *rekursiivne* faktoriaali definitsioon:
 
@@ -91,12 +91,19 @@ Kui antud funktsiooni definitsiooni rahulikult lugeda, siis peaks selle tähendu
         >>> stardiloendus(3)
 
     * ``stardiloendus`` käivitatub argumendiga `3` ja kuna see ei võrdu `0`-ga, väljastakse väärtus `3`  ja ``stardiloendus`` kutsutakse välja argumendiga `2`
+    
         * ``stardiloendus`` käivitatub argumendiga `2` ja kuna see ei võrdu `0`-ga, väljastakse väärtus `2` ja ``stardiloendus`` kutsutakse välja argumendiga `1`
+        
             * ``stardiloendus`` käivitatub argumendiga `1` ja kuna see ei võrdu `0`-ga, väljastakse väärtus `1` ja ``stardiloendus`` kutsutakse välja argumendiga `0`
-                * ``stardiloendus`` käivitatub argumendiga `0` ja kuna see rahuldab `if`-lause tingimust, siis väljastatakse ``'Start!'`` 
+            
+                * ``stardiloendus`` käivitatub argumendiga `0` ja kuna see rahuldab `if`-lause tingimust, siis väljastatakse ``'Start!'``
+                 
                 * ``stardiloendus`` argumendiga `0` lõpetab oma töö
+                
             * ``stardiloendus`` argumendiga `1` lõpetab oma töö
+            
         * ``stardiloendus`` argumendiga `2` lõpetab oma töö
+        
     * ``stardiloendus`` argumendiga `3` lõpetab oma töö
 
 Harjutus 2. Modifitseeritud stardiloendus
@@ -123,9 +130,9 @@ Eukleidese algoritm leiab kahe naturaalarvu suurima ühisteguri.
 
 Algoritm on järgmine:
 
-    * Olgu meil naturaalarvud a ja b ning on teada, et a > b;
-    * Kui b = 0, siis on suurim ühistegur a;
-    * Kui ei, siis korda protsessi, võttes uueks a-ks b ja uueks b-ks endiste a ja b jagamisel saadud jääk.
+* Olgu meil naturaalarvud a ja b ning on teada, et a > b;
+* Kui b = 0, siis on suurim ühistegur a;
+* Kui ei, siis korda protsessi, võttes uueks a-ks b ja uueks b-ks endiste a ja b jagamisel saadud jääk.
 
 Realiseeri Eukleidese algoritm rekursiivse funktsioonina.
 
@@ -254,12 +261,12 @@ Harjutus 8. Küülikud
 --------------------
 Üks XIII sajandi matemaatik tundis huvi küülikute paljunemise vastu. Ta koostas sellise ülesande: 
 
-    * alguses on meil üks äsjasündinud emane ja üks äsjasündinud isane küülik
-    * küülik saab suguküpseks ühe kuuga (ja ta kasutab oma uut staatust kohe ära)
-    * küüliku tiinusperiood kestab 1 kuu (st. küülik poegib 1 kuu pärast viljastamist)
-    * suguküps emane küülik poegib iga kuu järel ja sünnitab igal korral ühe emase ning ühe isase küüliku
-    * oletame, et küülikud ei sure iial
-    * mitu paari küülikuid on meil 12 kuu pärast?
+* alguses on meil üks äsjasündinud emane ja üks äsjasündinud isane küülik
+* küülik saab suguküpseks ühe kuuga (ja ta kasutab oma uut staatust kohe ära)
+* küüliku tiinusperiood kestab 1 kuu (st. küülik poegib 1 kuu pärast viljastamist)
+* suguküps emane küülik poegib iga kuu järel ja sünnitab igal korral ühe emase ning ühe isase küüliku
+* oletame, et küülikud ei sure iial
+* mitu paari küülikuid on meil 12 kuu pärast?
 
 Kirjuta üldisem funktsioon, mis annab vastuse suvalise arvu kuude kohta.
     
@@ -366,7 +373,7 @@ Kirjuta funktsioon, mis etteantud kaustanime põhjal moodustab ja tagastab mitme
 
 siis funktsioon peaks tagastama sellise järjendi:
 
-    * ``[['kaelakee_hääl.mp3', 'Bemmi kummid.mp3'], 'miami_vice_theme.mp3']``
+* ``[['kaelakee_hääl.mp3', 'Bemmi kummid.mp3'], 'miami_vice_theme.mp3']``
 
 2. Arvamismäng
 --------------
@@ -374,7 +381,7 @@ Realiseeri 3. peatükis tutvustatud *Arvamismäng* kasutades tsüklite asemel re
 
 
 3. Fraktal
------------------
+----------
 Järgneval pildid on fraktali tasemed 1, 2, 3 ja 4:
 
 .. image:: images/cesaro.png
@@ -507,21 +514,21 @@ Aritmeetilise avaldise väärtustaja
 
 Alljärgnevalt on toodud mõned näited erineva struktuuriga avaldistest:
 
-    * ``3`` --- arv
-    * ``3 + 2`` --- liitmine, kus argumendid on arvud
-    * ``3 * 10 + 2 * 10`` --- liitmine, kus argumendid on korrutised
-    * ``3 - 2 - 6`` --- loetakse ``( 3 - 2 ) - 6``; so. lahutamine, kus vasak argument on lahutamine (``3 - 2``) ja parem argument on arv (``6``)
-    * ``3 + 2 * 3`` --- loetakse ``3 + ( 2 * 3 )``; so. liitmine, kus vasak argument on arv ja parem argument on korrutamine
-    * ``( 3 + 2 )`` --- sulgudes olev avaldis
-    * ``( 3 + 2 ) * 3`` --- korrutamine, kus vasak argument on sulgudes olev avaldis ja parem argument on arv
+* ``3`` --- arv
+* ``3 + 2`` --- liitmine, kus argumendid on arvud
+* ``3 * 10 + 2 * 10`` --- liitmine, kus argumendid on korrutised
+* ``3 - 2 - 6`` --- loetakse ``( 3 - 2 ) - 6``; so. lahutamine, kus vasak argument on lahutamine (``3 - 2``) ja parem argument on arv (``6``)
+* ``3 + 2 * 3`` --- loetakse ``3 + ( 2 * 3 )``; so. liitmine, kus vasak argument on arv ja parem argument on korrutamine
+* ``( 3 + 2 )`` --- sulgudes olev avaldis
+* ``( 3 + 2 ) * 3`` --- korrutamine, kus vasak argument on sulgudes olev avaldis ja parem argument on arv
 
 Viimases kahes näites kasutasime avaldise struktuuri kirjelduses mõistet *avaldis* -- st. me kirjeldasime avaldise olemust *rekursiivselt*.
 
 Enne edasi minemist defineerime abimõisted erinevatel kujudel avaldiste tähistamiseks:
 
-    * `faktor` -- arv või sulgudes olev avaldis, nt. ``3`` või ``( 2 * 3 + ( 4 / 6 ) )``
-    * `term` -- faktor või korrutis/jagatis, nt ``3``, ``( 2 * 3 + ( 4 / 6 ) )`` või ``2 * ( 3 + 4 )``. Pane tähele, et korrutise/jagatise vasak argument võib olla term aga parem argument on faktor (mõtle ``8 / 2 / 2`` struktuuri peale). 
-    * `avaldis` -- term või liitmine/lahutamine. Liitmise/lahutamise vasak argument võib olla avaldis, aga parem argument on term.
+* `faktor` -- arv või sulgudes olev avaldis, nt. ``3`` või ``( 2 * 3 + ( 4 / 6 ) )``
+* `term` -- faktor või korrutis/jagatis, nt ``3``, ``( 2 * 3 + ( 4 / 6 ) )`` või ``2 * ( 3 + 4 )``. Pane tähele, et korrutise/jagatise vasak argument võib olla term aga parem argument on faktor (mõtle ``8 / 2 / 2`` struktuuri peale). 
+* `avaldis` -- term või liitmine/lahutamine. Liitmise/lahutamise vasak argument võib olla avaldis, aga parem argument on term.
     
 Paneme samad mõisted kirja ka spetsiaalses notatsioonis, mida kasutatakse *grammatikate* esitamiseks (``|`` võib lugeda kui sõna *või*):
 
@@ -533,10 +540,10 @@ Paneme samad mõisted kirja ka spetsiaalses notatsioonis, mida kasutatakse *gram
 
 Avaldise väärtustamise plaan on järgnev:
 
-    * mugavuse mõttes teisendame sõne *märkide* järjendiks nii, et iga märk on kas mingi operaator, arv või sulg; edasine töö toimub märkide järjendi põhjal
-    * loome iga avaldise tüübi jaoks eraldi funktsiooni (``loe_avaldis``, ``loe_term``, ``loe_faktor``), mis võtab argumendiks märkide järjendi, loeb järjendi lõpust selle jupi, mida ta tunneb (vastavalt avaldise, termi või faktori) ning tagastab selle jupi väärtuse. "Ära loetud" jupp eemaldatakse märkide järjendist -- seega muutub järjend igal etapil järjest lühemaks.
-    * märkide järjendi lühendamiseks kasutame meetodit ``pop``, mis eemaldab ja tagastab järjendi viimase elemendi
-    * kui kõik läheb ilusti, siis funktsiooni ``loe_avaldis`` töö lõpus on märkide järjend muutunud tühjaks järjendiks ja saadud vastus ongi avaldise väärtus.
+* mugavuse mõttes teisendame sõne *märkide* järjendiks nii, et iga märk on kas mingi operaator, arv või sulg; edasine töö toimub märkide järjendi põhjal
+* loome iga avaldise tüübi jaoks eraldi funktsiooni (``loe_avaldis``, ``loe_term``, ``loe_faktor``), mis võtab argumendiks märkide järjendi, loeb järjendi lõpust selle jupi, mida ta tunneb (vastavalt avaldise, termi või faktori) ning tagastab selle jupi väärtuse. "Ära loetud" jupp eemaldatakse märkide järjendist -- seega muutub järjend igal etapil järjest lühemaks.
+* märkide järjendi lühendamiseks kasutame meetodit ``pop``, mis eemaldab ja tagastab järjendi viimase elemendi
+* kui kõik läheb ilusti, siis funktsiooni ``loe_avaldis`` töö lõpus on märkide järjend muutunud tühjaks järjendiks ja saadud vastus ongi avaldise väärtus.
 
 Selle plaani põhjal on kirjutatud järgnev programm, mis toetub rekursiivsetele funktsioonidele:
 

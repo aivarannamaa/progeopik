@@ -123,9 +123,9 @@ Käesolevas õpiku osas keskendumegi programmeerimise sellele osale, mis jääb 
 
 Selles peatükis astume sammu tagasi ja vaatame üle mõned üldised programmeerimisega seotud küsimused:
     
-    * Milliseid ülesandeid saab lahendada arvuti abil?
-    * Kas kaks erinevat programmi, mis annavad sama tulemuse, on sama head?
-    * Kuidas keerulistele programmeerimisülesannetele lahendusi leida?
+* Milliseid ülesandeid saab lahendada arvuti abil?
+* Kas kaks erinevat programmi, mis annavad sama tulemuse, on sama head?
+* Kuidas keerulistele programmeerimisülesannetele lahendusi leida?
 
 
 
@@ -584,10 +584,10 @@ Viimasel kuul välja makstud palgad on failis ``palgad.txt``:
 
 Firma käekäigul silma peal hoidmiseks tuleb nüüd kirjutada programm, mis annab käivitamisel kokkuvõtte mainitud 4 faili hetkesisust. Täpsemalt: ekraanile tuleb näidata
 
-    * klientide koguarv,
-    * toodete koguarv,
-    * jooksva aasta müügitehingutest saadud summaarne sissetulek, 
-    * viimasel kuul väljamakstud palkade summa.
+* klientide koguarv,
+* toodete koguarv,
+* jooksva aasta müügitehingutest saadud summaarne sissetulek, 
+* viimasel kuul väljamakstud palkade summa.
 
 
 .. note::

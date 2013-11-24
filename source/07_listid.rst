@@ -98,8 +98,8 @@ Harjutus 1. Järjendiavaldiste kasutamine
 ----------------------------------------
 Olgu meil defineeritud järgnevad järjendimuutujad:
 
-    * ``a = [2, 3, 1, 5]``
-    * ``b = [6, 4]``
+* ``a = [2, 3, 1, 5]``
+* ``b = [6, 4]``
 
 Koosta muutujaid ``a`` ja ``b`` ning järjendioperatsioone kasutades avaldis, mille väärtuseks oleks järjend ``[1, 2, 3, 4, 5, 6]``.
 
@@ -313,9 +313,9 @@ Funktsiooni ``range`` saab kasutada ka 2 või 3 argumendiga. Järgnevas käsurea
 
 Kommentaarid:
 
-    * ühe argumendiga variandi puhul algab loetelu 0-st ning lõpeb *enne* näidatud argumendi väärtuseni jõudmist
-    * kahe argumendi puhul algab loetelu esimese argumendi väärtusest ja lõpeb *enne* teise argumendini jõudmist
-    * kolme argumendi puhul näitab kolmas argument väärtuste kasvamise sammu
+* ühe argumendiga variandi puhul algab loetelu 0-st ning lõpeb *enne* näidatud argumendi väärtuseni jõudmist
+* kahe argumendi puhul algab loetelu esimese argumendi väärtusest ja lõpeb *enne* teise argumendini jõudmist
+* kolme argumendi puhul näitab kolmas argument väärtuste kasvamise sammu
 
 Harjutus 4. Kolmega jaguvad arvud
 ---------------------------------
@@ -345,9 +345,9 @@ Tegelikult saaks ``for``-tsükli asemel alati kasutada ka ``while``-tsüklikt, a
 
 Kui meenutad kolmandat peatükki, siis selleks, et ``while`` tsükliga teha mingit toimingut *n* korda, tuleb:
 
-    * võtta kasutusele abimuutuja (loendur) algväärtusega 0
-    * tsükli kehas suurendada muutuja väärtust igal kordusel
-    * tsükli päises kontrollida, et loenduri väärtus on väiksem kui *n*
+* võtta kasutusele abimuutuja (loendur) algväärtusega 0
+* tsükli kehas suurendada muutuja väärtust igal kordusel
+* tsükli päises kontrollida, et loenduri väärtus on väiksem kui *n*
 
 Nagu näha, annab ``for``-tsükkel koos ``range``-ga sama tulemuse palju lihtsamalt -- tsüklimuutuja algväärtustamine, selle suurendamine ja tsükli lõpetamise kontrollimine toimuvad kõik automaatselt. Seetõttu ongi soovitav loenduril põhinevad tsüklid kirjutada ``for``-tsüklina.
 
@@ -571,9 +571,9 @@ Pesa kirjeldusse saab märkida ka lisatingimusi andmete formaadi kohta:
 
 Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust:
 
-    * koolonist vasakul on pesa järjekorranumber
-    * ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb nihutada sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit
-    * ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
+* koolonist vasakul on pesa järjekorranumber
+* ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb nihutada sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit
+* ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
     
 .. note::
 

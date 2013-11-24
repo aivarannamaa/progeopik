@@ -147,6 +147,17 @@ a {
 #side_toc li.toctree-l3:last-child a {
     border-bottom: medium none;
 }
+
+
+#content ul blockquote, #content ol blockquote, 
+#content ul dd, #content ul dl,
+#content ol dd, #content ol dl {
+    margin: 0px;
+    padding: 0px;
+}
+  
+
+
 h1, h2, h3, h4 {
     color: #3465A4;
     font-family: "Georgia","Times New Roman",serif;

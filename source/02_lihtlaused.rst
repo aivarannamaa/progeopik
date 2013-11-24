@@ -338,81 +338,81 @@ Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kaune
 
     Asi läheb veidi keerulisemaks, kui sõne *sees* on vaja kasutada jutumärke, ülakomasid või muid erisümboleid. Järgnevalt demonstreerime erinevaid viise selle probleemi lahendamiseks:
 
-        * Kui tekstis on ülakomasid, siis kõige lihtsam on kasutada piiritlejaks jutumärke ja vastupidi:
+    * Kui tekstis on ülakomasid, siis kõige lihtsam on kasutada piiritlejaks jutumärke ja vastupidi:
+    
+        .. sourcecode:: py3
         
-            .. sourcecode:: py3
+            >>> print("Rock 'n' roll")
+            Rock 'n' roll
+            >>> print('Jim ütles vaid: "Siin see on."')
+            Jim ütles vaid: "Siin see on."
             
-                >>> print("Rock 'n' roll")
-                Rock 'n' roll
-                >>> print('Jim ütles vaid: "Siin see on."')
-                Jim ütles vaid: "Siin see on."
-                
-        * Kui tekstis on vaja kasutada nii jutumärke kui ülakomasid, siis pole eelmisest soovitusest abi. Sellisel juhul tuleb üks neist (nt. jutumärk) ikkagi valida piiritlejaks, aga tema kasutamisel tekstis tuleb ta spetsiaalselt märgistada langkriipsuga (seda nimetatakse inglise keeles *escaping*) -- see annab Pythonile märku, et tegemist pole veel teksti lõpuga, vaid sooviti kirja panna piiritlejaks valitud sümbolit ennast:
+    * Kui tekstis on vaja kasutada nii jutumärke kui ülakomasid, siis pole eelmisest soovitusest abi. Sellisel juhul tuleb üks neist (nt. jutumärk) ikkagi valida piiritlejaks, aga tema kasutamisel tekstis tuleb ta spetsiaalselt märgistada langkriipsuga (seda nimetatakse inglise keeles *escaping*) -- see annab Pythonile märku, et tegemist pole veel teksti lõpuga, vaid sooviti kirja panna piiritlejaks valitud sümbolit ennast:
+    
+        .. sourcecode:: py3
         
-            .. sourcecode:: py3
+            >>> print("Jack vastas: \"Rock 'n' roll\".")
+            Jack vastas: "Rock 'n' roll".
+            >>> print('Jack vastas: "Rock \'n\' roll".')
+            Jack vastas: "Rock 'n' roll".
             
-                >>> print("Jack vastas: \"Rock 'n' roll\".")
-                Jack vastas: "Rock 'n' roll".
-                >>> print('Jack vastas: "Rock \'n\' roll".')
-                Jack vastas: "Rock 'n' roll".
-                
-        * Langkriipsu saab kasutada ka muul otstarbel, nt. reavahetusi saab esitada kombinatsiooniga ``\n`` (tavalist reavahetust Python siin ei lubaks):
+    * Langkriipsu saab kasutada ka muul otstarbel, nt. reavahetusi saab esitada kombinatsiooniga ``\n`` (tavalist reavahetust Python siin ei lubaks):
+    
+        .. sourcecode:: py3
         
-            .. sourcecode:: py3
+            >>> print("Seda kuupaistet!\nOh muutuksin sündides\nmänniks mäetipul!\n--Ryota")
+            Seda kuupaistet!
+            Oh muutuksin sündides
+            männiks mäetipul!
+            --Ryota
             
-                >>> print("Seda kuupaistet!\nOh muutuksin sündides\nmänniks mäetipul!\n--Ryota")
-                Seda kuupaistet!
-                Oh muutuksin sündides
-                männiks mäetipul!
-                --Ryota
-                
-        * Nagu näha on langkriips tekstiliteraalis spetsiaalse tähendusega. Kuidas aga esitada langkriipsu ennast? Lihtne, see tuleb ära märgistada ... langkriipsuga!:
+    * Nagu näha on langkriips tekstiliteraalis spetsiaalse tähendusega. Kuidas aga esitada langkriipsu ennast? Lihtne, see tuleb ära märgistada ... langkriipsuga!:
+    
+        .. sourcecode:: py3
         
-            .. sourcecode:: py3
-            
-                >>> print("C:\\kaustanimi\\failinimi.txt")
-                C:\kaustanimi\failinimi.txt
+            >>> print("C:\\kaustanimi\\failinimi.txt")
+            C:\kaustanimi\failinimi.txt
 
-                
-        * Kui tekstis on vaja kasutada palju erisümboleid, siis võib tulemus muutuda langkriipsude tõttu väga kirjuks. Seetõttu on Pythonis veel üks sõne kirjapaneku viis -- kolmekordsete ülakomade või jutumärkide vahele. Sel juhul ei ole langkriipsul literaali sees enam mingit eritähendust -- iga täht ja sümbol seisab iseenda eest. Selle esitusviisiga saab teksti sees kasutada ka tavalist reavahetust:
-        
-            .. sourcecode:: py3
             
-                >>> print("""Jack vastas: "Rock 'n' roll".""")
-                Jack vastas: "Rock 'n' roll".
-                >>> print('''Jack vastas: "Rock 'n' roll".''')
-                Jack vastas: "Rock 'n' roll".
-                >>> print("""Seda kuupaistet!
-                Oh muutuksin sündides
-                männiks mäetipul!
-                --Ryota""")
-                Seda kuupaistet!
-                Oh muutuksin sündides
-                männiks mäetipul!
-                --Ryota
-                >>> print("""
-                   _____                                            
-                  / ____|                                           
-                 | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
-                 | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
-                 | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
-                  \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
-                """)
+    * Kui tekstis on vaja kasutada palju erisümboleid, siis võib tulemus muutuda langkriipsude tõttu väga kirjuks. Seetõttu on Pythonis veel üks sõne kirjapaneku viis -- kolmekordsete ülakomade või jutumärkide vahele. Sel juhul ei ole langkriipsul literaali sees enam mingit eritähendust -- iga täht ja sümbol seisab iseenda eest. Selle esitusviisiga saab teksti sees kasutada ka tavalist reavahetust:
+    
+        .. sourcecode:: py3
+        
+            >>> print("""Jack vastas: "Rock 'n' roll".""")
+            Jack vastas: "Rock 'n' roll".
+            >>> print('''Jack vastas: "Rock 'n' roll".''')
+            Jack vastas: "Rock 'n' roll".
+            >>> print("""Seda kuupaistet!
+            Oh muutuksin sündides
+            männiks mäetipul!
+            --Ryota""")
+            Seda kuupaistet!
+            Oh muutuksin sündides
+            männiks mäetipul!
+            --Ryota
+            >>> print("""
+               _____                                            
+              / ____|                                           
+             | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
+             | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+             | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
+              \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+            """)
 
-                   _____                                            
-                  / ____|                                           
-                 | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
-                 | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
-                 | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
-                  \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
-                  
-                  
+               _____                                            
+              / ____|                                           
+             | |  __  __ _ _ __ ___   ___    _____   _____ _ __ 
+             | | |_ |/ _` | '_ ` _ \ / _ \  / _ \ \ / / _ \ '__|
+             | |__| | (_| | | | | | |  __/ | (_) \ V /  __/ |   
+              \_____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|
+              
+              
 
-                
-                
-        * On oluline mõista, et piiritlejad ning langkriipsud on vaid selleks, et Python suudaks teksti õigesti sisse lugeda -- peale sisselugemist muutub ``'Rock\'n\'roll'`` tekstiks `Rock'n'roll`.
+            
+            
+    * On oluline mõista, et piiritlejad ning langkriipsud on vaid selleks, et Python suudaks teksti õigesti sisse lugeda -- peale sisselugemist muutub ``'Rock\'n\'roll'`` tekstiks `Rock'n'roll`.
 
-        * Neid sõneliteraale Pythoni käsureale sisestades (ilma ``print``-i kasutamata) saad piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt. Kui soovid näha sõne tegelikku väärtust, siis kuva see ``print`` käsuga ekraanile.
+    * Neid sõneliteraale Pythoni käsureale sisestades (ilma ``print``-i kasutamata) saad piiritlejad ja mõnel juhul langkriipsud ka väljundis. See on tingitud sellest, et Pythoni käsurida näitab avaldise väärtust alati Pythoni süntaksile vastavalt. Kui soovid näha sõne tegelikku väärtust, siis kuva see ``print`` käsuga ekraanile.
 
 
 Tehted sõnedega
@@ -1425,10 +1425,10 @@ Programmi ülesandeks on võtta esimese faili sisu, teisendada see suurtähtedes
 ----------------
 Kirjuta programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrgusele ronimiseks. Programm peaks küsima kasutajalt soovitud kõrguse ning väljastama minimaalse ja maksimaalse pulkade arvu, mis peaks sobival redelil olema. Arvestame, et:
  
-    * redeli alumine ja ülemine pulk on redeli otstest 15cm kaugusel
-    * redeli pulkade vahekaugus on 25cm
-    * redeli ülemine ots peab toetuma etteantud kõrgusele
-    * nurk redeli ja maapinna vahel peab olema vahemikus 50° - 80°
+* redeli alumine ja ülemine pulk on redeli otstest 15cm kaugusel
+* redeli pulkade vahekaugus on 25cm
+* redeli ülemine ots peab toetuma etteantud kõrgusele
+* nurk redeli ja maapinna vahel peab olema vahemikus 50° - 80°
 
 .. hint::
 

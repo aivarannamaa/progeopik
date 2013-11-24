@@ -135,8 +135,8 @@ Täienda seda programmi nüüd nii, et see küsiks kasutajalt lisaks rahasummale
 
 Proovi kirjutada sellest programmist kaks varianti erinevate kitsendustega: 
 
-    * esimeses programmis kasutatakse muutujale omistamist ainult ühes kohas
-    * teises programmis kasutatakse ``print`` käsku ainult ühes kohas
+* esimeses programmis kasutatakse muutujale omistamist ainult ühes kohas
+* teises programmis kasutatakse ``print`` käsku ainult ühes kohas
 
 .. hint::
 
@@ -883,18 +883,18 @@ Nägime, et tõeväärtused on paljude arvu- ja sõnetehete tulemuseks. Kas on o
 
 Kõige tähtsamad tehted, mille argumentideks on tõeväärtused, so. **loogilised tehted**, on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järgi proovida:
 
-    * ``True and True``
-    * ``True and False``
-    * ``False and True``
-    * ``False and False``
-    
-    * ``True or True``
-    * ``True or False``
-    * ``False or True``
-    * ``False or False``
-    
-    * ``not True``
-    * ``not False``
+* ``True and True``
+* ``True and False``
+* ``False and True``
+* ``False and False``
+
+* ``True or True``
+* ``True or False``
+* ``False or True``
+* ``False or False``
+
+* ``not True``
+* ``not False``
 
 Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``True and False`` väärtuse -- loogilisi tehteid kasutatakse tavaliselt teiste tõeväärtusavaldiste kombineerimiseks, just nagu järgmises kahes näites:
 
