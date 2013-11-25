@@ -4,6 +4,9 @@
 
 .. todo::
 
+    * Näita listide "kasvatamist" (``a = a + [x]``)
+    * See nõuab väikseid muudatusi ka järgmises peatükis.
+
     * Ül: Kirjuta funkts on_palindroom näidete järgi
     * Käsurea argumendid (nt. käsurealt antud arvude keskmine)
     * mediaani arvutamine
@@ -222,7 +225,7 @@ Harjutus. Temperatuuride lugemine failist
 Kirjuta programm, mis loeb tekstifailist ükshaaval Celsiuse skaalas esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalas.
 
 .. hint:: 
-    Meeldetuletus: Justnagu ``input`` käsu puhul, saame ka tekstifailist lugedes sisendi alati tekstina, seetõttu tuleb antud ülesandes teisendada algandmed enne kasutamist arvudeks.
+    Meeldetuletus: Nii nagu ``input`` käsu puhul, saame ka tekstifailist lugedes sisendi alati tekstina, seetõttu tuleb antud ülesandes teisendada algandmed enne kasutamist arvudeks.
 
 
 Funktsioon ``range``

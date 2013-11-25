@@ -142,7 +142,7 @@ Sõnastikud kirjutatakse looksulgude vahele, just nagu hulgad, aga iga elemendi 
 
     Sõnastike ja hulkade sarnast kirjapaneku viisi saab selgitada sellega, et sõnastikku võib vaadata kui paaride hulka, kus paari esimeseks komponendiks on võti ja teiseks väärtus.
 
-Justnagu järjendite puhul, saab kõiki sõnastiku elemente läbi vaadata kasutades ``for``-tsüklit, aga erinevalt järjenditest antakse igal sammul tsüklimuutujasse elemendi võti, mitte väärtus:
+Nii nagu järjendite puhul, saab kõiki sõnastiku elemente läbi vaadata kasutades ``for``-tsüklit, aga erinevalt järjenditest antakse igal sammul tsüklimuutujasse elemendi võti, mitte väärtus:
 
 .. sourcecode:: py3
     
@@ -157,7 +157,7 @@ Kui sa proovisid seda näidet käivitada, siis võis juhtuda, et telefoninumbrid
 
 Sõnastiku täiendamine elementhaaval
 -----------------------------------
-Justnagu järjendeid ja hulki, saab ka sõnastikke programmi töö käigus täiendada, aga seejuures ei kasutata mitte meetodeid ``append`` või ``add``, vaid võtme järgi omistamist kujul ``sõnastik[võti] = väärtus``:
+Nii nagu järjendeid ja hulki, saab ka sõnastikke programmi töö käigus täiendada, aga seejuures ei kasutata mitte meetodeid ``append`` või ``add``, vaid võtme järgi omistamist kujul ``sõnastik[võti] = väärtus``:
 
 .. sourcecode:: py3
 
@@ -277,7 +277,7 @@ Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset
 
     *Listid* ei sea mingeid piiranguid oma elementide tüübile, sest listi ei huvita elementide võrdsus või mittevõrdsus. Seetõttu pole mingit probleemi koostada Pythonis näiteks hulkade listi.
     
-    *Sõnastike* puhul on piirangud vaid sõnastiku võtme tüübile -- ka siin nõutakse omadust *hashable* (kuna sõnastikusse ei tohi lubada korduvaid võtmeid). Kirje väärtuse tüübi osas kitsendusi ei seata -- seega saab vabalt luua näiteks sõnastiku, mille võtmetüübiks on sõne ning väärtuse tüübiks arvude list -- justnagu on demonstreeritud ülalpooltoodud näites, kus sõnastikku nimega on kasutatud hinnete loetelu sidumiseks inimese nimega.
+    *Sõnastike* puhul on piirangud vaid sõnastiku võtme tüübile -- ka siin nõutakse omadust *hashable* (kuna sõnastikusse ei tohi lubada korduvaid võtmeid). Kirje väärtuse tüübi osas kitsendusi ei seata -- seega saab vabalt luua näiteks sõnastiku, mille võtmetüübiks on sõne ning väärtuse tüübiks arvude list -- nii nagu on demonstreeritud ülalpooltoodud näites, kus sõnastikku nimega on kasutatud hinnete loetelu sidumiseks inimese nimega.
 
 
 
@@ -309,7 +309,7 @@ Taoliste andmestruktuuride kasutamiseks ei ole tarvis mingisuguseid erivõtteid 
             print("Sisemine tsükkel, arv:", arv)
 
 
-Kuigi tsüklit tsükli sees oled ka juba eespool kohanud, võib see siiski tunduda pisut veider. Selles pole tegelikult midagi erilist, mõlemad tsüklid toimivad tavapäraselt -- enne uuele ringile minekut tehakse tsükli keha sees olevad käsud lõpuni. See tähendab muuhulgas seda, et välimise tsükli iga korduse puhul tehakse läbi sisemise tsükli kõik kordused.
+Kuigi tsüklit tsükli sees oled ka juba eespool kohanud, võib see siiski tunduda pisut veider. Selles pole tegelikult midagi erilist, mõlemad tsüklid toimivad tavaliselt -- enne uuele ringile minekut tehakse tsükli keha sees olevad käsud lõpuni. See tähendab muuhulgas seda, et välimise tsükli iga korduse puhul tehakse läbi sisemise tsükli kõik kordused.
 
 .. note::
 

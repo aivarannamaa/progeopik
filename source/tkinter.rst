@@ -328,7 +328,7 @@ Alustame sekundiosutist. Kuna osuti üks ots on fikseeritud kella keskel, siis m
     
     def osutiTipp(positsioon, pikkus):
         """
-        Annab sekundiosuti liikuva tipu koordinaadid tavapärases koordinaadistikus
+        Annab sekundiosuti liikuva tipu koordinaadid tavalises koordinaadistikus
         positsioon on ujukomaarv 0 ja 1 vahel    
         """
         # arvutame x koordinaadi
@@ -350,7 +350,7 @@ Järgmise sammuna loome funktsiooni, mis loeb jooksvalt aega ja uuendab sekundio
         # loeme jooksva sekundi
         sekundid = time.localtime().tm_sec
 
-        # saame osuti liikuva tipu koordinaadid tavapärases koordinaadistikus
+        # saame osuti liikuva tipu koordinaadid tavalises koordinaadistikus
         tipp_x, tipp_y  = osutiTipp(sekundid / 60, w // 2 - 20)
 
         # teisendame need canvas'e koordinaadistikku

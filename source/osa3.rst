@@ -8,4 +8,4 @@ III osa: Lisad
    pythoni_lisavoimalused
    tkinter
    pygame
-   python3_vs_2
+   tehniline

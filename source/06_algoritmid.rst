@@ -174,7 +174,7 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida valem, mis esit
         :math:`d=\sqrt{a^2+a^2}=\sqrt{2a^2}`
         :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
 
-    Justnagu paadisõidu ülesandes, on ka siin võimalik saadud tulemust kasutada ära teisel tasemel -- nimelt ülesandes, mis nõuab valemi rakendamist etteantud sisendandmetega. Selle ülesande lahendamiseks on programmi kirjutamine väga sobiv valik. Samas, valemini jõudmine nõudis loovust ja seega seda osa arvutile me delegeerida ei oleks saanud. 
+    Nii nagu paadisõidu ülesandes, on ka siin võimalik saadud tulemust kasutada ära teisel tasemel -- nimelt ülesandes, mis nõuab valemi rakendamist etteantud sisendandmetega. Selle ülesande lahendamiseks on programmi kirjutamine väga sobiv valik. Samas, valemini jõudmine nõudis loovust ja seega seda osa arvutile me delegeerida ei oleks saanud. 
 
 
 .. todo::
@@ -282,7 +282,7 @@ Pykkar asub ristkülikukujulise maailma vasakus ülemises nurgas näoga paremale
 
 .. note::
 
-    Plokkskeemi võib vabalt käske juurde leiutada -- antud ülesandes kuluks arvatavasti ära käsk muutuja defineerimiseks ja suurendamiseks (aga võib ka tõmmata kriipse kujuteldavale paberile, justnagu kartulisalati näites). 
+    Plokkskeemi võib vabalt käske juurde leiutada -- antud ülesandes kuluks arvatavasti ära käsk muutuja defineerimiseks ja suurendamiseks (aga võib ka tõmmata kriipse kujuteldavale paberile, nii nagu kartulisalati näites). 
 
 
 .. _triibuliseks:
