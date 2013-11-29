@@ -199,6 +199,22 @@ NB! Erinevalt suurima elemendi leidmise funktsioonist, peaks summa funktsioon t�
 Lõpuks kontrolli, kas sinu funktsioon annab samade järjendite puhul sama tulemuse, mis Pythoni funktsioon ``sum``.    
     
 
+Harjutus. Positiivsed vs. negatiivsed
+---------------------------------------
+Kirjuta funktsioon ``negatiivsete_summa_suurem``, mis võtab argumendiks arvujärjendi ja tagastab ``True``, kui järjendis olevate negatiivsete arvude summa on suurem, kui järjendis olevate positiivsete arvude summa. Vastasel juhul tuleb tagastada ``False``. 
+
+.. hint::
+
+    Kõige lihtsam võimalik lahendus sellele ülesandele:
+    
+    .. sourcecode:: py3
+    
+        def negatiivsete_summa_suurem(arvud):
+            return False
+            
+    
+    Jah, see ülesanne oli "tillikas" :p    
+
 Failist lugemine
 ================
 Tuleb välja, et ``for``-tsükkel on väga mugav ka failist lugemiseks:
