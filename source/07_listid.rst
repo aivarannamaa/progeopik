@@ -201,7 +201,7 @@ Lõpuks kontrolli, kas sinu funktsioon annab samade järjendite puhul sama tulem
 
 Harjutus. Positiivsed vs. negatiivsed
 ---------------------------------------
-Kirjuta funktsioon ``negatiivsete_summa_suurem``, mis võtab argumendiks arvujärjendi ja tagastab ``True``, kui järjendis olevate negatiivsete arvude summa on suurem, kui järjendis olevate positiivsete arvude summa. Vastasel juhul tuleb tagastada ``False``. 
+Kirjuta funktsioon ``negatiivsete_summa_suurem``, mis võtab argumendiks arvujärjendi ja tagastab ``True``, kui järjendis olevate negatiivsete arvude summa on suurem kui järjendis olevate positiivsete arvude summa. Vastasel juhul tuleb tagastada ``False``. 
 
 .. hint::
 
