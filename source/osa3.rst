@@ -7,5 +7,6 @@ III osa: Lisad
    
    pythoni_lisavoimalused
    tkinter
+   easygui
    pygame
    tehniline
