@@ -9,4 +9,5 @@ III osa: Lisad
    tkinter
    easygui
    pygame
+   matplotlib
    tehniline
