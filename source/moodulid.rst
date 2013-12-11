@@ -1,5 +1,5 @@
 Moodulid ja skoop
-===================================
+*****************
 .. note::
 
     See peatükk on senistest hoopis tehnilisem. Siiski, esimene osa "Lokaalsed ja globaalsed muutujad" kuni alamteemani "Ametlik terminoloogia: skoop" on vajalik ja jõukohane materjal kõigile.
@@ -12,7 +12,7 @@ Selles peatüki tegelastega olete õigupoolest juba tuttavad -- käsitleme Pytho
 
 
 Lokaalsed ja globaalsed muutujad
-----------------------------------
+================================
 .. note::
     
     Siin on esitatud pisut lihtsustatud mudel Pythoni muutujate haldamise süsteemist. Täpsemalt saab lugeda näiteks Pythoni ametlikust dokumentatsioonist: http://docs.python.org/3/reference/executionmodel.html#naming-and-binding
@@ -70,13 +70,13 @@ Selleks, et funktsiooni sees saaks globaalset muutujat muuta, tuleb selleks Pyth
 
 
 Ametlik terminoloogia: *skoop*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+------------------------------
 Funktsiooni "sisemuse" ja "välismaailma" tähistamiseks on tegelikult olemas spetsiaalsed terminid -- **lokaalne skoop** (ing. k *local scope*) ja **globaalne skoop** (*global scope*). *Lokaalne skoop* tähistab seda *piirkonda programmi tekstis*, mis jääb mingi konkreetse funktsiooni definitsiooni sisse. Iga funktsiooni definitsioon moodustab omaette lokaalse skoobi. Kõik, mis jääb funktsioonide definitsioonidest väljapoole, on *globaalne skoop* (see väide on pisut lihtsustatud, aga praeguseks siiski piisavalt täpne).
 
 Kui räägitakse mingist konkreetsest muutujast, siis võidakse ka öelda, et "sellel muutujal on *<lokaalne või globaalne>* skoop" (see tähendab sama mis "see muutuja on *<lokaalne või globaalne>*").
 
 Nimeruumid
-~~~~~~~~~~~~~~~
+----------
 Mingi funktsiooni sees kasutusele võetud (st. lokaalsete) muutujate kogumit nimetatakse selle funktsiooni **lokaalseks nimeruumiks** (*local namespace*). Kõigist mingi skripti e. mooduli globaalsest muutujatest moodustub vastava mooduli **globaalne nimeruum** (*global namespace*). Kõige tähtsamad Pythoni funktsioonid (nt. ``len``, ``str``, ``sum``) on koondatud omaette nimeruumi, mida nimetatakse **sisseehitatud nimeruumiks** (*builtin namespace*).
 
 Nimeruumide abil haldab Python muutujaid ja nende väärtusi programmi jooksutamise ajal. Nimeruumi võib kujutada ette kaheveerulise tabelina, mis seab mingi muutuja nimele vastavusse mingi väärtuse. Näitena toome ühe lihtsa programmi ja sellele vastava globaalse nimeruumi, nagu see näeks välja programmi lõppu jõudes:
@@ -96,7 +96,7 @@ Nimeruumide abil haldab Python muutujaid ja nende väärtusi programmi jooksutam
 +----------+------------+
 
 Nimeruumide kasutamine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 Sisseehitatud nimeruum luuakse Pythoni interpretaatori käivitamisel ja see püsib Pythoni mälus kuni interpretaatori sulgemiseni. 
 
 Skripti/mooduli globaalne nimeruum luuakse skripti käivitamisel/mooduli laadimisel (st. esmakordsel importimisel) ja see püsib mälus (tavaliselt) kuni programmi sulgemiseni. Konktreetse skripti/mooduli käivitamise/laadimise alguses on tema nimeruum tühi. Uued kirjed tekivad ja olemasolevate kirjete väärtused muutuvad omistamislausete käivitamisel. Funktsioon ``globals()`` annab selle nimeruumi sisu tavalise Pythoni sõnastikuna.
@@ -111,7 +111,7 @@ Mingis avaldises esineva muutuja väärtustamiseks kasutab Python järgnevat ske
     #. kui ka sisseehitatud nimeruumis vastet ei leidu, siis antakse veateade (``NameError``).
 
 Moodulid
-----------------------------------
+========
 Pythoni moodulitega tutvusite juba 1. peatükis, kus öeldi, et teatud matemaatiliste funktsioonide kasutamiseks on need vaja kõigepalt ``math`` moodulist *importida*, näiteks:
 
 .. sourcecode:: py3
@@ -151,7 +151,7 @@ Siiani oleme muutuja väärtust uurinud kas ``print`` käsu abil või siis käsu
 Käsurida andis meile vastuse -- ``math``-il on tõepoolest väärtus!
 
 Moodul kui väärtus/objekt
-~~~~~~~~~~~~~~~~~~~~~~~~~~  
+-------------------------
 Tuleb välja, et ``import`` lause tekitab programmi uue muutuja, mille väärtuseks on samanimelises programmifailis sisalduvate funktsioonidefinitsioonide (ja teiste definitsioonide) kogum. Kuna sõna *moodul* kasutatakse ka programmifaili tähistamiseks, siis on tavaks ``import`` lausega tekitatud väärtust nimetada *mooduli objektiks*. 
 
 .. note::
@@ -237,7 +237,7 @@ Tänu Pythoni sellisele lähenemisele funktsioonidele saamegi väga lihtsalt öe
     
 
 Isetehtud moodulid
----------------------
+------------------
 Pythoni installeerimisel tuleb kaasa suur hulk nn. standardmoodule, mis paigutatakse kindlatesse kaustadesse, kust ``import``-lause nad üles leiab. Neile lisaks on aga väga lihtne luua ka oma mooduleid -- tegelikult saab igat skripti, mida te siiani olete kirjutanud, kasutada Pythoni moodulina.
 
 Kui te tahate ühte oma moodulitest kasutada teises skriptis, siis on kõige kindlam, kui salvestate mõlemad failid samasse kausta. Salvestage järgnev näide faili nimega ``demomoodul.py``:
@@ -266,7 +266,7 @@ Samasse kausta salvestage (suvalise nimega) järgnev skript ja käivitage see:
 Nendes skriptides, mida te kavatsete kasutada moodulina (st. importida mõnes teises skriptis) võiks sisalduda ainult definitsioonid. Nagu näitest näha on Pythonis kaks viisi definitsioonide kirjutamiseks -- uute funktsioonide defineerimiseks kasutatakse ``def`` konstruktsiooni ja lihtsamate definitsioonide jaoks võrdusmärki. 
 
 Mooduli sisu uurimine
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------
 Nagu öeldud, saab mooduli objektilt küsida mingile nimele vastavat väärtust. Kas see kirjeldus meenutab teile ühte teist Pythoni andmetüüpi? Loodetavasti mäletate, et ka Pythoni sõnastikus sai mingi võtme järgi küsida sellega seotud väärtust. Moodulit võib tegelikult vaadelda justkui teatud kitsendustega sõnastikku -- võti antakse punktiga, mitte kantsulgudes ja võti peab alati olema mingi nimi.
 
 Erinev on ka moodulis sisalduvate nimede loetlemine -- selleks tuleb kasutada funktsiooni ``dir``:
@@ -283,7 +283,7 @@ Erinev on ka moodulis sisalduvate nimede loetlemine -- selleks tuleb kasutada fu
 
 
 Objektid ja attribuudid
--------------------------
+=======================
 Me alustasime moodulite uurimist kõrvutades moodulis oleva funktsiooni ja sõnemeetodi kasutamist. Tuleb välja, et kõigil Pythoni väärtustel on sarnasus moodulitega -- neilt saab nime järgi küsida mingi nende komponendi (või aspekti) väärtust. Samuti saab kasutada ``dir`` funktsiooni tuvastamaks, milliste nimedega komponente mingil objektil on.
 
 Proovime näiteks arvudega:
@@ -335,7 +335,7 @@ Nagu näha, on nii arvudel, kui moodulitel funktsioonitüüpi attribuute. Moodul
 
 
 Modulaarsus
-------------------------------
+===========
 Paljude tänapäeva programmide taga on meeletu hulk koodi -- pole lootustki, et keegi suudaks näiteks Microsoft Wordi või Linuxi tuuma kogu koodi olulisi detaile ühekorraga hoomata. Seetõttu rakendatakse keeruliste tarkvaralahenduste loomisel juba eespool mainitud "jaga ja valitse" printsiipi -- ülesanne ja sellele vastav lahendus jagatakse osadeks, millest igaüks keskendub mingile konkreetsele lõigule koguülesandest. Kui sedasi saadud alamülesanded on ikka liiga keerulised, siis jagatakse need omakorda veel osadeks jne, kuni saadakse paraja suurusega ülesanded, mida programmeerija suudab oma peas piisava täpsusega "töödelda".
 
 Ülesannet ei saa siiski jagada osadeks suvalisest kohast -- on oluline, et alamülesanded ja neile vastavad lahendused (st. programmiosad) sõltuksid üksteisest võimalikult vähe, vastasel juhul peab programmeerija ikkagi mõtlema mitmele ülesandele korraga. Kuigi lõpuks tuleb need suhteliselt iseseisvad programmiosad ikkagi panna koos töötama (vastasel juhul poleks tegemist ühe süsteemi komponentidega), tuleb osade arendamisel kasuks, kui me ei pea eriti ülejäänud süsteemi peale mõtlema.
