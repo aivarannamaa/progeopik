@@ -6,6 +6,7 @@ III osa: Lisad
    :maxdepth: 2
    
    pythoni_lisavoimalused
+   moodulid
    tkinter
    easygui
    pygame

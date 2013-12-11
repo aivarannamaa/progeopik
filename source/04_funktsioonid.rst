@@ -413,6 +413,7 @@ Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi 
         ...
         ...
 
+.. _lokaalsed-muutujad:
 
 Lokaalsed muutujad
 ------------------
