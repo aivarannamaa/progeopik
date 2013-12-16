@@ -105,10 +105,10 @@ Funktsiooni nimeruum luuakse igal funktsiooni väljakutsel uuesti ja see kustuta
 
 Mingis avaldises esineva muutuja väärtustamiseks kasutab Python järgnevat skeemi:
 
-    #. kui avaldis asub funktsiooni kehas ja kui funktsiooni lokaalses nimeruumis leidub otsitav nimi, siis kasutatakse vastavat väärtust
-    #. vastasel juhul otsitakse väärtust kõigepealt mooduli globaalsest nimeruumist
-    #. kui globaalses nimeruumis vastet ei leidu, siis otsitakse sisseehitatud nimeruumist
-    #. kui ka sisseehitatud nimeruumis vastet ei leidu, siis antakse veateade (``NameError``).
+#. kui avaldis asub funktsiooni kehas ja kui funktsiooni lokaalses nimeruumis leidub otsitav nimi, siis kasutatakse vastavat väärtust
+#. vastasel juhul otsitakse väärtust kõigepealt mooduli globaalsest nimeruumist
+#. kui globaalses nimeruumis vastet ei leidu, siis otsitakse sisseehitatud nimeruumist
+#. kui ka sisseehitatud nimeruumis vastet ei leidu, siis antakse veateade (``NameError``).
 
 Moodulid
 ========
