@@ -2,6 +2,8 @@
 EasyGui
 *******
 
+(Kirjutanud Tiina Kull)
+
 Mis on GUI? Eks ikka graafiline kasutajaliides. Tegelikult on ka IDLE graafilise kasutajaliidesega, kuid esialgu võibolla harjumatu sisendi ja väljundi kasutamisega. Prooviks aga minna sammukese edasi ja hakkame looma selliseid programme, milles on meie oma graafiline kasutajaliides ehk siis algatuseks hakkame kasutajaga suhtlema dialoogiakna kaudu. Selleks peab kõigepealt enda arvutisse salvestama **easygui.py** mooduli. 
 
 EasyGui installeerimine
