@@ -4,6 +4,7 @@
 
 .. todo::
 
+    * Lisalugemisse (või põhiteksti) tuua näide XML-i läbimisest
     * Maini fraktali näites ära, et vaja ka pikkuse parameetrit. Too seal ka näitelahendus välja
     * Võimalik vääritimõistmine: et rekursiooniahela tipus olev return lõpetab kogu ahela töö ja määrab kogu ahela väärtuse. Selgita, et iga return liigutab fookust vaid 1 frame'i võrra tagasi.
 
