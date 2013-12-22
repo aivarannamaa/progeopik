@@ -276,7 +276,7 @@ Proovime plokkskeemiga edasi anda ühe Pykkari liikumisskeemi -- ta peab astuma 
 
 .. image:: images/l04_fig16.png  
 
-Harjutus: Ring ümber mänguväljaku
+Harjutus. Ring ümber mänguväljaku
 ---------------------------------
 Pykkar asub ristkülikukujulise maailma vasakus ülemises nurgas näoga paremale. Maailma mõõtmed ei ole teada. Joonista plokkskeem, mis paneb Pykkari seina ääred läbi käima. Lõpuks peab ta jõudma esialgsesse positsiooni tagasi. 
 

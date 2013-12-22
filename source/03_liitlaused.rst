@@ -60,7 +60,7 @@ Tingimusi saab (muuhulgas) moodustada järgmiste operaatoritega:
     
     Ära unusta, et üksikut võrdusmärki (``=``) kasutatakse Pythonis muutujale väärtuse omistamiseks, seetõttu on võrdsuse kontrollimiseks ette nähtud topeltvõrdusmärk (``==``).
 
-Harjutus: Jaguvus
+Harjutus. Jaguvus
 -----------------
 Kirjuta programm, mis küsib kasutajalt kaks arvu ning vastab, kas esimene arv jagub teisega või mitte.
 
@@ -119,7 +119,7 @@ Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides
     Tegelikult pole enamasti vaja IDLE'is isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
 
 
-Harjutus: Eurokalkulaator vol. 2
+Harjutus. Eurokalkulaator vol. 2
 ---------------------------------
 Eelmises peatükis oli ülesanne, kus tuli kirjutada eurokalkulaator, mis teisendas kroone eurodeks.
 
@@ -187,7 +187,7 @@ Põhimõte on sama nagu lihtlausete allutamisel -- alluvuse tähistamiseks lisat
 
     Nüüd peaks olema ka näha, miks treppimist nimetatakse treppimiseks -- kui joondamine toimub mitmel tasemel, siis paistab nagu programmi tekst paikneks trepiastmetel.
 
-Harjutus: Tiitlid
+Harjutus. Tiitlid
 -----------------
 Kirjuta programm, mis küsib kasutajalt tema nime, perekonnaseisu (vallaline või abielus), sugu ja vanust. Väljasta nende andmete põhjal sobiv tervitus (nt. abielus naiste puhul kasuta tiitlit *proua*, teatud vanusest vanemate meeste puhul *härra* jne.).
 
@@ -205,7 +205,7 @@ Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui ting
     if x == y:
         print("... järelikult on nad võrdsed")
 
-Harjutus: Miks on ronk nagu kirjutuslaud?
+Harjutus. Miks on ronk nagu kirjutuslaud?
 -----------------------------------------
 Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga et seal kasutataks vaid üheharulist ``if`` lauset:
 
@@ -310,7 +310,7 @@ Kogu ``if-elif-...-else`` konstruktsioon moodustab Pythoni jaoks ühe terviku --
     Kuigi antud näites on igas ``elif`` plokis ainult üks lause, võib seal olla ükskõik kui keeruline kood, nagu ka ``if`` või ``else`` plokis. 
 
 
-Harjutus: Hinde arvutamine
+Harjutus. Hinde arvutamine
 --------------------------
 Ülikoolis on tavaks panna hindeid järgmise skeemi järgi:
 
@@ -462,7 +462,7 @@ Muutuja väärtuse suurendamist mingi arvu võrra saab Pythonis ka lühemalt kir
 
 
 
-Harjutus: Programm *n*-nurga joonistamiseks
+Harjutus. Programm *n*-nurga joonistamiseks
 -------------------------------------------
 Kirjuta ruudu näite põhjal programm, mis joonistab *n*-küljega hulknurga (*n* väärtus ja küljepikkus küsitakse kasutajalt). 
 
@@ -504,7 +504,7 @@ Nii ``if``-lause kui ka ``while``-lause keha võib koosneda suvalistest Pythoni 
 
 
 
-Harjutus: Loendamine
+Harjutus. Loendamine
 --------------------
 Täienda eelnevat programmi veel ühe loenduriga, mille abil loetakse kokku 3-ga jaguvate ruutude arv. Kui kõik arvud on läbi vaadatud, siis väljasta saadud tulemus.
 
@@ -531,11 +531,11 @@ Alati pole võimalik ette öelda, mitu korda midagi kordama peab enne kui jõuta
     print("Ära arvasid! Tubli!")
 
 
-Harjutus: Kolmeaastase lapse simulaator
+Harjutus. Kolmeaastase lapse simulaator
 ---------------------------------------
 Kirjuta programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga sisestuse peale "Aga miks?" niikaua, kuni kasutaja sisestab mingi kindla "võlusõna".
 
-Harjutus: Algandmete kontrollimine tsükliga
+Harjutus. Algandmete kontrollimine tsükliga
 -------------------------------------------
 Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sisestatud infoga rahul.
 
@@ -591,11 +591,11 @@ Mõnikord on mugav tsükli lõpetamise tingimust kontrollida *ainult* tsükli ke
             arv = float(tekst)
             print("Selle arvu ruut on", arv * arv)
 
-Harjutus: Juhuslikud arvud
+Harjutus. Juhuslikud arvud
 --------------------------
 Kirjuta programm, mis väljastab iga ENTER-i vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
 
-Harjutus: Algandmete kontrollimine ja ``break``
+Harjutus. Algandmete kontrollimine ja ``break``
 -----------------------------------------------
 Kui sa enne kasutasid algandmete kontrollimise ülesandes ``input`` käsku mitmes kohas, siis proovi nüüd kirjutada lahendus ümber nii, et programmis on vaid üks ``input`` käsk.
 
@@ -619,7 +619,7 @@ Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Tegel
 Antud juhul suurendasime igal tsükli kordusel muutuja ``i`` väärtust 2 võrra ja muutuja ``summa`` väärtust teise muutuja (``i``) hetkeväärtuse võrra.
 
 
-Harjutus: Faktoriaali arvutamine
+Harjutus. Faktoriaali arvutamine
 --------------------------------
 Kirjuta programm, mis arvutab etteantud arvu faktoriaali.
 
@@ -711,7 +711,7 @@ Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mit
     
     Kui tekib selline situatsioon, kus programm ei tööta nii nagu sa soovid, siis võiks kõigepealt uurida, kas sisendandmed loeti sisse selliselt nagu sa arvasid. Antud programmis võiks tsüklis esimese asjana peale rea sisselugemist kuvada selle ekraanile. Selleks, et oleks näha ka tühikute ning reavahetuste paiknemine, võib kuvamist teha nt. selliselt: ``print('>' + nimi + '<')``.
 
-Harjutus: Failis olevate temperatuuride teisendamine
+Harjutus. Failis olevate temperatuuride teisendamine
 ----------------------------------------------------
 Kirjuta programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja väljastab ekraanile vastavad temperatuurid Celsiuse skaalas.
 
@@ -830,7 +830,7 @@ Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
 
 
 
-Harjutus: Mitte-tõstutundlik sõnede võrdlemine
+Harjutus. Mitte-tõstutundlik sõnede võrdlemine
 ----------------------------------------------
 "Mitte-tõstutundlik" võrdlemine tähendab seda, et suur- ja väiketähtedel ei tehta vahet. Sellise võrdlemise korral loetakse sõned ``"TeRe"`` ja ``"tere"`` võrdseks. Pythonis selle jaoks eraldi konstruktsiooni pole, aga seda saab erinevaid operatsioone kombineerides siiski teha.
 
@@ -870,7 +870,7 @@ Kirjuta avaldis, mis võrdleb kahte muutujatena antud sõne ``a`` ja ``b`` ning 
         True
 
 
-Harjutus: Arvu ruut koos kontrolliga
+Harjutus. Arvu ruut koos kontrolliga
 ------------------------------------
 Kirjuta programm, mis küsib kasutajalt positiivse täisarvu ning kontrollib, kas sisestatud tekst on numbriline. Kui jah, siis kuvatakse antud arvu ruut, vastasel juhul kuvatakse veateade. 
 
@@ -922,7 +922,7 @@ Keerulisemate loogiliste avaldiste puhul tuleb arvestada, et ``not`` on kõrgema
 
 Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõrgema prioriteediga (st. tehakse esimesena) ning loogilised tehted on madalama prioriteediga (tehakse viimasena), seega ``a > b and b > c`` tähendab ``(a > b) and (b > c)``.
 
-Harjutus: Samaväärne loogiline avaldis
+Harjutus. Samaväärne loogiline avaldis
 --------------------------------------
 Kirjuta järgneva avaldisega samaväärne avaldis, milles poleks kasutatud ``not`` tehet:
 
@@ -975,7 +975,7 @@ Loodetavasti nägid programmi käivitamisel umbes sellist pilti, millele järgne
 
 .. image:: images/pykkar.png
 
-Harjutus: Maksimaalselt 4 sammu
+Harjutus. Maksimaalselt 4 sammu
 -------------------------------
 Muuda eelmist näidet selliselt, et Pykkar üritab kõndida 4 sammu, aga kui sein tuleb varem vastu, siis jääb ta seisma seina ääres. Lõpuks pöörab ta ennast ümber.
 
@@ -1073,7 +1073,7 @@ Pykkar saab aru järgnevatest käskudest:
 
 Pykkar ei oska tõepoolest vasakule pöörata! Õnneks on võimalik sama efekt siiski saavutada. Kuidas?
 
-Harjutus: Torbiku kandmine
+Harjutus. Torbiku kandmine
 --------------------------
 Kirjuta programm, mis loob allolevale pildile vastava maailma:
 

@@ -741,7 +741,7 @@ siis peale selle IDLE'is käivitamist on võimalik käsureal teha nii:
     450072
  
 
-Harjutus: Puuduv definitsioon
+Harjutus. Puuduv definitsioon
 -----------------------------
 Kirjuta võimalikult lühike programm, mille käivitamise järgselt saaks Pythoni käsureal pidada sellise dialoogi:
 
