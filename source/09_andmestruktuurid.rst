@@ -313,7 +313,7 @@ Kuigi tsüklit tsükli sees oled ka juba eespool kohanud, võib see siiski tundu
 
 .. note::
 
-    Viimases näites läks meil vaja kahte tsüklit, et jõuda andmestruktuuri "põhjani" välja. Alati ei ole meil aga taolist kõikide elementide läbikäimist tarviski. Järgnev näiteprogramm väljastab sama 2-mõõtmelise järjendi kõige elementide (so. arvujärjendite) summad:
+    Viimases näites läks meil vaja kahte tsüklit, et jõuda andmestruktuuri "põhjani" välja. Alati ei ole meil aga taolist kõikide elementide läbikäimist tarviski. Järgnev näiteprogramm väljastab sama 2-mõõtmelise järjendi kõige elementide (s.o. arvujärjendite) summad:
 
     .. sourcecode:: py3
 

@@ -16,7 +16,7 @@
     
 Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse ülesande lahendamiseks lahendatakse kõigepealt väiksem alamülesanne ja seejärel täiendatakse saadud vastust mingil moel. Sarnast skeemi kasutasime korduvalt tsüklite peatükis.
 
-Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- so. funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad, kui tsüklitega kirjutatud lahendused.
+Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- s.o. funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad, kui tsüklitega kirjutatud lahendused.
 
 Tehniliselt võttes ei õpi sa selles peatükis Pythoni kui programmeerimiskeele kohta midagi uut, kuna Pythoni seisukohast ei erine rekursiivsed funktsioonid "tavalistest" funktsioonidest. Samas, rekursiivsetest algoritmidest arusaamiseks on vaja vaadata asju pisut teise nurga alt -- seetõttu on antud peatükis ülesandeid, mis aitavad rekursiivse mõtteviisiga harjuda. 
 
@@ -141,7 +141,7 @@ Rekursioon järjenditel
 ======================
 Nagu ülalpool mainitud, on rekursiooni põhimõte teha ülesanne pisut "väiksemaks" alamülesandeks, lahendada see uus ülesanne (sama meetodiga) ning lõpuks jõuda alamülesande lahendusest algse ülesande lahenduseni.
 
-Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- so. kõik elemendid peale esimest elementi). Uuri näiteks järjendi elementide loendamise funktsiooni:
+Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- s.o. kõik elemendid peale esimest elementi). Uuri näiteks järjendi elementide loendamise funktsiooni:
 
 .. sourcecode:: py3
 
@@ -518,8 +518,8 @@ Alljärgnevalt on toodud mõned näited erineva struktuuriga avaldistest:
 * ``3`` --- arv
 * ``3 + 2`` --- liitmine, kus argumendid on arvud
 * ``3 * 10 + 2 * 10`` --- liitmine, kus argumendid on korrutised
-* ``3 - 2 - 6`` --- loetakse ``( 3 - 2 ) - 6``; so. lahutamine, kus vasak argument on lahutamine (``3 - 2``) ja parem argument on arv (``6``)
-* ``3 + 2 * 3`` --- loetakse ``3 + ( 2 * 3 )``; so. liitmine, kus vasak argument on arv ja parem argument on korrutamine
+* ``3 - 2 - 6`` --- loetakse ``( 3 - 2 ) - 6``; s.o. lahutamine, kus vasak argument on lahutamine (``3 - 2``) ja parem argument on arv (``6``)
+* ``3 + 2 * 3`` --- loetakse ``3 + ( 2 * 3 )``; s.o. liitmine, kus vasak argument on arv ja parem argument on korrutamine
 * ``( 3 + 2 )`` --- sulgudes olev avaldis
 * ``( 3 + 2 ) * 3`` --- korrutamine, kus vasak argument on sulgudes olev avaldis ja parem argument on arv
 

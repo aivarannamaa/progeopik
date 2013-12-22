@@ -232,7 +232,7 @@ Tänu Pythoni sellisele lähenemisele funktsioonidele saamegi väga lihtsalt öe
         import math
         sin = math.sin
         cos = math.cos
-        del math # del eemaldab näidatud (so. import lause poolt tekitatud) muutuja
+        del math # del eemaldab näidatud (s.o. import lause poolt tekitatud) muutuja
         ...
     
 

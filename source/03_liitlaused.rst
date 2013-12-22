@@ -192,7 +192,7 @@ Harjutus. Tiitlid
 Kirjuta programm, mis küsib kasutajalt tema nime, perekonnaseisu (vallaline või abielus), sugu ja vanust. Väljasta nende andmete põhjal sobiv tervitus (nt. abielus naiste puhul kasuta tiitlit *proua*, teatud vanusest vanemate meeste puhul *härra* jne.).
 
 
-Lisavõimalus. Üheharuline ``if``-lause
+Lisavõimalus: üheharuline ``if``-lause
 --------------------------------------
 Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui tingimuse mittekehtimise puhul ei ole vaja midagi teha:
 
@@ -221,7 +221,7 @@ Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga e
 
 .. _elif_kuu_nimi:
 
-Lisavõimalus: Mitmeharuline ``if``-lause
+Lisavõimalus: mitmeharuline ``if``-lause
 ----------------------------------------
 Üritame panna kirja programmi, mis küsib kasutajalt kuu numbri ja väljastab sellele vastava kuu nime:
 
@@ -542,7 +542,7 @@ Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisend
 Kirjuta ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua, kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata.
 
 
-Lisavõimalus: Käsk ``break``
+Lisavõimalus: käsk ``break``
 ----------------------------
 Tsükli lõpetamise määrab tavaliselt tsükli päises olev tingimus. Sellele lisaks on Pythonis veel üks võimalus tsükli töö lõpetamiseks -- selleks tuleb tsükli kehas anda sobival hetkel käsk ``break``.
 
@@ -657,7 +657,7 @@ Nii nagu me võime ``while``-lause kehas kasutada ``if``-lauseid, võime seal ka
 
     Ära muretse, kui see programm tundub hetkel liiga keeruline! Mitmekordsete tsüklitega hakkame tõsisemalt tegelema alles mitme peatüki pärast. Praegu on oluline vaid meelde jätta, et Python ei sea kitsendusi sellele, mida võib ``while`` või ``if``-lause sisse panna.
 
-Ülesanne. Korrutustabeli korrastamine
+Harjutus. Korrutustabeli korrastamine
 -------------------------------------
 Eelmise näiteprogrammi väljund jäi natuke kipakaks, sest osad korrutised olid ühekohalised, osad kahekohalised ja seetõttu ei jäänud veerud kohakuti. Täienda nüüd programmi nii, et see väljastaks umbes taolise tabeli: 
 

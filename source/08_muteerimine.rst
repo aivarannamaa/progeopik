@@ -239,7 +239,7 @@ Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde
 
     a = [1, 2, 3]
     
-    # muudame teist elementi (so. element järjekorranumbriga 1)
+    # muudame teist elementi (s.o. element järjekorranumbriga 1)
     a[1] = 22 
     
     print(a)
