@@ -13,11 +13,11 @@ Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame
 
  
 
-.. admonition:: Õpinipp: Ole aktiivne!
+.. admonition:: Õpinipp. Ole aktiivne!
 
     Proovi olla materjalist sammu võrra ees, märgates seoseid ja võimalusi enne, kui õpik neid mainib. Iga näite juures loe esimese asjana programmi tekst hoolikalt läbi ja ennusta, mida iga rida teeb.
     
-    Teisisõnu, eelista värsket mõttetoitu -- see annab parema vormi, kui juba läbimälutud tarkuseterad! 
+    Teisisõnu, eelista värsket mõttetoitu -- see annab parema vormi kui juba läbimälutud tarkuseterad! 
 
 
 .. index::
@@ -27,7 +27,7 @@ Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame
 
 Tingimuslause e. ``if``-lause
 =============================
-Praktiliselt kõikides mittetriviaalsetes programmides tuleb mingil hetkel teha valikuid, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad panna kirja **tingimuslause** e. **valikulause** e. **if-lause** abil.
+Peaaegu kõikides mittetriviaalsetes programmides tuleb mingil hetkel teha valik, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad panna kirja **tingimuslause** e. **valikulause** e. **if-lause** abil.
 
 Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
 
@@ -48,13 +48,13 @@ Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arv
 
 Selles programmis ei täida Python enam kõiki käske -- see, kas täidetakse käsk ``vastus = -arv`` või ``vastus = arv``, sõltub konkreetsest kasutaja poolt sisestatud arvust. Antud näites on mõlemas tingimuslause *harus* vaid üks käsk, aga neid võib seal olla ka rohkem.
 
-Tingimuslause komponendid on *päis* (so. ``if``-i ja tingimusega rida), ``then``-haru (so. päisele järgnevad paremale nihutatud read), võtmesõna ``else``, ning ``else``-haru (jällegi paremale nihutatud).
+Tingimuslause komponendid on *päis* (``if``-i ja tingimusega rida), ``then``-haru (päisele järgnevad paremale nihutatud read), võtmesõna ``else`` ning ``else``-haru (jällegi paremale nihutatud).
 
 Tingimusi saab (muuhulgas) moodustada järgmiste operaatoritega: 
 
-* ``<``, ``>``, ``<=``, ``>=`` sobivad arvude võrdlemiseks
-* Topeltvõrdusmärk (``==``) tähistab võrdsust nii arvude kui sõnede puhul
-* ``!=`` tähistab mittevõrdsust nii arvude kui sõnede puhul
+* ``<``, ``>``, ``<=``, ``>=`` sobivad arvude võrdlemiseks;
+* topeltvõrdusmärk (``==``) tähistab võrdsust nii arvude kui ka sõnede puhul;
+* ``!=`` tähistab mittevõrdsust nii arvude kui sõnede puhul.
 
 .. note::
     
@@ -99,7 +99,7 @@ Treppimine
 
 Antud näites kuuluvad tingimuslause *then*-harusse laused ``print("Tõesti?")`` ja ``print("Imelik nimi!")`` ning *else*-harusse üksainus lause ``print("Tere " + nimi + "!")``. Võib ka öelda, et need joondatud laused kuuluvad ``if``-lause *alla* -- nende käivitamine sõltub ``if``-lausest.
 
-Programmi viimane lause ei ole trepitud ja seetõttu ei ole ta millegi "alluvuses" vaid on täiesti "iseseisev". (Kontrollküsimus: Kuidas muutuks programmi käitumine, kui ka viimase rea ette panna 4 tühikut?)
+Programmi viimane lause ei ole trepitud ja seetõttu ei ole ta millegi alluvuses vaid on täiesti iseseisev. (Kontrollküsimus: kuidas muutuks programmi käitumine, kui ka viimase rea ette panna 4 tühikut?)
 
 Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides ning põhimõte on alati selles, et sama kaugele joondatud järjestikused read moodustavad mingi terviku. 
 
@@ -109,17 +109,17 @@ Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides
 
 .. admonition:: Katsetus
     
-    Proovi järgi, kuidas Python käitub, kui unustad kasutada koolonit või jätad ära mõne taandrea. Sellega saad end taoliseks situatsiooniks juba ette valmistada.
+    Proovi järele, kuidas Python käitub, kui unustad kasutada koolonit või jätad ära mõne taandrea. Sellega saad end taoliseks situatsiooniks juba ette valmistada.
 
 
 
 .. note::
 
-    Kuigi Python on treppimise osas võrdlemisi paindlik, tuleks segaduste vältimiseks alati kasutada joondamiseks 4 tühikut. IDLE-s kirjutades võib treppimiseks vajutada ka TAB klahvi -- IDLE genereerib sellepeale TAB sümboli asemel 4 tühikut.
-    Tegelikult pole enamasti vaja IDLE-s isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
+    Kuigi Python on treppimise osas võrdlemisi paindlik, tuleks segaduste vältimiseks alati kasutada joondamiseks 4 tühikut. IDLE'is kirjutades võib treppimiseks vajutada ka TAB klahvi -- IDLE genereerib sellepeale TAB sümboli asemel 4 tühikut.
+    Tegelikult pole enamasti vaja IDLE'is isegi TAB klahvi kasutada -- kui vajutada kooloniga lõppeval real uue rea saamiseks ENTER-it, taipab redaktor ise, et järgmine rida tuleb treppida ja lisab uue rea algusesse vajaliku arvu tühikuid. Ka järgmistele ridadele paneb IDLE usinalt tühikud ette. Andmaks märku, et uus rida enam tingimuse alla ei kuulu, tuleb need tühikud ära kustutada ja alustada käsu kirjutamist jälle ekraani vasakust servast.
 
 
-Harjutus: Eurokalkulaator, vol. 2
+Harjutus: Eurokalkulaator vol. 2
 ---------------------------------
 Eelmises peatükis oli ülesanne, kus tuli kirjutada eurokalkulaator, mis teisendas kroone eurodeks.
 
@@ -135,8 +135,8 @@ Täienda seda programmi nüüd nii, et see küsiks kasutajalt lisaks rahasummale
 
 Proovi kirjutada sellest programmist kaks varianti erinevate kitsendustega: 
 
-* esimeses programmis kasutatakse muutujale omistamist ainult ühes kohas
-* teises programmis kasutatakse ``print`` käsku ainult ühes kohas
+* esimeses programmis kasutatakse muutujale omistamist ainult ühes kohas;
+* teises programmis kasutatakse ``print`` käsku ainult ühes kohas.
 
 .. hint::
 
@@ -181,7 +181,7 @@ Tingimuslauseid võib panna üksteise sisse:
         else:
             print("Arvud on võrdsed")
 
-Põhimõte on sama nagu lihtlausete "allutamisel" -- alluvuse tähistamiseks lisatakse vastavate ridade algusesse 4 tühikut. Kui alluvatel endal on alluvaid, siis võibki mõne rea ette sattuda 8, 12, üldisemalt `n * 4` tühikut. 
+Põhimõte on sama nagu lihtlausete allutamisel -- alluvuse tähistamiseks lisatakse vastavate ridade algusesse 4 tühikut. Kui alluvatel endal on alluvaid, siis võibki mõne rea ette sattuda 8, 12, üldisemalt `n * 4` tühikut. 
 
 .. note::
 
@@ -189,7 +189,7 @@ Põhimõte on sama nagu lihtlausete "allutamisel" -- alluvuse tähistamiseks lis
 
 Harjutus: Tiitlid
 -----------------
-Kirjuta programm, mis küsib kasutajalt tema nime, perekonnaseisu (vallaline või abielus), sugu ja vanust. Väljasta nende andmete põhjal sobiv tervitus (nt. abielus naiste puhul kasuta tiitlit *proua*, teatud vanusest vanemate meeste puhul *härra* jne.)
+Kirjuta programm, mis küsib kasutajalt tema nime, perekonnaseisu (vallaline või abielus), sugu ja vanust. Väljasta nende andmete põhjal sobiv tervitus (nt. abielus naiste puhul kasuta tiitlit *proua*, teatud vanusest vanemate meeste puhul *härra* jne.).
 
 
 Lisavõimalus. Üheharuline ``if``-lause
@@ -268,7 +268,7 @@ Lisavõimalus: Mitmeharuline ``if``-lause
                                                     print("vale kuu number!")
 
 
-Selles koodis kõik õige ja loogiline, aga nii kaugele trepitud koodiga on ebamugav toimetada. Õnneks on Pythonis taoliste juhtumite jaoks olemas altenatiivne esitusviis:
+Selles koodis on kõik õige ja loogiline, aga nii kaugele trepitud koodiga on ebamugav toimetada. Õnneks on Pythonis taoliste juhtumite jaoks olemas alternatiivne esitusviis:
 
 .. sourcecode:: py3
 
@@ -301,13 +301,13 @@ Selles koodis kõik õige ja loogiline, aga nii kaugele trepitud koodiga on ebam
     else:
         print("vale kuu number!")
 
-Appi tuli võtmesõna ``elif``, mis on nii kirjapildi, kui tähenduse poolest kombinatsioon ``else``-st ja talle järgnevast ``if``-ist.
+Appi tuli võtmesõna ``elif``, mis on nii kirjapildi, kui ka tähenduse poolest kombinatsioon ``else``'ist ja talle järgnevast ``if``-ist.
 
-Kogu ``if-elif-...-else`` konstruktsioon moodustab Pythoni jaoks ühe terviku -- niipea, kui ülevalt alla liikudes leitakse tingimus, mis kehtib, täidetakse vastav haru ja sellega on ka kogu konstruktsioon täidetud. Teisisõnu, ``if-elif-...-else``-s täidetakse alati täpselt üks haru, just nagu ``if-else`` puhul. (Kui ``else`` haru kirjutamata jätta, siis võib muidugi juhtuda, et ei täideta ühtegi haru.) 
+Kogu ``if-elif-...-else`` konstruktsioon moodustab Pythoni jaoks ühe terviku -- niipea kui ülevalt alla liikudes leitakse tingimus, mis kehtib, täidetakse vastav haru ja sellega on ka kogu konstruktsioon täidetud. Teisisõnu, ``if-elif-...-else``'is täidetakse alati täpselt üks haru, nagu ka ``if-else`` puhul. (Kui ``else`` haru kirjutamata jätta, siis võib muidugi juhtuda, et ei täideta ühtegi haru.) 
 
 .. note::
 
-    Kuigi antud näites on igas ``elif`` plokis ainult üks lause, võib seal olla ükskõik kui keeruline kood, just nagu ``if`` või ``else`` plokis. 
+    Kuigi antud näites on igas ``elif`` plokis ainult üks lause, võib seal olla ükskõik kui keeruline kood, nagu ka ``if`` või ``else`` plokis. 
 
 
 Harjutus: Hinde arvutamine
@@ -330,7 +330,7 @@ Harjutus: Hinde arvutamine
 | <=50          | F      |
 +---------------+--------+
 
-Kirjuta programm, mis küsib kasutajalt mitu punkti võis aines saada ning mitu punkti tudeng sai, ning väljastab vastava hinde.
+Kirjuta programm, mis küsib kasutajalt mitu punkti võis aines saada, mitu punkti tudeng sai, ning väljastab vastava hinde.
 
 .. hint::
     
@@ -360,7 +360,7 @@ Kirjuta programm, mis küsib kasutajalt mitu punkti võis aines saada ning mitu 
 
 Korduslause e. ``while``-lause
 ==============================
-Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et programmi tuleb lihtsalt kirjutada laused lihtsalt mitmekordselt, nagu järgmises programmis, mis joonistab kilpkonnaga ruudu:
+Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et programmi tuleb kirjutada laused lihtsalt mitmekordselt nagu järgmises programmis, mis joonistab kilpkonnaga ruudu:
 
 .. sourcecode:: py3
     
@@ -406,13 +406,13 @@ Siinkohal tulevad appi **tsüklid** (e. korduslaused), mis on programmikonstrukt
     exitonclick()
 
 
-``while``-lause keha täidetakse vaid siis kui päises antud tingimus kehtib. Selles suhtes on ``while`` väga sarnane üheharulisele ``if``-lausele. Erinevus on selles, et kui kehas olevad laused on täidetud, siis minnakse uuesti päises näidatud tingimust kontrollima -- kui tingimus kehtib ikka veel, siis täidetakse kehas olevad laused uuesti jne. Kui lõpuks tingimus enam ei kehti (antud näites peale 4 kordust), minnakse edasi ``while``-lausele järgnevate lausetega (antud juhul ``exitonclick()``).
+``while``-lause keha täidetakse vaid siis, kui päises antud tingimus kehtib. Selles suhtes on ``while`` väga sarnane üheharulise ``if``-lausega. Erinevus on selles, et kui kehas olevad laused on täidetud, siis minnakse uuesti päises näidatud tingimust kontrollima -- kui tingimus kehtib ikka veel, siis täidetakse kehas olevad laused uuesti jne. Kui lõpuks tingimus enam ei kehti (antud näites peale 4 kordust), minnakse edasi ``while``-lausele järgnevate lausetega (antud juhul ``exitonclick()``).
 
 Selleks, et taoline tsükkel ei jääks lõputult tööle, peab tsükli kehas olema midagi, mis mõjutab tingimuse kehtivust -- antud näites on selleks lause ``joonistatud_kylgi = joonistatud_kylgi + 1``. Kuju poolest on siin tegemist täiesti tavalise omistuslausega, ainuke veider asi on see, et paremal pool mainitakse sedasama muutujat, mida parasjagu defineeritakse. Kas siin ei lähe miskit "sõlme"?
 
 Muutuja muutmine
 ----------------
-Pythoni muutujate süsteem on ehitatud selliselt, et muutuja väärtust on võimalik *üle defineerida* või lihtsamalt öeldes *muuta*. Iga muutuja viitab tegelikult ühele pesale või lahtrile kuskil Pythoni sisemuses olevas tabelis, ja selles lahtri sisu on võimalik omistuslausega muuta.
+Pythoni muutujate süsteem on ehitatud selliselt, et muutuja väärtust on võimalik *üle defineerida* või lihtsamalt öeldes *muuta*. Iga muutuja viitab tegelikult ühele pesale või lahtrile kuskil Pythoni sisemuses olevas tabelis ja selles lahtri sisu on võimalik omistuslausega muuta.
     
 Antud näites genereerisime muutujale ``joonistatud_kylgi`` uue väärtuse tema eelmise väärtuse põhjal. Selles pole Pythoni jaoks midagi erilist -- nagu eelmises peatükis mainitud, väärtustab Python omistuslause käivitamisel kõigepealt parema poole ja salvestab saadud tulemuse vasakul pool näidatud muutujasse. Seega, kui ``joonistatud_kylgi`` väärtuseks oli ``0``, siis kõigepealt arvutati välja parema poole väärtus ``1`` ning alles seejärel uuendati muutuja sisu.
 
@@ -420,7 +420,7 @@ Antud näites genereerisime muutujale ``joonistatud_kylgi`` uue väärtuse tema 
 
     Kui arvu- või sõneoperatsioonides (e. tehetes) kasutada muutujaid (nt. ``n + 1`` või ``tekst.upper()``), siis võib avaldise kujust jääda mulje, et operatsiooni käigus muudetakse muutuja väärtust. Tegelikult genereeritakse tehte tulemusena hoopis *uus väärtus* ja kasutatud muutujaga midagi ei juhtu.
     
-    Selles veendumiseks uuri järgmisi käsurea näiteid, kus kõigepealt omistatakse muutujale mingi väärtus, seejärel kasutatakse muutujat mingis tehtes (mis konstrueerib uue väärtuse), ning lõpuks demonstreeritakse, et see ei mõjutanud muutuja väärtust:
+    Selles veendumiseks uuri järgmisi käsurea näiteid, kus kõigepealt omistatakse muutujale mingi väärtus, seejärel kasutatakse muutujat mingis tehtes (mis konstrueerib uue väärtuse) ning lõpuks demonstreeritakse, et see ei mõjutanud muutuja väärtust:
     
     .. sourcecode:: py3
     
@@ -472,7 +472,7 @@ Kirjuta ruudu näite põhjal programm, mis joonistab *n*-küljega hulknurga (*n*
     
 Näide. Tsükli ja tingimuslause kombineerimine
 ---------------------------------------------
-Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni lausetest. Järelikult võib panna ka ``if``-lause ``while``-lause sisse (ja vastupidi):
+Nii ``if``-lause kui ka ``while``-lause keha võib koosneda suvalistest Pythoni lausetest. Järelikult võib panna ka ``if``-lause ``while``-lause sisse (ja vastupidi):
 
 .. sourcecode:: py3
 
@@ -500,7 +500,7 @@ Nii ``if``-lause, kui ``while``-lause keha võib koosneda suvalistest Pythoni la
 
     Eelmises peatükis soovitati valida muutujatele nimed, mis kirjeldavad nende tähendust. Selles näites on aga muutuja nimega ``i``, mis ei paista midagi tähendavat. Milles asi?
     
-    Asi on selles, et nime ``i`` kasutamine tsüklimuutuja jaoks lihtsalt väga levinud. Nähes muutujat nimega ``i`` kusagil tsükli läheduses, eeldab iga vähegi kogenud programmeerija, et seda muutujat kasvatatakse igal tsükli sammul ühe võrra. Seega ei rikkunud me antud näites tähendusrikka muutujanime reeglit -- sellele  nimele lihtsalt ongi kujunenud oma tähendus.
+    Asi on selles, et nime ``i`` kasutamine tsüklimuutuja jaoks on lihtsalt väga levinud. Nähes muutujat nimega ``i`` kusagil tsükli läheduses, eeldab iga vähegi kogenud programmeerija, et seda muutujat kasvatatakse igal tsükli sammul ühe võrra. Seega ei rikkunud me antud näites tähendusrikka muutujanime reeglit -- sellele  nimele lihtsalt ongi kujunenud oma tähendus.
 
 
 
@@ -510,16 +510,16 @@ Täienda eelnevat programmi veel ühe loenduriga, mille abil loetakse kokku 3-ga
 
 Määramata tsükkel
 -----------------
-Alati pole võimalik ette öelda, kui mitu korda midagi kordama peab enne, kui jõutakse soovitud tulemuseni. ``while`` lause sobib ka neil juhtudel, sest tsükli päises võime kasutada suvalist tingimust. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:
+Alati pole võimalik ette öelda, mitu korda midagi kordama peab enne kui jõutakse soovitud tulemuseni. ``while`` lause sobib ka neil juhtudel, sest tsükli päises võime kasutada suvalist tingimust. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:
 
 .. sourcecode:: py3
 
     from random import randint 
     
-    arv = randint(1, 999) # randint annab juhusliku täisarvu näidatud vahemikust
+    arv = randint(1, 999) # randint annab juhusliku täisarvu näidatud vahemikust.
     arvamus = int(input("Arva, millist tuhandest väiksemat arvu ma mõtlen: "))
 
-    # Kuni pakutud arv erineb arvuti valitust
+    # Kuni pakutud arv erineb arvuti valitust:
     while arvamus != arv :
         if arv > arvamus:
             print("Minu arv on suurem!")
@@ -537,9 +537,9 @@ Kirjuta programm, mis küsib kasutajalt mingi küsimuse ja seejärel küsib iga 
 
 Harjutus: Algandmete kontrollimine tsükliga
 -------------------------------------------
-Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sistatud infoga rahul.
+Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sisestatud infoga rahul.
 
-Kirjuta ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata.
+Kirjuta ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua, kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata.
 
 
 Lisavõimalus: Käsk ``break``
@@ -553,7 +553,7 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
 
     from random import randint
     
-    arv = randint(1,999) # randint annab juhusliku täisarvu näidatud vahemikust
+    arv = randint(1,999) # randint annab juhusliku täisarvu näidatud vahemikust.
     arvamus = int(input("Arva, millist tuhandest väiksemat arvu ma mõtlen: "))
     arvamise_kordi = 1
     
@@ -569,7 +569,7 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
         arvamus = int(input("Arva veelkord: "))
         arvamise_kordi += 1 # lühem kirjapilt muutuja väärtuse suurendamiseks
     
-    # kuna tsükkel võis lõppeda ka edutult, siis peame enne kiitmist kontrollima...
+    # Kuna tsükkel võis lõppeda ka edutult, siis peame enne kiitmist kontrollima...
     if arv == arvamus:
         print("Ära arvasid! Tubli!")
     else:
@@ -593,7 +593,7 @@ Mõnikord on mugav tsükli lõpetamise tingimust kontrollida *ainult* tsükli ke
 
 Harjutus: Juhuslikud arvud
 --------------------------
-Kirjuta programm, mis väljastab iga ENTER vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
+Kirjuta programm, mis väljastab iga ENTER-i vajutuse järel (st. tühisõne sisestamisel) ekraanile juhusliku täisarvu vahemikus 1..999. Tsükli töö tuleks lõpetada (kasutades ``break``-i) siis, kui kasutaja sisestab tühisõne asemel sõne ``'aitab'``.
 
 Harjutus: Algandmete kontrollimine ja ``break``
 -----------------------------------------------
@@ -616,7 +616,7 @@ Senistes näidetes kasvatasime igal kordusel loenduri väärtust 1 võrra. Tegel
     
     print(n, "esimese naturaalarvu hulgas olevate paarisarvude summa on", summa)
 
-Antud juhul suurendasime igal tsükli kordusel muutuja ``i`` väärtust 2 võrra ja muutu ``summa`` väärtust teise muutuja (``i``) hetkeväärtuse võrra.
+Antud juhul suurendasime igal tsükli kordusel muutuja ``i`` väärtust 2 võrra ja muutuja ``summa`` väärtust teise muutuja (``i``) hetkeväärtuse võrra.
 
 
 Harjutus: Faktoriaali arvutamine
@@ -630,7 +630,7 @@ Kirjuta programm, mis arvutab etteantud arvu faktoriaali.
 
 Näide. Kahekordne tsükkel
 -------------------------
-Nii, nagu me võime ``while``-lause kehas kasutada ``if``-lauseid, võime seal kasutada ka ``while``-lauseid. Järgnev programm kasutab kahekordset tsüklit korrutustabeli kuvamiseks:
+Nii nagu me võime ``while``-lause kehas kasutada ``if``-lauseid, võime seal kasutada ka ``while``-lauseid. Järgnev programm kasutab kahekordset tsüklit korrutustabeli kuvamiseks:
 
 .. sourcecode:: py3
 
@@ -658,8 +658,8 @@ Nii, nagu me võime ``while``-lause kehas kasutada ``if``-lauseid, võime seal k
     Ära muretse, kui see programm tundub hetkel liiga keeruline! Mitmekordsete tsüklitega hakkame tõsisemalt tegelema alles mitme peatüki pärast. Praegu on oluline vaid meelde jätta, et Python ei sea kitsendusi sellele, mida võib ``while`` või ``if``-lause sisse panna.
 
 Ülesanne. Korrutustabeli korrastamine
-------------------------------------------------------------------------------------------------------- 
-Eelmise näiteprogrammi väljund jäi natuke kipakas, sest osad korrutised olid ühekohalised, osad kahekohalised ja seetõttu ei jäänud veerud kohakuti. Täienda nüüd programmi nii, et see väljastaks umbes taolise tabeli: 
+-------------------------------------
+Eelmise näiteprogrammi väljund jäi natuke kipakaks, sest osad korrutised olid ühekohalised, osad kahekohalised ja seetõttu ei jäänud veerud kohakuti. Täienda nüüd programmi nii, et see väljastaks umbes taolise tabeli: 
 
 .. sourcecode:: none
 
@@ -680,7 +680,7 @@ Eelmise näiteprogrammi väljund jäi natuke kipakas, sest osad korrutised olid 
 
 .. hint::
 
-    Teine võimalus on kasutada ühte sõneoperatsiooni, mille kohta näide on ühes 2. peatüki tabelis.
+    Teine võimalus on kasutada ühte sõneoperatsiooni, mille kohta on näide ühes 2. peatüki tabelis.
     
 
 Näide. Failist lugemine tsükliga
@@ -732,7 +732,7 @@ Kirjuta programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja vä
 
 Tõeväärtustüüp ``bool``
 =======================
-Nagu varem mainitud, koosneb iga Pythoni programm lausetest ja lause komponentideks on avaldised. Tuleb välja, et Python peab ka ``if`` või ``while`` lause päises olevat tingimust avaldiseks. Aga kui igal avaldisel on väärtus, siis millised näevad välja tingimuse väärtused? Proovime järgi:
+Nagu varem mainitud, koosneb iga Pythoni programm lausetest ja lause komponendid on avaldised. Tuleb välja, et Python peab ka ``if`` või ``while`` lause päises olevat tingimust avaldiseks. Aga kui igal avaldisel on väärtus, siis millised näevad välja tingimuse väärtused? Proovime järele:
 
 .. sourcecode:: py3
 
@@ -752,13 +752,13 @@ Nagu varem mainitud, koosneb iga Pythoni programm lausetest ja lause komponentid
     >>> toit == "kapsas"  # kahe võrdusmärgiga on võrdsuse kontrollimine
     True
 
-Selgitus: Tingimuste jaoks on Pythonis eraldi andmetüüp nimega ``bool``, milles on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks** (``bool`` on lühend sõnast ``boolean``, mis tuleb omakorda matemaatiku George Boole'i nimest).
+Selgitus: tingimuste jaoks on Pythonis eraldi andmetüüp nimega ``bool``, milles on vaid kaks võimalikku väärtust -- ``True`` ja ``False``. Eesti keeles nimetatakse seda andmetüüpi **tõeväärtustüübiks** (``bool`` on lühend sõnast ``boolean``, mis tuleb omakorda matemaatiku George Boole'i nimest).
 
 Pole kokkusattumus, et me käsitleme seda andmetüüpi just tingimuslausete peatükis -- kõik avaldised, mis annavad väärtustamisel tulemuseks ``True`` või ``False`` sobivad ``if`` või ``while``-lause päisesse ning nende lausete päised on põhiline koht, kus tõeväärtusi kohtab. 
 
 .. note::
 
-    Just nagu iga avaldise puhul, saab ka tõeväärtusavaldise põhjal defineerida muutujaid. Kuna ``if``-lause päises võib tõeväärtus olla antud mistahes kujul, siis võiksime mingi kontrolli tulemuse salvestada eelnevalt muutujasse ning hiljem kasutada seda muutujat tingimusena:
+    Nagu iga avaldise puhul, saab ka tõeväärtusavaldise põhjal defineerida muutujaid. Kuna ``if``-lause päises võib tõeväärtus olla antud mistahes kujul, siis võiksime mingi kontrolli tulemuse salvestada eelnevalt muutujasse ning hiljem kasutada seda muutujat tingimusena:
 
     .. sourcecode:: py3
 
@@ -791,7 +791,7 @@ Kuigi tõeväärtustüübis on vaid kaks väärtust ``True`` ja ``False``, on ol
 +----------------------------------+---------+---------------------------------------------------------------------+
 | Avaldis                          | Väärtus | Selgitus                                                            |
 +==================================+=========+=====================================================================+
-| ``2 == 2.0``                     |``True`` | ``==`` sobib nii sõnede, kui arvude võrduse kontrollimiseks         |
+| ``2 == 2.0``                     |``True`` | ``==`` sobib nii sõnede kui ka arvude võrdsuse kontrollimiseks      |
 +----------------------------------+---------+                                                                     +
 | ``'tere' == 'tere'``             |``True`` |                                                                     |
 +----------------------------------+---------+---------------------------------------------------------------------+
@@ -799,8 +799,8 @@ Kuigi tõeväärtustüübis on vaid kaks väärtust ``True`` ja ``False``, on ol
 +----------------------------------+---------+---------------------------------------------------------------------+
 | ``2 == '2'``                     |``False``| Ükski sõne pole ühegi arvuga võrdne                                 |
 +----------------------------------+---------+---------------------------------------------------------------------+
-| ``2 != '2'``                     |``True`` | ``!=`` annab ``True`` neil juhtudel kus ``==`` annaks ``False``     |
-+----------------------------------+---------+ ja vastupidi                                                        +
+| ``2 != '2'``                     |``True`` | Mittevõrdsuse kontroll -- ``!=`` annab ``True`` neil juhtudel,      |
++----------------------------------+---------+ kus ``==`` annaks ``False`` ja vastupidi                            +
 | ``2 != 2``                       |``False``|                                                                     |
 +----------------------------------+---------+---------------------------------------------------------------------+
 | ``3 > 3``                        |``False``| Arvude võrdlemine toimub ootuspäraselt                              |
@@ -881,7 +881,7 @@ Tõeväärtuste kombineerimine
 ---------------------------
 Nägime, et tõeväärtused on paljude arvu- ja sõnetehete tulemuseks. Kas on olemas mingeid mõistlikke tehteid, mida saab teha tõeväärtuste endiga?
 
-Kõige tähtsamad tehted, mille argumentideks on tõeväärtused, so. **loogilised tehted**, on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järgi proovida:
+Kõige tähtsamad tehted, mille argumendid on tõeväärtused, s.o. **loogilised tehted**, on ``and``, ``or`` ja ``not``. Nende operaatorite tähendus on arvatavasti intuitiivselt arusaadav, kuid vajadusel saab kõik kombinatsioonid Pythoni käsureal järele proovida.
 
 * ``True and True``
 * ``True and False``
@@ -896,7 +896,7 @@ Kõige tähtsamad tehted, mille argumentideks on tõeväärtused, so. **loogilis
 * ``not True``
 * ``not False``
 
-Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``True and False`` väärtuse -- loogilisi tehteid kasutatakse tavaliselt teiste tõeväärtusavaldiste kombineerimiseks, just nagu järgmises kahes näites:
+Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``True and False`` väärtuse -- loogilisi tehteid kasutatakse tavaliselt teiste tõeväärtusavaldiste kombineerimiseks, nii nagu järgmises kahes näites:
 
 .. sourcecode:: py3
 
@@ -944,15 +944,15 @@ Nagu eespool veendusime, saab robotkilpkonna juhtimisel tsüklitega teha päris 
 
 Pykkar on virtuaalne robot, kes tegutseb oma virtuaalses maailmas. Ta oskab liikuda, värvida, asju kanda ja tal on ka sensorid, mis suudavad näiteks anda märku kui otse ees asub sein. See omadus sobib antud peatükki oivaliselt, sest sensoritelt saadud info ning ``if`` ja ``while``-lausete abil saame panna Pykkari tegevuse sõltuma konkreetsest situatsioonist.
 
-Esimese näitena laseme Pykkaril liikuda otse edasi, kuni ta jõuab seinani ning pöörata siis ümber. See programm (nagu ka kõik meie järgnevad Pykkari programmid) vajab oma tööks moodulit ``pykkar`` (failis :download:`pykkar.py <downloads/pykkar.py>`), mis ei kuulu Pythoni standardteeki, ja tuleb seega enne näiteprogrammi käivitamist salvestada enda arvutisse, näiteprogrammiga samasse kausta.
+Esimese näitena laseme Pykkaril liikuda otse edasi, kuni ta jõuab seinani ning siis ümber pöörata. See programm (nagu ka kõik meie järgnevad Pykkari programmid) vajab oma tööks moodulit ``pykkar`` (failis :download:`pykkar.py <downloads/pykkar.py>`), mis ei kuulu Pythoni standardteeki ja tuleb seega enne näiteprogrammi käivitamist salvestada enda arvutisse, näiteprogrammiga samasse kausta.
 
 .. sourcecode:: py3
 
     from pykkar import *
     
-    # create_world võtab argumendiks mitmerealise sõne, mis esitab roboti "maailma"
+    # create_world võtab argumendiks mitmerealise sõne, mis esitab roboti "maailma".
     # Trellid tähistavad seinu, nooleke tähistab robotit.
-    # Noole suund (>, <, v või ^) tähistab roboti suunda
+    # Noole suund (>, <, v või ^) tähistab roboti suunda.
     create_world("""
     ########
     #  >   #
@@ -977,7 +977,7 @@ Loodetavasti nägid programmi käivitamisel umbes sellist pilti, millele järgne
 
 Harjutus: Maksimaalselt 4 sammu
 -------------------------------
-Muutke eelmist näidet selliselt, et Pykkar üritab kõndida 4 sammu, aga kui sein tuleb varem vastu, siis jääb ta seisma seina ääres. Lõpuks pöörab ta ennast ümber.
+Muuda eelmist näidet selliselt, et Pykkar üritab kõndida 4 sammu, aga kui sein tuleb varem vastu, siis jääb ta seisma seina ääres. Lõpuks pöörab ta ennast ümber.
 
 Programm peab töötama suvalise maailma ja suvalise Pykkari alguspositsiooni korral.
 
@@ -1017,7 +1017,7 @@ Pykkari maailm ja käsud
 -----------------------
 Vaatame nüüd üle, millises maailmas Pykkar tegutseb ja milliseid käske ta tunneb.
 
-Maailm luuakse käsuga ``create_world``, mille argumendiks on mitmerealine sõne, mis esitab "maailma kaarti", kus iga sümbol tähistab ühte ruutu. Järgnev tabel võtab kokku, milliseid ruute on võimalik kasutada:
+Maailm luuakse käsuga ``create_world``, mille argument on mitmerealine sõne, mis esitab "maailma kaarti", kus iga sümbol tähistab ühte ruutu. Järgnev tabel võtab kokku, milliseid ruute on võimalik kasutada:
 
 +----------------------------+--------------------------------------------------------+-----------------------------------------+
 | Ruudu sümbol               | Tähendus                                               | Näide                                   |
@@ -1071,7 +1071,7 @@ Pykkar saab aru järgnevatest käskudest:
 | ``get_direction()`` | Ütle, millisesse suunda oled hetkel pööratud (vastab ``'N'``, ``'E'``, ``'S'`` või ``'W'``)   |
 +---------------------+-----------------------------------------------------------------------------------------------+
 
-NB! Pykkar ei oska tõepoolest vasakule pöörata! Õnneks on võimalik sama effekt siiski saavutada. Kuidas?
+Pykkar ei oska tõepoolest vasakule pöörata! Õnneks on võimalik sama efekt siiski saavutada. Kuidas?
 
 Harjutus: Torbiku kandmine
 --------------------------
@@ -1110,10 +1110,10 @@ NB! Programm peab töötama ka laiemate ja kitsamate maailmade korral.
 
 Kokkuvõte
 =========
-Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käskude jada, mida täidetakse üksteise järel kuni jõutakse programmi lõppu. Vaatlesime kahte programmikonstruktsiooni, millel kõigil on **päis** ja tühikutega veidi paremale nihutatud **keha**, kusjuures kehas olevate lausete täitmise viis on mõlemal juhul erinev:
+Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käskude jada, mida täidetakse üksteise järel kuni jõutakse programmi lõppu. Vaatlesime kahte programmikonstruktsiooni, millel kõigil on **päis** ja tühikutega veidi paremale nihutatud **keha**, kusjuures kehas olevate lausete täitmise viis on mõlemal juhul erinev.
 
-* **Tingimuslause** e. ``if``-lause peaharus olevad laused täidetakse ainult siis, kui päises esitatud tingimus kehtib. Kui tingimuslauses on olemas ka ``else`` haru, siis seal olevad laused täidetakse siis, kui tingimus *ei* kehti. Sellise konstruktsiooniga saab muuta programme paindlikumaks, pannes selle käituma üht- või teistmoodi vastavalt olukorrale.
-* **Korduslause** e. tsükli puhul täidetakse kehas olevad laused 0 või rohkem korda, vastavalt päisele. Selles peatükis vaadeldud ``while``-lause korral kontrollitakse enne kehas olevate lausete täitmist, kas päises antud tingimus kehtib, nii nagu tingimuslausegi puhul. Erinevalt tingimuslausest, minnakse peale keha täitmist uuesti tingimust kontrollima ja kui see kehtib endiselt, siis täidetakse kehas olevad laused uuesti jne. Seda protsessi korratakse niikaua, kuni tingimus enam ei kehti. Korduslausega saame kirjeldada protsesse, kus sama toimingut tuleb teha mitu korda järjest (ja seejuures ei pruugi me korduste arvu programmi kirjutamisel ette teada).
+* **Tingimuslause** e. ``if``-lause peaharus olevad laused täidetakse ainult siis, kui päises esitatud tingimus kehtib. Kui tingimuslauses on olemas ka ``else`` haru, siis seal olevad laused täidetakse siis, kui tingimus *ei* kehti. Sellise konstruktsiooniga saab muuta programme paindlikumaks, pannes need käituma üht- või teistmoodi vastavalt olukorrale.
+* **Korduslause** e. tsükli puhul täidetakse kehas olevad laused 0 või rohkem korda, vastavalt päisele. Sarnaselt tingimuslausega, kontrollitakse selles peatükis vaadeldud ``while``-lause korral enne kehas olevate lausete täitmist, kas päises antud tingimus kehtib. Erinevalt tingimuslausest minnakse peale keha täitmist uuesti tingimust kontrollima ja kui see kehtib endiselt, siis täidetakse kehas olevad laused uuesti jne. Seda protsessi korratakse niikaua, kuni tingimus enam ei kehti. Korduslausega saame kirjeldada protsesse, kus sama toimingut tuleb teha mitu korda järjest (ja seejuures ei pruugi me korduste arvu programmi kirjutamisel ette teada).
     
 Kõiki vaadeldavaid programmikonstruktsioone nimetatakse Pythonis **liitlauseteks**, kuna nende kehad koosnevad teistest (suvalist liiki) lausetest. See võimaldab näiteks tingimuslause kehas lisaks lihtlausetele kasutada ka korduslauset, mille kehas on omakorda kasutatud tingmuslauset, mille kehas on veel üks tingimuslause jne.
 
@@ -1140,15 +1140,15 @@ Lõpuks korralda nii, et programm töötab õigesti ka siis, kui ema või isa br
 
 3. Busside logistika
 --------------------
-Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjuta programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
+Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid, ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjuta programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande. 
 
     
 **Testi** oma programmi muuhulgas järgmiste algandmetega:
 
-* inimeste arv: 60, kohtade arv: 40
-* inimeste arv: 80, kohtade arv: 40
-* inimeste arv: 20, kohtade arv: 40
-* inimeste arv: 40, kohtade arv: 40
+* inimeste arv: 60, kohtade arv: 40;
+* inimeste arv: 80, kohtade arv: 40;
+* inimeste arv: 20, kohtade arv: 40;
+* inimeste arv: 40, kohtade arv: 40.
 
 Ürita mõista, miks valiti taolised testiandmed.
 
@@ -1199,7 +1199,7 @@ Kirjuta programm, mis lahendab esimese ülesande aadressilt http://projecteuler.
 
 .. note::
 
-    Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teete endale seal konto, siis saad oma progressi salvestada ja tulemusi kontrollida.
+    Soovitame otsida sellelt saidilt endale huvipakkuvaid ülesandeid ka edaspidi! Kui teed endale seal konto, siis saad oma progressi salvestada ja tulemusi kontrollida.
 
 6. Ringi joonistamine
 ---------------------
@@ -1213,7 +1213,7 @@ Kirjuta programm, mis joonistab kilpkonnaga pisikestest sirglõikudest koosneva 
 7. Kolmnurk
 -----------
 
-Kirjutage programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kolmnurga:
+Kirjuta programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile vastava kõrgusega kolmnurga:
 
 .. sourcecode:: none
 
@@ -1227,13 +1227,13 @@ Kirjutage programm, mis küsib kasutajalt ridade arvu ning väljastab ekraanile 
 
 .. hint::
     
-    Tuletage meelde, mida tähendab ``'Tere' * 4``
+    Tuleta meelde, mida tähendab ``'Tere' * 4``
 
 
 8. Horisontaalsed tulbad
 ------------------------
 
-Kirjuta programm, mis kuvaks failis olevate arvude põhjal tekstilisi, horisontaalsete tulpadega tulpdiagramme. Näiteks, kui faili sisu on
+Kirjuta programm, mis kuvaks failis olevate arvude põhjal tekstilisi, horisontaalsete tulpadega tulpdiagramme. Näiteks kui faili sisu on
 
 .. sourcecode:: none
 
@@ -1260,7 +1260,7 @@ siis ekraanile peaks ilmuma
 
 9. Kivi-paber-käärid
 --------------------
-Kirjuta programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikult valitud sõna loetelust "kivi", "paber", "käärid". Programmi töö lõpetamiseks tuleb kasutajal enne ENTERi vajutamist sisestada "aitab".
+Kirjuta programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikult valitud sõna loetelust "kivi", "paber", "käärid". Programmi töö lõpetamiseks tuleb kasutajal enne ENTER-i vajutamist sisestada "aitab".
 
 .. hint::
 
@@ -1296,15 +1296,15 @@ Kirjuta programm, mis kuvab ekraanile erinevatest kriipsutaolistest sümbolitest
 
 12. Raskem: Redeli asendid
 --------------------------
-Ülesandeks on genereerida Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonista redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
+Genereeri Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonista redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
 
 .. hint::
 
-    Abiks võib olla ``turtle`` käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
+    Abiks võib olla ``turtle``'i käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik).
 
 13. Raskem: Ruudustik
 ---------------------
-Kirjuta programm mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal, ning joonistab kilpkonna abil vastava ruudustiku, nt:
+Kirjuta programm, mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal ning joonistab kilpkonna abil vastava ruudustiku, nt:
 
 .. image:: images/ruudustik.png
 
@@ -1332,11 +1332,11 @@ Lisalugemine
 
 .. admonition:: Matemaatika ja programmeerimine
 
-    Loodetavasti veendute järgnevat lugedes, et matemaatikat ja programmeerimist (ning matemaatika ja programmeerimise õppimist) saab omavahel väga edukalt siduda. Tegelikult ongi väga kasulik mingi uue matemaatilise mõiste õppimisel proovida väljendada seda mõnes programmeerimiskeeles. Erinevalt tavakeelest peab programmeerimiskeeles väljendama ennast alati absoluutselt täpselt, seetõttu toob taoline harjutus välja need aspektid, mille osas sinu arusaamine antud mõistest on jäänud veidi hägusaks.
+    Loodetavasti veendud järgnevat lugedes, et matemaatikat ja programmeerimist (ning matemaatika ja programmeerimise õppimist) saab omavahel väga edukalt siduda. Tegelikult ongi väga kasulik mingi uue matemaatilise mõiste õppimisel proovida väljendada seda mõnes programmeerimiskeeles. Erinevalt tavakeelest peab programmeerimiskeeles väljendama ennast alati absoluutselt täpselt, seetõttu toob taoline harjutus välja need aspektid, mille osas sinu arusaamine antud mõistest on jäänud veidi hägusaks.
 
 Ruutjuure leidmine
 ------------------
-Kuidas arvutada ruutjuurt? Kui importida moodul ``math``, on asi muidugi lihtne. Tegelikult ei vasta see aga küsimusele, vaid lükkab selle lihtsalt meist kaugemale – me teame, et seda funktsiooni välja kutsudes saame me õige tulemuse, kuid me ei tea, kuidas arvuti selleni jõuab. Järgnevalt vaatame ühte viisi ruutjuure leidmiseks kus kasutatakse vaid lihtsaid aritmeetilisi tehteid.
+Kuidas arvutada ruutjuurt? Kui importida moodul ``math``, on asi muidugi lihtne. Tegelikult ei vasta see aga küsimusele, vaid lükkab selle lihtsalt meist kaugemale – me teame, et seda funktsiooni välja kutsudes saame õige tulemuse, kuid me ei tea, kuidas arvuti selleni jõuab. Järgnevalt vaatame ühte viisi ruutjuure leidmiseks, kus kasutatakse vaid lihtsaid aritmeetilisi tehteid.
 
 Olgu meil antud arv `y`. Otsime sellist `x` et `x * x = y`. Siis aga `x = y / x`. Seega, kui võtta mingi lähend x\ :sub:`0` selle ruutjuure jaoks, võiks x\ :sub:`0` ja y/x\ :sub:`0` aritmeetiline keskmine olla tegelikule ruutjuure väärtusele juba lähemal, kui x\ :sub:`0` ise seda on. Tuleb välja, et nii enamasti ka on. See lubab ruutjuure leidmiseks kirjutada järgmise programmi:
 
@@ -1352,13 +1352,13 @@ Olgu meil antud arv `y`. Otsime sellist `x` et `x * x = y`. Siis aga `x = y / x`
 
         print("Lähend on " + str(x0))
 
-        # Lõpeta arvutamine, kui lähend enam eriti ei muutu
+        # Lõpeta arvutamine kui lähend enam eriti ei muutu.
         if abs(x0-eelmine_x0) < 0.0000001:
             break
 
     print("Ruutjuur on ligikaudu: " + str(x0))
 
-``while True`` tähendab lõpmatut kordust. Tsükli kehas on aga siiski ``if``-lause, mille tingimuse täidetuse korral kordus break-käsuga lõpetatakse. ``if``-lause kontrollib sisuliselt seda, kas eelmise lähendi ja uue lähendi erinevus on väiksem, kui 0,0000001. Peale natukest katsetamist peaks olema selge, et enamasti jõutakse sellise täpsuseni väga väheste korduste arvuga. Võiksite kontrollimise huvides võrrelda selle programmi ja näiteks ``math.sqrt`` tulemusi. Sellist lähendi leidmise meetodit nimetatakse Newtoni iteratsioonimeetodiks, inglise matemaatiku ja füüsiku Isaac Newtoni auks.
+``while True`` tähendab lõpmatut kordust. Tsükli kehas on aga siiski ``if``-lause, mille tingimuse täidetuse korral kordus break-käsuga lõpetatakse. ``if``-lause kontrollib sisuliselt seda, kas eelmise lähendi ja uue lähendi erinevus on väiksem kui 0,0000001. Peale natukest katsetamist peaks olema selge, et enamasti jõutakse sellise täpsuseni väga väheste korduste arvuga. Võiksid kontrollimise huvides võrrelda selle programmi ja näiteks ``math.sqrt`` tulemusi. Sellist lähendi leidmise meetodit nimetatakse Newtoni iteratsioonimeetodiks inglise matemaatiku ja füüsiku Isaac Newtoni auks.
 
 .. admonition:: Katsetamise teel arvutamine
 
@@ -1366,9 +1366,9 @@ Olgu meil antud arv `y`. Otsime sellist `x` et `x * x = y`. Siis aga `x = y / x`
 
 π leidmine
 ----------
-Järgmisena kirjeldaksime aga hästi kavalat viisi kuidas leida π (ringi ümbermõõdu ja diameetri vahelise suhte) väärtust. Kui joonistada ruut ja selle sisse ring, siis kui ringi raadius on `r`, on ruudu pindala `(2*r)*(2*r) = 4*r**2` ja ringi pindala `pi*r**2`. Seega ringi pindala moodustab `pi/4` kogu ruudu pindalast. Seega, valides juhusliku punkti ruudu seest, asub ta ringi sees tõenäosusega `pi/4`. Seega, kui valida juhuslikult palju punkte ruudu seest, peaks ligikaudu `pi/4` osa neist olema ringi sees. Neid kokku lugedes saame seega hinnata `pi/4` väärtust suhtega `ringi sees olevate arv` / `katsete koguarv`.
+Järgmisena kirjeldame aga omapärast viisi π (ringi ümbermõõdu ja diameetri vahelise suhte) väärtuse leidmiseks. Kui joonistada ruut ja selle sisse ring, siis kui ringi raadius on `r`, on ruudu pindala `(2*r)*(2*r) = 4*r**2` ja ringi pindala `pi*r**2`. Seega ringi pindala moodustab `pi/4` kogu ruudu pindalast. Seega, valides juhusliku punkti ruudu seest, asub ta ringi sees tõenäosusega `pi/4`. Niisiis kui valida juhuslikult palju punkte ruudu seest, peaks ligikaudu `pi/4` osa neist olema ringi sees. Neid kokku lugedes saame seega hinnata `pi/4` väärtust suhtega `ringi sees olevate arv` / `katsete koguarv`.
 
-Teame, et ringi moodustavad kõik punktid, mis on tema keskpunktile lähemal kui raadius. Seega, kui keskpunkt on (0,0), siis on ringi sees täpselt need punktid (x,y) mille korral 
+Teame, et ringi moodustavad kõik punktid, mis on tema keskpunktile lähemal kui raadius. Seega, kui keskpunkt on (0,0), siis on ringi sees täpselt need punktid (x,y), mille korral 
 `sqrt(x**2 + y**2) ≤  r`, st. `x**2 + y**2 ≤  r**2`. Valides `r=1`, saame koostada järgmise programmi:
 
 .. sourcecode:: py3
@@ -1380,25 +1380,25 @@ Teame, et ringi moodustavad kõik punktid, mis on tema keskpunktile lähemal kui
 
     i = 0
     while i < n:
-        # Genereeri juhuslik punkt
+        # Genereeri juhuslik punkt.
         x = random.uniform(-1,1)
         y = random.uniform(-1,1)
 
-        # Kontrolli, kas ta on ringi sees
+        # Kontrolli, kas ta on ringi sees.
         if (x**2 + y**2 < 1):
             c=c+1
         
         i += 1
 
-    print("Hinnanguks on "+ str((4.0*c) / n))
+    print("Hinnang on "+ str((4.0*c) / n))
 
 Funktsioon ``random.uniform`` valib ühtlase jaotuse põhjal juhuslikult ühe reaalarvu etteantud vahemikust. Kõik muu programmi juures peaks olema juba tuttav.
 
-Katsetamine erinevate katsete arvudega (10,100,1000,...,1000000) peaks veenma, et kuigi tulemused on reeglina π-le lähedased, on see siiski suhteliselt halb meetod π kohtade leidmiseks sest vähegi mõistliku täpsuse saamiseks tuleb teha väga palju katseid.
+Katsetamine erinevate katsete arvudega (10,100,1000,...,1000000) peaks veenma, et kuigi tulemused on reeglina π-le lähedased, on see siiski suhteliselt halb meetod π kohtade leidmiseks, sest vähegi mõistliku täpsuse saamiseks tuleb teha väga palju katseid.
 
 .. admonition:: Graafiline versioon
 
     Kui selle lahenduskäigu põhimõte jäi hägusaks, siis lae alla järgnev programm, mis demonstreerib sama asja graafiliselt: :download:`pi_demo.py <downloads/pi_demo.py>`. Juhuslike täppide genereerimiseks tee programmi aknas hiireklõpse (hiirekursori asukoht pole tähtis). Iga uue täpi lisandumisel korrigeeritakse arvutatud pi väärtust vastavalt sellele, kas täpp sattus ringi sisse või mitte. Jooksvat tulemust näidatakse käsurea aknas.
 
-Selliseid arvutusmeetodeid nimetatakse Monte Carlo meetoditeks (kuulsa kasiinolinna järgi Monakos). Antud näide on taas pigem illustratiivne – praktikas kasutatakse seda reeglina ülesannete puhul, mida muud moodi lahendada ei osata. π arvutamiseks teatakse aga palju teisi ja oluliselt paremaid meetodeid.
+Selliseid arvutusmeetodeid nimetatakse Monte Carlo meetoditeks (kuulsa kasiinolinna järgi Monacos). Antud näide on taas pigem illustratiivne – praktikas kasutatakse seda reeglina ülesannete puhul, mida muud moodi lahendada ei osata. π arvutamiseks teatakse aga palju teisi ja oluliselt paremaid meetodeid.
 
