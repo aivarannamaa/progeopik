@@ -179,7 +179,7 @@ Harjutus. Pikkus
 Kirjuta rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st. elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
 
 
-Mitmeharuline rekursioon e. *puurekursioon*
+Hargnev rekursioon e. *puurekursioon*
 ===========================================
 Rekursiivses funktsioonis võib olla mitu rekursiivset väljakutset. Sellist *rekursiooniskeemi* nimetatakse *puurekursiooniks*, kuna selle graafilises esituses moodustub funktsiooni väljakutseid tähistavatest nooltest puutaoline kujutis. 
 

@@ -14,7 +14,7 @@ Tuleta meelde eelmises peatükis nähtud programme.
 
 .. admonition:: NB! 
 
-    Need on tegelikult päris olulised küsimused. Võta aeg maha, vaata mõned programmid uuesti üle ja paku välja oma vastus!
+    Need on kaunis olulised küsimused. Võta aeg maha, vaata mõned programmid uuesti üle ja paku välja oma vastus!
     
 
 See peatükk tegeleb just nende kahe küsimusega.

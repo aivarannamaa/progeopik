@@ -22,11 +22,19 @@ Teine osa keskendub keerulisematele ülesannetele, kus mõnikord ei oskaks detai
 
 Kui esimesed kaks osa on üpris üldise iseloomuga, siis kolmandasse osasse on koondatud erinevaid teemasid, mis võivad ühe ülesande puhul olla vajalikud ja teise puhul mitte. Muuhulgas on siin tutvustatud Pythoni vahendeid graafiliste kasutajaliideste tegemiseks.  
 
+Soovitused õpiku kasutamiseks
+=============================
+Esimene osa sisaldab omajagu materjali, mille sügavama tähenduse mõistmiseks on vaja piisavalt programmeerimise kogemust. Seetõttu on soovitav teise osa läbitöötamisel aeg-ajalt esimese osa juurde tagasi pöörduda -- ehk kõnetab mõni varem kiiruga loetud lõik nüüd sind rohkem.
+
+Samuti soovitan nii esimese kui teise osa lugemisel piiluda vahel ka kolmandasse osasse -- sealsed teemad võivad olla heaks võimaluseks loetud teooria rakendamiseks ja kinnistamiseks.  
+
 Tagasiside
 ==========
 Kui leiad õpikus vigu või soovid lihtsalt midagi kommenteerida, siis kirjuta aadressil aivar.annamaa@ut.ee
 
 Edu!
+
+Aivar Annamaa
 
 .. todo::
 

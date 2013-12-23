@@ -14,7 +14,7 @@ Kuidas Matplotlib installida?
 =============================
 
 Järgnev juhend on Windowsi kasutajate jaoks.
---------------------------------------------
+
 1) Installeri leiad lehelt: http://matplotlib.org/downloads.html. Sealt otsige sobiv versioon.
 2) Laadige alla teek NumPy, Python 3.2 ja 3.3 jaoks sobib 1.8.0: http://sourceforge.net/projects/numpy/files/NumPy/. Tänu sellele saame kasutada laiend
 3) Laadige alla Python dateutil: https://pypi.python.org/pypi/python-dateutil
