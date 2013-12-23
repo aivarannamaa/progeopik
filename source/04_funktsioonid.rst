@@ -75,9 +75,9 @@ Arvutamine vs. "tegemine"
 -------------------------
 Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni väljakutse (nt. ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause? Tuleb välja, et sellele ei saagi lühidalt vastata.
 
-Mõned funktsioonid (nt. ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatilistele funktsioonidele, kuna nad "võtavad" ühe väärtuse, arvutavad natuke ja "annavad vastu" e. **tagastavad** mingi teise väärtuse (nt. avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide väljakutsed on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. Siia gruppi loeme ka need funktsioonid, mille väljakutse võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
+Mõned funktsioonid (nt. ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatiliste funktsioonidega, kuna nad "võtavad" ühe väärtuse, arvutavad natuke ja annavad vastu e. **tagastavad** mingi teise väärtuse (nt. avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide väljakutsed on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. Siia gruppi loeme ka need funktsioonid, mille väljakutse võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
 
-Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step()``) huvitab meid see, mida nad **teevad** -- me tahame, et midagi *juhtuks* (nt. et ekraanile ilmuks uus tekstijupp või robot liigutaks ennast). Mingit huvitavat tagastusväärtust nad meile ei paku. Selliste funktsioonide väljakutseid loeme me lauseteks ja seetõttu esinevad nad programmides omaette real. Funktsioonide defineerimise õppimist alustame just seda tüüpi funktsioonidega.
+Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step()``) huvitab meid see, mida nad **teevad** -- me tahame, et midagi **juhtuks** (nt. et ekraanile ilmuks uus tekstijupp või robot liigutaks ennast). Mingit huvitavat tagastusväärtust nad meile ei paku. Selliste funktsioonide väljakutseid loeme me lauseteks ja seetõttu esinevad nad programmides omaette real. Funktsioonide defineerimise õppimist alustame just seda tüüpi funktsioonidega.
 
 
 .. note::
@@ -86,7 +86,7 @@ Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step(
 
 .. note::
 
-    Kui nüüd päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``step``. Need funktsioonid, mille põhieesmärgiks on mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata. Õnneks ta meid ka ei sega, seega võime teda vabalt ignoreerida.
+    Kui nüüd päris täpne olla, siis tegelikult kõik Pythoni funktsioonid tagastavad midagi, isegi ``print`` ja ``step``. Need funktsioonid, mille põhieesmärk on mingi tegevus, tagastavad alati ühe spetsiifilise (ja suhteliselt ebahuvitava) väärtuse ``None``. Selle väärtusega ei ole üldjuhul midagi peale hakata. Õnneks ta meid ka ei sega, seega võime teda vabalt ignoreerida.
 
 
 .. index::
@@ -111,7 +111,7 @@ Taolisi funktsioone nimetatakse **meetoditeks**. Lisaks sellele, et meetodite pu
 
 Funktsioonide defineerimine
 ===========================
-Enne, kui funktsiooni saab kasutada, tuleb ta *defineerida*. Meile tuttavad funktsioonid on defineeritud Pythoni loojate poolt, seepärast ei pidanud me siiani selle peale mõtlema. Paraku pole võimalik ette valmistada kõiki funktsioone, mida kellelgi võiks vaja minna, seepärast lubab Python neid ka programmeerijal ise defineerida.
+Enne kui funktsiooni saab kasutada, tuleb ta *defineerida*. Meile tuttavad funktsioonid on defineeritud Pythoni loojate poolt, seepärast ei pidanud me siiani selle peale mõtlema. Paraku pole võimalik ette valmistada kõiki funktsioone, mida kellelgi võiks vaja minna, seepärast lubab Python neid ka programmeerijal ise defineerida.
 
 Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 30, aga nad peavad olema erinevates kohtades: 
 
@@ -166,9 +166,8 @@ Kui vastav programm kirjutada "jõumeetodil", siis sisalduks ruudu joonistamise 
 Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas spetsiaalne funktsioon. ``turtle`` moodulis sellist ei leidu, aga me võime selle ise *defineerida* ja seejärel kasutada seda justkui iga teist Pythoni funktsiooni:
 
 .. sourcecode:: py3
-    :emphasize-lines: 4-9,12,22,31    
+    :emphasize-lines: 3-8,11,21,30    
     
-    # Kavalam variant
     from turtle import *
     
     def ruut():
@@ -203,11 +202,9 @@ Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas spetsiaalne 
     exitonclick()
 
 
-Kui sa nüüd arvad, et funktsiooni defineerimisega on seotud see koodijupp, mis algab võtmesõnaga ``def``, siis on sul täiesti õigus.
+``def``-konstruktsiooni päises antakse funktsioonile nimi, mille järgi saab teda hiljem kasutada. Tühjad sulud nime järel näitavad, et antud funktsioon on mõeldud kasutamiseks ilma argumentideta.
 
-``def``-konstruktsiooni *päises* antakse funktsioonile nimi, mille järgi saab teda hiljem kasutada. Tühjad sulud nime järel näitavad, et antud funktsioon on mõeldud kasutamiseks ilma argumentideta.
-
-Konstruktsiooni *kehas* tuuakse välja need laused, mida soovitakse käivitada funktsiooni rakendamisel. Antud juhul kopeerisime funktsiooni kehasse algsest programmist ruudu joonistamise koodi. Seejuures pidime muidugi read pisut paremale nihutama, et oleks aru saada, et need kuuluvad ``def``-konstruktsiooni alla.
+Konstruktsiooni kehas tuuakse välja need laused, mida soovitakse käivitada funktsiooni rakendamisel. Antud juhul kopeerisime funktsiooni kehasse algsest programmist ruudu joonistamise koodi. Seejuures pidime muidugi read pisut paremale nihutama, et oleks aru saada, et need kuuluvad ``def``-konstruktsiooni alla.
 
 Päis ja keha kokku moodustavad *funktsiooni definitsiooni* e. ``def``-lause. Pärast selle lause käivitamist on Pythonil üks käsk juures, mida saab edaspidi rakendada samal põhimõttel nagu sisseehitatud funktsioone. (Erinevus on selles, et uus funktsioon kehtib ainult sama programmi piires -- kui tahad seda kasutada ka mõnes muus programmis, siis tuleb see seal uuesti defineerida.)
 
@@ -240,9 +237,8 @@ Täienda eespool toodud 3 ruudu joonistamise programmi nii, et kõik 3 ruutu ole
     Esimeses variandis lisame täitmise käsud otse funktsiooni ``ruut`` definitsiooni:
     
     .. sourcecode:: py3
-        :emphasize-lines: 5, 11
+        :emphasize-lines: 4, 10
         
-        # Kavalam variant
         from turtle import *
         
         def ruut():
@@ -276,9 +272,8 @@ Täienda eespool toodud 3 ruudu joonistamise programmi nii, et kõik 3 ruutu ole
     Kui me leiame, et definitsioon ``ruut`` peaks siiski jääma täitmise küsimustest sõltumatuks, siis on mõttekam mainida täitmist iga ruudu joonistamise juures eraldi:
 
     .. sourcecode:: py3
-        :emphasize-lines: 11,13,21,23,30,32
+        :emphasize-lines: 10,12,20,22,29,31
         
-        # Kavalam variant
         from turtle import *
         
         def ruut():
@@ -317,13 +312,13 @@ Täienda eespool toodud 3 ruudu joonistamise programmi nii, et kõik 3 ruutu ole
 
 .. hint::
 
-    Kui soovid täitmise värvi ise valida, siis uuri kilpkonna dokumentatsiooni: http://docs.python.org/3/library/turtle.html
+    Kui soovid täitmise värvi ise valida, siis uuri kilpkonna dokumentatsiooni: http://docs.python.org/3/library/turtle.html.
 
-Kontrollküsimus: Mitu kala?
+Kontrollküsimus: mitu kala?
 ---------------------------
 Küllap oled juba märganud, et Python ei soovi programmeerija vabadust piirata, seetõttu on loomulik, et ühes programmis võib defineerida ükskõik kui palju uusi funktsioone ja need võivad ka üksteist kasutada. 
 
-Nüüd küsimus: Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? NB! proovi vastata ilma Pythoni abita, programmi enda peas "läbi mängides"! Lõpuks kontrolli oma vastust Pythoni abil.
+Nüüd küsimus: mitu korda kirjutab järgnev programm ekraanile sõna "kala"? NB! Proovi vastata ilma Pythoni abita programmi enda peas läbi mängides! Lõpuks kontrolli oma vastust Pythoni abil.
 
 .. sourcecode:: py3
 
@@ -363,7 +358,7 @@ Nüüd küsimus: Mitu korda kirjutab järgnev programm ekraanile sõna "kala"? N
         print("kogu eksperimendi lõpp")
 
 
-Kontrollküsimus: Mitu tärni?
+Kontrollküsimus: mitu tärni?
 ----------------------------
 Mitu tärni ilmub ekraanile järgmise programmi käivitamisel? Paku vastus ja siis kontrolli.
 
@@ -386,7 +381,7 @@ Mitu tärni ilmub ekraanile järgmise programmi käivitamisel? Paku vastus ja si
 
 Harjutus. Pööre vasakule
 ------------------------
-Eelmises peatükis Pykkari käske tutvustades tuli välja, et Pykkaril pole sisseehitatud käsku vasakule pööramiseks. Õnneks oli võimalik saavutada sama effekt pöörates 3 korda paremale.
+Eelmises peatükis Pykkari käske tutvustades tuli välja, et Pykkaril pole sisseehitatud käsku vasakule pööramiseks. Õnneks oli võimalik saavutada sama efekt 3 korda paremale pöörates.
 
 Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi selliselt, et vasakule pööramised näeksid koodis natuke loomulikumad välja. 
 
@@ -415,8 +410,8 @@ Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi 
 
 .. _lokaalsed-muutujad:
 
-Lokaalsed muutujad
-------------------
+Lokaalsed vs. globaalsed muutujad
+=================================
 Nagu nägime juba funktsiooni ``ruut`` definitsioonist, võib definitsiooni kehas kasutada abimuutujaid (meie näites ``joonistatud_külgi``). Teeme nüüd väikese eksperimendi -- joonistame funktsiooni kasutades ühe ruudu ning üritame seejärel väljastada muutuja ``joonistatud_külgi`` viimase väärtuse:
 
 .. sourcecode:: py3
@@ -440,9 +435,46 @@ Nagu nägime juba funktsiooni ``ruut`` definitsioonist, võib definitsiooni keha
 
 Programmi käivitades saime oodatud ``4`` asemel hoopis veateate ``NameError: name 'joonistatud_külgi' is not defined``.
 
-Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on **lokaalsed**, st nad toimivad ainult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni igal käivitamisel ja nad kaovad, kui funktsioon oma töö lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil funktsiooni sees olevatele muutujatele e. *lokaalsetele muutujatele* vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
+Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on **lokaalsed**, st. nad toimivad ainult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni igal käivitamisel ja nad kaovad, kui funktsioon oma töö lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil funktsiooni sees olevatele e. lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
 
-Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees defineeritud muutuja ``x`` ei mõjuta kuidagi programmi põhiosas defineeritud samanimelist muutujat, tegemist on kahe eraldi muutujaga, millele on juhtumisi sama nimi (nii nagu kahel erineval inimesel võib olla sama nimi):
+Programmi põhiosas defineeritud muutujaid nimetatakse **globaalseteks** muutujateks. Nende nähtavus on suurem -- nendele pääseb Python ligi nii programmi põhiosas, kui ka funktsioonide sees.
+
+Kontrollküsimus: mis juhtub?
+----------------------------
+Nüüd peaksid sa oskama ennustada, mida teeb järgmine programm:
+
+.. sourcecode:: py3
+
+    x = 1
+    
+    def f():
+        y = 2
+        print(x) 
+        print(y) 
+    
+    f()
+    print(x)
+    print(y)
+
+.. hint::
+
+    Minu ekraanile ilmus
+    
+    .. sourcecode:: none
+    
+        1
+        2
+        1
+        Traceback (most recent call last):
+          File "C:\Users\Aivar\Desktop\katse.py", line 10, in <module>
+            print(y)
+        NameError: name 'y' is not defined 
+    
+    Funktsiooni sees olevad ``print``-laused õnnestusid -- esimene neist kuvas globaalse muutuja ``x`` väärtuse, teine lokaalse muutuja ``y`` väärtuse. Õnnestus ka programmi põhiosas olev esimene ``print``-lause, mis kuvas globaalse muutuja ``x`` väärtuse. Vea andis programmi lõpus olev ``print``, sest programmi põhiosal on ligipääs vaid globaalsetele muutujatele, aga selles programmis ei ole ühtegi globaalset muutujat nimega ``y``.
+
+Funktsioonis jäävad lokaalsed muutujad peale
+--------------------------------------------
+Eespool sai öeldud, et lokaalsetele muutujatele võib nimesid valida ilma teiste funktsioonide või programmi põhiosa pärast muretsemata. Mis juhtub aga siis, kui valida lokaalsele muutujale selline nimi, mis esineb ka mõne globaalse muutuja nimena? Proovime järgi! 
 
 .. sourcecode:: py3
 
@@ -456,11 +488,48 @@ Eelneva jutu kinnituseks demonstreerib järgnev programm, et funktsiooni sees de
     f()      # ekraanile kuvatakse 2
     print(x) # ekraanile kuvatakse 1
         
+Tuleb välja, et funktsiooni sees defineeritud muutuja ``x`` ei mõjuta kuidagi samanimelist globaalset muutujat, tegemist on kahe erineva muutujaga, millel on juhtumisi sama nimi (nagu kahel erineval inimesel võib olla sama nimi).
+
+Selle skeemiga kaasneb paratamatult kitsendus, et me ei saa funktsiooni ``f`` sees enam ligi globaalsele ``x``-le, sest lokaalsed muutujad varjavad samanimelisi globaalseid muutujaid.
 
 .. note::
 
-    Programmi põhiosa muutujate (neid nimetakse ka *globaalseteks muutujateks*) ning funktsiooni kehas defineeritud muutujate (e. lokaalsete muutujate) eraldatus ei ole päris sümmeetriline -- kuigi programmi põhiosal pole ligipääsu funktsiooni muutujatele, saab funktsioonis siiski kasutada programmi põhiosa muutujaid. Sellest tuleb täpsemalt juttu ühes hilisemas peatükis.
+    Python paneb lokaalsete muutujate nimekirja kokku funktsiooni koodis leiduvate omistuslausete põhjal. Tuleb aga arvestada, et seda teeb ta juba funktsiooni sisenedes, enne vastavate omistuslausete käivitamist, seetõttu tähendab järgneva näite funktsioonis ``f`` olev ``x`` lokaalset muutujat, hoolimata sellest, et vastavat omistuslauset kunagi ei täideta.
+    
+    .. sourcecode:: py3
+    
+        x = 1
+        
+        def f():
+            print(x) 
+            
+            if False:
+                x = 2
+    
+        f()
+    
+    Antud programm annab käivitamisel vea, sest ``print(x)`` üritab kuvada lokaalse muutuja ``x`` väärtust, aga sellele pole väärtust omistatud. 
 
+Globaalsete muutujate muutmine funktsiooni sees
+-----------------------------------------------
+Kui omistuslause funktsiooni sees tekitab uue lokaalse muutuja, siis kas on üldse võimalik funktsiooni sees olles mõnd globaalset muutujat muuta? On võimalik küll. Selleks tuleb funktsiooni alguses deklareerida, et teatud nime puhul mõtleme me antud funktsioonis igal juhul globaalset muutujat, isegi kui sellele muutujale tehakse omistamine. 
+
+.. sourcecode:: py3
+    :emphasize-lines: 4
+    
+    x = 10
+    
+    def test():
+        global x    
+        x = 3       # Globaalsele x-le omistatakse uus väärtus. 
+        print(x)    # Kuvatakse globaalse x-i väärtus.
+    
+    test()      # Mis peaks nüüd ekraanile ilmuma?
+    print(x)    # Aga nüüd?
+
+NB! Kuigi teatud juhtudel on selline võimalus kasulik, tuleks funktsioonis globaalsete muutujate muutmist siiski võimalusel vältida. Globaalsed muutujad on funktsiooni jaoks väga võimas kanal, mille abil ülejäänud programmiga infot vahetada, aga selle kanali ülemäärasel kasutamisel võib programmeerija kergesti kaotada järje kes suhtleb kellega ja mis sõltub millest. Järgmiseks tutvustame ühte palju paremat viisi funktsiooni ja ülejäänud programmi vahel info vahetamiseks.
+ 
+    
 
 
 .. index::
@@ -492,7 +561,7 @@ Parameetritega saab teha funktsiooni universaalsemaks -- teatud detailid jäetak
     .. note::    
         `Parameetri` vs. `argumendi` asemel võib mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
     
-Harjutus. Parameetriseeritud ``ruut``
+Harjutus. Parametriseeritud ``ruut``
 -------------------------------------
 Täiusta eespool defineeritud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasuta loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
 
@@ -719,7 +788,7 @@ Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab sel
     Abiks on funktsioon ``len`` ja operaator ``*``
 
 
-Nipp: Funktsioonide testimine käsureal
+Nipp: funktsioonide testimine käsureal
 --------------------------------------
 Väärtusega funktsioone on mugav testida IDLE'i käsureal. Selleks piisab, kui skriptis on kirjas ainult funktsiooni definitsioon -- taolise skripti jooksutamisel küll esialgu midagi ekraanile ei ilmu, aga käsureal on võimalik funktsiooni kasutada. Näiteks, kui skripti sisu on selline:
 
