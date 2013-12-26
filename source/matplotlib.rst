@@ -2,6 +2,12 @@ Matplotlib
 **********
 (Kirjutanud Allar Aav ja Andreas Suurkuusk)
 
+.. warning::
+
+    See peatükk on veel kontrollimata ja lõplikult viimistlemata.
+
+
+ 
 Matplotlib on teek, mille eesmärk on kuvada graafikuid. Sellega saab teha väga erinevat tüüpi graafikuid, milledest allpool ka juttu tuleb.
 
 Matplotlib osutub kasulikuks, kui on vaja näiteks andmeanalüüsis kuvada graafikuid. Nii nagu Pygame, ei ole ka Matplotlib Pythoniga automaatselt kaasas.

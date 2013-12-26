@@ -11,4 +11,5 @@ III osa: Lisad
    easygui
    pygame
    matplotlib
+   statistikast
    tehniline
