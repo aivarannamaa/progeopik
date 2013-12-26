@@ -1,6 +1,6 @@
-**********************************
-6. II osa sissejuhatus. Algoritmid
-**********************************
+***********************************
+6. II osa sissejuhatus. Algoritmid.
+***********************************
 
 .. todo::
     Ptk. ülesanne
@@ -106,22 +106,22 @@
 
 
 
-Õpiku esimeses osas tutvustatud programmeerimise mõisted ja vahendid (arvud, sõned, avaldised, muutujad, tingimuslause, korduslause, sisend ja väljund) on teatud nurga alt vaadates kõik, mida programmeerimise kohta on vaja teada. Kui oleksime nõus spetsiifiliste sisend/väljund seadmetega suhtlemise taandama ``input`` ja ``print`` käskudele, siis hea tahtmise juures saaksime praeguseks tuttavate vahendite abil lahendada suvalise programmeerimisülesande. Samas, kui mõtled "päris" programmidele, mida sa igapäevaselt kasutad, siis ilmselt nõustud, et miskit jääb veel puudu.
+Õpiku esimeses osas tutvustatud programmeerimise mõisted ja vahendid (arvud, sõned, avaldised, muutujad, tingimuslause, korduslause, sisend ja väljund) on teatud nurga alt vaadates kõik, mida programmeerimise kohta on vaja teada. Kui oleksime nõus spetsiifiliste sisend/väljund seadmetega suhtlemise taandama ``input`` ja ``print`` käskudele, siis hea tahtmise juures saaksime praeguseks tuttavate vahendite abil lahendada suvalise programmeerimisülesande. Samas, kui mõtled "päris" programmidele, mida sa iga päev kasutad, siis ilmselt nõustud, et midagi jääb veel puudu.
 
-Üheks probleemiks, nagu juba vihjatud, on erinevate spetsiifiliste seadmete juhtimine -- ükskõik kuidas me ``if``-lauseid ja ``while``-tsükleid ei kombineeriks, ei õnnestuks meil arvuti kõlaritesse ühtki piuksu saata ilma vastavaid käske teadmata. Taolistest probleemidest saab harilikult kergesti üle -- tuleb vaid järgi uurida, millistes moodulites millised funktsioonid soovitud effekti annavad, ning lasta programmil neid lihtsalt õigel ajal ja õigete argumentidega välja kutsuda. Mõnede selliste probleemide osas leiab näpunäiteid õpiku lisadest.
+Üks probleem, nagu juba vihjatud, on erinevate spetsiifiliste seadmete juhtimine -- ükskõik kuidas me ``if``-lauseid ja ``while``-tsükleid ei kombineeriks, ei õnnestuks meil arvuti kõlaritesse ühtki piuksu saata ilma vastavaid käske teadmata. Taolistest probleemidest saab harilikult kergesti üle -- tuleb vaid järele uurida, millistes moodulites millised funktsioonid soovitud efekti annavad ning lasta programmil neid lihtsalt õigel ajal ja õigete argumentidega välja kutsuda. Mõnede selliste probleemide osas leiab näpunäiteid õpiku lisadest.
 
-Suuremaks probleemiks on ülesanded, mille puhul pole kohe selge, kuidas üldse jõuda sisendist väljundini. Mõnikord tundub ülesande mitteformaalne lahendus küll triviaalne, aga sama lahendust Pythoni programmina vormistades satume raskustesse. 
+Suurem probleem on ülesannetega, mille puhul pole kohe selge, kuidas üldse jõuda sisendist väljundini. Mõnikord tundub ülesande mitteformaalne lahendus küll triviaalne, aga sama lahendust Pythoni programmina vormistades satume raskustesse. 
 
-Oletame, et meil on tekstifail, kus igal real kirjas on ühe inimese nimi ja ülesandeks on leida sellest loetelust kõige pikem nimi. Kui nimekiri pole väga pikk, siis ülesande käsitsi lahendamiseks piisab faili Notepadis avamisest ja pilguga üle ridade käimisest, võibolla on vaja ka mõned pikemad nimed üksteise alla kopeerida, et nende pikkust täpsemalt võrrelda. Kui üritame sama strateegiat Pythoni programmina kirja panna, siis see tõenäoliselt enam nii lihtne ei tundu, kuigi kõik selleks vajalikud vahendid on meile tuttavad.
+Oletame, et meil on tekstifail, kus igal real on kirjas ühe inimese nimi ja ülesanne on leida sellest loetelust kõige pikem nimi. Kui nimekiri pole väga pikk, siis ülesande käsitsi lahendamiseks piisab faili Notepadis avamisest ja pilguga üle ridade käimisest, võibolla on vaja ka mõned pikemad nimed üksteise alla kopeerida, et nende pikkust täpsemalt võrrelda. Kui üritame sama strateegiat Pythoni programmina kirja panna, siis see tõenäoliselt enam nii lihtne ei tundu, kuigi kõik selleks vajalikud vahendid on meile tuttavad.
 
-Käesolevas õpiku osas keskendumegi programmeerimise sellele osale, mis jääb sisendi ja väljundi vahele ning uurime standardseid võtteid tüüpiliste programmeerimisprobleemide lahendamiseks. 
+Selles õpiku osas keskendumegi programmeerimise sellele osale, mis jääb sisendi ja väljundi vahele, ning uurime standardseid võtteid tüüpiliste programmeerimisprobleemide lahendamiseks. 
 
 .. todo::
 
     Ütle midagi ka andmestruktuuride kohta
 
 
-Selles peatükis astume sammu tagasi ja vaatame üle mõned üldised programmeerimisega seotud küsimused:
+Selles peatükis astume sammu tagasi ja vaatame üle mõned üldised programmeerimisega seotud küsimused.
     
 * Milliseid ülesandeid saab lahendada arvuti abil?
 * Kas kaks erinevat programmi, mis annavad sama tulemuse, on sama head?
@@ -131,28 +131,28 @@ Selles peatükis astume sammu tagasi ja vaatame üle mõned üldised programmeer
 
 Näited probleemidest
 ====================
-Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnedele ülesannetele on olemas standardvastused, teiste korral tuleb neid alles hakata otsima, seejuures mõned lahendamata ülesanded tunduvad huvitavana, mõned mitte. Probleemid varieeruvad oma olemuselt matemaatilistest kuni filosoofilisteni (Mis on elu mõte?). 
+Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnele ülesandele on olemas standardvastused, teise korral tuleb neid alles hakata otsima, seejuures mõni lahendamata ülesanne tundub huvitavana, mõni mitte. Probleemid varieeruvad oma olemuselt matemaatilistest filosoofilisteni (Mis on elu mõte?). 
 
-Vaatame nüüd mõnesid ülesandeid, millega võid kokku puutuda. Enne ülesande kommentaari lugemist mõtle, kuidas tuleks sellele ülesandele läheneda ja kas selle lahendamiseks (või lahendamise abistamiseks) saaks kirjutada arvutiprogrammi.
+Vaatame nüüd paari ülesannet, millega võid kokku puutuda. Enne ülesande kommentaari lugemist mõtle, kuidas tuleks sellele ülesandele läheneda ja kas selle lahendamiseks (või lahendamise abistamiseks) saaks kirjutada arvutiprogrammi.
 
 
-Näide 1. Dokumentideta võõras linnas
-------------------------------------
+Näide 1. Dokumentideta võõras linnas.
+-------------------------------------
 Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde avastad, et ühiselamu võti, ID-kaart ja mobiiltelefon on kadunud. Kuidas lahendada olukord?
 
 .. admonition:: Kommentaar 
 
-    Antud ülesande püstitus tekitab palju küsimusi: kuhu need asjad võisid kaduda? Kas nad kadusid korraga? Millal nad viimati olemas olid? Kas ülikooli ruumidesse pääseb veel sisse, et neid sinna otsima minna? Selliseid küsimusi saab esitada veel ja seetõttu oleks väga raske lahendust üheselt määrata. Me võiksime ju proovida formuleerida kaotatud asjade leidmiseks mingi "retsepti" aga tõenäoliselt nõuab selle situatsiooni lahendamine ka *loovust*, st. oskust toimida ettenägematus olukorras.
+    Antud ülesande püstitus tekitab palju küsimusi: kuhu need asjad võisid kaduda? Kas need kadusid korraga? Millal need viimati olemas olid? Kas ülikooli ruumidesse pääseb veel sisse, et neid sinna otsima minna? Selliseid küsimusi saab esitada veel ja seetõttu oleks väga raske lahendust üheselt määrata. Me võiksime ju proovida formuleerida kaotatud asjade leidmiseks mingi "retsepti" aga tõenäoliselt nõuab selle situatsiooni lahendamine ka loovust, st. oskust toimida ettenägematus olukorras.
 
-Näide 2. Hundi, kitse ja kapsa üle jõe viimine
-----------------------------------------------
-Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal, kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
+Näide 2. Hundi, kitse ja kapsa üle jõe viimine.
+-----------------------------------------------
+Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
 
 Leida ülesandele vähemalt üks lahendus.
 
 .. admonition:: Kommentaar
     
-    Seda ülesannet on arvatavasti oma peaga lihtsam lahendada, kui arvutiga, aga võime siiski kujutada ette arvutiprogrammi, mis proovib läbi kõikvõimalikud sõidud ja väljastab tulemuseks need, kus lõpuks on kõik tegelased teiselpool jõge ja vahepeal ei jäänud kordagi kits kapsaga ega hunt kitsega omapead.
+    Seda ülesannet on arvatavasti oma peaga lihtsam lahendada kui arvutiga, aga võime siiski kujutada ette arvutiprogrammi, mis proovib läbi kõik võimalikud sõidud ja väljastab tulemuseks need, kus lõpuks on kõik tegelased teisel pool jõge ja vahepeal ei jäänud kordagi kits kapsaga ega hunt kitsega omapead.
     
     Samas, me võime seda ülesannet vaadata ka teiselt tasemelt -- kui me oleme välja mõelnud sobiva üleveo skeemi, siis võiksime selle põhjal kirjutada programmi robotpaadile, mis tõstab õiged tegelased õigel ajal paati ja viib üle jõe. 
 
@@ -164,7 +164,7 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida valem, mis esit
 
 .. admonition:: Kommentaar
 
-    Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg) ja väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist 
+    Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg), väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt. ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist ... 
 
     .. image:: images/ring_ruut2.png
 
@@ -174,7 +174,7 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida valem, mis esit
         :math:`d=\sqrt{a^2+a^2}=\sqrt{2a^2}`
         :math:`S=\frac {\pi d^2}{4}= \frac {\pi a^2}{2}`
 
-    Nii nagu paadisõidu ülesandes, on ka siin võimalik saadud tulemust kasutada ära teisel tasemel -- nimelt ülesandes, mis nõuab valemi rakendamist etteantud sisendandmetega. Selle ülesande lahendamiseks on programmi kirjutamine väga sobiv valik. Samas, valemini jõudmine nõudis loovust ja seega seda osa arvutile me delegeerida ei oleks saanud. 
+    Nii nagu paadisõidu ülesandes, on ka siin võimalik saadud tulemust ära kasutada teisel tasemel -- nimelt ülesandes, mis nõuab valemi rakendamist etteantud sisendandmetega. Selle ülesande lahendamiseks on programmi kirjutamine väga sobiv valik. Samas, valemini jõudmine nõudis loovust ja seega seda osa arvutile me delegeerida ei oleks saanud. 
 
 
 .. todo::
@@ -214,32 +214,32 @@ Algoritm
 ========
 Ülalpool toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. Programmeerimisel tegeleme me probleemidega, mille lahendust saab esitada `algoritmina`. 
 
-**Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehhaaniliselt* (st. ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
+**Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehaaniliselt* (st. ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
 
-Algoritmil on neli olulist omadust:
+Algoritmil on neli olulist omadust.
 
-1. Algoritmi iga samm peab olema *täpne*, st olema ühetähenduslik.
-2. Algoritm peab olema *lõplik*. Vastasel juhul me ei saa probleemile lahendust.
+1. Algoritmi iga samm peab olema *täpne*, st. olema ühetähenduslik.
+2. Algoritm peab olema *lõplik*. Vastasel juhul ei saa me probleemile lahendust.
 3. Algoritm peab olema *efektiivne*, st ta peab andma probleemile korrektse vastuse.
-4. Algoritm peab olema *üldine*, st ta peab lahendama ülesande iga eksemplari. Näiteks ringi pindala leidmise algoritm peab sobima kõigi võimalike algandmete jaoks.
+4. Algoritm peab olema *üldine*, st. ta peab lahendama ülesande iga eksemplari. Näiteks ringi pindala leidmise algoritm peab sobima kõigi võimalike algandmetega.
 
 
 Algoritme kasutatakse erinevate elukutsete juures. Näiteks kokk järgib algoritmi, mida nimetatakse retseptiks. Retsept kirjeldab protsessi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). 
  
 .. note::
 
-    Sõna *‘algoritm’* on tuletatud 9. sajandi Pärsia matemaatiku Mohammed al-Khowarizmi nimest. Tema nime ladinapärane kuju on *Algorismus*.
+    Sõna *algoritm* on tuletatud 9. sajandi Pärsia matemaatiku Mohammed al-Khowarizmi nimest. Tema nime ladinapärane kuju on Algorismus.
 
 
 Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida arvuti jaoks arusaadavale kujule (programm) ja seega saab neid vajadusel käivitada arvutil. Sellest vaatenurgast võiksime anda algoritmile ka järgneva, veidi kitsama definitsiooni:
 
-*Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, millele antakse sisendina ette mingi väärtus või väärtuste hulk ja mis leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused.* 
+    Algoritm on täpselt defineeritud (arvutuslik) protseduur, mis koosneb instruktsioonide hulgast, millele antakse sisendina ette mingi väärtus või väärtuste hulk ja mis leiab väljundiks mingi väärtuse või väärtuste hulga. Teiste sõnadega, algoritm on protseduur, mis võtab andmed ja manipuleerib nendega, järgides ettekirjutatud samme ja leiab otsitavad väärtused. 
 
 .. image:: images/l04_fig8.png 
 
-Mõned ütlevad, et programmeerimine ja algoritmide loomine ongi üks ja sama. Tavapärases kõnepruugis siiski tehakse algoritmil ja programmil vahet: algoritm esitab mingi ülesande lahenduskäiku ilma tehnilistesse detailidesse laskumata (aga siiski ühetähenduslikult), programm on aga tavaliselt mõeldud mingi konkreetse masina (sh virtuaalse masina) juhtimiseks ja seetõttu võib sisaldada nüansse, mis on olulised vaid selle masina kasutamise korral.
+Mõned ütlevad, et programmeerimine ja algoritmide loomine ongi üks ja sama. Tavapärases kõnepruugis siiski tehakse algoritmil ja programmil vahet: algoritm esitab mingi ülesande lahenduskäiku ilma tehnilistesse detailidesse laskumata (aga siiski ühetähenduslikult), programm on aga tavaliselt mõeldud mingi konkreetse masina (sh. virtuaalse masina) juhtimiseks ja võib seetõttu sisaldada nüansse, mis on olulised vaid selle masina kasutamisel.
 
-Kaasaegsetes programmeerimiskeeltes (nt Python) ei ole masina nüanssidele eriti vaja mõelda, seetõttu kasutatakse programmeerimiskeeli juba algoritmide väljatöötamise faasis. Vahel on aga siiski mugavam panna algoritm esialgu kirja kuidagi teisiti, näiteks *pseudokoodina* (s.o. loomuliku keele ja matemaatiliste sümbolite segu) või mingi visuaalse *skeemina*. Järgnevalt uurimegi lähemalt ühte algoritmide skemaatilise esitamise viisi.
+Kaasaegsetes programmeerimiskeeltes (nt. Python) ei ole masina nüanssidele eriti vaja mõelda, seetõttu kasutatakse programmeerimiskeeli juba algoritmide väljatöötamise faasis. Vahel on aga siiski mugavam panna algoritm esialgu kirja kuidagi teisiti, näiteks *pseudokoodina* (s.o. loomuliku keele ja matemaatiliste sümbolite segu) või mingi visuaalse skeemina. Järgnevalt uurimegi lähemalt ühte algoritmide skemaatilise esitamise viisi.
 
 
 .. index::
@@ -254,31 +254,31 @@ Plokkskeem
 
 .. image:: images/l04_fig9.png 
 
-Näide: Kartulisalat
--------------------
+Näide. Kartulisalat.
+--------------------
 Plokkskeem sobib hästi kasutamiseks ka arvutikaugetes valdkondades. Proovime näiteks selle abil kirjeldada kartulisalati valmistamist:
 
 .. image:: images/l05_fig1.png
 
-Kui me tahaksime protsessi täpsemalt kirjeldada, võime lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
+Kui me tahame protsessi täpsemalt kirjeldada, võime lisada kartuleid ühekaupa ja hapukoort ühe lusikatäie kaupa, samal ajal kontrollides, kas vajalik kogus on juba lisatud:
 
 .. image:: images/l05_fig2.png
 
 
-Ka loendamist saame me detailsemalt väljendada, oletame, et me loendame pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
+Ka loendamist saame detailsemalt väljendada. Oletame, et me loendame pliiatsi ja paberiga, märkides igal lisamisel paberile ühe kriipsu. Peale kartulite lisamist kustutame kriipsud paberilt, et saaks loendada hapukurkide lisamist:
 
 .. image:: images/l05_fig3.png
 
-Näide: Kuni kolm sammu ja ümberpöörd
-------------------------------------
-Proovime plokkskeemiga edasi anda ühe Pykkari liikumisskeemi -- ta peab astuma kolm sammu või kui sein tuleb varem vastu siis seinani ja seejärel ennast ümber pöörama. Kuna plokkskeem on tavaliselt mõeldud vaid lahendusidee edasiandmiseks, siis ei pea me kasutama täpselt samu käske, nagu Pykkari Pythoni moodul ette näeb.
+Näide. Kuni kolm sammu ja ümberpöörd.
+-------------------------------------
+Proovime plokkskeemiga edasi anda ühe Pykkari liikumisskeemi -- ta peab astuma kolm sammu, või kui sein tuleb varem vastu, siis seinani, ja seejärel ennast ümber pöörama. Kuna plokkskeem on tavaliselt mõeldud vaid lahendusidee edasiandmiseks, siis ei pea me kasutama täpselt samu käske nagu Pykkari Pythoni moodul ette näeb.
 
 
 .. image:: images/l04_fig16.png  
 
-Harjutus. Ring ümber mänguväljaku
----------------------------------
-Pykkar asub ristkülikukujulise maailma vasakus ülemises nurgas näoga paremale. Maailma mõõtmed ei ole teada. Joonista plokkskeem, mis paneb Pykkari seina ääred läbi käima. Lõpuks peab ta jõudma esialgsesse positsiooni tagasi. 
+Harjutus. Ring ümber mänguväljaku.
+----------------------------------
+Pykkar asub ristkülikukujulise maailma vasakus ülemises nurgas, näoga paremale. Maailma mõõtmed ei ole teada. Joonista plokkskeem, mis paneb Pykkari seina ääred läbi käima. Lõpuks peab ta jõudma esialgsesse positsiooni tagasi. 
 
 .. note::
 
@@ -291,9 +291,9 @@ Alaprogrammid plokkskeemis
 --------------------------
 Alamprogramme saab defineerida ka plokkskeemides. Selleks eraldatakse lihtsalt skeemil üks eraldiolev ala alamprogrammi jaoks (näiteks ümbritsetakse kastiga) ning kirjutatakse selle juurde alamprogrammi nimi.
 
-Loome näiteks skeemi, mis paneb Pykkari värvima põrandat põhja-lõuna suunas triibuliseks – alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne. Maailma mõõtmed pole teada, aga teame, et Pykkar on alguses loodenurgas (NW) näoga lõuna suunas.
+Loome näiteks skeemi, mis paneb Pykkari värvima põrandat põhja-lõuna suunal triibuliseks – alustada tuleks lääneservast, järgmine veerg põrandaruute peab jääma värvimata, ülejärgmine tuleb jälle värvida jne. Maailma mõõtmed pole teada, aga teame, et Pykkar on alguses loodenurgas (NW), näoga lõuna suunas.
 
-Loome kõigepealt alamprogrammid järgmistele tegevustele: 
+Loome kõigepealt alamprogrammid järgmistele tegevustele. 
 
 * Ühe triibu värvimine kuni seinani.
 * Tagasitulek sama teed mööda seinani ja lõpuks pööre paremale.
@@ -310,7 +310,7 @@ Loome kõigepealt alamprogrammid järgmistele tegevustele:
     .. image:: images/l05_fig14.png
     
 
-Koostame nüüd plokkskeemi kogu maailma värvimiseks triibuliseks, kasutades juba koostatud protseduure:
+Koostame nüüd plokkskeemi kogu maailma triibuliseks värvimiseks, kasutades juba koostatud protseduure:
 
 .. image:: images/l05_fig15.png
 
@@ -338,11 +338,11 @@ Alternatiivsed lahendused
 =========================
 Põranda värvimise näite juures andsime kaks alternatiivset lahendust -- üks neist oli lihtsam, teine efektiivsem. Algoritmi efektiivsuse ja lihtsuse vahel valimine on programmeerimisel tihti esinev dilemma.
 
-Näide: Pikim sõna
------------------
-Oletame, et meil on antud fail, mis sisaldab igal real ühte sõna ja me soovime väljastada kõige pikema sõna või, kui sama pikkusega on mitu sõna, siis kõik need, millest pikemaid ei leidu.
+Näide. Pikim sõna.
+------------------
+Oletame, et meil on antud fail, mis sisaldab igal real ühte sõna ja me soovime väljastada kõige pikema sõna, või kui sama pikkusega on mitu sõna, siis kõik need, millest pikemaid ei leidu.
 
-Lihtsam lahendus oleks käia fail läbi kaks korda -- esimesel korral leiame kõige suurema sõnapikkuse ja teisel korral väljastame kõik sellele pikkusele vastavad sõnad:
+Lihtsam lahendus oleks käia fail läbi kaks korda -- esimesel korral leiame kõige suurema sõna pikkuse ja teisel korral väljastame kõik sellele pikkusele vastavad sõnad:
 
 .. sourcecode:: py3
     
@@ -380,7 +380,7 @@ Lihtsam lahendus oleks käia fail läbi kaks korda -- esimesel korral leiame kõ
     
     fail.close()
 
-Sellel lahendusel on kaks probleemi -- esiteks, kuna failide lugemine on suhteliselt aeglane toiming, võib selle topelt tegemine mõnikord olla lubamatu ajaraiskamine; teiseks, me pidime kirjutama kaks tsüklit.
+Sellel lahendusel on kaks probleemi -- esiteks, kuna failide lugemine on suhteliselt aeglane toiming, võib selle topelt tegemine mõnikord olla lubamatu ajaraiskamine, teiseks, me pidime kirjutama kaks tsüklit.
 
 Proovime, kas saab paremini. Seekord katsume ühe läbivaatusega pikimad sõnad kohe meelde jätta:
 
@@ -419,7 +419,7 @@ Proovime, kas saab paremini. Seekord katsume ühe läbivaatusega pikimad sõnad 
     
     fail.close()
 
-See variant on natuke lühem, kui esimene, ning ka pisut kiirem, aga kardetavasti vähemalt algajate jaoks raskemini arusaadav. Proffessionaalsed programmeerijad peavad tihti lisaks programmide korrektsusele jälgima ka etteantud efektiivsuse nõudeid ja samal ajal arvestama enda kaastöötajate tasemega -- paratamatult tuleb siin aeg-ajalt teha kompromisse.
+See variant on natuke lühem kui esimene ning ka pisut kiirem, aga kardetavasti vähemalt algajate jaoks raskemini arusaadav. Professionaalsed programmeerijad peavad tihti lisaks programmide korrektsusele jälgima ka etteantud efektiivsuse nõudeid ja samal ajal arvestama enda kaastöötajate tasemega -- paratamatult tuleb siin aeg-ajalt teha kompromisse.
 
 
 .. todo::
@@ -436,17 +436,13 @@ Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on 
 .. index::
     single: Pólya
     
-.. _Pólya:    
-
-George Pólya:
-
-*Suur avastus lahendab suure probleemi, kuid väike avastus on olemas iga probleemi lahenduses. Sinu probleem võib olla tagasihoidlik, kuid kui see esitab väljakutse sinu uudishimule ja toob mängu sinu leiutaja omadused. Kui sa seda lahendad omaenda vahenditega, võid kogeda pingutust ja nautida avastuse triumfi. Sellised kogemused võivad vastuvõtlikus eas tekitada vajaduse vaimse töö järele ja jätta jälje terveks eluks.*
+    Suur avastus lahendab suure probleemi, kuid väike avastus on olemas iga probleemi lahenduses. Sinu probleem võib olla tagasihoidlik, kuid kui see esitab väljakutse sinu uudishimule ja toob mängu sinu leiutaja omadused. Kui sa lahendad seda omaenda vahenditega, võid kogeda pingutust ja nautida avastuse triumfi. Sellised kogemused võivad vastuvõtlikus eas tekitada vajaduse vaimse töö järele ja jätta jälje terveks eluks.
 
 George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soovitame ka antud kursuse ülesannete korral hoolikalt järgida. 
 
 1. Ülesandest arusaamine
 ------------------------
-* Mis on otsitavaks? Mis on antud? Milles seisnevad ülesande tingimused?
+* Mis on otsitav? Mis on antud? Milles seisnevad ülesande tingimused?
 * Kas tingimusi on võimalik üldse rahuldada? Kas tingimused on otsitava tulemi määramiseks piisavad? Kas nende hulgas on ülearuseid? Kas tingimused on vastuolulised?
 * Valmista joonis. Võta kasutusele sobiv tähistus.
 
@@ -482,7 +478,7 @@ George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soo
 Kirjuta eespool toodud :ref:`Pykkariga põranda värvimise plokkskeemile <triibuliseks>` vastav Pythoni programm.
             
 
-2. Liikumine takistusest mööda
+2. Takistusest mööda liikumine 
 ------------------------------
 Pykkar asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Pykkaril on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on.
 
@@ -513,14 +509,14 @@ ja
 
 3. Malelaud
 -----------
-Joonista plokkskeem, ja kirjuta Pythoni programm, mis mõlemad panevad Pykkarit värvima ristküliku kujulist maailma malelaua stiilis ruuduliseks. 
+Joonista plokkskeem ja kirjuta Pythoni programm, mis mõlemad panevad Pykkarit värvima ristkülikukujulist maailma malelaua stiilis ruuduliseks. 
 
 
 4. Efektiivsem kuu nimi
 -----------------------
 Kolmandas peatükis demonstreeriti :ref:`kahte samaväärset programmi <elif_kuu_nimi>`, mis väljastavad etteantud kuu numbrile vastava kuu nime. Leidsime, et teine viis on esimesest parem, kuna teda on lihtsam kirjutada ja lugeda.
 
-Mõlemad näidatud viisid sunnivad Pythonit halvimal juhul tegema kuni 12 võrdlemist (kui sisestatud arv oli `12`). Kirjuta veel üks nende kahega samaväärne lahendus, mis saab alati hakkama väiksema arvu võrdlustega.
+Mõlemad näidatud viisid sunnivad Pythonit halvimal juhul tegema kuni 12 võrdlemist (kui sisestatud arv oli 12). Kirjuta veel üks nende kahega samaväärne lahendus, mis saab alati hakkama väiksema arvu võrdlustega.
 
 .. hint::
 
@@ -528,14 +524,14 @@ Mõlemad näidatud viisid sunnivad Pythonit halvimal juhul tegema kuni 12 võrdl
 
 .. hint:: 
 
-    Siin on parem kasutada ainult tavalisi, üksteise sisse pandud ``if-else``-sid (st. mitte kasutada ``elif``-i).
+    Siin on parem kasutada ainult tavalisi, üksteise sisse pandud ``if-else``-isid (st. mitte kasutada ``elif``-i).
 
 .. hint::
-    Pane tähele, et ühe ``if-else`` võime me paigutada teise ``if-else`` sisse kahel moel -- kas ``then`` harusse või ``else`` harusse.
+    Pane tähele, et ühe ``if-else``'i võime me paigutada teise ``if-else``'i sisse kahel moel -- kas ``then`` harusse või ``else`` harusse.
 
 .. hint::
 
-    Mõtle sellele, kuidas sa otsid mingit sõna sõnaraamatust. Kas hakkad sõnastiku algusest lehitsema, kuni jõuad otsitava sõnani või kasutad mingit kavalamat viisi?     
+    Mõtle sellele, kuidas sa otsid mingit sõna sõnaraamatust. Kas hakkad sõnastiku algusest lehitsema, kuni jõuad otsitava sõnani, või kasutad mingit kavalamat viisi?     
 
 5. Firma statistika
 -------------------
@@ -584,15 +580,15 @@ Viimasel kuul välja makstud palgad on failis ``palgad.txt``:
 
 Firma käekäigul silma peal hoidmiseks tuleb nüüd kirjutada programm, mis annab käivitamisel kokkuvõtte mainitud 4 faili hetkesisust. Täpsemalt: ekraanile tuleb näidata
 
-* klientide koguarv,
-* toodete koguarv,
-* jooksva aasta müügitehingutest saadud summaarne sissetulek, 
+* klientide koguarv;
+* toodete koguarv;
+* jooksva aasta müügitehingutest saadud summaarne sissetulek; 
 * viimasel kuul väljamakstud palkade summa.
 
 
 .. note::
 
-    See ülesanne on senistest mahukam -- reserveeri selle jaoks rohkem aega. Proovi läheneda ülesandele osade kaupa. Vaata, kas erinevate osade vahel on sarnasusi.
+    See ülesanne on senistest mahukam -- võta selle jaoks rohkem aega. Proovi läheneda ülesandele osade kaupa. Vaata, kas erinevate osade vahel on sarnasusi.
 
 
 .. note::
@@ -671,9 +667,9 @@ Firma käekäigul silma peal hoidmiseks tuleb nüüd kirjutada programm, mis ann
 
 6. Üks asi veel
 ---------------
-Kui eelmises ülesandes mainitud programm sai juba valmis, tuli firma juhile meelde, et lisaks viimase kuu palkade summale tahab ta näha ka kuu keskmist palka.
+Kui eelmises ülesandes mainitud programm sai juba valmis, tuli firmajuhile meelde, et lisaks viimase kuu palkade summale tahab ta näha ka kuu keskmist palka.
 
-Proovi lisada soovitud funktsionaalsus võimalikult lühikese lisakoodiga, ilma programmi efektiivsuse pärast muretsemata.
+Proovi lisada soovitud funktsionaalsus võimalikult lühikese lisakoodiga ilma programmi efektiivsuse pärast muretsemata.
 
  
 
