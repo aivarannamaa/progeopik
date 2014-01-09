@@ -461,7 +461,7 @@ Tehted sõnedega
 +-------------------------------------+--------------------+ ja reavahetusteta                                                   +
 | ``'tere'.strip()``                  | ``'tere'``         |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``'tere'replace('e','ö')``          | ``'törö'``         | Meetod ``replace`` genereerib uue sõne, kus näidatud tähed või      |
+| ``'tere'.replace('e','ö')``         | ``'törö'``         | Meetod ``replace`` genereerib uue sõne, kus näidatud tähed või      |
 +-------------------------------------+--------------------+ *alamsõned* on asendatud millegi muuga                              |
 | ``'tere'.replace('a', 'b')``        | ``'tere'``         |                                                                     |
 +-------------------------------------+--------------------+                                                                     |
@@ -1117,7 +1117,7 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
         Siin ja edasipidi proovi kõigepealt ise lahenduseni jõuda. Mõnikord see õnnestub, mõnikord mitte, aga alati treenib see sinu probleemilahendamise oskust.
 
 Suur näide Juhuslik tsitaat
-============================
+===========================
 Aadressil http://programmeerimine.cs.ut.ee/tsitaadid/ on hulk tekstifaile, millest igaüks sisaldab ühte tsitaati mõnest tuntud Eesti filmist. Ma üritan nüüd kirjutada programmi, mis valib juhuslikult ühe neist failidest ja kuvab selle sisu ekraanile. Seejuures ei hüppa ma kohe lõpptulemuse juurde, vaid katsun esitada kogu programmeerimise protsessi koos katsetuste ja ebaõnnestumistega.
 
 Enne päriselt ülesande kallale asumist on vaja teha üks asjakohane kõrvalepõige.
