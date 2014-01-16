@@ -570,6 +570,7 @@ Täiusta eespool defineeritud ruudu joonistamise funktsiooni nii, et ruudu külj
     Järgnevas vihjes on antud harjutuse näitelahendus, ära seda enne vaata, kui oled ise proovinud!
 
 .. hint::
+    :class: solution    
     
     .. sourcecode:: py3
     

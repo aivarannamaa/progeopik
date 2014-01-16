@@ -220,6 +220,27 @@ div.admonition, div.topic, div.sidebar {
   background-color: #f3f3f3
 }
 
+/* exercise stuff */
+div.topic.exercise {
+	background-color: #F2F1DF;
+	border: 1px solid #B8B074;
+	border-left: 0.2em solid #B8B074;
+}
+
+div.topic.exercise div.admonition,
+div.topic.exercise tt.literal:not(.download) {
+	background-color:rgba(200, 200, 200, 0.2);	
+}
+
+div.topic.exercise.done {
+	background-color: #E9F2EA;
+	border: 1px solid green;
+	border-left: 0.2em solid green;
+}
+
+
+
+
 p.admonition-title,  p.topic-title, p.sidebar-title {
   margin: 0px 0px 0px 0px;
   font-weight: bold;
