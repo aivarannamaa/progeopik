@@ -232,12 +232,40 @@ div.topic.exercise tt.literal:not(.download) {
 	background-color:rgba(200, 200, 200, 0.2);	
 }
 
+div.topic.exercise div.highlight {
+	background-color:rgba(200, 200, 200, 0.2);
+}
+
+
+
 div.topic.exercise.done {
 	background-color: #E9F2EA;
 	border: 1px solid green;
 	border-left: 0.2em solid green;
 }
 
+.topic-title .controls a, 
+.admonition-title .controls a {
+	color:gray ! important;
+	font-weight: normal;
+}
+
+
+.admonition.user-solution,
+.admonition.server-response {
+	margin-bottom: 0.7em;
+	padding-right: 0.5em;
+	
+}
+
+.topic.done.wrong .admonition.user-solution {
+	border-left-color: #883030;
+	background-color: #EDE5D8;
+}
+
+.topic.done:not(.wrong) .admonition.user-solution {
+	border-left-color: green;
+}
 
 
 
@@ -273,13 +301,15 @@ p.admonition-title,  p.topic-title, p.sidebar-title {
     user-select: none;
 }
 
-.admonition.hint.hidden * {
+.admonition.hint.hidden>:not(.admonition-title) {
     display: none;
 }
+
 
 .admonition.hint.hidden  p.admonition-title:after {
     content: " ...";
 }
+
 
 .admonition-tegemata, .admonition-todo, .admonition-teha,
 .admonition-tegemata *, .admonition-todo *, .admonition-teha * {

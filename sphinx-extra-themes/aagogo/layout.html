@@ -11,13 +11,56 @@
     
     <script type="text/javascript">
 		$(function() {
+		    $("div.exercise:not(.nosubmit)")
+		    	.append (
+		    		"<div class='admonition user-solution hint' style='padding-right:0.2em'>"
+		    		+ "<p class='first admonition-title'>Minu lahendus"
+		    		+ "<span class='controls' style='float:right'><a href='#'>Thonny</a></span>"
+		    		+ "</p>"
+		    		+ "<textarea rows='5' style='width:99%'>def kala(x):\n    return x</textarea>"
+		    		+ "<button style='float:right;clear:both;margin-top:0.2em'>Esita</button>"
+		    		+ "  <div>"
+		    		+ "  <p><b style='color:gray'>Serveri vastus</b></p>"
+		    		+ "    <ul>"
+		    		+ "    <li>kala(10) peaks tagastama 10 aga tagastab None"
+		    		+ "    <li>kala(0) peaks tagastama 0 aga tagastab None"
+		    		+ "    </ul>"
+		    		+ "  </div>"
+		    		+ "</div>"
+		    	);
+			
+			
+		    $("div.exercise:not(.done) p.topic-title.first")
+		    	.append("<span class='controls' style='float:right'>"
+		    		+ "<img src='_static/gray_cm2v.png' alt='Oskan'/>14 &nbsp;"
+		    		+ "<img src='_static/gray_star.png' alt='Meeldib'/>12"
+		    		//+ "<input type='checkbox' id='cb1'/>"
+		    		//+ "<input type='checkbox' id='cb1'/><label for='cb1'>oskan</label>"
+		    		//+ "<input type='checkbox' id='cb2'/><label for='cb2'>meeldib</label>"
+		    		+ "</span>");
+		    		
+		    $("div.exercise.done p.topic-title.first")
+		    	.append("<span class='controls' style='float:right'>"
+		    		+ "<img src='_static/color_cm2v.png' alt='Oskan'/>78 &nbsp;"
+		    		+ "<img src='_static/color_star.png' alt='Meeldib'/>4"
+		    		//+ "<input type='checkbox' id='cb1' checked='checked'/>"
+		    		//+ "<input type='checkbox' id='cb1' checked='checked'/><label for='cb1'>oskan</label>"
+		    		//+ "<input type='checkbox' id='cb2'/><label for='cb2'>meeldib</label>"
+		    		+ "</span>");
+		});
+	</script>
+	
+    <script type="text/javascript">
+		$(function() {
 		    $(".admonition.hint").addClass("hidden");
 		
 		    $(".admonition.hint .admonition-title").click(function(e){
 		        $(e.target.parentNode).toggleClass("hidden");
 		    });
 		});
-	</script> 
+	</script>
+	
+	
   </head>
   
 <body>
