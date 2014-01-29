@@ -508,6 +508,8 @@ Harjutus. Loendamine
 --------------------
 Täienda eelnevat programmi veel ühe loenduriga, mille abil loetakse kokku 3-ga jaguvate ruutude arv. Kui kõik arvud on läbi vaadatud, siis väljasta saadud tulemus.
 
+.. _arvamismang:
+
 Määramata tsükkel
 -----------------
 Alati pole võimalik ette öelda, mitu korda midagi kordama peab enne kui jõutakse soovitud tulemuseni. ``while`` lause sobib ka neil juhtudel, sest tsükli päises võime kasutada suvalist tingimust. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:

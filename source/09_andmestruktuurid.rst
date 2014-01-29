@@ -11,14 +11,14 @@
     
     "Listid kui andmebaas" tüüpi ülesanded domineerivad tudengite mõtetes. Võibolla oleks vaja teha rohkem väikeseid, lihtsaid aga mitmekesiseid ülesandeid, enne kui minna suurte, mahukate ülesannete juurde. 
 
-Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni oled tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi, ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
+Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. Seni oled tutvunud täisarvu-, ujukomaarvu-, tõeväärtus-, sõne-, listi- ja ennikutüüpidega. Selles peatükis vaatame veel kahte andmetüüpi (hulk ja sõnastik) ning lisaks uurime, miks ja kuidas võiks andmetüüpe omavahel kombineerida. Lõpuks astume sammu tagasi ning analüüsime, mida on järjenditel, hulkadel ja sõnastikel ühist.
 
 
 Hulgad
 ======
-Pythoni *hulga* (ing.k *set*) andmetüüp on küllalt sarnane listile -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttava hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elemente (jällegi, sarnaselt matemaatilisele hulgale).
+Pythoni *hulga* (ingl.k. *set*) andmetüüp on küllalt sarnane listiga -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttava hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elemente (nagu ka matemaatiline hulk).
 
-Konkreetse hulga kirjapanekuks kasutatakse loogelisi sulge. Järgnev käsurea näide demonstreerib eelpoolmainitud hulkade omadusi:
+Konkreetse hulga kirjapanekuks kasutatakse loogelisi sulge. Järgnev käsurea näide demonstreerib eelmainitud hulkade omadusi:
 
 .. sourcecode:: py3
     :linenos:
@@ -34,7 +34,7 @@ Real 3 üritasime luua korduvate elementidega hulka, aga vastusest on näha, et 
 
 .. note::
 
-    Ära üllatu, kui mõnikord näitab Python sinu poolt esitatud hulga elemente teistsuguses järjekorras, kui sa need kirja panid. Kuna hulga puhul ei ole elementide järjekord tähtis, siis Python võib paigutada nad ümber, kui see lubab tal hulka efektiivsemalt hoida või kasutada.
+    Ära üllatu, kui mõnikord näitab Python sinu poolt esitatud hulga elemente teistsuguses järjekorras, kui sa need kirja panid. Kuna hulga puhul ei ole elementide järjekord tähtis, siis Python võib need ümber paigutada, kui see lubab tal hulka efektiivsemalt hoida või kasutada.
     
 Olulisimad hulgaoperatsioonid on mingi väärtuse hulgas sisalduvuse kontroll (``in``), hulga elementide arvu leidmine (``len``) ning hulka elemendi lisamine (``add``):
 
@@ -55,11 +55,11 @@ Olulisimad hulgaoperatsioonid on mingi väärtuse hulgas sisalduvuse kontroll (`
     >>> len(nimed)
     4
     
-Nagu näha, ei pea hulgas olema vaid arvud -- just nagu listis, saab ka hulgas hoida erinevaid Pythoni väärtusi. (Selle väite osas teeme allpool väikese korrektuuri, aga praegu on oluline, et hulgas saab hoida vähemalt täisarve, ujukomaarve, tõeväärtusi ja sõnesid).
+Nagu näha, ei pea hulgas olema vaid arvud -- just nagu listis, saab ka hulgas hoida erinevaid Pythoni väärtusi. (Selle väite osas teeme allpool väikese korrektuuri, aga praegu on oluline, et hulgas saab hoida vähemalt täisarve, ujukomaarve, tõeväärtusi ja sõnesid.)
 
-Pane tähele, et elemendi hulka lisamiseks on meetod ``add``, mitte ``append`` nagu listide puhul. Põhjus on selles, et sõna *append* viitab justnimelt lõppu lisamisele, aga kuna hulkadel pole elementide järjekord tähtis, siis kasutatakse üldisemat sõna *add*.
+Pane tähele, et elemendi hulka lisamiseks on meetod ``add``, mitte ``append`` nagu listide puhul. Põhjus on selles, et sõna *append* viitab justnimelt lõppu lisamisele, aga kuna hulga elementide järjekord pole tähtis, siis kasutatakse üldisemat sõna *add*.
 
-Kui proovisite tühja hulka kirja panna kirjutades ``{}``, siis said sellise "hulga" kasutamisel ilmselt veateate. Põhjus on selles, et sellist tähistust kasutatakse Pythonis ühe teise andmestruktuuri, nimelt tühja sõnastiku tähistamiseks. Tühi hulk tuleb kirjutada kasutades funktsiooni ``set``:
+Kui proovisid tühja hulka kirja panna kirjutades ``{}``, siis said sellise "hulga" kasutamisel ilmselt veateate. Põhjus on selles, et sellist tähistust kasutatakse Pythonis ühe teise andmestruktuuri, nimelt tühja sõnastiku tähistamiseks. Tühi hulk tuleb kirjutada kasutades funktsiooni ``set``:
 
 .. sourcecode:: py3
 
@@ -82,7 +82,7 @@ Funktsiooni ``set`` saab kasutada ka mõnede teiste andmetüüpide teisendamisek
     >>> set([1,2,3])
     {1, 2, 3}
 
-Just nagu järjendite puhul, saab ka hulga kõiki elemente "läbi käia" kasutades ``for``-tsüklit:
+Nii nagu järjendite puhul, saab ka hulga kõiki elemente "läbi käia" kasutades ``for``-tsüklit:
 
 
 .. sourcecode:: py3
@@ -108,7 +108,7 @@ Kirjuta funktsioon, mis võtab argumendiks kaks hulka ja tagastab esimese ja tei
         >>> {1,2,3} - {1,3}
         {2}
     
-    Harjutamise mõttes aga proovi see operatsioon ise defineerida. Miinusmärki kasuta pärast kontrollimaks, kas sinu funktsioon arvutab sama tulemuse.
+    Harjutamise mõttes aga proovi see operatsioon ise defineerida. Miinusmärki kasuta pärast oma funktsiooni kontrollimiseks.
 
 
 Sõnastikud
@@ -119,11 +119,11 @@ Sõnastikud
     * Sõnastiku kasutamine kirjetena
     * Rohkem sõnastikuga ülesandeid
 
-Sõnastik (ing.k. *dictionary*, lühendatult ``dict``) on Pythoni andmetüüp, mis meenutab jällegi mitmes mõttes järjendeid: teda kasutatakse andmete koondamisel üheks kogumiks ja temas sisalduvaid üksikuid elemente on võimalik küsida kasutades  avaldist kujul ``kogum[võti]``.
+Sõnastik (ingl.k. *dictionary*, lühendatult ``dict``) on Pythoni andmetüüp, mis meenutab jällegi mitmes mõttes järjendeid: teda kasutatakse andmete koondamisel üheks kogumiks ja temas sisalduvaid üksikuid elemente on võimalik küsida kasutades  avaldist kujul ``kogum[võti]``.
 
-Põhiline erinevus on selles, et kui järjendi puhul on võtmeks (e. indeksiks) alati täisarv (nt. ``palgad[0]``), siis sõnastike puhul saab kasutada võtmeks ka näiteks sõnesid (nt. ``telefoninumbrid['Peeter']``), või muid Pythoni lihtsamaid tüüpe.
+Põhiline erinevus on selles, et kui järjendi puhul on võtmeks (e. indeksiks) alati täisarv (nt. ``palgad[0]``), siis sõnastike puhul saab kasutada võtmena ka näiteks sõnesid (nt. ``telefoninumbrid['Peeter']``), või muid Pythoni lihtsamaid tüüpe.
 
-Sõnastikud kirjutatakse looksulgude vahele, just nagu hulgad, aga iga elemendi juures näidatakse ära elemendi võti ja väärtus. Väärtuse küsimiseks tuleb nurksulgudes anda soovitud elemendi võti:
+Sõnastikud kirjutatakse looksulgude vahele nagu hulgadki, aga iga elemendi juures näidatakse ära elemendi võti ja väärtus. Väärtuse küsimiseks tuleb nurksulgudes anda soovitud elemendi võti:
 
 .. sourcecode:: py3
     
@@ -140,7 +140,7 @@ Sõnastikud kirjutatakse looksulgude vahele, just nagu hulgad, aga iga elemendi 
 
 .. note::
 
-    Sõnastike ja hulkade sarnast kirjapaneku viisi saab selgitada sellega, et sõnastikku võib vaadata kui paaride hulka, kus paari esimeseks komponendiks on võti ja teiseks väärtus.
+    Sõnastike ja hulkade sarnast kirjapaneku viisi saab selgitada sellega, et sõnastikku võib vaadata kui paaride hulka, kus paari esimene komponent on võti ja teine on väärtus.
 
 Nii nagu järjendite puhul, saab kõiki sõnastiku elemente läbi vaadata kasutades ``for``-tsüklit, aga erinevalt järjenditest antakse igal sammul tsüklimuutujasse elemendi võti, mitte väärtus:
 
@@ -153,11 +153,11 @@ Nii nagu järjendite puhul, saab kõiki sõnastiku elemente läbi vaadata kasuta
     for nimi in telefonid:
         print(nimi.capitalize() + " - " + telefonid[nimi])
 
-Kui sa proovisid seda näidet käivitada, siis võis juhtuda, et telefoninumbrid väljastati teistsuguses järjekorras, kui sõnastiku loomisel. Põhjus on selles, et just nagu hulkade puhul, ei pea ka sõnastiku puhul Python elementide omavahelist järjekorda oluliseks ja võib neid programmi efektiivsuse huvides ümber tõsta (aga ühe elemendi võti ja väärtus jäävad siiski alati omavahel seotuks).
+Kui sa proovisid seda näidet käivitada, siis võis juhtuda, et telefoninumbrid väljastati teistsuguses järjekorras kui sõnastiku loomisel. Põhjus on selles, et nii nagu hulkade puhul, ei pea ka sõnastiku puhul Python elementide omavahelist järjekorda oluliseks ja võib neid programmi efektiivsuse huvides ümber tõsta (aga ühe elemendi võti ja väärtus jäävad siiski alati omavahel seotuks).
 
 Sõnastiku täiendamine elementhaaval
 -----------------------------------
-Nii nagu järjendeid ja hulki, saab ka sõnastikke programmi töö käigus täiendada, aga seejuures ei kasutata mitte meetodeid ``append`` või ``add``, vaid võtme järgi omistamist kujul ``sõnastik[võti] = väärtus``:
+Ka sõnastikke saab programmi töö käigus täiendada, aga seejuures ei kasutata mitte meetodeid ``append`` või ``add``, vaid võtme järgi omistamist kujul ``sõnastik[võti] = väärtus``:
 
 .. sourcecode:: py3
 
@@ -176,7 +176,7 @@ Nii nagu järjendeid ja hulki, saab ka sõnastikke programmi töö käigus täie
 
 .. note::
 
-    Siin tuleb meeles pidada, et *järjendite* puhul on taoline omistamine võimalik vaid nende indeksitega, mis juba on järjendis olemas, st. järjendit taolise lähenemisega kasvatada ei saa:
+    Siin tuleb meeles pidada, et järjendite puhul on taoline omistamine võimalik vaid nende indeksitega, mis juba on järjendis olemas, st. järjendit taolise lähenemisega kasvatada ei saa:
     
     .. sourcecode:: py3
     
@@ -212,9 +212,9 @@ Muuda ülalpool toodud telefoniraamatu näidet selliselt, et andmed loetakse sis
 
 Mitmemõõtmelised andmestruktuurid
 =================================
-Nagu teate, saab Pythonis teatud lausete sisse panna teisi lauseid (nt. tingimuslause sisse tsükleid või vastupidi) ja teatud avaldiste komponentideks võivad olla teised avaldised.
+Nagu tead, saab Pythonis teatud lausete sisse panna teisi lauseid (nt. tingimuslause sisse tsükleid või vastupidi) ja teatud avaldiste komponentideks võivad olla teised avaldised.
 
-Samamoodi saab panna andmestruktuuridesse teisi andmestruktuure. Näiteks on võimalik luua järjendeid, mille elementideks on mingid järjendid või siis ennikuid, mille elementideks on ennikud ja järjendid või sõnastikke, mille elementideks on järjendid:
+Samamoodi saab panna andmestruktuuridesse teisi andmestruktuure. Näiteks on võimalik luua järjendeid, mille elementideks on mingid järjendid, või siis ennikuid, mille elementideks on ennikud ja järjendid, või sõnastikke, mille elementideks on järjendid:
 
 .. sourcecode:: py3
     
@@ -234,7 +234,7 @@ Samamoodi saab panna andmestruktuuridesse teisi andmestruktuure. Näiteks on võ
         'Mart Maru'  : [3, 3, 3, 3, 5, 3, 3, 4]
     }
 
-Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset aga vajadusel on võimalik konstrueerida mistahes tasemete arvuga andmestruktuure, näiteks järjendite järjendite järjendeid (e. 3-mõõtmelisi järjendeid):
+Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset aga vajadusel on võimalik konstrueerida mistahes tasemete arvuga andmestruktuure, näiteks järjendite järjendite järjendeid (e. kolmemõõtmelisi järjendeid):
 
 .. sourcecode:: py3
 
@@ -277,16 +277,16 @@ Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset
 
     *Listid* ei sea mingeid piiranguid oma elementide tüübile, sest listi ei huvita elementide võrdsus või mittevõrdsus. Seetõttu pole mingit probleemi koostada Pythonis näiteks hulkade listi.
     
-    *Sõnastike* puhul on piirangud vaid sõnastiku võtme tüübile -- ka siin nõutakse omadust *hashable* (kuna sõnastikusse ei tohi lubada korduvaid võtmeid). Kirje väärtuse tüübi osas kitsendusi ei seata -- seega saab vabalt luua näiteks sõnastiku, mille võtmetüübiks on sõne ning väärtuse tüübiks arvude list -- nii nagu on demonstreeritud ülalpooltoodud näites, kus sõnastikku nimega on kasutatud hinnete loetelu sidumiseks inimese nimega.
+    *Sõnastike* puhul on piirangud vaid sõnastiku võtme tüübile -- ka siin nõutakse omadust *hashable* (kuna sõnastikku ei tohi lubada korduvaid võtmeid). Kirje väärtuse tüübi osas kitsendusi ei seata -- seega saab vabalt luua näiteks sõnastiku, mille võtmetüübiks on sõne ning väärtuse tüübiks arvude list -- nii nagu on demonstreeritud ülalpool toodud näites, kus sõnastikku ``hinded`` on kasutatud hinnete loetelu sidumiseks inimese nimega.
 
 
 
 
 Mitmemõõtmeliste järjendite läbimine
 ------------------------------------
-Taoliste andmestruktuuride kasutamiseks ei ole tarvis mingisuguseid erivõtteid -- tuleb lihtsalt pidada meeles, millist tüüpi elementidega meil mingil tasemel tegemist on.
+Taoliste andmestruktuuride kasutamiseks ei ole tarvis mingisuguseid erivõtteid -- tuleb lihtsalt meeles pidada, millist tüüpi elementidega meil mingil tasemel tegemist on.
 
-Üritame näiteks kuvada ekraanile kahemõõtmelises järjendis sisalduvat infot *(NB! enne selle programmi käivitamist käi tsüklid ise mõttes läbi ja ennusta, milline tuleb programmi väljund!)*:
+Üritame näiteks kuvada ekraanile kahemõõtmelises järjendis sisalduvat infot *(NB! Enne selle programmi käivitamist käi tsüklid ise mõttes läbi ja ennusta, milline tuleb programmi väljund!)*:
 
 .. sourcecode:: py3
 
@@ -313,7 +313,7 @@ Kuigi tsüklit tsükli sees oled ka juba eespool kohanud, võib see siiski tundu
 
 .. note::
 
-    Viimases näites läks meil vaja kahte tsüklit, et jõuda andmestruktuuri "põhjani" välja. Alati ei ole meil aga taolist kõikide elementide läbikäimist tarviski. Järgnev näiteprogramm väljastab sama 2-mõõtmelise järjendi kõige elementide (s.o. arvujärjendite) summad:
+    Viimases näites läks meil vaja kahte tsüklit, et jõuda välja andmestruktuuri põhjani välja. Alati ei ole meil aga taolist kõikide elementide läbikäimist tarviski. Järgnev näiteprogramm väljastab sama kahemõõtmelise järjendi kõigi elementide (s.o. arvujärjendite) summad:
 
     .. sourcecode:: py3
 
@@ -331,7 +331,7 @@ Kuigi tsüklit tsükli sees oled ka juba eespool kohanud, võib see siiski tundu
 
 Mitmemõõtmeliste järjendite indekseerimine
 ------------------------------------------
-Eelnevates näidetes põhinesid tsüklid otse järjenditel, aga nagu teate, võib järjendeid läbida ka indeksite abil:
+Eelnevates näidetes põhinesid tsüklid otse järjenditel, aga nagu tead, võib järjendeid läbida ka indeksite abil:
 
 .. sourcecode:: py3
 
@@ -350,7 +350,7 @@ Eelnevates näidetes põhinesid tsüklid otse järjenditel, aga nagu teate, või
             print(arv)
 
 
-Abimuutuja ``arvujärjend`` kasutamise asemel oleksime võinud kasutada ka kahte indekseerimist järjest (pöörake tähelepanu viimasele reale):
+Abimuutuja ``arvujärjend`` kasutamise asemel oleksime võinud kasutada ka kahte indekseerimist järjest (pööra tähelepanu viimasele reale):
 
 .. sourcecode:: py3
 
@@ -359,7 +359,7 @@ Abimuutuja ``arvujärjend`` kasutamise asemel oleksime võinud kasutada ka kahte
         for j in range(len(arvujärjendite_järjend[i])):
             print(arvujärjendite_järjend[i][j])
 
-Viimasel real oleva ``print``-i argumendi tähendus saab võibolla selgemaks, kui sinna kirjutada sulge juurde: 
+Viimasel real oleva ``print``-i argumendi tähendus saab võibolla selgemaks, kui sinna sulge juurde kirjutada: 
 
 .. sourcecode:: py3
 
@@ -371,13 +371,13 @@ Kokkuvõtteks: Mitmemõõtmeliste andmestruktuuride kasutamise põhimõte
 --------------------------------------------------------------------
 Pythonis ei ole tehniliselt võttes eraldi konstruktsiooni "kahemõõtmeline järjend". On järjendid ja järjendite elemendid võivad olla suvalist tüüpi (sh. järjenditüüpi). Mõistet "kahemõõtmeline järjend" kasutatakse vaid selleks, et anda lugejale/kuulajale veidi lisainfot vaadeldava järjendi sisu/kuju kohta.
 
-Olgu meil ühe-, kahe- või 100-mõõtmeline järjend, tegemist on alati ikkagi järjendiga ja sedasi tuleb talle ka läheneda. Vaja on lihtsalt arvestada, millised on tema elemendid (vastavalt lihttüüpi väärtused, ühemõõtmelised järjendid või 99-mõõtmelised järjendid).
+Olgu meil ühe-, kahe- või sajamõõtmeline järjend, tegemist on alati ikkagi järjendiga ja nii tuleb talle ka läheneda. Vaja on lihtsalt arvestada, millised on tema elemendid (vastavalt lihttüüpi väärtused, ühemõõtmelised järjendid või 99-mõõtmelised järjendid).
     
 Sama põhimõte kehtib ka "järjendite ennikute" ja "hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastikega" -- alusta lähenemist "välimisest kihist" ja pea meeles, millised on sisemised kihid.
 
 .. note::
 
-    Proovi panna kirja üks hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastik :)
+    Proovi panna kirja üks hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastik.
 
 
 Harjutus. Sudoku tabeli sisselugemine
@@ -418,34 +418,34 @@ Näide: Eksami statistika
 ------------------------
 Õppejõud koostas eksami, milles oli 7 ülesannet. Iga ülesande eest võis saada kuni 10 punkti. Eksami tulemused on kirjas failis :download:`eksam.txt<downloads/eksam.txt>`.
 
-Leida iga tudengi eksamipunktide kogusumma.
+Leiame iga tudengi eksamipunktide kogusumma.
 
 *NB! Enne näitelahenduse vaatamist mõtle, kuidas tuleks seda ülesannet lahendada!* 
 
 .. sourcecode:: py3
 
-    # Faili avamine
-    file = open("Eksam.txt","r")
+    # faili avamine
+    file = open("Eksam.txt")
 
-    # Tulemuste lugemine tabelisse
+    # tulemuste lugemine tabelisse
     tabel = []
     nimed = []
 
     for rida in file :
-       # Eralda tudengi nimi
+       # eralda tudengi nimi
        jupid = rida.split("|")
        nimed.append(jupid[0].strip())
 
        # võta ülejäänud osa juppideks
        tulemuste_jupid = jupid[1].split(",")
 
-       # Märgi tudengi tulemused tabelisse
+       # märgi tudengi tulemused tabelisse
        tulemused = []
        for tulemus in tulemuste_jupid:
            tulemused.append(int(tulemus))
        tabel.append(tulemused)
 
-    # Faili sulgemine
+    # faili sulgemine
     file.close()
 
     n = len(tabel)
@@ -462,7 +462,7 @@ Leida iga tudengi eksamipunktide kogusumma.
 
 
     print("-----------------")
-    # Reasummad
+    # reasummad
     for i in range(n) :
         summa = 0
         for j in range(7) :
@@ -474,11 +474,11 @@ Leida iga tudengi eksamipunktide kogusumma.
 
 Harjutus. Keskmine tulemus ülesannete kaupa
 ---------------------------------------------
-Täienda eelnevat näiteprogrammi nii, et see näitaks millised ülesanded olid üldiselt raskemad ja millised kergemad. Selleks väljasta keskmised tulemused ülesannete kaupa (st. eraldi kõigi tudengite 1. ülesande eest saadud punktide keskmine jne).
+Täienda eelnevat näiteprogrammi nii, et see näitaks, millised ülesanded olid üldiselt raskemad ja millised kergemad. Selleks väljasta keskmised tulemused ülesannete kaupa (st. eraldi kõigi tudengite 1. ülesande eest saadud punktide keskmine jne).
 
 .. hint::
 
-    Ühe ülesande punktide kogusumma arvutamise skeem on väga sarnane ühe tudengi punktisumma arvutamisele.
+    Ühe ülesande punktide kogusumma arvutamise skeem on väga sarnane ühe tudengi punktisumma arvutamisega.
 
 
 Kahekordsed tsüklid ühemõõtmelisel järjendil
@@ -491,7 +491,7 @@ Antud on fail (:download:`aktsiad.txt <downloads/aktsiad.txt>`), kus on antud ü
 
 .. sourcecode:: py3
 
-    # Hindade lugemine failist
+    # hindade lugemine failist
     hinnad = [] # hinnad on tavaline ühemõõtmeline järjend
     f = open("aktsiad.txt")
     for rida in f:
@@ -499,7 +499,7 @@ Antud on fail (:download:`aktsiad.txt <downloads/aktsiad.txt>`), kus on antud ü
     f.close()
 
 
-    # Keskmiste arvutamine
+    # keskmiste arvutamine
     k = int(input("Mitut eelnevat päeva soovid keskmise arvutamisel kasutada: "))
 
     # kuna meil on vaja k eelnevat päeva, siis alustame indeksist k
@@ -536,7 +536,7 @@ Koosta funktsioon ``kõik_erinevad``, mis tagastab ``True`` või ``False`` vasta
 
     Seda ülesannet saaks lahendada ka ``count`` meetodit kasutades, aga kuna ``count`` meetod kasutab sisemas samuti tsüklit, siis kokkuvõttes on Pythoni jaoks ikkagi tegemist kahekordse tsükliga.
     
-    On veel üks viis selle ülesande lahendamiseks, mille jaoks läheb vaja ühte selle peatüki teema tundmist.
+    On veel üks viis selle ülesande lahendamiseks, mille jaoks läheb vaja ühe selle peatüki teema tundmist.
     
     .. hint::
 
@@ -573,16 +573,16 @@ Sisemise tsükli viimasel real on tegemist kahe elemendi väärtuse vahetamisega
 
 Andmestruktuurid
 ================
-Peatüki pealkirjaks on andmestruktuurid, nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab :)
+Peatüki pealkiri on "Andmestruktuurid", nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab.
 
-Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad nö "atomaarseid" või "jagamatuid" väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisut segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks, kui liittüübiks).
+Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad atomaarseid (e. jagamatuid) väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisut segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks kui ka liittüübiks).
 
-Nagu öeldud, liittüüpi väärtused on kombineeritud kokku mingitest teistest väärtustest. Oluline on see, et need komponendid moodustavad mingi kindla *struktuuri*. Näiteks järjendite puhul moodustub struktuur sellest, et iga komponent (element) on teiste komponentidega võrreldes kas eespool või tagapool, teisisõnu -- järjendi struktuur määrab elementide järjestuse. Teistel Pythoni liitüüpidel on teistsugune struktuur -- näiteks hulgatüübi struktuur määrab ära vaid selle, millised elemendid hulka kuuluvad, elementide järjestus pole selles struktuuris oluline. Kuna struktuur on liittüüpide puhul väga tähtis, siis nimetatakse neid vahel ka *struktuurseteks tüüpideks* või *andmestruktuurideks*.
+Nagu öeldud, liittüüpi väärtused on kombineeritud mingitest teistest väärtustest. Oluline on see, et need komponendid moodustavad mingi kindla struktuuri. Näiteks järjendite puhul moodustub struktuur sellest, et iga komponent (element) on teiste komponentidega võrreldes kas eespool või tagapool, teisisõnu -- järjendi struktuur määrab elementide järjestuse. Teistel Pythoni liitüüpidel on teistsugune struktuur -- näiteks hulgatüübi struktuur määrab ära vaid selle, millised elemendid hulka kuuluvad, elementide järjestus pole selles struktuuris oluline. Kuna struktuur on liittüüpide puhul väga tähtis, siis nimetatakse neid vahel ka *struktuurseteks tüüpideks* või *andmestruktuurideks*.
 
-Antud õpiku käsitluses on erinevatel andmestruktuuridel erinevad kasutusviisid, mida nad toetavad -- listi puhul saab elementi ``append``-ida, sõnastikus saab küsida elementi tema (suvalist tüüpi) võtme järgi jne, st. meid huvitab eelkõige *mida* mingi andmestruktuur "teha oskab". Reaalsetes programmides aga on tihti vaja teada ka ka seda *kuidas* seda tehakse. Seetõttu on loodud näiteks erinevaid listitüüpe, millega saab teha samu asju, aga mis sisemas töötavad erinevalt ning seetõttu sobivad eri situatsioonidesse paremini või halvemini (näiteks ühe tuntud listitüübi variatsiooni puhul toimib indekseerimine väga kiiresti aga teise puhul saab väga kiiresti listi algusesse uut elementi lisada).
+Antud õpiku käsitluses on erinevatel andmestruktuuridel erinevad kasutusviisid, mida nad toetavad -- listi puhul saab elementi ``append``-ida, sõnastikus saab küsida elementi tema (suvalist tüüpi) võtme järgi jne, st. meid huvitab eelkõige mida mingi andmestruktuur teha oskab. Reaalsetes programmides aga on tihti vaja teada ka ka seda kuidas seda tehakse. Seetõttu on loodud näiteks erinevaid listitüüpe, millega saab teha samu asju, aga mis sisemas töötavad erinevalt ning seetõttu sobivad eri situatsioonidesse paremini või halvemini (näiteks ühe tuntud listitüübi variatsiooni puhul toimib indekseerimine väga kiiresti, aga teise puhul saab väga kiiresti listi algusesse uue elementi lisada).
 
 Algoritmid ja andmestruktuurid
--------------------------------------------------------------------------------------------------------     
+------------------------------
 Programmeerimise teemad jaotatakse tihti tinglikult kaheks pooleks -- *algoritmid* ja *andmestruktuurid* (või lihtsalt *andmed*).
     
 Algoritmid kehastavad programmide "aktiivset" poolt -- nad kirjeldavad mingit tegevust, arvutamist, valikut, teisendamist vms. Selle poole märksõnad on näiteks ``if``, ``print``, ``while``, ``sin``.
@@ -597,7 +597,7 @@ Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- 
 
 1. Teksti analüüs
 -----------------
-Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust eesti- vs. ingliskeelsetes tekstides.
+Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust eesti- ja ingliskeelsetes tekstides.
 
 .. hint::
 
@@ -605,7 +605,7 @@ Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust ees
 
 .. hint::
 
-    Sõnastiku võtmeteks peaks olema tähed või muud sümbolid (st. tehniliselt võttes sõned) ja väärtusteks täisarvud.
+    Sõnastiku võtmeteks peaksid olema tähed või muud sümbolid (st. tehniliselt võttes sõned) ja väärtusteks täisarvud.
 
 .. hint::
 
@@ -613,41 +613,37 @@ Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust ees
 
 .. hint::
 
-    Meeldetuletus: sõnesid saab käsitleda justkui sümbolite järjendeid.
+    Meeldetuletus: sõnesid saab käsitleda sümbolite järjendina.
 
 .. hint::
     
-    Kui nuputad, millises etapis tuleks kasutada oma head tuttavat ``split`` meetodit, siis mõtle järgi, kas seda üldse läheb antud ülesandes tarvis.
+    Kui nuputad, millises etapis tuleks kasutada oma head tuttavat ``split`` meetodit, siis mõtle järele, kas seda üldse läheb antud ülesandes tarvis.
 
 
 2. Eksami statistika, 2. osa
 ----------------------------
-.. note::
-
-    Praktikumiks ettevalmistamiseks piisab, kui lahendate allolevatest alamülesannetest vaid ühe. Samas, harjutamise mõttes on kindlasti kasulik kõik ära lahendada.
-
 See ülesanne põhineb ülalpool toodud näiteülesandel.
 
-Kõigepealt muutke etteantud lahendust nii, et küsimuste arv 7 ei oleks fikseeritud, vaid tuvastataks käigu pealt, vastavalt esimesel real olevate tulemuste arvule (võib eeldada, et kõigil ridadel on võrdne arv tulemusi).
+Kõigepealt muuda etteantud lahendust nii, et küsimuste arv ei oleks fikseeritud, vaid tuvastataks käigu pealt vastavalt esimesel real olevate tulemuste arvule (võib eeldada, et kõigil ridadel on võrdne arv tulemusi).
 
 NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tulemuste arvu korral. Lahendused võib kõik teha järjest ühte samasse faili.
 
 Ülesande lahendamisel võid muuhulgas kasutada kõiki Pythoni funktsioone (sh. ``sum`` ja ``max``).
 
-#. **Maksimaalsed tulemused**: Leida iga ülesande kohta selle lahendamisel saadud maksimaalne skoor.
+#. **Maksimaalsed tulemused**: leia iga ülesande kohta selle lahendamisel saadud maksimaalne skoor.
 
-#. **Seinast seina**: Väljasta nende tudengite nimed, kes said vähemalt ühe ülesande eest 10 punkti ja mõne teise ülesande eest 0 punkti.
+#. **Seinast seina**: väljasta nende tudengite nimed, kes said vähemalt ühe ülesande eest 10 punkti ja mõne teise ülesande eest 0 punkti.
 
-#. **Priimused**: Leida nende tudengite nimed, kes kogusid summaarselt kõige rohkem punkte. Kui mitu inimest sai sama palju punkte, väljastada kõigi nende nimed (vihje – kogu need nimed järjendisse).
+#. **Priimused**: leia nende tudengite nimed, kes kogusid summaarselt kõige rohkem punkte. Kui mitu inimest sai sama palju punkte, väljasta kõigi nende nimed (vihje – kogu need nimed järjendisse).
 
-#. **Spikerdamine**: Fail on koostatud nii, et kõrvuti istunud tudengite andmed on failis järjest. Kontrollida, kas tulemused viitavad sellele, et mõni oma naabri pealt spikerdas. Spikerdamises võib tudengit kahtlustada, kui tema kõik tulemused on kas võrdsed või ülimalt 2 punkti võrra väiksemad, kui ühel tema kahest naabrist. Väljastada kõigi spikerdamises kahtlustatavate tudengite nimed.
+#. **Spikerdamine**: fail on koostatud nii, et kõrvuti istunud tudengite andmed on failis järjest. Kontrolli, kas tulemused viitavad sellele, et mõni spikerdas oma naabri pealt. Loeme, et spikerdamises võib tudengit kahtlustada, kui tema kõik tulemused on kas võrdsed või ülimalt 2 punkti võrra väiksemad kui ühel tema kahest naabrist. Väljasta kõigi spikerdamises kahtlustatavate tudengite nimed.
 
-#. **Skaleeritud hindamine**: Oletame, et hindamisskeem on selline, et kui mõne ülesande eest ei saanud keegi maksimumpunkte, siis korrutatakse kõigi tudengite punktid läbi sellise konfitsendiga, et parima tulemuse saanud tudengi uus tulemus oleks 10. Teisenda ja väljasta kõigi tudengite kõigi ülesannete punktid sellest hindamisskeemist lähtuvalt (1 komakoha täpsusega). Vihje: koosta järjend, kus on iga ülesande kohta leitud sellele vastav kordaja, ning kasuta seda tudengite hinnete tuvastamisel.
+#. **Skaleeritud hindamine**: oletame, et hindamisskeem on selline, et kui mõne ülesande eest ei saanud keegi maksimumpunkte, siis korrutatakse kõigi tudengite punktid läbi sellise koefitsiendiga, et parima tulemuse saanud tudengi uus tulemus oleks 10. Teisenda ja väljasta kõigi tudengite kõigi ülesannete punktid sellest hindamisskeemist lähtuvalt (ühe komakoha täpsusega). Vihje: koosta järjend, kus on iga ülesande kohta leitud sellele vastav kordaja, ning kasuta seda tudengite hinnete tuvastamisel.
 
 
 3. Kaugeimad punktid
 --------------------
-Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leida punktid, mis asuvad teineteisest kõige kaugemal. Väljastada ekraanile ka nende punktide koordinaadid.
+Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leia punktid, mis asuvad teineteisest kõige kaugemal. Väljasta ekraanile ka nende punktide koordinaadid.
 
 .. hint::
 
@@ -655,16 +651,16 @@ Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide 
 
 .. hint::
 
-    Punktide omavahelise kauguse arvutamisel on abi *Pythagorase teoreemist*. Vajadusel visanda skeem koordinaatteljestiku ja kahe punktiga ning otsi pildilt täisnurkset kolmnurka.
+    Punktide omavahelise kauguse arvutamisel on abi Pythagorase teoreemist. Vajadusel visanda skeem koordinaatteljestiku ja kahe punktiga, ning otsi pildilt täisnurkset kolmnurka.
 
 4. Sudoku lahenduse kontrollimine
 ---------------------------------
 
 Kirjuta programm, mis kontrollib, kas etteantud failis (:download:`sudoku.txt <downloads/sudoku.txt>`) on korrektne Sudoku lahendus. Mittekorrektse lahenduse korral tuleb öelda, millises veerus, reas või 3x3 ruudus probleem esineb.
 
-Lisainfot Sudoku kohta: http://en.wikipedia.org/wiki/Sudoku
+Lisainfot Sudoku kohta: http://en.wikipedia.org/wiki/Sudoku.
 
-NB! testi oma programmi nii korrektse kui ka mittekorrektse lahendusega!
+NB! Testi oma programmi nii korrektse kui ka mittekorrektse lahendusega!
 
 .. note::
 
@@ -703,8 +699,8 @@ NB! testi oma programmi nii korrektse kui ka mittekorrektse lahendusega!
         # kontrollime üle kõik veerud
         for i in range(9):
             if not veerg_on_korras(tabel, i):
-                # Tuleb välja, et optimism polnud põhjendatud.
-                # Korrigeerime on seisukohta.
+                # tuleb välja, et optimism polnud põhjendatud
+                # korrigeerime on seisukohta
                 lahendus_on_korras = False
         ...
         ...
@@ -731,11 +727,11 @@ NB! testi oma programmi nii korrektse kui ka mittekorrektse lahendusega!
 ------
 *See ülesanne on antud koos näitelahendusega, aga enne selle vaatamist ürita ise lahenduseni jõuda!*
 
-Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nimed ja nende SKP-d semikooloniga eraldatult (miljonites USA dollarites, 2009. aasta seisuga). Küsida kasutajalt, kui suur SKP teda huvitab ning leida kolm sisestatud arvule kõige lähema SKP-ga riiki.
+Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nimed ja nende SKP-d semikooloniga eraldatult (miljonites USA dollarites 2009. aasta seisuga). Küsida kasutajalt, kui suur SKP teda huvitab, ning leida kolm sisestatud arvule kõige lähema SKP-ga riiki.
 
 .. hint::
 
-    Kõige lähema leidmine on iseenesest lihtne – leida lihtsalt selline, mille jaoks absoluutväärtus `| SKP – sisestatud arv |` oleks minimaalne. Kuidas aga leida kolme lähimat? Tuletame aga meelde, kuidas me leidsime minimaalset – me hoidsime vähimat meeles ning kui parasjagu vaadeldav element oli sellest väiksem, asendasime ta sellega. Miski ei takista meid aga hoidmast ühe vähima asemel nimekirja näiteks kolmest. Kui nüüd leidub uus, mis on kõigist kolmest väiksem, siis lisame selle sinna nimekirja ning viskame seal enne olnutest kõige suurema välja. Sama teeme tegelikult alati, kui uus väärtus on vähemalt kõige suuremast seni meeles hoitud väärtusest väiksem. Seega piisab, kui leiame igal sammul meeles peetuist suurima ja vaatame, kas uus on sellest väiksem. Kui on, asendame endise meeles peetuva suurima lihtsalt uue leituga. See aga tähendab, et igal sammul tuleb vaid leida maksimaalne meeles hoitutest – seda me aga juba oskame.
+    Kõige lähema leidmine on iseenesest lihtne – leida lihtsalt selline, mille jaoks absoluutväärtus `| SKP – sisestatud arv |` oleks minimaalne. Kuidas aga leida kolme lähimat? Tuletame aga meelde, kuidas me leidsime minimaalset – me hoidsime vähimat meeles ning kui parasjagu vaadeldav element oli sellest väiksem, asendasime ta sellega. Miski ei takista meid aga hoidmast ühe vähima asemel nimekirja näiteks kolmest. Kui nüüd leidub uus, mis on kõigist kolmest väiksem, siis lisame selle sinna nimekirja ning viskame seal enne olnutest kõige suurema välja. Sama teeme tegelikult alati, kui uus väärtus on vähemalt kõige suuremast seni meeles hoitud väärtusest väiksem. Seega piisab, kui leiame igal sammul meeles peetuist suurima ja vaatame, kas uus on sellest väiksem. Kui on, asendame endise meeles peetava suurima lihtsalt uue leituga. See aga tähendab, et igal sammul tuleb vaid leida maksimaalne meeles hoitutest – seda me aga juba oskame.
 
     .. sourcecode:: py3
 
@@ -745,40 +741,40 @@ Antud on fail :download:`SKP.txt<downloads/SKP.txt>`, kus on kirjas riikide nime
         vahed = []
         nimed = []
 
-        # Faili sisse lugemine
+        # faili sisse lugemine
         f = open("SKP.txt","r", encoding="UTF-8")
         for rida in f:
-            # Teisenda rida riigiks ja skp-ks ning lisa need järjenditele
+            # teisenda rida riigiks ja SKP-ks ning lisa need järjenditele
             paar = rida.split(";")
             nimed.append(paar[0])
             skpd.append(float(paar[1]))
 
-            # Arvutada ka absoluutväärtus vahest nõutud skp-ga
+            # arvutada ka absoluutväärtus vahest nõutud SKP-ga
             vahed.append(abs(float(paar[1])-skp))
 
         f.close()
 
-        # Eralda esimesed kolm elementi esialgseks lähimate järjendiks
+        # eralda esimesed kolm elementi esialgseks lähimate järjendiks
         lahimadskpd = skpd[0:3]
         lahimadnimed = nimed[0:3]
         lahimadvahed = vahed[0:3]
 
-        # Leia tegelikud lähimad järjendi läbi käimise teel
+        # leia tegelikud lähimad järjendi läbi käimise teel
         for i in range(3,len(skpd)) :
-            # Leia maksimaalse erinevusega indeks meeles peetute hulgast
+            # leia maksimaalse erinevusega indeks meeles peetute hulgast
             maksj = 0
             for j in range(1,len(lahimadvahed)) :
                 if lahimadvahed[j] > lahimadvahed[maksj] :
                     maksj=j
 
-            # Vaadata, kas uus leitu on meie parameetrile lähemal
+            # vaata, kas uus leitu on meie parameetrile lähemal
             if vahed[i] < lahimadvahed[maksj] :
-                # Kui on, asenda seal enne olnud riigi info uuega
+                # kui on, asenda seal enne olnud riigi info uuega
                 lahimadvahed[maksj] = vahed[i]
                 lahimadskpd[maksj] = skpd[i]
                 lahimadnimed[maksj] = nimed[i]
 
-        # Väljasta tulemus
+        # väljasta tulemus
         for i in range(0,len(lahimadvahed)) :
             print(lahimadnimed[i] + " - " + str(lahimadskpd[i]))
 
@@ -788,7 +784,7 @@ Projekt
 =======
 Pythoni andmestruktuuride salvestamine ja sisselugemine
 -------------------------------------------------------
-Selleks, et "järjendikujulist" infot failis hoida, oleme seni kasutanud mingit lihtsat tekstilist formaati, mida on mugav näiteks tsükli ja ``split``-i abil töödelda. Selle lähenemise eelis on see, et taolist tekstiformaati saab vabalt ka suvalises tekstiredaktoris lugeda või koostada.
+Selleks, et järjendikujulist infot failis hoida, oleme seni kasutanud mingit lihtsat tekstilist formaati, mida on mugav näiteks tsükli ja ``split``-i abil töödelda. Selle lähenemise eelis on see, et taolist tekstiformaati saab vabalt ka suvalises tekstiredaktoris lugeda või koostada.
 
 Keerulisemate andmestruktuuride ja nende kombinatsioonide (nt. sõnastike või mitmemõõtmeliste järjendite) puhul võib sobiva formaadi väljatöötamine ja kasutamine olla küllalt suur töö. Seetõttu on Pythonis olemas vahendid, mis seda tööd lihtsustavad.
 
@@ -815,7 +811,7 @@ Nende kasutamise põhimõte on lihtne: ``repr`` teisendab argumendiks antud vä�
 
 .. note:: 
 
-    Kui sulle tundub, et ``repr`` ja ``str`` on väga sarnased funktsioonid, siis on sul täiesti õigus -- paljude andmetüüpide puhul toimivad nad täpselt samamoodi. Mõnede tüüpide puhul on aga ``str`` ülesandeks moodustada väärtuse "kasutajasõbralik" esitus ja ``repr`` ülesandeks moodustatada "``eval``-i sõbralik" esitus, seetõttu on tavaks kasutada koos ``eval``-iga justnimelt funktsiooni ``repr``.
+    Kui sulle tundub, et ``repr`` ja ``str`` on väga sarnased funktsioonid, siis on sul täiesti õigus -- paljude andmetüüpide puhul toimivad nad täpselt samamoodi. Mõnede tüüpide puhul on aga ``str``-i ülesandeks moodustada väärtuse "kasutajasõbralik" esitus ja ``repr`` ülesandeks moodustatada "``eval``-i sõbralik" esitus, seetõttu on tavaks kasutada koos ``eval``-iga justnimelt funktsiooni ``repr``.
 
 Tegelikult sobib ``eval`` suvalise sõnena esitatud Pythoni avaldise väärtustamiseks. Seetõttu on selle kasutamisel oht, et kui keegi sinu andmeid pahatahtlikult modifitseerib, siis andmete ``eval``-iga sisselugemisel käivitab programm hoopis mingi pahatahtliku käsu (näiteks kustutab kogu kõvaketta sisu). Seega maksab uurida ka alternatiivset viisi Pythoni andmete faili salvestamiseks -- käsud ``pickle.dump`` ja ``pickle.load``: http://docs.python.org/3/library/pickle.html. 
 
@@ -824,14 +820,14 @@ Lisalugemine
 ============
 Keerukus
 --------
-Üldiselt on üht ja sama ülesannet võimalik tihti lahendada mitmel väga erineval moel. Näiteks sobib "Libisev keskmine" lahenduses keskmiste leidmiseks ka järgmine programmijupp:
+Üldiselt on üht ja sama ülesannet võimalik tihti lahendada mitmel väga erineval moel. Näiteks sobib ülesande "Libisev keskmine" lahenduses keskmiste leidmiseks ka järgmine programmijupp:
 
 .. sourcecode:: py3
 
     ...
     
-    # Keskmiste arvutamine
-    # Leia kumulatiivsed summad
+    # keskmiste arvutamine
+    # leia kumulatiivsed summad
 
     summad = [0.0]
 
@@ -844,19 +840,19 @@ Keerukus
        keskm = keskm / k
        print("{0}-ndale päevale eelnenud {1} päeva keskmine oli {2:.2f}".format(i,k,keskm))
 
-See programm on mingis mõttes keerulisem, kui ülesande algne lahendus, sest keskmise jaoks vajalike summade otse leidmise asemel leitakse siin alguses kõik “kumulatiivsed summad” st summad esimesest aktsiahinnast kuni i-nda aktsiahinnani (kõikide i-de jaoks) ning seejärel kasutatakse neid summasid kavalalt et k eelmise elemendi summat leida, lähtudes tõdemusest, et
+See programm on mingis mõttes keerulisem kui ülesande algne lahendus, sest keskmise jaoks vajalike summade otse leidmise asemel leitakse siin alguses kõik "kumulatiivsed summad", st summad esimesest aktsiahinnast kuni i-nda aktsiahinnani (kõikide i-de jaoks). Seejärel kasutatakse neid summasid kavalalt, et *k* eelmise elemendi summat leida, lähtudes tõdemusest, et
 
 .. sourcecode:: none
 
     a[i-k+1] + a[i-k+2] + ... + a[i] == (a[0]+a[1] + ... + a[i]) – (a[0]+a[1] + ... + a[i-k])
 
-Kui samale ülesandele on kaks lahendust, tekib paratamatult küsimus, kumb neist parem on. Ühest vastust sellele ei ole. Õpetamise kontekstis on näiteks selge, et esimene lahendus sobib kahekordse tsükli illustreerimiseks märksa paremini, sest teine lahendus seda konstruktsiooni isegi ei kasuta. Samuti on esimene programm ehk ka lihtsamini kontrollitav, sest ta on lühem ning leiab need keskmised vahetult summade leidmise kaudu, selle asemel et mingeid trikke kasutada.
+Kui samale ülesandele on kaks lahendust, tekib paratamatult küsimus, kumb neist parem on. Ühest vastust sellele ei ole. Õpetamise kontekstis on näiteks selge, et esimene lahendus sobib kahekordse tsükli illustreerimiseks märksa paremini, sest teine lahendus seda konstruktsiooni isegi ei kasuta. Samuti on esimene programm ehk ka lihtsamini kontrollitav, sest ta on lühem ning selle asemel et mingeid trikke kasutada, leiab need keskmised vahetult summade leidmise kaudu.
 
-Teisel lahendusel on esimese ees siiski üks oluline eelis, mis tuleb küll välja alles suuremate andmestike puhul. Kui näiteks aktsiahindu ei vaadata mitte päevade vaid sekundite lõikes, võib neid failis olla mõnekümne asemel miljoneid, ning keskmiseid oleks vaja samuti leida ilmselt üle mitte 10 vaid pigem 100 000 eelmise väärtuse. Sellisel juhul jääks esimene lahendus märkimisväärselt aeglasemaks ja seda väga lihtsal põhjusel: esimene ülesanne teeb iga keskmise leidmiseks k liitmistehet, kuid teine lahendus saab sellega eelnevalt leitud summade abil hakkama vaid ühe lahutamistehtega. Kuigi ka summade leidmiseks kulub aega, on lihtne veenduda, on see kuluv aeg samuti vaid keskmiselt üks liitmine iga i väärtuse jaoks. Kokkuvõttes kulub teisel lahendusel seega iga k-keskmise peale üks liitmine, üks lahutamine samas kui esimene lahendus peab tegema k liitmist.
+Teisel lahendusel on esimese ees siiski üks oluline eelis, mis tuleb küll välja alles suuremate andmestike puhul. Kui näiteks aktsiahindu ei vaadata mitte päevade, vaid sekundite lõikes, võib neid failis olla mõnekümne asemel miljoneid, ning keskmiseid oleks vaja samuti leida ilmselt mitte üle 10 vaid pigem üle 100 000 eelmise väärtuse. Sellisel juhul jääks esimene lahendus märkimisväärselt aeglasemaks ja seda väga lihtsal põhjusel: esimene lahendus teeb iga keskmise leidmiseks *k* liitmistehet, kuid teine lahendus saab sellega eelnevalt leitud summade abil hakkama vaid ühe lahutamistehtega. Kuigi ka summade leidmiseks kulub aega, on lihtne veenduda, et see kuluv aeg on samuti vaid keskmiselt üks liitmine iga *i* väärtuse jaoks. Kokkuvõttes kulub teisel lahendusel seega iga *k*-keskmise peale üks liitmine ja üks lahutamine, samas kui esimene lahendus peab tegema k liitmist.
 
 Programmi poolt tehtavate sammude arvu hindamist nimetatakse selle *ajalise keerukuse* analüüsimiseks. Selline analüüs muutub oluliseks eelkõige suurte andmemahtude korral - väikeste andmemahtude korral (paartuhat erinevat aktsiahinda) töötavad mõlemad lahendused lihtsalt nii kiiresti, et inimene nende töökiiruse erinevust ei taju, kuid mida suuremad on andmemahud, seda suurem on erinevus ja seda eelistatum on teine lahendus esimesele.
 
-Üldiselt tehakse sellist analüüsi küllaltki umbkaudselt, loendades vaid neid samme, mida korduvalt tehakse ning tehes isegi seda tihti suhteliselt ligikaudselt. Näiteks esimest lahendust analüüsides vaadataks, et kõige rohkem tehakse sisemise tsükli liitmistehet, mis toimub kokku `(n-k)*(k-1)` ehk suurusjärgus `n*k` korda, samas kui teises lahenduses toimub kumulatiivsete summade leidmisel n liitmist ja hiljem keskmiste leidmisel `n-k` lahutamist, st. kokku `2n-k` ehk "suurusjärgus" `n` tehet. Kuna üldiselt `n` kasvades ka `k` kasvab, võib teha lisaeelduse et `k` ja `n` on umbes samas suurusjärgus, mis annaks esimese algoritmi keerukuse hinnanguks `n`\ :sup:`2` tehet ning teise jaoks lihtsalt `n` tehet. Sealt ongi näha, et mida suurema väärtus `n` omandab (st. mida suurem on andmestik), seda suuremaks muutub hinnagute erinevus ja seega ka töökiiruste erinevus.
+Üldiselt tehakse sellist analüüsi küllaltki umbkaudselt, loendades vaid neid samme, mida korduvalt tehakse ning tehes isegi seda tihti ligikaudselt. Näiteks esimest lahendust analüüsides vaadataks, et kõige rohkem tehakse sisemise tsükli liitmistehet, mis toimub kokku `(n-k)*(k-1)` ehk suurusjärgus `n*k` korda, samas kui teises lahenduses toimub kumulatiivsete summade leidmisel n liitmist ja hiljem keskmiste leidmisel `n-k` lahutamist, st. kokku `2n-k` ehk "suurusjärgus" `n` tehet. Kuna üldiselt `n` kasvades ka `k` kasvab, võib teha lisaeelduse, et `k` ja `n` on umbes samas suurusjärgus, mis annaks esimese algoritmi keerukuse hinnanguks `n`\ :sup:`2` tehet ning teise jaoks lihtsalt `n` tehet. Sealt ongi näha, et mida suurema väärtuse `n` omandab (st. mida suurem on andmestik), seda suuremaks muutub hinnagute erinevus ja seega ka töökiiruste erinevus.
 
-Sellist analüüsi nimetatakse *asümptootiliseks*, sest ta kehtib `n` suurte väärtuste korral ning üldiselt seda paremini, mida suuremad `n` väärtused on. Selline ligikaudne lähenemine on tegelikult formaliseeritav nn. *O-notatsiooni* abil, mis annab ka küllalti täpsed piirangud sellele, kuidas ja mis alustel üldistada ja lihtsustada tohib. Sel viisil keerukuse hindamisest kuulete täpsemalt kursusel *Algoritmid ja andmestruktuurid*.
+Sellist analüüsi nimetatakse *asümptootiliseks*, sest ta kehtib `n` suurte väärtuste korral ning üldiselt seda paremini, mida suuremad `n` väärtused on. Selline ligikaudne lähenemine on tegelikult formaliseeritav nn. *O-notatsiooni* abil, mis annab ka küllalti täpsed piirangud sellele, kuidas ja mis alustel üldistada ja lihtsustada tohib.
 
