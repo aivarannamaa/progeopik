@@ -550,7 +550,9 @@ Iga peatüki lõpus on soovitav teha iseenda jaoks mõttes (või kirjalikult) ol
 .. note ::
 
     Peatükkide lõpus olevad ülesanded on mahukamad kui teksti sees antud ülesanded ja õpetavad seega paremini probleemi lahendamise oskust. Esimeses peatükis on soenduseks vaid üks ülesanne, edaspidi tuleb neid rohkem.
-    
+
+.. _maja:
+
 1. Maja
 -------
 Kirjuta programm, mis joonistab kilpkonnaga lihtsa otsevaates maja (võib olla ka "pseudo-3D" vaatega). 

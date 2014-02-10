@@ -1069,6 +1069,8 @@ Selleks, et funktsiooni saaks kasutada avaldises, peab ta arvutatud väärtuse *
 .. todo::
 
     Lisada Pykkarile käsk set_direction
+    
+    tee mitme maja joonistamise ülesanne
 
 1. Liigu nurka ver.2
 --------------------

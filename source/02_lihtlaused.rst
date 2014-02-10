@@ -1419,9 +1419,18 @@ Programmi ülesanne on võtta esimese faili sisu, teisendada see suurtähtedesse
     anna vihjed
 
 
+7. Maja
+-------
+Eelmises peatükis oli :ref:`maja joonistamise ülesanne <maja>`. Nüüd tuleks lahendada see ülesanne nii, et programm küsib maja mõõtmed kasutajalt. Näiteks kui kasutaja sisestab laiuseks 100 ja seina kõrguseks 40, siis ilmub
+
+.. image:: images/maja_100_40.png   
+
+aga kui kasutaja sisestab laiuseks 50 ja seina kõrguseks 40, siis ilmub
+
+.. image:: images/maja_50_40.png   
 
 
-7. Redeli pikkus
+8. Redeli pikkus
 ----------------
 Kirjuta programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrgusele ronimiseks. Programm peaks küsima kasutajalt soovitud kõrguse ning väljastama minimaalse ja maksimaalse pulkade arvu, mis peaks sobival redelil olema. Arvestame, et:
  
@@ -1434,7 +1443,7 @@ Kirjuta programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrguse
 
     Selleks, et arvutused ei läheks liiga keeruliseks, on soovitav vahetulemused salvestada abimuutujatesse.
 
-8. Pentagramm
+9. Pentagramm
 -------------
 Kirjuta programm, mis küsib kasutajalt positiivse arvu vahemikus 10 .. 300 ja joonistab kilpkonna abil vastava diagonaalipikkusega pentagrammi:
 
