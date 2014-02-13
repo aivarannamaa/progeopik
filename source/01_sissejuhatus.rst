@@ -86,7 +86,7 @@ Selgitused:
 
 * käsk ``input`` võimaldab kasutajal midagi sisestada ning edastab saadud teksti Pythonile;
 * konstruktsioon ``nimi = ...`` salvestab selle teksti mällu, edaspidi saab sellele tekstile viidata kirjutades lihtsalt ``nimi``;
-* konstruktsioon ``Tere " + nimi + "!"`` kombineerib etteantud tekstijupid ja kasutaja nime uueks tekstiks.
+* konstruktsioon ``"Tere " + nimi + "!"`` kombineerib etteantud tekstijupid ja kasutaja nime uueks tekstiks.
 
 Harjutus. Programmi muutmine
 ----------------------------
@@ -299,7 +299,7 @@ Kui sul on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saad avada men
 
     Edaspidi tuleb meil näiteid nii käsurea kui ka skriptide (st. faili salvestatud programmide) kohta. Kui näide algab käsuviibaga (``>>>``), siis esitab see käsurea dialoogi. Vastasel juhul on tegemist skriptiga.
     
-    NB! Käsureal kasutatakse käsuviiba märki vaid selleks, et oleks kergem eristada, millistel ridadel on käsud ja millistel on vastused. Seda ei ole vaja kunagi ise kirjutada. Skiptis ei kasutata seda märki kunagi.
+    NB! Käsureal kasutatakse käsuviiba märki vaid selleks, et oleks kergem eristada, millistel ridadel on käsud ja millistel on vastused. Seda ei ole vaja kunagi ise kirjutada. Skriptis ei kasutata seda märki kunagi.
 
 .. note::
 
@@ -316,7 +316,7 @@ Python kui kalkulaator
 ----------------------
 .. note::
     
-    Siin ja edaspidi on käsurea näidete juures soovitav ise läbi proovida mõned sarnased, aga mitte samad näited (kui proovid täpselt samu näiteid, siis usu, sa saad ka samad tulemused.) Ürita Pythonit (või iseennast) üllatada!
+    Siin ja edaspidi on käsurea näidete juures soovitav ise läbi proovida mõned sarnased, aga mitte samad näited (kui proovid täpselt samu näiteid, siis usu, sa saad ka samad tulemused). Ürita Pythonit (või iseennast) üllatada!
 
 
 
@@ -472,7 +472,7 @@ Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keele
     
 
 Mõtteharjutus. Tehisintellekt
-------------------------------
+-----------------------------
 Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? Kas tulevikus saab programmeerida eesti või inglise keeles? Millised takistused tuleks selleks ületada? Kas kunagi hakkavad arvutid arvestama sellega, et programmeerija võib teha vigu? ("Hmm... siin on küll kirjas ``2 / x`` aga see ei klapi siin mitte, küllap ta mõtles ``x / 2``.")
 
 
@@ -578,7 +578,7 @@ Järgneva osa eesmärk on aidata sind projektiideede genereerimisel. Siin on too
     Arvatavasti jääb nende programmide kood praegu arusaamatuks, kuid proovi siiski seda lugeda, kasvõi selleks, et saada aimu, mis sind ees ootab.
 
 Mis toimub?
--------------
+-----------
 :download:`mistoimub.py <downloads/mistoimub.py>`
 
 See küllalt lihtne programm loeb ja esitab andmeid kahelt veebilehelt. Ühel juhul loetakse info sisse spetsiaalses XML formaadis (XML-i töötlemisest tuleb põgusalt juttu ühes hilisemas projektiplokis), teisel juhul otsitakse soovitud info üles Pythoni tekstitöötlusvahenditega (seda õpetab juba järgmine peatükk).
