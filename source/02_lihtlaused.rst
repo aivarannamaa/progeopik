@@ -446,14 +446,14 @@ Tehted sõnedega
 | ``len('tere')``                     | ``4``              | Sõne pikkuse (`length`) küsimine                                    |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'tere'.upper()``                  | ``'TERE'``         | Mõnede käskude korral kirjutatakse sõne käsu ette.                  |
-+-------------------------------------+--------------------+ Taolisi käske nimetatakse *meetoditeks*.                             |
++-------------------------------------+--------------------+ Taolisi käske nimetatakse *meetoditeks*.                            |
 | ``'TeRe'.lower()``                  | ``'tere'``         |                                                                     |
 +-------------------------------------+--------------------+                                                                     |
 | ``'jäääär'.count('ä')``             | ``4``              |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
-| ``'tere'.rjust(10)``                | ``'      tere'``   | Sõne paigutamine etteantud "ruumi", see on abiks nt tabelite       |
-+-------------------------------------+--------------------+ moodustamisel. Selle meetodi paariliseks on ``ljust``, katseta ise,  |
-| ``'terekest'.rjust(10)``            | ``'  terekest'``   | mida see teeb!                                               |
+| ``'tere'.rjust(10)``                | ``'      tere'``   | Sõne paigutamine etteantud "ruumi", see on abiks nt tabelite        |
++-------------------------------------+--------------------+ moodustamisel. Selle meetodi paariliseks on ``ljust``, katseta ise, |
+| ``'terekest'.rjust(10)``            | ``'  terekest'``   | mida see teeb!                                                      |
 +-------------------------------------+--------------------+ Teise argumendiga saab määrata, millist sümbolit ruumi täitmiseks   | 
 | ``'terekest'.rjust(10, '~')``       | ``'~~terekest'``   | kasutatakse.                                                        |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
@@ -468,14 +468,14 @@ Tehted sõnedega
 | ``'isamaa'.replace('isa', 'ema')``  | ``'emamaa'``       |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'abc'[0]``                        | ``'a'``            | Kirjutades sõne järele nurksulgudesse mingi numbri, antakse         |
-+-------------------------------------+--------------------+ vastuseks vastava järjekorranumbriga e *indeksiga* täht.           +
++-------------------------------------+--------------------+ vastuseks vastava järjekorranumbriga e *indeksiga* täht.            +
 | ``'abc'[1]``                        | ``'b'``            | NB! Indeksid algavad 0-ga.                                          |
 +-------------------------------------+--------------------+                                                                     +
 | ``'abc'[2]``                        | ``'c'``            |                                                                     |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'tere'[0:3]``                     | ``'ter'``          | Kui nurksulgudesse kirjutada kooloniga eraldatult kaks indeksit,    |
 +-------------------------------------+--------------------+ siis antakse sõnest lõik alates esimesest indeksist (kaasaarvatud)  +
-| ``'tere'[2:4]``                     | ``'re'``           | kuni viimase indeksini (väljaarvatud).                               |
+| ``'tere'[2:4]``                     | ``'re'``           | kuni viimase indeksini (väljaarvatud).                              |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'tere'.replace('e','ö').upper()`` | ``'TÖRÖ'``         | Käske saab kombineerida                                             |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+

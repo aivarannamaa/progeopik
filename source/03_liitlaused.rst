@@ -61,7 +61,7 @@ Tingimusi saab (muuhulgas) moodustada järgmiste operaatoritega:
     Ära unusta, et üksikut võrdusmärki (``=``) kasutatakse Pythonis muutujale väärtuse omistamiseks, seetõttu on võrdsuse kontrollimiseks ette nähtud topeltvõrdusmärk (``==``).
 
 Harjutus. Jaguvus.
------------------
+------------------
 Kirjuta programm, mis küsib kasutajalt kaks arvu ning vastab, kas esimene arv jagub teisega või mitte.
 
 .. hint::
@@ -825,7 +825,7 @@ Kuigi tõeväärtustüübis on vaid kaks väärtust ``True`` ja ``False``, on ol
 +----------------------------------+---------+ nende nimedest arvata                                               +
 | ``'Tallinn'.startswith('reha')`` |``False``|                                                                     |
 +----------------------------------+---------+---------------------------------------------------------------------+
-| ``'10203'.isnumeric()``          | ``True``| ``isnumeric`` annab ``True``, kui sõne sisaldab ainult numbreid      |
+| ``'10203'.isnumeric()``          | ``True``| ``isnumeric`` annab ``True``, kui sõne sisaldab ainult numbreid     |
 +----------------------------------+---------+---------------------------------------------------------------------+
 
 Loomulikult saab kõiki mainitud operatsioone kasutada ka muutujatega.
