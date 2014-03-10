@@ -12,7 +12,7 @@ Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku
 
 .. sourcecode:: py3
 
-    # loome tühja (st. 0 elemendiga) järjendi ja kuvame selle ekraanile
+    # loome tühja (st 0 elemendiga) järjendi ja kuvame selle ekraanile
     a = []  
     print(a)
     
@@ -25,9 +25,9 @@ Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku
     print(a)
 
 
-Nagu nägid, olid programmi lõpuks järjendi elemendid ``1``, ``5`` ja ``9``. Selle saavutamiseks kasutasime meetodit ``append``, mis lisab järjendi lõppu uue elemendi, st. muudab olemasolevat järjendit.
+Nagu nägid, olid programmi lõpuks järjendi elemendid ``1``, ``5`` ja ``9``. Selle saavutamiseks kasutasime meetodit ``append``, mis lisab järjendi lõppu uue elemendi, st muudab olemasolevat järjendit.
 
-Taolist järjendite elementhaaval "kasvatamist" kasutatakse siis, kui järjendi elemendid selguvad alles programmi töö käigus. Kõige tavalisema skeemi puhul luuakse kõigepealt tühi järjend ning järjendi sisu täiendatakse tsüklis:
+Taolist järjendite elementhaaval kasvatamist kasutatakse siis, kui järjendi elemendid selguvad alles programmi töö käigus. Kõige tavalisema skeemi puhul luuakse kõigepealt tühi järjend ning järjendi sisu täiendatakse tsüklis:
 
 .. sourcecode:: py3
             
@@ -132,7 +132,7 @@ Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhja
 
 Harjutus. Arvude tuvastamine
 ------------------------------
-Kirjuta funktsioon ``naturaal_sõned``, mis võtab argumendiks sõnede järjendi ning tagastab uue sõnede järjendi, milles sisalduvad vaid need esialgse järjendi väärtused, mis kujutavad naturaalarve (st. ``sõne.isnumeric() == True``). NB! Sõnede teisendamist arvudeks pole selles ülesandes tarvis.
+Kirjuta funktsioon ``naturaal_sõned``, mis võtab argumendiks sõnede järjendi ning tagastab uue sõnede järjendi, milles sisalduvad vaid need esialgse järjendi väärtused, mis kujutavad naturaalarve (st ``sõne.isnumeric() == True``). NB! Sõnede teisendamist arvudeks pole selles ülesandes tarvis.
 
 Harjutus. Arvude tuvastamine koos teisendamisega
 --------------------------------------------------
@@ -176,7 +176,7 @@ Kirjuta funktsioon ``ühisosa``, mis võtab argumendiks kaks järjendit ning tag
 
 Järjendite kasutamine "andmebaasina"
 ====================================
-Järgnevates näidetes kasutame me mitut järjendit, mille elemendid on omavahel kuidagi seotud -- nt. järjendi ``a`` element positsioonil ``16`` (st. ``a[16]``) on seotud järjendi ``b`` samal positsioonil oleva elemendiga (st. ``b[16]``). Uuri ja katseta järgnevat näidet:
+Järgnevates näidetes kasutame me mitut järjendit, mille elemendid on omavahel kuidagi seotud -- nt järjendi ``a`` element positsioonil ``16`` (st. ``a[16]``) on seotud järjendi ``b`` samal positsioonil oleva elemendiga (st ``b[16]``). Uuri ja katseta järgnevat näidet:
 
 .. sourcecode:: py3
 
@@ -187,14 +187,14 @@ Järgnevates näidetes kasutame me mitut järjendit, mille elemendid on omavahel
     for i in range(n):
         print(eesnimed[i] + ' ' + perenimed[i])
 
-Kuna selles näites oli meil tarvis võtta element mõlemast järjendist samalt positsioonilt, siis ei piisanud meile "tavalisest" ``for``-tsükli variandist, mis võtab elemente lihtsalt järjest, ignoreerides nende indekseid. Seetõttu ei võtnud me tsükli aluseks mitte järjendi, vaid hoopis ``range``-i abil genereeritud indeksite loetelu.
+Kuna selles näites oli meil tarvis võtta element mõlemast järjendist samalt positsioonilt, siis ei piisanud meile tavalisest ``for``-tsükli variandist, mis võtab elemente lihtsalt järjest, ignoreerides nende indekseid. Seetõttu ei võtnud me tsükli aluseks mitte järjendi, vaid hoopis ``range``-i abil genereeritud indeksite loetelu.
 
 Taolistes ülesannetes eeldame, et seotud järjendid on sama pikad, seetõttu on ükskõik, millise järjendi pikkuse järgi me loendurit kontrollime.
 
 
 "Andmebaasi" sisselugemine failist
 ----------------------------------
-Et teha järgnevaid näiteid ja ülesandeid realistlikumaks, siis loeme omavahel seotud järjendid sisse tekstifailidest. Kõige lihtsam võimalus oleks kirjutada erinevate järjendite sisu eri failidesse ning lugeda nad sealt järjenditesse, üks järjend/fail korraga. Sellise lähenemise puhul on aga failide koostamine ebamugav, kuna me peame hoolikalt jälgima, et seotud andmed (nt. sama inimese eesnimi ja perenimi) satuksid mõlemas failis ikka samale reale.
+Et teha järgnevaid näiteid ja ülesandeid realistlikumaks, siis loeme omavahel seotud järjendid sisse tekstifailidest. Kõige lihtsam võimalus oleks kirjutada erinevate järjendite sisu eri failidesse ning lugeda nad sealt järjenditesse, üks järjend/fail korraga. Sellise lähenemise puhul on aga failide koostamine ebamugav, kuna me peame hoolikalt jälgima, et seotud andmed (nt sama inimese eesnimi ja perenimi) satuksid mõlemas failis ikka samale reale.
 
 Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed failis samale reale ning faili sisselugemisel kasutame ülalpool tutvustatud sõnemeetodit ``split``. Koosta tekstifail ``nimed.txt``, mille igal real on tühikuga eraldatud eesnimi ja perenimi, ning katseta järgnevat programmi:
 
@@ -222,11 +222,11 @@ Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed faili
 
 .. topic:: Millal on mõtet salvestada andmed järjendisse?
 
-    Kui me soovime failist loetud (või kasutaja käest küsitud) järjendi põhjal arvutada midagi lihtsat (nt. arvude summat või maksimaalset arvu), siis pole järjendi koostamine tegelikult isegi vajalik -- piisaks ühest abimuutujast, mille väärtust me iga järgmise arvu sisselugemisel sobivalt uuendame. Andmete järjendisse salvestamine on oluline näiteks siis, kui andmeid on vaja mitu korda läbi vaadata, sest järjendi korduv läbivaatamine on palju kiirem kui faili korduv lugemine.
+    Kui me soovime failist loetud (või kasutaja käest küsitud) järjendi põhjal arvutada midagi lihtsat (nt arvude summat või maksimaalset arvu), siis pole järjendi koostamine tegelikult isegi vajalik -- piisaks ühest abimuutujast, mille väärtust me iga järgmise arvu sisselugemisel sobivalt uuendame. Andmete järjendisse salvestamine on oluline näiteks siis, kui andmeid on vaja mitu korda läbi vaadata, sest järjendi korduv läbivaatamine on palju kiirem kui faili korduv lugemine.
 
 Harjutus. Eksami tulemused
 ----------------------------
-Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma ja saadud punktide arv (nt. ``Jaan Tamm,24``). Maksimaalne eksami eest saadav punktide arv on 40. Õppejõud soovib näha nende tudengite nimesid ja tulemusi, kes said eksamil vähem kui 50% punktidest. Kirjuta programm selle probleemi lahendamiseks.
+Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma ja saadud punktide arv (nt ``Jaan Tamm,24``). Maksimaalne eksami eest saadav punktide arv on 40. Õppejõud soovib näha nende tudengite nimesid ja tulemusi, kes said eksamil vähem kui 50% punktidest. Kirjuta programm selle probleemi lahendamiseks.
 
 .. hint::
     Meetod ``split`` annab kõik komponendid sõnedena!
@@ -239,7 +239,7 @@ Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde
 
     a = [1, 2, 3]
     
-    # muudame teist elementi (s.o. element järjekorranumbriga 1)
+    # muudame teist elementi (s.o element järjekorranumbriga 1)
     a[1] = 22 
     
     print(a)
@@ -277,7 +277,7 @@ Järjendi muutmisel (nii ``append`` kui ``a[i] = x`` puhul) tuleb arvestada ühe
     
     print(a)
  
-Nagu nägid, ilmus ekraanile ``[1, 2, 3, 4]``, ehkki programmist ei paista, et kusagil oleks järjendisse ``a`` lisatud arv *4*. Selle omapära põhjus peitub real ``b = a``, mis mitte ei kopeeri muutuja ``a`` väärtust muutujasse ``b``, vaid hoopis paneb muutuja ``b`` viitama samale järjendile. Teisisõnu, ``b`` on sama järjendi alternatiivne nimi (ingl.k. *alias*). Seetõttu, kui järjendit muuta kasutades nime ``b``, on muudatus näha ka nime ``a`` kaudu (ja vastupidi).
+Nagu nägid, ilmus ekraanile ``[1, 2, 3, 4]``, ehkki programmist ei paista, et kusagil oleks järjendisse ``a`` lisatud arv *4*. Selle omapära põhjus peitub real ``b = a``, mis mitte ei kopeeri muutuja ``a`` väärtust muutujasse ``b``, vaid hoopis paneb muutuja ``b`` viitama samale järjendile. Teisisõnu, ``b`` on sama järjendi alternatiivne nimi (ingl *alias*). Seetõttu, kui järjendit muuta kasutades nime ``b``, on muudatus näha ka nime ``a`` kaudu (ja vastupidi).
 
 Kuna funktsiooni parameetrid on oma olemuselt samuti muutujad, siis sama efekt ilmneb ka siis, kui parameetrina antud järjendit muudetakse funktsiooni sees:
 
@@ -312,7 +312,7 @@ Kõik Pythoni väärtused on programmi käimise ajal esitatud mingite objektiden
 
 Erinevus listidest tuleneb aga sellest, et täisarvu objekti ei ole võimalik muuta, seetõttu ei ole ilma pingutamata võimalik isegi aru saada, kas need muutujad viitavad samale objektile, või erinevatele objektidele, mis tähistavad sama arvu. Seetõttu ei pidanud me ei arvude ega sõnede puhul viitamise teema peale mõtlema.  
 
-Viitamise teema täpsemal uurimisel on abiks funktsioon ``id``, mis tagastab argumendiks antud väärtuse (e. objekti) aadressi arvuti mälus -- see ongi see viide, mida muutujad sisaldavad. Järgnevas näites luuakse kaks samaväärset sõneobjekti, mille kummagi viide salvestatakse erinevasse muutujasse:
+Viitamise teema täpsemal uurimisel on abiks funktsioon ``id``, mis tagastab argumendiks antud väärtuse (e objekti) aadressi arvuti mälus -- see ongi see viide, mida muutujad sisaldavad. Järgnevas näites luuakse kaks samaväärset sõneobjekti, mille kummagi viide salvestatakse erinevasse muutujasse:
 
 .. sourcecode:: py3
 
@@ -458,15 +458,15 @@ Loe läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`.
 
 * Loo 3 tekstifaili -- ``alus.txt``, ``oeldis.txt`` ning ``sihitis.txt``. Kirjuta igasse neist 10 sõna eraldi ridadele.
 
-    * ``alus.txt`` - peaks sisaldama nimisõnu või nimesid nimetavas käändes (nt. `Margus`).
-    * ``oeldis.txt`` - oleviku vormis, 3. isikus tegusõnad (nt. `õpetab`).
-    * ``sihitis.txt`` - nimisõna osastavas käändes (nt. `tudengeid`).
+    * ``alus.txt`` - peaks sisaldama nimisõnu või nimesid nimetavas käändes (nt `Margus`).
+    * ``oeldis.txt`` - oleviku vormis, 3. isikus tegusõnad (nt `õpetab`).
+    * ``sihitis.txt`` - nimisõna osastavas käändes (nt `tudengeid`).
 
 * Kirjuta funktsioon, mis võtab argumendiks failinime ning tagastab vastava faili read järjendina (reavahetuse sümbolid tuleks eemaldada meetodiga ``strip``).
 
 * Kirjuta programm, mis:
     
-    #. loeb mainitud kolme faili sisud järjenditesse (``alused``, ``oeldised``, ``sihitised``), kasutades selleks eelmises punktis defineeritud funktsiooni:
+    #. loeb mainitud kolme faili sisud järjenditesse (``alused``, ``oeldised``, ``sihitised``), kasutades selleks eelmises punktis defineeritud funktsiooni;
     #. genereerib 3 juhuslikku täisarvu vahemikust 0..9;
     #. võtab järjendite vastavatelt positsioonidelt aluse, öeldise ja sihitise ning koostab neist lause kasutades eelnevalt defineeritud funktsiooni ``lause``;
     #. kuvab moodustatud lause ekraanile.
@@ -487,7 +487,7 @@ Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real
 ---------------------------
 Lae alla eesti-inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
-Kirjuta programm, mis loeb failist eestikeelsed ja inglisekeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida inglisekeelse sõna eestikeelset vastet (või vastupidi – võid ise valida).
+Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida ingliskeelse sõna eestikeelset vastet (või vastupidi – võid ise valida).
 
 .. note::
     
@@ -552,7 +552,7 @@ Failis ``filmid.txt`` on ühe filmi andmed ühel real kujul *<nimi><tühik>(<aas
 
 .. hint::
 
-    Fail on kodeeringus ``UTF-8``, st. faili avamisel tuleks seda mainida: ``f = open("filmid.txt", encoding="UTF-8")``.
+    Fail on kodeeringus ``UTF-8``, st faili avamisel tuleks seda mainida: ``f = open("filmid.txt", encoding="UTF-8")``.
     
 .. hint::
 
@@ -567,7 +567,7 @@ Failis ``filmid.txt`` on ühe filmi andmed ühel real kujul *<nimi><tühik>(<aas
     
 .. topic:: Lisaülesande lisa
 
-    Täienda programmi selliselt, et see küsib (korduvalt) kasutajalt aastaarvu ning väljastab ekraanile kõik selle aasta Eesti filmid. Kui kasutaja sisestab tühisõne (st. vajutab lihtsalt ENTER-it), siis programm lõpetab töö. Selleks tuleb organiseerida sisseloetud filmid aastate kaupa eraldi.
+    Täienda programmi selliselt, et see küsib (korduvalt) kasutajalt aastaarvu ning väljastab ekraanile kõik selle aasta Eesti filmid. Kui kasutaja sisestab tühisõne (st vajutab lihtsalt ENTER-it), siis programm lõpetab töö. Selleks tuleb organiseerida sisseloetud filmid aastate kaupa eraldi.
     
     .. hint::
         
@@ -580,13 +580,13 @@ Failis ``filmid.txt`` on ühe filmi andmed ühel real kujul *<nimi><tühik>(<aas
 ==============================
 On teada, et mingi teema valdamiseks tuleb tegelda vaheldumisi nii teooria kui ka praktikaga. Praeguseks oled harjutanud läbi kõik olulisemad Python keele võimalused ja nüüd on paras aeg astuda samm tagasi ning vaadata juba läbitud materjalile uue, veidi kogenuma pilguga.
 
-Avaldised vs. laused
+Avaldised vs laused
 --------------------
 Kõik eelpool käsitletud Python keele elemendid saame jaotada kahte suurde gruppi: *avaldised* ja *laused*.
 
-**Avaldised** on näiteks ``2``, ``2 + 3``, ``brutopalk`` ja ``sin(0.5) ** (x-1)`` -- kõigil neil on **väärtus** ja neid saab seetõttu kasutada nt. muutujate defineerimisel ja teistes keerulisemates avaldistes.
+**Avaldised** on näiteks ``2``, ``2 + 3``, ``brutopalk`` ja ``sin(0.5) ** (x-1)`` -- kõigil neil on **väärtus** ja neid saab seetõttu kasutada nt muutujate defineerimisel ja teistes keerulisemates avaldistes.
 
-**Laused** (ingl.k. *statements*) on näiteks omistamislause (``x = sin(0.5)``), tingimus- ja korduslaused (``if``, ``while`` ja ``for``) ja funktsioonide definitsioonid (``def``). Eri tüüpi lausete ühine omadus on see, et nad *teevad* midagi (nt. muudavad muutuja väärtust, defineerivad uue käsu või teevad midagi tingimuslikult või korduvalt).
+**Laused** (ingl *statements*) on näiteks omistamislause (``x = sin(0.5)``), tingimus- ja korduslaused (``if``, ``while`` ja ``for``) ja funktsioonide definitsioonid (``def``). Eri tüüpi lausete ühine omadus on see, et nad *teevad* midagi (nt muudavad muutuja väärtust, defineerivad uue käsu või teevad midagi tingimuslikult või korduvalt).
 
 Nii avaldiste kui ka lausete juures on oluline see, et neid saab panna üksteise sisse. Näiteks operaatori ``+`` kasutuse üldskeem on ``<avaldis1> + <avaldis2>``, kusjuures nii ``avaldis1`` kui ka ``avaldis2`` võivad olla samuti mingi tehted. ``if``-lause põhiskeem on:
 
@@ -597,10 +597,10 @@ Nii avaldiste kui ka lausete juures on oluline see, et neid saab panna üksteise
     else:
         <laused2>
 
-kusjuures nii ``laused1``, kui ``laused2`` võivad sisaldada suvalisi lauseid, sh. ``if``-lauseid, mille sees võib olla omakorda suvalisi lauseid.
+kusjuures nii ``laused1`` kui ka ``laused2`` võivad sisaldada suvalisi lauseid, sh ``if``-lauseid, mille sees võib olla omakorda suvalisi lauseid.
 
 .. note::
-    Funktsiooni väljakutsed (nt. ``sin(0.5)``) on tehniliselt küll alati avaldised, aga mõnesid funktsioone kasutatakse tavaliselt lausetena (nt. ``turtle.forward(100)`` või ``print("Tere")``). Seega, natuke lihtsustades võiks öelda, et nende funktsioonide väljakutsed, mis midagi arvutavad, on avaldised, ja teiste funktsioonide väljakutsed, mis midagi teevad, on laused.
+    Funktsiooni väljakutsed (nt ``sin(0.5)``) on tehniliselt küll alati avaldised, aga mõnesid funktsioone kasutatakse tavaliselt lausetena (nt ``turtle.forward(100)`` või ``print("Tere")``). Seega, natuke lihtsustades võiks öelda, et nende funktsioonide väljakutsed, mis midagi arvutavad, on avaldised, ja teiste funktsioonide väljakutsed, mis midagi teevad, on laused.
 
 Muutujad
 --------
@@ -624,35 +624,35 @@ Kui muutujad võimaldavad meil kasutada mingit väärtust ilma et me peaksime m�
     
     print(kolmest_suurim(4, 15, 2))
 
-Tõenäoliselt oskad isegi ilma funktsiooni definitsiooni süvenemata arvata, mida taoline programm ekraanile prindib. Põhjus on selles, et antud funktsiooni olemus tuleb välja juba tema nimest ja üldjuhul võime me eeldada, et funktsiooni tegelik definitsioon on tema nimele vastav. Seetõttu, kui meil on sobivad funktsioonid juba defineeritud, siis saame me programmi põhiosas (või järgmiste funktsioonide defineerimisel) töötada "kõrgemal tasemel", ilma "pisiasjade" pärast muretsemata.
+Tõenäoliselt oskad isegi ilma funktsiooni definitsiooni süvenemata arvata, mida taoline programm ekraanile prindib. Põhjus on selles, et antud funktsiooni olemus tuleb välja juba tema nimest ja üldjuhul võime me eeldada, et funktsiooni tegelik definitsioon on tema nimele vastav. Seetõttu, kui meil on sobivad funktsioonid juba defineeritud, siis saame me programmi põhiosas (või järgmiste funktsioonide defineerimisel) töötada kõrgemal tasemel, ilma pisiasjade pärast muretsemata.
 
 Kuna funktsioonide teema on programmeerimise algkursusel tavaliselt tudengitele kõige hägusam, siis on soovitatav lugeda uuesti läbi 5. peatükist vähemalt järgmised osad.
 
-* :ref:`Parameetrid vs. input<param-vs-input>`
+* :ref:`Parameetrid vs input<param-vs-input>`
 * :ref:`return vs. print <return-vs-print>`
 * :ref:`milleks-funktsioonid`
     
 
 Tingimuslause
 -------------
-Tingimuslause (ehk ``if``-lause ehk hargnemislause) on oma olemuselt küllalt lihtne -- teatud tingimusel tuleb täita ühed laused ja vastasel juhul teised. Lisavõimalusena on Pythonis võimalik kirjutada ka üheharulisi (st. ilma ``else``-ta) ning mitmeharulisi (``elif``-iga) tingimuslauseid.
+Tingimuslause (ehk ``if``-lause ehk hargnemislause) on oma olemuselt küllalt lihtne -- teatud tingimusel tuleb täita ühed laused ja vastasel juhul teised. Lisavõimalusena on Pythonis võimalik kirjutada ka üheharulisi (st ilma ``else``-ta) ning mitmeharulisi (``elif``-iga) tingimuslauseid.
 
-Üks oluline punkt tingimuslause juures on lause päises antud tingimusavaldis. Nagu eelnevalt mainitud, on avaldiste moodustamiseks lõputult võimalusi -- võib kasutada konstante, muutujaid, tehteid, funktsiooni väljakutseid või kõigi nende kombinatsioone. Tingimusavaldise juures on oluline, et avaldise tüüp oleks tõeväärtus, st. avaldise väärtustamisel saadakse kas ``True`` või ``False``. 
+Üks oluline punkt tingimuslause juures on lause päises antud tingimusavaldis. Nagu eelnevalt mainitud, on avaldiste moodustamiseks lõputult võimalusi -- võib kasutada konstante, muutujaid, tehteid, funktsiooni väljakutseid või kõigi nende kombinatsioone. Tingimusavaldise juures on oluline, et avaldise tüüp oleks tõeväärtus, st avaldise väärtustamisel saadakse kas ``True`` või ``False``. 
 
-Mitme tingimuse kombineerimiseks saab kasutada operaatoreid ``and`` ja ``or``, tingimuse "ümberpööramiseks" on operaator ``not``. Ära unusta, et tingimuses saad kasutada ka isetehtud funktsioone, aga need peavad sel juhul tagastama tõeväärtuse.
+Mitme tingimuse kombineerimiseks saab kasutada operaatoreid ``and`` ja ``or``, tingimuse ümberpööramiseks on operaator ``not``. Ära unusta, et tingimuses saad kasutada ka isetehtud funktsioone, aga need peavad sel juhul tagastama tõeväärtuse.
 
 
-Korduslaused e. tsüklid
+Korduslaused e tsüklid
 -----------------------
 Pythonis on kaks erinevat korduslauset -- ``while``-tsükkel, mis on väga paindlik, ning ``for``-tsükkel, mis on lihtsam, aga mis ei sobi kõigil juhtumitel.
 
-``for``-tsükli juures on oluline mõista, et tema tööpõhimõte on ``while``'ist kaunis erinev. Kui ``while``-tsükli kordused põhinevad mingil tingimusel, siis ``for``-tsükli kordused põhinevad mingil järjendil (või järjendisarnasel asjal, nt. failil või vahemikul).
+``for``-tsükli juures on oluline mõista, et tema tööpõhimõte on ``while``'ist kaunis erinev. Kui ``while``-tsükli kordused põhinevad mingil tingimusel, siis ``for``-tsükli kordused põhinevad mingil järjendil (või järjendisarnasel asjal, nt failil või vahemikul).
 
 Järjendid
 ---------
 Järjendite abil saame koondada mingi hulga andmeid ühe nime alla.
 
-Järjendid on vajalikud neil juhtudel, kus programmi kirjutades pole võimalik öelda, mitme "andmejupiga" peab programm töötama (vastasel juhul võiksime iga andmejupi jaoks võtta programmis kasutusele ühe muutuja).
+Järjendid on vajalikud neil juhtudel, kus programmi kirjutades pole võimalik öelda, mitme andmejupiga peab programm töötama (vastasel juhul võiksime iga andmejupi jaoks võtta programmis kasutusele ühe muutuja).
 
 Järjendeid saab programmi sisse kirjutada, koostada teiste järjendite põhjal või lugeda failist. Kui järjendeid on vaja ükshaaval järjest läbi vaadata, siis on selleks kõige mugavam kasutada ``for``-tsüklit, kui on vaja lugeda järjendist mingit konkreetset elementi, siis tuleks kasutada indekseerimist.
 

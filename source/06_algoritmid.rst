@@ -106,9 +106,9 @@
 
 
 
-Õpiku esimeses osas tutvustatud programmeerimise mõisted ja vahendid (arvud, sõned, avaldised, muutujad, tingimuslause, korduslause, sisend ja väljund) on teatud nurga alt vaadates kõik, mida programmeerimise kohta on vaja teada. Kui oleksime nõus spetsiifiliste sisend/väljund seadmetega suhtlemise taandama ``input`` ja ``print`` käskudele, siis hea tahtmise juures saaksime praeguseks tuttavate vahendite abil lahendada suvalise programmeerimisülesande. Samas, kui mõtled "päris" programmidele, mida sa iga päev kasutad, siis ilmselt nõustud, et midagi jääb veel puudu.
+Õpiku esimeses osas tutvustatud programmeerimise mõisted ja vahendid (arvud, sõned, avaldised, muutujad, tingimuslause, korduslause, sisend ja väljund) on teatud nurga alt vaadates kõik, mida programmeerimise kohta on vaja teada. Kui oleksime nõus spetsiifiliste sisend/väljund seadmetega suhtlemise taandama ``input`` ja ``print`` käskudele, siis hea tahtmise juures saaksime praeguseks tuttavate vahendite abil lahendada suvalise programmeerimisülesande. Samas, kui mõtled päris programmidele, mida sa iga päev kasutad, siis ilmselt nõustud, et midagi jääb veel puudu.
 
-Üks probleem, nagu juba vihjatud, on erinevate spetsiifiliste seadmete juhtimine -- ükskõik kuidas me ``if``-lauseid ja ``while``-tsükleid ei kombineeriks, ei õnnestuks meil arvuti kõlaritesse ühtki piuksu saata ilma vastavaid käske teadmata. Taolistest probleemidest saab harilikult kergesti üle -- tuleb vaid järele uurida, millistes moodulites millised funktsioonid soovitud efekti annavad ning lasta programmil neid lihtsalt õigel ajal ja õigete argumentidega välja kutsuda. Mõnede selliste probleemide osas leiab näpunäiteid õpiku lisadest.
+Üks probleem, nagu juba vihjatud, on erinevate spetsiifiliste seadmete juhtimine -- ükskõik, kuidas me ``if``-lauseid ja ``while``-tsükleid ei kombineeriks, ei õnnestuks meil arvuti kõlaritesse ühtki piuksu saata ilma vastavaid käske teadmata. Taolistest probleemidest saab harilikult kergesti üle -- tuleb vaid järele uurida, millistes moodulites millised funktsioonid soovitud efekti annavad ning lasta programmil neid lihtsalt õigel ajal ja õigete argumentidega välja kutsuda. Mõnede selliste probleemide osas leiab näpunäiteid õpiku lisadest.
 
 Suurem probleem on ülesannetega, mille puhul pole kohe selge, kuidas üldse jõuda sisendist väljundini. Mõnikord tundub ülesande mitteformaalne lahendus küll triviaalne, aga sama lahendust Pythoni programmina vormistades satume raskustesse. 
 
@@ -131,7 +131,7 @@ Selles peatükis astume sammu tagasi ja vaatame üle mõned üldised programmeer
 
 Näited probleemidest
 ====================
-Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt. arst avastab sinu lähedasel ravimatu haiguse). Mõnele ülesandele on olemas standardvastused, teise korral tuleb neid alles hakata otsima, seejuures mõni lahendamata ülesanne tundub huvitavana, mõni mitte. Probleemid varieeruvad oma olemuselt matemaatilistest filosoofilisteni (Mis on elu mõte?). 
+Meie igapäevaelus tuleb ette suuri ja väikesi ülesandeid või probleeme. Mõned on lihtsad lahendada, teiste lahendamine pöörab kogu elu pahupidi (nt arst avastab sinu lähedasel ravimatu haiguse). Mõnele ülesandele on olemas standardvastused, teise korral tuleb neid alles hakata otsima, seejuures mõni lahendamata ülesanne tundub huvitavana, mõni mitte. Probleemid varieeruvad oma olemuselt matemaatilistest filosoofilisteni (Mis on elu mõte?). 
 
 Vaatame nüüd paari ülesannet, millega võid kokku puutuda. Enne ülesande kommentaari lugemist mõtle, kuidas tuleks sellele ülesandele läheneda ja kas selle lahendamiseks (või lahendamise abistamiseks) saaks kirjutada arvutiprogrammi.
 
@@ -142,11 +142,11 @@ Kujutle end võõras linnas välisüliõpilanena. Saabudes ühiselamu juurde ava
 
 .. admonition:: Kommentaar 
 
-    Antud ülesande püstitus tekitab palju küsimusi: kuhu need asjad võisid kaduda? Kas need kadusid korraga? Millal need viimati olemas olid? Kas ülikooli ruumidesse pääseb veel sisse, et neid sinna otsima minna? Selliseid küsimusi saab esitada veel ja seetõttu oleks väga raske lahendust üheselt määrata. Me võiksime ju proovida formuleerida kaotatud asjade leidmiseks mingi "retsepti" aga tõenäoliselt nõuab selle situatsiooni lahendamine ka loovust, st. oskust toimida ettenägematus olukorras.
+    Antud ülesande püstitus tekitab palju küsimusi: kuhu need asjad võisid kaduda? Kas need kadusid korraga? Millal need viimati olemas olid? Kas ülikooli ruumidesse pääseb veel sisse, et neid sinna otsima minna? Selliseid küsimusi saab esitada veel ja seetõttu oleks väga raske lahendust üheselt määrata. Me võiksime ju proovida formuleerida kaotatud asjade leidmiseks mingi "retsepti", aga tõenäoliselt nõuab selle situatsiooni lahendamine ka loovust, st oskust toimida ettenägematus olukorras.
 
 Näide 2. Hundi, kitse ja kapsa üle jõe viimine.
 -----------------------------------------------
-Mees peab ületama jõe paadiga, millesse mahub peale tema ainult üks kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
+Mees peab ületama jõe paadiga, millesse mahub peale ainult üks tema kaaslane. Ta peab üle jõe viima hundi, kitse ja kapsapea. Mees peab tegutsema nii, et samal ajal kui ta ise on paadiga jõel, ei sööks hunt ära kitse ega kits kapsapead. 
 
 Leida ülesandele vähemalt üks lahendus.
 
@@ -164,11 +164,11 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida valem, mis esit
 
 .. admonition:: Kommentaar
 
-    Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg), väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt. ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist ... 
+    Siin on tegemist täpselt defineeritud geomeetriaülesandega. Peale ülesandest arusaamist on vaja lahendusplaani. On vaja välja selgitada sisend (ristküliku külg), väljund (ringi pindala) ja kasutada sobivat tähistust.  Edasi on vaja välja selgitada seos sisendi ja väljundi vahel, mis viib lahenduseni. See võib sisaldada vahepealsete tulemuste arvutamist, nt ristküliku diagonaali arvutamist. On vaja kasutada tasandilise geomeetria põhiteadmisi (antud juhul Pythagorase teoreemi). Täiendame joonist ... 
 
     .. image:: images/ring_ruut2.png
 
-    ja esitame lahenduse kahe sammuna:
+    ...ja esitame lahenduse kahe sammuna:
 
     .. centered::
         :math:`d=\sqrt{a^2+a^2}=\sqrt{2a^2}`
@@ -179,9 +179,9 @@ Ringi sisse on joonistatud ruut, mille külje pikkus on a. Leida valem, mis esit
 
 .. todo::
 
-    Näide 4. Pascal'i kolmnurk
+    Näide 4. Pascali kolmnurk
     
-    Joonisel on esitatud Pascal'i arvude kolmnurk
+    Joonisel on esitatud Pascali arvude kolmnurk
     
     .. image:: images/l04_fig4.png
     
@@ -214,14 +214,14 @@ Algoritm
 ========
 Ülalpool toodud näited illustreerivad olukordi, mis tekivad ülesannete lahendamisel. Programmeerimisel tegeleme me probleemidega, mille lahendust saab esitada `algoritmina`. 
 
-**Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehaaniliselt* (st. ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
+**Algoritmiks** nimetatakse probleemi lahendamiseks vajalikku instruktsioonide hulka, mida *mehaaniliselt* (st ilma loovust rakendamata) järgides on võimalik jõuda soovitud tulemuseni. Algoritmi kohta öeldakse tihti ka lihtsalt *protseduur*.
 
 Algoritmil on neli olulist omadust.
 
-1. Algoritmi iga samm peab olema *täpne*, st. olema ühetähenduslik.
+1. Algoritmi iga samm peab olema *täpne*, st olema ühetähenduslik.
 2. Algoritm peab olema *lõplik*. Vastasel juhul ei saa me probleemile lahendust.
 3. Algoritm peab olema *efektiivne*, st ta peab andma probleemile korrektse vastuse.
-4. Algoritm peab olema *üldine*, st. ta peab lahendama ülesande iga eksemplari. Näiteks ringi pindala leidmise algoritm peab sobima kõigi võimalike algandmetega.
+4. Algoritm peab olema *üldine*, st ta peab lahendama ülesande iga eksemplari. Näiteks ringi pindala leidmise algoritm peab sobima kõigi võimalike algandmetega.
 
 
 Algoritme kasutatakse erinevate elukutsete juures. Näiteks kokk järgib algoritmi, mida nimetatakse retseptiks. Retsept kirjeldab protsessi, mis teisendab rea sammude abil toiduained (sisend) mingiks toiduks (väljund). 
@@ -237,9 +237,9 @@ Kuna algoritmi järgimine ei nõua loovust, siis on algoritme võimalik tõlkida
 
 .. image:: images/l04_fig8.png 
 
-Mõned ütlevad, et programmeerimine ja algoritmide loomine ongi üks ja sama. Tavapärases kõnepruugis siiski tehakse algoritmil ja programmil vahet: algoritm esitab mingi ülesande lahenduskäiku ilma tehnilistesse detailidesse laskumata (aga siiski ühetähenduslikult), programm on aga tavaliselt mõeldud mingi konkreetse masina (sh. virtuaalse masina) juhtimiseks ja võib seetõttu sisaldada nüansse, mis on olulised vaid selle masina kasutamisel.
+Mõned ütlevad, et programmeerimine ja algoritmide loomine ongi üks ja sama. Tavapärases kõnepruugis siiski tehakse algoritmil ja programmil vahet: algoritm esitab mingi ülesande lahenduskäiku ilma tehnilistesse detailidesse laskumata (aga siiski ühetähenduslikult), programm on aga tavaliselt mõeldud mingi konkreetse masina (sh virtuaalse masina) juhtimiseks ja võib seetõttu sisaldada nüansse, mis on olulised vaid selle masina kasutamisel.
 
-Kaasaegsetes programmeerimiskeeltes (nt. Python) ei ole masina nüanssidele eriti vaja mõelda, seetõttu kasutatakse programmeerimiskeeli juba algoritmide väljatöötamise faasis. Vahel on aga siiski mugavam panna algoritm esialgu kirja kuidagi teisiti, näiteks *pseudokoodina* (s.o. loomuliku keele ja matemaatiliste sümbolite segu) või mingi visuaalse skeemina. Järgnevalt uurimegi lähemalt ühte algoritmide skemaatilise esitamise viisi.
+Kaasaegsetes programmeerimiskeeltes (nt Python) ei ole masina nüanssidele eriti vaja mõelda, seetõttu kasutatakse programmeerimiskeeli juba algoritmide väljatöötamise faasis. Vahel on aga siiski mugavam panna algoritm esialgu kirja kuidagi teisiti, näiteks *pseudokoodina* (s.o loomuliku keele ja matemaatiliste sümbolite segu) või mingi visuaalse skeemina. Järgnevalt uurimegi lähemalt ühte algoritmide skemaatilise esitamise viisi.
 
 
 .. index::
@@ -433,7 +433,7 @@ Kuidas seda lahendada?
 
 Kuna algoritmi koostamine on ülesande lahendamise kõige olulisem osa, siis on seda uuritud ka süstemaatiliselt. Üheks selle ala klassikuks võib lugeda Ungari matemaatikut George Pólyat, kes uuris ülesande lahendamise protsessi lähemalt ja avaldas oma kuulsa raamatu "Kuidas seda lahendada?". Oma raamatus toob ta välja neli etappi, millega ülesande lahendajal tuleb kokku puutuda. Esitame siinkohal tema kuulsa tsitaadi:
 
-    Suur avastus lahendab suure probleemi, kuid väike avastus on olemas iga probleemi lahenduses. Sinu probleem võib olla tagasihoidlik, kuid kui see esitab väljakutse sinu uudishimule ja toob mängu sinu leiutaja omadused. Kui sa lahendad seda omaenda vahenditega, võid kogeda pingutust ja nautida avastuse triumfi. Sellised kogemused võivad vastuvõtlikus eas tekitada vajaduse vaimse töö järele ja jätta jälje terveks eluks.
+    Suur avastus lahendab suure probleemi, kuid väike avastus on olemas iga probleemi lahenduses. Sinu probleem võib olla tagasihoidlik, kuid kui see esitab väljakutse sinu uudishimule ja toob mängu sinu leiutaja omadused, siis on tema lahendamisest selge kasu olemas. Kui sa lahendad seda omaenda vahenditega, võid kogeda pingutust ja nautida avastuse triumfi. Sellised kogemused võivad vastuvõtlikus eas tekitada vajaduse vaimse töö järele ja jätta jälje terveks eluks.
 
 George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soovitame ka antud kursuse ülesannete korral hoolikalt järgida. 
 
@@ -521,10 +521,10 @@ Mõlemad näidatud viisid sunnivad Pythonit halvimal juhul tegema kuni 12 võrdl
 
 .. hint:: 
 
-    Siin on parem kasutada ainult tavalisi, üksteise sisse pandud ``if-else``-isid (st. mitte kasutada ``elif``-i).
+    Siin on parem kasutada ainult tavalisi, üksteise sisse pandud ``if-else``'isid (st mitte kasutada ``elif``-i).
 
 .. hint::
-    Pane tähele, et ühe ``if-else``'i võime me paigutada teise ``if-else``'i sisse kahel moel -- kas ``then`` harusse või ``else`` harusse.
+    Pane tähele, et ühe ``if-else``'i võime paigutada teise ``if-else``'i sisse kahel moel -- kas ``then`` harusse või ``else`` harusse.
 
 .. hint::
 

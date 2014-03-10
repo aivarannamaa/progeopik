@@ -16,7 +16,7 @@
     
 Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse ülesande lahendamiseks lahendatakse kõigepealt väiksem alamülesanne ja seejärel täiendatakse saadud vastust mingil moel. Sarnast skeemi kasutasime korduvalt tsüklite peatükis.
 
-Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- s.o. funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad kui tsüklitega kirjutatud lahendused.
+Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- s.o funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad kui tsüklitega kirjutatud lahendused.
 
 Tehniliselt võttes ei õpi sa selles peatükis Pythoni kui programmeerimiskeele kohta midagi uut, kuna Pythoni seisukohast ei erine rekursiivsed funktsioonid tavalistest funktsioonidest. Samas, rekursiivsetest algoritmidest arusaamiseks on vaja vaadata asju pisut teise nurga alt -- seetõttu on antud peatükis ülesandeid, mis aitavad rekursiivse mõtteviisiga harjuda. 
 
@@ -36,12 +36,12 @@ Rekursiooni *baas* ja *samm*
 ----------------------------
 Et rekursioon mingil hetkel lõppeks, peab rekursiivses funktsioonis toimuma hargnemine sõltuvalt funktsiooni argumentidest. Vähemalt üks haru peab olema ilma rekursiivse väljakutseta – seda nimetatakse rekursiooni **baasiks**. Seda haru, mis kutsub funktsiooni rekursiivselt välja, nimetatakse rekursiooni **sammuks**.
 
-Rekursiooni samm lahendab tavaliselt ülesande "vähendatud koopia" e. mingi alamülesande (kasutades selleks sedasama funktsiooni) ning koostab saadud tulemuse põhjal terve ülesande lahenduse. Aga kui alamülesanne on piisavalt väike, siis käsitletakse seda *baasjuhuna* ja vastus antakse ilma rekursiivse väljakutseta.
+Rekursiooni samm lahendab tavaliselt ülesande vähendatud koopia e mingi alamülesande (kasutades selleks sedasama funktsiooni) ning koostab saadud tulemuse põhjal terve ülesande lahenduse. Aga kui alamülesanne on piisavalt väike, siis käsitletakse seda *baasjuhuna* ja vastus antakse ilma rekursiivse väljakutseta.
 
 
 Näide: Faktoriaal
 -----------------
-Faktoriaali definitsiooni järgi on `0! = 1`. Iga teise naturaalarvu puhul on `n!` võrdne arvude `1` .. `n` korrutisega. Nt.
+Faktoriaali definitsiooni järgi on `0! = 1`. Iga teise naturaalarvu puhul on `n!` võrdne arvude `1` .. `n` korrutisega. Nt
 
 * 4! = 1 × 2 × 3 × 4
 * 5! = 1 × 2 × 3 × 4 × 5
@@ -81,7 +81,7 @@ Rekursiivne funktsioon ei pea alati midagi tagastama:
             stardiloendus(sekundeid_stardini-1)
     
 
-Kui antud funktsiooni definitsiooni rahulikult lugeda, siis peaks selle tähendus olema selge -- kui me teeme stardiloenduse `0` sekundiga (e. *baasjuhu* korral), siis ei ole vaja midagi loendada, vaid kohe start anda. Vastasel juhul väljastame ekraanile järelejäänud sekundite arvu, ootame ühe sekundi ja alustame ühe sekundi võrra lühemat stardiloendust. 
+Kui antud funktsiooni definitsiooni rahulikult lugeda, siis peaks selle tähendus olema selge -- kui me teeme stardiloenduse `0` sekundiga (e *baasjuhu* korral), siis ei ole vaja midagi loendada, vaid kohe start anda. Vastasel juhul väljastame ekraanile järelejäänud sekundite arvu, ootame ühe sekundi ja alustame ühe sekundi võrra lühemat stardiloendust. 
      
 .. topic:: Lisaseletus
 
@@ -109,7 +109,7 @@ Kui antud funktsiooni definitsiooni rahulikult lugeda, siis peaks selle tähendu
 
 Harjutus. Modifitseeritud stardiloendus
 -----------------------------------------
-Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunud sekundeid, st. ``uus_stardiloendus(3)`` peaks andma sellise väljundi:
+Muutke eelnevat näidet nii, et peale starti loendatakse veel stardist möödunud sekundeid, st ``uus_stardiloendus(3)`` peaks andma sellise väljundi:
 
 .. sourcecode:: none
 
@@ -141,7 +141,7 @@ Rekursioon järjenditel
 ======================
 Nagu ülalpool mainitud, on rekursiooni põhimõte teha ülesanne pisut väiksemaks alamülesandeks, lahendada see uus ülesanne (sama meetodiga) ning lõpuks jõuda alamülesande lahendusest algse ülesande lahenduseni.
 
-Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- s.o. kõik elemendid peale esimest elementi). Uuri näiteks järjendi elementide loendamise funktsiooni:
+Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korraldame nii, et uueks väiksemaks alamülesandeks on sama toiming listi mingi osa peal (näiteks listi *sabal* -- s.o kõik elemendid peale esimest elementi). Uuri näiteks järjendi elementide loendamise funktsiooni:
 
 .. sourcecode:: py3
 
@@ -176,10 +176,10 @@ Seda põhimõtet saab hästi rakendada ka järjendite töötlemisel -- me korral
 
 Harjutus. Pikkus
 ----------------
-Kirjuta rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st. elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
+Kirjuta rekursiivne funktsioon ``pikkus``, mis tagastab argumendina antud järjendi pikkuse (st elementide arvu). Ülesanne tuleks lahendada ilma tsükleid ja ``len`` funktsiooni kasutamata.
 
 
-Hargnev rekursioon e. *puurekursioon*
+Hargnev rekursioon e *puurekursioon*
 ===========================================
 Rekursiivses funktsioonis võib olla mitu rekursiivset väljakutset. Sellist *rekursiooniskeemi* nimetatakse *puurekursiooniks*, kuna selle graafilises esituses moodustub funktsiooni väljakutseid tähistavatest nooltest puutaoline kujutis. 
 
@@ -207,7 +207,7 @@ Selle fraktali joonistamise mitteformaalne juhis: 1 tasemega fraktali joonistami
 
 .. hint::
 
-    Fraktali joonistamiseks sobib kahe parameetriga funktsioon -- üks parameeter määrab millise taseme juures me parasjagu oleme, teine määrab vaadeldava fraktali osa mõõtmed.
+    Fraktali joonistamiseks sobib kahe parameetriga funktsioon -- üks parameeter määrab, millise taseme juures me parasjagu oleme, teine määrab vaadeldava fraktali osa mõõtmed.
 
 .. hint::
 
@@ -269,7 +269,7 @@ Harjutus. Küülikud
 
 * alguses on meil üks äsjasündinud emane ja üks äsjasündinud isane küülik;
 * küülik saab suguküpseks ühe kuuga (ja ta kasutab oma uut staatust kohe ära);
-* küüliku tiinusperiood kestab 1 kuu (st. küülik poegib 1 kuu pärast viljastamist);
+* küüliku tiinusperiood kestab 1 kuu (st küülik poegib 1 kuu pärast viljastamist);
 * suguküps emane küülik poegib iga kuu järel ja sünnitab igal korral ühe emase ning ühe isase küüliku;
 * oletame, et küülikud ei sure iial;
 * mitu paari küülikuid on meil 12 kuu pärast?
@@ -418,7 +418,7 @@ Kirjuta funktsioon, mis võtab argumendiks joonepikkuse ja taseme numbri ning jo
     
     Erijuht (baas) on tase 0, kus tuleb joonistada lihtsalt kriips
 
-4. Kuulujutt ver.2
+4. Kuulujutt ver 2
 ------------------
 Lahenda ülalpool toodud kuulujutu ülesandest ümberpööratud variant.
 
@@ -426,7 +426,7 @@ Antud on linnakese elanike arv *n*. Leida, mitme tunni pärast teavad kuulujuttu
 
 5. Vokaalide eemaldamine
 ------------------------
-Kirjuta rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja tagastab sellest sõnest uue variandi, kus kõik vokaalid on eemaldatud, nt. ``konsonandid("kapitalist")`` peaks tagastama sõne ``"kptlst"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata.
+Kirjuta rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja tagastab sellest sõnest uue variandi, kus kõik vokaalid on eemaldatud, nt ``konsonandid("kapitalist")`` peaks tagastama sõne ``"kptlst"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata.
 
 .. hint::
 
@@ -434,11 +434,11 @@ Kirjuta rekursiivne funktsioon ``konsonandid``, mis võtab argumendiks sõne ja 
 
 6. Tagurpidi
 ------------
-Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja tagastab selle sümbolid uue sõnena vastupidises järjestuses. Nt. ``tagurpidi("stressed")`` peaks tagastama sõne ``"desserts"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata. NB! See funktsioon peaks töötama ka tühja sõne puhul!
+Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja tagastab selle sümbolid uue sõnena vastupidises järjestuses. Nt ``tagurpidi("stressed")`` peaks tagastama sõne ``"desserts"``. Ülesanne tuleks lahendada ilma tsükleid kasutamata. NB! See funktsioon peaks töötama ka tühja sõne puhul!
 
 .. hint::
 
-    Tühja sõne puhul on vastus lihtne. Pikemate sõnede puhul võib küsida ümberpööratud versiooni sõne sabast (st. esimesele sümbolile järgnevad sümbolid) ja kombineerida (liita) see sõne päisega (st. esimese sümboliga).
+    Tühja sõne puhul on vastus lihtne. Pikemate sõnede puhul võib küsida ümberpööratud versiooni sõne sabast (st esimesele sümbolile järgnevad sümbolid) ja kombineerida (liita) see sõne päisega (st esimese sümboliga).
 
 
 7. Efektiivsem Fibonacci
@@ -448,7 +448,7 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja ta
 
 .. hint:: 
 
-     Kasuta funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust, st. kirjuta hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrdle antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-nda Fibonacci arvu leidmisel.
+     Kasuta funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust, st kirjuta hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrdle antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-nda Fibonacci arvu leidmisel.
 
 
 8. Projecteuler.net
@@ -468,7 +468,7 @@ Antud on fail :download:`sugupuu.txt <downloads/sugupuu.txt>` sugulussidemetega 
 
 Loe esmalt andmed Pythoni sõnastikku (võtmeks inimese nimi, väärtuseks kaheelemendiline järjend tema isa ja ema nimedega).
 
-Kirjuta rekursiivne funktsioon ``on_eellane``, mis võtab argumentideks kahe inimese nimed ja sugupuu sõnastiku ning tagastab ``True``, kui esimene inimene on teise eellane (st. isa või vanaema või vanaisa ema jne), vastasel juhul ``False``.
+Kirjuta rekursiivne funktsioon ``on_eellane``, mis võtab argumentideks kahe inimese nimed ja sugupuu sõnastiku ning tagastab ``True``, kui esimene inimene on teise eellane (st isa või vanaema või vanaisa ema jne), vastasel juhul ``False``.
 
 .. hint::
 
@@ -506,11 +506,11 @@ Aritmeetilise avaldise väärtustaja
 ----------------------------------
 
 .. note::
-    See näide demonstreerib ühte ilusat rekursiivset algoritmi. Nagu rekursiivsete algoritmide puhul tavaline, võib see alguses aju "sõlme keerata" -- varu endale selle teema läbitöötamiseks piisavalt aega!
+    See näide demonstreerib ühte ilusat rekursiivset algoritmi. Nagu rekursiivsete algoritmide puhul tavaline, võib see alguses aju sõlme keerata -- varu endale selle teema läbitöötamiseks piisavalt aega!
 
 Ülesanne: kirjutada funktsioon, mis võtab argumendiks sõne kujul aritmeetilise avaldise ja tagastab selle väärtuse. Avaldis võib sisaldada arve, aritmeetilisi operatsioone (``+``, ``-``, ``*``, ``/``) ning sulge (mitmel tasemel). Seal, kus sulge pole kasutatud, tuleb arvestada tavalise tehete järjekorraga.
 
-(Lihtsuse mõttes võime esialgu eeldada, et kõik avaldise komponendid on üksteisest tühikutega eraldatud, nt. ``3 * ( -4 / 3.5 + ( 3 - 2 ) ) - 6`` -- sedasi on lihtsam avaldist komponentideks jagada.)
+(Lihtsuse mõttes võime esialgu eeldada, et kõik avaldise komponendid on üksteisest tühikutega eraldatud, nt ``3 * ( -4 / 3.5 + ( 3 - 2 ) ) - 6`` -- sedasi on lihtsam avaldist komponentideks jagada.)
 
 .. note::
 
@@ -523,16 +523,16 @@ Alljärgnevalt on toodud mõned näited erineva struktuuriga avaldistest:
 * ``3`` --- arv;
 * ``3 + 2`` --- liitmine, kus argumendid on arvud;
 * ``3 * 10 + 2 * 10`` --- liitmine, kus argumendid on korrutised;
-* ``3 - 2 - 6`` --- loetakse ``( 3 - 2 ) - 6``; s.o. lahutamine, kus vasak argument on lahutamine (``3 - 2``) ja parem argument on arv (``6``);
-* ``3 + 2 * 3`` --- loetakse ``3 + ( 2 * 3 )``; s.o. liitmine, kus vasak argument on arv ja parem argument on korrutamine;
+* ``3 - 2 - 6`` --- loetakse ``( 3 - 2 ) - 6``; s.o lahutamine, kus vasak argument on lahutamine (``3 - 2``) ja parem argument on arv (``6``);
+* ``3 + 2 * 3`` --- loetakse ``3 + ( 2 * 3 )``; s.o liitmine, kus vasak argument on arv ja parem argument on korrutamine;
 * ``( 3 + 2 )`` --- sulgudes olev avaldis;
 * ``( 3 + 2 ) * 3`` --- korrutamine, kus vasak argument on sulgudes olev avaldis ja parem argument on arv.
 
-Viimases kahes näites kasutasime avaldise struktuuri kirjelduses mõistet *avaldis* -- st. me kirjeldasime avaldise olemust *rekursiivselt*.
+Viimases kahes näites kasutasime avaldise struktuuri kirjelduses mõistet *avaldis* -- st me kirjeldasime avaldise olemust *rekursiivselt*.
 
 Enne edasi minemist defineerime abimõisted erinevatel kujudel avaldiste tähistamiseks.
 
-* `faktor` -- arv või sulgudes olev avaldis, nt. ``3`` või ``( 2 * 3 + ( 4 / 6 ) )``.
+* `faktor` -- arv või sulgudes olev avaldis, nt ``3`` või ``( 2 * 3 + ( 4 / 6 ) )``.
 * `term` -- faktor või korrutis/jagatis, nt ``3``, ``( 2 * 3 + ( 4 / 6 ) )`` või ``2 * ( 3 + 4 )``. Pane tähele, et korrutise/jagatise vasak argument võib olla term aga parem argument on faktor (mõtle ``8 / 2 / 2`` struktuuri peale). 
 * `avaldis` -- term või liitmine/lahutamine. Liitmise/lahutamise vasak argument võib olla avaldis, aga parem argument on term.
     
@@ -577,7 +577,7 @@ Selle plaani põhjal on kirjutatud järgnev programm, mis toetub rekursiivsetele
                 return vasak_argument - parem_argument
                 
         # kui liitmist/lahutamist pole, siis järelikult on tegemist
-        # avaldise lihtsa variandiga (e. lihtsalt termiga)
+        # avaldise lihtsa variandiga (e lihtsalt termiga)
         else:
             return parem_argument
 
@@ -620,7 +620,7 @@ Selle plaani põhjal on kirjutatud järgnev programm, mis toetub rekursiivsetele
 
 .. note::
 
-    Selles programmis on lisaks *otsesele rekursioonile* mängus ka *kaudne rekursioon* -- nt. funktsioon ``loe_faktor`` ei kutsu küll otseselt iseend välja, kuid ta võib kutsuda välja funktsiooni ``loe_avaldis``, mis võib kutsuda välja ``loe_term``-i, mis võib kutsuda välja ``loe_faktor``-i.
+    Selles programmis on lisaks *otsesele rekursioonile* mängus ka *kaudne rekursioon* -- nt funktsioon ``loe_faktor`` ei kutsu küll otseselt iseend välja, kuid ta võib kutsuda välja funktsiooni ``loe_avaldis``, mis võib kutsuda välja ``loe_term``-i, mis võib kutsuda välja ``loe_faktor``-i.
     
 .. topic:: Küsimus
 
@@ -630,6 +630,6 @@ Labürintide genereerimine
 -------------------------
 Üks huvitav näide rekursiooni kasutamisest on juhuslike labürintide genereerimine.
 
-Kujutame ette, et meil on suur plokk betooni, kuhu me hakkame uuristama ploki külgedega paralleelseid ja aeg-ajalt täisnurga all pööravaid, mõnikord ka hargnevaid käike. Igal sammul on meil mitu võimalust, kuhupoole edasi uuristada. Üks võimalus probleemile läheneda, on uuristada üks juhuslik labürint otse ette, teine labürint vasakule ja kolmas paremale, aga selle, millisest "alam-labürindist" me alustame, valime juhuslikult. Selleks, et labürint ei tuleks triviaalne, jälgime, et me ei puuriks läbi seda seina, mille taga vahetult on juba üks käik uuristatud -- see tingimus tagab, et iga järgmise alam-labürindi võimalik ala on järjest väiksem (ilmselt märkad siin juba viidet rekursiooni põhimõtetele).
+Kujutame ette, et meil on suur plokk betooni, kuhu me hakkame uuristama ploki külgedega paralleelseid ja aeg-ajalt täisnurga all pööravaid, mõnikord ka hargnevaid käike. Igal sammul on meil mitu võimalust, kuhupoole edasi uuristada. Üks võimalus probleemile läheneda, on uuristada üks juhuslik labürint otse ette, teine labürint vasakule ja kolmas paremale, aga selle, millisest alam-labürindist me alustame, valime juhuslikult. Selleks, et labürint ei tuleks triviaalne, jälgime, et me ei puuriks läbi seda seina, mille taga vahetult on juba üks käik uuristatud -- see tingimus tagab, et iga järgmise alam-labürindi võimalik ala on järjest väiksem (ilmselt märkad siin juba viidet rekursiooni põhimõtetele).
 
 Selle algoritmi kohta võid täpsemalt uurida vastavast Wikipedia artiklist (http://en.wikipedia.org/wiki/Maze_generation_algorithm) või laadida alla ühe näiteprogrammi (:download:`mazes.py <downloads/mazes.py>`), mis kasutab Pygame nimelist Pythoni lisateeki (tuleb eraldi installeerida, saadaval aadressilt http://pygame.org). 

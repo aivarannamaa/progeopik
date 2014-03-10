@@ -4,7 +4,7 @@
 
 .. todo::
     
-    Sõnastikud, kui objektid a la 
+    Sõnastikud kui objektid a la 
     isik = {'nimi':'Peeter', 'vanus': 19, 'sugu': 'mees'} 
 
     Kas nad saavad teada, et kui sul on vaja nt. hulkade listis ühte hulka midagi lisada, siis ei pea seda hulka sealt välja võtma, vaid võid teha kohe lst[i].add("blah") ?
@@ -16,7 +16,7 @@ Erinevat laadi info esitamiseks/kasutamiseks on olemas erinevad andmetüübid. S
 
 Hulgad
 ======
-Pythoni *hulga* (ingl.k. *set*) andmetüüp on küllalt sarnane listiga -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttava hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elemente (nagu ka matemaatiline hulk).
+Pythoni *hulga* (ingl *set*) andmetüüp on küllalt sarnane listiga -- iga hulgatüüpi väärtus võib sisaldada 0 või rohkem elementi. Esimene oluline erinevus on see, et just nagu matemaatikast tuttava hulga puhul, ei ole ka Pythoni hulga elementide omavaheline järjestus määratud, seetõttu ei saa hulga elemente ka indekseerida. Teine erinevus on see, et hulk ei sisalda kunagi korduvaid elemente (nagu ka matemaatiline hulk).
 
 Konkreetse hulga kirjapanekuks kasutatakse loogelisi sulge. Järgnev käsurea näide demonstreerib eelmainitud hulkade omadusi:
 
@@ -59,7 +59,7 @@ Nagu näha, ei pea hulgas olema vaid arvud -- just nagu listis, saab ka hulgas h
 
 Pane tähele, et elemendi hulka lisamiseks on meetod ``add``, mitte ``append`` nagu listide puhul. Põhjus on selles, et sõna *append* viitab justnimelt lõppu lisamisele, aga kuna hulga elementide järjekord pole tähtis, siis kasutatakse üldisemat sõna *add*.
 
-Kui proovisid tühja hulka kirja panna kirjutades ``{}``, siis said sellise "hulga" kasutamisel ilmselt veateate. Põhjus on selles, et sellist tähistust kasutatakse Pythonis ühe teise andmestruktuuri, nimelt tühja sõnastiku tähistamiseks. Tühi hulk tuleb kirjutada kasutades funktsiooni ``set``:
+Kui proovisid tühja hulka kirja panna kirjutades ``{}``, siis said sellise hulga kasutamisel ilmselt veateate. Põhjus on selles, et sellist tähistust kasutatakse Pythonis ühe teise andmestruktuuri, nimelt tühja sõnastiku tähistamiseks. Tühi hulk tuleb kirjutada kasutades funktsiooni ``set``:
 
 .. sourcecode:: py3
 
@@ -82,7 +82,7 @@ Funktsiooni ``set`` saab kasutada ka mõnede teiste andmetüüpide teisendamisek
     >>> set([1,2,3])
     {1, 2, 3}
 
-Nii nagu järjendite puhul, saab ka hulga kõiki elemente "läbi käia" kasutades ``for``-tsüklit:
+Nii nagu järjendite puhul, saab ka hulga kõiki elemente läbi käia kasutades ``for``-tsüklit:
 
 
 .. sourcecode:: py3
@@ -97,7 +97,7 @@ Täpsemat infot Pythoni hulkade kohta saab aadressilt http://docs.python.org/3/l
 
 Harjutus. Hulkade vahe
 ------------------------
-Kirjuta funktsioon, mis võtab argumendiks kaks hulka ja tagastab esimese ja teise hulga vahe, st. hulga, mis sisaldab kõiki neid esimese hulga elemente, mis ei sisaldu teises hulgas.
+Kirjuta funktsioon, mis võtab argumendiks kaks hulka ja tagastab esimese ja teise hulga vahe, st hulga, mis sisaldab kõiki neid esimese hulga elemente, mis ei sisaldu teises hulgas.
 
 .. admonition:: NB!
 
@@ -119,9 +119,9 @@ Sõnastikud
     * Sõnastiku kasutamine kirjetena
     * Rohkem sõnastikuga ülesandeid
 
-Sõnastik (ingl.k. *dictionary*, lühendatult ``dict``) on Pythoni andmetüüp, mis meenutab jällegi mitmes mõttes järjendeid: teda kasutatakse andmete koondamisel üheks kogumiks ja temas sisalduvaid üksikuid elemente on võimalik küsida kasutades  avaldist kujul ``kogum[võti]``.
+Sõnastik (ingl *dictionary*, lühendatult ``dict``) on Pythoni andmetüüp, mis meenutab jällegi mitmes mõttes järjendeid: teda kasutatakse andmete koondamisel üheks kogumiks ja temas sisalduvaid üksikuid elemente on võimalik küsida kasutades  avaldist kujul ``kogum[võti]``.
 
-Põhiline erinevus on selles, et kui järjendi puhul on võtmeks (e. indeksiks) alati täisarv (nt. ``palgad[0]``), siis sõnastike puhul saab kasutada võtmena ka näiteks sõnesid (nt. ``telefoninumbrid['Peeter']``), või muid Pythoni lihtsamaid tüüpe.
+Põhiline erinevus on selles, et kui järjendi puhul on võtmeks (e indeksiks) alati täisarv (nt ``palgad[0]``), siis sõnastike puhul saab kasutada võtmena ka näiteks sõnesid (nt ``telefoninumbrid['Peeter']``) või muid Pythoni lihtsamaid tüüpe.
 
 Sõnastikud kirjutatakse looksulgude vahele nagu hulgadki, aga iga elemendi juures näidatakse ära elemendi võti ja väärtus. Väärtuse küsimiseks tuleb nurksulgudes anda soovitud elemendi võti:
 
@@ -176,7 +176,7 @@ Ka sõnastikke saab programmi töö käigus täiendada, aga seejuures ei kasutat
 
 .. note::
 
-    Siin tuleb meeles pidada, et järjendite puhul on taoline omistamine võimalik vaid nende indeksitega, mis juba on järjendis olemas, st. järjendit taolise lähenemisega kasvatada ei saa:
+    Siin tuleb meeles pidada, et järjendite puhul on taoline omistamine võimalik vaid nende indeksitega, mis juba on järjendis olemas, st järjendit taolise lähenemisega kasvatada ei saa:
     
     .. sourcecode:: py3
     
@@ -212,7 +212,7 @@ Muuda ülalpool toodud telefoniraamatu näidet selliselt, et andmed loetakse sis
 
 Mitmemõõtmelised andmestruktuurid
 =================================
-Nagu tead, saab Pythonis teatud lausete sisse panna teisi lauseid (nt. tingimuslause sisse tsükleid või vastupidi) ja teatud avaldiste komponentideks võivad olla teised avaldised.
+Nagu tead, saab Pythonis teatud lausete sisse panna teisi lauseid (nt tingimuslause sisse tsükleid või vastupidi) ja teatud avaldiste komponentideks võivad olla teised avaldised.
 
 Samamoodi saab panna andmestruktuuridesse teisi andmestruktuure. Näiteks on võimalik luua järjendeid, mille elementideks on mingid järjendid, või siis ennikuid, mille elementideks on ennikud ja järjendid, või sõnastikke, mille elementideks on järjendid:
 
@@ -234,7 +234,7 @@ Samamoodi saab panna andmestruktuuridesse teisi andmestruktuure. Näiteks on võ
         'Mart Maru'  : [3, 3, 3, 3, 5, 3, 3, 4]
     }
 
-Antud näites kasutasime taolises "üksteise sisse panemises" ainult kahte taset aga vajadusel on võimalik konstrueerida mistahes tasemete arvuga andmestruktuure, näiteks järjendite järjendite järjendeid (e. kolmemõõtmelisi järjendeid):
+Antud näites kasutasime taolises üksteise sisse panemises ainult kahte taset, aga vajadusel on võimalik konstrueerida mistahes tasemete arvuga andmestruktuure, näiteks järjendite järjendite järjendeid (e kolmemõõtmelisi järjendeid):
 
 .. sourcecode:: py3
 
@@ -313,7 +313,7 @@ Kuigi tsüklit tsükli sees oled ka juba eespool kohanud, võib see siiski tundu
 
 .. note::
 
-    Viimases näites läks meil vaja kahte tsüklit, et jõuda välja andmestruktuuri põhjani välja. Alati ei ole meil aga taolist kõikide elementide läbikäimist tarviski. Järgnev näiteprogramm väljastab sama kahemõõtmelise järjendi kõigi elementide (s.o. arvujärjendite) summad:
+    Viimases näites läks meil vaja kahte tsüklit, et jõuda välja andmestruktuuri põhjani välja. Alati ei ole meil aga taolist kõikide elementide läbikäimist tarviski. Järgnev näiteprogramm väljastab sama kahemõõtmelise järjendi kõigi elementide (s.o arvujärjendite) summad:
 
     .. sourcecode:: py3
 
@@ -369,11 +369,11 @@ Nüüd on ilusti näha, et sulgudes olev avaldis kujutab endast ``i``-ndat eleme
 
 Kokkuvõtteks: Mitmemõõtmeliste andmestruktuuride kasutamise põhimõte
 --------------------------------------------------------------------
-Pythonis ei ole tehniliselt võttes eraldi konstruktsiooni "kahemõõtmeline järjend". On järjendid ja järjendite elemendid võivad olla suvalist tüüpi (sh. järjenditüüpi). Mõistet "kahemõõtmeline järjend" kasutatakse vaid selleks, et anda lugejale/kuulajale veidi lisainfot vaadeldava järjendi sisu/kuju kohta.
+Pythonis ei ole tehniliselt võttes eraldi konstruktsiooni "kahemõõtmeline järjend". On järjendid ja järjendite elemendid võivad olla suvalist tüüpi (sh järjenditüüpi). Mõistet *kahemõõtmeline järjend* kasutatakse vaid selleks, et anda lugejale/kuulajale veidi lisainfot vaadeldava järjendi sisu/kuju kohta.
 
 Olgu meil ühe-, kahe- või sajamõõtmeline järjend, tegemist on alati ikkagi järjendiga ja nii tuleb talle ka läheneda. Vaja on lihtsalt arvestada, millised on tema elemendid (vastavalt lihttüüpi väärtused, ühemõõtmelised järjendid või 99-mõõtmelised järjendid).
     
-Sama põhimõte kehtib ka "järjendite ennikute" ja "hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastikega" -- alusta lähenemist "välimisest kihist" ja pea meeles, millised on sisemised kihid.
+Sama põhimõte kehtib ka "järjendite ennikute" ja "hulkade sõnastike ennikute järjendite sõnastike järjendite ennikute sõnastikega" -- alusta lähenemist välimisest kihist ja pea meeles, millised on sisemised kihid.
 
 .. note::
 
@@ -474,7 +474,7 @@ Leiame iga tudengi eksamipunktide kogusumma.
 
 Harjutus. Keskmine tulemus ülesannete kaupa
 ---------------------------------------------
-Täienda eelnevat näiteprogrammi nii, et see näitaks, millised ülesanded olid üldiselt raskemad ja millised kergemad. Selleks väljasta keskmised tulemused ülesannete kaupa (st. eraldi kõigi tudengite 1. ülesande eest saadud punktide keskmine jne).
+Täienda eelnevat näiteprogrammi nii, et see näitaks, millised ülesanded olid üldiselt raskemad ja millised kergemad. Selleks väljasta keskmised tulemused ülesannete kaupa (st eraldi kõigi tudengite 1. ülesande eest saadud punktide keskmine jne).
 
 .. hint::
 
@@ -575,19 +575,19 @@ Andmestruktuurid
 ================
 Peatüki pealkiri on "Andmestruktuurid", nüüd on paras aeg lõpuks ära öelda, mida see sõna tähendab.
 
-Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihtüübid tähistavad atomaarseid (e. jagamatuid) väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt. listi elementideks) jagada. (Sõnega on Pythoni puhul pisut segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks kui ka liittüübiks).
+Programmeerimisel jaotatakse andmetüübid laias laastus *lihttüüpideks* ja *liittüüpideks*. Lihttüübid tähistavad atomaarseid (e jagamatuid) väärtusi -- näiteks arvutüübid ja tõeväärtustüüp; liittüübid (näiteks list ja ennik) aga tähistavad väärtusi, mida saaks veel mingiteks alamkomponentideks (nt listi elementideks) jagada. (Sõnega on Pythoni puhul pisut segased lood -- seda võib olenevalt vaatenurgast pidada nii lihttüübiks kui ka liittüübiks.)
 
 Nagu öeldud, liittüüpi väärtused on kombineeritud mingitest teistest väärtustest. Oluline on see, et need komponendid moodustavad mingi kindla struktuuri. Näiteks järjendite puhul moodustub struktuur sellest, et iga komponent (element) on teiste komponentidega võrreldes kas eespool või tagapool, teisisõnu -- järjendi struktuur määrab elementide järjestuse. Teistel Pythoni liitüüpidel on teistsugune struktuur -- näiteks hulgatüübi struktuur määrab ära vaid selle, millised elemendid hulka kuuluvad, elementide järjestus pole selles struktuuris oluline. Kuna struktuur on liittüüpide puhul väga tähtis, siis nimetatakse neid vahel ka *struktuurseteks tüüpideks* või *andmestruktuurideks*.
 
-Antud õpiku käsitluses on erinevatel andmestruktuuridel erinevad kasutusviisid, mida nad toetavad -- listi puhul saab elementi ``append``-ida, sõnastikus saab küsida elementi tema (suvalist tüüpi) võtme järgi jne, st. meid huvitab eelkõige mida mingi andmestruktuur teha oskab. Reaalsetes programmides aga on tihti vaja teada ka ka seda kuidas seda tehakse. Seetõttu on loodud näiteks erinevaid listitüüpe, millega saab teha samu asju, aga mis sisemas töötavad erinevalt ning seetõttu sobivad eri situatsioonidesse paremini või halvemini (näiteks ühe tuntud listitüübi variatsiooni puhul toimib indekseerimine väga kiiresti, aga teise puhul saab väga kiiresti listi algusesse uue elementi lisada).
+Antud õpiku käsitluses on erinevatel andmestruktuuridel erinevad kasutusviisid, mida nad toetavad -- listi puhul saab elementi ``append``-ida, sõnastikus saab küsida elementi tema (suvalist tüüpi) võtme järgi jne, st meid huvitab eelkõige mida mingi andmestruktuur teha oskab. Reaalsetes programmides aga on tihti vaja teada ka ka seda, kuidas seda tehakse. Seetõttu on loodud näiteks erinevaid listitüüpe, millega saab teha samu asju, aga mis sisemas töötavad erinevalt ning seetõttu sobivad eri situatsioonidesse paremini või halvemini (näiteks ühe tuntud listitüübi variatsiooni puhul toimib indekseerimine väga kiiresti, aga teise puhul saab väga kiiresti listi algusesse uue elementi lisada).
 
 Algoritmid ja andmestruktuurid
 ------------------------------
 Programmeerimise teemad jaotatakse tihti tinglikult kaheks pooleks -- *algoritmid* ja *andmestruktuurid* (või lihtsalt *andmed*).
     
-Algoritmid kehastavad programmide "aktiivset" poolt -- nad kirjeldavad mingit tegevust, arvutamist, valikut, teisendamist vms. Selle poole märksõnad on näiteks ``if``, ``print``, ``while``, ``sin``.
+Algoritmid kehastavad programmide aktiivset poolt -- nad kirjeldavad mingit tegevust, arvutamist, valikut, teisendamist vms. Selle poole märksõnad on näiteks ``if``, ``print``, ``while``, ``sin``.
 
-Andmeid (sh. andmestruktuure) võib pidada programmide "passiivseks" pooleks -- nad kehastavad mingeid abstraktseid või konkreetseid asju, seoseid või muud laadi infot ja nad "lihtsalt on". Selleks, et midagi juhtuks, peab mõni algoritm neid manipuleerima või uurima ja saadud info põhjal midagi tegema. Selle poole märksõnadeks on nt. *väärtus*, *tüüp*, *sõne*, *list*.
+Andmeid (sh andmestruktuure) võib pidada programmide passiivseks pooleks -- nad kehastavad mingeid abstraktseid või konkreetseid asju, seoseid või muud laadi infot ja nad "lihtsalt on". Selleks, et midagi juhtuks, peab mõni algoritm neid manipuleerima või uurima ja saadud info põhjal midagi tegema. Selle poole märksõnadeks on nt *väärtus*, *tüüp*, *sõne*, *list*.
 
 
 
@@ -605,7 +605,7 @@ Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust ees
 
 .. hint::
 
-    Sõnastiku võtmeteks peaksid olema tähed või muud sümbolid (st. tehniliselt võttes sõned) ja väärtusteks täisarvud.
+    Sõnastiku võtmeteks peaksid olema tähed või muud sümbolid (st tehniliselt võttes sõned) ja väärtusteks täisarvud.
 
 .. hint::
 
@@ -628,7 +628,7 @@ Kõigepealt muuda etteantud lahendust nii, et küsimuste arv ei oleks fikseeritu
 
 NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tulemuste arvu korral. Lahendused võib kõik teha järjest ühte samasse faili.
 
-Ülesande lahendamisel võid muuhulgas kasutada kõiki Pythoni funktsioone (sh. ``sum`` ja ``max``).
+Ülesande lahendamisel võid muuhulgas kasutada kõiki Pythoni funktsioone (sh ``sum`` ja ``max``).
 
 #. **Maksimaalsed tulemused**: leia iga ülesande kohta selle lahendamisel saadud maksimaalne skoor.
 
@@ -651,7 +651,7 @@ Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide 
 
 .. hint::
 
-    Punktide omavahelise kauguse arvutamisel on abi Pythagorase teoreemist. Vajadusel visanda skeem koordinaatteljestiku ja kahe punktiga, ning otsi pildilt täisnurkset kolmnurka.
+    Punktide omavahelise kauguse arvutamisel on abi Pythagorase teoreemist. Vajadusel visanda skeem koordinaatteljestiku ja kahe punktiga ning otsi pildilt täisnurkset kolmnurka.
 
 4. Sudoku lahenduse kontrollimine
 ---------------------------------
@@ -786,7 +786,7 @@ Pythoni andmestruktuuride salvestamine ja sisselugemine
 -------------------------------------------------------
 Selleks, et järjendikujulist infot failis hoida, oleme seni kasutanud mingit lihtsat tekstilist formaati, mida on mugav näiteks tsükli ja ``split``-i abil töödelda. Selle lähenemise eelis on see, et taolist tekstiformaati saab vabalt ka suvalises tekstiredaktoris lugeda või koostada.
 
-Keerulisemate andmestruktuuride ja nende kombinatsioonide (nt. sõnastike või mitmemõõtmeliste järjendite) puhul võib sobiva formaadi väljatöötamine ja kasutamine olla küllalt suur töö. Seetõttu on Pythonis olemas vahendid, mis seda tööd lihtsustavad.
+Keerulisemate andmestruktuuride ja nende kombinatsioonide (nt sõnastike või mitmemõõtmeliste järjendite) puhul võib sobiva formaadi väljatöötamine ja kasutamine olla küllalt suur töö. Seetõttu on Pythonis olemas vahendid, mis seda tööd lihtsustavad.
 
 Esimese võimalusena uurime käske ``repr`` ja ``eval``:
 
@@ -840,19 +840,19 @@ Keerukus
        keskm = keskm / k
        print("{0}-ndale päevale eelnenud {1} päeva keskmine oli {2:.2f}".format(i,k,keskm))
 
-See programm on mingis mõttes keerulisem kui ülesande algne lahendus, sest keskmise jaoks vajalike summade otse leidmise asemel leitakse siin alguses kõik "kumulatiivsed summad", st summad esimesest aktsiahinnast kuni i-nda aktsiahinnani (kõikide i-de jaoks). Seejärel kasutatakse neid summasid kavalalt, et *k* eelmise elemendi summat leida, lähtudes tõdemusest, et
+See programm on mingis mõttes keerulisem kui ülesande algne lahendus, sest keskmise jaoks vajalike summade otse leidmise asemel leitakse siin alguses kõik kumulatiivsed summad, st summad esimesest aktsiahinnast kuni i-nda aktsiahinnani (kõikide i-de jaoks). Seejärel kasutatakse neid summasid kavalalt, et *k* eelmise elemendi summat leida, lähtudes tõdemusest, et
 
 .. sourcecode:: none
 
     a[i-k+1] + a[i-k+2] + ... + a[i] == (a[0]+a[1] + ... + a[i]) – (a[0]+a[1] + ... + a[i-k])
 
-Kui samale ülesandele on kaks lahendust, tekib paratamatult küsimus, kumb neist parem on. Ühest vastust sellele ei ole. Õpetamise kontekstis on näiteks selge, et esimene lahendus sobib kahekordse tsükli illustreerimiseks märksa paremini, sest teine lahendus seda konstruktsiooni isegi ei kasuta. Samuti on esimene programm ehk ka lihtsamini kontrollitav, sest ta on lühem ning selle asemel et mingeid trikke kasutada, leiab need keskmised vahetult summade leidmise kaudu.
+Kui samale ülesandele on kaks lahendust, tekib paratamatult küsimus, kumb neist parem on. Ühest vastust sellele ei ole. Õpetamise kontekstis on näiteks selge, et esimene lahendus sobib kahekordse tsükli illustreerimiseks märksa paremini, sest teine lahendus seda konstruktsiooni isegi ei kasuta. Samuti on esimene programm ehk ka lihtsamini kontrollitav, sest ta on lühem, ning selle asemel, et mingeid trikke kasutada, leiab need keskmised vahetult summade leidmise kaudu.
 
 Teisel lahendusel on esimese ees siiski üks oluline eelis, mis tuleb küll välja alles suuremate andmestike puhul. Kui näiteks aktsiahindu ei vaadata mitte päevade, vaid sekundite lõikes, võib neid failis olla mõnekümne asemel miljoneid, ning keskmiseid oleks vaja samuti leida ilmselt mitte üle 10 vaid pigem üle 100 000 eelmise väärtuse. Sellisel juhul jääks esimene lahendus märkimisväärselt aeglasemaks ja seda väga lihtsal põhjusel: esimene lahendus teeb iga keskmise leidmiseks *k* liitmistehet, kuid teine lahendus saab sellega eelnevalt leitud summade abil hakkama vaid ühe lahutamistehtega. Kuigi ka summade leidmiseks kulub aega, on lihtne veenduda, et see kuluv aeg on samuti vaid keskmiselt üks liitmine iga *i* väärtuse jaoks. Kokkuvõttes kulub teisel lahendusel seega iga *k*-keskmise peale üks liitmine ja üks lahutamine, samas kui esimene lahendus peab tegema k liitmist.
 
 Programmi poolt tehtavate sammude arvu hindamist nimetatakse selle *ajalise keerukuse* analüüsimiseks. Selline analüüs muutub oluliseks eelkõige suurte andmemahtude korral - väikeste andmemahtude korral (paartuhat erinevat aktsiahinda) töötavad mõlemad lahendused lihtsalt nii kiiresti, et inimene nende töökiiruse erinevust ei taju, kuid mida suuremad on andmemahud, seda suurem on erinevus ja seda eelistatum on teine lahendus esimesele.
 
-Üldiselt tehakse sellist analüüsi küllaltki umbkaudselt, loendades vaid neid samme, mida korduvalt tehakse ning tehes isegi seda tihti ligikaudselt. Näiteks esimest lahendust analüüsides vaadataks, et kõige rohkem tehakse sisemise tsükli liitmistehet, mis toimub kokku `(n-k)*(k-1)` ehk suurusjärgus `n*k` korda, samas kui teises lahenduses toimub kumulatiivsete summade leidmisel n liitmist ja hiljem keskmiste leidmisel `n-k` lahutamist, st. kokku `2n-k` ehk "suurusjärgus" `n` tehet. Kuna üldiselt `n` kasvades ka `k` kasvab, võib teha lisaeelduse, et `k` ja `n` on umbes samas suurusjärgus, mis annaks esimese algoritmi keerukuse hinnanguks `n`\ :sup:`2` tehet ning teise jaoks lihtsalt `n` tehet. Sealt ongi näha, et mida suurema väärtuse `n` omandab (st. mida suurem on andmestik), seda suuremaks muutub hinnagute erinevus ja seega ka töökiiruste erinevus.
+Üldiselt tehakse sellist analüüsi küllaltki umbkaudselt, loendades vaid neid samme, mida korduvalt tehakse ning tehes isegi seda tihti ligikaudselt. Näiteks esimest lahendust analüüsides vaadataks, et kõige rohkem tehakse sisemise tsükli liitmistehet, mis toimub kokku `(n-k)*(k-1)` ehk suurusjärgus `n*k` korda, samas kui teises lahenduses toimub kumulatiivsete summade leidmisel n liitmist ja hiljem keskmiste leidmisel `n-k` lahutamist, st kokku `2n-k` ehk suurusjärgus `n` tehet. Kuna üldiselt `n` kasvades ka `k` kasvab, võib teha lisaeelduse, et `k` ja `n` on umbes samas suurusjärgus, mis annaks esimese algoritmi keerukuse hinnanguks `n`\ :sup:`2` tehet ning teise jaoks lihtsalt `n` tehet. Sealt ongi näha, et mida suurema väärtuse `n` omandab (st mida suurem on andmestik), seda suuremaks muutub hinnagute erinevus ja seega ka töökiiruste erinevus.
 
-Sellist analüüsi nimetatakse *asümptootiliseks*, sest ta kehtib `n` suurte väärtuste korral ning üldiselt seda paremini, mida suuremad `n` väärtused on. Selline ligikaudne lähenemine on tegelikult formaliseeritav nn. *O-notatsiooni* abil, mis annab ka küllalti täpsed piirangud sellele, kuidas ja mis alustel üldistada ja lihtsustada tohib.
+Sellist analüüsi nimetatakse *asümptootiliseks*, sest ta kehtib `n` suurte väärtuste korral ning üldiselt seda paremini, mida suuremad `n` väärtused on. Selline ligikaudne lähenemine on tegelikult formaliseeritav nn *O-notatsiooni* abil, mis annab ka küllalti täpsed piirangud sellele, kuidas ja mis alustel üldistada ja lihtsustada tohib.
 
