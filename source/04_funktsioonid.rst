@@ -45,13 +45,13 @@ Eelmise peatüki :ref:`pere sissetuleku ülesandes <pere_sissetulek_vol1>` tuli 
 
 Kahtlemata oleks pere sissetulekut palju lihtsam arvutada, kui Pythonis oleks olemas spetsiaalne käsk netopalga arvutamiseks. Samas, kust teavad Pythoni loojad, milliseid käske kellelgi vaja võib minna?
 
-Selles peatükis uurime, kuidas "pakendada" mingi programmijupp *funktsiooniks* ja kuidas seda hiljem erinevates kohtades kasutada. Teisiti öeldes, me hakkame looma uusi Pythoni käske. Alustuseks aga võtame kokku selle, mida me Pythoni käskude kohta juba teame.
+Selles peatükis uurime, kuidas pakendada mingi programmijupp *funktsiooniks* ja kuidas seda hiljem erinevates kohtades kasutada. Teisiti öeldes, me hakkame looma uusi Pythoni käske. Alustuseks aga võtame kokku selle, mida me Pythoni käskude kohta juba teame.
 
-Käsud e. funktsioonid
+Käsud e funktsioonid
 =====================
-Siiani on olnud juttu mitmetest erinevatest Pythoni "käskudest" nagu näiteks ``input``, ``sin``, ``right``, ``is_wall``, ``int``, ``readline``, ``upper``, ``print``. Tegelikult on ametlik termin nende kohta *funktsioon*.
+Siiani on olnud juttu mitmetest erinevatest Pythoni n-ö käskudest, nagu näiteks ``input``, ``sin``, ``right``, ``is_wall``, ``int``, ``readline``, ``upper``, ``print``. Tegelikult on ametlik termin nende kohta *funktsioon*.
 
-Paljudel juhtudel saab tõmmata selged paralleelid Pythoni funktsioonide ja matemaatikast tuntud funktsioonide vahele, samas on mõnede Pythoni funktsioonide olemus hoopis erinev. Alustuseks ütleme lihtsalt, et funktsioon (e. mitteformaalselt *käsk*) on mingi Pythoni maailma "asi", millel on (tavaliselt) nimi ja *mis oskab midagi arvutada või teha*.
+Paljudel juhtudel saab tõmmata selged paralleelid Pythoni funktsioonide ja matemaatikast tuntud funktsioonide vahele, samas on mõnede Pythoni funktsioonide olemus hoopis erinev. Alustuseks ütleme lihtsalt, et funktsioon (e mitteformaalselt *käsk*) on mingi Pythoni maailma "asi", millel on (tavaliselt) nimi ja **mis oskab midagi arvutada või teha**.
 
 
 Funktsioonide kasutamine
@@ -63,7 +63,7 @@ Toome meeldetuletuseks mõned koodijupid, kus on kasutatud funktsioone nimedega 
 * ``if is_wall(): ...``
 * ``print(sqrt(sin(0.5)))``
 
-Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem **argumenti** s.o. miski, millega me saame funktsiooni tööd kuidagi mõjutada. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni **väljakutse** e. **rakendamine**  (öeldakse ka *aplikatsioon*). Argumendid võivad olla mingid konkreetsed väärtused, muutujad või mingid muud avaldised (sh. funktsioonide rakendused).
+Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema nimi ja selle järel sulud. Sulgudes võib olla 0 või rohkem **argumenti** s.o miski, millega me saame funktsiooni tööd kuidagi mõjutada. Näiteks lauses ``print("tere")`` tähistab ``print`` funktsiooni, ``"tere"`` on tema argument ja kõik see kokku on funktsiooni **väljakutse** e **rakendamine**  (öeldakse ka *aplikatsioon*). Argumendid võivad olla mingid konkreetsed väärtused, muutujad või mingid muud avaldised (sh funktsioonide rakendused).
 
 
 .. todo::
@@ -71,13 +71,13 @@ Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema ni
     TODO: skeem: funktsioon, argument ja väljakutse
 
 
-Arvutamine vs. "tegemine"
+Arvutamine vs tegemine
 -------------------------
-Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni väljakutse (nt. ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause? Tuleb välja, et sellele ei saagi lühidalt vastata.
+Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni väljakutse (nt ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause? Tuleb välja, et sellele ei saagi lühidalt vastata.
 
-Mõned funktsioonid (nt. ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatiliste funktsioonidega, kuna nad "võtavad" ühe väärtuse, arvutavad natuke ja annavad vastu e. **tagastavad** mingi teise väärtuse (nt. avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide väljakutsed on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. Siia gruppi loeme ka need funktsioonid, mille väljakutse võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
+Mõned funktsioonid (nt ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatiliste funktsioonidega, kuna nad võtavad ühe väärtuse, arvutavad natuke ja annavad vastu e **tagastavad** mingi teise väärtuse (nt avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide väljakutsed on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. Siia gruppi loeme ka need funktsioonid, mille väljakutse võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
 
-Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step()``) huvitab meid see, mida nad **teevad** -- me tahame, et midagi **juhtuks** (nt. et ekraanile ilmuks uus tekstijupp või robot liigutaks ennast). Mingit huvitavat tagastusväärtust nad meile ei paku. Selliste funktsioonide väljakutseid loeme me lauseteks ja seetõttu esinevad nad programmides omaette real. Funktsioonide defineerimise õppimist alustame just seda tüüpi funktsioonidega.
+Teiste funktsioonide väljakutsel (nt ``print('Tere')``, ``right(90)``, ``step()``) huvitab meid see, mida nad **teevad** -- me tahame, et midagi **juhtuks** (nt et ekraanile ilmuks uus tekstijupp või robot liigutaks ennast). Mingit huvitavat tagastusväärtust nad meile ei paku. Selliste funktsioonide väljakutseid loeme lauseteks ja seetõttu esinevad nad programmides omaette real. Funktsioonide defineerimise õppimist alustame just seda tüüpi funktsioonidega.
 
 
 .. note::
@@ -94,7 +94,7 @@ Teiste funktsioonide väljakutsel (nt. ``print('Tere')``, ``right(90)``, ``step(
 
 Meetodid
 --------
-Teises peatükis nägime, et sõnede puhul kirjutati mõne funktsiooni nimi (nt. ``count``) sõne ja argumentide vahele, nt:
+Teises peatükis nägime, et sõnede puhul kirjutati mõne funktsiooni nimi (nt ``count``) sõne ja argumentide vahele, nt:
 
 .. sourcecode:: py3
 
@@ -119,12 +119,12 @@ Oletame, et meil on vaja joonistada kilpkonnaga 3 ruutu, kõik küljepikkusega 3
 
 Võiks ju proovida joonistada ruudud kolme kordusega tsüklis, aga ilmselt jääksime hätta, sest tsükkel teeb igal kordusel sama asja, kuid meil on vaja iga ruudu joonistamise eel liikuda erinevasse kohta.
 
-Kui vastav programm kirjutada "jõumeetodil", siis sisalduks ruudu joonistamise kood kolmes kohas:
+Kui vastav programm kirjutada jõumeetodil, siis sisalduks ruudu joonistamise kood kolmes kohas:
 
 .. sourcecode:: py3
     :emphasize-lines: 5-9,19-23,32-36 
 
-    # "Jõuga" programmeeritud variant
+    # Jõuga programmeeritud variant:
     from turtle import *
 
     # joonistame esimese ruudu
@@ -206,7 +206,7 @@ Lahendus oleks palju lihtsam, kui ruudu joonistamiseks oleks olemas spetsiaalne 
 
 Konstruktsiooni kehas tuuakse välja need laused, mida soovitakse käivitada funktsiooni rakendamisel. Antud juhul kopeerisime funktsiooni kehasse algsest programmist ruudu joonistamise koodi. Seejuures pidime muidugi read pisut paremale nihutama, et oleks aru saada, et need kuuluvad ``def``-konstruktsiooni alla.
 
-Päis ja keha kokku moodustavad *funktsiooni definitsiooni* e. ``def``-lause. Pärast selle lause käivitamist on Pythonil üks käsk juures, mida saab edaspidi rakendada samal põhimõttel nagu sisseehitatud funktsioone. (Erinevus on selles, et uus funktsioon kehtib ainult sama programmi piires -- kui tahad seda kasutada ka mõnes muus programmis, siis tuleb see seal uuesti defineerida.)
+Päis ja keha kokku moodustavad *funktsiooni definitsiooni* e ``def``-lause. Pärast selle lause käivitamist on Pythonil üks käsk juures, mida saab edaspidi rakendada samal põhimõttel nagu sisseehitatud funktsioone. (Erinevus on selles, et uus funktsioon kehtib ainult sama programmi piires -- kui tahad seda kasutada ka mõnes muus programmis, siis tuleb see seal uuesti defineerida.)
 
 Pane tähele, et ``def``-konstruktsioon ise ei tee muud, kui jätab enda kehas olevad laused meelde. Laused käivituvad alles funktsiooni rakendamisel.
 
@@ -410,7 +410,7 @@ Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi 
 
 .. _lokaalsed-muutujad:
 
-Lokaalsed vs. globaalsed muutujad
+Lokaalsed vs globaalsed muutujad
 =================================
 Nagu nägime juba funktsiooni ``ruut`` definitsioonist, võib definitsiooni kehas kasutada abimuutujaid (meie näites ``joonistatud_külgi``). Teeme nüüd väikese eksperimendi -- joonistame funktsiooni kasutades ühe ruudu ning üritame seejärel väljastada muutuja ``joonistatud_külgi`` viimase väärtuse:
 
@@ -435,7 +435,7 @@ Nagu nägime juba funktsiooni ``ruut`` definitsioonist, võib definitsiooni keha
 
 Programmi käivitades saime oodatud ``4`` asemel hoopis veateate ``NameError: name 'joonistatud_külgi' is not defined``.
 
-Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on **lokaalsed**, st. nad toimivad ainult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni igal käivitamisel ja nad kaovad, kui funktsioon oma töö lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil funktsiooni sees olevatele e. lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
+Asi on selles, et funktsiooni kehas kasutusele võetud muutujad on **lokaalsed**, st nad toimivad ainult funktsiooni sees. Lokaalsed muutujad luuakse funktsiooni igal käivitamisel ja nad kaovad, kui funktsioon oma töö lõpetab. Nende olemasolu on funktsiooni siseasi, see ei paista kuidagimoodi väljapoole. See asjaolu võimaldab meil funktsiooni sees olevatele e lokaalsetele muutujatele vabalt nimesid valida, ilma muretsemata, kas mõnda neist nimedest on juba programmi põhiosas või mõnes teises funktsioonis kasutatud. 
 
 Programmi põhiosas defineeritud muutujaid nimetatakse **globaalseteks** muutujateks. Nende nähtavus on suurem -- nendele pääseb Python ligi nii programmi põhiosas, kui ka funktsioonide sees.
 
@@ -474,7 +474,7 @@ Nüüd peaksid sa oskama ennustada, mida teeb järgmine programm:
 
 Funktsioonis jäävad lokaalsed muutujad peale
 --------------------------------------------
-Eespool sai öeldud, et lokaalsetele muutujatele võib nimesid valida ilma teiste funktsioonide või programmi põhiosa pärast muretsemata. Mis juhtub aga siis, kui valida lokaalsele muutujale selline nimi, mis esineb ka mõne globaalse muutuja nimena? Proovime järgi! 
+Eespool sai öeldud, et lokaalsetele muutujatele võib nimesid valida ilma teiste funktsioonide või programmi põhiosa pärast muretsemata. Mis juhtub aga siis, kui valida lokaalsele muutujale selline nimi, mis esineb ka mõne globaalse muutuja nimena? Proovime järele! 
 
 .. sourcecode:: py3
 
@@ -512,7 +512,7 @@ Selle skeemiga kaasneb paratamatult kitsendus, et me ei saa funktsiooni ``f`` se
 
 Globaalsete muutujate muutmine funktsiooni sees
 -----------------------------------------------
-Kui omistuslause funktsiooni sees tekitab uue lokaalse muutuja, siis kas on üldse võimalik funktsiooni sees olles mõnd globaalset muutujat muuta? On võimalik küll. Selleks tuleb funktsiooni alguses deklareerida, et teatud nime puhul mõtleme me antud funktsioonis igal juhul globaalset muutujat, isegi kui sellele muutujale tehakse omistamine. 
+Kui omistuslause funktsiooni sees tekitab uue lokaalse muutuja, siis kas on üldse võimalik funktsiooni sees olles mõnd globaalset muutujat muuta? On võimalik küll. Selleks tuleb funktsiooni alguses deklareerida, et teatud nime puhul mõtleme antud funktsioonis igal juhul globaalset muutujat, isegi kui sellele muutujale tehakse omistamine. 
 
 .. sourcecode:: py3
     :emphasize-lines: 4
@@ -527,7 +527,7 @@ Kui omistuslause funktsiooni sees tekitab uue lokaalse muutuja, siis kas on üld
     test()      # Mis peaks nüüd ekraanile ilmuma?
     print(x)    # Aga nüüd?
 
-NB! Kuigi teatud juhtudel on selline võimalus kasulik, tuleks funktsioonis globaalsete muutujate muutmist siiski võimalusel vältida. Globaalsed muutujad on funktsiooni jaoks väga võimas kanal, mille abil ülejäänud programmiga infot vahetada, aga selle kanali ülemäärasel kasutamisel võib programmeerija kergesti kaotada järje kes suhtleb kellega ja mis sõltub millest. Järgmiseks tutvustame ühte palju paremat viisi funktsiooni ja ülejäänud programmi vahel info vahetamiseks.
+NB! Kuigi teatud juhtudel on selline võimalus kasulik, tuleks funktsioonis globaalsete muutujate muutmist siiski võimalusel vältida. Globaalsed muutujad on funktsiooni jaoks väga võimas kanal, mille abil ülejäänud programmiga infot vahetada, aga selle kanali ülemäärasel kasutamisel võib programmeerija kergesti kaotada järje, kes suhtleb kellega ja mis sõltub millest. Järgmiseks tutvustame ühte palju paremat viisi funktsiooni ja ülejäänud programmi vahel info vahetamiseks.
  
     
 
@@ -539,7 +539,7 @@ NB! Kuigi teatud juhtudel on selline võimalus kasulik, tuleks funktsioonis glob
     
 Parameetrid
 ===========
-Nagu näha, on funktsioonid suureks abiks, kui sama käskude komplekti tahetakse programmis käivitada mitmes kohas. Samas, täpselt sama tegevuse kordamist on vaja siiski üpris harva. Tihemini on vaja teha midagi sarnast, kuid teatud väikese nüansiga, mis võib erinevatel kordadel varieeruda. Sellise nüansi väljatoomiseks on võimalik funktsioonile lisada **parameetreid**. Järgnevas näiteprogrammis on defineeritud funktsioon kasutaja tervitamiseks. Varieeruv nüanss e. parameeter on antud juhul tervitatava nimi:
+Nagu näha, on funktsioonid suureks abiks, kui sama käskude komplekti tahetakse programmis käivitada mitmes kohas. Samas, täpselt sama tegevuse kordamist on vaja siiski üpris harva. Tihemini on vaja teha midagi sarnast, kuid teatud väikese nüansiga, mis võib erinevatel kordadel varieeruda. Sellise nüansi väljatoomiseks on võimalik funktsioonile lisada **parameetreid**. Järgnevas näiteprogrammis on defineeritud funktsioon kasutaja tervitamiseks. Varieeruv nüanss e parameeter on antud juhul tervitatava nimi:
 
 .. sourcecode:: python
 
@@ -559,7 +559,7 @@ Parameetritega saab teha funktsiooni universaalsemaks -- teatud detailid jäetak
     Mitte päris. Parameetrid ja argumendid on ühe mündi kaks erinevat poolt. Argument on funktsiooni väljakutses antud *avaldis*, millest saab vastava parameetri *väärtus*. Parameetrid on seotud funktsiooni definitsiooniga, argumendid on seotud funktsiooni väljakutsega. Parameetrid on üldised, argumendid on konkreetsed. Meie viimases näites on ``nimi`` funktsiooni ``tere`` parameeter, aga sõneliteraal ``"Kalle"`` on vastav argument funktsiooni väljakutses.
     
     .. note::    
-        Parameetri vs. argumendi asemel võib mõnikord kohata ka väljendeid `formaalne parameeter` vs. `tegelik parameeter`.  
+        Parameetri vs argumendi asemel võib mõnikord kohata ka väljendeid `formaalne parameeter` vs `tegelik parameeter`.  
     
 Harjutus. Parametriseeritud ``ruut``
 -------------------------------------
@@ -600,7 +600,7 @@ Täiusta eespool defineeritud ruudu joonistamise funktsiooni nii, et ruudu külj
 
 .. _param-vs-input:
 
-Parameetrid vs. ``input``
+Parameetrid vs ``input``
 -------------------------
 Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``input`` käsku -- mõlemal juhul on konkreetsed sisendandmed teadmata. Erinevus on selles, et kui ``input`` puhul on teada, et sisendandmed küsitakse kasutajalt, siis parameetrite kasutamisel jäetakse (funktsiooni seisukohast vaadatuna) sisendi saamise viis lahtiseks. Eelnevas näites andsime funktsiooni väljakutsel parameetri väärtuseks sõneliteraali, kuid seal oleks võinud kasutada ka muutujat:
 
@@ -628,9 +628,9 @@ See näide demonstreerib parameetritega funktsioonide universaalsust -- vastaval
         nimi = input("Kuidas on sinu nimi? ")
         tere(nimi)
         
-    See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh. tema parameetrid) on ülejäänud programmist eraldatud. Kõlab sarnaselt sektsioonile "Lokaalsed muutujad"? Tegemist ongi sama teemaga -- nagu juba korra mainitud, käsitletakse ka parameetreid justkui (lokaalseid) muutujaid.
+    See, et funktsiooni ``tere`` parameeter on samuti ``nimi``, ei aja Pythonit segadusse, kuna funktsiooni sisemus (sh tema parameetrid) on ülejäänud programmist eraldatud. Kõlab sarnaselt sektsiooniga "Lokaalsed muutujad"? Tegemist ongi sama teemaga -- nagu juba korra mainitud, käsitletakse ka parameetreid justkui (lokaalseid) muutujaid.
     
-    Taoline nimede "taaskasutamine" erinevates kontekstides on küllalt levinud, aga kui leiad, et see ajab sind ennast segadusse, siis võid kasutada alati erinevaid muutujanimesid.
+    Taoline nimede taaskasutamine erinevates kontekstides on küllalt levinud, aga kui leiad, et see ajab sind ennast segadusse, siis võid kasutada alati erinevaid muutujanimesid.
 
 .. todo::
 
@@ -653,7 +653,7 @@ Nagu näed, tuleb funktsiooni väljakutsel argumendid anda samas järjekorras na
 
 Harjutus. Värviline ruut
 ------------------------
-Kilpkonna "pliiatsi" värvi saab muuta funktsiooniga ``color``, andes sellele argumendiks sõne ingliskeelse värvinimega, nt. ``color('red')``. Peale seda teeb kilpkonn järgmised jooned nõutud värviga. 
+Kilpkonna pliiatsi värvi saab muuta funktsiooniga ``color``, andes sellele argumendiks sõne ingliskeelse värvinimega, nt ``color('red')``. Peale seda teeb kilpkonn järgmised jooned nõutud värviga. 
 
 .. note::
 
@@ -666,9 +666,9 @@ Lisa funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta.
 
     Mariann ütles, et kaks järgnevat lisavõimalust ajasid teda segadusse.
 
-.. topic:: Lisavõimalus: naikeväärtusega parameetrid
+.. topic:: Lisavõimalus: vaikeväärtusega parameetrid
 
-    Mõnede funktsioonide puhul on ühe parameetri väärtus tavaliselt sama ja seda on vaja vaid harvadel juhtudel muuta. Sellisel juhul on võimalik see "tavaline" väärtus funktsiooni definitsioonis ära mainida. Kui funktsiooni väljakutsel sellele parameetrile väärtust ei anta, kasutatakse lihtsalt seda vaikeväärtust. Seda võimalust demonstreerime eelmise näite modifikatsiooniga:
+    Mõnede funktsioonide puhul on ühe parameetri väärtus tavaliselt sama ja seda on vaja vaid harvadel juhtudel muuta. Sellisel juhul on võimalik see väärtus funktsiooni definitsioonis ära mainida. Kui funktsiooni väljakutsel sellele parameetrile väärtust ei anta, kasutatakse lihtsalt seda vaikeväärtust. Seda võimalust demonstreerime eelmise näite modifikatsiooniga:
     
     .. sourcecode:: py3
     
@@ -679,7 +679,7 @@ Lisa funktsioonile ``ruut`` uus parameeter joone värvi määramiseks. Katseta.
         tere("Kalle", 3)
         tere("Malle")
     
-    Eespool juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (s.o. reavahetus). See on põhjus, miks ``print`` kuvab teksti vaikimisi koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st. seda ei saa anda positsiooniliselt.
+    Eespool juba nägime, et funktsioonil ``print`` on lisaks põhiparameetrile veel parameeter nimega `end`, millele on antud vaikeväärtus ``"\n"`` (s.o reavahetus). See on põhjus, miks ``print`` kuvab teksti vaikimisi koos reavahetusega. Kuna selle funktsiooni definitsioonis kasutatakse Pythoni keerulisemaid võimalusi, siis ``print``-i väljakutsel ei olegi võimalik `end` väärtust määrata ilma parameetri nime mainimata, st seda ei saa anda positsiooniliselt.
 
 .. topic:: Lisavõimalus: nimelised argumendid
 
@@ -719,7 +719,7 @@ Väärtusega funktsioonid
 =======================
 Tuleme tagasi peatüki alguses mainitud probleemi juurde: pere sissetuleku ülesandes pidime netopalga valemi panema kirja kahes kohas ja kuigi koodi kopeerimine ajas asja ära, ei tundunud see siiski päris õige.
 
-Ilmselt juba aimad, et taolise kordamise vältimiseks on jälle abiks funktsioonid -- netopalga arvutamiseks tuleb defineerida uus funktsioon (nt. nimega ``neto``), valem tuleb kirja panna funktsiooni kehas, seejuures tuleks brutopalk jätta lahtiseks, st. parameetriks.
+Ilmselt juba aimad, et taolise kordamise vältimiseks on jälle abiks funktsioonid -- netopalga arvutamiseks tuleb defineerida uus funktsioon (nt nimega ``neto``), valem tuleb kirja panna funktsiooni kehas, seejuures tuleks brutopalk jätta lahtiseks, st parameetriks.
 
 Kuidas aga saada funktsiooni käest vastust kätte? Võid proovida lisada funktsiooni lõppu vastava ``print`` lause, aga see ei aita, kui tahame tulemust järgmistes arvutustes kasutada. Võiks proovida salvestada tulemuse kuhugi muutujasse, aga milline muutuja valida? Kas ``isa_sissetulek`` või ``ema_sissetulek``?
 
@@ -745,7 +745,7 @@ Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``re
     sissetulek = neto(ema_bruto) + neto(isa_bruto) + laste_arv * ühe_lapse_toetus
     print('Pere sissetulek kuus on', sissetulek, 'eurot.')
 
-``return``-lause käivitamisel arvutab Python näidatud avaldise väärtuse ja saadab selle funktsioonist välja e. **tagastab** sellesse konteksti, kus funktsioon välja kutsuti (antud näites on selleks kontekstiks eelviimase rea liitmistehe). 
+``return``-lause käivitamisel arvutab Python näidatud avaldise väärtuse ja saadab selle funktsioonist välja e **tagastab** sellesse konteksti, kus funktsioon välja kutsuti (antud näites on selleks kontekstiks eelviimase rea liitmistehe). 
 
 Vaatame selle idee kinnistamiseks ka ühte lihtsamat näidet -- defineerime funktsiooni, mis arvutab ja tagastab ringi pindala, ning seejärel kutsume selle välja omistuslauses:
 
@@ -790,7 +790,7 @@ Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab sel
 
 .. hint::
 
-    Abiks on funktsioon ``len`` ja operaator ``*``
+    Abiks on funktsioon ``len`` ja operaator ``*``.
 
 
 Nipp: funktsioonide testimine käsureal
@@ -875,16 +875,16 @@ Kirjuta võimalikult lühike programm, mille käivitamise järel saaks Pythoni k
     jama ülesanne
     Harjutus. Tollid ja sentimeetrid
 
-    #. **Kirjuta funktsioon** ``cm``, mis võtab argumentideks pikkuse jalgades ja tollides (st. esimene argument tähistab jalgu ja teine tolle) ning tagastab pikkuse sentimeetrites (nt. ``cm(6, 1)`` peaks tagastama umbes ``187.96``). Salvesta esialgu faili vaid funktsiooni definitsioon, ilma väljakutseta.
-    #. **Testi loodud funktsiooni** käsureal (käivita programm, ning kirjuta mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeeri definitsiooni ja proovi uuesti.
-    #. Lõpuks **kirjuta programmi põhiosa**, mis küsib kasutajalt tema pikkuse tollides ja väljastab ekraanile vastava pikkuse sentimeetrites ning tema nn. "ideaalkaalu" (s.o. pikkus sentimeetrites - 100, nt. kui pikkus on 185cm, siis ideaalkaal on 85kg).
+    #. **Kirjuta funktsioon** ``cm``, mis võtab argumentideks pikkuse jalgades ja tollides (st esimene argument tähistab jalgu ja teine tolle) ning tagastab pikkuse sentimeetrites (nt ``cm(6, 1)`` peaks tagastama umbes ``187.96``). Salvesta esialgu faili vaid funktsiooni definitsioon ilma väljakutseta.
+    #. **Testi loodud funktsiooni** käsureal (käivita programm ning kirjuta mõned väljakutsed). Kui funktsioon ei tööta õigesti, siis korrigeeri definitsiooni ja proovi uuesti.
+    #. Lõpuks **kirjuta programmi põhiosa**, mis küsib kasutajalt tema pikkuse tollides, väljastab ekraanile vastava pikkuse sentimeetrites ning tema nn ideaalkaalu (s.o pikkus sentimeetrites - 100, nt kui pikkus on 185cm, siis ideaalkaal on 85kg).
     
     
-    Taolist programmi kirjutamise stiili, kus alguses tehakse valmis mõned abifunktsioonid ja alles peale nende testimist kirjutatakse programmi põhiosa, nimetatakse "alt üles programmeerimiseks". 
+    Taolist programmi kirjutamise stiili, kus alguses tehakse valmis mõned abifunktsioonid ja alles peale nende testimist kirjutatakse programmi põhiosa, nimetatakse alt üles programmeerimiseks. 
 
 .. _return-vs-print:
 
-``return`` vs. ``print``
+``return`` vs ``print``
 ------------------------
 
 .. todo::
@@ -897,7 +897,7 @@ Eelnevalt märkisime, et funktsiooni parameetrid ja ``input`` on olemuselt sarna
 
 Analoogselt võime võrrelda ``print`` ja ``return`` käskusid -- mõlemad on seotud väljundi andmisega, kuid ``return`` on paindlikum, kuna täpne tulemuse kasutamise viis jäetakse lahtiseks.
 
-Uuri kahte järgnevat programmi, kus mõlemas on defineeritud funktsioon ringi pindala arvutamiseks. Mõlemal juhul on meie eesmärgiks arvutada mingi ringi pindala ning kuvada tulemus ekraanile ja kirjutada faili. 
+Uuri kahte järgnevat programmi, kus mõlemas on defineeritud funktsioon ringi pindala arvutamiseks. Mõlemal juhul on meie eesmärgiks arvutada mingi ringi pindala, kuvada tulemus ekraanile ja kirjutada faili. 
 
 +----------------------------------------------+----------------------------------------------+
 |.. sourcecode:: py3                           |.. sourcecode:: py3                           |
@@ -916,7 +916,7 @@ Uuri kahte järgnevat programmi, kus mõlemas on defineeritud funktsioon ringi p
 |                                              |    f.close()                                 |
 +----------------------------------------------+----------------------------------------------+
     
-Kui sooviksime arvutuse tulemust näidata ainult ekraanil, siis tehniliselt võttes pole vahet, kas me teeme ``print``-i funktsiooni sees või väljaspool. Erinevus tuleb sisse, kui me soovime tulemust veel kuskil kasutada näiteks faili koostamisel või mingites järgnevates arvutustes -- meie esimeses programmis olev funktsioon siis enam ei sobi. Teises variandis on funktsioon defineeritud üldisemana ja seetõttu saab seda kasutada rohkemates situatsioonides.
+Kui sooviksime arvutuse tulemust näidata ainult ekraanil, siis tehniliselt võttes pole vahet, kas me teeme ``print``-i funktsiooni sees või väljaspool. Erinevus tuleb sisse, kui me soovime tulemust veel kuskil kasutada, näiteks faili koostamisel või mingites järgnevates arvutustes -- meie esimeses programmis olev funktsioon siis enam ei sobi. Teises variandis on funktsioon defineeritud üldisemana ja seetõttu saab seda kasutada rohkemates situatsioonides.
 
 .. todo::
 
@@ -967,13 +967,13 @@ Senistes näidetes oli ``return``-lause funktsiooni kehas kõige viimane lause (
         
         return x
 
-Kumb neist ``return``-idest siis ikkagi kehtib? Sellele vastamiseks peame teadma, et ``return`` lause käivitamine lõpetab alati funktsiooni töö. Seega, kui kutsume antud funktsiooni välja negatiivse argumendiga, siis käivitub esimene ``return`` ja ``if``-lausele järgnevat rida üldse ei vaadatagi. Kui aga ``if`` lause tingimus osutub vääraks, siis ``if``-lause keha ei vaadata ja Python jätkab sellega, mis tuleb peale ``if``-lauset (s.o. teine ``return```).
+Kumb neist ``return``-idest siis ikkagi kehtib? Sellele vastamiseks peame teadma, et ``return`` lause käivitamine lõpetab alati funktsiooni töö. Seega, kui kutsume antud funktsiooni välja negatiivse argumendiga, siis käivitub esimene ``return`` ja ``if``-lausele järgnevat rida üldse ei vaadatagi. Kui aga ``if`` lause tingimus osutub vääraks, siis ``if``-lause keha ei vaadata ja Python jätkab sellega, mis tuleb peale ``if``-lauset (s.o teine ``return```).
 
 Selline võimalus kasutada ``return``-i funktsiooni keskel ei ole tegelikult eriti oluline -- alati saab funktsiooni panna kirja nii, et seal on täpselt üks ``return`` lause ja see paikneb funktsiooni lõpus.
 
 .. note::
 
-    ``return``-lausest on olemas ka variatsioon, kus avaldise osa on hoopis ära jäetud, st. kogu lause koosneb ainult võtmesõnast ``return``. Seda varianti kasutatakse siis, kui tahetakse funktsiooni töö lõpetada ilma mingit väärtust tagastamata.
+    ``return``-lausest on olemas ka variatsioon, kus avaldise osa on hoopis ära jäetud, st kogu lause koosneb ainult võtmesõnast ``return``. Seda varianti kasutatakse siis, kui tahetakse funktsiooni töö lõpetada ilma mingit väärtust tagastamata.
 
 
 
@@ -990,7 +990,7 @@ Vaatame üle peamised põhjused, miks on funktsioonid kasulikud.
     
 DRY-printsiip
 -------------
-Kogenud programmeerijad mainivad tihti nn. **DRY-printsiipi** -- see tuleb ingliskeelsest väljendist "Don't repeat yourself", millega tahetakse öelda, et sarnase koodi mitmekordset kirjapanekut tuleks vältida.
+Kogenud programmeerijad mainivad tihti nn **DRY-printsiipi** -- see tuleb ingliskeelsest väljendist "Don't repeat yourself", millega tahetakse öelda, et sarnase koodi mitmekordset kirjapanekut tuleks vältida.
 
 Põhiline viis DRY-printsiibi rakendamiseks on uue funktsiooni defineerimine -- selle asemel, et sarnast koodi kirjutada erinevatesse kohtadesse, saab selle esitada funktsioonina ning edaspidi piisab selle kasutamiseks vaid funktsiooni nime mainimisest. Kui midagi on vaja muuta, siis tehakse muudatus vaid funktsiooni kehas ja see mõjub igalpool, kus funktsiooni on kasutatud.
 
@@ -999,7 +999,7 @@ Pere sissetuleku programmi muutmine oli hea DRY-printsiibi rakendamise näide. L
 
 Üldistamine
 -----------
-Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt. ühel juhul arvutame netopalka ema, aga teisel juhul isa brutopalga põhjal), siis tulevad appi parameetrid, mis võimaldavad meil funktsiooni kehas jätta mõned detailid lahtiseks. Teisiti öeldes -- funktsiooni parameetrid võimaldavad meil kirjutada üldisema lahenduse, mida saab hiljem konkreetsete argumentidega täpsustada. Nt. netopalga arvutamise funktsioonis saame brutopalga esitada parameetrina, millele antakse väärtus alles konkreetse arvutuse käivitamisel.
+Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt ühel juhul arvutame netopalka ema, aga teisel juhul isa brutopalga põhjal), siis tulevad appi parameetrid, mis võimaldavad meil funktsiooni kehas jätta mõned detailid lahtiseks. Teisiti öeldes -- funktsiooni parameetrid võimaldavad meil kirjutada üldisema lahenduse, mida saab hiljem konkreetsete argumentidega täpsustada. Nt netopalga arvutamise funktsioonis saame brutopalga esitada parameetrina, millele antakse väärtus alles konkreetse arvutuse käivitamisel.
 
 
 
@@ -1011,7 +1011,7 @@ Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt. ühel ju
     
 Abstraktsioon ja mustad kastid
 ------------------------------
-Kolmas oluline põhjus tuleb paremini esile suuremate programmide puhul. Kui me koondame teatud alamülesande lahendamiseks vajalikud laused ühte funktsiooni (e. alamprogrammi), siis programmi põhiosas piisab selle alamülesande lahendamiseks vaid vastava funktsiooni nime mainimisest. See annab meile võimaluse juba lahendatud alamülesandeid käsitleda abstraktselt ilma muretsemata kuidas vastavad funktsioonid sisemas töötavad. Teisiti öeldes, programmi põhiosa kallal töötades võime me käsitleda funktsioone kui maagilisi "musti kaste", lihtsalt eeldades, et nad teevad seda, mida nende nimest võib välja lugeda. Taoline võte võimaldab meil ühele programmi "kihile" korraga keskendudes luua väga keerulisi programme, millega poleks võimalik toime tulla, kui me peaks kõiki detaile korraga meeles pidama.
+Kolmas oluline põhjus tuleb paremini esile suuremate programmide puhul. Kui me koondame teatud alamülesande lahendamiseks vajalikud laused ühte funktsiooni (e alamprogrammi), siis programmi põhiosas piisab selle alamülesande lahendamiseks vaid vastava funktsiooni nime mainimisest. See annab meile võimaluse juba lahendatud alamülesandeid käsitleda abstraktselt ilma muretsemata, kuidas vastavad funktsioonid sisemas töötavad. Teisiti öeldes, programmi põhiosa kallal töötades võime me käsitleda funktsioone kui maagilisi "musti kaste", lihtsalt eeldades, et nad teevad seda, mida nende nimest võib välja lugeda. Taoline võte võimaldab meil ühele programmi kihile korraga keskendudes luua väga keerulisi programme, millega poleks võimalik toime tulla, kui me peaks kõiki detaile korraga meeles pidama.
 
 Kui *DRY*-printsiibi juures rõhutasime seda, et funktsioonid aitavad sama koodi kasutada korduvalt, siis abstraktsiooni põhiidee on selles, et me saame hästi valitud nimega funktsiooni edukalt kasutada ilma selle ehituse peale mõtlemata. Seetõttu on uue funktsiooni loomine põhjendatud tihti ka siis, kui seda kasutatakse vaid ühes kohas.
 
@@ -1043,7 +1043,7 @@ Kui sisestad nõutud palganumbri, siis saad umbes taolise veateate:
         return aastapalk / 12
     TypeError: unsupported operand type(s) for /: 'str' and 'int'
 
-Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr. 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas mida välja kutsuti.
+Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas mida välja kutsuti.
 
 
 
@@ -1052,7 +1052,7 @@ Kokkuvõte
 
 Funktsioonid võimaldavad keerulise programmilõigu panna kirja ühekordselt, aga kasutada seda mitmes erinevas kohas. 
 
-Funktsiooni *definitsiooni* e. ``def``-lause kehas olevad laused jäetakse esialgu lihtsalt meelde. Neid saab hiljem käivitada kirjutades definitsiooni päises antud nime koos sulgudega -- seda nimetatakse funktsiooni *väljakutseks* e. rakendamiseks.
+Funktsiooni *definitsiooni* e ``def``-lause kehas olevad laused jäetakse esialgu lihtsalt meelde. Neid saab hiljem käivitada kirjutades definitsiooni päises antud nime koos sulgudega -- seda nimetatakse funktsiooni *väljakutseks* e rakendamiseks.
 
 *Parameetrid* võimaldavad funktsiooni defineerimisel jätta mõned detailid lahtiseks. Parameetritega funktsiooni väljakutsel kirjutatakse sulgudesse *argumendid*, mis täpsustavad vastavaid definitsioonis lahtiseks jäetud detaile.
 
@@ -1072,11 +1072,11 @@ Selleks, et funktsiooni saaks kasutada avaldises, peab ta arvutatud väärtuse *
     
     tee mitme maja joonistamise ülesanne
 
-1. Liigu nurka ver.2
+1. Liigu nurka ver 2
 --------------------
 Eelmises peatükis oli :ref:`ülesanne <liigu_nurka>`, kus Pykkar tuli juhatada maailma kirdenurka. Ilmselt pidid sa selleks kirjutama kaks korda samalaadse tsükli, mis kummalgi korral liigutas Pykkari tema ees oleva seinani. Miks ei võiks Pykkaril olla eraldi käsk, mis paneb ta kõndima kuni seinani? 
 
-Lisa oma eelmises peatükis tehtud programmi funktsiooni definitsioon (nt. nimega ``liigu_seinani``), mis lisab Pykkarile just sellise uue käsu. Muuda ka programmi põhiosa nii, et see delegeeriks seinani kõndimise sammud äsja loodud funktsioonile.
+Lisa oma eelmises peatükis tehtud programmile funktsioon ``liigu_seinani``, mis lisab Pykkarile just sellise uue käsu. Muuda ka programmi põhiosa nii, et see delegeeriks seinani kõndimise sammud äsja loodud funktsioonile.
 
 
 
@@ -1252,10 +1252,10 @@ Loodetavasti ilmus sinu ekraanile aken, kus oli võimalik sisestada mingi tekst 
 
 Kuigi see programm on suhteliselt lihtne ja lühike, illustreerib ta küllalt hästi graafiliste programmide põhimõtteid.
 
-* Kuskil on olemas funktsioonid ja andmetüübid, mis oskavad ekraanile manada nuppe jms. (antud juhul moodulid ``tkinter`` ja ``tkinter.ttk``).
-* Erinevaid kasutajaliidese komponente (e. "vidinaid") saab paigutada üksteise sisse (antud näites asuvad ``raam``-i sees ``silt``, ``nimi`` ja ``nupp``).
-* Vidinate loomisel saab määrata mitmeid erinevaid välimust puudutavaid omadusi (nt. ``... text="Tervita!" ...``).
-* Saab ka määrata millise funktsiooni peab Python käivitama mingi kasutaja tegevuse e. sündmuse korral (``... command=tervita ...``). Sündmustele vastamise funktsioonides võib teha mida iganes -- lugeda ja kirjutada faile, tõmmata midagi internetist, muuta teiste vidinate sisu või välimust jne.
+* Kuskil on olemas funktsioonid ja andmetüübid, mis oskavad ekraanile manada nuppe jms (antud juhul moodulid ``tkinter`` ja ``tkinter.ttk``).
+* Erinevaid kasutajaliidese komponente (e vidinaid) saab paigutada üksteise sisse (antud näites asuvad ``raam``-i sees ``silt``, ``nimi`` ja ``nupp``).
+* Vidinate loomisel saab määrata mitmeid erinevaid välimust puudutavaid omadusi (nt ``... text="Tervita!" ...``).
+* Saab ka määrata, millise funktsiooni peab Python käivitama mingi kasutaja tegevuse e sündmuse korral (``... command=tervita ...``). Sündmustele vastamise funktsioonides võib teha mida iganes -- lugeda ja kirjutada faile, tõmmata midagi internetist, muuta teiste vidinate sisu või välimust jne.
 * Peale kasutajaliidese paikasättimist pannakse programm kasutaja tegevusi ootama (``raam.mainloop()``).
     
 Järgmine samm oleks uurida välja, milliseid erinevaid kasutajaliidese komponente ``tkinter`` toetab ja kuidas neid kasutada. Kui sul on juba olemas projektiidee, mis vajab graafilist kasutajaliidest, siis tee oma tulevase programmi väljanägemisest lihtne visand ja proovi seda realiseerida ``tkinter``-i abil.
@@ -1270,7 +1270,7 @@ Soovitame uurida ka järgnevaid linke, mis tutvustavad ``tkinter``-i erinevaid v
     
 ``tkinter.Canvas``
 ------------------
-Standardsed kasutajaliidese komponendid (nupud, sisestuskastid jms.) on kasulikud ennekõike "asjalike" programmide juures, aga näiteks mängude juures vajab programmeerija tavaliselt suuremat väljenduvabadust. Appi tuleb üks väga paindlik ``tkinter``-i vidin, mille nimi on *Canvas* (tõlkes *lõuend*). *Canvase* peale saab joonistada kujundeid, laadida pilte, neid pilte ja kujundeid saab liigutada, nendele klõpsamist on võimalik registreerida jne.
+Standardsed kasutajaliidese komponendid (nupud, sisestuskastid jms) on kasulikud ennekõike "asjalike" programmide juures, aga näiteks mängude juures vajab programmeerija tavaliselt suuremat väljenduvabadust. Appi tuleb üks väga paindlik ``tkinter``-i vidin, mille nimi on *Canvas* (tõlkes *lõuend*). *Canvase* peale saab joonistada kujundeid, laadida pilte, neid pilte ja kujundeid saab liigutada, nendele klõpsamist on võimalik registreerida jne.
 
 Salvesta endale järgnev näiteprogramm. Enne käivitamist salvesta samasse kausta ka fail :download:`juku.gif <downloads/juku.gif>`.
 
