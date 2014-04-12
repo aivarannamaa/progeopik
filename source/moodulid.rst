@@ -6,20 +6,20 @@ Moodulid ja skoop
     
     Kui sellele järgnev materjal (alates teemaga "Nimeruumid") jääb teile segaseks, siis ärge heitke veel meelt -- programmeerida saab ka ilma seda mõistmata. Samas, kui kavatsete programmeerimist tõsiselt võtta, siis on varem või hiljem ikkagi soovitav kõik selle peatüki teemad endale selgeks teha.
     
-Miks hoiab Python funktsiooni sees defineeritud muutujaid ülejäänud muutujatest eraldi? Kuidas leiab Python muutuja nime põhjal muutuja väärtuse? Miks on vaja teatud funktsioone (nt. ``sin``) enne kasutamist *importida*? Mis asi ikkagi on moodul? 
+Miks hoiab Python funktsiooni sees defineeritud muutujaid ülejäänud muutujatest eraldi? Kuidas leiab Python muutuja nime põhjal muutuja väärtuse? Miks on vaja teatud funktsioone (nt ``sin``) enne kasutamist importida? Mis asi ikkagi on moodul? 
 
-Selles peatüki tegelastega olete õigupoolest juba tuttavad -- käsitleme Pythoni muutujaid, funktsioone ja mooduleid aga seda veidi teise nurga alt kui seni. Nimelt võtame me need mõisted "pulkadeks" lahti, uurime natuke ja paneme uuesti kokku, lootuses, et taoline analüüs aitab Pythoni tööpõhimõtetest paremini aru saada. Lõpuks näeme, et Pythoni tööpõhimõtted toetavad programmide loomist osade kaupa. 
+Selle peatüki tegelastega oled õigupoolest juba tuttav -- käsitleme Pythoni muutujaid, funktsioone ja mooduleid, aga seda veidi teise nurga alt kui seni. Nimelt võtame need mõisted pulkadeks lahti, uurime natuke ja paneme uuesti kokku, lootuses, et taoline analüüs aitab Pythoni tööpõhimõtetest paremini aru saada. Lõpuks näeme, et Pythoni tööpõhimõtted toetavad programmide loomist osade kaupa. 
 
 
 Lokaalsed ja globaalsed muutujad
 ================================
 .. note::
     
-    Siin on esitatud pisut lihtsustatud mudel Pythoni muutujate haldamise süsteemist. Täpsemalt saab lugeda näiteks Pythoni ametlikust dokumentatsioonist: http://docs.python.org/3/reference/executionmodel.html#naming-and-binding
+    Siin on esitatud pisut lihtsustatud mudel Pythoni muutujate haldamise süsteemist. Täpsemalt saab lugeda näiteks Pythoni ametlikust dokumentatsioonist: http://docs.python.org/3/reference/executionmodel.html#naming-and-binding.
      
-Nagu 4. peatükis (:ref:`lokaalsed-muutujad`) mainitud, on kõik funktsiooni definitsiooni sees kasutusele võetud muutujad **lokaalsed**, st. neid pole võimalik funktsioonist väljaspool kasutada. Taoline korraldus on mugav, kuna nii ei pea programmeerija funktsiooni kirjutamisel muretsema kellegi teise (või tema enda) poolt kusagil mujal kasutatud muutujate kogemata ülekirjutamise pärast. Kui kogu vajaminev info tuleb funktsiooni sisse parameetrite kaudu ja tulemused tagastatakse ``return`` lausega, siis võib funktsiooni kirjutamisel kogu ülejäänud programmi ära unustada ja keskenduda ainult käesolevale alamülesandele.
+Nagu 4. peatükis (:ref:`lokaalsed-muutujad`) mainitud, on kõik funktsiooni definitsiooni sees kasutusele võetud muutujad **lokaalsed**, st neid pole võimalik funktsioonist väljaspool kasutada. Taoline korraldus on mugav, kuna nii ei pea programmeerija funktsiooni kirjutamisel muretsema kellegi teise (või tema enda) poolt kusagil mujal kasutatud muutujate kogemata ülekirjutamise pärast. Kui kogu vajaminev info tuleb funktsiooni sisse parameetrite kaudu ja tulemused tagastatakse ``return`` lausega, siis võib funktsiooni kirjutamisel kogu ülejäänud programmi ära unustada ja keskenduda ainult käesolevale alamülesandele.
 
-Samas, mõnikord on kasulik, kui me saaksime ka funktsiooni sees otse "välise maailmaga" suhelda, lugedes ja/või kirjutades funktsioonist väljaspool olevaid muutujaid e. **globaalseid muutujaid**.
+Samas, mõnikord on kasulik, kui me saaksime ka funktsiooni sees otse välise maailmaga suhelda, lugedes ja/või kirjutades funktsioonist väljaspool olevaid muutujaid e **globaalseid muutujaid**.
 
 .. note::
 
@@ -71,15 +71,15 @@ Selleks, et funktsiooni sees saaks globaalset muutujat muuta, tuleb selleks Pyth
 
 Ametlik terminoloogia: *skoop*
 ------------------------------
-Funktsiooni "sisemuse" ja "välismaailma" tähistamiseks on tegelikult olemas spetsiaalsed terminid -- **lokaalne skoop** (ing. k *local scope*) ja **globaalne skoop** (*global scope*). *Lokaalne skoop* tähistab seda *piirkonda programmi tekstis*, mis jääb mingi konkreetse funktsiooni definitsiooni sisse. Iga funktsiooni definitsioon moodustab omaette lokaalse skoobi. Kõik, mis jääb funktsioonide definitsioonidest väljapoole, on *globaalne skoop* (see väide on pisut lihtsustatud, aga praeguseks siiski piisavalt täpne).
+Funktsiooni sisemuse ja välismaailma tähistamiseks on tegelikult olemas spetsiaalsed terminid -- **lokaalne skoop** (ingl *local scope*) ja **globaalne skoop** (ingl *global scope*). *Lokaalne skoop* tähistab seda *piirkonda programmi tekstis*, mis jääb mingi konkreetse funktsiooni definitsiooni sisse. Iga funktsiooni definitsioon moodustab omaette lokaalse skoobi. Kõik, mis jääb funktsioonide definitsioonidest väljapoole, on *globaalne skoop* (see väide on pisut lihtsustatud, aga praeguseks siiski piisavalt täpne).
 
-Kui räägitakse mingist konkreetsest muutujast, siis võidakse ka öelda, et "sellel muutujal on *<lokaalne või globaalne>* skoop" (see tähendab sama mis "see muutuja on *<lokaalne või globaalne>*").
+Kui räägitakse mingist konkreetsest muutujast, siis võidakse ka öelda, et "sellel muutujal on *<lokaalne või globaalne>* skoop" (see tähendab sama, mis "see muutuja on *<lokaalne või globaalne>*").
 
 Nimeruumid
 ----------
-Mingi funktsiooni sees kasutusele võetud (st. lokaalsete) muutujate kogumit nimetatakse selle funktsiooni **lokaalseks nimeruumiks** (*local namespace*). Kõigist mingi skripti e. mooduli globaalsest muutujatest moodustub vastava mooduli **globaalne nimeruum** (*global namespace*). Kõige tähtsamad Pythoni funktsioonid (nt. ``len``, ``str``, ``sum``) on koondatud omaette nimeruumi, mida nimetatakse **sisseehitatud nimeruumiks** (*builtin namespace*).
+Mingi funktsiooni sees kasutusele võetud (st. lokaalsete) muutujate kogumit nimetatakse selle funktsiooni **lokaalseks nimeruumiks** (*local namespace*). Kõigist mingi skripti e mooduli globaalsest muutujatest moodustub vastava mooduli **globaalne nimeruum** (*global namespace*). Kõige tähtsamad Pythoni funktsioonid (nt ``len``, ``str``, ``sum``) on koondatud omaette nimeruumi, mida nimetatakse **sisseehitatud nimeruumiks** (*builtin namespace*).
 
-Nimeruumide abil haldab Python muutujaid ja nende väärtusi programmi jooksutamise ajal. Nimeruumi võib kujutada ette kaheveerulise tabelina, mis seab mingi muutuja nimele vastavusse mingi väärtuse. Näitena toome ühe lihtsa programmi ja sellele vastava globaalse nimeruumi, nagu see näeks välja programmi lõppu jõudes:
+Nimeruumide abil haldab Python muutujaid ja nende väärtusi programmi jooksutamise ajal. Nimeruumi võib kujutada ette kaheveerulise tabelina, mis seab mingi muutuja nime vastavusse mingi väärtusega. Näitena toome ühe lihtsa programmi ja sellele vastava globaalse nimeruumi nagu see näeks välja programmi lõppu jõudes:
 
 .. sourcecode:: py3
     
@@ -101,18 +101,18 @@ Sisseehitatud nimeruum luuakse Pythoni interpretaatori käivitamisel ja see püs
 
 Skripti/mooduli globaalne nimeruum luuakse skripti käivitamisel/mooduli laadimisel (st. esmakordsel importimisel) ja see püsib mälus (tavaliselt) kuni programmi sulgemiseni. Konktreetse skripti/mooduli käivitamise/laadimise alguses on tema nimeruum tühi. Uued kirjed tekivad ja olemasolevate kirjete väärtused muutuvad omistamislausete käivitamisel. Funktsioon ``globals()`` annab selle nimeruumi sisu tavalise Pythoni sõnastikuna.
 
-Funktsiooni nimeruum luuakse igal funktsiooni väljakutsel uuesti ja see kustutakse, kui funktsioon lõpetab. Funktsiooni käivitamisel täidetakse nimeruum juba ette funktsioonis defineeritud muutujate nimedega, va. need nimed, mis on mainitud võtmesõna ``global`` järel. Väärtuste lahtrid jäetaks esialgu tühjaks. Funktsiooni täitmise käigus lokaalsesse nimeruumi enam uusi kirjeid ei teki, omistamislaused muudavad ainult olemasolevate kirjete väärtuse veergu (kui omistatakse globaalsetesse muutujatesse, siis muudetakse vastava mooduli globaalset nimeruumi).  Funktsioon ``locals()`` annab selle nimeruumi sisu sõnastikuna.
+Funktsiooni nimeruum luuakse igal funktsiooni väljakutsel uuesti ja see kustutatakse, kui funktsioon lõpetab. Funktsiooni käivitamisel täidetakse nimeruum juba ette funktsioonis defineeritud muutujate nimedega, v.a need nimed, mis on mainitud võtmesõna ``global`` järel. Väärtuste lahtrid jäetaks esialgu tühjaks. Funktsiooni täitmise käigus lokaalsesse nimeruumi enam uusi kirjeid ei teki, omistamislaused muudavad ainult olemasolevate kirjete väärtuse veergu (kui omistatakse globaalsetesse muutujatesse, siis muudetakse vastava mooduli globaalset nimeruumi).  Funktsioon ``locals()`` annab selle nimeruumi sisu sõnastikuna.
 
 Mingis avaldises esineva muutuja väärtustamiseks kasutab Python järgnevat skeemi:
 
-#. kui avaldis asub funktsiooni kehas ja kui funktsiooni lokaalses nimeruumis leidub otsitav nimi, siis kasutatakse vastavat väärtust
-#. vastasel juhul otsitakse väärtust kõigepealt mooduli globaalsest nimeruumist
-#. kui globaalses nimeruumis vastet ei leidu, siis otsitakse sisseehitatud nimeruumist
+#. kui avaldis asub funktsiooni kehas ja kui funktsiooni lokaalses nimeruumis leidub otsitav nimi, siis kasutatakse vastavat väärtust;
+#. vastasel juhul otsitakse väärtust kõigepealt mooduli globaalsest nimeruumist;
+#. kui globaalses nimeruumis vastet ei leidu, siis otsitakse sisseehitatud nimeruumist;
 #. kui ka sisseehitatud nimeruumis vastet ei leidu, siis antakse veateade (``NameError``).
 
 Moodulid
 ========
-Pythoni moodulitega tutvusite juba 1. peatükis, kus öeldi, et teatud matemaatiliste funktsioonide kasutamiseks on need vaja kõigepalt ``math`` moodulist *importida*, näiteks:
+Pythoni moodulitega tutvusid juba 1. peatükis, kus öeldi, et teatud matemaatiliste funktsioonide kasutamiseks on need vaja kõigepealt ``math`` moodulist importida, näiteks:
 
 .. sourcecode:: py3
 
@@ -120,7 +120,7 @@ Pythoni moodulitega tutvusite juba 1. peatükis, kus öeldi, et teatud matemaati
     >>> sqrt(4.0)
     2.0
 
-Teises peatükis tutvustati ``import``-lausest ka teist varianti, kus imporditi *moodul* ise ja soovitud funktsiooni kasutati koos mooduli nimega:
+Teises peatükis tutvustati ``import``-lause teist varianti, kus imporditi moodul ise ja soovitud funktsiooni kasutati koos mooduli nimega:
 
 .. sourcecode:: py3
 
@@ -130,7 +130,7 @@ Teises peatükis tutvustati ``import``-lausest ka teist varianti, kus imporditi 
 
 Tuleb välja, et just selle variandi kaudu jõuame natuke lähemale moodulite olemusele!
 
-Hakkame näidet lähemalt uurima. Näite teine rida tundub väga sarnane mingi *meetodi* kasutamisele. Vaatame näiteks sõnemeetodi ``count`` kasutamist:
+Hakkame näidet lähemalt uurima. Näite teine rida tundub väga sarnane mingi meetodi kasutamisele. Vaatame näiteks sõnemeetodi ``count`` kasutamist:
 
 .. sourcecode:: py3
 
@@ -138,7 +138,7 @@ Hakkame näidet lähemalt uurima. Näite teine rida tundub väga sarnane mingi *
     >>> lause.count("e")
     4
     
-Mõlemal juhul on kõigepealt kirjutatud mingi nimi (vastavalt ``math`` või ``lause``), siis punkt, siis veel mingi nimi (``sqrt`` ja ``count``) ja lõpuks sulgudes mingi argument. Ilmselt juba teate, et ``lause`` on antud näites *muutuja* ning nagu iga muutuja, tähistab ta mingit *väärtust* e. *objekti* (selles peatükis kasutame mõlemaid termineid). Kas antud näidete *süntaktilise* sarnasuse järgi võib järeldada, et ka ``math`` avaldises ``math.sqrt(4.0)`` on muutuja? Kui jah, siis mis on selle muutuja väärtus?
+Mõlemal juhul on kõigepealt kirjutatud mingi nimi (vastavalt ``math`` või ``lause``), siis punkt, siis veel mingi nimi (``sqrt`` ja ``count``) ja lõpuks sulgudes mingi argument. Ilmselt juba tead, et ``lause`` on antud näites muutuja ning nagu iga muutuja, tähistab ta mingit *väärtust* e *objekti* (selles peatükis kasutame mõlemaid termineid). Kas antud näidete süntaktilise sarnasuse järgi võib järeldada, et ka ``math`` avaldises ``math.sqrt(4.0)`` on muutuja? Kui jah, siis mis on selle muutuja väärtus?
 
 Siiani oleme muutuja väärtust uurinud kas ``print`` käsu abil või siis käsureal. Proovime järgi:
 
@@ -152,13 +152,13 @@ Käsurida andis meile vastuse -- ``math``-il on tõepoolest väärtus!
 
 Moodul kui väärtus/objekt
 -------------------------
-Tuleb välja, et ``import`` lause tekitab programmi uue muutuja, mille väärtuseks on samanimelises programmifailis sisalduvate funktsioonidefinitsioonide (ja teiste definitsioonide) kogum. Kuna sõna *moodul* kasutatakse ka programmifaili tähistamiseks, siis on tavaks ``import`` lausega tekitatud väärtust nimetada *mooduli objektiks*. 
+Tuleb välja, et ``import``-lause tekitab programmi uue muutuja, mille väärtuseks on samanimelises programmifailis sisalduvate funktsioonidefinitsioonide (ja teiste definitsioonide) kogum. Kuna sõna *moodul* kasutatakse ka programmifaili tähistamiseks, siis on tavaks ``import`` lausega tekitatud väärtust nimetada *mooduli objektiks*. 
 
 .. note::
 
-    Erinevalt siiani nähtud väärtustest (nagu näiteks arvud või sõnastikud), paistab mooduli objekt Pythoni käsurealt vaadates väga veider (``<module 'math' (built-in)>``) -- lubatud definitsioonide kogumit pole kusagil näha. Asi on selles, et osade moodulite jaoks ei ole head viisi, kuidas neid ekraanil näida, seetõttu näidatakse vaikimisi moodulite kohta alati vaid lühike kirjeldus. 
+    Erinevalt siiani nähtud väärtustest (nagu näiteks arvud või sõnastikud) paistab mooduli objekt Pythoni käsurealt vaadates väga veider (``<module 'math' (built-in)>``) -- lubatud definitsioonide kogumit pole kusagil näha. Asi on selles, et osade moodulite jaoks ei ole head viisi, kuidas neid ekraanil näidata, seetõttu näidatakse vaikimisi moodulite kohta alati vaid lühike kirjeldus. 
 
-Nagu teame, on igal Pythoni väärtusel/objektil mingi tüüp, mis määrab ära, mida sellega teha saab. Uurime järgi, mis on mooduli objekti tüüp:
+Nagu teame, on igal Pythoni väärtusel/objektil mingi tüüp, mis määrab ära, mida sellega teha saab. Uurime järele, mis on mooduli objekti tüüp:
 
 .. sourcecode:: py3
 
@@ -168,11 +168,11 @@ Nagu teame, on igal Pythoni väärtusel/objektil mingi tüüp, mis määrab ära
     
 Saime teada, et tegemist on tüübiga ``module``. Arve saab liita ja korrutada, sõnesid saab teisendada suurtähtedeks jne. Mida saab teha ``module`` tüüpi objektiga?
 
-Nagu mainitud, on moodul mingite definitsioonide kogum, seega võib arvata, et moodulilt saab küsida mingit definitsiooni. Nii see on -- mingi moodulis sisalduva definitsiooni kasutamiseks tuleb kirjutada moodulit tähistava muutuja nimi, punkt ja definitsiooni nimi. Seega, kui te olete mõnes oma programmis kasutanud avaldist ``math.pi``, siis meie uue terminoloogia järgi võite öelda, et küsisite mooduli objektilt ``math`` defintsiooni ``pi`` väärtust.
+Nagu mainitud, on moodul mingite definitsioonide kogum, seega võib arvata, et moodulilt saab küsida mingit definitsiooni. Nii see on -- mingi moodulis sisalduva definitsiooni kasutamiseks tuleb kirjutada moodulit tähistava muutuja nimi, punkt ja definitsiooni nimi. Seega, kui oled mõnes oma programmis kasutanud avaldist ``math.pi``, siis meie uue terminoloogia järgi võid öelda, et küsisid mooduli objektilt ``math`` defintsiooni ``pi`` väärtust.
 
 .. note::
 
-    Loodetavasti juba märkasite seost mooduli objekti ning eespool kirjeldatud mooduli globaalse nimeruumi vahel. Tegemist on tõepoolest sama info kahe erineva esitusega.
+    Loodetavasti juba märkasid seost mooduli objekti ning eespool kirjeldatud mooduli globaalse nimeruumi vahel. Tegemist on tõepoolest sama info kahe erineva esitusega.
 
 Kuidas jääb aga avaldisega ``math.sqrt(4.0)``? See avaldis on veid keerulisem, sest siin on kasutatud funktsiooni definitsiooni, aga ``pi`` oli lihtsalt mingi arv. Tuleb välja, et me võime selle avaldise veel osadeks võtta:
 
@@ -186,11 +186,11 @@ Kuidas jääb aga avaldisega ``math.sqrt(4.0)``? See avaldis on veid keerulisem,
     >>> type(math.sqrt)
     <class 'builtin_function_or_method'>
 
-Nagu näha, õnnestus meil küsida definitsiooni ``sqrt`` väärtus ilma argumenti mainimata. Justnagi mooduli objekti puhul, on tegemist väärtusega, mida ei ole lihtne ekraanil näidata, sellepärast näitabki käsurida ainult lühikest kirjeldust. Oluline on see, et nii kirjeldus, kui väärtuse tüübi küsimine kinnitavad, et definitsiooni sisuks on funktsioon (nimetatakse ka *funktsiooni objekt*).
+Nagu näha, õnnestus meil küsida definitsiooni ``sqrt`` väärtus ilma argumenti mainimata. Nii nagu mooduli objekti puhul, on tegemist väärtusega, mida ei ole lihtne ekraanil näidata, sellepärast näitabki käsurida ainult lühikest kirjeldust. Oluline on see, et nii kirjeldus kui ka väärtuse tüübi küsimine kinnitavad, et definitsiooni sisu on funktsioon (nimetatakse ka *funktsiooni objekt*).
 
-Siiani olete harjunud funktsiooni mainima ainult koos argumendiga. Samas, kui järgi mõelda, siis on täiesti loomulik, et iga funktsioon on ka *ise* olemas, konkreetsetest argumentidest sõltumatult. 
+Siiani oled harjunud funktsiooni mainima ainult koos argumendiga. Samas, kui järele mõelda, siis on täiesti loomulik, et iga funktsioon on ka *ise*, konkreetsetest argumentidest sõltumatult olemas. 
 
-Nagu juba tavaks saanud, küsime ka funktsioonitüüpi väärtuse puhul -- mida sellega teha saab? Vastust olete juba eelnevates peatükkides kohanud -- funktsiooni saab *välja kutsuda* e. *käivitada*, kirjutades tema järele sulud ja sinna sisse 0 või rohkem argumenti. Seejuures pole oluline, kust ja kuidas me selle funktsioonitüüpi väärtuse saime. Selle demonstreerimiseks on järgnevas näites küsitud ``math`` mooduli käest mõned funktsioonid ja tehtud nendega kõikvõimalikke trikke:
+Nagu juba tavaks saanud, küsime ka funktsioonitüüpi väärtuse puhul -- mida sellega teha saab? Vastust oled juba eelnevates peatükkides kohanud -- funktsiooni saab välja kutsuda e käivitada, kirjutades tema järele sulud ja sinna sisse 0 või rohkem argumenti. Seejuures pole oluline, kust ja kuidas me selle funktsioonitüüpi väärtuse saime. Selle demonstreerimiseks on järgnevas näites küsitud ``math`` mooduli käest mõned funktsioonid ja tehtud nendega kõikvõimalikke trikke:
 
 .. sourcecode:: py3
 
@@ -201,7 +201,7 @@ Nagu juba tavaks saanud, küsime ka funktsioonitüüpi väärtuse puhul -- mida 
     >>> funktsioon(4.0)
     2.0
     
-    >>> # alamaavaldiste ümber võib panna sulge, järelikult peaks järgnev töötama:
+    >>> # alamavaldiste ümber võib panna sulge, järelikult peaks järgnev töötama
     >>> (math.sqrt)(4.0)
     2.0
     
@@ -216,7 +216,7 @@ Nagu juba tavaks saanud, küsime ka funktsioonitüüpi väärtuse puhul -- mida 
     >>> järjend[2](0.5)
     0.8775825618903728    
 
-Tänu Pythoni sellisele lähenemisele funktsioonidele saamegi väga lihtsalt öelda, mida mooduli objektiga saab teha -- sellelt saab nime järgi küsida mingit väärtust (mis peab olema eelnevalt moodulis defineeritud). See, kas antud väärtus on mingi lihtne objekt (nagu sõne või täisarv) või midagi keerulisemat (nt. funktsioon), ning kuidas seda väärtust kasutada on juba küsija mure.
+Tänu Pythoni sellisele lähenemisele funktsioonidele saamegi väga lihtsalt öelda, mida mooduli objektiga saab teha -- sellelt saab nime järgi küsida mingit väärtust (mis peab olema eelnevalt moodulis defineeritud). See, kas antud väärtus on mingi lihtne objekt (sõne või täisarv) või midagi keerulisemat (nt funktsioon), ning kuidas seda väärtust kasutada, on juba küsija mure.
 
 .. topic:: from math import sin, cos
 
@@ -232,15 +232,15 @@ Tänu Pythoni sellisele lähenemisele funktsioonidele saamegi väga lihtsalt öe
         import math
         sin = math.sin
         cos = math.cos
-        del math # del eemaldab näidatud (s.o. import lause poolt tekitatud) muutuja
+        del math # del eemaldab näidatud (s.o import lause poolt tekitatud) muutuja
         ...
     
 
 Isetehtud moodulid
 ------------------
-Pythoni installeerimisel tuleb kaasa suur hulk nn. standardmoodule, mis paigutatakse kindlatesse kaustadesse, kust ``import``-lause nad üles leiab. Neile lisaks on aga väga lihtne luua ka oma mooduleid -- tegelikult saab igat skripti, mida te siiani olete kirjutanud, kasutada Pythoni moodulina.
+Pythoni installeerimisel tuleb kaasa suur hulk nn standardmoodule, mis paigutatakse kindlatesse kaustadesse, kust ``import``-lause nad üles leiab. Neile lisaks on aga väga lihtne luua ka oma mooduleid -- tegelikult saab igat skripti, mida siiani oled kirjutanud, kasutada Pythoni moodulina.
 
-Kui te tahate ühte oma moodulitest kasutada teises skriptis, siis on kõige kindlam, kui salvestate mõlemad failid samasse kausta. Salvestage järgnev näide faili nimega ``demomoodul.py``:
+Kui tahad ühte oma moodulitest kasutada teises skriptis, siis on kõige kindlam, kui salvestad mõlemad failid samasse kausta. Salvesta järgnev näide faili nimega ``demomoodul.py``:
 
 .. sourcecode:: py3
 
@@ -253,7 +253,7 @@ Kui te tahate ühte oma moodulitest kasutada teises skriptis, siis on kõige kin
         print("Tervitused demomoodulist")
     
 
-Samasse kausta salvestage (suvalise nimega) järgnev skript ja käivitage see:
+Samasse kausta salvesta (suvalise nimega) ka järgnev skript ja käivita see:
 
 .. sourcecode:: py3
 
@@ -263,11 +263,11 @@ Samasse kausta salvestage (suvalise nimega) järgnev skript ja käivitage see:
     print(demomoodul.korruta(2))
     demomoodul.tervita()
 
-Nendes skriptides, mida te kavatsete kasutada moodulina (st. importida mõnes teises skriptis) võiks sisalduda ainult definitsioonid. Nagu näitest näha on Pythonis kaks viisi definitsioonide kirjutamiseks -- uute funktsioonide defineerimiseks kasutatakse ``def`` konstruktsiooni ja lihtsamate definitsioonide jaoks võrdusmärki. 
+Nendes skriptides, mida kavatsed kasutada moodulina (st importida mõnes teises skriptis) võiks sisalduda ainult definitsioonid. Nagu näitest näha, on Pythonis kaks viisi definitsioonide kirjutamiseks -- uute funktsioonide defineerimiseks kasutatakse ``def`` konstruktsiooni ja lihtsamate definitsioonide jaoks võrdusmärki. 
 
 Mooduli sisu uurimine
 ---------------------
-Nagu öeldud, saab mooduli objektilt küsida mingile nimele vastavat väärtust. Kas see kirjeldus meenutab teile ühte teist Pythoni andmetüüpi? Loodetavasti mäletate, et ka Pythoni sõnastikus sai mingi võtme järgi küsida sellega seotud väärtust. Moodulit võib tegelikult vaadelda justkui teatud kitsendustega sõnastikku -- võti antakse punktiga, mitte kantsulgudes ja võti peab alati olema mingi nimi.
+Nagu öeldud, saab mooduli objektilt küsida mingile nimele vastavat väärtust. Kas see kirjeldus meenutab sulle ühte teist Pythoni andmetüüpi? Loodetavasti mäletad, et ka Pythoni sõnastikus sai mingi võtme järgi küsida sellega seotud väärtust. Moodulit võib tegelikult vaadelda justkui teatud kitsendustega sõnastikku -- võti antakse punktiga, mitte kantsulgudes, ja võti peab alati olema mingi nimi.
 
 Erinev on ka moodulis sisalduvate nimede loetlemine -- selleks tuleb kasutada funktsiooni ``dir``:
 
@@ -282,9 +282,9 @@ Erinev on ka moodulis sisalduvate nimede loetlemine -- selleks tuleb kasutada fu
      'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
 
 
-Objektid ja attribuudid
+Objektid ja atribuudid
 =======================
-Me alustasime moodulite uurimist kõrvutades moodulis oleva funktsiooni ja sõnemeetodi kasutamist. Tuleb välja, et kõigil Pythoni väärtustel on sarnasus moodulitega -- neilt saab nime järgi küsida mingi nende komponendi (või aspekti) väärtust. Samuti saab kasutada ``dir`` funktsiooni tuvastamaks, milliste nimedega komponente mingil objektil on.
+Me alustasime moodulite uurimist kõrvutades moodulis olevat funktsiooni sõnemeetodi kasutamisega. Tuleb välja, et kõigil Pythoni väärtustel on sarnasus moodulitega -- neilt saab nime järgi küsida mingi nende komponendi (või aspekti) väärtust. Samuti saab kasutada ``dir`` funktsiooni tuvastamaks, milliste nimedega komponente mingil objektil on.
 
 Proovime näiteks arvudega:
 
@@ -314,11 +314,11 @@ Proovime näiteks arvudega:
     >>> (2.1).is_integer()
     False    
     
-Allkriipsudega nimesid käsitleb Python spetsiaalselt (neid kasutatakse siis kui antud väärtus esineb operaatori ees).
+Allkriipsudega nimesid käsitleb Python eriliselt (neid kasutatakse siis, kui antud väärtus esineb operaatori ees).
 
-Kui me tahame väärtuse juures rõhutada seda, et tema "komponente" saab nime järgi küsida, siis nimetame teda **objektiks**. Vastavaid komponente nimetatakse **attribuutideks**.
+Kui me tahame väärtuse juures rõhutada seda, et tema komponente saab nime järgi küsida, siis nimetame teda **objektiks**. Vastavaid komponente nimetatakse **atribuutideks**.
 
-Nagu näha, on nii arvudel, kui moodulitel funktsioonitüüpi attribuute. Moodulite puhul nimetatakse neid lihtsalt funktsioonideks, ülejäänud objektide juures eelistatakse terminit *meetod*. Meetodit võib võtta kui funktsiooni, mis on spetsialiseeritud ühe konkreetse objekti jaoks:
+Nagu näha, on nii arvudel kui ka moodulitel funktsioonitüüpi atribuute. Moodulite puhul nimetatakse neid lihtsalt funktsioonideks, ülejäänud objektide juures eelistatakse terminit *meetod*. Meetodit võib võtta kui funktsiooni, mis on spetsialiseeritud ühe konkreetse objekti jaoks:
 
 .. sourcecode:: py3
 
@@ -336,13 +336,13 @@ Nagu näha, on nii arvudel, kui moodulitel funktsioonitüüpi attribuute. Moodul
 
 Modulaarsus
 ===========
-Paljude tänapäeva programmide taga on meeletu hulk koodi -- pole lootustki, et keegi suudaks näiteks Microsoft Wordi või Linuxi tuuma kogu koodi olulisi detaile ühekorraga hoomata. Seetõttu rakendatakse keeruliste tarkvaralahenduste loomisel juba eespool mainitud "jaga ja valitse" printsiipi -- ülesanne ja sellele vastav lahendus jagatakse osadeks, millest igaüks keskendub mingile konkreetsele lõigule koguülesandest. Kui sedasi saadud alamülesanded on ikka liiga keerulised, siis jagatakse need omakorda veel osadeks jne, kuni saadakse paraja suurusega ülesanded, mida programmeerija suudab oma peas piisava täpsusega "töödelda".
+Paljude tänapäeva programmide taga on meeletu hulk koodi -- pole lootustki, et keegi suudaks näiteks Microsoft Wordi või Linuxi tuuma kogu koodi olulisi detaile ühekorraga hoomata. Seetõttu rakendatakse keeruliste tarkvaralahenduste loomisel juba eespool mainitud jaga-ja-valitse printsiipi -- ülesanne ja sellele vastav lahendus jagatakse osadeks, millest igaüks keskendub mingile konkreetsele lõigule koguülesandest. Kui sedasi saadud alamülesanded on ikka liiga keerulised, siis jagatakse need omakorda veel osadeks jne, kuni saadakse paraja suurusega ülesanded, mida programmeerija suudab oma peas piisava täpsusega töödelda.
 
-Ülesannet ei saa siiski jagada osadeks suvalisest kohast -- on oluline, et alamülesanded ja neile vastavad lahendused (st. programmiosad) sõltuksid üksteisest võimalikult vähe, vastasel juhul peab programmeerija ikkagi mõtlema mitmele ülesandele korraga. Kuigi lõpuks tuleb need suhteliselt iseseisvad programmiosad ikkagi panna koos töötama (vastasel juhul poleks tegemist ühe süsteemi komponentidega), tuleb osade arendamisel kasuks, kui me ei pea eriti ülejäänud süsteemi peale mõtlema.
+Ülesannet ei saa siiski jagada osadeks suvalisest kohast -- on oluline, et alamülesanded ja neile vastavad lahendused (st programmiosad) sõltuksid üksteisest võimalikult vähe, vastasel juhul peab programmeerija ikkagi mõtlema mitmele ülesandele korraga. Kuigi lõpuks tuleb need suhteliselt iseseisvad programmiosad ikkagi panna koos töötama (vastasel juhul poleks tegemist ühe süsteemi komponentidega), tuleb osade arendamisel kasuks, kui me ei pea eriti ülejäänud süsteemi peale mõtlema.
 
-Kui mingi süsteemi (nt. tarkvara) komponentidest rääkides tahetakse rõhutada just nende suhtelist sõltumatust, siis nimetatakse neid komponente üldiselt *mooduliteks*. Konkreetse programmeerimiskeele puhul võib sellel sõnal olla ka kitsam tähendus (nagu veendusite eespool Pythoni näitel). Kui süsteemi ülesehitusel on edukalt kasutatud sõltumatuid komponente, siis nimetatakse seda süsteemi *modulaarseks*. Modulaarset süsteemi saab kergemini täiendada ja muuta, kuna pole karta, et mingi väike muudatus ühes kohas võib põhjustada mingi ettenägematu probleemi kusagil mujal.
+Kui mingi süsteemi (nt tarkvara) komponentidest rääkides tahetakse rõhutada just nende suhtelist sõltumatust, siis nimetatakse neid komponente üldiselt *mooduliteks*. Konkreetse programmeerimiskeele puhul võib sellel sõnal olla ka kitsam tähendus (nagu veendusid eespool Pythoni näitel). Kui süsteemi ülesehitusel on edukalt kasutatud sõltumatuid komponente, siis nimetatakse seda süsteemi *modulaarseks*. Modulaarset süsteemi saab kergemini täiendada ja muuta, kuna pole karta, et mingi väike muudatus ühes kohas võib põhjustada mingi ettenägematu probleemi kusagil mujal.
 
-Kaks põhilist mehhanismi modulaarsuse saavutamiseks on funktsioonid ja objektid. Programmeerimiskeeled on valdavalt üles ehitatud selliselt, et see mis toimub funktsiooni sees, on selle funktsiooni siseasi -- see võimaldab vajadusel funktsiooni sisu ümber kirjutada, ilma et see põhjustaks ootamatusi ülejäänud süsteemis. See on ka põhjus, miks Python hoiab lokaalseid muutujaid teistest muutujatest eraldi. Objektid lisavad siia juurde veel võimaluse kasutada samamoodi "privaatseid" aga pikema elueaga muutujaid, millele pääsevad ligi ainult teatud hulk funktsioone ja mida neis funktsioonides on võimalik seetõttu palju muretumalt kasutada. See osa ei ole paraku Pythonis eriti hästi lahendatud.
+Kaks põhilist mehhanismi modulaarsuse saavutamiseks on funktsioonid ja objektid. Programmeerimiskeeled on valdavalt üles ehitatud selliselt, et see, mis toimub funktsiooni sees, on selle funktsiooni siseasi -- see võimaldab vajadusel funktsiooni sisu ümber kirjutada, ilma et see põhjustaks ootamatusi ülejäänud süsteemis. See on ka põhjus, miks Python hoiab lokaalseid muutujaid teistest muutujatest eraldi. Objektid lisavad siia juurde veel võimaluse kasutada samamoodi privaatseid, aga pikema elueaga muutujaid, millele pääseb ligi ainult teatud hulk funktsioone, ja mida neis funktsioonides on võimalik seetõttu palju muretumalt kasutada. See osa ei ole paraku Pythonis eriti hästi lahendatud.
 
 
 

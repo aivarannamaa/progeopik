@@ -3,21 +3,21 @@
 *******
 tkinter
 *******
-Käesolevas lisas vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Seejärel demonstreerime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil "vabas vormis" kasutajaliideseid (nt. graafikuid, animatsioone, mänge).
+Selles lisas vaatleme graafilise kasutajaliidesega programmide tegemist Pythoni ``tkinter`` mooduli baasil. Esmalt kirjutame ühe lihtsa näiteprogrammi, kasutades standardseid kasutajaliidese komponente (nupud, tekstikastid). Seejärel demonstreerime, kuidas luua ``tkinter``-i ``canvas`` komponendi abil vabas vormis kasutajaliideseid (nt graafikuid, animatsioone, mänge).
 
 Tk ja ``tkinter``
 =================
-Moodul ``tkinter`` (koos alammooduliga ``tkinter.ttk``) kuulub Pythoni "standardvarustusse" ja seetõttu on kõige mugavam vahend graafiliste kasutajaliideste loomiseks Pythonis. Nimetatud moodulid põhinevad levinud teegil nimega *Tk*, mida kasutatakse ka teistes programmeerimiskeeltes.
+Moodul ``tkinter`` (koos alammooduliga ``tkinter.ttk``) kuulub Pythoni standardvarustusse ja on seetõttu kõige mugavam graafiliste kasutajaliideste loomise vahend Pythonis. Nimetatud moodulid põhinevad levinud teegil nimega Tk, mida kasutatakse ka teistes programmeerimiskeeltes.
 
-Käesolevas materjalis eeldame Python 3-ga kaasas olevat ``tkinter``-i versiooni 8.5. Selle versiooni olulisimaks eeliseks vanemate versioonide võrreldes on see, et ta võimaldab luua kasutajaliideseid, mis võtavad erinevates op-süsteemides (Windows, Mac OS, Linux) vastavale platvormile omase välimuse.
+Käesolevas materjalis eeldame Python 3-ga kaasas olevat ``tkinter``-i versiooni 8.5. Selle versiooni olulisim eelis vanemate versioonide ees on see, et ta võimaldab luua kasutajaliideseid, mis võtavad erinevates op-süsteemides (Windows, Mac OS, Linux) vastavale platvormile omase välimuse.
 
 .. note::
 
 
-    Kuna ``tkinter`` on väga paljude võimalustega, siis siin saame demonstreerida vaid väikest osa. Paraku ei ole ka Pythoni standard-dokumentatsioon ``tkinter``-i osas piisavalt põhjalik ja seetõttu tuleks huvi korral otsida lisainfot internetist. Kuna *Tk*-le pandi algus juba aastal 1988, leidub nii *Tk* kui ``tkinter``-i kohta interetis palju materjali, millest kõik ei kajasta adekvaatselt uuemate versioonide võimalusi. Alljärgnevalt on toodud mõned paremad kohad, kust uuemate *Tk* versioonide kohta infot leida:
+    Kuna ``tkinter`` on väga paljude võimalustega, siis siin saame demonstreerida vaid väikest osa. Paraku ei ole ka Pythoni standard-dokumentatsioon ``tkinter``-i osas piisavalt põhjalik ja seetõttu tuleks huvi korral otsida lisainfot internetist. Kuna Tk-le pandi algus juba aastal 1988, leidub nii Tk kui ``tkinter``-i kohta interetis palju materjali, millest kõik ei kajasta adekvaatselt uuemate versioonide võimalusi. Alljärgnevalt on toodud mõned paremad kohad, kust uuemate Tk versioonide kohta infot leida:
 
     * http://www.tkdocs.com/ -- kõige parem koht Tk ja ``tkinter``-i põhimõtete õppimiseks.  
-    * http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html -- eelmisest materjalist täielikum, aga eeldab, et lugeja on ``tkinter``-i põhimõtetega juba tuttav. Hea koht ``canvas``-e võimalustega tutvumiseks.
+    * http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html -- eelmisest materjalist täielikum, aga eeldab, et lugeja on ``tkinter``-i põhimõtetega juba tuttav. Hea koht ``canvas``-i võimalustega tutvumiseks.
 
 
 Standardsed kasutajaliidese komponendid
@@ -56,26 +56,26 @@ Alustuseks toome ära ühe lihtsa ``tkinter``-i programmi:
     # ilmutame akna ekraanile
     raam.mainloop()
 
-Seda programmi käivitades peaksite saama ühe väikese akna, milles on tekstikast nime sisestamiseks ning nupp, mida vajutades saad nimelise tervituse.
+Seda programmi käivitades peaksid saama ühe väikese akna, milles on tekstikast nime sisestamiseks ning nupp, mida vajutades saad nimelise tervituse.
 
-Hakkame nüüd selle programmi sisu analüüsima:
+Hakkame nüüd selle programmi sisu analüüsima.
 
-#. Esimene ``import`` lause teeb meile kättesaadavaks ``tkinter``-i põhivahendid, teine ``import`` teeb kättesaadavaks "platvormi stiiliga" kasutajaliidese vidinad.
+#. Esimene ``import``-lause teeb meile kättesaadavaks ``tkinter``-i põhivahendid, teine ``import`` teeb kättesaadavaks platvormi stiiliga kasutajaliidese vidinad.
 
-#. Funktsioon ``tervita`` on mõeldud käivitamiseks nupule klikkimise korral. Funktsiooni kehas küsitakse allpool defineeritud tekstikasti sisu (``nimi.get()``), moodustatakse selle põhjal tervitusega sõne ning näidatakse seda kasutajale väikses lisaaknas. (Selles funktsioonis oleme kasutanud ühte *globaalset muutujat* -- ``nimi`` pole ei funktsiooni parameeter ega lokaalne muutuja, vaid funktsioonist väljaspool defineeritud muutuja).
+#. Funktsioon ``tervita`` on mõeldud käivitamiseks nupule klikkimise korral. Funktsiooni kehas küsitakse allpool defineeritud tekstikasti sisu (``nimi.get()``), moodustatakse selle põhjal tervitusega sõne ning näidatakse seda kasutajale väikses lisaaknas. (Selles funktsioonis oleme kasutanud ühte globaalset muutujat -- ``nimi`` pole ei funktsiooni parameeter ega lokaalne muutuja, vaid funktsioonist väljaspool defineeritud muutuja.)
 
 #. Funktsioon ``Tk()`` loob akna, millele järgmisel real määratakse pealkiri ja ülejärgmisel real mõõtmed (pikslites).
 
-#. Järgnevalt luuakse 3 kasutajaliidese komponenti e. *vidinat* (ing. k *widget*):
+#. Järgnevalt luuakse 3 kasutajaliidese komponenti e vidinat (ingl *widget*):
 
-    * Funktsioon ``ttk.Label`` loob ühe *sildi* (s.o. vidin teksti näitamiseks). Funktsiooni esimese argumendiga näitasime, et me soovime seda silti kasutada eespool loodud aknas. Kasutades *nimelist argumenti* ``text``, andsime sellele sildile ka soovitud teksti. Käsk ``silt.place(...)`` paigutas loodud sildi soovitud koordinaatidele (ühikuteks on pikslid, punkt (0,0) paikneb akna sisuosa ülemises vasakus nurgas ning koordinaadid kasvavad paremale/alla liikudes).
+    * Funktsioon ``ttk.Label`` loob ühe sildi (s.o vidina teksti näitamiseks). Funktsiooni esimese argumendiga näitasime, et me soovime seda silti kasutada eespool loodud aknas. Kasutades nimelist argumenti ``text``, andsime sellele sildile ka soovitud teksti. Käsk ``silt.place(...)`` paigutas loodud sildi soovitud koordinaatidele (ühikuteks on pikslid, punkt (0,0) paikneb akna sisuosa ülemises vasakus nurgas ning koordinaadid kasvavad paremale/alla liikudes).
         .. image:: images/coords.png
         
     * Järgmises plokis lõime ja seadsime paika tekstisisestuskasti (``ttk.Entry``). Selle paigutamisel näitasime ära ka soovitud laiuse.
     
-    * Nupu (``ttk.Button``) loomisel määrasime argumendiga ``command`` ära, mida tuleb teha nupule klikkimise korral. Pane tähele, et argumendi väärtuseks on ainult funktsiooni nimi, mitte funktsiooni väljakutse (see oleks olnud koos tühjade sulgudega). Põhjus on selles, et me ei taha seda funktsiooni käivitada mitte nupu loomise ajal, vaid siis kui nuppu klikitakse.
+    * Nupu (``ttk.Button``) loomisel määrasime argumendiga ``command`` ära, mida tuleb teha nupule klikkimise korral. Pane tähele, et argumendi väärtuseks on ainult funktsiooni nimi, mitte funktsiooni väljakutse (see oleks olnud koos tühjade sulgudega). Põhjus on selles, et me ei taha seda funktsiooni käivitada mitte nupu loomise ajal, vaid siis, kui nuppu klikitakse.
 
-#. Viimaks käivitasime lause ``raam.mainloop()``, mis manab loodud akna ekraanile ja jääb ootama kasutaja tegevusi.
+#. Viimaks käivitasime lause ``raam.mainloop()``, mis kuvab loodud akna ekraanile ja jääb ootama kasutaja tegevusi.
 
 
  
@@ -115,7 +115,7 @@ Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutu
     nimi = ttk.Entry(raam)
     nimi.grid(column=1, row=0, padx=5, pady=5, sticky=(N, W, E))
 
-    # soovime, et nupp veniks nii laiuses kui kõrguses
+    # soovime, et nupp veniks nii laiuses kui ka kõrguses
     nupp = ttk.Button(raam, text="Tervita!", command=tervita)
     nupp.grid(column=1, row=1, padx=5, pady=5, sticky=(N, S, W, E))
 
@@ -124,14 +124,14 @@ Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutu
     raam.columnconfigure(1, weight=1) 
     raam.rowconfigure(1, weight=1)
 
-    # ilmutame akna ekraanile
+    # kuvame akna ekraanile
     raam.mainloop()
 
 .. note::
 
-    Lisaks meetoditele ``place`` ja ``grid`` võid kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry
+    Lisaks meetoditele ``place`` ja ``grid`` võid kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry .
 
-Harjutus. Täiendatud tervitaja
+Harjutus. Täiendatud tervitaja.
 --------------------------------
 Täienda eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
 
@@ -139,12 +139,12 @@ Täienda eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja ka
 
 Tahvel (``canvas``)
 ===================
-Üks põnevamaid Tk vidinaid on *tahvel* (ing. k *canvas*). Tegemist on alaga, kuhu on võimalik joonistada erinevaid kujundeid, paigutada pilte vms. Järgnev näiteprogramm demonstreerib mõningaid tahvli kasutamise võimalusi:
+Üks põnevamaid Tk vidinaid on tahvel (ingl *canvas*). Tegemist on alaga, kuhu on võimalik joonistada erinevaid kujundeid, paigutada pilte vms. Järgnev näiteprogramm demonstreerib mõningaid tahvli kasutamise võimalusi:
 
 .. sourcecode:: py3
 
     from tkinter import *
-    from tkinter import font # vajalik teksti fonti muutmiseks
+    from tkinter import font # vajalik teksti fondi muutmiseks
 
     raam = Tk()
     raam.title("Tahvel")
@@ -184,7 +184,7 @@ Tahvel (``canvas``)
     raam.mainloop()
 
 
-Lisainfot ``canvas``-e kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/tkinter/canvas.html
+Lisainfot ``canvas``-i kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/tkinter/canvas.html
 
 Harjutus. Bahama lipp
 -----------------------
@@ -198,7 +198,7 @@ Keerulisemad kujundid
 ---------------------
 Miski ei keela tahvlile kujundite joonistamiseks kasutada tsükleid või muid Pythoni vahendeid.
 
-Kuigi *Tkinter* sobib hästi graafikute joonistamiseks, tekitab mõningast ebamugavust teistmoodi koordinaatide süsteem -- oleme ju harjunud, et *y* kasvab ülespoole, mitte aga alla. Et sellest probleemist lahti saada, võtame abiks tahvli meetodi ``move``, mis võimaldab tahvlil olevaid objekte horisontaalset ja vertikaalset telge mööda ümber tõsta. Seega paigutame kõik objektid harilikku koordinaadistikku ja siis rakendame funktsiooni ``move``. 
+Kuigi Tkinter sobib hästi graafikute joonistamiseks, tekitab mõningast ebamugavust teistmoodi koordinaatide süsteem -- oleme ju harjunud, et *y* kasvab ülespoole, mitte aga alla. Et sellest probleemist lahti saada, võtame abiks tahvli meetodi ``move``, mis võimaldab tahvlil olevaid objekte horisontaalset ja vertikaalset telge mööda ümber tõsta. Seega paigutame kõik objektid harilikku koordinaadistikku ja siis rakendame funktsiooni ``move``. 
 
 Järgnev näiteprogramm püüab teha *y=sin(x)* graafikut:
 
@@ -235,13 +235,13 @@ Järgnev näiteprogramm püüab teha *y=sin(x)* graafikut:
 
     raam.mainloop()
 
-Kas saadud graafik on korrektne? Miks? Leidke ja paranda viga.
+Kas saadud graafik on korrektne? Miks? Leia ja paranda viga.
 
 Piltide esitamine
 -----------------
 Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite proovimiseks salvesta programmiga samasse kausta järgmised failid:  :download:`pall.gif <downloads/pall.gif>`,
 :download:`avatud.gif <downloads/avatud.gif>`,
-:download:`suletud.gif <downloads/suletud.gif>`
+:download:`suletud.gif <downloads/suletud.gif>`.
 
 .. sourcecode:: py3
 
@@ -252,7 +252,7 @@ Tahvlile saab panna ka .gif, .pgm, või .ppm formaadis pilte. Järgmise näite p
     tahvel = Canvas(raam, width=600, height=600, background="white")
     tahvel.grid()
 
-    # pildi kuvamisel vaja kõigepealt laadida pilt ja see siis panna tahvlile
+    # pildi kuvamisel on vaja kõigepealt laadida pilt ja panna see siis tahvlile
     pall = PhotoImage(file="pall.gif") 
     img = tahvel.create_image(450, 80, image=pall)
 
@@ -276,7 +276,7 @@ Graafikaobjektide loomisel võib neile omistada unikaalseid identifikaatoreid, m
 
     id = tahvel.create_line(x0,y0,...,xn,yn)
 
-Kasutades sellist identifikaatorit, saab näiteks objekti kustutada, nihutada või muuta tema parameetreid. Objektidega manipuleerimiseks saame kasutada järgnevaid ``canvas``'e meetodeid:
+Kasutades sellist identifikaatorit, saab näiteks objekti kustutada, nihutada või muuta tema parameetreid. Objektidega manipuleerimiseks saame kasutada järgnevaid ``canvas``-i meetodeid:
 
 .. sourcecode:: py3
 
@@ -314,7 +314,7 @@ Tekitame uue raami ja tahvli. Kella keskpunkt olgu tahvli keskel.
     # kella keskpunkt
     tahvel.create_oval(w//2-5,h//2-5,w//2+5,h//2+5,fill="black")
 
-Joonistame sekundiosuti (joon) ja salvestame tema id muutujasse ``sek_id``
+Joonistame sekundiosuti (joon) ja salvestame tema id muutujasse ``sek_id``.
 
 .. sourcecode:: py3
 
@@ -328,7 +328,7 @@ Alustame sekundiosutist. Kuna osuti üks ots on fikseeritud kella keskel, siis m
     
     def osutiTipp(positsioon, pikkus):
         """
-        Annab sekundiosuti liikuva tipu koordinaadid tavalises koordinaadistikus
+        annab sekundiosuti liikuva tipu koordinaadid tavalises koordinaadistikus
         positsioon on ujukomaarv 0 ja 1 vahel    
         """
         # arvutame x koordinaadi
@@ -353,7 +353,7 @@ Järgmise sammuna loome funktsiooni, mis loeb jooksvalt aega ja uuendab sekundio
         # saame osuti liikuva tipu koordinaadid tavalises koordinaadistikus
         tipp_x, tipp_y  = osutiTipp(sekundid / 60, w // 2 - 20)
 
-        # teisendame need canvas'e koordinaadistikku
+        # teisendame need canvas-i koordinaadistikku
         keskpunkt_x = w // 2
         keskpunkt_y = h // 2
         tipp_x = keskpunkt_x + tipp_x
@@ -375,7 +375,7 @@ Kutsu funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
 
 Pane kood kokku ja käivita rakendus.
 
-Harjutus. Täiendatud kell
+Harjutus. Täiendatud kell.
 ---------------------------
 Täienda kella. Lisa minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
 
@@ -439,7 +439,7 @@ Järgmine näide demonstreerib, kuidas uuendada tahvli sisu vastavalt kasutaja t
 
     raam.mainloop()
 
-Selles näites liigutasime me kasutaja tegevusele vastavalt pildi asukohta aga sama hästi võiksime ka näiteks midagi uut joonistada või tekitada uusi pilte vms.
+Selles näites liigutasime kasutaja tegevusele vastavalt pildi asukohta, aga sama hästi võiksime ka näiteks midagi uut joonistada, tekitada uusi pilte vms.
 
 .. note::
     
@@ -449,7 +449,7 @@ Mõned lisanipid
 ===============
 Paljude objektide genereerimine tsüklis ning hiirekliki seostamine konkreetse objektiga
 ---------------------------------------------------------------------------------------
-Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole "ligi pääseda", salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvesta samasse kausta :download:`juku.gif <downloads/juku.gif>`.
+Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades selleks tsüklit. Selleks, et piltidele oleks võimalik ka pärastpoole ligi pääseda, salvestatakse siin piltide *id*-d abitabelisse. Näite proovimiseks salvesta samasse kausta :download:`juku.gif <downloads/juku.gif>`.
 
 .. sourcecode:: py3
 
@@ -457,15 +457,14 @@ Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades sellek
 
     # see funktsioon käivitatakse piltidele klikkimisel
     def hiireklikk(event):
-        # Küsin selle objekti id, millele parasjagu klõpsati.
-        # tahvel.find_withtag(CURRENT) annab loetelu kõigi "aktiivsete" objektide id-dega, 
-        # antud juhul tähendab aktiivsus seda, et selle objekti peale klikiti.
-        # Praegu võime eeldada, et selles loetelus on vaid 1 element,
+        # küsin selle objekti id, millele parasjagu klõpsati
+        # tahvel.find_withtag(CURRENT) annab loetelu kõigi aktiivsete objektide id-dega
+        # antud juhul tähendab aktiivsus seda, et selle objekti peale klikiti
+        # praegu võime eeldada, et selles loetelus on vaid 1 element
         # seetõttu võtamegi sealt elemendi indeksiga 0
         pildi_id = tahvel.find_withtag(CURRENT)[0]
 
-        # vaatan id_tabeli läbi, et saada teada,
-        # millisel positsioonil sellise id-ga pilt asub
+        # vaatan id_tabeli läbi, et saada teada, millisel positsioonil sellise id-ga pilt asub
         for i in range(3):
             for j in range(3):
                 if pildi_id == id_tabel[i][j]:
@@ -486,7 +485,7 @@ Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades sellek
     # pildi sisu laadimine
     pilt = PhotoImage(file="juku.gif")
 
-    # järgnevas tsüklis loon 9 pilti ja paigutan nad tahvlil 3x3 asetusse
+    # järgnevas tsüklis loon 9 pilti ja paigutan need tahvlil 3x3 asetusse
     # lisaks salvestan piltide id-d 3x3 tabelisse (st. 2-mõõtmelisse järjendisse)
     id_tabel = []
     for i in range (3):
@@ -514,11 +513,11 @@ Järgnev näide demonstreerib, kuidas panna tahvlile hulk pilte kasutades sellek
 
     raam.mainloop()
 
-Tsüklis genereerimist võib kasutada ka siis kui on vaja palju nuppe või tekstikaste vms.
+Tsüklis genereerimist võib kasutada ka siis, kui on vaja palju nuppe, tekstikaste vms.
 
 Pildi vahetamine
 ----------------
-Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt. hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvesta samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
+Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hiir liigub üle pildi. Vaatame nüüd üldisemat võimalust, kuidas soovi korral (nt hiireklõpsuga) vahetada pildi sisu. Näite proovimiseks salvesta samasse kausta :download:`avatud.gif <downloads/avatud.gif>` ja  :download:`suletud.gif <downloads/suletud.gif>`.
 
 .. sourcecode:: py3
 
@@ -554,7 +553,7 @@ Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hii
 
     raam.mainloop()
     
-Hiirerullile reageerimine ja objektide *zoom*-imine
+Hiirerullile reageerimine ja objektide suumimine 
 ---------------------------------------------------
 Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutamist ning kuidas muuta tahvli objektide suurust.
 
@@ -563,7 +562,7 @@ Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutami
     from tkinter import *
 
     def zoom(event):
-        # Linuxis toimib event.num  aga windowsis delta
+        # Linuxis toimib event.num, aga windowsis delta
         if event.num == 5 or event.delta < 0:
             # allapoole rullimine
             faktor = 0.9
@@ -596,5 +595,5 @@ Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutami
 
     raam.mainloop()
 
-Kahjuks ei toimu automaatselt piltide suuruse muutmine -- täieliku *zoom* efekti saamiseks tuleks ka piltide sisu vahetada suuremate vastu.
+Kahjuks ei toimu automaatselt piltide suuruse muutmine -- täieliku efekti saamiseks tuleks ka piltide sisu vahetada suuremate vastu.
 

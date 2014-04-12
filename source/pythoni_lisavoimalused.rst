@@ -5,7 +5,7 @@ Pythoni lisavõimalused
 
 Tingimusavaldis
 ========================================================================
-Lisaks ``if``-*lausele* on Pythonis olemas ka ``if``-*avaldis* e. *tingimusavaldis*. Selle olemust on kõige lihtsam selgitada näitega:
+Lisaks ``if``-*lausele* on Pythonis olemas ka ``if``-*avaldis* e *tingimusavaldis*. Selle olemust on kõige lihtsam selgitada näitega:
 
 .. sourcecode:: py3
 
@@ -14,7 +14,7 @@ Lisaks ``if``-*lausele* on Pythonis olemas ka ``if``-*avaldis* e. *tingimusavald
     >>> 'suurem' if a > b else 'väiksem'
     'väiksem'
 
-Ka ``if``-avaldise juures kasutatakse võtmesõnu ``if`` ja ``else``, aga nende paigutus on erinev -- tõesele tingumusele vastav haru kirjutatakse ``if``-i ette ja väärale tingimusele vastav haru kirjutatakse ``else`` järele, koolonit ega treppimist ei kasutata. Oluline on veel see, et erinevalt tingimuslausest, ei käi tingimusavaldise harudesse mitte laused vaid avaldised. Tingimusavaldise väärtus võetakse ühest või teisest harust, vastavalt tingimusele. See asjaolu tingib ka selle, et mõlemad harud peavad olema antud.
+Ka ``if``-avaldise juures kasutatakse võtmesõnu ``if`` ja ``else``, aga nende paigutus on erinev -- tõesele tingumusele vastav haru kirjutatakse ``if``-i ette ja väärale tingimusele vastav haru kirjutatakse ``else`` järele, koolonit ega treppimist ei kasutata. Oluline on veel see, et erinevalt tingimuslausest ei käi tingimusavaldise harudesse mitte laused, vaid avaldised. Tingimusavaldise väärtus võetakse ühest või teisest harust, vastavalt tingimusele. See asjaolu tingib ka selle, et mõlemad harud peavad olema antud.
 
 Toome siinkohal veel ühe näite tingimusavaldise kasutamise kohta:
 
