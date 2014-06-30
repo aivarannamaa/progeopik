@@ -386,7 +386,7 @@ Nagu sa ehk eelnevaid ülesandeid lahendades juba märkasid, annab Python märku
 
 **Süntaksivea** (ingl *syntax error*) korral ei saa Python programmi tekstist aru ja seetõttu ei hakka ta programmi üldse käivitama. Veateate ütleb Python selle rea kohta, kust ta enam edasi lugeda ei osanud, tegelik vea põhjus on tihti hoopis eelneval real. Üks tüüpilisemaid süntaksivigu on puuduv lõpetav sulg -- kuigi iga programmeerija saab aru, mida on mõeldud lausega ``x = 3 + (4 * 5``, on see Pythoni jaoks täiesti mõttetu tekst, sest see ei vasta Pythoni reeglitele. Teisiti öeldes, Python (nagu ka iga teine programmeerimiskeel) on suur tähenärija ning sellega tuleb arvestada -- programmi kirjutamisel tuleb olla täpne!
 
-**Täitmisaegse vea** (ingl *runtime error*) puhul programm küll käivitati, aga mingi konkreetse käsu täitmine ebaõnnestus. Vigaseks käsuks võis olla näiteks nulliga jagamine, valesti kirjutatud funktsiooninime kasutamine, olematu faili lugemine vms. Kui sa pole siiani ühtki täitmisaegset veateadet näinud, siis sisesta käsureal käsk ``prin("Tere!")``.
+**Täitmisaegse vea** (ingl *runtime error*) puhul programm küll käivitati, aga mingi konkreetse käsu täitmine ebaõnnestus. Vigaseks käsuks võis olla näiteks nulliga jagamine, valesti kirjutatud funktsiooninime kasutamine, olematu faili lugemine vms. Kui sa pole siiani ühtki täitmisaegset veateadet näinud, siis sisesta käsureal käsk ``prin("Tere!")``. Täitmisaegseid vigu nimetatakse tihti ka **erinditeks** (ingl *exception*).
 
 .. note::
 
@@ -472,7 +472,7 @@ Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keele
     
 
 Mõtteharjutus. Tehisintellekt
-------------------------------
+-----------------------------
 Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? Kas tulevikus saab programmeerida eesti või inglise keeles? Millised takistused tuleks selleks ületada? Kas kunagi hakkavad arvutid arvestama sellega, et programmeerija võib teha vigu? ("Hmm... siin on küll kirjas ``2 / x`` aga see ei klapi siin mitte, küllap ta mõtles ``x / 2``.")
 
 
@@ -511,7 +511,7 @@ Mõtteharjutus. Sina ja programmeerimine
 
 
 Programmeerimine vs maagia
----------------------------
+--------------------------
 
 .. todo::
 
@@ -578,7 +578,7 @@ Järgneva osa eesmärk on aidata sind projektiideede genereerimisel. Siin on too
     Arvatavasti jääb nende programmide kood praegu arusaamatuks, kuid proovi siiski seda lugeda, kasvõi selleks, et saada aimu, mis sind ees ootab.
 
 Mis toimub?
--------------
+-----------
 :download:`mistoimub.py <downloads/mistoimub.py>`
 
 See küllalt lihtne programm loeb ja esitab andmeid kahelt veebilehelt. Ühel juhul loetakse info sisse spetsiaalses XML formaadis (XML-i töötlemisest tuleb põgusalt juttu ühes hilisemas projektiplokis), teisel juhul otsitakse soovitud info üles Pythoni tekstitöötlusvahenditega (seda õpetab juba järgmine peatükk).

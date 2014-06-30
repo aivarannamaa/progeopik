@@ -48,7 +48,7 @@ Kahtlemata oleks pere sissetulekut palju lihtsam arvutada, kui Pythonis oleks ol
 Selles peatükis uurime, kuidas pakendada mingi programmijupp *funktsiooniks* ja kuidas seda hiljem erinevates kohtades kasutada. Teisiti öeldes, me hakkame looma uusi Pythoni käske. Alustuseks aga võtame kokku selle, mida me Pythoni käskude kohta juba teame.
 
 Käsud e funktsioonid
-=====================
+====================
 Siiani on olnud juttu mitmetest erinevatest Pythoni n-ö käskudest, nagu näiteks ``input``, ``sin``, ``right``, ``is_wall``, ``int``, ``readline``, ``upper``, ``print``. Tegelikult on ametlik termin nende kohta *funktsioon*.
 
 Paljudel juhtudel saab tõmmata selged paralleelid Pythoni funktsioonide ja matemaatikast tuntud funktsioonide vahele, samas on mõnede Pythoni funktsioonide olemus hoopis erinev. Alustuseks ütleme lihtsalt, et funktsioon (e mitteformaalselt *käsk*) on mingi Pythoni maailma "asi", millel on (tavaliselt) nimi ja **mis oskab midagi arvutada või teha**.
@@ -72,7 +72,7 @@ Esimene tähelepanek on see, et funktsiooni kasutamiseks tuleb kirjutada tema ni
 
 
 Arvutamine vs tegemine
--------------------------
+----------------------
 Siiani oli meil kombeks uusi Pythoni konstruktsioone lahterdada avaldiste või lausete hulka. Nüüd tekib küsimus, kas mingi funktsiooni väljakutse (nt ``sqrt(sin(x))`` või ``print('Tere!')``) on avaldis või lause? Tuleb välja, et sellele ei saagi lühidalt vastata.
 
 Mõned funktsioonid (nt ``sin``, ``sqrt`` ja ``int``) on olemuselt küllalt sarnased matemaatiliste funktsioonidega, kuna nad võtavad ühe väärtuse, arvutavad natuke ja annavad vastu e **tagastavad** mingi teise väärtuse (nt avaldisega ``sqrt(4)`` anname funktsioonile ``sqrt`` argumendiks väärtuse ``4`` ning funktsioon annab meile vastu väärtuse ``2.0``). Selliste funktsioonide väljakutsed on oma olemuselt avaldised, mis tähendab, et me võime neid kasutada igal pool, kus avaldised on lubatud, näiteks omistuslauses või mõne teise funktsiooni argumendina. Siia gruppi loeme ka need funktsioonid, mille väljakutse võib anda igal korral erineva väärtuse, näiteks ``input("Sisesta midagi: ")`` või Pykkari ``is_wall()``. Kuigi need pole funktsioonid matemaatilises mõttes, kasutatakse ka neid avaldistes.
@@ -411,7 +411,7 @@ Proovi nüüd täiendada mõnda eelmises peatükis kirjutatud Pykkari programmi 
 .. _lokaalsed-muutujad:
 
 Lokaalsed vs globaalsed muutujad
-=================================
+================================
 Nagu nägime juba funktsiooni ``ruut`` definitsioonist, võib definitsiooni kehas kasutada abimuutujaid (meie näites ``joonistatud_külgi``). Teeme nüüd väikese eksperimendi -- joonistame funktsiooni kasutades ühe ruudu ning üritame seejärel väljastada muutuja ``joonistatud_külgi`` viimase väärtuse:
 
 .. sourcecode:: py3
@@ -562,7 +562,7 @@ Parameetritega saab teha funktsiooni universaalsemaks -- teatud detailid jäetak
         Parameetri vs argumendi asemel võib mõnikord kohata ka väljendeid `formaalne parameeter` vs `tegelik parameeter`.  
     
 Harjutus. Parametriseeritud ``ruut``
--------------------------------------
+------------------------------------
 Täiusta eespool defineeritud ruudu joonistamise funktsiooni nii, et ruudu küljepikkuse saab määrata funktsiooni väljakutsel. Kasuta loodud funktsiooni, joonistades mitu erineva suurusega ruutu.
 
 .. note::
@@ -601,7 +601,7 @@ Täiusta eespool defineeritud ruudu joonistamise funktsiooni nii, et ruudu külj
 .. _param-vs-input:
 
 Parameetrid vs ``input``
--------------------------
+------------------------
 Parameetritega funktsioon meenutab oma olemuselt programmi, kus on kasutatud ``input`` käsku -- mõlemal juhul on konkreetsed sisendandmed teadmata. Erinevus on selles, et kui ``input`` puhul on teada, et sisendandmed küsitakse kasutajalt, siis parameetrite kasutamisel jäetakse (funktsiooni seisukohast vaadatuna) sisendi saamise viis lahtiseks. Eelnevas näites andsime funktsiooni väljakutsel parameetri väärtuseks sõneliteraali, kuid seal oleks võinud kasutada ka muutujat:
 
 .. sourcecode:: py3
@@ -726,6 +726,8 @@ Kuidas aga saada funktsiooni käest vastust kätte? Võid proovida lisada funkts
 ``return``-lause
 ----------------
 Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``return`` lause. Demonstreerime selle kasutamist netopalga arvutamise funktsioonis:
+
+.. _neto_funktsioon:
 
 .. sourcecode:: py3
     :emphasize-lines: 1-7, 13
@@ -885,7 +887,7 @@ Kirjuta võimalikult lühike programm, mille käivitamise järel saaks Pythoni k
 .. _return-vs-print:
 
 ``return`` vs ``print``
-------------------------
+-----------------------
 
 .. todo::
 
@@ -977,9 +979,111 @@ Selline võimalus kasutada ``return``-i funktsiooni keskel ei ole tegelikult eri
 
 
 
+Funktsioonid ja vead
+====================
+Vaatame nüüd, kuidas mõjutab funktsioonide kasutamine Pythoni vigade käsitlemise süsteemi.
+
+Funktsioonide veateadete lugemine
+---------------------------------
+Esimeses peatükis soovitasime pikkade veateadete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovi käivitada järgnevat programmi:
+
+.. sourcecode:: py3
+
+    def arvuta_kuupalk(aastapalk):
+        return aastapalk / 12
+    
+    aastapalk = input("Palun sisesta aastapalk: ")
+    print("Kuupalk on", arvuta_kuupalk(aastapalk))    
+
+
+Kui sisestad nõutud palganumbri, siis saad umbes taolise veateate:
+
+.. sourcecode:: none
+
+    Traceback (most recent call last):
+      File "C:/harjutused/vigane.py", line 5, in <module>
+        print("Kuupalk on", arvuta_kuupalk(aastapalk))
+      File "C:/harjutused/vigane.py", line 2, in arvuta_kuupalk
+        return aastapalk / 12
+    TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas mida välja kutsuti.
+
+
+Erindite tekitamine
+-------------------
+Tuleta meelde :ref:`netopalga arvutamise funktsiooni<neto_funktsioon>`. Mis juhtub, kui sellele anda argumendiks negatiivne arv? Proovi toodud näiteprogrammi nii, et isa palk on -300 ja ema oma 900. Kas saadud tulemus on mingis mõttes mõistlik?  
+
+Ilmselt oled nõus, ``neto(-300)`` ei ole mõistlik, samamoodi nagu ``int("tere")`` ei ole mõistlik. Kuna Python annab ``int("tere")`` käivitamisel vea e tekitab erindi (mida vajadusel saab :ref:`kinni püüda<erindite_pyydmine>`) siis võiksime ka funktsioonis ``neto`` kontrollida kõigepealt parameetri väärtust ja kui see on vigane, siis tekitada erindi:
+
+.. sourcecode:: py3
+    :emphasize-lines: 2-3
+
+    def neto(bruto):
+        if not (bruto >= 0):
+            raise Exception("Argument peab olema mittenegatiivne")
+             
+        maksuvaba = 144
+        if (bruto <= maksuvaba):
+            return bruto
+        else:
+            maksustatav = bruto - maksuvaba
+            return maksustatav * 0.79 + maksuvaba
+    
+    ema_bruto = float(input('Sisesta ema brutopalk: '))
+    isa_bruto = float(input('Sisesta isa brutopalk: '))
+    laste_arv = int(input('Sisesta alaealiste laste arv: '))
+    ühe_lapse_toetus = 20 
+    sissetulek = neto(ema_bruto) + neto(isa_bruto) + laste_arv * ühe_lapse_toetus
+    print('Pere sissetulek kuus on', sissetulek, 'eurot.')
+
+Ilmselt juba aimasid, et erindi tekitamisega oli seotud lause, mis algas võtmesõnaga ``raise``. Sõna ``Exception`` näitab erindi tüüpi. Eri tüüpi erindite kasutamist me siin ei käsitle, seetõttu ütleme praegu, et erindi tekitamise lause peab olema kujul ``raise Exception(<veateade>)``.
+
+
+Katseta muudetud programmi negatiivse palganumbriga -- loodetavasti näed nüüd vigase vastuse asemel veateadet.
+
+Enda erindite püüdmine
+----------------------
+
+Ise tekitatud erindeid on võimalik kinni püüda :ref:`samamoodi<erindite_pyydmine>` nagu Pythonisse sisseehitatud funktsioonide omi:
+  
+
+.. sourcecode:: py3
+    :emphasize-lines: 16-23
+
+    def neto(bruto):
+        if not (bruto >= 0):
+            raise Exception("Argument peab olema mittenegatiivne")
+             
+        maksuvaba = 144
+        if (bruto <= maksuvaba):
+            return bruto
+        else:
+            maksustatav = bruto - maksuvaba
+            return maksustatav * 0.79 + maksuvaba
+    
+    ema_bruto = float(input('Sisesta ema brutopalk: '))
+    isa_bruto = float(input('Sisesta isa brutopalk: '))
+    laste_arv = int(input('Sisesta alaealiste laste arv: '))
+    ühe_lapse_toetus = 20
+    try:
+        ema_neto = neto(ema_bruto)
+        isa_neto = neto(isa_neto)
+        sissetulek = ema_neto + isa_neto + laste_arv * ühe_lapse_toetus
+        print('Pere sissetulek kuus on', sissetulek, 'eurot.')
+    except:
+        print('Mingi jama. Arvatavasti ebaõnnestus ema või isa netopalga arvutamine')
+        # "arvatavasti", kuna teoreetiliselt võib ka print-lause erindi tekitada        
+
+Antud programmi puhul pole see lahendus tegelikult optimaalne -- kasutaja jaoks oleks mugavam, kui juba sisestamise järel kontrollitaks palganumbreid ja vigase sisendi korral küsitaks uuesti.  
+
+
+.. note::
+
+    Täpsema info Pythoni erindite kohta leiad siit: https://docs.python.org/3/tutorial/errors.html
+
 
 .. _milleks-funktsioonid:
-
 
 Milleks funktsioonid?
 =====================
@@ -1017,33 +1121,6 @@ Kui *DRY*-printsiibi juures rõhutasime seda, et funktsioonid aitavad sama koodi
 
 
 
-
-
-Veateated ja funktsioonid
-=========================
-Esimeses peatükis soovitasime pikkade veateadete puhul keskenduda veateate viimastele ridadele. Kui täitmisaegne viga tekib mingi funktsiooni sees, siis võib ainult viimaste ridade põhjal olla raske vea põhjust tuvastada. Proovi käivitada järgnevat programmi:
-
-.. sourcecode:: py3
-
-    def arvuta_kuupalk(aastapalk):
-        return aastapalk / 12
-    
-    aastapalk = input("Palun sisesta aastapalk: ")
-    print("Kuupalk on", arvuta_kuupalk(aastapalk))    
-
-
-Kui sisestad nõutud palganumbri, siis saad umbes taolise veateate:
-
-.. sourcecode:: none
-
-    Traceback (most recent call last):
-      File "C:/harjutused/vigane.py", line 5, in <module>
-        print("Kuupalk on", arvuta_kuupalk(aastapalk))
-      File "C:/harjutused/vigane.py", line 2, in arvuta_kuupalk
-        return aastapalk / 12
-    TypeError: unsupported operand type(s) for /: 'str' and 'int'
-
-Viimaste ridade järgi võiks järeldada, et probleem on real nr 2, funktsioonis ``arvuta_kuupalk``. Tegelikult oli viga aga selles, et funktsiooni kutsuti välja valet tüüpi argumendiga (peaks olema arv, aga oli sõne). Seega tuleb pöörata tähelepanu ka funktsiooni väljakutse kohale. Meie õnneks on ka väljakutse koht veateates ära näidatud -- see on real nr 5. Kui ka väljakutse ise paiknes kuskil funktsioonis, siis on ka tolle funktsiooni väljakutse koht ära näidatud -- ülevalt alla liikudes saab veateatest välja lugeda, millises kohas mida välja kutsuti.
 
 
 
@@ -1199,6 +1276,14 @@ Mis funktsiooniga on tegemist?
     212.0
 
 Kirjuta sellise käsureasessiooniga klappiv funktsioon.
+
+8. Abifunktsioonid arvude küsimiseks
+------------------------------------
+Kolmandas peatükis toodi ära :ref:`üks skeem<korduv_kysimine>` kasutajalt arvu küsimiseks niikaua, kuni sisestatud teksti tõesti on võimalik arvuks teisendada. Kuna taolist skeemi läheb vaja paljudes programmides (ning mõnes programmis palju kordi), võiks selle pakendada abifunktsiooniks.
+
+Kirjuta funktsioonid ``input_int`` ja ``input_float``, mis mõlemad võtavad argumendiks kasutajale esitatava teksti ning tagastavad kasutaja poolt sisestatud arvu, mis on juba teisendatud vastavalt ``int``-iks või ``float``-iks. Vigase sisendi puhul peavad funktsioonid küsimust kordama.
+
+Demonstreeri nende funktsioonide kasutamist. 
 
 Lisalugemine
 ============

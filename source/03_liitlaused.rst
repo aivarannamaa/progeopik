@@ -26,7 +26,7 @@ Antud peatükis vaatame, kuidas panna Python valikuid tegema. Selleks täiendame
 
 
 Tingimuslause e ``if``-lause
-=============================
+============================
 Peaaegu kõikides mittetriviaalsetes programmides tuleb mingil hetkel teha valik, kas jätkata üht- või teistmoodi. Python võimaldab programmeerijal taolised dilemmad panna kirja **tingimuslause** e **valikulause** e **if-lause** abil.
 
 Järgnevas näiteskriptis kasutatakse tingimuslauset arvu absoluutväärtuse arvutamiseks:
@@ -120,7 +120,7 @@ Edaspidi näeme, et treppimist kasutatakse ka teistes Pythoni konstruktsioonides
 
 
 Harjutus. Eurokalkulaator vol 2
----------------------------------
+-------------------------------
 Eelmises peatükis oli ülesanne, kus tuli kirjutada eurokalkulaator, mis teisendas kroone eurodeks.
 
 Täienda seda programmi nüüd nii, et see küsiks kasutajalt lisaks rahasummale ka selle, kas ta soovib teisendada Eesti kroone eurodeks või vastupidi.
@@ -359,7 +359,7 @@ Kirjuta programm, mis küsib kasutajalt, mitu punkti võis aines saada, mitu pun
 
 
 Korduslause e ``while``-lause
-==============================
+=============================
 Kui meil on vaja teha sama toimingut mitu korda järjest, siis võiks arvata, et programmi tuleb kirjutada laused lihtsalt mitmekordselt nagu järgmises programmis, mis joonistab kilpkonnaga ruudu:
 
 .. sourcecode:: py3
@@ -542,7 +542,6 @@ Harjutus. Algandmete kontrollimine tsükliga
 Tsükleid saab kasutada algandmete sisestamise juures -- me võime vigase sisendi puhul lasta kasutajal sisestamist korrata niikaua, kuni oleme sisestatud infoga rahul.
 
 Kirjuta ruutjuure arvutamise programm, mis enne ruutjuure võtmist kontrollib, kas sisestati positiivne arv. Niikaua, kuni sisestati mittepositiivne arv, tuleb sisendi küsimist jätkata.
-
 
 Lisavõimalus: käsk ``break``
 ----------------------------
@@ -1110,12 +1109,106 @@ NB! Programm peab töötama ka laiemate ja kitsamate maailmade korral.
     Kontrolli, kas on tegemist ainult kasvamisega?
 
 
+.. _erindite_pyydmine:
+
+Erindite püüdmine ``try``-lausega
+=================================
+Vaatame ühte lühikest ja lihtsat programmi:
+
+.. sourcecode:: py3
+    
+    arv1 = float(input("Sisesta esimene arv: "))
+    arv2 = float(input("Sisesta teine arv: "))
+    print("Nende arvude jagatis on", arv1 / arv2)
+
+Mis juhtub siis, kui kasutaja sisestab ühe soovitud arvu (nt. ``45``) asemel kogemata midagi, millest Python ei oska arvu välja lugeda (näiteks ``45t``)? Proovi järele!
+
+Ilmselt nägid, et Python väljastas ekraanile veateate, ning lõpetas programmi töö. Selle programmi puhul polnud see suur õnnetus, aga keerulisemates programmides, kus kasutaja on suure ülesandega poole peale jõudnud, oleks üpris kahju kui selline väike aps programmi sulgeks. Seetõttu on Pythonisse loodud võimalused täitmisaegsete vigade e *erindite* "püüdmiseks".
+
+Vigade püüdimiseks tuleb kasutada ``try``-lauset. Alustame näitest:
+
+.. sourcecode:: py3
+    :emphasize-lines: 1,5,6
+            
+    try:
+        arv1 = float(input("Sisesta esimene arv: "))
+        arv2 = float(input("Sisesta teine arv: "))
+        print("Nende arvude jagatis on", arv1 / arv2)
+    except:
+        print("Hmm..., midagi läks vussi.")
+
+
+Nii nagu ``if``-``else``-lause, koosneb ka ``try``-lause mitmest osast -- võtmesõna ``try`` alla kirjutatakse laused, mida soovitakse normaalsel juhul täita ning võtmesõna ``except`` alla laused, mida täidetakse siis, kui ``try``-osa lausete täitmisel tekib mingi viga (siit ka võtmesõna ``except`` -- neid lauseid soovime täita vaid erandjuhtumitel).
+
+Antud näite puhul on küsitav, kuivõrd ``try`` lause lisamine midagi paremaks tegi -- me küll peitsime kasutaja eest ära koleda mitmerealise veateate (kas see peitmine oli üldse hea?), aga vigase sisestuse korral jäi kasutaja ikkagi vastusest ilma. Koodi kavalalt ümber paigutades saame me aga programmi, mis küsib kasutajalt arve niikaua, kuni lõpuks teisendamine ja jagamine õnnestub:
+
+.. _korduv_kysimine:
+
+.. sourcecode:: py3
+    :emphasize-lines: 1,6,9
+    
+    while True:    
+        try:
+            arv1 = float(input("Sisesta esimene arv: "))
+            arv2 = float(input("Sisesta teine arv: "))
+            print("Nende arvude jagatis on", arv1 / arv2)
+            break
+        except:
+            print("Hmm..., midagi läks vussi.")
+            print("Proovime uuesti!")
+
+Siin me panime kogu programmi loogika tsüklisse, millest pääseb välja käsuga ``break``. Selle käsuni jõuab Python aga ainult siis, kui kõik ``try``-osa laused edukalt läbitakse -- niipea, kui kusagil eespool tekib mingi viga, hüpatakse kohe ``except``-osasse ning peale selle täitmist jätkatakse uuesti tsükli algusest.
+
+.. warning:: 
+
+    Vigade kinnipüüdmine on põhjendatud ainult siis, kui sa tõesti oskad selle veasituatsiooniga midagi ette võtta. Vigu ei tohiks püüda kinni lihtsalt selleks, et vältida veateate ekraanile jõudmist -- see võib tekitada situatsiooni, kus programmis on mingi probleem, aga ei programmeerija ega kasutaja ei saa sellest teada ning programm annab süüdimatult välja valed tulemused.
+
+Harjutus. Peenem vigade püüdmine
+--------------------------------
+Viimase näite puhul, kui probleem oli teises arvus, pidi kasutaja sisestama uuesti ka esimese arvu. Kirjuta programm nüüd ümber selliselt, et kui esimene sisestatud arv teisendamine õnnestus, siis seda enam uuesti ei küsita.
+
+.. hint::
+
+    Jaga programm kaheks osaks ...
+
+
+.. hint::
+
+    ... kumbki oma ``while``-tsüklis, oma ``try``-ga .
+
+
+.. hint::
+
+    Näidislahendus:
+    
+    .. sourcecode:: py3
+    
+        while True:    
+            try:
+                arv1 = float(input("Sisesta esimene arv: "))
+                break
+            except:
+                print("Hmm..., midagi läks vussi.")
+                print("Proovime uuesti!")
+    
+        while True:    
+            try:
+                arv2 = float(input("Sisesta teine arv: "))
+                print("Nende arvude jagatis on", arv1 / arv2)
+                break
+            except:
+                print("Hmm..., midagi läks vussi.")
+                print("Proovime uuesti!")
+        
+        
+
 Kokkuvõte
 =========
 Selles peatükis nägime, et Pythoni programm ei pruugi olla vaid lihtsate käskude jada, mida täidetakse üksteise järel, kuni jõutakse programmi lõppu. Vaatlesime kahte programmikonstruktsiooni, millel kõigil on **päis** ja tühikutega veidi paremale nihutatud **keha**, kusjuures kehas olevate lausete täitmise viis on mõlemal juhul erinev.
 
 * **Tingimuslause** e ``if``-lause peaharus olevad laused täidetakse ainult siis, kui päises esitatud tingimus kehtib. Kui tingimuslauses on olemas ka ``else`` haru, siis seal olevad laused täidetakse siis, kui tingimus **ei** kehti. Sellise konstruktsiooniga saab muuta programme paindlikumaks, pannes need käituma üht- või teistmoodi vastavalt olukorrale.
 * **Korduslause** e tsükli puhul täidetakse kehas olevad laused 0 või rohkem korda, vastavalt päisele. Sarnaselt tingimuslausega, kontrollitakse selles peatükis vaadeldud ``while``-lause korral enne kehas olevate lausete täitmist, kas päises antud tingimus kehtib. Erinevalt tingimuslausest minnakse peale keha täitmist uuesti tingimust kontrollima ja kui see kehtib endiselt, siis täidetakse kehas olevad laused uuesti jne. Seda protsessi korratakse niikaua, kuni tingimus enam ei kehti. Korduslausega saame kirjeldada protsesse, kus sama toimingut tuleb teha mitu korda järjest (ja seejuures ei pruugi me korduste arvu programmi kirjutamisel ette teada).
+* **Erindite püüdmine** käib ``try``-lausega, mis võimaldab ``except``-osas näidata laused, mida täidetakse siis, kui mõni ``try``-osa lausetest ebaõnnestub. 
     
 Kõiki vaadeldavaid programmikonstruktsioone nimetatakse Pythonis **liitlauseteks**, kuna nende kehad koosnevad teistest (suvalist liiki) lausetest. See võimaldab näiteks tingimuslause kehas lisaks lihtlausetele kasutada ka korduslauset, mille kehas on omakorda kasutatud tingmuslauset, mille kehas on veel üks tingimuslause jne.
 
@@ -1277,12 +1370,33 @@ Kirjuta programm, mis väljastab iga ENTER-klahvi vajutuse peale ühe juhuslikul
     1
 
 
-10. Pentagramm vol 2
----------------------
+10. Erindite püüdmine failist lugemisel
+---------------------------------------
+Kirjuta programm, mis loeb tekstifailist temperatuure Celsiuse skaalal ja kuvab neid ekraanile Fahrenheiti skaalal. Faili nende ridade juures, kus arvuks teisendamine miskipärast ebaõnnestub, tuleb ekraanile kuvada "Vigane sisend", ning jätkata faili järgmise reaga.
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        ...
+        while ...:
+            ...
+            ... readline()
+            ...
+            try:
+                ...
+                ... float(...)
+                ...
+            except:
+                ...
+                
+
+11. Pentagramm vol 2
+--------------------
 Kui lahendasid eelmises peatükis pentagrammi ülesande, siis proovi nüüd oma programmi tsükli abil lühemaks teha.
 
 
-11. Raskem: Risttahukas
+12. Raskem: Risttahukas
 -----------------------
 Kirjuta programm, mis kuvab ekraanile erinevatest kriipsutaolistest sümbolitest moodustatud kasti, mille külgede mõõtmed annab ette programmi kasutaja. Näiteks mõõtmetega 5x3x2 näeks kast välja selline:
 
@@ -1296,7 +1410,7 @@ Kirjuta programm, mis kuvab ekraanile erinevatest kriipsutaolistest sümbolitest
        \__________\/    
     
 
-12. Raskem: Redeli asendid
+13. Raskem: Redeli asendid
 --------------------------
 Genereeri Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonista redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
 
@@ -1304,7 +1418,7 @@ Genereeri Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt 
 
     Abiks võib olla ``turtle``'i käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik.)
 
-13. Raskem: Ruudustik
+14. Raskem: Ruudustik
 ---------------------
 Kirjuta programm, mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal ning joonistab kilpkonna abil vastava ruudustiku, nt:
 
