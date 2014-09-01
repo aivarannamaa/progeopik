@@ -22,15 +22,15 @@ Esimese peatüki eesmärk on tutvustada Pythoni põhilisi töövahendeid ning an
 
 Pythoni paigaldamine
 ====================
-Pythoni paigaldamiseks Windowsiga arvutisse lae leheküljelt http://www.python.org/download/ alla fail `Python 3.3.2 Windows x86 MSI Installer` ja käivita see.
+Pythoni paigaldamiseks Windowsiga arvutisse lae leheküljelt http://www.python.org/downloads/ alla esimesena pakutav, värskeim paigaldusfail Windowsi jaoks (selle teksti kirjutamise hetkel oli värskeim versioon 3.4.1) ja käivita see.
 
-Mac-is on tavaliselt Python küll olemas, aga see on Python 2, mis meile ei sobi. Python 3 paigaldamiseks pakutakse mainitud leheküljel faili `Python 3.3.2 Mac OS X 64-bit/32-bit x86-64/i386 Installer`.
+Mac-is on tavaliselt Python küll olemas, aga see on Python 2, mis meile ei sobi. Python 3 paigaldamiseks kasuta mainitud lehel pakutavat Python 3 paigaldusfaili Mac-i jaoks.
 
-Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 tuleks paigaldada paketihalduri abil. Vajaminevad paketid on populaarsemates distributsioonides nimedega `python3`, `python3-tk` ja `idle3`. Nt Ubuntus piisab käsust ``sudo apt-get install idle3`` (see peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
+Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 on kõige kindlam paigaldada paketihalduri abil. Vajaminevad paketid on populaarsemates distributsioonides nimedega `python3`, `python3-tk` ja `idle3`. Nt Ubuntus piisab käsust ``sudo apt-get install idle3`` (see peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
 
 .. note::
 
-    Pythoni versioon ei pea olema tingimata 3.3.2, on oluline, et versiooni number algab 3-ga, olgu see `3.2`, `3.1` vms. Versioonides, mis algavad 2-ga, töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
+    Pythoni versioon ei pea olema tingimata kõige uuem, aga on oluline, et versiooni number algab 3-ga. Versioonides, mis algavad 2-ga, töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
     
 
 
