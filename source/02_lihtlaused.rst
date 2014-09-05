@@ -453,9 +453,9 @@ Tehted sõnedega
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``'tere'.rjust(10)``                | ``'      tere'``   | Sõne paigutamine etteantud "ruumi", see on abiks nt tabelite        |
 +-------------------------------------+--------------------+ moodustamisel. Selle meetodi paariliseks on ``ljust``, katseta ise, |
-| ``'terekest'.rjust(10)``            | ``'  terekest'``   | mida see teeb!                                                      |
+| ``'terekest'.rjust(12)``            | ``'    terekest'`` | mida see teeb!                                                      |
 +-------------------------------------+--------------------+ Teise argumendiga saab määrata, millist sümbolit ruumi täitmiseks   | 
-| ``'terekest'.rjust(10, '~')``       | ``'~~terekest'``   | kasutatakse.                                                        |
+| ``'terekest'.rjust(12, '~')``       | ``'~~~~terekest'`` | kasutatakse.                                                        |
 +-------------------------------------+--------------------+---------------------------------------------------------------------+
 | ``' tere '.strip()``                | ``'tere'``         | Meetod ``strip`` annab sõne ilma alguses ja lõpus olevate tühikute  |
 +-------------------------------------+--------------------+ ja reavahetusteta                                                   +
