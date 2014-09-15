@@ -94,10 +94,10 @@ Treppimine
         print("Tõesti?")
         print("Imelik nimi!")
     else:
-        print("Tere " + nimi + "!")
+        print("Tere, " + nimi + "!")
     print("Meeldiv tutvuda!")
 
-Antud näites kuuluvad tingimuslause *then*-harusse laused ``print("Tõesti?")`` ja ``print("Imelik nimi!")`` ning *else*-harusse üksainus lause ``print("Tere " + nimi + "!")``. Võib ka öelda, et need joondatud laused kuuluvad ``if``-lause *alla* -- nende käivitamine sõltub ``if``-lausest.
+Antud näites kuuluvad tingimuslause *then*-harusse laused ``print("Tõesti?")`` ja ``print("Imelik nimi!")`` ning *else*-harusse üksainus lause ``print("Tere, " + nimi + "!")``. Võib ka öelda, et need joondatud laused kuuluvad ``if``-lause *alla* -- nende käivitamine sõltub ``if``-lausest.
 
 Programmi viimane lause ei ole trepitud ja seetõttu ei ole ta millegi alluvuses, vaid on täiesti iseseisev. (Kontrollküsimus: kuidas muutuks programmi käitumine, kui ka viimase rea ette panna 4 tühikut?)
 
