@@ -475,7 +475,7 @@ George Pólya selgitab oma raamatus ülesande lahendamise nelja etappi, mida soo
 Kirjuta eespool toodud :ref:`Pykkariga põranda värvimise plokkskeemile <triibuliseks>` vastav Pythoni programm.
             
 
-2. Takistusest mööda liikumine 
+2. Takistusest mööda liikumine
 ------------------------------
 Pykkar asub ruudustiku suvalisel ruudul. Ruutude arv ei ole teada. Ruudustikul võib olla sirge vahesein, mille otsad ei ulatu ruudustiku servani. Pykkaril on vaja liikuda ruudustiku selle välisseinani, mille poole ta näoga on.
 
@@ -669,5 +669,78 @@ Kui eelmises ülesandes mainitud programm sai juba valmis, tuli firmajuhile meel
 Proovi lisada soovitud funktsionaalsus võimalikult lühikese lisakoodiga ilma programmi efektiivsuse pärast muretsemata.
 
  
+7. Põranda keskkoht
+-------------------
 
+Kirjuta programm, mis 
 
+* küsib kasutaja käest ristkülikukujulise Pykkari maailma mõõtmed ning Pykkari esialgse asukoha ja suuna;
+* loob mõõtmetele vastava maailma;
+* paigutab Pykkari nõutud suunaga nõutud positsioonile;
+* käivitab käsud, mis panevad Pykkarit värvima põranda keskkohta tumedaks. (Pykkari all oleva ruudu saab tumedaks värvida käsuga ``paint()``.)
+
+Täpsustused.
+
+* Loodud maailma servaruutudes peab olema sein, ülejäänud ruudud peavad olema värvimata põrand.
+* Kasutaja võib Pykkari suunda anda ilmakaarte tähistega (``n``, ``e``, ``s``, ``w``, ``N``, ``E``, ``S``, ``W``) või noolekujuliste suunatähistega (``^``, ``>``, ``v``, ``<``).   
+* Kui maailma põrand laius ja kõrgus on paaritu arv ruute, siis tuleb põranda keskelt värvida täpselt üks ruut. Kui mõlemad mõõtmed on paarisarvud, siis tuleb värvida 4 keskmist ruutu. Kui üks mõõde on paaritu ja teine paaris, siis tuleb värvida 2 ruutu (nii, et värvitud osa jääks täpselt põranda keskele). 
+* Kasutaja käest küsitud sisendit tuleb kontrollida. Programm ei tohi kokku joosta, kui kasutaja sisestab midagi valesti (näiteks sisestab suvalise teksti seal, kus oodatakse täisarvu või sisestab Pykkari algseks positsiooniks sellise, mis ei jää põranda piiridesse). Ebasobiva sisendi korral tuleb küsimist korrata niikaua, kuni sisend sobib.
+
+Näiteks, kui kasutaja ja programmi vahel kujuneb selline dialoog:
+
+.. sourcecode:: none
+
+    Sisesta maailma laius: 10
+    Sisesta maailma kõrgus: asdf
+    Vigane sisend! Proovime uuesti ...
+    Sisesta maailma kõrgus: 7
+    Sisesta Pykkari positsiooni x-koordinaat: 3
+    Sisesta Pykkari positsiooni y-koordinaat: 23
+    Liiga suur! Proovime uuesti ...
+    Sisesta Pykkari positsiooni y-koordinaat: 0
+    Liiga väike! Proovime uuesti ... 
+    Sisesta Pykkari positsiooni y-koordinaat: 2
+    Sisesta Pykkari suund: S
+
+Siis peaks ilmuma kõigepealt selline pilt:
+
+.. image:: images/poranda_keskkoht_algus.png
+
+ja Pykkari tegutsemise lõpuks peaks maailm olema selline (Pykkari suund ja asukoht pole tähtis):
+
+.. image:: images/poranda_keskkoht_lopp.png
+
+.. admonition:: NB!
+
+    Kuigi ülesande tekst ühegi alaprogrammi (st funktsiooni) kasutamist ei nõua, on siin palju võimalusi funktsioonide abil koodi selgemaks muuta. Kui märkad oma lahenduses korduvaid sarnaseid koodiplokke, või kui mingi osa koodist läheb väga keeruliseks, siis proovi funktsioonide abil asja parandada.
+    
+.. hint::
+
+    Ülesande kaks poolt (maailma moodustamine ja selle keskkoha värvimine) on üksteisest kaunis sõltumatud. Kui sa kohe ei oska kasutaja sisendi põhjal maailma moodustada, siis proovi kõigepealt lahendada ülesanne mingi fikseeritud maailmaga.
+
+.. hint::
+
+    ``create_world`` võtab ette lihtsalt ühe sõne ja sõnet on võimalik dünaamiliselt kokku panna.
+    
+.. hint::
+
+    .. sourcecode:: py3
+    
+        def küsi_kasutajalt_täisarv(küsimus, min, max):
+            ...
+            ... while ...
+            ... input ...
+            ... try ...
+            ... if ....
+            ... 
+            
+            return ...
+
+.. hint::
+
+    :ref:`Erindite püüdmine<erindite_pyydmine>`.
+
+.. hint::
+
+    Kui keskkoha värvimine tundub alguses raske, siis lase kõigepealt Pykkaril lihtsalt tuvastada põranda laius ja kõrgus. 
+    
