@@ -714,6 +714,10 @@ ja Pykkari tegutsemise lõpuks peaks maailm olema selline (Pykkari suund ja asuk
 
     Kuigi ülesande tekst ühegi alaprogrammi (st funktsiooni) kasutamist ei nõua, on siin palju võimalusi funktsioonide abil koodi selgemaks muuta. Kui märkad oma lahenduses korduvaid sarnaseid koodiplokke, või kui mingi osa koodist läheb väga keeruliseks, siis proovi funktsioonide abil asja parandada.
     
+.. admonition:: Ülesande lisa
+
+    Proovi lahendada ülesanne nii, et Pykkar ei kasuta kasutaja poolt sisestatud infot maailma mõõtmete kohta, vaid üritab põranda mõõtmed iseseisvalt tuvastada. 
+
 .. hint::
 
     Ülesande kaks poolt (maailma moodustamine ja selle keskkoha värvimine) on üksteisest kaunis sõltumatud. Kui sa kohe ei oska kasutaja sisendi põhjal maailma moodustada, siis proovi kõigepealt lahendada ülesanne mingi fikseeritud maailmaga.
