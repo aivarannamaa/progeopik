@@ -374,7 +374,7 @@ Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kaune
             C:\kaustanimi\failinimi.txt
 
             
-    * Kui tekstis on vaja kasutada palju erisümboleid, siis võib tulemus muutuda langkriipsude tõttu väga kirjuks. Seetõttu on Pythonis veel üks sõne kirjapaneku viis -- kolmekordsete ülakomade või jutumärkide vahele. Sel juhul ei ole langkriipsul literaali sees enam mingit eritähendust -- iga täht ja sümbol seisab iseenda eest. Selle esitusviisiga saab teksti sees kasutada ka tavalist reavahetust:
+    * Kui tekstis on vaja kasutada palju reavahetusi, ülakomasid või jutumärke, siis võib tulemus muutuda kõigi nende ``\n``-de, ``\'``-d või ``\"``-de tõttu väga kirjuks. Seetõttu on Pythonis veel üks sõne kirjapaneku viis -- kolmekordsete ülakomade või jutumärkide vahel saab vabalt kasutada tavalisi reavahetusi, ülakomasid ja jutumärke:
     
         .. sourcecode:: py3
         
