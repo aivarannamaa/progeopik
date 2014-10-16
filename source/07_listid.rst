@@ -98,7 +98,7 @@ Järgnev tabel demonstreerib olulisimaid järjendioperatsioone:
 NB! Nagu viimastest ridadest selgub, võib järjendis olla korduvaid väärtusi ning elementide järjekord on oluline.
     
 Harjutus. Järjendiavaldiste kasutamine
-----------------------------------------
+--------------------------------------
 Olgu meil defineeritud järgnevad järjendimuutujad:
 
 * ``a = [2, 3, 1, 5]``
@@ -108,7 +108,7 @@ Koosta muutujaid ``a`` ja ``b`` ning järjendioperatsioone kasutades avaldis, mi
 
 
 Järjendi elementide küsimine e indekseerimine
-----------------------------------------------
+---------------------------------------------
 Nagu esimeses näites juba mainitud, võimaldab Python küsida järjendimuutujas mingil konkreetsel positsioonil olevat elementi, kirjutades järjendi nime taga olevatesse nurksulgudesse soovitud elemendi positsiooni e **indeksi** :
 
 .. sourcecode:: py3
@@ -191,7 +191,7 @@ Sellise töötlemise juures kasutatakse enamasti abimuutujat, mida nimetatakse *
 Tegelikult on Pythonisse juba sisse ehitatud mitmeid funktsioone, mis koguvad etteantud järjendi kohta mingit infot. Näiteks funktsioon ``max`` teeb sama, mis meie eelmise näite funktsioon. Selles peatükis aga üritame taolisi funktsioone ise leiutada, et õppida järjendeid ning ``for``-tsüklit paremini tundma.
 
 Harjutus. Elementide summa
-----------------------------
+--------------------------
 Kirjuta funktsioon ``elementide_summa``, mis võtab argumendiks arvujärjendi ning tagastab kõigi elementide summa. (Selle jaoks on küll Pythonis juba olemas funktsioon ``sum``, aga ära praegu seda kasuta.)
 
 NB! Erinevalt suurima elemendi leidmise funktsioonist peaks summa funktsioon töötama ka tühja järjendiga, st ``elementide_summa([])`` peaks andma vastuseks ``0``.
@@ -204,7 +204,7 @@ Lõpuks kontrolli, kas sinu funktsioon annab samade järjendite puhul sama tulem
     
 
 Harjutus. Positiivsed vs negatiivsed
----------------------------------------
+------------------------------------
 Kirjuta funktsioon ``negatiivsete_summa_suurem``, mis võtab argumendiks arvujärjendi ja tagastab ``True``, kui järjendis olevate negatiivsete arvude summa on suurem kui järjendis olevate positiivsete arvude summa. Vastasel juhul tuleb tagastada ``False``. 
 
 .. hint::
@@ -241,7 +241,7 @@ Seda näidet kommenteerides võiks lihtsustatult öelda, et:
 Tegelikult ei ole muutujas ``f`` siiski mitte järjend, vaid natuke keerulisem väärtus. Õnneks oskab ``for``-tsükkel seda väärtust käsitleda justkui järjendit, seetõttu ei pea me muretsema, kuidas need faili read tegelikult on esitatud.
 
 Harjutus. Temperatuuride lugemine failist
--------------------------------------------
+-----------------------------------------
 Kirjuta programm, mis loeb tekstifailist ükshaaval Celsiuse skaalal esitatud temperatuure (iga arv on antud eraldi real) ning väljastab need ekraanile koos vastavate väärtustega Fahrenheiti skaalal.
 
 .. hint:: 
@@ -286,7 +286,7 @@ Nüüd peaks olema selge, miks meie ``for``-tsükli näide sedasi käitus -- ``r
 
 
 Harjutus. Kilpkonn tsüklis
-----------------------------
+--------------------------
 Proovi ennustada, mida joonistab järgmine programm:
 
 .. sourcecode:: python
@@ -340,11 +340,11 @@ Kommentaarid:
 * kolme argumendi puhul näitab kolmas argument väärtuste kasvamise sammu.
 
 Harjutus. Kolmega jaguvad arvud
----------------------------------
+-------------------------------
 Kirjuta ``for``-tsükkel koos sobiva ``range`` variandiga, mis kuvab ekraanile kõik 3-ga jaguvad arvud vahemikus 10 kuni 100.
 
 Harjutus. ``range`` avaldis
------------------------------
+---------------------------
 Kirjuta avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
  ``[100, 93, 86, 79, 72, 65, 58, 51, 44, 37, 30, 23, 16]``
@@ -353,7 +353,7 @@ Kirjuta avaldis kujul ``list(range(...))``, mis tagastaks järgmise järjendi:
 
 
 ``for`` vs ``while``
-=====================
+====================
 Tegelikult saaks ``for``-tsükli asemel alati kasutada ka ``while``-tsüklikt, aga tulemus poleks alati nii selge. Võrdleme omavahel samaväärseid ``while``- ja ``for``-tsükleid:
 
 +----------------------------------+-----------------------------------+
@@ -422,7 +422,7 @@ Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
     'CY2X44;3;66;T'
 
 Harjutus. Kuupäeva lahtiharutamine
---------------------------------------
+----------------------------------
 Kirjuta funktsioon ``kuu``, mis võtab argumendiks sõne kujul *<päev>. <kuu> <aasta>* (nt ``'24. veebruar 1918'``) ning tagastab vastava kuu nime.
 
 Negatiivsed indeksid
@@ -444,7 +444,7 @@ Järjendeid (ja sõnesid) saab indekseerida ka negatiivsete indeksitega, sel juh
 Avaldis ``järjend[-0]`` tähistab siiski esimest elementi, sest *-0 = 0*.
 
 Järjendite viilutamine
-------------------------
+----------------------
 .. todo::
 
     tee skeem, kus indeksid asuvad tähtede vahel. vt. http://www.openbookproject.net/thinkcs/python/english2e/ch07.html#string-slices
@@ -487,14 +487,14 @@ Proovi läbi järgnev näide, et sa tunneksid saadud veateate edaspidi ära:
 
 
 Harjutus. Sõne viilutamine
-----------------------------
+--------------------------
 Kirjuta funktsioon ``kaja``, mis võtab argumendiks sõne ning tagastab selle sõne 3 viimast tähte. Kui sõnes on vähem kui 3 tähte, siis tagastada terve sõne.
 
 
 
 Ennikud
 =======
-Ennik (ingl *tuple*) on Pythoni andmetüüp, mis on järjendiga väga sarnane. Ainus sisuline erinevus on see, et ennikut ei saa muuta -- st ennikusse ei saa ``append`` meetodiga elemente lisada ega olemasolevaid elemente muuta. Ennikud kirjutatakse ümarsulgude vahele, aga nende indekseerimiseks kasutatakse siiski nurksulge:
+Ennik (ingl *tuple*) on Pythoni andmetüüp, mis on järjendiga väga sarnane. Ainus oluline tehniline erinevus on see, et ennikut ei saa muuta (listide muutmisest on juttu eraldi peatükis). Ennikud kirjutatakse ümarsulgude vahele, aga nende indekseerimiseks kasutatakse siiski nurksulge:
 
 .. sourcecode:: py3
 
@@ -528,8 +528,10 @@ Ennikuid kasutatakse tihti siis, kui funktsioonist on vaja tagastada mitu väär
         f = open(failinimi)
         for rida in f:
             jupid = rida.split()
-            nimed.append(jupid[0])
-            sünniaastad.append(jupid[1])
+            nimi = jupid[0]
+            sünniaasta = jupid[1]
+            nimed = nimed + [nimi]
+            sünniaastad = sünniaastad + [sünniaasta]
         
         f.close()
         
@@ -721,7 +723,7 @@ Tegelikkuses ei lähe paroolide murdmine siiski nii libedalt -- esiteks piirasim
 
 
 Kilpkonna keel ja interpretaator
----------------------------------
+--------------------------------
 Kilpkonnaga Pythoni käsureal joonistamine on üpris lõbus, kuid muutub pikkade käskude tõttu kähku tüütuks. Arvutid on aga just mõeldud tüütute ülesannete automatiseerimiseks ja lihtsustamiseks. See motiveerib ka järgnevat ülesannet.
 
 Antud on fail, kus igal real on kilpkonna käsk – täht ja selle järel number, näiteks:
