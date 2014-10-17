@@ -1,3 +1,5 @@
+.. _listid2:
+
 *********************************
 8. Järjendid ja ``for``-tsükkel 2
 *********************************
@@ -42,7 +44,7 @@ Salvestades täiendatud järjendi samasse muutujasse, saavutame järjendi kasvam
     >>> a = a + [2]
     >>> a
     [1, 2, 6, 2]
-    >>> a += [5]   # nagu arvude puhulm saab ka siin kasutada liitmisega omistamist
+    >>> a += [5]   # nagu arvude puhul, saab ka siin kasutada liitmisega omistamist
     >>> a
     [1, 2, 6, 2, 5]
  
