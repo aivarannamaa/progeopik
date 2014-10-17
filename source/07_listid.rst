@@ -1,11 +1,8 @@
-*******************************
-7. Järjendid ja ``for``-tsükkel
-*******************************
+*********************************
+7. Järjendid ja ``for``-tsükkel 1
+*********************************
 
 .. todo::
-
-    * Näita listide "kasvatamist" (``a = a + [x]``)
-    * See nõuab väikseid muudatusi ka järgmises peatükis.
 
     * Ül: Kirjuta funkts on_palindroom näidete järgi
     * Käsurea argumendid (nt. käsurealt antud arvude keskmine)
@@ -494,26 +491,29 @@ Kirjuta funktsioon ``kaja``, mis võtab argumendiks sõne ning tagastab selle s�
 
 Ennikud
 =======
-Ennik (ingl *tuple*) on Pythoni andmetüüp, mis on järjendiga väga sarnane. Ainus oluline tehniline erinevus on see, et ennikut ei saa muuta (listide muutmisest on juttu eraldi peatükis). Ennikud kirjutatakse ümarsulgude vahele, aga nende indekseerimiseks kasutatakse siiski nurksulge:
+Ennik (ingl *tuple*) on Pythoni andmetüüp, mis on järjendiga väga sarnane. Enniku elemendid kirjutatakse ümarsulgude vahele, aga nende indekseerimiseks kasutatakse siiski nurksulge:
 
 .. sourcecode:: py3
+    :emphasize-lines: 1, 5 
 
-    punkt = (3, 8)
+    punkt = (3, 8) # kahe elemendiga ennik e paar
     print("Punkti x-koordinaat on:", punkt[0])
     print("Punkti y-koordinaat on:", punkt[1])
     
-    andmed = ("Peeter", "Paun", 1967)
+    andmed = ("Peeter", "Paun", 1967) # kolme elemendiga ennik e kolmik
     print("Eesnimi:", andmed[0])
     print("Perenimi:", andmed[1])
     print("Sünniaasta:", andmed[2])
 
-Tegelikult saaksime alati ennikute asemel kasutada ka järjendeid, aga hea tava on kasutada järjendeid vaid neil juhtudel, kus kogumi elemendid on kõik ühte tüüpi.
-
-Ennikuid võiks eelistada siis, kui meil on mingi kindel komplekt elemente, mida me tahame koos käsitleda, kusjuures iga element võib olla erinevat tüüpi.
+Tegelikult saaksime siin ennikute asemel kasutada ka järjendeid, aga hea tava on kasutada järjendeid vaid neil juhtudel, kus kogumi elemendid on kõik ühte tüüpi. Kui meil on mingi kindel komplekt elemente, mida me tahame koos käsitleda, ja mis võivad olla erinevat tüüpi, siis on parem paigutada need ennikusse. 
 
 .. note::
 
     Mingit 3-elemendilist kogumit nimetatakse tavaliselt *kolmikuks*, 4-elemendilist *nelikuks* jne. Enniku nimi on tulnud selle skeemi üldistamisest: *n*-elemendilist kogumit nimetatakse *ennikuks*.
+
+.. note::
+
+    Kui hakkame rääkima :ref:`listide muteerimisest<listide-muteerimine>`, siis näeme veel ühte erinevust listide ja ennikute vahel: liste on võimalik muteerida, ennikuid mitte.
 
 Mitme väärtuse tagastamine funktsioonist
 ----------------------------------------
