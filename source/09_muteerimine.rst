@@ -230,27 +230,6 @@ Kokkuvõttes: omistamisel salvestatakse muutujasse ainult viit paremal pool näi
 Loe läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`.
 
 
-2. Lausegeneraator
-------------------
-* Defineeri funktsioon ``lause``, mis **võtab argumendiks** 3 sõna (sõnena) ning **tagastab** neist kombineeritud lause (muuhulgas lisab tühikud ja punkti).
-
-* Loo 3 tekstifaili -- ``alus.txt``, ``oeldis.txt`` ning ``sihitis.txt``. Kirjuta igasse neist 10 sõna eraldi ridadele.
-
-    * ``alus.txt`` - peaks sisaldama nimisõnu või nimesid nimetavas käändes (nt `Margus`).
-    * ``oeldis.txt`` - oleviku vormis, 3. isikus tegusõnad (nt `õpetab`).
-    * ``sihitis.txt`` - nimisõna osastavas käändes (nt `tudengeid`).
-
-* Kirjuta funktsioon, mis võtab argumendiks failinime ning tagastab vastava faili read järjendina (reavahetuse sümbolid tuleks eemaldada meetodiga ``strip``).
-
-* Kirjuta programm, mis:
-    
-    #. loeb mainitud kolme faili sisud järjenditesse (``alused``, ``oeldised``, ``sihitised``), kasutades selleks eelmises punktis defineeritud funktsiooni;
-    #. genereerib 3 juhuslikku täisarvu vahemikust 0..9;
-    #. võtab järjendite vastavatelt positsioonidelt aluse, öeldise ja sihitise ning koostab neist lause kasutades eelnevalt defineeritud funktsiooni ``lause``;
-    #. kuvab moodustatud lause ekraanile.
-
-* Muuda programmi selliselt, et see genereeriks ja väljastaks (lõpmatus tsüklis) iga ENTER-i vajutuse peale uue lause.
-
 
 3. Palkade analüüs
 ------------------
@@ -260,16 +239,6 @@ Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real
 * keskmise palga;
 * keskmisest palgast rohkem teenijate arvu;
 * keskmised vanused eraldi neile, kes teenivad keskmisest palgast vähem (või samapalju), ning neile, kes teenivad keskmisest palgast rohkem.
-
-4. Eesti-inglise sõnaraamat
----------------------------
-Lae alla eesti-inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
-
-Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida ingliskeelse sõna eestikeelset vastet (või vastupidi – võid ise valida).
-
-.. note::
-    
-    Antud sõnastiku fail on veidi modifitseeritud variant Eesti Keele Instituudi poolt jagatavast failist (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt).
 
 5. minu_shuffle
 ---------------

@@ -565,49 +565,6 @@ Näite lõpp näitab, et enniku komponente saab omistamise süntaksi abil salves
     See näide demonstreerib veel seda, et teatud juhtudel on lubatud enniku ümbert sulud ära jätta.
 
 
-*Vahepala: sõnede ja väljundi formaatimine*
-===========================================
-Seni oleme sõnede ja teiste andmetüüpide kombineerimisel kasutanud komponentide ühendamiseks operatsiooni ``+`` ning teisendamiseks funktsiooni ``str``. Nüüd vaatame alternatiivset viisi selle toimingu tegemiseks.
-
-Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatele sõnekujudele. Selle meetodi põhiolemust demonstreerib järgnev käsurea näide:
-
-.. sourcecode:: py3
-
-    >>> eesnimi = "Kalle"
-    >>> perenimi = "Kala"
-    >>> vanus = 25
-    >>> 'Klient: {0} {1}, vanus: {2}'.format(eesnimi, perenimi, vanus)
-    'Klient: Kalle Kala, vanus: 25'
-
-Meetod ``format`` konstrueerib tulemuse (uue sõne) mitmest komponendist: esimene komponent on lähtesõne, mis sisaldab muuhulgas loogeliste sulgudega tähistatud "pesasid" (ingl `placeholders`); ülejäänud komponendid (st meetodi argumendid) on suvalised väärtused, mis kopeeritakse vastavatesse pesadesse.
-
-Pesa kirjeldus on kõige lihtsamal juhul täisarv, mis näitab, kui mitmes argumentväärtus tuleb antud pesasse panna. Seejuures tuleb arvestada, et loendamist alustatakse 0-st. 
-
-Pesa kirjeldusse saab märkida ka lisatingimusi andmete formaadi kohta:
-
-.. sourcecode:: py3
-    
-    pikkused = [173.235235, 33.0, 167.333]
-
-    for i in range(len(pikkused)):
-        pikkus_sõnena = "{0}. pikkus on {1:>6.2f}cm".format(i, pikkused[i])
-        print(pikkus_sõnena)
-
-Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust.
-
-* Koolonist vasakul on pesa järjekorranumber.
-* ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit.
-* ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
-    
-.. note::
-
-    | ``format`` meetodi teiste võimalustega saab tutvuda aadressil:    
-    | http://docs.python.org/3/library/string.html#format-examples
-
-
-
-
-
 
 Ülesanded
 =========

@@ -4,17 +4,18 @@
 8. Järjendid ja ``for``-tsükkel 2
 *********************************
 
-Selle peatüki põhiteema on järjendite elementhaaval koostamine ning analüüsimine. Lisaks vaatame üle mõned uued skeemid järjendite kasutamiseks.
+Selles peatükis me uusi Pythoni konstruktsioone sisse ei too, vaid uurime erinevaid võimalusi juba tuttavate teemade kombineerimiseks ja kasutamiseks.
 
+TODO: map, filter, reduce, zip, keskmine, mediaan, standardhälve
 
 
 Järjendite koostamine elementhaaval
 ===================================
-Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku pole alati võimalik kõiki elemente korraga välja tuua. Appi tuleb järjendite liitmine:
+Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku pole alati võimalik kõiki elemente korraga välja tuua. Appi tuleb järjendite liitmine. Tuletame kõigepealt meelde, mida see tähendas:
 
 .. sourcecode:: py
 
-    >>> [1 ,2, 3] + [6, 4, 9]
+    >>> [1, 2, 3] + [6, 4, 9]
     [1, 2, 3, 6, 4, 9]
     
     >>> [1] + [2] + [3]
@@ -194,8 +195,29 @@ Harjutus. Järjendite ühisosa
 Kirjuta funktsioon ``ühisosa``, mis võtab argumendiks kaks järjendit ning tagastab **uue** järjendi, mis sisaldab (ühekordselt) neid väärtusi, mis esinevad mõlemas järjendis.
 
 
+TODO: eelnevate kasutamine listdir-iga
+
+TODO: readlines, splitlines, list(f) [need vist pigem sobiks eelmisse]
+
+
+Otsimine
+========
+
+TODO: leidub / ei leidu, indeksi tagastamine
+
+
+
 Järjendite kasutamine "andmebaasina"
 ====================================
+
+TODO: kas seda on üldse vaja ??????????????????????????????????
+Sõnastiku ülesanne ajab asja ära
+
+Võibolla peaks siin lihtsalt tutvustama zip operatsioone .........
+
+Näide, kus eri failides on tudengite nimed ja hinded (nt. anonüümsuse saavutamiseks)
+2. näide juhuslikust paaritamisest
+
 Järgnevates näidetes kasutame me mitut järjendit, mille elemendid on omavahel kuidagi seotud -- nt järjendi ``a`` element positsioonil ``16`` (st. ``a[16]``) on seotud järjendi ``b`` samal positsioonil oleva elemendiga (st ``b[16]``). Uuri ja katseta järgnevat näidet:
 
 .. sourcecode:: py3
@@ -255,4 +277,127 @@ Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma 
 
 Topelttsükkel
 =============
+TODO: pixboard
 
+
+
+
+
+Sõnede algoritmid
+=================
+
+Palindroom
+
+Anagrammid
+
+http://www.greenteapress.com/thinkpython/html/thinkpython010.html
+
+*Vahepala: sõnede ja väljundi formaatimine*
+===========================================
+Seni oleme sõnede ja teiste andmetüüpide kombineerimisel kasutanud komponentide ühendamiseks operatsiooni ``+`` ning teisendamiseks funktsiooni ``str``. Nüüd vaatame alternatiivset viisi selle toimingu tegemiseks.
+
+Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatele sõnekujudele. Selle meetodi põhiolemust demonstreerib järgnev käsurea näide:
+
+.. sourcecode:: py3
+
+    >>> eesnimi = "Kalle"
+    >>> perenimi = "Kala"
+    >>> vanus = 25
+    >>> 'Klient: {0} {1}, vanus: {2}'.format(eesnimi, perenimi, vanus)
+    'Klient: Kalle Kala, vanus: 25'
+
+Meetod ``format`` konstrueerib tulemuse (uue sõne) mitmest komponendist: esimene komponent on lähtesõne, mis sisaldab muuhulgas loogeliste sulgudega tähistatud "pesasid" (ingl `placeholders`); ülejäänud komponendid (st meetodi argumendid) on suvalised väärtused, mis kopeeritakse vastavatesse pesadesse.
+
+Pesa kirjeldus on kõige lihtsamal juhul täisarv, mis näitab, kui mitmes argumentväärtus tuleb antud pesasse panna. Seejuures tuleb arvestada, et loendamist alustatakse 0-st. 
+
+Pesa kirjeldusse saab märkida ka lisatingimusi andmete formaadi kohta:
+
+.. sourcecode:: py3
+    
+    pikkused = [173.235235, 33.0, 167.333]
+
+    for i in range(len(pikkused)):
+        pikkus_sõnena = "{0}. pikkus on {1:>6.2f}cm".format(i, pikkused[i])
+        print(pikkus_sõnena)
+
+Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust.
+
+* Koolonist vasakul on pesa järjekorranumber.
+* ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit.
+* ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
+    
+.. note::
+
+    | ``format`` meetodi teiste võimalustega saab tutvuda aadressil:    
+    | http://docs.python.org/3/library/string.html#format-examples
+
+
+
+
+
+
+
+
+Ülesanded
+=========
+
+
+Statistika failist
+
+nt. loenda ilma e-deta sõnu, 
+!!! sõnad, mille tähed on alfabeetilises järjekorras 
+
+1. Veergude eraldamine
+----------------------
+CSV failist teatud veergude kirjutamine teise faili
+
+
+2. Lausegeneraator
+------------------
+* Defineeri funktsioon ``lause``, mis **võtab argumendiks** 3 sõna (sõnena) ning **tagastab** neist kombineeritud lause (muuhulgas lisab tühikud ja punkti).
+
+* Loo 3 tekstifaili -- ``alus.txt``, ``oeldis.txt`` ning ``sihitis.txt``. Kirjuta igasse neist 10 sõna eraldi ridadele.
+
+    * ``alus.txt`` - peaks sisaldama nimisõnu või nimesid nimetavas käändes (nt `Margus`).
+    * ``oeldis.txt`` - oleviku vormis, 3. isikus tegusõnad (nt `õpetab`).
+    * ``sihitis.txt`` - nimisõna osastavas käändes (nt `tudengeid`).
+
+* Kirjuta funktsioon, mis võtab argumendiks failinime ning tagastab vastava faili read järjendina (reavahetuse sümbolid tuleks eemaldada meetodiga ``strip``).
+
+* Kirjuta programm, mis:
+    
+    #. loeb mainitud kolme faili sisud järjenditesse (``alused``, ``oeldised``, ``sihitised``), kasutades selleks eelmises punktis defineeritud funktsiooni;
+    #. genereerib 3 juhuslikku täisarvu vahemikust 0..9;
+    #. võtab järjendite vastavatelt positsioonidelt aluse, öeldise ja sihitise ning koostab neist lause kasutades eelnevalt defineeritud funktsiooni ``lause``;
+    #. kuvab moodustatud lause ekraanile.
+
+* Muuda programmi selliselt, et see genereeriks ja väljastaks (lõpmatus tsüklis) iga ENTER-i vajutuse peale uue lause.
+
+4. Eesti-inglise sõnaraamat
+---------------------------
+Lae alla eesti-inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
+
+Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida ingliskeelse sõna eestikeelset vastet (või vastupidi -- võid ise valida).
+
+.. note::
+    
+    Antud sõnastiku fail on veidi modifitseeritud variant Eesti Keele Instituudi poolt jagatavast failist (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt).
+
+5. funktsioon is-sorted, has duplicates, remove duplicates
+----------------------------------------------------------
+TODO
+
+6. kiire otsing sõnastikust
+---------------------------
+
+
+
+EULER
+-----
+https://projecteuler.net/problem=4
+
+Lisalugemine
+============
+Map, filter, reduce
+
+List comprehension
