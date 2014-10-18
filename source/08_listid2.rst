@@ -620,11 +620,12 @@ Kirjuta programm, mis küsib kasutajalt sõna, ning väljastab kõik selle anagr
 
     Leia ja väljasta kõik mainitud failis leiduvad anagrammide komplektid. 
 
-
-
 .. todo::
+
+    Joonistamise ülesanne
 
     Lisalugemine
     Map, filter, reduce
 
     List comprehension
+    
