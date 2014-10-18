@@ -716,7 +716,7 @@ Selle funktsiooni kasutamiseks kirjutame teise argumendi kohale soovitud tingimu
 
 Suurepärane! Kuidas Pythoni loojad pole selle peale tulnud, et selline võimalus Pythonisse sisse kirjutada?
 
-Tegelikult on selline funktsioon Pythonis olemas ja selle nimi on ... ``filter``! See käitub pisut meie funktsioonist erinevalt, nimelt võtab ta argumendid vastupidises järjekorras (kõigepealt tingimusfunktsioon ja siis järjend), ning ta ei tagasta päris järjendit, vaid ühe müstilise *filter*-objekti. Õnneks saab seda objekti ``list`` funktsiooniga järjendiks teisendada:
+Tegelikult on selline funktsioon Pythonis olemas ja selle nimi on ... ``filter``! See käitub meie funktsioonist veidi erinevalt, nimelt võtab ta argumendid vastupidises järjekorras (kõigepealt tingimusfunktsioon ja siis järjend), ning ta ei tagasta päris järjendit, vaid ühe müstilise *filter*-objekti. Õnneks saab seda objekti ``list`` funktsiooniga järjendiks teisendada:
 
 .. sourcecode:: py3
 
