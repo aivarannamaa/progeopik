@@ -1,10 +1,9 @@
-*********************************
-7. Järjendid ja ``for``-tsükkel 1
-*********************************
+*******************************
+7. Järjendid ja ``for``-tsükkel
+*******************************
 
 .. todo::
 
-    * Ül: Kirjuta funkts on_palindroom näidete järgi
     * Käsurea argumendid (nt. käsurealt antud arvude keskmine)
     * mediaani arvutamine
     * Lisalugemiseks statistika?
@@ -157,6 +156,9 @@ Nagu näed, sarnaneb ``for``-tsükkel kuju poolest ``while``-tsükliga -- esimes
 .. admonition:: Miks "for"?
 
     Mõnedes programmeerimiskeeltes nimetatakse `for`-tsüklit hoopis *for-each*-tsükliks, sest tsükli keha täidetakse päises näidatud järjendi iga elemendi jaoks uuesti. Pythonis on otsustatud lühema nime "for" kasuks.
+
+
+.. _jarjendite-tootlemine:
 
 Järjendite töötlemine
 =====================
@@ -409,7 +411,33 @@ Tihti on tarvis teha mingi sõne pisut suuremateks juppideks kui üksikud tähed
 
 Kui ``split``-i kasutada ilma argumentideta, siis tehakse lõikamine tühikute, tabulaatorite ja reavahetuste kohalt. Kui anda ette mingi muu sümbol, siis lõigatakse sõne juppideks just selle sümboli kohalt. 
 
-Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
+.. note::
+
+    Kui meil on vaja mitmerealisest sõnest saada ridade listi, siis sobib hästi ``split`` koos argumendiga ``\n``:
+
+    .. sourcecode:: py3
+    
+        >>> "Esimene rida\nTeine rida\nKolmas rida".split("\n")
+        ['Esimene rida', 'Teine rida', 'Kolmas rida']
+
+    Kui ka viimase rea lõpus on reavahetuse sümbol, siis pole tulemus võibolla päris see, mida soovid:
+     
+    .. sourcecode:: py3
+    
+        >>> "Esimene rida\nTeine rida\nKolmas rida\n".split("\n")
+        ['Esimene rida', 'Teine rida', 'Kolmas rida', '']
+
+    Appi tuleb meetod ``splitlines``, mis käsitleb ``\n``-i kui **rea lõpu** sümbolit, mitte kui **reavahetuse** sümbolit:
+    
+    .. sourcecode:: py3
+    
+        >>> "Esimene rida\nTeine rida\nKolmas rida".splitlines()
+        ['Esimene rida', 'Teine rida', 'Kolmas rida']
+        >>> "Esimene rida\nTeine rida\nKolmas rida\n".splitlines()
+        ['Esimene rida', 'Teine rida', 'Kolmas rida']    
+
+
+Meetodi ``split`` "vastand" on meetod ``join``:
 
 .. sourcecode:: py3
 
@@ -417,6 +445,8 @@ Sama operatsiooni saab "ümber pöörata" meetodiga ``join``:
     'Tere hommikust'
     >>> ';'.join(['CY2X44', '3', '66', 'T'])
     'CY2X44;3;66;T'
+
+
 
 Harjutus. Kuupäeva lahtiharutamine
 ----------------------------------
@@ -563,6 +593,48 @@ Näite lõpp näitab, et enniku komponente saab omistamise süntaksi abil salves
         print(y)
         
     See näide demonstreerib veel seda, et teatud juhtudel on lubatud enniku ümbert sulud ära jätta.
+
+*Vahepala: sõnede ja väljundi formaatimine*
+===========================================
+Seni oleme sõnede ja teiste andmetüüpide kombineerimisel kasutanud komponentide ühendamiseks operatsiooni ``+`` ning teisendamiseks funktsiooni ``str``. Nüüd vaatame alternatiivset viisi selle toimingu tegemiseks.
+
+Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatele sõnekujudele. Selle meetodi põhiolemust demonstreerib järgnev käsurea näide:
+
+.. sourcecode:: py3
+
+    >>> eesnimi = "Kalle"
+    >>> perenimi = "Kala"
+    >>> vanus = 25
+    >>> 'Klient: {0} {1}, vanus: {2}'.format(eesnimi, perenimi, vanus)
+    'Klient: Kalle Kala, vanus: 25'
+
+Meetod ``format`` konstrueerib tulemuse (uue sõne) mitmest komponendist: esimene komponent on lähtesõne, mis sisaldab muuhulgas loogeliste sulgudega tähistatud "pesasid" (ingl `placeholders`); ülejäänud komponendid (st meetodi argumendid) on suvalised väärtused, mis kopeeritakse vastavatesse pesadesse.
+
+Pesa kirjeldus on kõige lihtsamal juhul täisarv, mis näitab, kui mitmes argumentväärtus tuleb antud pesasse panna. Seejuures tuleb arvestada, et loendamist alustatakse 0-st. 
+
+Pesa kirjeldusse saab märkida ka lisatingimusi andmete formaadi kohta:
+
+.. sourcecode:: py3
+    
+    pikkused = [173.235235, 33.0, 167.333]
+
+    for i in range(len(pikkused)):
+        pikkus_sõnena = "{0}. pikkus on {1:>6.2f}cm".format(i, pikkused[i])
+        print(pikkus_sõnena)
+
+Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust.
+
+* Koolonist vasakul on pesa järjekorranumber.
+* ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit.
+* ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
+    
+.. note::
+
+    | ``format`` meetodi teiste võimalustega saab tutvuda aadressil:    
+    | http://docs.python.org/3/library/string.html#format-examples
+
+
+
 
 
 

@@ -1,16 +1,176 @@
 .. _listid2:
 
-*********************************
-8. Järjendid ja ``for``-tsükkel 2
-*********************************
+************************
+8. Järjendite töötlemine
+************************
 
-Selles peatükis me uusi Pythoni konstruktsioone sisse ei too, vaid uurime erinevaid võimalusi juba tuttavate teemade kombineerimiseks ja kasutamiseks.
+Selles peatükis me uusi Pythoni keelekonstruktsioone sisse ei too, vaid uurime erinevaid võimalusi juba tuttavate teemade kombineerimiseks ja kasutamiseks.
 
-TODO: map, filter, reduce, zip, keskmine, mediaan, standardhälve
+Järjendid ja failid
+===================
+Enne peatüki põhiosa juurde asumist vaatame üle paar kasulikku failidega seotud funktsiooni, mis annavad tulemuseks listi.
+
+Meetod ``readlines``
+--------------------
+Eespool oleme juba vaatanud failimeetodeid ``read`` ja ``readline``. Nüüd on paras aeg tutvuda meetodiga ``readlines``.
+
+Koosta fail *tekst.txt*, mille sisu on järgmine:
+
+.. sourcecode:: none
+
+    Esimene rida
+    Teine rida
+    Kolmas rida
+
+Nüüd käivita samas kaustas järgnev programm:
+
+.. sourcecode:: py3
+
+    f = open("tekst.txt")
+    read = f.readlines()
+    f.close() # faili ei lähe enam vaja
+    
+    print(read)
+
+Loodetavasti nägid, et muutujasse ``read`` ilmus list, mille iga element on üks rida näidatud failist.
+
+Funktsioon ``os.listdir``
+-------------------------
+Moodulis ``os`` asuv funktsioon ``listdir`` tagastab listi, mille elemendid on näidatud kaustas asuvate failide ja alamkaustade nimed:
+
+.. sourcecode:: py3
+
+    >>> import os
+    
+    >>> os.listdir("C:\\Users\\Aivar\\Desktop")
+    ['desktop.ini', 'demo.py', 'SML_modules.pdf', 'thonny-0.1.3.exe', 'IMG_23887.jpg']
+    
+    >>> os.listdir(".") 
+    ['08_listid2.rst', 'temp.py', 'sonad.txt']
+
+Esimesel korral andsin kausta ette *absoluutse teega*. Siin tuleb panna tähele, et langjooned kausta nimede vahel on kirjutatud topelt, kuna Pythoni sõne süntaks seda nõuab. 
+
+Teisel korral kasutasin kausta tee asemel punkti, mis tähendab, et tuleb tagastada *jooksva kausta* failid ja alamkaustad. Jooksev kaust on harilikult see kaust, kus asub käivitatav skriptifail. 
+
+Järjendist otsimine
+===================
+Loodetavasti mäletad, et kontrollimaks, kas järjendis leidub mingi kindel element, piisab operaatorist ``in``:
+
+.. sourcecode:: py3
+
+    >>> 4 in [2,5,3,6,3,4,1,4]
+    True
+    
+    >>> "Nuustaku" in ["Tartu", "Tallinn", "Pärnu", "Narva"]
+    False
+
+Kui tahame teada, mitu korda mingi element esineb, siis seda saab teha meetodiga ``count``:
+
+.. sourcecode:: py3
+
+    >>> arvud = [2,5,3,6,3,4,1,4]
+    >>> arvud.count(4)
+    2
+    >>> arvud.count(7)
+    0
+
+Mõnikord aga pole tarvis otsida mitte konkreetset väärtust, vaid väärtust, mis vastab mingitele tingimustele. Sel juhul tuleks elemendid ükshaaval läbi käia, ning jätta meelde, kas me nägime selle käigus mõnda sobivat elementi. Järgnev programm üritab tuvastada, kas teatud kasutas on mõni mp3-fail:
+
+.. sourcecode:: py3
+
+    from os import listdir
+    
+    failinimed = listdir("C:\\Users\\Aivar\\Music")
+    
+    mp3_leidub = False # alustame pessimistlikult
+    for failinimi in failinimed:
+        if failinimi.endswith(".mp3"):
+            mp3_leidub = True
+            
+            # kui meile piisab ühe faili leidumisest, 
+            # siis rohkem pole vaja edasi vaadata
+            break
+                     
+    print(mp3_leidub)
 
 
-Järjendite koostamine elementhaaval
-===================================
+.. note::
+
+    Kuna ``listdir`` annab vaid otse näidatud kaustas olevad faili- ja kaustanimed, siis selle lihtsa programmiga ei saa kontrollida, kas mõnes suvalisel sügavusel olevas alamkaustas leidub mõni mp3-fail. Sellele probleemile hakkame lahendust otsima rekursiooni peatükis. 
+
+Indeksi otsimine
+----------------
+Mõnikord on vaja teada mingi elemendi asukohta järjendis. Kui otsime konkreetse väärtuse paiknemist, siis tuleb appi meetod ``index``:
+
+.. sourcecode:: py3
+
+    >>> linnad = ["Tartu", "Tallinn", "Pärnu", "Narva", "Tartu"]
+    >>> linnad.index("Pärnu")
+    2
+    >>> linnad.index("Tartu") # mitme esinemise korral antakse esimese esinemise indeks
+    0
+    >>> linnad.index("Võru")
+    Traceback (most recent call last):
+      File "<pyshell#12>", line 1, in <module>
+        linnad.index("Võru")
+    ValueError: 'Võru' is not in list
+
+Kui on vaja otsida mingi kriteeriumi põhjal, siis tuleb rohkem vaeva näha. Järgnev programm ütleb, mitmes rida etteantud failis on tühi või, et sellist ei leidu.
+
+.. sourcecode:: py3
+
+    f = open(input("Sisesta failinimi: "))
+    read = f.readlines()
+    f.close() 
+    
+    tühja_rea_indeks = -1 # harilikult tähistatakse mitteleidumist indeksiga -1
+    
+    # kuna tarvis teada ka elemendi positsiooni, siis teeme tsükli üle indeksite
+    for i in range(len(read)):
+        rida = read[i] 
+        if rida.strip("\n") == "":
+            tühja_rea_indeks = i
+            break
+    
+    if tühja_rea_indeks > -1:
+        # indeksid algavad 0-st aga reanumbreid on tavaks lugeda 1-st
+        tühja_rea_nr = tühja_rea_indeks + 1  
+        print(str(tühja_rea_nr) + ". rida oli tühi")
+    else:
+        print("Tühje ridasid polnud")
+        
+
+Nagu näha on ``for i in range(len(järjend)):`` paindlikum kui ``for element in järjend:``, sest pole mingit probleemi tsükli kehas indeksi abil saada kätte ka vastav element (``element = järjend[i]``), aga elemendi põhjal indeksi leidmine üldjuhul ei õnnestu.
+
+Harjutus. Viimane tühi rida
+---------------------------
+Tähelepanelik lugeja loodetavasti märkas, et kui failis on mitu tühja rida, siis eelnev näiteprogramm leiab neist esimese asukoha.
+
+Muuda programmi nüüd nii, et see mitme tühja rea korral väljastaks viimase tühja rea numbri.
+
+Proovi teha seda mitmel erineval moel:
+
+* nii, kuidas sulle endale kõige lihtsam tundub;
+* programmist ühe rea kustutamisega;
+* programmi ühe sümboli lisamisega;
+* ``range`` funktsiooni argumentide muutmisega.
+
+
+Järjendist kokkuvõtte tegemine
+==============================
+Väga sagedasti tuleb teha järjendi elementidest mingi kokkuvõte, näiteks leida neist suurim või vähim või arvutada kõigi elementide summa. Suurima elemendi leidmise näide ning summa arvutamise harjutus olid juba :ref:`eelmises peatükis<jarjendite-tootlemine>`. Teema kinnistamiseks võiks teha siin veel ühe harjutuse.
+
+Harjutus. Aritmeetiline keskmine
+--------------------------------
+Kirjuta funktsioon ``aritmeetiline_keskmine``, mis võtab argumendiks arvulisti ning tagastab antud arvude aritmeetilise keskmise.
+
+.. hint::
+
+    Selle funktsiooni keha on võimalik kirjutada ühe reaga. Samas ei tee paha ka tsükliga variant kirja panna.
+
+        
+Järjendi koostamine elementhaaval
+=================================
 Siiani oleme järjendi kirjapanekul loetlenud alati kõik tema elemendid. Paraku pole alati võimalik kõiki elemente korraga välja tuua. Appi tuleb järjendite liitmine. Tuletame kõigepealt meelde, mida see tähendas:
 
 .. sourcecode:: py
@@ -50,6 +210,8 @@ Salvestades täiendatud järjendi samasse muutujasse, saavutame järjendi kasvam
     [1, 2, 6, 2, 5]
  
 
+.. _arvude-liitmine-listi:
+
 Taolist järjendite elementhaaval kasvatamist kasutatakse siis, kui järjendi elemendid selguvad alles programmi töö käigus.  Kõige tavalisema skeemi puhul luuakse kõigepealt tühi järjend ning järjendi sisu täiendatakse tsüklis -- igal kordusel täiendatakse järjendit ühe uue elemendiga. Selleks kombineeritakse olemasolev järjend üheelemendilise järjendiga:   
 
 .. sourcecode:: py3
@@ -82,11 +244,42 @@ Harjutus. Failist järjendisse
 -----------------------------
 Nagu juba tead, võib ``for``-tsükli aluseks olla ka mingi tekstifail.
 
-Kirjuta programm, mis loeb tekstifailist ükshaaval ridu (eeldame, et igal real on üks arv) ning koostab selle käigus järjendi, mis sisaldab failist leitud paarisarve. Koostatud järjend kuvada ekraanile.
+Kirjuta programm, mis loeb tekstifailist ükshaaval ridu (eeldame, et igal real on üks arv) ning koostab selle käigus järjendi, mis sisaldab failist leitud paarisarve. Koostatud järjend kuva ekraanile.
 
 
-Juhuslike järjendite genereerimine
-----------------------------------
+Näide. Standardhälbe leidmine
+-----------------------------
+Standardhälve kirjeldab mingi arvukogumi elementide varieeruvust. Väikese standarhälbega kogumis on elementide väärtused suhteliselt lähedal nende aritmeetilisele keskmisele, suure standardhälbe korral leidub palju keskmisest väga erineva väärtusega elemente.
+
+Standardhälbe leidmiseks tuleb kõigepealt leida arvude aritmeetiline keskmine. Seejärel arvutatakse iga arvu kaugus keskmisest, ning võetakse see ruutu. Nendest ruutudest võetakse omakorda keskmine. Arvude standardhälve on selle keskmise ruutjuur. See protsess on loodetavasti arusaadavam Pythoni koodi kujul:
+
+.. sourcecode:: py3
+
+    from math import sqrt
+    
+    def aritmeetiline_keskmine(arvud):
+        return sum(arvud) / len(arvud)
+    
+    
+    def standardhälve(arvud):
+        keskmine = aritmeetiline_keskmine(arvud)
+        
+        kauguste_ruudud = []
+        
+        for arv in arvud:
+            kaugus = abs(arv - keskmine)
+            kauguste_ruudud += [kaugus**2]
+        
+        kauguste_keskmine = aritmeetiline_keskmine(kauguste_ruudud)
+        
+        return sqrt(kauguste_keskmine)
+        
+.. note::
+
+    Python 3.4-st alates on standardteegis olemas moodul ``statistics`` ja selles funktsioon ``pstdev``, mis teeb sama mida meie ``standardhälve``.
+
+Näide. Juhuslike järjendite genereerimine
+-----------------------------------------
 Selle asemel, et harjutustes järjendeid ise sisse toksida, võime kasutada ka juhuslikult genereeritud arvujärjendeid:
 
 .. sourcecode:: py3
@@ -100,23 +293,15 @@ Selle asemel, et harjutustes järjendeid ise sisse toksida, võime kasutada ka j
     
     print(arvud)
 
-Harjutus. Juhuslik järjend
---------------------------
-Kirjuta funktsioon ``juhuslik_järjend``, mis võtab argumendiks järjendi elementide arvu ning kaks argumenti arvuvahemiku määramiseks, ning tagastab vastava juhuslikult genereeritud arvujärjendi. (Seda funktsiooni võid edaspidi kasutada alati, kui on tarvis genereerida mingi juhuslik järjend.)
+Harjutus. Juhuslike järjendite uurimine
+---------------------------------------
+Kirjuta funktsioon ``juhuslik_järjend``, mis võtab argumendiks järjendi elementide arvu ning kaks argumenti arvuvahemiku määramiseks, ning tagastab vastava juhuslikult genereeritud arvujärjendi.
 
-Genereeri loodud funktsiooni abil mitu erineva pikkusega järjendit, aga nii, et arvuvahemik on kõigil juhtudel sama.
-
-Kirjuta ka lihtne abifunktsioon ``keskmine``, mis annab järjendi arvude aritmeetilise keskmise (siin võid kasutada Pythoni funktsioone ``sum`` ja ``len``).
-
-Uuri, kuidas sõltub järjendite keskmine järjendi pikkusest.
+Genereeri loodud funktsiooni abil mitu erineva pikkusega järjendit (sh mõned väga lühikesed ja mõned väga pikad) nii, et arvuvahemik on kõigil juhtudel sama. Uuri nende järjendite aritmeetilisi keskmisi. Kas märkad mingit seaduspära?
 
 
-Järjendite teisendamine
-=======================
-Järgnevates näidetes ja ülesannetes võetakse aluseks üks või mitu järjendit ning koostatakse nende põhjal uus järjend.
-
-Järjendi elementide teisendamine
---------------------------------
+Järjendi teisendamine
+=====================
 Tihti on tarvis teha mingit operatsiooni järjendi iga elemendiga ning salvestada tulemused uude järjendisse. Uuri ja katseta järgnevat näiteprogrammi:
 
 .. sourcecode:: py3
@@ -136,8 +321,8 @@ Kirjuta eelneva programmi näitel funktsioon ``sõned_arvudeks``, mis võtab arg
 
 
 Järjendi filtreerimine
-----------------------
-Filtreerimiseks nimetame seda operatsiooni, mis moodustab mingi järjendi põhjal uue järjendi, milles sisalduvad teatud tingimustele vastavad väärtused algsest järjendist. Uuri ja katseta järgnevat näidet:
+======================
+Filtreerimiseks nimetame operatsiooni, mis moodustab mingi järjendi põhjal uue järjendi, milles sisalduvad teatud tingimustele vastavad väärtused algsest järjendist. Uuri ja katseta järgnevat näidet:
 
 .. sourcecode:: py3
 
@@ -168,9 +353,21 @@ Kirjuta funktsioon ``filtreeri_ja_teisenda``, mis võtab argumendiks sõnede jä
 
     Kui kasutad abifunktsioone ``sõned_arvudeks`` ja ``naturaal_sõned``, siis saab selle funktsiooni väga lühidalt kirja panna.
     
+Harjutus. Mp3-failid
+--------------------
+Kirjuta funktsioon ``mp3_failid``, mis võtab argumendiks kaustatee, ning tagastab kõik selles kaustas leiduvate mp3-laiendiga failide nimed.
 
-Järjendite ühend
-----------------
+.. hint::
+
+    Abiks on ``os.listdir``, mille kasutamise näide on ülalpool.
+
+
+Järjendite kombineerimine
+=========================
+Küllalt sagedasti tuleb ette situatsioon, kus kahest või enamast järjendist on vaja mingi reegli põhjal panna kokku üks järjend. Kõige lihtsam juhtum on see, kus erinevate järjendite elemendid on vaja panna lihtsalt üksteise järele uude järjendisse. Nagu just nägime, saab seda teha järjendite liitmisega. Siin vaatame veidi keerulisemaid probleeme.
+
+Näide. Järjendite ühend
+-----------------------
 Järgnevas näites võtab funktsioon ``ühend`` argumendiks kaks järjendit ning tagastab uue järjendi, mis sisaldab mõlema argumentjärjendi erinevaid väärtusi ühekordselt:
 
 .. sourcecode:: py3
@@ -195,143 +392,150 @@ Harjutus. Järjendite ühisosa
 Kirjuta funktsioon ``ühisosa``, mis võtab argumendiks kaks järjendit ning tagastab **uue** järjendi, mis sisaldab (ühekordselt) neid väärtusi, mis esinevad mõlemas järjendis.
 
 
-TODO: eelnevate kasutamine listdir-iga
+Näide. Kahe järjendi elementide "paaritamine"
+---------------------------------------------
+Mõnikord juhtub, et omavahel seotud andmed asuvad erinevates järjendites.
 
-TODO: readlines, splitlines, list(f) [need vist pigem sobiks eelmisse]
+Eksamitöid hinnatakse tihti nii, et hindaja ei tea, kelle tööd ta parasjagu vaatab. Samas on lõpuks ikkagi tarvis nimed ja punktid kokku viia. Üks võimalus selle korraldamiseks on omistada igale õpilasele järjekorranumber ja salvestades tema nimi vastavale reale mingis tekstifailis. Hindajale antakse ilma nimedeta eksamitööd samas järjekorras ja tema ülesandeks on kirjutada uude faili samas järjekorras tööde eest pandud punktid. Lõpuks võtavad eksami korraldajad mõlemad failid ja koostavad järgneva programmi abil kolmanda faili, kus on nimed koos punktidega:
+
+.. sourcecode:: py3
+
+    def loe_faili_read(failinimi):
+        f = open(failinimi)
+        read = []
+        for rida in f:
+            read += [rida.strip("\n")]
+        f.close()
+        return read
+    
+    
+    nimed = loe_faili_read("nimed.txt")
+    punktid = loe_faili_read("punktid.txt")
+    
+    
+    f = open("nimed_koos_punktidega.txt", mode="w")
+    
+    # teen tsükli üle indeksite (järjekorranumbrite)
+    # kuna eeldan, et nimede ja punktide failis oli ridu sama palju,
+    # siis pole vahet kumma listi pikkuse ma aluseks võtan
+    for i in range(len(nimed)):
+        nimi_koos_punktidega = nimed[i] + ", " + punktid[i]
+        f.write(nimi_koos_punktidega + "\n")
+    
+    f.close()
+ 
 
 
-Otsimine
-========
+Näide. Eraldamine ja sidumine
+-----------------------------
+Arendame eelmist näidet veidi edasi. Oletame, et õpetaja, kellel on käepärast fail `nimed_koos_hinnetega.txt`, tahab teada nende õpilaste nimesid, kes said keskmisest vähem punkte. Selle eesmärgi saavutamiseks võiks ta kirjutada järgneva programmi: 
 
-TODO: leidub / ei leidu, indeksi tagastamine
+.. sourcecode:: py3
+
+    def aritmeetiline_keskmine(arvud):
+        return sum(arvud) / len(arvud)
+    
+    
+    f = open("nimed_koos_punktidega.txt")
+    
+    # eraldan failis olevad nimed ja punktid eraldi järjenditesse
+    nimed = []
+    tulemused = []
+    
+    for rida in f:
+        # löön rea koma kohalt pooleks
+        rea_osad = rida.split(",")
+    
+        nimi = rea_osad[0]
+        tulemus = int(rea_osad[1])
+        
+        nimed += [nimi]
+        tulemused += [tulemus]
+    
+    f.close()
+    
+    # arvutan keskmise
+    keskmine_tulemus = aritmeetiline_keskmine(tulemused)
+    
+    # käin üle kõikide tudengite järjekorranumbrite 
+    # ja prindin välja nimed, millele vastav tulemus oli alla keskmise
+    for i in range(len(nimed)):
+        if tulemused[i] < keskmine_tulemus:
+            print(nimed[i])
+    
+    
+    
+    
+        
 
 
+.. admonition:: Millal on mõtet salvestada andmed järjendisse?
 
-Järjendite kasutamine "andmebaasina"
+    Kui me soovime failist loetud (või kasutaja käest küsitud) järjendi põhjal arvutada midagi lihtsat (nt arvude summat või maksimaalset arvu), siis pole järjendi koostamine tegelikult isegi vajalik -- piisaks ühest abimuutujast, mille väärtust me iga järgmise arvu sisselugemisel sobivalt uuendame. Andmete järjendisse võib tulla kasuks näiteks siis, kui andmeid on vaja mitu korda läbi vaadata, sest järjendi korduv läbivaatamine on palju kiirem kui faili korduv lugemine ja kasutajalt samade andmete mitu korda küsimine oleks eriti plass.
+
+*Vahepala. Pikslid ja topelttsükkel*
 ====================================
 
-TODO: kas seda on üldse vaja ??????????????????????????????????
-Sõnastiku ülesanne ajab asja ära
-
-Võibolla peaks siin lihtsalt tutvustama zip operatsioone .........
-
-Näide, kus eri failides on tudengite nimed ja hinded (nt. anonüümsuse saavutamiseks)
-2. näide juhuslikust paaritamisest
-
-Järgnevates näidetes kasutame me mitut järjendit, mille elemendid on omavahel kuidagi seotud -- nt järjendi ``a`` element positsioonil ``16`` (st. ``a[16]``) on seotud järjendi ``b`` samal positsioonil oleva elemendiga (st ``b[16]``). Uuri ja katseta järgnevat näidet:
-
-.. sourcecode:: py3
-
-    eesnimed = ['Isaac', 'Leonhard', 'David']
-    perenimed = ['Newton', 'Euler', 'Hilbert']
-    
-    n = len(eesnimed) 
-    for i in range(n):
-        print(eesnimed[i] + ' ' + perenimed[i])
-
-Kuna selles näites oli meil tarvis võtta element mõlemast järjendist samalt positsioonilt, siis ei piisanud meile tavalisest ``for``-tsükli variandist, mis võtab elemente lihtsalt järjest, ignoreerides nende indekseid. Seetõttu ei võtnud me tsükli aluseks mitte järjendi, vaid hoopis ``range``-i abil genereeritud indeksite loetelu.
-
-Taolistes ülesannetes eeldame, et seotud järjendid on sama pikad, seetõttu on ükskõik, millise järjendi pikkuse järgi me loendurit kontrollime.
-
-
-"Andmebaasi" sisselugemine failist
-----------------------------------
-Et teha järgnevaid näiteid ja ülesandeid realistlikumaks, siis loeme omavahel seotud järjendid sisse tekstifailidest. Kõige lihtsam võimalus oleks kirjutada erinevate järjendite sisu eri failidesse ning lugeda nad sealt järjenditesse, üks järjend/fail korraga. Sellise lähenemise puhul on aga failide koostamine ebamugav, kuna me peame hoolikalt jälgima, et seotud andmed (nt sama inimese eesnimi ja perenimi) satuksid mõlemas failis ikka samale reale.
-
-Seetõttu kasutame me teistsugust võtet: kirjutame omavahel seotud andmed failis samale reale ning faili sisselugemisel kasutame ülalpool tutvustatud sõnemeetodit ``split``. Koosta tekstifail ``nimed.txt``, mille igal real on tühikuga eraldatud eesnimi ja perenimi, ning katseta järgnevat programmi:
-
-.. sourcecode:: py3
-
-    # teeme valmis tühjad järjendid
-    eesnimed = []
-    perenimed = []
-    
-    # loeme failist järjenditesse
-    f = open('nimed.txt')
-    for rida in f:
-        nime_osad = rida.split()
-        eesnimi = nime_osad[0]
-        perenimi = nime_osad[1]
-        eesnimed += [eesnimi]
-        perenimed += [perenimi]
-        
-    f.close() # faili meil enam tarvis pole
-    
-    # hakkame järjendeid töötlema
-    n = len(eesnimed) 
-    for i in range(n):
-        print('Eesnimi on: ' + eesnimed[i])
-        print('Perenimi on: ' + perenimed[i])
-
-
-.. topic:: Millal on mõtet salvestada andmed järjendisse?
-
-    Kui me soovime failist loetud (või kasutaja käest küsitud) järjendi põhjal arvutada midagi lihtsat (nt arvude summat või maksimaalset arvu), siis pole järjendi koostamine tegelikult isegi vajalik -- piisaks ühest abimuutujast, mille väärtust me iga järgmise arvu sisselugemisel sobivalt uuendame. Andmete järjendisse salvestamine on oluline näiteks siis, kui andmeid on vaja mitu korda läbi vaadata, sest järjendi korduv läbivaatamine on palju kiirem kui faili korduv lugemine.
-
-Harjutus. Eksami tulemused
---------------------------
-Eksami tulemused on salvestatud faili, kus igal real on tudengi täisnimi, koma ja saadud punktide arv (nt ``Jaan Tamm,24``). Maksimaalne eksami eest saadav punktide arv on 40. Õppejõud soovib näha nende tudengite nimesid ja tulemusi, kes said eksamil vähem kui 50% punktidest. Kirjuta programm selle probleemi lahendamiseks.
-
-.. hint::
-    Meetod ``split`` annab kõik komponendid sõnedena!
-
-Topelttsükkel
-=============
-TODO: pixboard
-
-
-
-
-
-Sõnede algoritmid
-=================
-
-Palindroom
-
-Anagrammid
-
-http://www.greenteapress.com/thinkpython/html/thinkpython010.html
-
-*Vahepala: sõnede ja väljundi formaatimine*
-===========================================
-Seni oleme sõnede ja teiste andmetüüpide kombineerimisel kasutanud komponentide ühendamiseks operatsiooni ``+`` ning teisendamiseks funktsiooni ``str``. Nüüd vaatame alternatiivset viisi selle toimingu tegemiseks.
-
-Sõnedel on olemas meetod ``format``, millega saab teisendada andmeid erinevatele sõnekujudele. Selle meetodi põhiolemust demonstreerib järgnev käsurea näide:
-
-.. sourcecode:: py3
-
-    >>> eesnimi = "Kalle"
-    >>> perenimi = "Kala"
-    >>> vanus = 25
-    >>> 'Klient: {0} {1}, vanus: {2}'.format(eesnimi, perenimi, vanus)
-    'Klient: Kalle Kala, vanus: 25'
-
-Meetod ``format`` konstrueerib tulemuse (uue sõne) mitmest komponendist: esimene komponent on lähtesõne, mis sisaldab muuhulgas loogeliste sulgudega tähistatud "pesasid" (ingl `placeholders`); ülejäänud komponendid (st meetodi argumendid) on suvalised väärtused, mis kopeeritakse vastavatesse pesadesse.
-
-Pesa kirjeldus on kõige lihtsamal juhul täisarv, mis näitab, kui mitmes argumentväärtus tuleb antud pesasse panna. Seejuures tuleb arvestada, et loendamist alustatakse 0-st. 
-
-Pesa kirjeldusse saab märkida ka lisatingimusi andmete formaadi kohta:
-
-.. sourcecode:: py3
-    
-    pikkused = [173.235235, 33.0, 167.333]
-
-    for i in range(len(pikkused)):
-        pikkus_sõnena = "{0}. pikkus on {1:>6.2f}cm".format(i, pikkused[i])
-        print(pikkus_sõnena)
-
-Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust.
-
-* Koolonist vasakul on pesa järjekorranumber.
-* ``>6`` näitab, et sisu esitamiseks on ette nähtud 6 positsiooni ja kui tegelik sisu võtab vähem ruumi, siis tuleb sisu ette panna niipalju tühikuid, et kokku saaks 6 sümbolit.
-* ``.2f`` ütleb, et vastavat väärtust tuleb tõlgendada ujukomaarvuna (`f` nagu `float`), mis tuleb esitada 2 komakohaga.
-    
 .. note::
 
-    | ``format`` meetodi teiste võimalustega saab tutvuda aadressil:    
-    | http://docs.python.org/3/library/string.html#format-examples
+    Paari peatüki pärast tulevad meil mängu ka listid, mille elementideks on listid. Nendega toimetamisel on peamiseks vahendiks tsükkel, mille sees on tsükkel. Et harjutada ennast ideega tsüklist tsükli sees, võtame ette järjekordse mänguasja.
+
+Arvuti esitab pilte ruudustikuna paigutatud täppidena e *pikslitena*. Moodul :download:`pixboard<downloads/pixboard.py>` võimaldab pilte joonistada pikselhaaval. Lae viidatud fail alla, salvesta samasse kausta järgnev skript ning käivita see. 
 
 
+.. sourcecode:: py3
+
+    from pixboard import *
+    
+    # Määrame pildi laiuseks 60 pikslit ja kõrguseks 40 pikslit
+    setup(60, 40) 
+    
+    # värvime pildi keskel olevad 4 pikslit punaseks
+    set_pixel(29, 19, "red")
+    set_pixel(29, 20, "red")
+    set_pixel(30, 19, "red")
+    set_pixel(30, 20, "red")
+    
+    # näitame oma saavutust
+    show()
+
+Ilmselt aimasid, et ``set_pixel``-i esimene argument on x-koordinaat, teine y-koordinaat ning kolmas soovitav värv.
+
+NB! Siin tuleb arvestada, et ``pixboard``-i arvates (nagu ka arvutigraafikas üldiselt tavaks) kasvab y-koordinaat allapoole ja punkt (0,0) asub pildi ülemises vasakus nurgas. Näiteks 10x10 pikslise pildi koordinaadistik on selline:
+
+.. image:: images/coords_grid.png
+
+Näide. Kõigi pikslite värvimine kahekordse tsükliga
+---------------------------------------------------
+Kui me tahaks 60x40 pikslist pilti üleni näiteks siniseks värvida, siis üks võimalus oleks kirjutada 2400 korda käsku ``set_pixel`` sobivate argumentidega. Kui see tundub liiga tüütu, siis võib proovida muidugi tsüklit kasutada.
+
+Paljudel tuleks arvatavasti esimese hooga mõte kirjutada ``for i in range(2400): ...``. See on täiesti adekvaatne lähenemine, aga siis peaks hakkama eraldi jälgima, millal kasvatada x-koordinaati ja millal y-koordinaati. Hoopis mugavam variant oleks selline:
+
+.. sourcecode:: py3
+
+    from pixboard import *
+    
+    # Määrame pildi laiuseks 60 pikslit ja kõrguseks 40 pikslit
+    laius = 60
+    kõrgus = 40
+    setup(laius, kõrgus) 
+    
+    for x in range(laius):
+        for y in range(kõrgus):
+            set_pixel(x, y, "blue")
+    
+    # näitame oma saavutust
+    show() 
+
+Välimine ``for``-tsükkel teeb niipalju kordusi, nagu on pildi ruudustikus veerge. Iga korduse ülesandeks on korralda ühe veeru värvimine. Selleks võtab ta endale appi ühe alluva, sisemise ``for``-tsükli, mis teeb igal välimise tsükli kordusel niipalju kordusi, nagu on pildil ridu. Kokku käivitataksegi käsku ``set_pixel`` 2400 korda, just nagu meil alguses plaanis oli. 
+
+Harjutus. Diagonaalne värvimine
+-------------------------------
+Kirjuta ``pixboard``-i programm, mis genereerib sellise 150x150 pikslise pildi:
+
+.. image:: images/must_valge_diagonaal.png
+
+(See peenike helehall raam akna servas ole pildi osa.)
 
 
 
@@ -341,16 +545,16 @@ Hakkame jupphaaval analüüsima pesa ``{1:>6.2f}`` tähendust.
 Ülesanded
 =========
 
+1. Mediaani leidmine
+--------------------
+Kirjuta enda versioon Pythoni ``statistics`` mooduli funktsioonist ``median`` (https://docs.python.org/3/library/statistics.html#statistics.median).
 
-Statistika failist
+.. hint::
 
-nt. loenda ilma e-deta sõnu, 
-!!! sõnad, mille tähed on alfabeetilises järjekorras 
-
-1. Veergude eraldamine
-----------------------
-CSV failist teatud veergude kirjutamine teise faili
-
+    .. sourcecode:: py3
+    
+        >>> sorted([5, 2, 8, 234, 8, 2, 1, -4, 6, -12])
+        [-12, -4, 1, 2, 2, 5, 6, 8, 8, 234] 
 
 2. Lausegeneraator
 ------------------
@@ -373,31 +577,54 @@ CSV failist teatud veergude kirjutamine teise faili
 
 * Muuda programmi selliselt, et see genereeriks ja väljastaks (lõpmatus tsüklis) iga ENTER-i vajutuse peale uue lause.
 
-4. Eesti-inglise sõnaraamat
+3. Eesti-inglise sõnaraamat
 ---------------------------
 Lae alla eesti-inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
-Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal küsida ingliskeelse sõna eestikeelset vastet (või vastupidi -- võid ise valida).
+Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal korduvalt küsida ingliskeelse sõna eestikeelset vastet (või vastupidi -- võid ise valida või lubada kasutajal valida).
+
+.. topic:: Ülesande lisa
+
+    Fail on järjestatud alfabeetiliselt ingliskeelsete vastete järgi. Seda arvestades tundub raiskamisena sõnastiku "läbilappamine" iga uue ingliskeelse sõna otsimisel. Proovi korraldada programmi töö nii, et enamikku ridadest puututakse vaid üks kord (faili sisselugemisel) ja et ingliskeelsele sõnale eestikeelse vaste otsimisel ei tehtaks kunagi rohkem kui 20 sõnede võrdlemist.
+    
+    .. hint::
+        
+        Tuleta meelde, milline oli parim strateegia :ref:`arvamismängus<arvamismang>`.   
 
 .. note::
     
     Antud sõnastiku fail on veidi modifitseeritud variant Eesti Keele Instituudi poolt jagatavast failist (ftp://ftp.eki.ee/pub/keeletehnoloogia/inglise-eesti/en_et.current.wbt).
 
-5. funktsioon is-sorted, has duplicates, remove duplicates
-----------------------------------------------------------
-TODO
 
-6. kiire otsing sõnastikust
----------------------------
+4. Palindroomid
+---------------
+Palindroom on sõna, mis on tagantpoolt ettepoole lugedes sama, nagu eestpoolt tagantpoole lugedes, näiteks *sammas*.
+
+#. Kirjuta funktsioon ``on_palindroom``, mis võtab argumendiks sõne, ning tagastab ``True`` või ``False`` vastavalt sellele, kas see sõne on palindroom või mitte.
+#. Failis :download:`sonad.txt <downloads/sonad.txt>` (kodeering UTF-8) on hulk eestikeelseid sõnu, iga sõna eraldi real. Kuva ekraanile kõik selles failis esinevad palindroomid, iga sõna eraldi reale, samas järjekorras nagu need failis paiknevad.
+
+5. Anagrammid
+-------------
+Kaks sõna on üksteise anagrammid, kui ühes sõnas tähti ümber paigutades on võimalik moodustada teine sõna, näiteks *puitpost* ja *supipott*.
+
+Kirjuta programm, mis küsib kasutajalt sõna, ning väljastab kõik selle anagrammid, mis leiduvad eelmises ülesandes mainitud sõnade failis.
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        >>> sorted("anagramm")
+        ['a', 'a', 'a', 'g', 'm', 'm', 'n', 'r']
+
+.. admonition:: Väljakutse
+
+    Leia ja väljasta kõik mainitud failis leiduvad anagrammide komplektid. 
 
 
 
-EULER
------
-https://projecteuler.net/problem=4
+.. todo::
 
-Lisalugemine
-============
-Map, filter, reduce
+    Lisalugemine
+    Map, filter, reduce
 
-List comprehension
+    List comprehension

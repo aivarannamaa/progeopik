@@ -918,7 +918,7 @@ Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``T
         print("Selles kuus on vähem, kui 31 päeva")
 
 Tehete järjekord
--------------------------------------------------------------------------------------------------------     
+----------------
 Keerulisemate loogiliste avaldiste puhul tuleb arvestada, et ``not`` on kõrgema prioriteediga kui ``and`` ning ``and`` on kõrgema prioriteediga kui ``or``, seega ``not x or not y and z`` tähendab ``(not x) or ((not y) and z)``.
 
 Kuna ühes avaldises võivad olla koos aritmeetilised tehted, võrdlustehted ja loogilised tehted, siis selleks, et vähendada sulgude vajadust, on aritmeetilised tehted kõrgema prioriteediga (st tehakse esimesena) ning loogilised tehted on madalama prioriteediga (tehakse viimasena), seega ``a > b and b > c`` tähendab ``(a > b) and (b > c)``.

@@ -4,10 +4,45 @@
 9. Listide muteerimine
 **********************
 
+.. todo::
+
+    CSV failist teatud veergude kirjutamine teise faili
+    
+
+Pythoni listid on *muteeritavad*, st sama list võib programmi käivitamise erinevatel hetkedel sisaldada erinevaid väärtusi. Esmapilgul võib olla raske eristada listi muteerimist ja uue, muudetud listi samasse muutujasse salvestamist, aga erinevused on olemas ning nende mitteteadmine võib valusasti hammustada.
+
+
 Meetod ``append``
 =================
+Eelmises peatükis vaatasime ühte skeemi listide kasvatamiseks. See seisnes vana listi ja uue info põhjal uue, pikema listi moodustamises:
 
-TODO
+.. sourcecode:: py3
+
+    >>> a = [1,2,3]
+    >>> a = a + [4,5]
+    >>> a
+    [1, 2, 3, 4, 5]
+    >>> a += [6]
+    >>> a
+    [1, 2, 3, 4, 5, 6]
+
+Tuleb välja, et peaaegu sama efekti saamiseks on olemas alternatiivne viis -- meetod ``append``:
+
+.. sourcecode:: py3
+
+    >>> a = [1,2,3]
+    >>> a.append(4)
+    >>> a.append(5)
+    >>> a.append(6)
+    >>> a
+    [1, 2, 3, 4, 5, 6] 
+
+Selles näites me peale esialgset omistamist muutuja sisu otseselt ei muutnud, küll aga muutsime listi enda sisu. 
+
+Harjutus. Arvude küsimine
+-------------------------
+Kirjuta eelmises peatükis toodud :ref:`arvude küsimise näide<arvude-liitmine-listi>` ümber ``append``-i kasutades.
+
 
 Järjendi elementide muutmine
 ============================
@@ -227,11 +262,11 @@ Kokkuvõttes: omistamisel salvestatakse muutujasse ainult viit paremal pool näi
 
 1. Tagasivaade
 --------------
-Loe läbi selle peatüki lõpus olev :ref:`tagasivaade_1-8`.
+Loe läbi selle peatüki lõpus olev :ref:`tagasivaade_1-9`.
 
 
 
-3. Palkade analüüs
+2. Palkade analüüs
 ------------------
 Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real on töötaja nimi, tema vanus ja kuupalk. Kirjuta programm, mis väljastab antud andmete põhjal:
 
@@ -240,7 +275,7 @@ Antud on tekstifail :download:`palgad.txt <downloads/palgad.txt>`, kus igal real
 * keskmisest palgast rohkem teenijate arvu;
 * keskmised vanused eraldi neile, kes teenivad keskmisest palgast vähem (või samapalju), ning neile, kes teenivad keskmisest palgast rohkem.
 
-5. minu_shuffle
+3. minu_shuffle
 ---------------
 Pythoni ``random`` moodulis on funktsioon ``shuffle``, mis ajab argumendiks antud järjendis elementide järjekorra juhuslikult segamini:
 
@@ -283,7 +318,7 @@ Kirjuta ise analoogne funktsioon ``minu_shuffle``, mis teeb sama (seejuures pole
     ... ja vahetada need kaks elementi omavahel.
     
 
-6. Eesti filmide statistika (raskem)
+4. Eesti filmide statistika (raskem)
 ------------------------------------
 Veebisait http://www.imdb.com kogub ja jagab informatsiooni filmide kohta. Aadressilt ftp://ftp.funet.fi/pub/mirrors/ftp.imdb.com/pub/ saab IMDB poolt kogutud infot alla laadida pakitud tekstifailidena.
 
@@ -321,9 +356,9 @@ Failis ``filmid.txt`` on ühe filmi andmed ühel real kujul *<nimi><tühik>(<aas
         Järjend võib sisaldada järjendeid: ``a = [[1, 2, 3], [5, 5, 6], [4, 4, 3]]``. Mõtle, mida võiks tähendada ``a[2][1]``?
 
 
-.. _tagasivaade_1-8:
+.. _tagasivaade_1-9:
 
-*Tagasivaade peatükkidele 1-8*
+*Tagasivaade peatükkidele 1-9*
 ==============================
 On teada, et mingi teema valdamiseks tuleb tegelda vaheldumisi nii teooria kui ka praktikaga. Praeguseks oled harjutanud läbi kõik olulisemad Python keele võimalused ja nüüd on paras aeg astuda samm tagasi ning vaadata juba läbitud materjalile uue, veidi kogenuma pilguga.
 
