@@ -43,7 +43,7 @@ Moodulis ``os`` asuv funktsioon ``listdir`` tagastab listi, mille elemendid on n
     >>> import os
     
     >>> os.listdir("C:\\Users\\Aivar\\Desktop")
-    ['desktop.ini', 'demo.py', 'SML_modules.pdf', 'thonny-0.1.3.exe', 'IMG_23887.jpg']
+    ['katsetused', 'demo.py', 'SML_modules.pdf', 'thonny-0.1.3.exe', 'IMG_23887.jpg']
     
     >>> os.listdir(".") 
     ['08_listid2.rst', 'temp.py', 'sonad.txt']
@@ -642,7 +642,7 @@ Selles peatükis käis meil korduvalt läbi skeem, kus oli tarvis leida järjend
         if ... element rahuldab mingit tingimust ...:
             uus_järjend += [element]
     
-Eespool on aga ka korduvalt manitsetud, et kui märkad oma koodis korduvaid koodiplokke või -skeeme, siis tuleks need pakendada funktsiooniks, kus spetsiifilised kohad on asendatud funktsiooni parameetritega. Lõpuks tuleb algsed `copy-paste`tud kohad asendada funktsioonikutsete, millele antakse vajalikud argumendid. Seega, me võiksime üritada kirjutada universaalse abifunktsiooni ``filtreeri``, mis oskab etteantud liste vastavalt vajadusele filtreerida. Esimene katse võiks olla midagi sellist:
+Eespool on aga ka korduvalt manitsetud, et kui märkad oma koodis korduvaid koodiplokke või -skeeme, siis tuleks need pakendada funktsiooniks, kus spetsiifilised kohad on asendatud funktsiooni parameetritega. Lõpuks tuleb algsed *copy-paste*'tud kohad asendada funktsioonikutsetega, millele antakse vajalikud argumendid. Seega, me võiksime üritada kirjutada universaalse abifunktsiooni ``filtreeri``, mis oskab etteantud liste vastavalt vajadusele filtreerida. Esimene katse võiks olla midagi sellist:
 
 .. sourcecode:: py3
     
@@ -711,7 +711,7 @@ Selle funktsiooni kasutamiseks kirjutame teise argumendi kohale soovitud tingimu
 
 .. sourcecode:: py3
 
-    >>> filtreeri(["dokument.doc", "tekst.txt", "Bemmi kummid.mp3", "Für Elise.mp3"], lõpeb_mp3_ga)
+    >>> filtreeri(["dokument.doc", "Zetod", "Bemmi kummid.mp3", "Für Elise.mp3"], lõpeb_mp3_ga)
     ['Bemmi kummid.mp3', 'Für Elise.mp3']
     >>> filtreeri(["asdbaf", "24jklh34", "3423", "3", "uuuu", "999"], str.isnumeric)
     ['3423', '3', '999']
