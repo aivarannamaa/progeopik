@@ -626,8 +626,138 @@ Kirjuta programm, mis küsib kasutajalt sõna, ning väljastab kõik selle anagr
 
     Joonistamise ülesanne
 
-    Lisalugemine
-    Map, filter, reduce
+Lisalugemine
+============
 
-    List comprehension
+Järjendite filtreerimise üldistus
+---------------------------------
+Selles peatükis käis meil korduvalt läbi skeem, kus oli tarvis leida järjendist teatud tingimusele vastavad elemendid ja moodustada nende põhjal uus järjend, teisisõnu, järjendit oli vaja filtreerida. Vastavate koodijuppide üldkuju oli alati midagi sellist:
+
+.. sourcecode:: py3
+
+    algne_järjend = ...
+    uus_järjend = []
     
+    for element in algne_järjend:
+        if ... element rahuldab mingit tingimust ...:
+            uus_järjend += [element]
+    
+Eespool on aga ka korduvalt manitsetud, et kui märkad oma koodis korduvaid koodiplokke või -skeeme, siis tuleks need pakendada funktsiooniks, kus spetsiifilised kohad on asendatud funktsiooni parameetritega. Lõpuks tuleb algsed `copy-paste`tud kohad asendada funktsioonikutsete, millele antakse vajalikud argumendid. Seega, me võiksime üritada kirjutada universaalse abifunktsiooni ``filtreeri``, mis oskab etteantud liste vastavalt vajadusele filtreerida. Esimene katse võiks olla midagi sellist:
+
+.. sourcecode:: py3
+    
+    def filtreeri(algne_järjend):
+        uus_järjend = []
+        
+        for element in algne_järjend:
+            if ... element rahuldab mingit tingimust ...:
+                uus_järjend += [element]
+        
+        return uus_järjend
+
+Nagu näha, tekib probleem tingimuse üldistamisega. Kuidas teha tingimus funktsiooni parameetriks, kui see võib erinevatel juhtumitel olla väga erineva struktuuriga? 
+
+Esimene samm oleks väljendada soovitud tingimus eraldi abifunktsioonina. Näiteks, kui meil on vaja eraldada sõned, mis lõpevad ``".mp3"``-ga, siis oleks tingimuse funktsioon midagi sellist:
+
+.. sourcecode:: py3
+
+    def lõpeb_mp3_ga(sõne):
+        return sõne.endswith(".mp3")
+
+Kui tahame eraldada sõnesid, mis tähistavad märgita täisarve, siis on meil tegelikult tingimuse funktsioon juba olemas, see on ``str.isnumeric``:
+
+.. sourcecode:: py3
+
+    >>> str.isnumeric("333")
+    True
+    >>> str.isnumeric("aaaa")
+    False
+
+.. note::
+
+    Pythoni jaoks on ``"aaa".isnumeric()`` praktiliselt sama, mis ``str.isnumeric("aaa")``. Miks see nii on, seda me praegu ei hakka uurima, selle jaoks tuleks kõigepealt teha selgeks Pythoni klasside olemus.
+
+Üldine idee on selles, et ükskõik kui keeruline meie tingimus ka on, me saame ta pakendada funktsiooniks, mis võtab ühe argumendi ja tagastab tõeväärtuse, mis näitab kas argument vastab tingimusele või mitte. Seda arvestades saame skeemi üldkuju lihtsustada:
+
+
+.. sourcecode:: py3
+    :emphasize-lines: 5
+    
+    def filtreeri(algne_järjend):
+        uus_järjend = []
+        
+        for element in algne_järjend:
+            if tingimus(element):
+                uus_järjend += [element]
+        
+        return uus_järjend
+
+
+Siit on jäänud veel üksainus samm meie eesmärgini. Erinevalt paljudest teistest populaarsetest programmeerimiskeeltest, lubab Python käsitleda funktsioone kui väärtusi, st salvestada neid muutujatesse ning, veel parem, anda funktsiooni väljakutse argumendiks. See lubab meie ``filtreeri`` funktsioonil käsitleda tingimust kui parameetrit:
+
+.. sourcecode:: py3
+    :emphasize-lines: 1
+    
+    def filtreeri(algne_järjend, tingimus):
+        uus_järjend = []
+        
+        for element in algne_järjend:
+            if tingimus(element):
+                uus_järjend += [element]
+        
+        return uus_järjend
+
+Selle funktsiooni kasutamiseks kirjutame teise argumendi kohale soovitud tingimusfunktsiooni nime:
+
+.. sourcecode:: py3
+
+    >>> filtreeri(["dokument.doc", "tekst.txt", "Bemmi kummid.mp3", "Für Elise.mp3"], lõpeb_mp3_ga)
+    ['Bemmi kummid.mp3', 'Für Elise.mp3']
+    >>> filtreeri(["asdbaf", "24jklh34", "3423", "3", "uuuu", "999"], str.isnumeric)
+    ['3423', '3', '999']
+
+Suurepärane! Kuidas Pythoni loojad pole selle peale tulnud, et selline võimalus Pythonisse sisse kirjutada?
+
+Tegelikult on selline funktsioon Pythonis olemas ja selle nimi on ... ``filter``! See käitub meie funktsioonist veidi erinevalt, nimelt võtab ta argumendid vastupidises järjekorras (kõigepealt tingimusfunktsioon ja siis järjend), ning ta ei tagasta päris järjendit, vaid ühe müstilise *filter*-objekti. Õnneks saab seda objekti ``list`` funktsiooniga järjendiks teisendada:
+
+.. sourcecode:: py3
+
+    >>> filter(lõpeb_mp3_ga, ["dokument.doc", "tekst.txt", "Bemmi kummid.mp3", "Für Elise.mp3" ])
+    <filter object at 0x0000000002C7ECF8>
+    >>> list(filter(lõpeb_mp3_ga, ["dokument.doc", "tekst.txt", "Bemmi kummid.mp3", "Für Elise.mp3" ]))
+    ['Bemmi kummid.mp3', 'Für Elise.mp3']
+    >>> list(filter(str.isnumeric, ["asdbaf", "24jklh34", "3423", "3", "uuuu", "999"]))
+    ['3423', '3', '999']
+
+Kui me tahaks tulemust aga kasutada näiteks for-tsükli aluseks, siis pole "päris"-järjendiks teisendamine vajalik.
+
+.. note::
+
+    Kui sulle tundub, et kõik on justkui ilus, aga see tingimuse funktsiooni defineerimine on tüütu, siis tea, et ka  sellele on lahendus. Vaata lähemalt näiteks siit: http://www.diveintopython.net/power_of_introspection/lambda_functions.html
+
+Järjendite teisendamise üldistus
+--------------------------------
+Loodetavasti mõtled sa nüüd, et küll oleks lahe, kui ka järjendite teisendamiseks saaks mingit sarnast trikki kasutada. Saab! Saage tuttavaks, ``map``:
+
+.. sourcecode:: py3
+
+    >>> list(map(str, [1,2,3]))
+    ['1', '2', '3']
+    
+    >>> list(map(float, [1,2,3]))
+    [1.0, 2.0, 3.0]
+    
+    >>> list(map(int, ["1","2","3"]))
+    [1, 2, 3]
+    
+    >>> from math import sqrt
+    >>> list(map(sqrt, [1,2,3]))
+    [1.0, 1.4142135623730951, 1.7320508075688772]
+    
+    >>> def pluss_üks(x): return x + 1
+    >>> list(map(pluss_üks, [1,2,3]))
+    [2, 3, 4]
+
+.. admonition:: Väljakutse
+
+    Kirjuta enda versioon ``map``-ist.
