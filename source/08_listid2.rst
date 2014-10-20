@@ -1,8 +1,8 @@
 .. _listid2:
 
-************************
-8. Järjendite töötlemine
-************************
+********************************
+8. Järjendite kasutamise skeemid
+********************************
 
 Selles peatükis me uusi Pythoni keelekonstruktsioone sisse ei too, vaid uurime erinevaid võimalusi juba tuttavate teemade kombineerimiseks ja kasutamiseks.
 
@@ -115,7 +115,7 @@ Mõnikord on vaja teada mingi elemendi asukohta järjendis. Kui otsime konkreets
         linnad.index("Võru")
     ValueError: 'Võru' is not in list
 
-Kui on vaja otsida mingi kriteeriumi põhjal, siis tuleb rohkem vaeva näha. Järgnev programm ütleb, mitmes rida etteantud failis on tühi või, et sellist ei leidu.
+Kui on vaja otsida mingi kriteeriumi põhjal, siis tuleb rohkem vaeva näha. Järgnev programm ütleb, mitmendal real asub faili esimene tühi rida või, et sellist ei leidu.
 
 .. sourcecode:: py3
 
@@ -144,7 +144,7 @@ Nagu näha on ``for i in range(len(järjend)):`` paindlikum kui ``for element in
 
 Harjutus. Viimane tühi rida
 ---------------------------
-Tähelepanelik lugeja loodetavasti märkas, et kui failis on mitu tühja rida, siis eelnev näiteprogramm leiab neist esimese asukoha.
+Kui failis on mitu tühja rida, siis eelnev näiteprogramm leiab neist ainult esimese asukoha.
 
 Muuda programmi nüüd nii, et see mitme tühja rea korral väljastaks viimase tühja rea numbri.
 
@@ -547,7 +547,9 @@ Kirjuta ``pixboard``-i programm, mis genereerib sellise 150x150 pikslise pildi:
 
 1. Mediaani leidmine
 --------------------
-Kirjuta enda versioon Pythoni ``statistics`` mooduli funktsioonist ``median`` (https://docs.python.org/3/library/statistics.html#statistics.median).
+Kirjuta funktsioon ``mediaan``, mis arvutab etteantud arvude mediaani. Lahenduse korrektsuse kontrollimiseks võrdle enda funktsiooni tulemusi Pythoni ``statistics`` moodulis oleva funktsiooni ``median`` tulemustega (https://docs.python.org/3/library/statistics.html#statistics.median).
+
+NB! Funktsiooni ``statistics.median`` ära enda lahenduses kasuta! 
 
 .. hint::
 
