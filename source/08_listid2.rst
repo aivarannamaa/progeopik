@@ -205,10 +205,6 @@ Salvestades täiendatud järjendi samasse muutujasse, saavutame järjendi kasvam
     >>> a = a + [2]
     >>> a
     [1, 2, 6, 2]
-    >>> a += [5]   # nagu arvude puhul, saab ka siin kasutada liitmisega omistamist
-    >>> a
-    [1, 2, 6, 2, 5]
- 
 
 .. _arvude-liitmine-listi:
 
@@ -223,7 +219,7 @@ Taolist järjendite elementhaaval kasvatamist kasutatakse siis, kui järjendi el
         if sisend == '':
             break
         else:
-            arvud += [int(sisend)]
+            arvud = arvud + [int(sisend)]
 
     print('Sisestati', len(arvud), 'arvu')
     print('Sisestatud arvud:', arvud)
@@ -236,9 +232,25 @@ Antud näite puhul olid tsükli aluseks kasutaja tegevused. Samahästi võiksime
     ruudud = []
     
     for arv in range(1, 10):
-        ruudud += [arv ** 2]
+        ruudud = ruudud + [arv ** 2]
     
     print('Arvude 1..9 ruudud on:', ruudud)
+
+
+.. note::
+
+    Nagu arvude puhul, saab ka listide liitmist kombineerida omistamisega:
+    
+    .. sourcecode:: py3
+     
+        >>> a = [1, 2, 6, 2]
+        >>> a += [5] 
+        >>> a
+        [1, 2, 6, 2, 5]
+    
+    Listide puhul on aga ``x = x + [y]`` ja ``x += [y]`` pisut erineva tähendusega. Sellest tuleb täpsemalt juttu järgmises peatükis. Praegu on kõige kindlam liitmine ja omistamine pikalt välja kirjutada.
+ 
+
 
 Harjutus. Failist järjendisse
 -----------------------------
@@ -268,7 +280,7 @@ Standardhälbe leidmiseks tuleb kõigepealt leida arvude aritmeetiline keskmine.
         
         for arv in arvud:
             kaugus = abs(arv - keskmine)
-            kauguste_ruudud += [kaugus**2]
+            kauguste_ruudud = kauguste_ruudud + [kaugus**2]
         
         kauguste_keskmine = aritmeetiline_keskmine(kauguste_ruudud)
         
@@ -289,7 +301,7 @@ Selle asemel, et harjutustes järjendeid ise sisse toksida, võime kasutada ka j
     arvud = []
     for i in range(100):
         # imiteerime täringuviskamist
-        arvud += [randint(1,6)]
+        arvud = arvud + [randint(1,6)]
     
     print(arvud)
 
@@ -310,7 +322,7 @@ Tihti on tarvis teha mingit operatsiooni järjendi iga elemendiga ning salvestad
     
     arvud = []
     for sõne in sõned:
-        arvud += [int(sõne)]
+        arvud = arvud + [int(sõne)]
     
     print(arvud)
 
@@ -330,7 +342,7 @@ Filtreerimiseks nimetame operatsiooni, mis moodustab mingi järjendi põhjal uue
         paaris = []
         for arv in arvud:
             if arv % 2 == 0:
-                paaris +=  [arv]
+                paaris = paaris + [arv]
         
         return paaris
     
@@ -377,11 +389,11 @@ Järgnevas näites võtab funktsioon ``ühend`` argumendiks kaks järjendit ning
         
         for element in j1:
             if not (element in tulemus):
-                tulemus += [element]
+                tulemus = tulemus + [element]
                 
         for element in j2:
             if not (element in tulemus):
-                tulemus += [element]
+                tulemus = tulemus + [element]
         
         return tulemus
     
@@ -404,7 +416,7 @@ Eksamitöid hinnatakse tihti nii, et hindaja ei tea, kelle tööd ta parasjagu v
         f = open(failinimi)
         read = []
         for rida in f:
-            read += [rida.strip("\n")]
+            read = read + [rida.strip("\n")]
         f.close()
         return read
     
@@ -449,8 +461,8 @@ Arendame eelmist näidet veidi edasi. Oletame, et õpetaja, kellel on käepäras
         nimi = rea_osad[0]
         tulemus = int(rea_osad[1])
         
-        nimed += [nimi]
-        tulemused += [tulemus]
+        nimed = nimed + [nimi]
+        tulemused = tulemused + [tulemus]
     
     f.close()
     
@@ -640,7 +652,7 @@ Selles peatükis käis meil korduvalt läbi skeem, kus oli tarvis leida järjend
     
     for element in algne_järjend:
         if ... element rahuldab mingit tingimust ...:
-            uus_järjend += [element]
+            uus_järjend = uus_järjend + [element]
     
 Eespool on aga ka korduvalt manitsetud, et kui märkad oma koodis korduvaid koodiplokke või -skeeme, siis tuleks need pakendada funktsiooniks, kus spetsiifilised kohad on asendatud funktsiooni parameetritega. Lõpuks tuleb algsed *copy-paste*'tud kohad asendada funktsioonikutsetega, millele antakse vajalikud argumendid. Seega, me võiksime üritada kirjutada universaalse abifunktsiooni ``filtreeri``, mis oskab etteantud liste vastavalt vajadusele filtreerida. Esimene katse võiks olla midagi sellist:
 
@@ -651,7 +663,7 @@ Eespool on aga ka korduvalt manitsetud, et kui märkad oma koodis korduvaid kood
         
         for element in algne_järjend:
             if ... element rahuldab mingit tingimust ...:
-                uus_järjend += [element]
+                uus_järjend = uus_järjend + [element]
         
         return uus_järjend
 
@@ -688,7 +700,7 @@ Kui tahame eraldada sõnesid, mis tähistavad märgita täisarve, siis on meil t
         
         for element in algne_järjend:
             if tingimus(element):
-                uus_järjend += [element]
+                uus_järjend = uus_järjend + [element]
         
         return uus_järjend
 
@@ -703,7 +715,7 @@ Siit on jäänud veel üksainus samm meie eesmärgini. Erinevalt paljudest teist
         
         for element in algne_järjend:
             if tingimus(element):
-                uus_järjend += [element]
+                uus_järjend = uus_järjend + [element]
         
         return uus_järjend
 

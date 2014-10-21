@@ -39,6 +39,7 @@ Tuleb välja, et peaaegu sama efekti saamiseks on olemas alternatiivne viis -- m
 
 Selles näites me peale esialgset omistamist muutuja sisu otseselt ei muutnud, küll aga muutsime listi enda sisu. 
 
+
 Harjutus. Arvude küsimine
 -------------------------
 Kirjuta eelmises peatükis toodud :ref:`arvude küsimise näide<arvude-liitmine-listi>` ümber ``append``-i kasutades.
@@ -115,6 +116,20 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovid parameetrin
     
     print(a) # a väärtus on endine
 
+
+.. note::
+
+    Eelmises peatükis sai põgusalt mainitud, et listide puhul pole ``x = x + [y]`` päris sama, mis ``x += [y]``. Asi on selles, et kasutades ``+=`` operatsiooni, Python tegelikult ei tee uut listi, vaid täiendab olemasolevat:
+    
+    .. sourcecode:: py3 
+
+        >>> a = [1, 2, 3]
+        >>> b = a
+        >>> b += [4]
+        >>> a
+        [1, 2, 3, 4]
+        >>> b
+        [1, 2, 3, 4]
 
 
 Viitamisest täpsemalt
