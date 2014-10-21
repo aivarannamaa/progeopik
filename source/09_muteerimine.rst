@@ -134,7 +134,7 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovid parameetrin
 
 Viitamisest täpsemalt
 ---------------------
-Kas selline situatsioon, et erinevad muutujad viitavad samale objektile, on võimalik ainult listide korral? Tehniliselt võttes ei -- muutujad ja omistamine toimivad alati samamoodi hoolimata andmetüübist.
+Kas selline situatsioon, et erinevad muutujad viitavad samale objektile, on võimalik ainult listide korral? Tehniliselt võttes ei -- muutujad ja harilik (``=``-ga) omistamine toimivad alati samamoodi hoolimata andmetüübist.
 
 Kõik Pythoni väärtused on programmi käimise ajal esitatud mingite objektidena, mis asuvad kusagil arvuti mälus. Kui käivitatakse lause ``x = 7``, siis luuakse mälus objekt, mis tähistab arvu `7` ja muutujasse ``x`` salvestatakse tegelikult ainult viide sellele objektile. Kui me järgmisena käivitame lause ``y = x``, siis muutujasse ``y`` salvestatakse sama viit, mis on muutujas ``x``, aga uut täisarvu objekti ei looda. Seega nüüd viitavad muutujad ``x`` ja ``y`` samale objektile.
 
