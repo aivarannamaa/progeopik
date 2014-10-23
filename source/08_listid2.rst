@@ -74,7 +74,7 @@ Kui tahame teada, mitu korda mingi element esineb, siis seda saab teha meetodiga
     >>> arvud.count(7)
     0
 
-Mõnikord aga pole tarvis otsida mitte konkreetset väärtust, vaid väärtust, mis vastab mingitele tingimustele. Sel juhul tuleks elemendid ükshaaval läbi käia, ning jätta meelde, kas me nägime selle käigus mõnda sobivat elementi. Järgnev programm üritab tuvastada, kas teatud kasutas on mõni mp3-fail:
+Mõnikord aga pole tarvis otsida mitte konkreetset väärtust, vaid väärtust, mis vastab mingitele tingimustele. Sel juhul tuleks elemendid ükshaaval läbi käia, ning jätta meelde, kas me nägime selle käigus mõnda sobivat elementi. Järgnev programm üritab tuvastada, kas teatud kaustas on mõni mp3-fail:
 
 .. sourcecode:: py3
 
