@@ -248,7 +248,7 @@ Antud näite puhul olid tsükli aluseks kasutaja tegevused. Samahästi võiksime
         >>> a
         [1, 2, 6, 2, 5]
     
-    Listide puhul on aga ``x = x + [y]`` ja ``x += [y]`` pisut erineva tähendusega. Sellest tuleb täpsemalt juttu järgmises peatükis. Praegu on kõige kindlam liitmine ja omistamine pikalt välja kirjutada.
+    Listide puhul on aga ``a = a + [x]`` ja ``a += [x]`` pisut erineva tähendusega. Sellest tuleb täpsemalt juttu järgmises peatükis. Praegu on kõige kindlam liitmine ja omistamine pikalt välja kirjutada. Kui aga sedasi koostatud listid lähevad väga pikaks, siis on kasulik ikkagi kasutada varianti ``a += [x]``
  
 
 
@@ -596,6 +596,10 @@ NB! Funktsiooni ``statistics.median`` ära enda lahenduses kasuta!
 Lae alla eesti-inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
 Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal korduvalt küsida ingliskeelse sõna eestikeelset vastet (või vastupidi -- võid ise valida või lubada kasutajal valida).
+
+.. attention::
+
+    Seda ülesannet on võimalik lahendada kasutades skeemi ``a = a + [x]``, kus ``a`` on list ja ``x`` on lisatav element, aga see kujuneks väga aeglaseks. Seetõttu on soovitav kasutada siin skeemi ``a += [x]``, mis töötab palju kiiremini. Selle skeemiga kaasneb ka üks lisanüanss, aga sellest räägime lähemalt järgmises peatükis.
 
 .. topic:: Ülesande lisa
 
