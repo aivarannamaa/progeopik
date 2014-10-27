@@ -130,7 +130,19 @@ Seda omapära võib vahepeal ka enda kasuks kasutada. Kui aga soovid parameetrin
         [1, 2, 3, 4]
         >>> b
         [1, 2, 3, 4]
-
+    
+    Samas ``x = x + [y]`` puhul tehakse alati uus list:
+    
+    .. sourcecode:: py3
+        :emphasize-lines: 3, 5
+        
+        >>> a = [1, 2, 3]
+        >>> b = a
+        >>> b = b + [4]
+        >>> a
+        [1, 2, 3]
+        >>> b
+        [1, 2, 3, 4]
 
 Viitamisest täpsemalt
 ---------------------
