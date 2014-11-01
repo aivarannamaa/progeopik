@@ -48,7 +48,7 @@ Kirjuta eelmises peatükis toodud :ref:`arvude küsimise näide<arvude-liitmine-
 Järjendi elementide muutmine
 ============================
 Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde lisada, saab muuta järjendis juba olemasolevaid elemente. Selleks tuleb teha omistamine kasutades järjendi indekseerimise süntaksit. Uuri ja katseta järgnevat programmi:
-
+ 
 .. sourcecode:: py3
 
     a = [1, 2, 3]
@@ -63,7 +63,7 @@ Nagu ikka, võib ka siin kasutada indeksina mingit täisarvulist muutujat.
 
 Harjutus. Täringuvisete statistika
 ----------------------------------
-Genereeri 100 täringuviske tulemust (kasutades eelpool defineeritud funktsiooni ``juhuslik_järjend``) ning salvesta tulemus muutujasse.
+Genereeri 100 täringuviske tulemust (kasutades näiteks :ref:`eelmises peatükis<juhuslik-jarjend>` defineeritud funktsiooni ``juhuslik_järjend``) ning salvesta tulemus muutujasse.
 
 Koosta 6-elemendiline järjend ``statistika``, mis sisaldab täringuvisete statistikat -- avaldis ``statistika[0]`` peaks näitama, mitu korda tuli täringuviske tulemuseks 1, ``statistika[1]`` peaks näitama kahtede sagedust jne.
 
@@ -73,14 +73,37 @@ Kuva statistika ekraanile.
 
     Kusagil programmis võiks olla lause ``statistika = [0, 0, 0, 0, 0, 0]``
     
-.. todo::
+.. hint::
 
-    Marianni arvates oli segane. Anna näitelahendus.
+    Näidislahendus:
+    
+    .. sourcecode:: py3
+    
+        from random import randint
+
+        def juhuslik_järjend(n, alates, kuni):
+            arvud = []
+        
+            for i in range(n):
+                arvud.append(randint(alates, kuni))
+        
+            return arvud
+        
+        statistika = [0, 0, 0, 0, 0, 0]
+        visked = juhuslik_järjend(100, 1, 6)
+        
+        for vise in visked:
+            # visked on arvud 1..6
+            # listi statistika indeksid on 0..5
+            indeks = vise-1
+            statistika[indeks] += 1
+        
+        print(statistika)
 
 
 Muudetavate andmetüüpide omapärad
 =================================
-Järjendi muutmisel (nii ``append`` kui ``a[i] = x`` puhul) tuleb arvestada ühe omapäraga, mis tuleb ilmsiks siis, kui sama järjend on omistatud mitmele muutujale. Uuri järgnevat näidet ning ennusta, mis antakse selle programmi käivitamisel väljundiks:
+Järjendi muutmisel või täiendamisel (nii ``append``-i kui ``a[i] = x`` puhul) tuleb arvestada ühe omapäraga, mis tuleb ilmsiks siis, kui sama järjend on omistatud mitmele muutujale. Uuri järgnevat näidet ning ennusta, mis antakse selle programmi käivitamisel väljundiks:
 
 .. sourcecode:: py3
     
@@ -468,10 +491,6 @@ Järjendeid saab programmi sisse kirjutada, koostada teiste järjendite põhjal 
 Kust saab rohkem infot?
 -----------------------
 Kes soovib läbitud teemade kohta rohkem detaile või lihtsalt teist vaatenurka, siis soovitame lugeda läbi Pythoni ametliku juhendi: http://docs.python.org/3/tutorial/.
-
-Mis ootab ees?
---------------
-Järgmistes peatükkides tulevad küll mõned uued teemad, aga põhiliselt keskendume suuremate (ja huvitavamate) ülesannete lahendamisele, kasutades juba õpitud vahendeid.
 
 
 Lisalugemine

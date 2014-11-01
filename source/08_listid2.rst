@@ -305,6 +305,8 @@ Selle asemel, et harjutustes järjendeid ise sisse toksida, võime kasutada ka j
     
     print(arvud)
 
+.. _juhuslik-jarjend:
+
 Harjutus. Juhuslike järjendite uurimine
 ---------------------------------------
 Kirjuta funktsioon ``juhuslik_järjend``, mis võtab argumendiks järjendi elementide arvu ning kaks argumenti arvuvahemiku määramiseks, ning tagastab vastava juhuslikult genereeritud arvujärjendi.
