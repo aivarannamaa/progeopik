@@ -44,10 +44,9 @@ Harjutus. Arvude küsimine
 -------------------------
 Kirjuta eelmises peatükis toodud :ref:`arvude küsimise näide<arvude-liitmine-listi>` ümber ``append``-i kasutades.
 
-
 Järjendi elementide muutmine
 ============================
-Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde lisada, saab muuta järjendis juba olemasolevaid elemente. Selleks tuleb teha omistamine kasutades järjendi indekseerimise süntaksit. Uuri ja katseta järgnevat programmi:
+Lisaks sellele, et olemasolevale järjendile on võimalik elemente lõppu juurde lisada, saab välja vahetada järjendi mingil positsioonil olevat elementi. Selleks tuleb teha omistamine kasutades järjendi indekseerimise süntaksit. Uuri ja katseta järgnevat programmi:
  
 .. sourcecode:: py3
 
@@ -99,6 +98,35 @@ Kuva statistika ekraanile.
             statistika[indeks] += 1
         
         print(statistika)
+
+Veel järjendimeetodeid
+======================
+Lisaks ``append``-ile on listidel veel meetodeid mis ei tagasta midagi, vaid muudavad listi sisu. Järgnev tabel näitab, kuidas mõjuvad erinevad meetodid listile ``[3,1,2,3,1,4]``, mis on salvestatud muutujasse ``a``.  
+
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| Meetodi rakendamine | Tagastusväärtus | Listi uus sisu        | Kommentaarid                                   |
++=====================+=================+=======================+================================================+
+| ``a.append(7)``     | ``None``        | ``[3,1,2,3,1,4,7]``   | lisab elemendi listi lõppu                     |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| ``a.extend([7,8])`` | ``None``        | ``[3,1,2,3,1,4,7,8]`` | lisab listitäie elemente listi lõppu           |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| ``a.insert(0,34)``  | ``None``        | ``[34,3,1,2,3,1,4]``  | lisab näidatud positsioonile näidatud elemendi,|
++---------------------+-----------------+-----------------------+ järgnevate elementide positsioonid nihkuvad    |
+| ``a.insert(1,34)``  | ``None``        | ``[3,34,1,2,3,1,4]``  |                                                |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| ``a.remove(1)``     | ``None``        | ``[3,2,3,1,4]``       | eemaldab esimese näidatud väärtusega elemendi  |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| ``a.pop()``         | ``4``           | ``[3,1,2,3,1]``       | eemaldab viimase elemendi ja tagastab selle    |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| ``a.clear()``       | ``None``        | ``[]``                | eemaldab listist kõik elemendid                |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| ``a.sort()``        | ``None``        | ``[1,1,2,3,3,4]``     | sorteerib                                      |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+| ``a.reverse()``     | ``None``        | ``[4,1,3,2,1,3]``     | pöörab elementide järjekorra ümber             |
++---------------------+-----------------+-----------------------+------------------------------------------------+
+
+Nagu näha, tagastab enamik neist meetoditest selle veidra väärtuse ``None``, mis tähendab sisuliselt väärtuse puudumist. Teisti öeldes, neid meetodeid käivitatakse vaid `kõrvalefekti` pärast. Antud juhul on kõrvalefektiks listi muteerimine.
+
 
 
 Muudetavate andmetüüpide omapärad

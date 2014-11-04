@@ -15,7 +15,8 @@ body {
 }
 
 
-tt.literal:not(.download) {
+tt.literal:not(.download),
+code.literal:not(.download) {
 	border: 1px solid #E1E1E8;
 	background-color: #EEEEEC;
 	border-radius: 2px 2px 2px 2px;
@@ -23,7 +24,8 @@ tt.literal:not(.download) {
 	padding-right: 2pt;
 } 
 
-.download tt {
+.download tt,
+.download code {
     font-family: Open Sans, Calibri,Garamond,Verdana,Geneva,Arial,Helvetica,sans-serif;
 }
 
@@ -180,7 +182,7 @@ p {
     margin-top: 0.4em;
     margin-bottom: 1.4em;
 }
-pre, tt {
+pre, tt, code {
     font-family: Consolas, Courier New, Courier;
 }
 

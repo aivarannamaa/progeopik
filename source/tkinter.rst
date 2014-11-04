@@ -29,6 +29,7 @@ Alustuseks toome ära ühe lihtsa ``tkinter``-i programmi:
     # impordi tk vidinad ja konstandid
     from tkinter import *
     from tkinter import ttk
+    from tkinter import messagebox
 
     # see funktsioon käivitatakse nupule klõpsamisel
     def tervita():
@@ -92,6 +93,7 @@ Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutu
 
     from tkinter import *
     from tkinter import ttk
+    from tkinter import messagebox
 
     def tervita():
         tervitus = 'Tere ' + nimi.get()
@@ -132,7 +134,7 @@ Eelmist näiteprogrammi käivitades ei olnud sa võibolla rahul vidinate paigutu
     Lisaks meetoditele ``place`` ja ``grid`` võid kohata veel paigutusmeetodit ``pack``. Rohkem infot saab siit: http://www.tkdocs.com/tutorial/concepts.html#geometry .
 
 Harjutus. Täiendatud tervitaja.
---------------------------------
+-------------------------------
 Täienda eelmist programmi nii, et see võimaldaks ka perenime sisestamist ja kasutaks seda tervituses.
 
 .. _canvas:
@@ -187,7 +189,7 @@ Tahvel (``canvas``)
 Lisainfot ``canvas``-i kohta leiab siit: http://infohost.nmt.edu/tcc/help/pubs/tkinter/canvas.html
 
 Harjutus. Bahama lipp
------------------------
+---------------------
 
 Koosta programm, mis kuvab valge taustaga graafikaakna pealkirjaga "Bahama saarte lipp" ja joonistab sinna Bahama lipu.
 
@@ -376,7 +378,7 @@ Kutsu funktsioon *uuenda* välja enne *Tkinteri* põhitsüklisse sisenemist.
 Pane kood kokku ja käivita rakendus.
 
 Harjutus. Täiendatud kell.
----------------------------
+--------------------------
 Täienda kella. Lisa minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
 
 
@@ -553,8 +555,8 @@ Eespool oli näide selle kohta, kuidas panna automaatselt pilt vahetuma, kui hii
 
     raam.mainloop()
     
-Hiirerullile reageerimine ja objektide suumimine 
----------------------------------------------------
+Hiirerullile reageerimine ja objektide suumimine
+------------------------------------------------
 Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutamist ning kuidas muuta tahvli objektide suurust.
 
 .. sourcecode:: py3
