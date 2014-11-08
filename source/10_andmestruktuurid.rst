@@ -672,9 +672,29 @@ Näiteks antud failide korral peaks ``seosta_lapsed_ja_vanemad("lapsed.txt", "ni
      'Karl Peedumets': {'Peeter Peedumets'}}
     
 
+4. Trips-traps-trull
+--------------------
+Kirjuta funktsioon ``võitja``, mis võtab argumendiks maatriksina (st listide listina) esitatud trips-traps-trulli mängu seisu, ning tagastab ``'O'`` (so suurtäht *O*, mitte null) kui O-ga mängija on võitnud, ``'X'``, kui X-ga mängija on võitnud ja ``'?'``, kui mäng on pooleli või viigis.
+
+Näited:
+
+.. sourcecode:: py3
+
+    >>> võitja([['O',' ','X'],
+                ['O','X',' '],
+                ['X',' ',' ']])
+    'X'
+
+    >>> võitja([['O',' ','X'],
+                ['O',' ',' '],
+                ['X',' ',' ']])
+    '?'
+
+      
 
 
-4. Sudoku lahenduse kontrollimine
+
+5. Sudoku lahenduse kontrollimine
 ---------------------------------
 
 Kirjuta programm, mis kontrollib, kas etteantud failis (:download:`sudoku.txt <downloads/sudoku.txt>`) on korrektne Sudoku lahendus. Mittekorrektse lahenduse korral tuleb öelda, millises veerus, reas või 3x3 ruudus probleem esineb.
@@ -744,7 +764,7 @@ NB! Testi oma programmi nii korrektse kui ka mittekorrektse lahendusega!
 
 
     
-5. SKP
+6. SKP
 ------
 *See ülesanne on antud koos näitelahendusega, aga enne selle vaatamist ürita ise lahenduseni jõuda!*
 
