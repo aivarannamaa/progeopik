@@ -1172,6 +1172,8 @@ Kirjuta funktsioon ``ristkylik``, mis võtab argumentideks kaks küljepikkust ja
     Segaduse vältimiseks on soovitav funktsiooni töö lõppedes pöörata kilpkonn tagasi algsesse suunda.
 
 
+.. _kahe_punkti_kaugus:
+
 3. Kahe punkti kaugus
 ---------------------
 Kirjuta funktsioon, mis võtab argumentideks kahe tasandipunkti koordinaadid ja tagastab nende punktide kauguse üksteisest.

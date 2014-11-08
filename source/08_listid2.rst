@@ -640,6 +640,21 @@ Kirjuta programm, mis küsib kasutajalt sõna, ning väljastab kõik selle anagr
 
     Leia ja väljasta kõik mainitud failis leiduvad anagrammide komplektid. 
 
+
+6. Kaugeimad punktid
+--------------------
+.. note::
+
+    Funktsioonide peatükis oli :ref:`ülesanne <kahe_punkti_kaugus>`, kus tuli leida kolme tasandipunkti hulgast kaks kõige lähemat. Nüüd tuleb lahendada sarnane ülesanne, aga mitte kolme, vaid *n* punkti korral. Teine muudatus on see, et nüüd on vaja leida punktid, mis on üksteisest kõige *kaugemal*.   
+  
+Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leia punktid, mis asuvad teineteisest kõige kaugemal. Väljasta ekraanile ka nende punktide koordinaadid.
+
+.. hint::
+
+    Kontrollida tuleb iga punkti kaugust igast teisest punktist. Seda võib teha kahekordse tsükliga. Välimises tsüklis võiks indeks ``i`` muutuda 1-st kuni n-ni, igal välimise tsükli sammul arvutatakse sisemises tsüklis i-nda punkti kaugus j-ndast punktist, kus j on sisemise for-tsükli indeks.
+
+
+
 .. todo::
 
     Joonistamise ülesanne

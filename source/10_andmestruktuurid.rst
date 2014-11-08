@@ -119,7 +119,8 @@ Sõnastikud
 .. todo::
 
     * Sõnastiku kasutamine kirjetena
-    * Rohkem sõnastikuga ülesandeid
+    * Rohkem sõnastikuga ülesandeid http://www.greenteapress.com/thinkpython/html/thinkpython012.html
+    * sõnastiku läbimine võtmete järjestuses
 
 Sõnastik (ingl *dictionary*, lühendatult ``dict``) on Pythoni andmetüüp, mis meenutab jällegi mitmes mõttes järjendeid: teda kasutatakse andmete koondamisel üheks kogumiks ja temas sisalduvaid üksikuid elemente on võimalik küsida kasutades  avaldist kujul ``kogum[võti]``.
 
@@ -599,19 +600,23 @@ Andmeid (sh andmestruktuure) võib pidada programmide passiivseks pooleks -- nad
 
 1. Teksti analüüs
 -----------------
-Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust eesti- ja ingliskeelsetes tekstides.
+Kirjuta funktsioon ``sümbolite_sagedus``, mis võtab argumendiks sõne ja tagastab sõnastiku, mis sisaldab sõnes sisalduvate tähtede esinemise sagedusi. Sõnastiku võtmeteks peaksid olema tähed või muud sümbolid (st tehniliselt võttes sõned) ja väärtusteks täisarvud.
+
+Kirjuta ka funktsioon ``erinevad_sümbolid``, mis võtab samuti argumendiks sõne, aga tagastab hulga kõikide antud sõnes leiduvate erinevate sümbolitega.
+
+
+Näited:
+
+.. sourcecode:: py3
+
+    >>> sümbolite_sagedus("Tere maailm!")
+    {'!' : 1, 'i' : 1, 'T' : , 'r' : 1, 'm' : 2, 'a' : 2, 'e' : 2, ' ' : 1, 'l' : 1}
+    >>> erinevad_sümbolid("hulk ei sisalda kunagi korduvaid elemente")
+    {'v', 't', 'i', 'r', 'h', 'u', 'm', 'g', 'a', 'o', ' ', 'e', 's', 'd', 'k', 'n', 'l'}
 
 .. hint::
 
-    Kirjuta funktsioon, mis võtab argumendiks failinime ja tagastab sõnastiku, mis sisaldab failis sisalduvate tähtede esinemise sagedusi.
-
-.. hint::
-
-    Sõnastiku võtmeteks peaksid olema tähed või muud sümbolid (st tehniliselt võttes sõned) ja väärtusteks täisarvud.
-
-.. hint::
-
-    Alusta tühja sõnastikuga.
+    Sümbolite sageduse leidmisel alusta tühja sõnastikuga.
 
 .. hint::
 
@@ -622,15 +627,14 @@ Kirjuta programm, mis aitaks võrrelda erinevate sümbolite esinemissagedust ees
     Kui nuputad, millises etapis tuleks kasutada oma head tuttavat ``split`` meetodit, siis mõtle järele, kas seda üldse läheb antud ülesandes tarvis.
 
 
+
 2. Eksami statistika, 2. osa
 ----------------------------
 See ülesanne põhineb ülalpool toodud näiteülesandel.
 
 Kõigepealt muuda etteantud lahendust nii, et küsimuste arv ei oleks fikseeritud, vaid tuvastataks käigu pealt vastavalt esimesel real olevate tulemuste arvule (võib eeldada, et kõigil ridadel on võrdne arv tulemusi).
 
-NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tulemuste arvu korral. Lahendused võib kõik teha järjest ühte samasse faili.
-
-Ülesande lahendamisel võid muuhulgas kasutada kõiki Pythoni funktsioone (sh ``sum`` ja ``max``).
+Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tulemuste arvu korral. Lahendused võib kõik teha järjest ühte samasse faili. Ülesande lahendamisel võid kasutada kõiki Pythoni funktsioone (sh ``sum`` ja ``max``).
 
 #. **Maksimaalsed tulemused**: leia iga ülesande kohta selle lahendamisel saadud maksimaalne skoor.
 
@@ -643,17 +647,32 @@ NB! Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tul
 #. **Skaleeritud hindamine**: oletame, et hindamisskeem on selline, et kui mõne ülesande eest ei saanud keegi maksimumpunkte, siis korrutatakse kõigi tudengite punktid läbi sellise koefitsiendiga, et parima tulemuse saanud tudengi uus tulemus oleks 10. Teisenda ja väljasta kõigi tudengite kõigi ülesannete punktid sellest hindamisskeemist lähtuvalt (ühe komakoha täpsusega). Vihje: koosta järjend, kus on iga ülesande kohta leitud sellele vastav kordaja, ning kasuta seda tudengite hinnete tuvastamisel.
 
 
-3. Kaugeimad punktid
+3. Lapsed ja vanemad
 --------------------
-Failis :download:`punktid.txt<downloads/punktid.txt>` on antud tasandi punktide koordinaadid (kujul *<x-koordinaat> <y-koordinaat>*). Leia punktid, mis asuvad teineteisest kõige kaugemal. Väljasta ekraanile ka nende punktide koordinaadid.
+Failis :download:`lapsed.txt <downloads/lapsed.txt>` on igal real vanema isikukood, tühik ja lapse isikukood. Failis :download:`nimed.txt <downloads/nimed.txt>` on igal real ühe inimese isikukood, tühik ja tema nimi. Võib eeldada, et korduvaid nimesid failis ei esine. Võib eeldada, et iga failis *lapsed.txt* oleva isikukoodi jaoks on failis *nimed.txt* välja toodud vastav nimi. 
 
-.. hint::
+Kirjuta programm, mis väljastab ekraanile iga lapsevanema kohta ühe rea: tema nimi, koolon, tühik ning seejärel komade ja tühikutega eraldatuna tema laste nimed. Näiteks antud failide korral peaks ekraanile ilmuma järgnevad read (lapsevanemate ega nende laste järjekord pole seejuures tähtis):
 
-    Kontrollida tuleb iga punkti kaugust igast teisest punktist. Seda võib teha kahekordse tsükliga. Välimises tsüklis võiks indeks ``i`` muutuda 1-st kuni n-ni, igal välimise tsükli sammul arvutatakse sisemises tsüklis i-nda punkti kaugus j-ndast punktist, kus j on sisemise for-tsükli indeks.
+.. sourcecode:: none
 
-.. hint::
+    Madli Peedumets: Robert Peedumets, Maria Peedumets
+    Peeter Peedumets: Robert Peedumets, Maria Peedumets
+    Kadri Kalkun: Liisa-Maria Jaaniste
+    Karl Peedumets: Peeter Peedumets
 
-    Punktide omavahelise kauguse arvutamisel on abi Pythagorase teoreemist. Vajadusel visanda skeem koordinaatteljestiku ja kahe punktiga ning otsi pildilt täisnurkset kolmnurka.
+Põhitöö tuleks delegeerida funktsioonile ``seosta_lapsed_ja_vanemad``, mis võtab argumentideks laste faili nime ja nimede faili nime, ning tagastab sõnastiku, kus kirje võtmeks on lapsevanema nimi ja väärtuseks tema laste nimede hulk. 
+
+Näiteks antud failide korral peaks ``seosta_lapsed_ja_vanemad("lapsed.txt", "nimed.txt")`` tagastama
+
+.. sourcecode:: py3
+
+    {'Madli Peedumets': {'Robert Peedumets', 'Maria Peedumets'},
+     'Peeter Peedumets': {'Robert Peedumets', 'Maria Peedumets'},
+     'Kadri Kalkun': {'Liisa-Maria Jaaniste'},
+     'Karl Peedumets': {'Peeter Peedumets'}}
+    
+
+
 
 4. Sudoku lahenduse kontrollimine
 ---------------------------------
