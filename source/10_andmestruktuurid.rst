@@ -610,7 +610,7 @@ Näited:
 .. sourcecode:: py3
 
     >>> sümbolite_sagedus("Tere maailm!")
-    {'!' : 1, 'i' : 1, 'T' : , 'r' : 1, 'm' : 2, 'a' : 2, 'e' : 2, ' ' : 1, 'l' : 1}
+    {'!' : 1, 'i' : 1, 'T' : 1, 'r' : 1, 'm' : 2, 'a' : 2, 'e' : 2, ' ' : 1, 'l' : 1}
     >>> erinevad_sümbolid("hulk ei sisalda kunagi korduvaid elemente")
     {'v', 't', 'i', 'r', 'h', 'u', 'm', 'g', 'a', 'o', ' ', 'e', 's', 'd', 'k', 'n', 'l'}
 
