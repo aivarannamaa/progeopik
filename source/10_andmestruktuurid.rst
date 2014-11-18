@@ -646,6 +646,7 @@ Kõik järgmiste ülesannete lahendused peavad samuti töötama suvalise tulemus
 
 #. **Skaleeritud hindamine**: oletame, et hindamisskeem on selline, et kui mõne ülesande eest ei saanud keegi maksimumpunkte, siis korrutatakse kõigi tudengite punktid läbi sellise koefitsiendiga, et parima tulemuse saanud tudengi uus tulemus oleks 10. Teisenda ja väljasta kõigi tudengite kõigi ülesannete punktid sellest hindamisskeemist lähtuvalt (ühe komakoha täpsusega). Vihje: koosta järjend, kus on iga ülesande kohta leitud sellele vastav kordaja, ning kasuta seda tudengite hinnete tuvastamisel.
 
+#. **Hobide mõju**: failis :download:`hobid.txt<downloads/hobid.txt>` on eksami teinute hobid. Täienda programmi nii, et see väljastaks iga hobi kohta vastavate tudengite keskmise eksamitulemuse.
 
 3. Lapsed ja vanemad
 --------------------
