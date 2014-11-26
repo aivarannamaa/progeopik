@@ -224,7 +224,7 @@ Selle fraktali joonistamise mitteformaalne juhis: 1 tasemega fraktali joonistami
         
         
         def fraktal(tase, pikkus):
-            if tase >= 0:
+            if tase >= 1:
                 forward(pikkus)
                 left(90)
                 fraktal(tase-1, pikkus * 0.7)
@@ -244,7 +244,7 @@ Selle fraktali joonistamise mitteformaalne juhis: 1 tasemega fraktali joonistami
     .. sourcecode:: py3
     
         def fraktal(tase, pikkus):
-            if tase == 0:
+            if tase == 1:
                 forward(pikkus)
                 backward(pikkus)
             else:
