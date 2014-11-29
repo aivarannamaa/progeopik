@@ -450,7 +450,17 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja ta
 
 .. hint:: 
 
-     Kasuta funktsioonis ainult üht rekursiivset väljakutset, mis tagastab 2 väärtust, st kirjuta hoopis programm mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmiseks. Võrdle antud näites toodud ja oma kirjutatud programmide töökiirust nt 30-nda Fibonacci arvu leidmisel.
+     Tee abifunktsioon, kus on ainult üks rekursiivne väljakutse, mis tagastab 2 väärtust, st abifunktsiooni ülesanne pole mitte mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmine. Võrdle esialgse ja uue funktsiooni töökiirust 40. Fibonacci arvu leidmisel.
+     
+     .. sourcecode:: py3
+     
+        def fib(n):
+            return abi_fib(n)[0]
+        
+        def abi_fib(n):
+            ...
+            ...
+            return [..., ...] 
 
 
 8. Projecteuler.net
