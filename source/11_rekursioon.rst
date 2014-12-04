@@ -448,8 +448,14 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja ta
 
 Ülalpool toodud definitsioon Fibonacci arvude leidmiseks pole optimaalne, sest samu väärtusi peab arvutama mitu korda ning programmi tööaeg kasvab eksponentsiaalselt. Kirjuta funktsioon ümber selliselt, et sama argumendiga väljakutset ei toimuks mitu korda. 
 
+.. hint::
+
+    Üks võimalus selle probleemi lahendamiseks on jätta iga väljaarvutatud Fibonacci arv kusagile meelde. Kui funktsioonilt küsitakse mingit Fibonacci arvu, siis kõigepealt vaatab see, kas vastus on juba eelnevalt välja arvutatud.
+
 .. hint:: 
 
+     Alternatiivne võimalus.
+     
      Tee abifunktsioon, kus on ainult üks rekursiivne väljakutse, mis tagastab 2 väärtust, st abifunktsiooni ülesanne pole mitte mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmine. Võrdle esialgse ja uue funktsiooni töökiirust 40. Fibonacci arvu leidmisel.
      
      .. sourcecode:: py3
