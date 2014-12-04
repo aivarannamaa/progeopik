@@ -450,13 +450,13 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja ta
 
 .. hint::
 
-    Üks võimalus selle probleemi lahendamiseks on jätta iga väljaarvutatud Fibonacci arv kusagile meelde. Kui funktsioonilt küsitakse mingit Fibonacci arvu, siis tuleks kõigepealt vaadata, kas vastus on juba eelnevalt välja arvutatud.
+    Üks võimalus selle probleemi lahendamiseks on jätta iga väljaarvutatud Fibonacci arv kusagile meelde. Kui funktsioonilt küsitakse mingit Fibonacci arvu, siis tuleks kõigepealt vaadata, kas vastus on juba eelnevalt välja arvutatud. Võrdle esialgse ja uue funktsiooni töökiirust 40. Fibonacci arvu leidmisel.
 
 .. hint:: 
 
      Alternatiivne võimalus.
      
-     Tee abifunktsioon, kus on ainult üks rekursiivne väljakutse, mis tagastab 2 väärtust, st abifunktsiooni ülesanne pole mitte mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmine. Võrdle esialgse ja uue funktsiooni töökiirust 40. Fibonacci arvu leidmisel.
+     Tee abifunktsioon, kus on ainult üks rekursiivne väljakutse, mis tagastab 2 väärtust, st abifunktsiooni ülesanne pole mitte mitte ühe, vaid kahe järjestikuse Fibonacci arvu leidmine. 
      
      .. sourcecode:: py3
      
