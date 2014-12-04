@@ -450,7 +450,7 @@ Kirjuta rekursiivne funktsioon ``tagurpidi``, mis võtab argumendiks sõne ja ta
 
 .. hint::
 
-    Üks võimalus selle probleemi lahendamiseks on jätta iga väljaarvutatud Fibonacci arv kusagile meelde. Kui funktsioonilt küsitakse mingit Fibonacci arvu, siis kõigepealt vaatab see, kas vastus on juba eelnevalt välja arvutatud.
+    Üks võimalus selle probleemi lahendamiseks on jätta iga väljaarvutatud Fibonacci arv kusagile meelde. Kui funktsioonilt küsitakse mingit Fibonacci arvu, siis tuleks kõigepealt vaadata, kas vastus on juba eelnevalt välja arvutatud.
 
 .. hint:: 
 
