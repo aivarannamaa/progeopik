@@ -492,6 +492,11 @@ Kui sa tunned, et mõne õpikus antud ülesande lahendamiseks pole piisavalt juh
 
 Programmeerimiseks vajalikku ettevalmistust on mõnel inimesel rohkem ja teisel vähem, aga harjutamisega on kõigil võimalik end selles osas arendada!
 
+.. topic:: Kui palju aega lugemisele kulutada?
+
+    Mõnikord heidavad programmeerimise õppijad meelt, kui neil ei õnnestu mõnest lõigust esimese lugemisega aru saada. Tehniliste tekstide puhul on aga täiesti normaalne, kui mõnda osa tuleb mitu korda lugeda, sest tekst on harilikust proosatekstist tihedam. Kui ka mitu korda lugedes jääb asi segaseks, siis maksab kelleltki abi küsida. Aidata võib ka see, kui minna materjaliga ikkagi edasi ning hiljem segase koha juurde tagasi tulla.
+
+
 Mõtlemise stiilid
 -----------------
 Osa inimesi (sh suur osa programmeerijatest) eelistavad õppida ja mõelda abstraktselt -- nad ei tunne ennast kindlalt enne, kui nad on suutnud käsitletava teema formuleerida enda peas võimalikult üldiselt. Sellise mõtlemisstiili märksõnad on loogika, ratsionaalsus, abstraktsus, formaalsus ja üldistamine. Nende märksõnadega seotud mõtteprotsessid pidavat toimuma peamiselt vasakus ajupooles.
@@ -527,6 +532,9 @@ Keerulisemate programmide loomine, täiendamine ja muutmine on võimalik vaid si
 .. note::
     
     Viimase lause juurde võiks siiski lisada väikese möönduse: katsetamine on OK, kui su eesmärk on katsetamise teel asja põhimõttest aru saada. Peaasi, et sa ei loeks oma tööd lõpetatuks enne, kui sa tunned, et saad programmist väga hästi aru.
+
+
+
 
 Kokkuvõte
 =========
