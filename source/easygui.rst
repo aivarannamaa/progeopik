@@ -8,7 +8,7 @@ Mis on GUI? Eks ikka graafiline kasutajaliides. Tegelikult on ka IDLE graafiline
 
 EasyGui installeerimine
 =======================
-Lae alla **easygui.py** või zip-fail, mis sisaldab **easygui.py**-d. Vali **versioon 0.96**. Seda saad teha näiteks aadressilt: http://easygui.sourceforge.net/download/. Mooduli peab salvestama sinna, kust Python selle ka leiaks. Kus see asub? Koolis salvesta see samasse kataloogi, kus asuvad sul ka teised Pythonis kirjutatud programmid. Hea oleks, kui see koht on eraldi kataloog sinu isiklikus kodukataloogis.
+Lae alla **easygui.py** või zip-fail, mis sisaldab **easygui.py**-d. Vali **versioon 0.96**. Seda saad teha näiteks aadressilt: http://easygui.sourceforge.net/. Mooduli peab salvestama sinna, kust Python selle ka leiaks. Kus see asub? Koolis salvesta see samasse kataloogi, kus asuvad sul ka teised Pythonis kirjutatud programmid. Hea oleks, kui see koht on eraldi kataloog sinu isiklikus kodukataloogis.
 
 .. note:: 
     Koduarvutis oleks sul kõige mõistlikum **easygui.py** salvestada samasse kataloogi, kus on Pythoni programm ise.
