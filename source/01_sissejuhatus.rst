@@ -33,7 +33,6 @@ Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 on kõige kindlam paigald
     Pythoni versioon ei pea olema tingimata kõige uuem, aga on oluline, et versiooni number algab 3-ga. Versioonides, mis algavad 2-ga, töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
     
 
-
 .. index::
     single: IDLE
 
@@ -69,11 +68,18 @@ Selgitused:
 
     Programmeerimise õppimisel on kasulik võtta uudishimulik hoiak. Kui õpik ütleb, et selle ja selle jaoks tuleb teha nii ja nii, siis küsi endalt "Aga mis siis, kui ..." ja proovi järele.
     
+IDLE'i alternatiiv Thonny
+=========================
+Thonny on algajatele mõeldud Pythoni programmeerimiskeskkond, mis pakub IDLE'iga võrreldes mõningaid lisavõimalusi. Kuigi neid lisavõimalusi me selles peatükis veel ei käsitle, soovitame juba praegu Thonnyt proovida. Paigaldusfailid ja -juhised leiad aadressilt http://thonny.cs.ut.ee.
+
+.. image:: images/thonny.png
+    :width: 100%
+
 
 
 Kasutajaga suhtlemine
 =====================
-Meie esimene programm polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekita `File -> New window` abil uus programmiaken ja kopeeri sinna järgnev programm. *NB! Ära praegu veel oma nime kuhugi kirjuta!*
+Meie esimene programm polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekita uus programmifail (Thonnys `File -> New`, IDLE'is `File -> New window`) ja kopeeri sinna järgnev programm. *NB! Ära praegu veel oma nime kuhugi kirjuta!*
 
 .. sourcecode:: py3
 
@@ -284,9 +290,9 @@ Kirjuta skript, mis joonistab kilpkonnaga mõne huvitava kujundi, näiteks ümbr
 
 Pythoni käsurida
 ================
-Võibolla imestasid, miks tuleb IDLE'i käivitamisel kõigepelt ette käsurea aken. Põhjus on selles, et programmeerida saab ka käsureal, ilma et programmi peaks skriptina salvestamata. Selline programmeerimise viis sobib väiksemate ülesannete lahendamiseks ning Pythoni võimaluste katsetamiseks. Kuna käske antakse ühekaupa ja tulemus näidatakse kohe järgmisel real, nimetatakse seda ka *interaktiivseks programmeerimiseks*. 
+Programmeerida saab ka käsureal, ilma et programmi peaks skriptina salvestamata. Selline programmeerimise viis sobib väiksemate ülesannete lahendamiseks ning Pythoni võimaluste katsetamiseks. Kuna käske antakse ühekaupa ja tulemus näidatakse kohe järgmisel real, nimetatakse seda ka *interaktiivseks programmeerimiseks*. 
 
-Kui sul on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saad avada menüüvalikuga `Windows -> Python shell`. Käsuviip ``>>>`` näitab kohta, kuhu saab kirjutada Pythoni käsu -- vajutades ENTER, see käsk täidetakse. Järgnev näide on kopeeritud IDLE'i käsurealt, kuhu sisestati 2 käsku ``print("Tere maailm!")`` ja ``print(23*454)``:
+Thonnys on käsurida alati nähtav, IDLE'is saad käsurea avada menüüvalikuga `Windows -> Python shell`. Käsuviip ``>>>`` näitab kohta, kuhu saab kirjutada Pythoni käsu -- vajutades ENTER, see käsk täidetakse. Järgnev näide on kopeeritud käsurealt, kuhu sisestati 2 käsku ``print("Tere maailm!")`` ja ``print(23*454)``:
 
 .. sourcecode:: py3
 
@@ -303,14 +309,14 @@ Kui sul on hetkel lahti vaid IDLE'i programmi aken, siis käsurea saad avada men
 
 .. note::
 
-    IDLE'i käsureal saab varasema käsu uuesti aktiivseks, kui liigud nooleklahvidega soovitud käsuni ja vajutad ENTER. Veidi kiirem variant on klahvikombinatsioon Alt+P (P nagu *previous*).
+    Thonny käsureal saab varasema käsu uuesti aktiivseks vajutades nool-üles klahvi. IDLE'is tuleb liikuda nooleklahvidega soovitud käsuni ja vajutada ENTER (veidi kiirem variant on klahvikombinatsioon Alt+P (P nagu *previous*)).
 
 
 
 
 Harjutus. Interaktiivne programmeerimine
 ----------------------------------------
-Katseta erinevaid siiani nähtud käske ka käsureal. Proovi muuhulgas ka Pythoni mälu kasutamist. (Paraku võib kilpkonna juhtimine käsurealt ebaõnnestuda, see sõltub IDLE'i seadetest.)
+Katseta erinevaid siiani nähtud käske ka käsureal. Proovi muuhulgas ka Pythoni mälu kasutamist.
 
 Python kui kalkulaator
 ----------------------
@@ -446,7 +452,7 @@ Mis on programmeerimine?
 
 Kõige lihtsam oleks öelda, et programmeerimine on programmi kirjapanemine. Tehniliselt võttes see nii ongi, aga mängu tulevad ka mõned inimlikud aspektid.
 
-Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõne fragmendiga, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes, programmeerija peab pidevalt ülesannet `analüüsima`. Analüüsi ning programmi kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
+Kuna lähteülesanne on alati püstitatud loomulikus keeles, võivad paljud olulised nüansid jääda esialgu tähelepanuta. Seetõttu ei õnnestu tavaliselt programmi oma peast lihtsalt "maha kirjutada" -- enamasti tuleb alustada mõne fragmendiga, mille kirjapanek annab parema arusaamise ülesande olemusest. Parem arusaamine omakorda võimaldab näha, mida tuleks veel täpsustada, mida järgmisena kirja panna jne. Teisiti öeldes peab programmeerija pidevalt ülesannet `analüüsima`. Analüüsi ning programmi kirjutamise tsükkel kordub suuremate ülesannete juures palju kordi.
 
 Teiseks, programmeerija on inimene ja inimene teeb vigu. Seetõttu loetakse üheks programmeerimise osaks ka programmi `silumist` st juba kirjapandud programmist vigade otsimist ja nende parandamist. Suurem osa vigu avastatakse eespool kirjeldatud kirjutamise ja analüüsimise protsessis, aga tähelepanelik maksab olla ka siis, kui programm on sinu arvates juba valmis.
 
@@ -473,7 +479,7 @@ Python on programmeerimiskeel ning samas ka programm, mis `interpreteerib` keele
 
 Mõtteharjutus. Tehisintellekt
 -----------------------------
-Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? Kas tulevikus saab programmeerida eesti või inglise keeles? Millised takistused tuleks selleks ületada? Kas kunagi hakkavad arvutid arvestama sellega, et programmeerija võib teha vigu? ("Hmm... siin on küll kirjas ``2 / x`` aga see ei klapi siin mitte, küllap ta mõtles ``x / 2``.")
+Kuidas võiks arvutite ja tehisintellekti areng mõjutada programmeerijate elu? Kas tulevikus saab programmeerida eesti või inglise keeles? Millised takistused tuleks selleks ületada? Kas kunagi hakkavad arvutid arvestama sellega, et programmeerija võib teha vigu? ("Hmm... siin on küll kirjas ``2 / x``, aga see ei klapi siin mitte, küllap ta mõtles ``x / 2``.")
 
 
 
@@ -503,9 +509,9 @@ Osa inimesi (sh suur osa programmeerijatest) eelistavad õppida ja mõelda abstr
 
 Teistele (nt suurele osale kunstnikest) lähevad rohkem korda konkreetsed situatsioonid või kombinatsioonid. Uue teema õppimisel ei tunne nad ennast kindlalt enne, kui nad on suutnud selle seostada millegi konkreetse või elulisega. Öeldakse, et nemad suudavad paremini kasutada oma paremat ajupoolt, mis pidavat muuhulgas vastutama intuitsiooni ja loova mõtlemise eest.
 
-Kuigi tavaliselt rõhutatakse programmeerimise juures abstraktse mõtlemise vajalikkust, peab edukas programmeerija kasutama siiski tervet oma aju. Keeruliste süsteemide loomine nõuab tõepoolest head üldistamisvõimet, aga parimad programmiideed sünnivad tihti hoopis konkreetsetest, elulistest või ka täiesti mitteratsionaalsest mõtetest ja tunnetest.
+Kuigi tavaliselt rõhutatakse programmeerimise juures abstraktse mõtlemise vajalikkust, peab edukas programmeerija kasutama siiski tervet oma aju. Keeruliste süsteemide loomine nõuab tõepoolest head üldistamisvõimet, aga parimad programmiideed sünnivad tihti hoopis konkreetsetest, elulistest või ka täiesti mitteratsionaalsetest mõtetest ja tunnetest.
 
-Loomulikult ei ole kõik must ja valge -- sama inimene mõtleb erinevates situatsioonides erinevalt ning erinevaid mõtlemise stiile on võimalik arendada. Siiski on erinevatel inimestel programmeerimise õppimisel erinevad lähtepositsioonid ja seega ka erinevad väljakutsed. Kui sa ei tunne ennast abstraktsete teemadega mugavalt, siis tuleb sul lihtsalt rohkem konkreetseid ülesandeid lahendada, enne kui õnnestub mingist teemast üldistatud ettekujutus saada. Neil, kes kalduvad abstraktsust eelistama, on mõtet iga teema juures võtta endale lisaaega märkamaks võimalikke seoseid igapäevase eluga.
+Loomulikult ei ole kõik must ja valge -- inimene mõtleb erinevates situatsioonides erinevalt ning erinevaid mõtlemise stiile on võimalik endas arendada. Siiski on erinevatel inimestel programmeerimise õppimisel erinevad lähtepositsioonid ja seega ka erinevad väljakutsed. Kui sa ei tunne ennast abstraktsete teemadega mugavalt, siis tuleb sul lihtsalt rohkem konkreetseid ülesandeid lahendada, enne kui õnnestub mingist teemast üldistatud ettekujutus saada. Neil, kes kalduvad abstraktsust eelistama, on mõtet iga teema juures võtta endale lisaaega märkamaks võimalikke seoseid igapäevase eluga.
 
 
 Mõtteharjutus. Sina ja programmeerimine
@@ -523,7 +529,7 @@ Programmeerimine vs maagia
     TODO: ära jäta muljet, et katsetamine on halb!!!!!
     TODO: viita tagasi mõtlemise stiilidele
 
-Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed, neid tuleb rituaali korras "sõnuda" (st oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
+Algajatel programmeerijaltel võib kergesti tekkida mulje, et programmeerimiseks tuleb teada mingit komplekti "loitse" (programmilõike), mille on välja mõelnud vanad ja targad mehed ning neid tuleb rituaali korras "sõnuda" (st oma programmi kopeerida), ja loota, et kokku sattusid õiged loitsud, mis annavad soovitud tulemuse. Taolist lähenemist nimetatakse inglise keeles `cargo cult programming` (vt http://en.wikipedia.org/wiki/Cargo_cult) ja see lähenemine ei vii praktikas kuigi kaugele.
 
 On täiesti arusaadav, kui mõned selle peatüki näited või ülesanded jäid praegu sinu jaoks segaseks või lausa müstiliseks. Pole hullu, peatüki eesmärk oli anda lihtsalt esimene ettekujutus Pythoni programmidest. Tegelikult pole programmeerimises aga midagi müstilist -- iga programmilõigu tööpõhimõte on võimalik alati täielikult ära seletada.
 
@@ -540,8 +546,8 @@ Kokkuvõte
 =========
 See peatükk on oma eesmärgi täitnud, kui:
 
-* sa oskad IDLE'i abil Pythoni programme avada ja käivitada;
-* sa oskad IDLE'i käsureal aritmeetikat teha;
+* sa oskad IDLE'i või Thonny abil Pythoni programme avada ja käivitada;
+* sa oskad IDLE'i või Thonny käsureal aritmeetikat teha;
 * sul on üldine ettekujutus, mida programmeerimine endast kujutab;
 * sa tahad programmeerimise õppimisega jätkata.
     
@@ -629,7 +635,7 @@ Ava Notepad (või mõni muu tekstiredaktor, mis salvestab *plain text*-i). Kopee
 
     Notepad on laiendite osas kangekaelne -- kui sa paned laiendiks ``.py``, siis lisatakse tõenäoliselt salvestamisel sinna otsa veel ``.txt``. Selle vältimiseks pane salvestusdialoogis failinime ümber veel jutumärgid, nt. ``"teremaailm.py"``. See annab Notepadile märku, et sa tõesti soovid just sellist failinime.
 
-Programmi käivitamiseks avame kõigepealt süsteemi käsurea ja liigume sellesse kausta, kus meie programm asub. Windows Vista ja Windows 7 puhul ava *Start-menüü*, sisesta otsingulahtrisse *cmd.exe* ja vajuta ENTER. Windows XP-s tuleb Start-menüüst kõigepealt valida *Run* ja seejärel sisestada *cmd.exe* ja ENTER. Mac-is ja Linuxis tuleb avada *Terminal*.
+Programmi käivitamiseks avame kõigepealt süsteemi käsurea ja liigume sellesse kausta, kus meie programm asub. Windowsi puhul ava Start-menüü, sisesta otsingulahtrisse *cmd.exe* ja vajuta ENTER. Mac-is ja Linuxis tuleb avada *Terminal*.
 
 Õigesse kausta liikumiseks sisesta ``cd``, tühik ja täielik kausta nimi. Näiteks kui sinu programmeerimise kaust asub sinu kodukaustas, siis võiks kausta vahetamise käsk näha välja midagi sellist:
 
@@ -651,7 +657,7 @@ Mis selle käsu peale tegelikult toimus:
 * esimene käsk ütles, et ekraanile tuleb kirjutada tekst "Tere maailm!". Seda interpretaator ka tegi;
 * kuna selles programmis rohkem käske polnud, siis interpretaator lõpetas töö ning käsurida läks tagasi OP-süsteemi kätte.
     
-Kui käivitad Pythoni interpretaatori ilma programmi argumendita, siis avaneb Pythoni käsurida, mis on peaaegu identne IDLE'i käsureaga.
+Kui käivitad Pythoni interpretaatori ilma programmi argumendita, siis avaneb Pythoni käsurida, mis on peaaegu identne IDLE'i või Thonny käsureaga.
 
 .. note::
 
@@ -659,9 +665,11 @@ Kui käivitad Pythoni interpretaatori ilma programmi argumendita, siis avaneb Py
     
     Windowsis saab Pythoni skripte käivitada ka nagu tavalisi programme, nt topeltklõpsuga `Windows Exploreris`.
 
-`Edit with IDLE`
-----------------
-Üks mugav viis, kuidas Windowsis avada olemasolevaid Pythoni faile IDLE'is, on teha Windows Exploreris soovitud failil paremklõps ning valida `Edit with IDLE`.
+..
+    TODO:
+    `Edit with IDLE`
+    ----------------
+    Üks mugav viis, kuidas Windowsis avada olemasolevaid Pythoni faile IDLE'is, on teha Windows Exploreris soovitud failil paremklõps ning valida `Edit with IDLE`.
+        
+    Kui arvutis on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE'i versioonis. Sel puhul on abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab määrata, millise programmiga peaks mingi failitüüp avanema.
     
-Kui arvutis on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE versioonis. Sel puhul on abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab määrata, millise programmiga peaks mingi failitüüp avanema.
-

@@ -797,7 +797,7 @@ Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab sel
 
 Nipp: funktsioonide testimine käsureal
 --------------------------------------
-Väärtusega funktsioone on mugav testida IDLE'i käsureal. Selleks piisab, kui skriptis on kirjas ainult funktsiooni definitsioon -- taolise skripti jooksutamisel küll esialgu midagi ekraanile ei ilmu, aga käsureal on võimalik funktsiooni kasutada. Näiteks kui skripti sisu on selline:
+Väärtusega funktsioone on mugav testida käsureal. Selleks piisab, kui skriptis on kirjas ainult funktsiooni definitsioon -- taolise skripti jooksutamisel küll esialgu midagi ekraanile ei ilmu, aga käsureal on võimalik funktsiooni kasutada. Näiteks kui skripti sisu on selline:
 
 .. sourcecode:: py3
 
@@ -807,7 +807,7 @@ Väärtusega funktsioone on mugav testida IDLE'i käsureal. Selleks piisab, kui 
     def korruta(a,b):
         return a * b
 
-siis peale selle IDLE'is käivitamist on võimalik käsureal teha nii:
+siis peale selle Thonnys või IDLE'is käivitamist on võimalik käsureal teha nii:
 
 .. sourcecode:: py3
 
