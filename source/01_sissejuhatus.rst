@@ -49,7 +49,7 @@ Pythoni programme võiks vabalt kirjutada näiteks Notepadi või mõne muu üldo
     Kui arvutis on installeeritud nii Python 2 kui ka Python 3, tuleb jälgida, et kasutad õiget versiooni. Käsurea aknas on Pythoni versioon näidatud esimesel real. Versiooni saab kontrollida ka menüüst `Help -> About IDLE`.
 
 
-**Uue programmi kirjutamiseks** vali `File` menüüst `New window`. Ilmub uus aken pealkirjaga "Untitled", kuhu saab hakata kirjutama Pythoni programmi. Esimeseks katsetuseks kirjuta või kopeeri redaktorisse järgnev üherealine programmitekst:
+**Uue programmi kirjutamiseks** vali `File` menüüst `New File`. Ilmub uus aken pealkirjaga "Untitled", kuhu saab hakata kirjutama Pythoni programmi. Esimeseks katsetuseks kirjuta või kopeeri redaktorisse järgnev üherealine programmitekst:
 
 .. sourcecode:: py3
 
@@ -79,7 +79,7 @@ Thonny on algajatele mõeldud Pythoni programmeerimiskeskkond, mis pakub IDLE'ig
 
 Kasutajaga suhtlemine
 =====================
-Meie esimene programm polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekita uus programmifail (Thonnys `File -> New`, IDLE'is `File -> New window`) ja kopeeri sinna järgnev programm. *NB! Ära praegu veel oma nime kuhugi kirjuta!*
+Meie esimene programm polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekita uus programmifail (Thonnys `File -> New`, IDLE'is `File -> New File`) ja kopeeri sinna järgnev programm. *NB! Ära praegu veel oma nime kuhugi kirjuta!*
 
 .. sourcecode:: py3
 
