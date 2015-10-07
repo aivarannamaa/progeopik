@@ -1412,7 +1412,7 @@ Ekraanile kuvatav kujund, kui kasutaja sisestab ``7``:
 -----------------------
 Kirjuta programm, mis küsib kasutajalt kaks failinime. Esimene neist peaks tähistama mingit olemasolevat tekstifaili. Teine failinimi võib olla uus, st selle nimega faili ei pruugi eksisteerida.
 
-Programmi ülesanne on võtta esimese faili sisu, teisendada see suurtähtedesse ning kirjutada teise faili. Ekraanile tuleks kuvada teisendatud failis olevate tähemärkide arv.
+Programmi ülesanne on võtta esimese faili sisu, teisendada see suurtähtedesse ning kirjutada teise faili. Ekraanile tuleks kuvada teisendatud failis olevate sümbolite arv.
 
 .. todo::
 
