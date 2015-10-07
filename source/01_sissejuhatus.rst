@@ -343,7 +343,7 @@ Nagu nägid, oskab Python arvutada, seega saaks Pythoni käsurida kasutada võim
 
 .. note::
     
-    Selline trikk toimib ainult käsureal. Kui soovid skriptis midagi ekraanil näidata, tuleb kasutada ikkagi ``print`` käsku.
+    Selline trikk toimib ainult käsureal. Kui soovid skriptis midagi ekraanil näidata, tuleb kasutada ikkagi ``print``-käsku.
     
 
 
@@ -351,7 +351,7 @@ Arve saab mällu salvestada samamoodi nagu skriptis:
 
 .. sourcecode:: py3
 
-    >>> a = 2 * 3
+    >>> a = 2 * 3 
     >>> b = 1
     >>> a + b + 2
     9

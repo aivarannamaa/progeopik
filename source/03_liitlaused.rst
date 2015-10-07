@@ -207,7 +207,7 @@ Tingimuslauses võib ``else`` osa ära jätta -- seda kasutatakse siis, kui ting
 
 Harjutus. Miks on ronk nagu kirjutuslaud?
 -----------------------------------------
-Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga et seal kasutataks vaid üheharulist ``if`` lauset:
+Kirjuta järgnev programm ümber nii, et ta töötaks samamoodi nagu enne, aga et seal kasutataks vaid üheharulist ``if``-lauset:
 
 .. sourcecode:: py3
 
@@ -512,7 +512,7 @@ Täienda eelnevat programmi veel ühe loenduriga, mille abil loetakse kokku 3-ga
 
 Määramata tsükkel
 -----------------
-Alati pole võimalik ette öelda, mitu korda midagi kordama peab enne kui jõutakse soovitud tulemuseni. ``while`` lause sobib ka neil juhtudel, sest tsükli päises võime kasutada suvalist tingimust. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:
+Alati pole võimalik ette öelda, mitu korda midagi kordama peab enne kui jõutakse soovitud tulemuseni. ``while``-lause sobib ka neil juhtudel, sest tsükli päises võime kasutada suvalist tingimust. Järgmine näiteprogramm laseb kasutajal arvata juhuslikult valitud arvu niikaua, kuni ta jõuab õige vastuseni:
 
 .. sourcecode:: py3
 
@@ -550,9 +550,9 @@ Tsükli lõpetamise määrab tavaliselt tsükli päises olev tingimus. Sellele l
 Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõpetamise tingimust (arvu ära arvamine) kontrollitakse tsükli päises ning teist tingimust (10 ebaõnnestunud arvamist) kontrollitakse tsükli kehas:
 
 .. sourcecode:: py3
-    :emphasize-lines: 14 
+    :emphasize-lines: 5,13,14,17,19,20,22,23 
 
-    from random import randint
+    from random import randint 
     
     arv = randint(1,999) # randint annab juhusliku täisarvu näidatud vahemikust.
     arvamus = int(input("Arva, millist tuhandest väiksemat arvu ma mõtlen: "))
@@ -576,7 +576,7 @@ Järgnevas näites on arvamismängu täiendatud selliselt, et ühte tsükli lõp
     else:
         print("Kümnest arvamisest ei piisanud, äkki peaksid taktikat muutma?")
 
-Tegelikult pole ``break`` lause Pythoni programmides hädavajalik - tsükli saab alati ümber kirjutada nii, et kõiki jätkamise/lõpetamise tingimusi kontrollitakse tsükli päises, aga vahel on ``break``-iga lahendus lihtsam.
+Tegelikult pole ``break``-lause Pythoni programmides hädavajalik - tsükli saab alati ümber kirjutada nii, et kõiki jätkamise/lõpetamise tingimusi kontrollitakse tsükli päises, aga vahel on ``break``-iga lahendus lihtsam.
 
 Mõnikord on mugav tsükli lõpetamise tingimust kontrollida *ainult* tsükli kehas, sel juhul pannakse tsükli päisesse alati kehtiv tingimus ``True``. Järgnev programm küsib kasutajalt arve ja näitab nende ruute niikaua, kuni kasutaja sisestab *tühisõne* (st vajutab ENTER ilma midagi tegelikult sisestamata):
 
@@ -686,7 +686,7 @@ Eelmise näiteprogrammi väljund jäi natuke kipakaks, sest osad korrutised olid
 
 Näide. Failist lugemine tsükliga
 --------------------------------
-Meie senised failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mitu rida antud failis on. Praktikas tuleb aga palju sagedamini ette situatsioone, kus faili ridade arv pole teada. Järgnev näide demonstreerib faili kõikide ridade lugemist:
+Meie senised ridahaaval failist lugemise näiteprogrammid teadsid (õigemini eeldasid), mitu rida antud failis on. Praktikas tuleb aga palju sagedamini ette situatsioone, kus faili ridade arv pole teada. Järgnev näide demonstreerib faili kõikide ridade lugemist:
 
 .. sourcecode:: py3
 
@@ -733,7 +733,7 @@ Kirjuta programm, mis loeb tekstifailist temperatuure Fahrenheiti skaalas ja vä
 
 Tõeväärtustüüp ``bool``
 =======================
-Nagu varem mainitud, koosneb iga Pythoni programm lausetest ja lause komponendid on avaldised. Tuleb välja, et Python peab ka ``if`` või ``while`` lause päises olevat tingimust avaldiseks. Aga kui igal avaldisel on väärtus, siis millised näevad välja tingimuse väärtused? Proovime järele:
+Nagu varem mainitud, koosneb iga Pythoni programm lausetest ja lause komponendid on avaldised. Tuleb välja, et Python peab ka ``if`` või ``while``-lause päises olevat tingimust avaldiseks. Aga kui igal avaldisel on väärtus, siis millised näevad välja tingimuse väärtused? Proovime järele:
 
 .. sourcecode:: py3
 
@@ -873,7 +873,7 @@ Kirjuta avaldis, mis võrdleb kahte muutujatena antud sõne ``a`` ja ``b`` ning 
 
 Harjutus. Arvu ruut koos kontrolliga
 ------------------------------------
-Kirjuta programm, mis küsib kasutajalt positiivse täisarvu ning kontrollib, kas sisestatud tekst on numbriline. Kui jah, siis kuvatakse antud arvu ruut, vastasel juhul kuvatakse veateade. 
+Kirjuta programm, mis küsib kasutajalt positiivse täisarvu ning väljastab selle arvu ruudu. Kui sisestatud tekst ei ole numbriline, siis kuvatakse vastavasisuline veateade.
 
 .. index::
     single: loogilised avaldised
@@ -915,7 +915,7 @@ Loomulikult ei hakka keegi kirjutama programmi, mis arvutaks välja avaldise ``T
     if kuu == 1 or kuu == 3 or kuu == 5 or kuu == 7 or kuu = 8 or kuu == 10 or kuu == 12:
         print("Selles kuus on 31 päeva")
     else:
-        print("Selles kuus on vähem, kui 31 päeva")
+        print("Selles kuus on vähem kui 31 päeva")
 
 Tehete järjekord
 ----------------
@@ -943,7 +943,7 @@ Pykkar
 ======
 Nagu eespool veendusime, saab robotkilpkonna juhtimisel tsüklitega teha päris keerulisi asju. Nüüd tutvustame aga järgmist programmeeritavat tegelast, kes lisaks käskude vastuvõtmisele annab ka infot teda ümbritseva keskkonna kohta. Saage tuttavaks, Pykkar!
 
-Pykkar on virtuaalne robot, kes tegutseb oma virtuaalses maailmas. Ta oskab liikuda, värvida, asju kanda ja tal on ka sensorid, mis suudavad näiteks anda märku kui otse ees asub sein. See omadus sobib antud peatükki oivaliselt, sest sensoritelt saadud info ning ``if`` ja ``while``-lausete abil saame panna Pykkari tegevuse sõltuma konkreetsest situatsioonist.
+Pykkar on virtuaalne robot, kes tegutseb oma virtuaalses maailmas. Ta oskab liikuda, värvida, asju kanda ja tal on ka sensorid, mis suudavad näiteks anda märku kui otse ees asub sein. See omadus sobib antud peatükki oivaliselt, sest sensoritelt saadud info ning ``if``- ja ``while``-lausete abil saame panna Pykkari tegevuse sõltuma konkreetsest situatsioonist.
 
 Esimese näitena laseme Pykkaril liikuda otse edasi, kuni ta jõuab seinani ning siis ümber pöörata. See programm (nagu ka kõik meie järgnevad Pykkari programmid) vajab oma tööks moodulit ``pykkar`` (failis :download:`pykkar.py <downloads/pykkar.py>`), mis ei kuulu Pythoni standardteeki ja tuleb seega enne näiteprogrammi käivitamist salvestada enda arvutisse, näiteprogrammiga samasse kausta.
 
@@ -1140,7 +1140,7 @@ Vigade püüdimiseks tuleb kasutada ``try``-lauset. Alustame näitest:
 
 Nii nagu ``if``-``else``-lause, koosneb ka ``try``-lause mitmest osast -- võtmesõna ``try`` alla kirjutatakse laused, mida soovitakse normaalsel juhul täita ning võtmesõna ``except`` alla laused, mida täidetakse siis, kui ``try``-osa lausete täitmisel tekib mingi viga (siit ka võtmesõna ``except`` -- neid lauseid soovime täita vaid erandjuhtumitel).
 
-Antud näite puhul on küsitav, kuivõrd ``try`` lause lisamine midagi paremaks tegi -- me küll peitsime kasutaja eest ära koleda mitmerealise veateate (kas see peitmine oli üldse hea?), aga vigase sisestuse korral jäi kasutaja ikkagi vastusest ilma. Koodi kavalalt ümber paigutades saame me aga programmi, mis küsib kasutajalt arve niikaua, kuni lõpuks teisendamine ja jagamine õnnestub:
+Antud näite puhul on küsitav, kuivõrd ``try``-lause lisamine midagi paremaks tegi -- me küll peitsime kasutaja eest ära koleda mitmerealise veateate (kas see peitmine oli üldse hea?), aga vigase sisestuse korral jäi kasutaja ikkagi vastusest ilma. Koodi kavalalt ümber paigutades saame me aga programmi, mis küsib kasutajalt arve niikaua, kuni lõpuks teisendamine ja jagamine õnnestub:
 
 .. _korduv_kysimine:
 

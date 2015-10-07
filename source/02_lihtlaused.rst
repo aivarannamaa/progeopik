@@ -77,9 +77,9 @@ Et teha järgnevat juttu konkreetsemaks, võtame ette 4 lühikest programmi eelm
     forward(nipitiri)
     left(120)
     
-    exitonclick() 
+    exitonclick()  
 
-Neist programmidest ilmneb, et kuigi Python on tähenärija, on ta mõnes mõttes jällegi väga paindlik. Nagu näha, on ``print`` käsku võimalik kasutada mitut moodi: andes ette kas mingi konkreetse tekstijupi (``print("Tere maailm")``), mingi arvutuse (``print(cos(0.5))``) või hoopis *muutuja* (``print(x)``). Samuti võisime kilpkonna liigutada kas mingi konkreetse teepikkuse jagu (``forward(100)``) või vastavalt sellele, milline arv on parasjagu etteantud muutujas (``forward(nipitiri)``). Isegi muutuja defineerimisel lubatakse võrdusmärgist paremale kirjutada nii lihtsat asja nagu üksik arv (``y = 123``) või nii keerulist asja nagu kasutaja sisendi küsimine koos vastuse teisendamisega (``nipitiri = int(input("Sisesta mingi täisarv: "))``).
+Neist programmidest ilmneb, et kuigi Python on tähenärija, on ta mõnes mõttes jällegi väga paindlik. Nagu näha, on ``print``-käsku võimalik kasutada mitut moodi: andes ette kas mingi konkreetse tekstijupi (``print("Tere maailm")``), mingi arvutuse (``print(cos(0.5))``) või hoopis *muutuja* (``print(x)``). Samuti võisime kilpkonna liigutada kas mingi konkreetse teepikkuse jagu (``forward(100)``) või vastavalt sellele, milline arv on parasjagu etteantud muutujas (``forward(nipitiri)``). Isegi muutuja defineerimisel lubatakse võrdusmärgist paremale kirjutada nii lihtsat asja nagu üksik arv (``y = 123``) või nii keerulist asja nagu kasutaja sisendi küsimine koos vastuse teisendamisega (``nipitiri = int(input("Sisesta mingi täisarv: "))``).
     
 Taoline paindlikkus on Pythoni (ja ka teiste programmeerimiskeelte) juures oluline joon. See võimaldab üsna väikese hulga mõistete ja reeglite põhjal koostada ükskõik kui keerulisi programme. Nüüd vaatamegi põgusalt üle kõige olulisemad programmeerimise mõisted. 
 
@@ -321,7 +321,7 @@ Programmeerimine pole ainult arvudega manipuleerimine, paljudes programmides on 
 
 Konkreetsed tekstijupid pannakse programmi tekstis kirja *sõneliteraalidena*. Enamasti piisab sõneliteraali kirjapanekuks sellest, kui soovitud tekst piiritletakse ülakomade või jutumärkidega, nt ``'Tartu'`` või ``"Kauneim linn on Eestis Tartu"``.
 
-Pane tähele, et tekst, mida antud sõneliteraalid esitavad on *Tartu* ja *Kauneim linn on Eestis Tartu*, st piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde. Demonstreerime seda ``print`` käsu abil, mis toob ekraanile alati sõne tegeliku sisu hoolimata sellest, kuidas ta programmi tekstis kirja on pandud:
+Pane tähele, et tekst, mida antud sõneliteraalid esitavad, on *Tartu* ja *Kauneim linn on Eestis Tartu*, st piiritlejana kasutatud ülakomad/jutumärgid ei kuulu sõne sisu juurde. Demonstreerime seda ``print`` käsu abil, mis toob ekraanile alati sõne tegeliku sisu hoolimata sellest, kuidas ta programmi tekstis kirja on pandud:
 
 .. sourcecode:: py3
 
@@ -744,7 +744,7 @@ Vaikimisi lisab ``print`` väljundi lõppu alati ka reavahetuse. Kui sa seda ei 
     print(32 * 57)                  
     
 
-``end`` on "peidetud" argument, mis määrab, mida kuvatakse väljundi lõppu. Vaikimisi on selle argumendi väärtus reavahetus (``'\n'``), aga meie seadsime selle väärtuseks *tühja sõne*, seetõttu kuvatakse antud näite väljund ühel real (mis lõpeb siiski reavahetusega, sest teine ``print`` käsk toimib ikka tavaliselt).
+``end`` on "peidetud" argument, mis määrab, mida kuvatakse väljundi lõppu. Vaikimisi on selle argumendi väärtus reavahetus (``'\n'``), aga meie seadsime selle väärtuseks *tühja sõne*, seetõttu kuvatakse antud näite väljund ühel real (mis lõpeb siiski reavahetusega, sest teine ``print``-käsk toimib ikka tavaliselt).
 
 Tegelikult oleks saanud sama tulemuse ka lihtsamalt:
 
@@ -927,7 +927,7 @@ Selgituseks:
 
 .. admonition:: Kapoti all: *stdin* ja *stdout*
 
-    Ilmselt märkasid teatud sarnasust ``print`` ja ``write`` ning ``input`` ja ``readline`` vahel. Tegelikult on nende kahe käsupaari seosed palju tihedamad kui paistab. Nimelt käsitletakse operatsioonisüsteemi tasemel kasutaja sisendit justkui mingit virtuaalset faili, millesse tekivad uued read iga kord kui kasutaja klaviatuuril midagi tipib ja vajutab ENTER-it -- seda faili nimetatakse *stdin*-iks e *standarsisendiks*. Analoogselt on olemas virtuaalne fail, kuhu kirjutades ilmuvad read kasutaja konsoolile -- seda faili nimetatakse *stdout*-iks e *standarväljundiks*. Need failid ei asu tegelikult failisüsteemis ja viited neile organiseeritakse igale programmile operatsioonisüsteemi poolt, seetõttu pole neid kunagi vaja ise avada ega sulgeda. 
+    Ilmselt märkasid teatud sarnasust ``print`` ja ``write`` ning ``input`` ja ``readline`` vahel. Tegelikult on nende kahe käsupaari seosed palju tihedamad kui paistab. Nimelt käsitletakse operatsioonisüsteemi tasemel kasutaja sisendit justkui mingit virtuaalset faili, millesse tekivad uued read iga kord kui kasutaja klaviatuuril midagi tipib ja vajutab ENTER-it -- seda faili nimetatakse *stdin*-iks e *standarsisendiks*. Analoogselt on olemas virtuaalne fail, kuhu kirjutades ilmuvad read kasutaja konsoolile -- seda faili nimetatakse *stdout*-iks e *standarväljundiks*. Need failid ei asu tegelikult failisüsteemis ja viited neile organiseeritakse iga programmi jaoks operatsioonisüsteemi poolt, seetõttu pole neid kunagi vaja ise avada ega sulgeda. 
     
     Pythonis saab viited neile failidele kätte moodulist ``sys`` ja nende kasutamist demonstreerib järgnev näide:
     
@@ -939,7 +939,7 @@ Selgituseks:
         nimi = stdin.readline().strip()
         stdout.write("Tere " + nimi + "!")
 
-    Käsud ``print`` ja ``input`` ongi lihtsalt mugavam viis nende failide kasutamiseks.
+    Käsud ``print`` ja ``input`` ongi lihtsalt mugavamad viisid nende failide kasutamiseks.
 
 .. index::
     single: import
@@ -978,7 +978,7 @@ Täienda eelnevat näiteprogrammi nii, et ekraanile ilmuks kirja ``The Whole Dam
 ================
 Ilmselt oled nüüdseks juba saanud intuitiivse ettekujutuse ``import`` käsu olemusest, aga vaatame kindluse mõttes asja siiski üle.
 
-Python mõistab tuhandeid erinevaid käske. Nende paremaks organiseerimiseks on nad jaotatud teemade kaupa gruppidesse, mida nimetatakse `mooduliteks`. ``import`` lause teeb moodulis olevad funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
+Python mõistab tuhandeid erinevaid käske. Nende paremaks organiseerimiseks on nad jaotatud teemade kaupa gruppidesse, mida nimetatakse `mooduliteks`. ``import``-lause teeb moodulis olevad funktsioonid programmi jaoks kättesaadavaks. Meeldetuletuseks näide, kus me soovime kasutada ainult kahte funktsiooni moodulist ``math``:
 
 .. sourcecode:: py3
 
@@ -997,6 +997,9 @@ Kui soovime moodulist kõiki funktsioone, siis võime kasutada import lauses fun
     left(90)
     forward(100)
 
+.. note::
+
+    Kui meil kõiki funktsioone (või vähemalt enamikku neist) vaja ei lähe, siis pole tärniga importimine soovitatav, sest Thonny muutujate tabel täitub ebavajalike ridadaga, ning huvipakkuvaid muutujaid on raskem leida. Samuti on oht, et kogemata valesti kirjutatud muutujanime korral Python mitte ei anna veateadet vaid kasutab meie teadmata mõnd imporditud muutujat. 
     
 Importida saab ka moodulit ennast, sel juhul tuleb soovitava funktsiooni nimi kirjutada koos mooduli nimega:
     
@@ -1309,7 +1312,7 @@ Muudan oma skripti veelkord:
 Ülesanded
 =========
 .. note::
-    Kuigi mõned järgnevad ülesanded nõuavad programmi vormistamist koos kasutajalt sisendi küsimisega, on soovitatav esialgu kirjutada ``input`` käskude asemele mingid konkreetsed väärtused -- sedasi läheb võimalike arvutusvalemite katsetamine kiiremini. Kui oled saanud kätte õige valemi, siis asenda need ajutised algandmed ``input`` käskudega.
+    Kuigi mõned järgnevad ülesanded nõuavad programmi vormistamist koos kasutajalt sisendi küsimisega, on soovitatav esialgu kirjutada ``input``-käskude asemele mingid konkreetsed väärtused -- sedasi läheb võimalike arvutusvalemite katsetamine kiiremini. Kui oled saanud kätte õige valemi, siis asenda need ajutised algandmed ``input``-käskudega.
 
 
 1. Pythoni dokumentatsioon
@@ -1432,7 +1435,7 @@ aga kui kasutaja sisestab laiuseks 50 ja seina kõrguseks 40, siis ilmub
 
 8. Redeli pikkus
 ----------------
-Kirjuta programm, mis arvutab mitme pulgaga redelit läheb vaja mingile kõrgusele ronimiseks. Programm peaks küsima kasutajalt soovitud kõrguse ning väljastama minimaalse ja maksimaalse pulkade arvu, mis peaks sobival redelil olema. Arvestame, et:
+Kirjuta programm, mis arvutab, mitme pulgaga redelit läheb vaja mingile kõrgusele ronimiseks. Programm peaks küsima kasutajalt soovitud kõrguse ning väljastama minimaalse ja maksimaalse pulkade arvu, mis peaks sobival redelil olema. Arvestame, et:
  
 * redeli alumine ja ülemine pulk on redeli otstest 15 cm kaugusel;
 * redeli pulkade vahekaugus on 25 cm;

@@ -336,7 +336,7 @@ Nüüd küsimus: mitu korda kirjutab järgnev programm ekraanile sõna "kala"? N
 
 .. hint::
 
-    Kui sulle jäi segaseks, miks tulemus tuli selline nagu ta tuli, siis uuri veidi muudetud, aga enam-vähem sama struktuuriga programmi käitumist:
+    Kui sulle jäi tulemus segaseks, siis uuri veidi muudetud, aga enam-vähem sama struktuuriga programmi käitumist:
     
     .. sourcecode:: py3
     
@@ -351,11 +351,11 @@ Nüüd küsimus: mitu korda kirjutab järgnev programm ekraanile sõna "kala"? N
             fun1()
             print("fun2 lõpp")
 
-        print("kogu eksperimendi algus")
+        print("eksperimendi algus")
         fun2()
         print("----------------")
         fun2()
-        print("kogu eksperimendi lõpp")
+        print("eksperimendi lõpp")
 
 
 Kontrollküsimus: mitu tärni?
@@ -721,11 +721,11 @@ Tuleme tagasi peatüki alguses mainitud probleemi juurde: pere sissetuleku üles
 
 Ilmselt juba aimad, et taolise kordamise vältimiseks on jälle abiks funktsioonid -- netopalga arvutamiseks tuleb defineerida uus funktsioon (nt nimega ``neto``), valem tuleb kirja panna funktsiooni kehas, seejuures tuleks brutopalk jätta lahtiseks, st parameetriks.
 
-Kuidas aga saada funktsiooni käest vastust kätte? Võid proovida lisada funktsiooni lõppu vastava ``print`` lause, aga see ei aita, kui tahame tulemust järgmistes arvutustes kasutada. Võiks proovida salvestada tulemuse kuhugi muutujasse, aga milline muutuja valida? Kas ``isa_sissetulek`` või ``ema_sissetulek``?
+Kuidas aga saada funktsiooni käest vastust kätte? Võid proovida lisada funktsiooni lõppu vastava ``print``-lause, aga see ei aita, kui tahame tulemust järgmistes arvutustes kasutada. Võiks proovida salvestada tulemuse kuhugi muutujasse, aga milline muutuja valida? Kas ``isa_sissetulek`` või ``ema_sissetulek``?
 
 ``return``-lause
 ----------------
-Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``return`` lause. Demonstreerime selle kasutamist netopalga arvutamise funktsioonis:
+Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``return``-lause. Demonstreerime selle kasutamist netopalga arvutamise funktsioonis:
 
 .. _neto_funktsioon:
 
@@ -752,7 +752,7 @@ Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``re
 Vaatame selle idee kinnistamiseks ka ühte lihtsamat näidet -- defineerime funktsiooni, mis arvutab ja tagastab ringi pindala, ning seejärel kutsume selle välja omistuslauses:
 
 .. sourcecode:: py3
-    :emphasize-lines: 1-2,9,10
+    :emphasize-lines: 3-4,9,10
     
     from math import pi
 
@@ -781,7 +781,7 @@ Eespool jagasime funktsioonid kahte leeri -- ühed teevad midagi (neid kasutame 
 
 Harjutus. Sõne dubleerimine
 ---------------------------
-Kirjuta funktsioon ``dubleeri`` , mis võtab argumendiks sõne ning tagastab selle sõne dubleerituna nii mitu korda, kui mitu tähte on esialgses sõnes:
+Kirjuta funktsioon ``dubleeri``, mis võtab argumendiks sõne ning tagastab selle sõne korratuna nii mitu korda, kui mitu tähte on esialgses sõnes:
 
 .. sourcecode:: py3
 
@@ -801,10 +801,10 @@ Väärtusega funktsioone on mugav testida käsureal. Selleks piisab, kui skripti
 
 .. sourcecode:: py3
 
-    def liida(a,b):
+    def liida(a ,b):
         return a + b
     
-    def korruta(a,b):
+    def korruta(a, b):
         return a * b
 
 siis peale selle Thonnys või IDLE'is käivitamist on võimalik käsureal teha nii:
@@ -895,7 +895,7 @@ Kirjuta võimalikult lühike programm, mille käivitamise järel saaks Pythoni k
     Äkki selgitad liiga segaselt?
 
 
-Eelnevalt märkisime, et funktsiooni parameetrid ja ``input`` on olemuselt sarnased, kuna mõlemad on seotud sisendi saamisega, kuid parameetrid on paindlikumad, kuna täpne sisendi saamise viis jäetakse lahtiseks.
+Eelnevalt märkisime, et funktsiooni parameetrid ja ``input`` on olemuselt sarnased, kuna mõlemad on seotud sisendi saamisega, kuid parameetrid on paindlikumad, sest täpne sisendi saamise viis jäetakse lahtiseks.
 
 Analoogselt võime võrrelda ``print`` ja ``return`` käskusid -- mõlemad on seotud väljundi andmisega, kuid ``return`` on paindlikum, kuna täpne tulemuse kasutamise viis jäetakse lahtiseks.
 
@@ -918,7 +918,7 @@ Uuri kahte järgnevat programmi, kus mõlemas on defineeritud funktsioon ringi p
 |                                              |    f.close()                                 |
 +----------------------------------------------+----------------------------------------------+
     
-Kui sooviksime arvutuse tulemust näidata ainult ekraanil, siis tehniliselt võttes pole vahet, kas me teeme ``print``-i funktsiooni sees või väljaspool. Erinevus tuleb sisse, kui me soovime tulemust veel kuskil kasutada, näiteks faili koostamisel või mingites järgnevates arvutustes -- meie esimeses programmis olev funktsioon siis enam ei sobi. Teises variandis on funktsioon defineeritud üldisemana ja seetõttu saab seda kasutada rohkemates situatsioonides.
+Kui sooviksime arvutuse tulemust näidata ainult ekraanil, siis tehniliselt pole vahet, kas me teeme ``print``-i funktsiooni sees või väljaspool. Erinevus tuleb sisse, kui me soovime tulemust veel kuskil kasutada, näiteks faili koostamisel või mingites järgnevates arvutustes -- meie esimeses programmis olev funktsioon siis enam ei sobi. Teises variandis on funktsioon defineeritud üldisemana ja seetõttu saab seda kasutada rohkemates situatsioonides.
 
 .. todo::
 
@@ -948,7 +948,7 @@ Harjutus. Kahest suurim => kolmest suurim
 
 Kõigepealt defineeri funktsioon ``kahest_suurim``, mis tagastab kahest argumendiks antud arvust suurima. 
 
-Seejärel küsi programmi põhiosas kasutajalt *kolm* arvu, ning kuva ekraanile neist suurim. Proovi seejuures delegeerida võimalikult palju tööd äsja loodud funktsioonile.
+Seejärel küsi programmi põhiosas kasutajalt *kolm* arvu ning kuva ekraanile neist suurim. Proovi seejuures delegeerida võimalikult palju tööd äsja loodud funktsioonile.
 
 .. hint::
 
@@ -969,9 +969,9 @@ Senistes näidetes oli ``return``-lause funktsiooni kehas kõige viimane lause (
         
         return x
 
-Kumb neist ``return``-idest siis ikkagi kehtib? Sellele vastamiseks peame teadma, et ``return`` lause käivitamine lõpetab alati funktsiooni töö. Seega, kui kutsume antud funktsiooni välja negatiivse argumendiga, siis käivitub esimene ``return`` ja ``if``-lausele järgnevat rida üldse ei vaadatagi. Kui aga ``if`` lause tingimus osutub vääraks, siis ``if``-lause keha ei vaadata ja Python jätkab sellega, mis tuleb peale ``if``-lauset (s.o teine ``return```).
+Kumb neist ``return``-idest siis ikkagi kehtib? Sellele vastamiseks peame teadma, et ``return``-lause käivitamine lõpetab alati funktsiooni töö. Seega, kui kutsume antud funktsiooni välja negatiivse argumendiga, siis käivitub esimene ``return`` ja ``if``-lausele järgnevat rida üldse ei vaadatagi. Kui aga ``if``-lause tingimus osutub vääraks, siis ``if``-lause keha ei vaadata ja Python jätkab sellega, mis tuleb peale ``if``-lauset (s.o teine ``return``).
 
-Selline võimalus kasutada ``return``-i funktsiooni keskel ei ole tegelikult eriti oluline -- alati saab funktsiooni panna kirja nii, et seal on täpselt üks ``return`` lause ja see paikneb funktsiooni lõpus.
+Selline võimalus kasutada ``return``-i funktsiooni keskel ei ole tegelikult eriti oluline -- alati saab funktsiooni panna kirja nii, et seal on täpselt üks ``return``-lause ja see paikneb funktsiooni lõpus. Vahel võib mitme return-i kasutamine siiski koodi selgemaks teha.
 
 .. note::
 
@@ -1014,13 +1014,13 @@ Erindite tekitamine
 -------------------
 Tuleta meelde :ref:`netopalga arvutamise funktsiooni<neto_funktsioon>`. Mis juhtub, kui sellele anda argumendiks negatiivne arv? Proovi toodud näiteprogrammi nii, et isa palk on -300 ja ema oma 900. Kas saadud tulemus on mingis mõttes mõistlik?  
 
-Ilmselt oled nõus, ``neto(-300)`` ei ole mõistlik, samamoodi nagu ``int("tere")`` ei ole mõistlik. Kuna Python annab ``int("tere")`` käivitamisel vea e tekitab erindi (mida vajadusel saab :ref:`kinni püüda<erindite_pyydmine>`) siis võiksime ka funktsioonis ``neto`` kontrollida kõigepealt parameetri väärtust ja kui see on vigane, siis tekitada erindi:
+Ilmselt oled nõus, et ``neto(-300)`` ei ole mõistlik, samamoodi nagu ``int("tere")`` ei ole mõistlik. Kuna Python annab ``int("tere")`` käivitamisel vea ehk tekitab erindi (mida vajadusel saab :ref:`kinni püüda<erindite_pyydmine>`), siis võiksime ka funktsioonis ``neto`` kontrollida kõigepealt parameetri väärtust ja kui see on vigane, siis tekitada erindi:
 
 .. sourcecode:: py3
     :emphasize-lines: 2-3
 
     def neto(bruto):
-        if not (bruto >= 0):
+        if bruto < 0:
             raise Exception("Argument peab olema mittenegatiivne")
              
         maksuvaba = 144
@@ -1040,7 +1040,7 @@ Ilmselt oled nõus, ``neto(-300)`` ei ole mõistlik, samamoodi nagu ``int("tere"
 Ilmselt juba aimasid, et erindi tekitamisega oli seotud lause, mis algas võtmesõnaga ``raise``. Sõna ``Exception`` näitab erindi tüüpi. Eri tüüpi erindite kasutamist me siin ei käsitle, seetõttu ütleme praegu, et erindi tekitamise lause peab olema kujul ``raise Exception(<veateade>)``.
 
 
-Katseta muudetud programmi negatiivse palganumbriga -- loodetavasti näed nüüd vigase vastuse asemel veateadet.
+Katseta muudetud programmi negatiivse palganumbriga -- loodetavasti näed nüüd vigase vastuse asemel veateadet. Kui saab valida, kas programm annab vale vastuse või lõpetab veateatega, siis kindlasti peaks eelistama viimast!
 
 Enda erindite püüdmine
 ----------------------
@@ -1049,10 +1049,10 @@ Ise tekitatud erindeid on võimalik kinni püüda :ref:`samamoodi<erindite_pyydm
   
 
 .. sourcecode:: py3
-    :emphasize-lines: 16-23
+    :emphasize-lines: 16,21-23
 
     def neto(bruto):
-        if not (bruto >= 0):
+        if bruto < 0:
             raise Exception("Argument peab olema mittenegatiivne")
              
         maksuvaba = 144
@@ -1087,7 +1087,7 @@ Antud programmi puhul pole see lahendus tegelikult optimaalne -- kasutaja jaoks 
 
 Milleks funktsioonid?
 =====================
-Vaatame üle peamised põhjused, miks on funktsioonid kasulikud.
+Vaatame üle peamised põhjused, miks funktsioonid on kasulikud.
 
 .. index::
     single: DRY-printsiip
@@ -1103,7 +1103,7 @@ Pere sissetuleku programmi muutmine oli hea DRY-printsiibi rakendamise näide. L
 
 Üldistamine
 -----------
-Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt ühel juhul arvutame netopalka ema, aga teisel juhul isa brutopalga põhjal), siis tulevad appi parameetrid, mis võimaldavad meil funktsiooni kehas jätta mõned detailid lahtiseks. Teisiti öeldes -- funktsiooni parameetrid võimaldavad meil kirjutada üldisema lahenduse, mida saab hiljem konkreetsete argumentidega täpsustada. Nt netopalga arvutamise funktsioonis saame brutopalga esitada parameetrina, millele antakse väärtus alles konkreetse arvutuse käivitamisel.
+Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt ühel juhul arvutame netopalka ema, aga teisel juhul isa brutopalga põhjal), siis tulevad appi parameetrid, mis võimaldavad meil funktsiooni kehas jätta mõned detailid lahtiseks. Teisiti öeldes -- funktsiooni parameetrid võimaldavad meil kirjutada üldisema lahenduse, mida saab hiljem konkreetsete argumentidega täpsustada. Netopalga arvutamise funktsioonis saime brutopalga esitada parameetrina, millele antakse väärtus alles konkreetse arvutuse käivitamisel.
 
 
 
@@ -1115,7 +1115,7 @@ Kui eri kohtades on vaja sarnast, kuid teatud variatsiooniga koodi (nt ühel juh
     
 Abstraktsioon ja mustad kastid
 ------------------------------
-Kolmas oluline põhjus tuleb paremini esile suuremate programmide puhul. Kui me koondame teatud alamülesande lahendamiseks vajalikud laused ühte funktsiooni (e alamprogrammi), siis programmi põhiosas piisab selle alamülesande lahendamiseks vaid vastava funktsiooni nime mainimisest. See annab meile võimaluse juba lahendatud alamülesandeid käsitleda abstraktselt ilma muretsemata, kuidas vastavad funktsioonid sisemas töötavad. Teisiti öeldes, programmi põhiosa kallal töötades võime me käsitleda funktsioone kui maagilisi "musti kaste", lihtsalt eeldades, et nad teevad seda, mida nende nimest võib välja lugeda. Taoline võte võimaldab meil ühele programmi kihile korraga keskendudes luua väga keerulisi programme, millega poleks võimalik toime tulla, kui me peaks kõiki detaile korraga meeles pidama.
+Kolmas oluline põhjus tuleb paremini esile suuremate programmide puhul. Kui me koondame teatud alamülesande lahendamiseks vajalikud laused ühte funktsiooni (alamprogrammi), siis programmi põhiosas piisab selle alamülesande lahendamiseks vaid vastava funktsiooni nime mainimisest. See annab meile võimaluse juba lahendatud alamülesandeid käsitleda abstraktselt ilma muretsemata, kuidas vastavad funktsioonid sisemas töötavad. Teisiti öeldes, programmi põhiosa kallal töötades võime me käsitleda funktsioone kui maagilisi "musti kaste", eeldades lihtsalt, et nad teevad seda, mida nende nimest võib välja lugeda. Taoline võte võimaldab meil ühele programmi kihile korraga keskendudes luua väga keerulisi programme, millega poleks võimalik toime tulla, kui me peaks kõiki detaile korraga meeles pidama.
 
 Kui *DRY*-printsiibi juures rõhutasime seda, et funktsioonid aitavad sama koodi kasutada korduvalt, siis abstraktsiooni põhiidee on selles, et me saame hästi valitud nimega funktsiooni edukalt kasutada ilma selle ehituse peale mõtlemata. Seetõttu on uue funktsiooni loomine põhjendatud tihti ka siis, kui seda kasutatakse vaid ühes kohas.
 
