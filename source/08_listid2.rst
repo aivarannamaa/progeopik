@@ -248,7 +248,9 @@ Antud näite puhul olid tsükli aluseks kasutaja tegevused. Samahästi võiksime
         >>> a
         [1, 2, 6, 2, 5]
     
-    Listide puhul on aga ``a = a + [x]`` ja ``a += [x]`` pisut erineva tähendusega. Sellest tuleb täpsemalt juttu järgmises peatükis. Praegu on kõige kindlam liitmine ja omistamine pikalt välja kirjutada. Kui aga sedasi koostatud listid lähevad väga pikaks, siis on kasulik ikkagi kasutada varianti ``a += [x]``
+    Listide puhul on aga ``a = a + [x]`` ja ``a += [x]`` pisut erineva tähendusega. Lühidalt öeldes, ``a = a + [x]`` tekitab uue ja pikema listi, aga ``a += [x]`` täiendab esialgset listi. ``a += [x]`` asemel võib kirjutada ka ``a.append(x)``.
+    
+    Kõigest sellest tuleb täpsemalt juttu järgmises peatükis. Praegu on kõige kindlam liitmine ja omistamine pikalt välja kirjutada. Pikemate listide puhul aga võib see teha programmi väga aeglaseks. Sel juhul on mõistlik kasutada siiski varianti ``a += [x]`` või ``a.append(x)``.
  
 
 
