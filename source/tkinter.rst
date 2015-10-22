@@ -381,10 +381,33 @@ Harjutus. Täiendatud kell.
 --------------------------
 Täienda kella. Lisa minuti- ja tunniosuti, mis samuti muudaks aja jooksul oma positsiooni.
 
+Hiireklõpsudele reageerimine
+----------------------------
+Järgnevas programmis kästakse tahvlil iga hiireklõpsu peale kutsuda välja funktsioon, mis registreerib hiireklõpsu koordinaadid:
+
+.. sourcecode:: py3
+
+    from tkinter import *
+    
+    def registreeri_hiireklõps(event):
+        print("Klõpsati positsioonile", event.x, event.y)
+        
+        klõpsud.append([event.x, event.y])
+        print("Seni tehtud klõpsud:", klõpsud)
+    
+    raam = Tk()
+    raam.title("Tahvel")
+    tahvel = Canvas(raam, width=600, height=600, background="white")
+    tahvel.grid()
+    tahvel.bind('<1>', registreeri_hiireklõps)
+    
+    klõpsud = []
+    
+    raam.mainloop()
 
 
-Kasutaja tegevusele reageerimine
---------------------------------
+Klahvidele reageerimine
+-----------------------
 Järgmine näide demonstreerib, kuidas uuendada tahvli sisu vastavalt kasutaja tegevusele (näite proovimiseks salvesta samasse kausta :download:`juku.gif <downloads/juku.gif>`):
 
 .. sourcecode:: py3
