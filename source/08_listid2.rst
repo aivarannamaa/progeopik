@@ -603,7 +603,7 @@ Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eral
 
 .. attention::
 
-    Seda ülesannet on võimalik lahendada kasutades skeemi ``a = a + [x]``, kus ``a`` on list ja ``x`` on lisatav element, aga see kujuneks väga aeglaseks. Seetõttu on soovitav kasutada siin skeemi ``a += [x]``, mis töötab palju kiiremini. Selle skeemiga kaasneb ka üks lisanüanss, aga sellest räägime lähemalt järgmises peatükis.
+    Seda ülesannet on võimalik lahendada kasutades skeemi ``a = a + [x]``, kus ``a`` on list ja ``x`` on lisatav element, aga see kujuneks väga aeglaseks. Seetõttu on soovitav kasutada siin skeemi ``a += [x]`` või ``a.append(x)``, mis töötab palju kiiremini. Nende skeemidega kaasneb ka üks lisanüanss, aga sellest räägime lähemalt järgmises peatükis.
 
 .. topic:: Ülesande lisa
 
