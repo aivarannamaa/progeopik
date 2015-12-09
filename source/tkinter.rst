@@ -622,3 +622,87 @@ Järgnev näide demonstreerib kahte asja -- kuidas tuvastada hiirerulli kasutami
 
 Kahjuks ei toimu automaatselt piltide suuruse muutmine -- täieliku efekti saamiseks tuleks ka piltide sisu vahetada suuremate vastu.
 
+Piltide kaitsmine prügikoristuse eest
+-------------------------------------
+Järgnev programm näitab nupule vajutades ekraanil pilti (proovimiseks salvesta skriptiga samasse kausta :download:`juku.gif <downloads/juku.gif>`):
+
+.. sourcecode:: py3
+    
+    from tkinter import *
+    from tkinter import ttk
+    
+    raam = Tk()
+    
+    # teen valmis ühe pildi, mida nupuvajutusega ekraanile kuvada
+    juku = PhotoImage(file="juku.gif")
+    
+    # pilt peab tulema selle sildi peale
+    silt = ttk.Label(raam)
+    silt.grid()
+    
+    def näita_jukut():
+        silt["image"] = juku
+    
+    # see nupp peab pildi kuvamise välja kutsuma
+    nupp = ttk.Button(text="Näita Jukut", command=näita_jukut)
+    nupp.grid()
+    
+    
+    raam.mainloop()
+
+Kuna muutujat ``juku`` läheb vaja vaid funktsioonis ``näita_jukut``, siis oleks loomulik teha see muutuja lokaalseks muutujaks:
+
+.. sourcecode:: py3
+    :emphasize-lines: 11-12
+    
+    from tkinter import *
+    from tkinter import ttk
+    
+    raam = Tk()
+    
+    # pilt peab tulema selle sildi peale
+    silt = ttk.Label(raam)
+    silt.grid()
+    
+    def näita_jukut():
+        # teen valmis ühe pildi, mida nupuvajutusega ekraanile kuvada
+        juku = PhotoImage(file="juku.gif")
+        silt["image"] = juku
+    
+    # see nupp peab pildi kuvamise välja kutsuma
+    nupp = ttk.Button(text="Näita Jukut", command=näita_jukut)
+    nupp.grid()
+    
+    
+    raam.mainloop()
+    
+Jama on selles, et nüüd peale nupuvajutust enam Jukut ei ilmu. Probleem on Pythoni ja Tk vahelises möödarääkimises -- Python arvab, et kui funktsioon ``näita_jukut`` oma töö lõpetab, siis lokaalsesse muutujasse ``juku`` salvestatud objekti enam vaja ei lähe ning viskab selle minema (vt https://en.wikipedia.org/wiki/Garbage_collection_%28computer_science%29). Kui ``juku`` oli globaalne muutuja, siis ei julgenud Python seda minema visata, sest globaalse muutuja kaudu võib suvaline koodi osa sellest objektist sõltuda.
+
+Selleks, et veenda Pythonit pildi vajalikkuses, tuleks kood korraldada nii, et ka peale funktsiooni töö lõppu jääks viide pildile kusagile alles. Üks võimalus on teha globaalne piltide hulk, kuhu me salvestame kõik ``PhotoImage``-d:
+
+.. sourcecode:: py3
+    :emphasize-lines: 4,14
+    
+    from tkinter import *
+    from tkinter import ttk
+    
+    pildid = set()
+    raam = Tk()
+    
+    # pilt peab tulema selle sildi peale
+    silt = ttk.Label(raam)
+    silt.grid()
+    
+    def näita_jukut():
+        # teen valmis ühe pildi, mida nupuvajutusega ekraanile kuvada
+        juku = PhotoImage(file="juku.gif")
+        pildid.add(juku)
+        silt["image"] = juku
+    
+    # see nupp peab pildi kuvamise välja kutsuma
+    nupp = ttk.Button(text="Näita Jukut", command=näita_jukut)
+    nupp.grid()
+    
+    
+    raam.mainloop()
+    
