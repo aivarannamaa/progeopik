@@ -122,7 +122,7 @@ Ilmselt on pisut ootamatu aga see, et esimest positsiooni ei tähista mitte numb
 
 .. topic:: Miks alustatakse järjendi elementide nummerdamist 0-st? 
 
-    Vanemates programmeerimiskeeltes oli taoline valik tingitud järjendite esitusviisist arvuti mälus. Teine põhjus on selles, et nii saab mõnesid keerulisemaid indekseerimisavaldisi veidi lühemalt kirja panna. Kolmas ja kõige olulisem põhus on see, et enamikus programmeerimiskeeltes on sedasi koguaeg tehtud ning väga paljud programmeerijad on harjunud taolise nummerdamisega. 
+    Vanemates programmeerimiskeeltes oli taoline valik tingitud järjendite esitusviisist arvuti mälus. Teine põhjus on selles, et nii saab mõnesid keerulisemaid indekseerimisavaldisi veidi lühemalt kirja panna. Kolmas ja kõige olulisem põhjus on see, et enamikus programmeerimiskeeltes on sedasi kogu aeg tehtud ning väga paljud programmeerijad on harjunud taolise nummerdamisega. 
     
 NB! Indeksina võime kasutada ka mingit täisarvulist muutujat. Seetõttu, kui kombineerime indekseerimise ``while``-tsükliga, siis saame iga järjendi elemendi ükshaaval ette võtta ja sellega midagi teha (nt ekraanile kuvada):
 
