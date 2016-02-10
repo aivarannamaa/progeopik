@@ -1395,8 +1395,23 @@ Kirjuta programm, mis loeb tekstifailist temperatuure Celsiuse skaalal ja kuvab 
 --------------------
 Kui lahendasid eelmises peatükis pentagrammi ülesande, siis proovi nüüd oma programmi tsükli abil lühemaks teha.
 
+12. Spiraalid
+-------------
+Joonista kilpkonnaga allolevad spiraalid. Proovi kujundada veel mingi teistmoodi spiraal. 
 
-12. Raskem: Risttahukas
+.. image:: images/spiraal1.png
+
+.. image:: images/spiraal2.png
+
+.. image:: images/spiraal3.png
+
+.. image:: images/spiraal4.png
+
+.. hint::
+
+    Viimased 2 spiraali on koostatud väikestest sirglõikudest.
+
+13. Raskem: Risttahukas
 -----------------------
 Kirjuta programm, mis kuvab ekraanile erinevatest kriipsutaolistest sümbolitest moodustatud kasti, mille külgede mõõtmed annab ette programmi kasutaja. Näiteks mõõtmetega 5x3x2 näeks kast välja selline:
 
@@ -1410,7 +1425,7 @@ Kirjuta programm, mis kuvab ekraanile erinevatest kriipsutaolistest sümbolitest
        \__________\/    
     
 
-13. Raskem: Redeli asendid
+14. Raskem: Redeli asendid
 --------------------------
 Genereeri Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt sirgjoonena) seina najal erinevate nurkade all. Joonista redel kõigepealt horisontaalasendis ning seejärel mitmes asendis järjest suurema nurga all, kuni lõpuks jõuab redel vertikaalasendisse.
 
@@ -1418,7 +1433,7 @@ Genereeri Pythoni kilpkonnaga joonistus, mis kujutab redelit (esitatud lihtsalt 
 
     Abiks võib olla ``turtle``'i käsk ``back``, mis liigutab kilpkonna senise suunaga võrreldes tagurpidi. (Aga see pole ülesande lahendamiseks tingimata vajalik.)
 
-14. Raskem: Ruudustik
+15. Raskem: Ruudustik
 ---------------------
 Kirjuta programm, mis küsib ruutude arvu vertikaalsuunal, ruutude arvu horisontaalsuunal ning joonistab kilpkonna abil vastava ruudustiku, nt:
 
