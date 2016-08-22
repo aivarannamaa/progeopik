@@ -947,6 +947,10 @@ Pykkar on virtuaalne robot, kes tegutseb oma virtuaalses maailmas. Ta oskab liik
 
 Esimese näitena laseme Pykkaril liikuda otse edasi, kuni ta jõuab seinani ning siis ümber pöörata. See programm (nagu ka kõik meie järgnevad Pykkari programmid) vajab oma tööks moodulit ``pykkar`` (failis :download:`pykkar.py <downloads/pykkar.py>`), mis ei kuulu Pythoni standardteeki ja tuleb seega enne näiteprogrammi käivitamist salvestada enda arvutisse, näiteprogrammiga samasse kausta.
 
+.. note::
+
+    Alternatiivina ava Thonnys menüü Tools => Open system shell ja sisesta ``pip install pykkar``.
+
 .. sourcecode:: py3
 
     from pykkar import *
