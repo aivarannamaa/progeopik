@@ -20,36 +20,40 @@ Esimese peatüki eesmärk on tutvustada Pythoni põhilisi töövahendeid ning an
 .. index::
     single: installeerimine
 
-Pythoni paigaldamine
-====================
+Arenduskeskkonna Thonny paigaldamine
+====================================
+Thonny on algajatele mõeldud Pythoni programmeerimiskeskkond, mille paigaldusfailid ja -juhised leiad aadressilt http://thonny.cs.ut.ee.
+
+
+.. image:: images/thonny.png
+    :width: 100%
+
+Lihtsuse huvides on Thonnysse Pythoni interpretaator juba sisse ehitatud, seega piisab ainult Thonny installimisest.
+
+Thonnyga seotud probleemide korral kirjuta aadressile aivar.annamaa@ut.ee. 
+
+
+
+Alternatiiv: Pythoni paigaldamine
+=================================
+Kui soovid kasutada mingit muud arenduskeskkonda, siis tuleks kõigepealt paigaldada arvutisse Python.
+
 Pythoni paigaldamiseks Windowsiga arvutisse lae leheküljelt http://www.python.org/downloads/ alla esimesena pakutav, värskeim paigaldusfail Windowsi jaoks (selle teksti kirjutamise hetkel oli värskeim versioon 3.4.1) ja käivita see.
 
 Mac-is on tavaliselt Python küll olemas, aga see on Python 2, mis meile ei sobi. Python 3 paigaldamiseks kasuta mainitud lehel pakutavat Python 3 paigaldusfaili Mac-i jaoks.
 
 Ka Linuxis on tõenäoliselt olemas Python 2. Python 3 on kõige kindlam paigaldada paketihalduri abil. Vajaminevad paketid on populaarsemates distributsioonides nimedega `python3`, `python3-tk` ja `idle3`. Nt Ubuntus piisab käsust ``sudo apt-get install idle3`` (see peaks sõltuvustena paigaldama ka ülejäänud 2 paketti). 
 
-.. note::
+Pythoni versioon ei pea olema tingimata kõige uuem, aga on oluline, et versiooni number algab 3-ga. Versioonides, mis algavad 2-ga, töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
 
-    Pythoni versioon ei pea olema tingimata kõige uuem, aga on oluline, et versiooni number algab 3-ga. Versioonides, mis algavad 2-ga, töötavad mõned asjad teisiti, kui on kirjeldatud selles õpikus.
-    
 
-.. index::
-    single: IDLE
-
-IDLE ja esimene programm
-========================
+Esimene programm
+================
 Alustuseks kirjutame ühe väga lihtsa programmi, mis ei tee muud, kui kirjutab ekraanile ``Tere maailm!`` (vt ka http://en.wikipedia.org/wiki/Hello_world_program). 
 
-Pythoni programme võiks vabalt kirjutada näiteks Notepadi või mõne muu üldotstarbelise tekstiredaktoriga, kuid Pythoni standardvarustuses on olemas spetsiaalne redaktor nimega **IDLE**, mis on selle töö jaoks palju sobivam.
+Pythoni programme võiks vabalt kirjutada näiteks Notepadi või mõne muu üldotstarbelise tekstiredaktoriga, kuid Thonny on selle töö jaoks palju sobivam.
 
-**IDLE'i käivitamiseks** Windowsis vali `Start -> All Programs -> Python 3.2 -> IDLE (Python GUI)`. Mac-is ja Linuxis tuleks sisestada terminalis käsk ``idle3``. Tõenäoliselt ilmub kõigepealt IDLE'i *käsurea* aken (pealkirjaga "Python shell"), mida kasutatakse juba käivitatud programmidega või Pythoni endaga suhtlemiseks.
-
-.. note::
-
-    Kui arvutis on installeeritud nii Python 2 kui ka Python 3, tuleb jälgida, et kasutad õiget versiooni. Käsurea aknas on Pythoni versioon näidatud esimesel real. Versiooni saab kontrollida ka menüüst `Help -> About IDLE`.
-
-
-**Uue programmi kirjutamiseks** vali `File` menüüst `New File`. Ilmub uus aken pealkirjaga "Untitled", kuhu saab hakata kirjutama Pythoni programmi. Esimeseks katsetuseks kirjuta või kopeeri redaktorisse järgnev üherealine programmitekst:
+Thonny esmakordsel avamisel peaks olema kohe tühi redaktor uue programmi kirjutamiseks. Esimeseks katsetuseks kirjuta või kopeeri sinna järgnev üherealine programmitekst:
 
 .. sourcecode:: py3
 
@@ -57,7 +61,7 @@ Pythoni programme võiks vabalt kirjutada näiteks Notepadi või mõne muu üldo
     
 Salvesta fail (`Ctrl+S`) kasutades failinime lõpus laiendit `py`, nt `teremaailm.py`. (NB! Soovitatav on juba praegu teha oma programmeerimisharjutuste jaoks eraldi kaust.) Taolist Pythoni programmi sisaldavat tekstifaili nimetame edaspidi *skriptiks*.
 
-**Programmi käivitamiseks** vajuta klaviatuuril `F5`. Ilmub uuesti IDLE'i käsurea aken, kuhu tekib uus rida tekstiga ``Tere maailm!``.
+**Programmi käivitamiseks** vajuta klaviatuuril `F5`. Akna allservas olevasse käsurea paneeli peaks tekkima uus rida tekstiga ``Tere maailm!``.
 
 Selgitused:
 
@@ -68,18 +72,9 @@ Selgitused:
 
     Programmeerimise õppimisel on kasulik võtta uudishimulik hoiak. Kui õpik ütleb, et selle ja selle jaoks tuleb teha nii ja nii, siis küsi endalt "Aga mis siis, kui ..." ja proovi järele.
     
-IDLE'i alternatiiv Thonny
-=========================
-Thonny on algajatele mõeldud Pythoni programmeerimiskeskkond, mis pakub IDLE'iga võrreldes mõningaid lisavõimalusi. Kuigi neid lisavõimalusi me selles peatükis veel ei käsitle, soovitame juba praegu Thonnyt proovida. Paigaldusfailid ja -juhised leiad aadressilt http://thonny.cs.ut.ee.
-
-.. image:: images/thonny.png
-    :width: 100%
-
-
-
 Kasutajaga suhtlemine
 =====================
-Meie esimene programm polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekita uus programmifail (Thonnys `File -> New`, IDLE'is `File -> New File`) ja kopeeri sinna järgnev programm. *NB! Ära praegu veel oma nime kuhugi kirjuta!*
+Meie esimene programm polnud just kõige põnevam. Proovime nüüd programmi, mis suhtleb kasutajaga dialoogi, mitte monoloogi vormis. Tekita uus programmifail (Thonnys `File -> New`) ja kopeeri sinna järgnev programm. *NB! Ära praegu veel oma nime kuhugi kirjuta!*
 
 .. sourcecode:: py3
 
@@ -546,8 +541,8 @@ Kokkuvõte
 =========
 See peatükk on oma eesmärgi täitnud, kui:
 
-* sa oskad IDLE'i või Thonny abil Pythoni programme avada ja käivitada;
-* sa oskad IDLE'i või Thonny käsureal aritmeetikat teha;
+* sa oskad Thonny või mõne muu keskkona abil Pythoni programme avada ja käivitada;
+* sa oskad Pythoni käsureal aritmeetikat teha;
 * sul on üldine ettekujutus, mida programmeerimine endast kujutab;
 * sa tahad programmeerimise õppimisega jätkata.
     
