@@ -1231,7 +1231,7 @@ Koosta tekstifail, mis sisaldab täisarve erinevatel ridadel. Kirjuta programm, 
 2. Pere sissetulek
 ------------------
 
-Kirjuta programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu, ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 20€ kuus.) 
+Kirjuta programm, mis küsib isa brutopalga, ema brutopalga ning alaealiste laste arvu, ja arvutab selle põhjal pere kuusissetuleku. (Oletame, et iga alaealise lapse kohta makstakse toetust 50€ kuus.) 
 
 Esialgu võid eeldada, et mõlema vanema kuupalk on vähemalt sama suur kui maksuvaba miinimum. (Siiamaani saaksid selle ülesande lahendada ka ilma selle peatüki vahenditeta.)
 
