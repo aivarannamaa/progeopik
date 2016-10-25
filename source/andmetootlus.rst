@@ -78,6 +78,8 @@ Täpsem info
 Ülevaade võimalustest: http://matplotlib.org/devdocs/users/screenshots.html
 Väga hea ülevaade matplotlib mõistetest: http://matplotlib.org/faq/usage_faq.html
 
+Hea tut?: http://www.labri.fr/perso/nrougier/teaching/matplotlib/
+
 NumPy
 =====
 
