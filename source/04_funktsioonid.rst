@@ -730,20 +730,22 @@ Funktsiooni tulemuse **tagastamiseks** on Pythonis eraldi konstruktsioon -- ``re
 .. _neto_funktsioon:
 
 .. sourcecode:: py3
-    :emphasize-lines: 1-7, 13
+    :emphasize-lines: 1-9, 15
 
     def neto(bruto):
-        maksuvaba = 144
+        maksuvaba = 180
         if (bruto <= maksuvaba):
             return bruto
         else:
             maksustatav = bruto - maksuvaba
-            return maksustatav * 0.79 + maksuvaba
+            tulumaksu_määr = 0.2
+            maks = maksustatav * tulumaksu_määr
+            return bruto - maks
     
     ema_bruto = float(input('Sisesta ema brutopalk: '))
     isa_bruto = float(input('Sisesta isa brutopalk: '))
     laste_arv = int(input('Sisesta alaealiste laste arv: '))
-    ühe_lapse_toetus = 20 
+    ühe_lapse_toetus = 50 
     sissetulek = neto(ema_bruto) + neto(isa_bruto) + laste_arv * ühe_lapse_toetus
     print('Pere sissetulek kuus on', sissetulek, 'eurot.')
 
