@@ -483,6 +483,64 @@ Täienda eelnevat näiteprogrammi nii, et see näitaks, millised ülesanded olid
 
     Ühe ülesande punktide kogusumma arvutamise skeem on väga sarnane ühe tudengi punktisumma arvutamisega.
 
+Tabelite esitamine
+==================
+Üritame nüüd oma teadmisi listidest ja sõnastikest kasutada tabelite esitamiseks.
+
+Andmetabelites tähistab tavaliselt iga rida mingit objekt ja iga veerg mingi objekti tunnust:
+
++----------+-------------+------------+-------------+
+| Eesnimi  | Perenimi    | Sünniaasta | Kinganumber |
++==========+=============+============+=============+
+| Mari     | Maasikas    | 1994       | 37          |
++----------+-------------+------------+-------------+
+| Peeter   | Pontsakas   | 2001       |             |
++----------+-------------+------------+-------------+
+| Albert   | Abivalmis   | 1969       | 44          |
++----------+-------------+------------+-------------+
+
+Pythonis on selliste andmete esitamiseks mitu võimalust. 
+
+Tabel kui maatriks
+------------------
+Kõige otsesemalt saab tabeleid esitada muidugi listide listina e maatriksina, kus välise listi elementideks on tabeli read ja iga rida on esitatud omakorda listi või ennikuna, mille elementideks on rea lahtrid / objekti tunnused. Ülalpool näidatud tabeli võiks esitada sellise Pythoni maatriksiga:
+
+.. sourcecode:: py3
+
+    [["Mari", "Maasikas", 1994, 37],
+     ["Peeter", "Pontsakas", 2001, None],
+     ["Albert", "Abivalmis", 1969, 44]]
+     
+Kuna Peeter Pontsaka kinganumber polnud teada, siis kasutasime selle asemel väärtust ``None``, mida tavapäraselt kasutatakse puuduva väärtuse tähistamiseks. Kui oleksime Peetri listi jätnud lihtsalt lühemaks, siis see oleks teinud maatriksi töötlemise keerulisemaks.
+
+Ilmselt märkasid, et see maatriks ei sisalda meie algse tabeli kogu infot -- veerupealkirjad on puudu. Veerupealkirjade rea ärajätmine võib teha maatriksi analüüsimise veidi lihtsamaks, kuna siis ei pea esimest rida ülejäänutest erinevalt käsitlema. Miinuseks on see, et sellise lähenemise korral peab eraldi meeles pidama, mitmendas veerus on millised andmed. 
+
+Tabeli esitamine veergude kaupa
+-------------------------------
+Tabelile võib läheneda ka teisiti, võttes esmaseks jaotuseks veerud. Sel juhul võiksime andmed jaotada näiteks mitmesse listi, kus ühe inimese andmed on alati samal positsioonil:
+
+.. sourcecode:: py3
+
+    eesnimed = ["Mari", "Peeter", "Albert"]
+    perenimed = ["Maasikas", "Pontsakas", "Abivalmis"]
+    sünniaastad = [1994, 2001, 1969]
+    kinganumbrid = [37, None, 44]
+
+Sellise jaotuse puhul on meil kerge koostada näiteks histogrammi, mis näitab kui sagedasti mingit kinganumbrit esineb.
+
+Rea esitamine sõnastikuna
+-------------------------
+Tabeli võime esitada ka sõnastike listina, kus iga sõnastik tähistab ühte rida:
+
+.. sourcecode:: py3
+
+    [{"Eesnimi" : "Mari", "Perenimi": "Maasikas", "Sünniaasta" : 1994, "Kinganumber" : 37},
+     {"Eesnimi" : "Peeter", "Perenimi": "Pontsakas", "Sünniaasta" : 2001},
+     {"Eesnimi" : "Albert", "Perenimi": "Abivalmis", "Sünniaasta" : 1969, "Kinganumber" : 44}]
+
+See lähenemine on eriti mugav siis, kui objekti võimalike tunnuste loetelu on lahtine või kui võimalikke tunnuseid on palju, aga enamiku objektide korral on teada vaid mõned tunnused. Selles näites ongi erinevatel objektidel kirjas erinev arv tunnuseid.
+
+
 
 Kahekordsed tsüklid ühemõõtmelisel järjendil
 ============================================
