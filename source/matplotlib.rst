@@ -2,28 +2,35 @@
 Matplotlib
 **********
 
-TODO: joonestusala vs teljestik
+.. todo::
 
-TODO: selle juhendi läbilugemine aitab ka dokumentatsioonis orienteeruda
+    TODO: joonestusala vs teljestik
+    TODO: selle juhendi läbilugemine aitab ka dokumentatsioonis orienteeruda
+    
+    * grid
+    
+
+Matplotlib on Pythoni pakett graafikute koostamiseks. 
+
+.. admonition:: NB!
+
+    Hetkel on juhend veel lõpetamata, aga tõenäoliselt juba kasulik...
 
 Paketi paigaldamine
 ===================
-...
+Thonny puhul vali *Tools* menüüst *Open system shell* ja sisesta süsteemi käsureale ``pip install matplotlib``
 
-Paigalduse kontrollimiseks käivita järgmine kood:
-
-.. sourcecode:: py3
-
-    ...
+TODO: Lisa ka Thonnyst sõltumatu juhend.
 
 
 
+.. todo::
 
-Andmed
-======
-listid vs NumPy
+    listid vs NumPy
 
-Näites on aastad ja vastavad elanike arvud antud harilike Pythoni listidena, aga nende asemel võivad vabalt olla ka NumPy massiivid.
+.. admonition:: Millisel kujul andmed?
+
+    Näidetes on aastad ja vastavad elanike arvud antud harilike Pythoni listidena, aga nende asemel võivad vabalt olla ka NumPy massiivid.
 
 Põhimõtted
 ==========
@@ -39,7 +46,8 @@ Oletame, et meil on andmed mingi firma sissetulekute kohta erinevatel kuudel. Pr
     fig = plt.figure()           # Kõigepealt loome joonist tähistava objekti
     ax = fig.add_subplot(1,1,1)  # ja lisame joonisele joonestusala.
     
-    ax.plot(kuud, sissetulekud)  # Lisame joonestusalale joondiagrammi.
+    ax.plot(kuud, sissetulekud)  # Lisame joonestusalale joondiagrammi
+    ax.set_xlabel("Kuud")        # ja x-telje pealkirja
     
     fig.show()                   # Kuvame joonise ekraanile.
 
@@ -52,7 +60,7 @@ Selle lihtsa näite põhjal saame välja tuua kõige olulisemad ``matplotlib``-i
 * Ühel joonisel võib olla mitu graafikut/joonestusala (ing k *subplot*). Uue joonestusala loomiseks kasutatakse joonise meetodit :py:meth:`add_subplot<matplotlib.figure.Figure.add_subplot>`, mille argumendid näitavad mitmeks reaks ja veeruks joonis jagada ning mitmes joonestusala luua. Ühe joonestusalaga jooniste puhul on argumendid alati ``1,1,1``.
 * ``add_subplot`` tagastab objekti klassist :py:class:`Axes<matplotlib.axes.Axes>` (*teljestik*), mille abil saab konkreetsele joonestusalale elemente lisada.
     * Antud näites kasutasime joonestamiseks meetodit :py:meth:`plot<matplotlib.axes.Axes.plot>`, mis on mõeldud joondiagrammide koostamiseks, aga ``Axes`` oskab joonistada ka sektor-,  tulp- ja hajuvusdiagramme, histogramme, lihtsaid kujundeid ja palju muud.
-    * Sama objekti kaudu käib näiteks ka telje, skaala ja legendi seadistamine.
+    * Sama objekti kaudu käib näiteks ka telgede ja legendi seadistamine.
 * Tulemust saab näha kasutades joonise meetodit :py:meth:`show<matplotlib.figure.Figure.show>`. Alternatiivina (või lisaks) võib joonise meetodiga :py:meth:`savefig<matplotlib.figure.Figure.savefig>` ka faili salvestada. 
 
 .. admonition:: Alternatiiv: pyplot-stiil
@@ -66,7 +74,8 @@ Selle lihtsa näite põhjal saame välja tuua kõige olulisemad ``matplotlib``-i
         kuud         = [  1,    4,    5,    6,    7,    8,    9,   10,  11,  12]
         sissetulekud = [710, 1200, 1445, 1690, 1350, 1223, 1470, 1200, 808, 698]
         
-        plt.plot(kuud, sissetulekud)  # Lisame joonestusalale joondiagrammi.
+        plt.plot(kuud, sissetulekud)  # Lisame joonestusalale joondiagrammi
+        plt.xlabel("Kuud")            # ja x-telje pealkirja
         
         plt.show()       
     
@@ -108,7 +117,8 @@ Täiendame nüüd oma graafikut neid võimalusi kasutades:
     fig = plt.figure()           # Kõigepealt loome joonist tähistava objekti
     ax = fig.add_subplot(1,1,1)  # ja lisame joonisele joonestusala.
     
-    ax.plot(kuud, sissetulekud)  # Lisame joonestusalale joondiagrammi.
+    ax.plot(kuud, sissetulekud)  # Lisame joonestusalale joondiagrammi
+    ax.set_xlabel("Kuud")        # ja x-telje pealkirja
     
     ax.set_ylim(0, 2000)         # Määrame y-telje nähtavuspiirkonna
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])  # ja x-telje märgid
@@ -136,7 +146,8 @@ Joone ja andmepunktide välimust saame määrata ``plot`` meetodi kolmanda argum
     fig = plt.figure()           # Kõigepealt loome joonist tähistava objekti
     ax = fig.add_subplot(1,1,1)  # ja lisame joonisele joonestusala.
     
-    ax.plot(kuud, sissetulekud, "o-")  # Lisame joonestusalale joondiagrammi.
+    ax.plot(kuud, sissetulekud, "o-")  # Lisame joonestusalale joondiagrammi
+    ax.set_xlabel("Kuud")        # ja x-telje pealkirja
     
     ax.set_ylim(0, 2000)         # Määrame y-telje nähtavuspiirkonna
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])  # ja x-telje märgid
@@ -169,6 +180,7 @@ Tuli välja, et firmal on kogutud andmed ka antud kuude väljaminekute kohta. Te
     ax.plot(kuud, sissetulekud, "o-", label="Sissetulekud")               
     ax.plot(kuud, väljaminekud, "^-r", label="Väljaminekud")
     
+    ax.set_xlabel("Kuud")      
     ax.set_ylim(0, 2000)         # Määrame y-telje nähtavuspiirkonna
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])  # ja x-telje märgid
     ax.legend()         
@@ -191,6 +203,7 @@ Tulpdiagrammi koostamiseks on meetod :py:meth:`bar<matplotlib.axes.Axes.bar>`, m
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
     ax.bar(kuud, ümbrikke_kulunud, 0.8)
+    ax.set_xlabel("Kuud")      
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
     
     fig.show()
@@ -214,6 +227,7 @@ Nagu näha, määrab meetodi ``bar`` esimene argument, kuhu satuvad tulpade vasa
     tulpade_positsioonid = [kuu - 0.4 for kuu in kuud]  
     ax.bar(tulpade_positsioonid, ümbrikke_kulunud, 0.8)
     
+    ax.set_xlabel("Kuud")      
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
     
     fig.show()
@@ -243,10 +257,16 @@ Kui me tahame tulpadena kõrvuti näha ümbrike ja kirjaklambrite kulusid, siis 
     # kirjaklambri tulpade positsioonideks kõlbavad kuu numbrid
     ax.bar(kuud, kirjaklambreid_kulunud, 0.4, label="Kirjaklambreid")
     
+    ax.set_xlabel("Kuud")      
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
     ax.legend()
     
     fig.show()
+
+Veel võimalusi
+--------------
+* Horisontaalse tulpdiagrammi jaoks on meetod :py:meth:`barh<matplotlib.axes.Axes.barh`
+* ...
 
 Kahe y-telje kasutamine
 =======================
@@ -276,6 +296,7 @@ Siiani tehtud joon- ja tulpdiagrammide kombineerimine ei ole tehniliselt võttes
     ax.bar(ümbriku_tulpade_positsioonid, ümbrikke_kulunud, 0.4, label="Ümbrikke")
     ax.bar(asjade_kuud, kirjaklambreid_kulunud, 0.4, label="Kirjaklambreid")
     
+    ax.set_xlabel("Kuud")      
     ax.legend()
     
     fig.show()                   # Kuvame joonise ekraanile.
@@ -308,6 +329,7 @@ Kahjuks see lähenemine siiski ei tööta, sest rahasummad on palju suuremad kui
     ax2.bar(ümbriku_tulpade_positsioonid, ümbrikke_kulunud, 0.4, label="Ümbrikke")
     ax2.bar(asjade_kuud, kirjaklambreid_kulunud, 0.4, label="Kirjaklambreid")
     
+    ax.set_xlabel("Kuud")      
     ax.legend(loc="upper left")
     ax2.legend(loc="upper right")
     
@@ -341,6 +363,7 @@ Nüüd häirib tulemuses veel see, et jooned jäävad osaliselt tulpade taha pei
     ax2.bar(ümbriku_tulpade_positsioonid, ümbrikke_kulunud, 0.4, label="Ümbrikke")
     ax2.bar(asjade_kuud, kirjaklambreid_kulunud, 0.4, label="Kirjaklambreid")
     
+    ax.set_xlabel("Kuud")      
     ax.legend(loc="upper left")
     ax2.legend(loc="upper right")
     
@@ -370,25 +393,225 @@ Sektordiagrammi koostamiseks on mõeldud meetod :py:meth:`pie<matplotlib.axes.Ax
 
 Histogramm
 ==========
-TODO: 
+Jätame nüüd firma rahule ja võtame ette järgmise andmekomplekti. Failis :download:`punktid.csv <downloads/punktid.csv>` (kodeering UTF-8) on tudengite poolt mingis aines kogutud punktid. Iga rida tähistab ühe tudengi andmeid. Esimeses veerus on kodutööde punktisumma, teises veerus on testi eest saadud punktid ja kolmandas veerus vaheeksami punktid.
 
-Scatter-plot
-============
-TODO: 
+Kõigepealt üritame saada selgust, kuidas jaotusid vaheeksami punktid. Selleks laseme matplotlib-il joonistada histogrammi. 
 
+Me võiksime need andmed sisse lugeda harilikke faili- ja tekstioperatsioone kasutades, aga seekord võtame Pythoni standardteegi moodulist :py:mod:`csv` appi  funktsiooni :py:func:`reader`, mis teeb CSV-faili lugemise oluliselt lihtsamaks.
 
-Stiilid
-=======
-print(plt.style.available)
-plt.style.use('fivethirtyeight')
+Histogrammi joonistamiseks kasutame ``Axes`` meetodit :py:meth:`hist<matplotlib.axes.Axes.hist>`, mis võtab esimeseks argumendiks väärtuste loetelu ja teiseks argumendiks täisarvu, mis näitab, mitmesse gruppi need väärtused tuleks jaotada.
+ 
+
+.. sourcecode:: py3
+    :emphasize-lines: 17
+
+    import csv
+    import matplotlib.pyplot as plt
+    
+    vaheeksamid = []
+    
+    with open("punktid.csv", encoding="UTF-8") as f:
+        reader = csv.reader(f, delimiter=";")
+        for rida in reader:
+            try:
+                vaheeksamid.append(float(rida[2]))
+            except ValueError:
+                # Ignoreerime puuduvate või vigaste väärtusega
+                pass 
+    
+    fig = plt.figure()           
+    ax = fig.add_subplot(1,1,1)  
+    ax.hist(vaheeksamid, 20)
+    fig.show()
+
+Hajuvusdiagramm
+===============
+Läheme edasi tudengite poolt kogutud punktide analüüsimisega. Nüüd oleks hea teada, kas usin kodutööde lahendamine aitab saada vaheeksamil paremat tulemust -- selleks koostame kodutööde ja vaheeksami punktide põhjal ning :py:meth:`Axes.scatter<matplotlib.axes.Axes.scatter>` abil hajuvusdiagrammi.
+
+.. sourcecode:: py3
+    :emphasize-lines: 38
+
+    import csv
+    import matplotlib.pyplot as plt
+    
+    kodutööd = []
+    vaheeksamid = []
+    
+    with open("punktid.csv", encoding="UTF-8") as f:
+        reader = csv.reader(f, delimiter=";")
+        for rida in reader:
+            try:
+                # Kui tudeng pole ühtegi kodutööd teinud, siis võib vastavas
+                # lahtris olla 0 asemel ka sidekriips.
+                # Mõlemal juhul võime öelda, et tudeng on saanud kodutööde eest 0p
+                if rida[0] == "-":
+                    kodutöö = 0.0
+                else:
+                    kodutöö = float(rida[0])
+    
+                # Vaheeksami puhul aga tähendab kriips seda, et tudeng puudus
+                # vaheeksamilt. Kõige kindlam on praegu neid tudengeid mitte arvestada.
+                # Seetõttu üritame teisendust ilma lisakontrollita. Kui see ebaõnnestub,
+                # siis selle tudengi andmeid ei arvestata (ka kontrolltööd mitte)
+                vaheeksam = float(rida[2])
+    
+                # Jätame andmed meelde alles siis, kui kõik teisendused õnnestusid.
+                # See kindlustab selle, et mõlemasse listi tuleb sama palju elemente
+                # ja samadel indeksitel on sama tudengi andmed, st. listides olevad andmed
+                # on seotud. See on hajuvusdiagrammi koostamisel oluline.
+                kodutööd.append(kodutöö)
+                vaheeksamid.append(vaheeksam)
+            except ValueError:
+                # Ignoreerime puuduvate või vigaste väärtustega ridu
+                pass 
+                
+    
+    fig = plt.figure()           
+    ax = fig.add_subplot(1,1,1)  
+    ax.scatter(kodutööd, vaheeksamid)
+    ax.set_xlabel("Kodutööde punktid")      
+    ax.set_ylabel("Vaheeksami punktid")      
+    fig.show()
+    
+
+Diagramm näitab tõesti, et rohkem kodutöid teinud tudengid said ka rohkem punkte vaheeksamil, aga algandmeid uurides näeme, et on palju tudengeid, kelle kodutööde ja vaheksami punktid kattuvad täpselt mõne teise (või paljude teiste) tudengite punktidega ja seetõttu satuvad vastavad andmepunktid ka graafikul kohakuti. Äkki selle täpi kohal, mis tähistab 0p kodutööde eest ja 20p vaheeksami eest, on tegelikult 50 täppi ja meie eespool tehtud järeldus ei pea paika?
+
+Kõige lihtsam lahendus on kasutada ``scatter``-i väljakutsel lisaparameetrit ``alpha``, mis määrab iga täpi läbipaistvuse -- 0.0 tähendab täiesti läbipaistvat täppi ja 1.0 täiesti läbipaistmatut täppi. Kui me laseme matplotlibil joonistada osaliselt läbipaistvaid täppe, siis mitut täppi kohakuti pannes saame kokku tumedama täpi. Proovi järele:
+
+.. sourcecode:: py3
+    :emphasize-lines: 2
+    
+    ...
+    ax.scatter(kodutööd, vaheeksamid, alpha=0.1)
+    ...
+
+Teine võimalus on näidata punktikombinatsioonide sagedust täppide suurusega. Selleks korjame kokku kõik erinevad punktikombinatsioonid ja nende sagedused, ning kasutame parameetrit ``s`` täppide läbimõõtude määramiseks. Järgneval graafikul ei tähista iga täpp enam mitte ühte tudengit, vaid ühte kodutöö ja vaheeksami punktide kombinatsiooni.
+
+.. sourcecode:: py3
+    :emphasize-lines: 3,4,6,26,27,33-52,57
+    
+    import csv
+    import matplotlib.pyplot as plt
+    from collections import Counter
+    from math import sqrt
+    
+    kombinatsioonid = []
+    
+    with open("punktid.csv", encoding="UTF-8") as f:
+        reader = csv.reader(f, delimiter=";")
+        for rida in reader:
+            try:
+                # Kui tudeng pole ühtegi kodutööd teinud, siis võib vastavas
+                # lahtris olla 0 asemel ka sidekriips.
+                # Mõlemal juhul võime öelda, et tudeng on saanud kodutööde eest 0p
+                if rida[0] == "-":
+                    kodutöö = 0.0
+                else:
+                    kodutöö = float(rida[0])
+    
+                # Vaheeksami puhul aga tähendab kriips seda, et tudeng puudus
+                # vaheeksamilt. Kõige kindlam on praegu neid tudengeid mitte arvestada.
+                # Seetõttu üritame teisendust ilma lisakontrollita. Kui see ebaõnnestub,
+                # siis selle tudengi andmeid ei arvestata (ka kontrolltööd mitte)
+                vaheeksam = float(rida[2])
+    
+                kombinatsioon = (kodutöö, vaheeksam)
+                kombinatsioonid.append(kombinatsioon)
+            except ValueError:
+                # Ignoreerime puuduvate või vigaste väärtustega ridu
+                pass 
+                
+    
+    # Toome välja erinevad kombinatsioonid ja täpi suurused vastavalt sagedusele
+    sagedused = Counter(kombinatsioonid)
+    kodutööd = []
+    vaheeksamid = []
+    täpi_läbimõõdud = []
+    for kombinatsioon in sagedused:
+        sagedus = sagedused[kombinatsioon]
+        kodutööd.append(kombinatsioon[0])
+        vaheeksamid.append(kombinatsioon[1])
+    
+        # Kui kombinatsiooni A esineb kaks korda rohkem, kui kombinatsiooni B,
+        # siis kumb valik oleks õigem?
+        #
+        #  - A täpi läbimõõt on 2x suurem kui B oma
+        #  - A täpi pindala on 2x suurem kui B oma
+        #
+        # On leitud, et täpsema mulje jätab see, kui sagedust näitab pindala,
+        # seetõttu valime täpi läbimõõdu nii, täpi pindala sõltuks lineaarselt
+        # vastava kombinatsiooni sagedusest:
+        täpi_läbimõõdud.append(sqrt(sagedus) * 10)
+    
+    
+    fig = plt.figure()           
+    ax = fig.add_subplot(1,1,1)
+    ax.scatter(kodutööd, vaheeksamid, alpha=0.3, s=täpi_läbimõõdud)
+    ax.set_xlabel("Kodutööde punktid")      
+    ax.set_ylabel("Vaheeksami punktid")      
+    fig.show() 
+
+Sageduste arvutamiseks võtsime appi klassi :py:class:`Counter<collections.Counter>` Pythoni standardteegi moodulist :py:mod:`collections` (aga seda oleksime võinud teha ka primitiivsemate vahenditega).
+
+Kuna täpid võivad nüüd osaliselt ikkagi kattuda, siis jätsime ``scatter`` väljakutsesse ka ``alpha`` argumendi, et pilt tuleks selgem. 
+
+.. note::
+
+    Argumendile ``s`` saab anda väärtuseks ka ainult ühe arvu -- sel juhul tulevad kõik täpid näidatud läbimõõduga. Selline paindlikkus on matplotlib-i puhul tavaline -- näiteks ``alpha`` aktsepteerib samuti nii üksikut arvu kui arvude loetelu. 
+
+TODO: ka üksikute täppide värvi saab varieerida
+
+Graafikute täiendamine
+======================
+:py:class:`Axes<matplotlib.axes.Axes>` pakub erinevaid meetodeid graafikute täiendamiseks üksikute joonte, kujundite ja tekstiga. Toome siin ära vaid mõned näited:
+
+* :py:meth:`axhline<matplotlib.axes.Axes.axhline>` ja :py:meth:`axvline<matplotlib.axes.Axes.axvline>` horisontaalsete / vertikaalsete joonte lisamiseks
+* :py:meth:`axhspan<matplotlib.axes.Axes.axhspan>` ja :py:meth:`axvspan<matplotlib.axes.Axes.axvspan>` horisontaalsete / vertikaalsete piirkondade esiletõstmiseks   
+* :py:meth:`text<matplotlib.axes.Axes.text>` ja :py:meth:`annotate<matplotlib.axes.Axes.annotate>` teksti lisamiseks
+* :py:meth:`fill<matplotlib.axes.Axes.fill>` hulknurkade joonistamiseks
+
+Järgnev näide demonstreerib nende võimaluste kasutamist:
+
+.. sourcecode:: py3
+
+    import csv
+    import matplotlib.pyplot as plt
+    
+    x = [-3.4, 0.5, -1.3, -4.4, 0.4, -3.8, -2.0, 1.2, 4.5, 4.3, -2.2, -2.9, 1.0,
+         0.9, 2.1, -2.4, 2.9, 0.5, 3.4, 4.4, 3.7, -1.1, 2.0, 0.4, -1.6, -3.9,
+         2.0, -0.9, -2.4, 0.1, 1.5, 3.6, 1.8, 4.1, 0.2, -2.8, -4.0, -0.2, -2.6,
+         -4.1, -2.6, -0.1, 3.3, 3.3, 0.7, -3.3, 4.8, -0.7, 2.5, 1.2]
+    
+    y = [594, 696, 299, 808, 840, 805, 0, 325, 168, 40, 444, 304, 842, 862, 406,
+         578, 162, 713, 236, 986, 680, 849, 236, 1, 6, 942, 387, 635, 682, 473, 54,
+         807, 948, 230, 521, 38, 423, 942, 752, 573, 117, 419, 729, 909, 106, 66,
+         236, 85, 653, 846]
+    
+    
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    
+    ax.scatter(x, y, zorder=3)
+    ax.axhline(y=700, color='r', zorder=1)
+    ax.axvspan(1,3, color="lightgreen", zorder=2)
+    
+    ax.text(3, 200, "Lihtne tekst")
+    ax.annotate("Vaata seda!!!", (-3.4, 594), color="r",
+                arrowprops={"arrowstyle" : "-|>"}, xytext=(-3, 500))
+    
+    ax.fill([0, -1, 2], [300, 255, 200], zorder=3, color="yellow")
+    
+    fig.show()
+
+Interaktiivsed graafikud
+========================
+http://matplotlib.org/users/event_handling.html
 
 
 Graafikute integreerimine programmidesse
 ========================================
 
-:py:mod:`matplotlib.pyplot`
-
-``matplotlib`` graafikuid saab integreerida erinevate kasutajaliidese raamistikega, sh Tkinteriga. Selleks tuleb ``Figure`` objekt luua mitte ``pyplot`` abil, vaid moodulis :py:mod:`matplotlib.figure` oleva klassi :py:class:`Figure<matplotlib.figure.Figure>` abil. Lisaks tuleb luua raamistikuspetsiifilised vidinad graafiku näitamiseks.
+Matplotlib-i graafikuid saab integreerida erinevate kasutajaliidese raamistikega, sh Tkinteriga. Selleks tuleb ``Figure`` objekt luua mitte ``pyplot`` abil, vaid moodulis :py:mod:`matplotlib.figure` oleva klassi :py:class:`Figure<matplotlib.figure.Figure>` abil. Lisaks tuleb luua raamistikuspetsiifilised vidinad graafiku näitamiseks.
 
 Järgnev näide demonstreerib pirukagraafiku lisamist Tkinteri programmi:
 

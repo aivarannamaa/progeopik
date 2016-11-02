@@ -65,11 +65,11 @@ Hakkame nüüd selle programmi sisu analüüsima.
 
 #. Funktsioon ``tervita`` on mõeldud käivitamiseks nupule klikkimise korral. Funktsiooni kehas küsitakse allpool defineeritud tekstikasti sisu (``nimi.get()``), moodustatakse selle põhjal tervitusega sõne ning näidatakse seda kasutajale väikses lisaaknas. (Selles funktsioonis oleme kasutanud ühte globaalset muutujat -- ``nimi`` pole ei funktsiooni parameeter ega lokaalne muutuja, vaid funktsioonist väljaspool defineeritud muutuja.)
 
-#. Funktsioon ``Tk()`` loob akna, millele järgmisel real määratakse pealkiri ja ülejärgmisel real mõõtmed (pikslites).
+#. :py:class:`Tk()<tkinter.Tk>` loob akna, millele järgmisel real määratakse pealkiri ja ülejärgmisel real mõõtmed (pikslites).
 
 #. Järgnevalt luuakse 3 kasutajaliidese komponenti e vidinat (ingl *widget*):
 
-    * Funktsioon ``ttk.Label`` loob ühe sildi (s.o vidina teksti näitamiseks). Funktsiooni esimese argumendiga näitasime, et me soovime seda silti kasutada eespool loodud aknas. Kasutades nimelist argumenti ``text``, andsime sellele sildile ka soovitud teksti. Käsk ``silt.place(...)`` paigutas loodud sildi soovitud koordinaatidele (ühikuteks on pikslid, punkt (0,0) paikneb akna sisuosa ülemises vasakus nurgas ning koordinaadid kasvavad paremale/alla liikudes).
+    * :py:class:`ttk.Label<tkinter.ttk.Label>` loob ühe sildi (s.o vidina teksti näitamiseks). Funktsiooni esimese argumendiga näitasime, et me soovime seda silti kasutada eespool loodud aknas. Kasutades nimelist argumenti ``text``, andsime sellele sildile ka soovitud teksti. Käsk ``silt.place(...)`` paigutas loodud sildi soovitud koordinaatidele (ühikuteks on pikslid, punkt (0,0) paikneb akna sisuosa ülemises vasakus nurgas ning koordinaadid kasvavad paremale/alla liikudes).
         .. image:: images/coords.png
         
     * Järgmises plokis lõime ja seadsime paika tekstisisestuskasti (``ttk.Entry``). Selle paigutamisel näitasime ära ka soovitud laiuse.
