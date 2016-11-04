@@ -127,6 +127,16 @@ Täiendame nüüd oma graafikut neid võimalusi kasutades:
 
 .. image:: images/mpl_joon2.png
 
+.. admonition::
+
+    * http://matplotlib.org/examples/pylab_examples/spine_placement_demo.html
+    * 
+
+Harjutus. Märkide seadistamine
+------------------------------
+Uuri meetodit :py:meth:`set_xticklabels<matplotlib.axes.Axes.set_xticklabels>` ja proovi manada x-teljele kuu numbrite asemel kuu nimed.
+
+
 Joone ja andmepunktide seadistamine
 -----------------------------------
 
@@ -161,12 +171,14 @@ Lisaks punkti ja kriipsu kuju määramisele, saaks sama argumendiga näidata är
 
 Rohkem infot leiab meetodi :py:meth:`plot<matplotlib.axes.Axes.plot>` dokumentatsioonist.
 
+TODO: grid
+
 Mitme näitaja võrdlemine
 ------------------------
 Tuli välja, et firmal on kogutud andmed ka antud kuude väljaminekute kohta. Teeme graafiku, mis näitab sissetulekuid ja väljaminekuid korraga. Selleks, et oleks, selge, kumb joon tähistab kumba näitajat, lisame graafikule ka legendi -- selleks lisame ``plot`` väljakutsetele ``label`` argumendid ja kutsume välja joonestusala meetodi :py:meth:`legend()<matplotlib.axes.Axes.legend>`: 
 
 .. sourcecode:: py3
-    :emphasize-lines: 5,11-12,16
+    :emphasize-lines: 5,10-11,16
 
     import matplotlib.pyplot as plt
     
@@ -239,7 +251,7 @@ Mitme näitaja tulpdiagramm
 Kui me tahame tulpadena kõrvuti näha ümbrike ja kirjaklambrite kulusid, siis  tuleb lihtsalt meetodit ``bar`` välja kutsuda kaks korda. Seejuures aga tuleb sättida eri näitajate tulbad nii, et nad üksteist varjutama ei hakkaks. Samuti tuleb teha tulbad kitsamaks. Lisaks anname ``bar``-ile ``label`` argumendi, mille põhjal :py:meth:`legend()<matplotlib.axes.Axes.legend>` teeb joonisele legendi:
 
 .. sourcecode:: py3
-    :emphasize-lines: 5,14-15,18
+    :emphasize-lines: 5,14-15,19
 
     import matplotlib.pyplot as plt
     
@@ -304,7 +316,7 @@ Siiani tehtud joon- ja tulpdiagrammide kombineerimine ei ole tehniliselt võttes
 Kahjuks see lähenemine siiski ei tööta, sest rahasummad on palju suuremad kui kontoritarvete arvud ja seetõttu viimased ei paista üldse välja. Lahenduseks on kahe erineva y-skaala kasutamine (TODO: pikem selgitus ja lingid):
 
 .. sourcecode:: py3
-    :emphasize-lines: 20-22,24-25
+    :emphasize-lines: 20-26
 
     import matplotlib.pyplot as plt
     
@@ -338,7 +350,7 @@ Kahjuks see lähenemine siiski ei tööta, sest rahasummad on palju suuremad kui
 Nüüd häirib tulemuses veel see, et jooned jäävad osaliselt tulpade taha peitu, ning sissetulekute joon on ümbrike tulpadega sama värvi. Õnneks pakub matplotlib lahenduse ka neile muredele:
 
 .. sourcecode:: py3
-    :emphasize-lines: 16,27-29
+    :emphasize-lines: 16,28-30
 
     import matplotlib.pyplot as plt
     
@@ -372,6 +384,11 @@ Nüüd häirib tulemuses veel see, et jooned jäävad osaliselt tulpade taha pei
     ax.patch.set_visible(False)
     
     fig.show()                   # Kuvame joonise ekraanile.
+
+.. admonition:: Rohkem infot
+
+    * http://matplotlib.org/examples/api/two_scales.html näitab, kuidas rõhutada telje ja joone seotust värvides erinevate telgede märgendid eri värvi
+    * http://matplotlib.org/examples/axes_grid/demo_parasite_axes2.html näitab kuidas tekitada graafikule rohkem kui 2 y-telge.
 
 Sektordiagramm
 ==============
@@ -603,9 +620,67 @@ Järgnev näide demonstreerib nende võimaluste kasutamist:
     
     fig.show()
 
+Graafikute kohandamine
+======================
+TODO: fondid, teljed, tickmarks, labels, grids, styles
+
+Eksportimine
+============
+TODO: fig.savefig
+
 Interaktiivsed graafikud
 ========================
-http://matplotlib.org/users/event_handling.html
+Matplotlibi graafikuid saab panna hiireklõpsudele ja klahvivajutustele reageerima. Järgnev näide demonstreerib ühte võimalust hiireklõpsudele reageerimiseks:
+
+.. sourcecode:: py3
+
+    import matplotlib.pyplot as plt
+    
+    kuud         = [  1,    4,    5,    6,    7,    8,    9,   10,  11,  12]
+    sissetulekud = [710, 1200, 1445, 1690, 1350, 1223, 1470, 1200, 808, 698]
+    väljaminekud = [700, 1160, 1556, 1520, 1415, 1180, 1770,  500, 408, 505]
+    
+    fig = plt.figure()           
+    ax = fig.add_subplot(1,1,1)  
+    
+    # Salvestame jooned muutujatesse, et oleks pärast võimalik vahet teha,
+    # kummale joonele klõpsati.
+    # Lisame ka picker argumendi, mis näitab kui lähedale peab klõpsama,
+    # et klõpsu seostatakse joonega
+    [sissetulekute_joon] = ax.plot(kuud, sissetulekud, "o-", label="Sissetulekud", picker=3)               
+    [väljaminekute_joon] = ax.plot(kuud, väljaminekud, "^-r", label="Väljaminekud", picker=3)
+    
+    ax.set_xlabel("Kuud")      
+    ax.set_ylim(0, 2000)        
+    ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12]) 
+    ax.legend()         
+    
+    # defineerime funktsiooni, mis peaks klõpsudele reageerima
+    def on_pick(event):
+        thisline = event.artist
+        
+        # xdata, ydata ja evend.ind on NumPy massiivid
+        xdata = thisline.get_xdata() 
+        ydata = thisline.get_ydata()
+        index = event.ind[0]
+        
+        kuu_nr = xdata[index]
+        summa = ydata[index]
+        
+        if thisline == sissetulekute_joon:
+            näitaja = "sissetulek"
+        else:
+            näitaja = "väljaminek"
+            
+        print(str(kuu_nr) + ". kuu " + näitaja + " oli " + str(summa))
+    
+    # registreerime funktsiooni klõpsudele reageerima
+    cid = fig.canvas.mpl_connect('pick_event', on_pick)
+    
+    fig.show()                   
+
+
+Täpsemalt loe siit: http://matplotlib.org/users/event_handling.html
 
 
 Graafikute integreerimine programmidesse
@@ -671,7 +746,6 @@ Rohkem infot:
 
 * http://matplotlib.org/examples/user_interfaces/embedding_in_tk.html 
 * https://pythonprogramming.net/how-to-embed-matplotlib-graph-tkinter-gui
-* http://matplotlib.org/users/event_handling.html
  
 Täpsem info
 ===========
