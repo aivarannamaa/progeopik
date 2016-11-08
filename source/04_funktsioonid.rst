@@ -1430,3 +1430,7 @@ See näiteprogramm oli siinkohal mõeldud vaid isuäratajana -- selleks, et sell
 
 
 
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: funktsioonid

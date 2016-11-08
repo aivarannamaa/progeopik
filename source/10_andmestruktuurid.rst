@@ -956,3 +956,8 @@ Programmi poolt tehtavate sammude arvu hindamist nimetatakse selle *ajalise keer
 
 Sellist analüüsi nimetatakse *asümptootiliseks*, sest ta kehtib `n` suurte väärtuste korral ning üldiselt seda paremini, mida suuremad `n` väärtused on. Selline ligikaudne lähenemine on tegelikult formaliseeritav nn *O-notatsiooni* abil, mis annab ka küllalti täpsed piirangud sellele, kuidas ja mis alustel üldistada ja lihtsustada tohib.
 
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: andmestruktuurid

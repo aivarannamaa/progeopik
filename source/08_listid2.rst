@@ -796,3 +796,9 @@ Loodetavasti mõtled sa nüüd, et küll oleks lahe, kui ka järjendite teisenda
 .. admonition:: Väljakutse
 
     Kirjuta enda versioon ``map``-ist.
+
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: listid2

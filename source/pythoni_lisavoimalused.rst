@@ -4,7 +4,7 @@ Pythoni lisavõimalused
 
 
 Tingimusavaldis
-========================================================================
+===============
 Lisaks ``if``-*lausele* on Pythonis olemas ka ``if``-*avaldis* e *tingimusavaldis*. Selle olemust on kõige lihtsam selgitada näitega:
 
 .. sourcecode:: py3
@@ -45,3 +45,9 @@ Tingimusavaldise asemel saab alati kasutada tingimuslauset ...
 .. note::
 
     Kui sulle siiski tundub, et tingimusavaldis teeb sinu jaoks asjad liiga segaseks, siis võid seda rahumeeli ignoreerida. Alati saab hakkama ka ainult tingimuslausega. Mitmes populaarses programmeerimiskeeles isegi pole tingimusavaldist.
+
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: lisavoimalused

@@ -747,4 +747,8 @@ ja Pykkari tegutsemise lõpuks peaks maailm olema selline (Pykkari suund ja asuk
 .. hint::
 
     Kui keskkoha värvimine tundub alguses raske, siis lase kõigepealt Pykkaril lihtsalt tuvastada põranda laius ja kõrgus. 
-    
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: algoritmid

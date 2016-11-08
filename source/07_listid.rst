@@ -803,3 +803,7 @@ Programm ise on tegelikult üsna lihtne:
 
 Sisuliselt kirjutasime just interpretaatori niiöelda "kilpkonna keele" jaoks, mis tõlkis lihtsalt loetud käsud meie kilpkonnale arusaadavasse keelde. Põhimõtteliselt sama moodi toimivad ka teiste keelte interpretaatorid. Interpretaator ei ole seega midagi keerulist ega abstraktset – tegu on lihtsalt programmiga, mis loeb käske ja täidab neid.
 
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: listid1

@@ -30,11 +30,18 @@ Samuti soovitan nii esimese kui teise osa lugemisel piiluda vahel ka kolmandasse
 
 Tagasiside
 ==========
-Kui leiad õpikus vigu või soovid lihtsalt midagi kommenteerida, siis kirjuta aadressil aivar.annamaa@ut.ee
+Iga lehekülje lõpus on koht, kus on võimalik peatüki sisu kommenteerida. Teine võimalus tagasiside andmiseks on saata kiri aadressile aivar.annamaa@ut.ee
+
+Kõikide peatükkide diskussioone saab koos jälgida siin: https://disqus.com/home/forums/programmeerimine/
 
 Edu!
 
 Aivar Annamaa
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: index
 
 .. todo::
 

@@ -283,7 +283,7 @@ Erinev on ka moodulis sisalduvate nimede loetlemine -- selleks tuleb kasutada fu
 
 
 Objektid ja atribuudid
-=======================
+======================
 Me alustasime moodulite uurimist kõrvutades moodulis olevat funktsiooni sõnemeetodi kasutamisega. Tuleb välja, et kõigil Pythoni väärtustel on sarnasus moodulitega -- neilt saab nime järgi küsida mingi nende komponendi (või aspekti) väärtust. Samuti saab kasutada ``dir`` funktsiooni tuvastamaks, milliste nimedega komponente mingil objektil on.
 
 Proovime näiteks arvudega:
@@ -348,3 +348,7 @@ Kaks põhilist mehhanismi modulaarsuse saavutamiseks on funktsioonid ja objektid
 
 
 
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: moodulid

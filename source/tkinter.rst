@@ -706,3 +706,7 @@ Selleks, et veenda Pythonit pildi vajalikkuses, tuleks kood korraldada nii, et k
     
     raam.mainloop()
     
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: tkinter

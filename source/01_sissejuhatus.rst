@@ -668,3 +668,7 @@ Kui käivitad Pythoni interpretaatori ilma programmi argumendita, siis avaneb Py
         
     Kui arvutis on mitu Pythoni versiooni, siis ei pruugi fail avaneda õiges IDLE'i versioonis. Sel puhul on abiks järgneval aadressil jagatav programm: http://defaultprogramseditor.com/. Sellega saab määrata, millise programmiga peaks mingi failitüüp avanema.
     
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: sissejuhatus

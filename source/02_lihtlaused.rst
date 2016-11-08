@@ -1524,3 +1524,7 @@ Tavaliselt on kolmandate osapoolte moodulid pakendatud koos installeerimisskript
     NB! Varu piisavalt aega ja kannatust, et võimalike tehniliste katsumustega hakkama saada. Võibolla pead valitud paketi installimiseks töötama ka operatsioonisüsteemi käsureal (selle kohta leiab juhiseid eelmise peatüki lisalugemises). Samas, läbi taolise "mässamise" saab oma OP-süsteemi kõige paremini tundma õppida.
 
 
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: lihtlaused

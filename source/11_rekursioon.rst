@@ -651,3 +651,9 @@ Labürintide genereerimine
 Kujutame ette, et meil on suur plokk betooni, kuhu me hakkame uuristama ploki külgedega paralleelseid ja aeg-ajalt täisnurga all pööravaid, mõnikord ka hargnevaid käike. Igal sammul on meil mitu võimalust, kuhupoole edasi uuristada. Üks võimalus probleemile läheneda, on uuristada üks juhuslik labürint otse ette, teine labürint vasakule ja kolmas paremale, aga selle, millisest alam-labürindist me alustame, valime juhuslikult. Selleks, et labürint ei tuleks triviaalne, jälgime, et me ei puuriks läbi seda seina, mille taga vahetult on juba üks käik uuristatud -- see tingimus tagab, et iga järgmise alam-labürindi võimalik ala on järjest väiksem (ilmselt märkad siin juba viidet rekursiooni põhimõtetele).
 
 Selle algoritmi kohta võid täpsemalt uurida vastavast Wikipedia artiklist (http://en.wikipedia.org/wiki/Maze_generation_algorithm) või laadida alla ühe näiteprogrammi (:download:`mazes.py <downloads/mazes.py>`), mis kasutab Pygame nimelist Pythoni lisateeki (tuleb eraldi installeerida, saadaval aadressilt http://pygame.org). 
+
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: rekursioon

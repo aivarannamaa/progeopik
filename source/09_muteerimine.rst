@@ -575,3 +575,8 @@ Selle kirjapildi teine tõsine eelis on see, et see muudab aritmeetiliste avaldi
 
 Tegu on ka asjaga, mis on praktikas täiesti kasutust leidnud. Oma töötlemise lihtsuse tõttu ehitati selline arvutamise süsteem sisse mõningatesse võimsamatesse kalkulaatoritesse, mida kunagi müüdi. Viimase 15 aasta jooksul on see aga arvutusvõimsuse kasvu tõttu vaikselt kalkulaatorites asendunud meile loomulikuma koolis õpitud infiksnotatsiooniga.
 
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: muteerimine

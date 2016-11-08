@@ -125,13 +125,12 @@ Täiendame nüüd oma graafikut neid võimalusi kasutades:
     
     fig.show()                   # Kuvame joonise ekraanile.
 
-.. image:: images/mpl_joon2.png
+.. image:: images/mpl_joon2.png 
 
-.. admonition::
+.. admonition:: Näide telgede paigutamisest keskele
 
     * http://matplotlib.org/examples/pylab_examples/spine_placement_demo.html
-    * 
-
+    
 Harjutus. Märkide seadistamine
 ------------------------------
 Uuri meetodit :py:meth:`set_xticklabels<matplotlib.axes.Axes.set_xticklabels>` ja proovi manada x-teljele kuu numbrite asemel kuu nimed.
@@ -746,7 +745,102 @@ Rohkem infot:
 
 * http://matplotlib.org/examples/user_interfaces/embedding_in_tk.html 
 * https://pythonprogramming.net/how-to-embed-matplotlib-graph-tkinter-gui
- 
+
+Matplotlib + Plotly
+===================
+`Plotly <http://plot.ly/>`_ on veebiteenus, mis võimaldab interaktiivsete graafikute koostamist ja veebis publitseerimist. Muuhulgas toetab Plotly ka matplotlib-i abil koostatatud graafikute importimist. Selleks saab kasutada Pythoni paketti ``plotly``, mille saab installida käsuga ``pip install plotly``.
+
+Järgnev näide demonstreerib, kuidas ühte meie eelpool koostatud graafikutest saata Plotly-sse:
+
+.. attention::
+
+    Enne selle koodi käivitamist tuleb sul teha enda Plotly konto, ning asendada funktsiooni ``sign_in`` argumendid enda andmetega!
+
+.. sourcecode:: py3
+    :emphasize-lines: 8,9,65-69
+
+    import matplotlib.pyplot as plt
+    
+    import csv
+    import matplotlib.pyplot as plt
+    from collections import Counter
+    from math import sqrt
+    
+    # plotly.plotly imporditakse tavaliselt nime py alla
+    import plotly.plotly as py      
+    
+    kombinatsioonid = []
+    
+    with open("punktid.csv", encoding="UTF-8") as f:
+        reader = csv.reader(f, delimiter=";")
+        for rida in reader:
+            try:
+                # Kui tudeng pole ühtegi kodutööd teinud, siis võib vastavas
+                # lahtris olla 0 asemel ka sidekriips.
+                # Mõlemal juhul võime öelda, et tudeng on saanud kodutööde eest 0p
+                if rida[0] == "-":
+                    kodutöö = 0.0
+                else:
+                    kodutöö = float(rida[0])
+    
+                # Vaheeksami puhul aga tähendab kriips seda, et tudeng puudus
+                # vaheeksamilt. Kõige kindlam on praegu neid tudengeid mitte arvestada.
+                # Seetõttu üritame teisendust ilma lisakontrollita. Kui see ebaõnnestub,
+                # siis selle tudengi andmeid ei arvestata (ka kontrolltööd mitte)
+                vaheeksam = float(rida[2])
+    
+                kombinatsioon = (kodutöö, vaheeksam)
+                kombinatsioonid.append(kombinatsioon)
+            except ValueError:
+                # Ignoreerime puuduvate või vigaste väärtustega ridu
+                pass
+    
+    
+    # Toome välja erinevad kombinatsioonid ja täpi suurused vastavalt sagedusele
+    sagedused = Counter(kombinatsioonid)
+    kodutööd = []
+    vaheeksamid = []
+    täpi_läbimõõdud = []
+    for kombinatsioon in sagedused:
+        sagedus = sagedused[kombinatsioon]
+        kodutööd.append(kombinatsioon[0])
+        vaheeksamid.append(kombinatsioon[1])
+    
+        # Kui kombinatsiooni A esineb kaks korda rohkem, kui kombinatsiooni B,
+        # siis kumb valik oleks õigem?
+        #
+        #  - A täpi läbimõõt on 2x suurem kui B oma
+        #  - A täpi pindala on 2x suurem kui B oma
+        #
+        # On leitud, et täpsema mulje jätab see, kui sagedust näitab pindala,
+        # seetõttu valime täpi läbimõõdu nii, täpi pindala sõltuks lineaarselt
+        # vastava kombinatsiooni sagedusest:
+        täpi_läbimõõdud.append(sqrt(sagedus) * 30)
+    
+    
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.scatter(kodutööd, vaheeksamid, alpha=0.3, s=täpi_läbimõõdud)
+    ax.set_xlabel("Kodutööde punktid")
+    ax.set_ylabel("Vaheeksami punktid")
+    
+    # Meetod sign_in on vajalik selleks, et graafiks jõuaks õige Plotly konto alla
+    py.sign_in("sinu_kasutajanimi", "sinu_api_key") # NB! pane siia enda andmed
+    plot_url = py.plot_mpl(fig)                     # Saadame graafiku Plotly-sse
+    print(plot_url)
+
+
+Kui kõik läks hästi, siis avanes peale selle koodi käivitamist varsti brauseri aken, mis näitas sama graafikut Plotly keskkonnas. Graafiku kõrvalt leiad HTML koodi, mille saad lisada oma veebilehele. Tulemus on midagi sellist (proovi liigutada hiirt punktide kohal): 
+
+.. raw:: html
+
+    <iframe width="100%" height="500" frameborder="0" scrolling="no" src="//plot.ly/~aivarannamaa/14.embed"></iframe> 
+
+.. note::
+    
+    Tuleb arvestada, et ``plot_mpl`` ei saa vähemalt 2016 novembri seisuga kõigi matplotlib-i graafikutega veel hakkama. Kui su graafik toimib :py:meth:`show<matplotlib.figure.Figure.show>` meetodiga, aga ``plot_mpl`` annab veateate, siis proovi graafikus midagi lihtsustada. Abi võib olla ka veateate guugeldamisest
+
+
 Täpsem info
 ===========
 Ülevaade võimalustest: http://matplotlib.org/users/screenshots.html
@@ -754,3 +848,8 @@ Väga hea ülevaade matplotlib mõistetest: http://matplotlib.org/faq/usage_faq.
 
 Hea tut?: http://www.labri.fr/perso/nrougier/teaching/matplotlib/
 
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: matplotlib

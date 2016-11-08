@@ -106,3 +106,8 @@ Kui muutujad võimaldavad meil töötada abstraktsemal tasemel, st ilma et me pe
     print(kolmest_suurim(4, 15, 2))
 
 Tõenäoliselt oskad isegi ilma funktsiooni definitsiooni süvenemata arvata, mida taoline programm ekraanile prindib. Põhjus on selles, et antud funktsiooni olemus tuleb välja juba tema nimest ja üldjuhul võime me eeldada, et funktsiooni tegelik definitsioon on tema nimele vastav. Seetõttu, kui meil on sobivad funktsioonid juba defineeritud, siis saame me programmi põhiosas (või järgmiste funktsioonide defineerimisel) töötada kõrgemal tasemel ilma pisiasjade pärast muretsemata.
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: kokkuvote1

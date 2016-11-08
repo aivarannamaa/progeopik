@@ -1537,3 +1537,7 @@ Katsetamine erinevate katsete arvudega (10,100,1000,...,1000000) peaks veenma, e
 
 Selliseid arvutusmeetodeid nimetatakse Monte Carlo meetoditeks (kuulsa kasiinolinna järgi Monacos). Antud näide on taas pigem illustratiivne – praktikas kasutatakse seda reeglina ülesannete puhul, mida muud moodi lahendada ei osata. π arvutamiseks teatakse aga palju teisi ja oluliselt paremaid meetodeid.
 
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: liitlaused

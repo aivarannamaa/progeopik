@@ -142,7 +142,7 @@ Lõpptulemus peaks välja nägema umbes selline:
 .. image:: images/pygame_aken.png
 
 Harjutus. Akna suurus
-----------------------
+---------------------
 Muuda akna suurust selliselt, et tema laius oleks 800 ühikut ning kõrgus 600.
 
 
@@ -197,7 +197,7 @@ Koos joonistatud ristkülikuga peaks meie aken välja nägema selline:
 .. image:: images/pygame_ruut.png
 
 Harjutus. Ristkülikud
-----------------------
+---------------------
 
 Paiguta ristkülik ekraani ülemisse vasakusse nurka ning muuda ta 2 korda suuremaks. Joonista veel teine ristkülik, mis esimese osaliselt kataks. Anna teisele ristkülikule mõni teine värv.
 
@@ -264,7 +264,7 @@ Harjutus. Pildi kuvamine
 Joonista või leia mingi suvaline pildifail, mis on ühes varem mainitud formaatidest ning proovi see sisse laadida ning ekraanile joonistada.
 
 Harjutus. Veel üks pilt
-------------------------
+-----------------------
 Lae sisse veel teine pilt. Joonista see otse pildile ``pilt1``.
 
 .. hint::
@@ -334,5 +334,10 @@ Kokku saime nüüd jälle veidi pikema koodijupi:
 .. image:: images/pygame_tekst.png
 
 Harjutus. Tekst
-----------------
+---------------
 Joonista ühele varem sisse laetud piltidest peale mingi tekst. Proovi seda pilti omakorda joonistada mitmele kohale ekraanil.
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: pygame

@@ -26,7 +26,7 @@ import sys, os
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.todo', 'sphinx.ext.imgmath',
-              'sphinx.ext.intersphinx']
+              'sphinx.ext.intersphinx','sphinxcontrib.disqus']
 todo_include_todos = False
 
 pngmath_dvipng_args = ['-gamma 1.5', '-D 110', '-bg', 'Transparent']
@@ -266,3 +266,8 @@ epub_copyright = '2011, ATI'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'mpl': ('http://matplotlib.org/', None),
                        }
+
+
+
+# disqus setup
+disqus_shortname = 'programmeerimine'

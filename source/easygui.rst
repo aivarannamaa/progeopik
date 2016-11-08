@@ -81,3 +81,7 @@ Kirjuta programm, mis küsib kasutajalt kõigepealt tema nime, siis tänava nime
 .. image:: images\easygui_aadress.png
 
  
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: easygui
