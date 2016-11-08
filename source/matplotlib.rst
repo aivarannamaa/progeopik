@@ -830,7 +830,7 @@ Järgnev näide demonstreerib, kuidas ühte meie eelpool koostatud graafikutest 
     print(plot_url)
 
 
-Kui kõik läks hästi, siis avanes peale selle koodi käivitamist varsti brauseri aken, mis näitas sama graafikut Plotly keskkonnas. Graafiku kõrvalt leiad HTML koodi, mille saad lisada oma veebilehele. Tulemus on midagi sellist (proovi liigutada hiirt punktide kohal): 
+Kui kõik läks hästi, siis avanes peale selle koodi käivitamist varsti brauseri aken, mis näitas sama graafikut Plotly keskkonnas. Graafiku kõrvalt leiad HTML koodi, mille saad `lisada oma veebilehele <http://help.plot.ly/embed-graphs-in-websites/>`_. Tulemus on midagi sellist (proovi liigutada hiirt punktide kohal): 
 
 .. raw:: html
 
