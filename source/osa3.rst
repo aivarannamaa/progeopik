@@ -12,4 +12,5 @@ III osa: Lisad
    pygame
    matplotlib
    statistikast
+   programmidevaheline_suhtlus
    tehniline
