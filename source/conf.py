@@ -29,7 +29,7 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.todo', 'sphinx.ext.imgmath',
               'sphinx.ext.intersphinx','sphinxcontrib.disqus']
 todo_include_todos = False
 
-pngmath_dvipng_args = ['-gamma 1.5', '-D 110', '-bg', 'Transparent']
+imgmath_image_format = "svg"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
