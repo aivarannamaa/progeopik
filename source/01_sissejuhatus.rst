@@ -632,15 +632,19 @@ Ava Notepad (või mõni muu tekstiredaktor, mis salvestab *plain text*-i). Kopee
 
 Programmi käivitamiseks avame kõigepealt süsteemi käsurea ja liigume sellesse kausta, kus meie programm asub. Windowsi puhul ava Start-menüü, sisesta otsingulahtrisse *cmd.exe* ja vajuta ENTER. Mac-is ja Linuxis tuleb avada *Terminal*.
 
+.. admonition:: Thonny kasutajatele
+
+    Thonny kasutamisel on soovitav avada süsteemi käsurida Thonny menüüpunkti *Tools → Open system shell* abil. See kindlustab, et õige Pythoni interpretaator on kättesaadav lühikese nimega (``python`` või ``python3``). 
+
 Õigesse kausta liikumiseks sisesta ``cd``, tühik ja täielik kausta nimi. Näiteks kui sinu programmeerimise kaust asub sinu kodukaustas, siis võiks kausta vahetamise käsk näha välja midagi sellist:
 
-* ``cd C:\Users\Peeter\Documents\progemine`` (Windows 7 ja Vista);
-* ``cd "C:\Documents and Settings\Peeter\My Documents\progemine"`` (Windows XP. Kui kausta nimes esineb tühikuid, tuleb see ümbritseda jutumärkidega);
+* ``cd C:\Users\Peeter\Documents\progemine`` (Windows);
 * ``cd ~/progemine`` (Mac ja Linux).
 
 Programmi käivitamiseks tuleb pöörduda Pythoni interpretaatori poole, öeldes talle jooksutatava programmi nime: 
 
-* ``c:\python32\python teremaailm.py`` (Windowsis, eeldades, et sul on Python 3.2 ja see on paigaldatud vaikimisi määratud kausta);
+* ``python teremaailm.py`` (Windowsis, juhul kui interpretaator on `PATH-is <https://en.wikipedia.org/wiki/PATH_(variable)>`_. Kui kasutada Thonnys *Tools → Open system shell*, siis on interpretaator PATH-is)
+* ``C:\python34\python teremaailm.py`` (Windowsis, eeldades, et sul on Python 3.4 ja see on paigaldatud vaikimisi määratud kausta);
 * ``python3 teremaailm.py`` (Mac ja Linux).
 
 Kui kõik läks kenasti, siis ilmus ekraanile uus rida ``Tere maailm!`` ja selle järel uuesti süsteemi käsuviip. 
@@ -656,7 +660,7 @@ Kui käivitad Pythoni interpretaatori ilma programmi argumendita, siis avaneb Py
 
 .. note::
 
-    Kui soovid ka Windowsis käivitada Pythoni interpretaatorit ilma tema asukohta mainimata (olgu interaktiivselt või skripti jooksutamiseks), siis loe edasisi juhiseid siit: http://docs.python.org/3/using/windows.html#configuring-python.
+    Kui sa ei kasuta Thonnyt aga soovid ka Windowsis käivitada Pythoni interpretaatorit ilma tema asukohta mainimata (olgu interaktiivselt või skripti jooksutamiseks), siis loe edasisi juhiseid siit: http://docs.python.org/3/using/windows.html#configuring-python.
     
     Windowsis saab Pythoni skripte käivitada ka nagu tavalisi programme, nt topeltklõpsuga `Windows Exploreris`.
 
