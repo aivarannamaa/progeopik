@@ -227,8 +227,76 @@ Kui sa nüüd käivitad klientprogrammi nii, et samal ajal serverprogramm käib,
     Thonny puhul saab mitut akent lubada, kui valid Tools menüüst Options => General ja eemaldad linnukese valiku "Allow only single Thonny instance" eest). Alternatiivina võid installida endale eraldi `ametliku Pythoni distributsiooni <https://www.python.org/downloads/>`_, ning kasutada teise akna asemel sealset IDLE programmi.
 
 
-``send`` ja ``recv``
-====================
+Toru analoogia
+--------------
+Suhtluspistikute paremaks mõistmiseks võime kujutada ette, et kliendi :py:meth:`connect<socket.socket.connect>`-i ja serveri :py:meth:`accept<socket.socket.accept>`-i koostöös tekib kahe protsessi vahele virtuaalne toru ja suhtluspistikud on selle toru otsad.
+
+Kuigi meie näites server ainult kirjutas sinna torusse (meetodiga :py:meth:`sendall<socket.socket.sendall>`) ja klient ainult luges sellest torust (meetodiga :py:meth:`recv<socket.socket.recv>`), siis tegelikult saavad mõlemad osapooled teisele kirjutada ja teise kirjutatut lugeda. Seetõttu oleks veel täpsem öelda, et suhtluspistikute vahel on lausa kaks toru, üks kummagi suuna jaoks.
+
+.. admonition:: Terminoloogiast
+
+    Termini *toru* (ing k *pipe*) kasutamisel tuleb tegelikult olla ettevaatlik. Siin me kasutasime seda sõna üldises, kujundlikus tähenduses, aga sel sõnal on IT-s ka spetsiifilisem tähendus, mis tähistab enamasti ühendust ülem- ja alamprotsessi vahel. Sellele tähendusele viitab ka ülalpool kasutatud avaldis ``subprocess.PIPE``.
+
+``recv`` nüansid
+----------------
+Eespool toodud näites tegime pistikust lugemise kohta ühe lihtsustuse, mida tõsises programmis ei saa lubada:
+
+.. sourcecode:: py3
+
+    # klientprogramm
+    ...
+    vastus = suhtlemise_pistik.recv(1024)
+    ...
+
+Meetod :py:meth:`recv<socket.socket.recv>` nõuab argumendiks täisarvu, mis näitab, mis on maksimaalne baitide arv, mida me soovime lugeda. Selle põhjal eraldab Python vastuse jaoks mälu. Kui server peaks saatma rohkem infot kui 1024 baiti (ladina tähtede ja UTF-8 kodeeringu puhul esitatakse üks täht ühe baidina), siis jääb osa saadetud infot kindlasti lugemata. Veel häirivam on aga see, et ka siis, kui server saadab vähem kui 1024 baiti -- näiteks 200 baiti -- võib jääda selle käsklusega osa infot lugemata.
+
+Erinevate võrgutehnoloogia nüansside tõttu on ``recv`` programmeeritud nii, et ta loeb ja tagastab selle portsu vastusest, mis parasjagu võtta on. Isegi kui server saatis vastuse ühe portsuna, võib juhtuda, et kliendini jõuab see kahe portsuna. (Meie näites seda tõenäoliselt ei juhtunud, aga selleks tuleb valmis olla.) Kui ``recv``-i väljakutsumise hetkeks on kohale jõudnud vaid esimene ports, siis see väljakutse tagastabki ainult esimese portsu (või osa esimesest portsust, kui see ports on suurem kui ``recv`` argument). Ülejäänud portsude lugemiseks tuleb ``recv``-i kasutada lihtsalt mitu korda:
+
+.. sourcecode:: py3
+
+    # klientprogramm
+    ...
+    vastus = b"" # tühi baidijada
+    while ...:
+        vastus += suhtlemise_pistik.recv(1024)
+    ...
+
+Aga kuidas me teame, milline ports on viimane? 
+
+Sellele probleemi lahendus sõltub valitud suhtlemise skeemist e protokollist:
+
+#. Kui on ette nähtud, et üks pool saadab kogu info korraga ja rohkem tal teise poolega suhelda pole vaja, siis võiks ta peale ``sendall``-i pistiku sulgeda. Sel juhul peaks teine pool ``recv``-ma niikaua, kuni tulemuseks on tühi baidijada. See annab märku, et saatja on ühenduse sulgenud ja rohkem midagi ei tule.
+#. Alternatiivina võib suhtlusprotokolli disainida nii, et iga sõnumi lõpus on spetsiaalne sümbol, bait, või sümboli/baidi jada. Siis kasutab lugeja ``recv``-i niikaua, kuni saab kätte vastava tähise. (Sama põhimõttega töötab meie vana tuttav :py:func:`input<input>` -- ta ootab ja loeb kasutaja sisendit niikaua, kuni saab kätte reavahetuse sümboli, mis tähistab kokkuleppeliselt ühe sisendi lõppu.)
+#. Kolmanda võimalusena võib kokku leppida, et iga sõnum on täpselt *n* baidi pikkune. Sel juhul kasutab lugeja ``recv``-i niikaua, kuni õige arv baite on koos.
+
+Meie lihtsa programmi korral, kus peale sõnumi saatmist server selle kliendiga rohkem suhelda ei soovinud, saame kliendi programmeerimisel vabalt kasutada esimest võimalust:
+
+.. sourcecode:: py3
+    :emphasize-lines: 8-14
+
+    # klientprogramm
+    import socket
+    
+    serveri_aadress=("localhost", 7842)
+    suhtlemise_pistik = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    suhtlemise_pistik.connect(serveri_aadress)
+    
+    vastus = b""
+    while True:
+        ports = suhtlemise_pistik.recv(1024)
+        if len(ports) > 0:
+            vastus += ports
+        else:
+            break 
+    
+    print("Sain serverilt sellise vastuse:", vastus.decode("UTF-8"))
+
+
+Lihtne veebiserver
+------------------
+Proovime nüüd nende teadmiste abil panna kokku ühe lihtsa veebiserveri.
+
+TODO:
 
 Kommentaarid
 ============

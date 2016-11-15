@@ -15,6 +15,10 @@ while True:
     suhtlemise_pistik, kliendi_aadress = kuulamise_pistik.accept()
     print("Sain just ühenduse kliendiga nr.", i)
     teade = "Tere, klient nr. " + str(i) + "! Kell on " + time.strftime("%H:%M:%S")
+    
+    suhtlemise_pistik.sendall(("a"*1000).encode("UTF-8"))
+    r = suhtlemise_pistik.recv(256)
+    print(r)
     suhtlemise_pistik.sendall(teade.encode("UTF-8"))
     print("Saatsin talle sellise teate:", teade)
     suhtlemise_pistik.close()
