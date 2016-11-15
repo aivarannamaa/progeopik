@@ -4,12 +4,12 @@ Programmidevaheline suhtlus
 
 Ükski programm pole saar -- alati sõltub sinu poolt kirjutatud programmikood mingist koodist, mis on kellegi teise poolt kirjutatud. Kõige selgemalt viitavad sellele ``import``-laused, aga ka ilma nendeta sõltub su programm Pythoni sisseehitatud funktsioonidest ja virtuaalmasina koodist. Sellest hoolimata moodustub selliste sõltuvuste puhul programmi käivitamisel suhteliselt ühtne tervik -- **operatsioonisüsteemi protsess**, mille erinevad komponendid jagavad sama mälu ning saavad vastastikku funktsioone välja kutsuda.
 
-Selles peatükis vaatame kahte viisi, kuidas panna omavahel suhtlema programme, mis elavad **erinevates protsessides** ja võivad olla kirjutatud erinevates programmeerimiskeeltes. Alamprotsesside skeem on tehniliselt väga lihtne, aga toimib vaid ühe masina piires. Pistikute kasutamisel võivad programmid asuda ka eri arvutites, aga nende kasutamisel peab rohkemate detailidega arvestam.  
+Selles peatükis vaatame kahte viisi, kuidas panna omavahel suhtlema programme, mis elavad **erinevates protsessides** ja võivad olla kirjutatud erinevates programmeerimiskeeltes. Alamprotsesside skeem on tehniliselt väga lihtne, aga toimib vaid ühe masina piires. Pistikute kasutamisel võivad programmid asuda ka eri arvutites, aga nende kasutamisel peab rohkemate detailidega arvestama.  
 
 
 Alamprotsessid
 ==============
-Kui programm käivitab oma töö käigus teise programmi, siis algse programmi protsessi nimetatakse selles kontekstis *ülemprotsessiks* ja uue programmi protsessi *alamprotsessiks*. Kui tegemist on konsooliprogrammiga (st. mittegraafilise programmiga), siis saab ülemprotsess kergesti alamprotsessile sisendit anda ja selle väljundit lugeda. Teisisõnu, ülemprotsess saab alamprotsessiga käituda samamoodi nagu inimkasutaja.
+Kui programm käivitab oma töö käigus teise programmi, siis algse programmi protsessi nimetatakse selles kontekstis *ülemprotsessiks* ja uue programmi protsessi *alamprotsessiks*. Kui uus programm on konsooliprogramm (st. mittegraafiline programm), siis saab ülemprotsess kergesti alamprotsessile sisendit anda ja selle väljundit lugeda. Teisisõnu, ülemprotsess saab alamprotsessiga käituda samamoodi nagu inimkasutaja.
 
 Käivitamine ja väljundi lugemine
 --------------------------------
@@ -175,10 +175,10 @@ Vaatame kõigepealt ühte lihtsat Pythonis kirjutatud serverit:
         print("Hakkan klienti ootama")
         suhtlemise_pistik, kliendi_aadress = kuulamise_pistik.accept()
         print("Sain just ühenduse kliendiga nr.", i)
-        teade = "Tere, klient nr. " + str(i) + "! Kell on " + time.strftime("%H:%M:%S")
+        teade = "Tere, klient nr. {}! Kell on {}".format(i, time.strftime("%H:%M:%S"))
         suhtlemise_pistik.sendall(teade.encode("UTF-8"))
         print("Saatsin talle sellise teate:", teade)
-        suhtlemise_pistik.close()
+        #suhtlemise_pistik.close()
         i += 1
 
 Serverites kasutatakse kahte tüüpi pistikuid: *kuulamispistikud* ja *suhtlemispistikud*. Antud näites luuakse funktsiooniga :py:func:`socket<socket.socket>` kõigepealt pistik, millele seejärel antakse meetodite :py:meth:`bind<socket.socket.bind>` ja :py:meth:`listen<socket.socket.listen>` abil **kuulamispistiku roll**.
@@ -231,7 +231,10 @@ Toru analoogia
 --------------
 Suhtluspistikute paremaks mõistmiseks võime kujutada ette, et kliendi :py:meth:`connect<socket.socket.connect>`-i ja serveri :py:meth:`accept<socket.socket.accept>`-i koostöös tekib kahe protsessi vahele virtuaalne toru ja suhtluspistikud on selle toru otsad.
 
-Kuigi meie näites server ainult kirjutas sinna torusse (meetodiga :py:meth:`sendall<socket.socket.sendall>`) ja klient ainult luges sellest torust (meetodiga :py:meth:`recv<socket.socket.recv>`), siis tegelikult saavad mõlemad osapooled teisele kirjutada ja teise kirjutatut lugeda. Seetõttu oleks veel täpsem öelda, et suhtluspistikute vahel on lausa kaks toru, üks kummagi suuna jaoks.
+Kuigi meie näites server ainult kirjutas sinna torusse (meetodiga :py:meth:`sendall<socket.socket.sendall>`) ja klient ainult luges sellest torust (meetodiga :py:meth:`recv<socket.socket.recv>`), siis tegelikult saavad mõlemad osapooled teisele kirjutada ja teise kirjutatut lugeda. Seetõttu oleks veel täpsem öelda, et suhtluspistikute vahelises torus on justkui kaks soont, üks kummagi suuna jaoks:
+
+.. image:: images/connection.png
+    :align: center 
 
 .. admonition:: Terminoloogiast
 
@@ -266,7 +269,7 @@ Aga kuidas me teame, milline ports on viimane?
 Sellele probleemi lahendus sõltub valitud suhtlemise skeemist e protokollist:
 
 #. Kui on ette nähtud, et üks pool saadab kogu info korraga ja rohkem tal teise poolega suhelda pole vaja, siis võiks ta peale ``sendall``-i pistiku sulgeda. Sel juhul peaks teine pool ``recv``-ma niikaua, kuni tulemuseks on tühi baidijada. See annab märku, et saatja on ühenduse sulgenud ja rohkem midagi ei tule.
-#. Alternatiivina võib suhtlusprotokolli disainida nii, et iga sõnumi lõpus on spetsiaalne sümbol, bait, või sümboli/baidi jada. Siis kasutab lugeja ``recv``-i niikaua, kuni saab kätte vastava tähise. (Sama põhimõttega töötab meie vana tuttav :py:func:`input<input>` -- ta ootab ja loeb kasutaja sisendit niikaua, kuni saab kätte reavahetuse sümboli, mis tähistab kokkuleppeliselt ühe sisendi lõppu.)
+#. Alternatiivina võib suhtlusprotokolli disainida nii, et iga sõnumi lõpus on spetsiaalne sümbol, bait, või sümboli/baidi jada. Siis kasutab lugeja ``recv``-i niikaua, kuni saab kätte vastava tähise. Selle kohta tuleb allpool, veebiserveri osas, ka näide. (Muideks, sama põhimõttega töötab meie vana tuttav :py:func:`input<input>` -- ta ootab ja loeb kasutaja sisendit niikaua, kuni saab kätte reavahetuse sümboli, mis tähistab kokkuleppeliselt ühe sisendi lõppu.)
 #. Kolmanda võimalusena võib kokku leppida, et iga sõnum on täpselt *n* baidi pikkune. Sel juhul kasutab lugeja ``recv``-i niikaua, kuni õige arv baite on koos.
 
 Meie lihtsa programmi korral, kus peale sõnumi saatmist server selle kliendiga rohkem suhelda ei soovinud, saame kliendi programmeerimisel vabalt kasutada esimest võimalust:
@@ -293,11 +296,150 @@ Meie lihtsa programmi korral, kus peale sõnumi saatmist server selle kliendiga 
 
 
 Lihtne veebiserver
-------------------
-Proovime nüüd nende teadmiste abil panna kokku ühe lihtsa veebiserveri.
+==================
 
-TODO:
+.. note::
 
+    Selle jaotuse eesmärk on demonstreerida pistikute kasutamist, tutvustades sealjuures HTTP põhimõtteid. "Päris" veebiprogrammide kirjutamiseks soovitame tutvuda mooduliga :py:mod:`http.server` või mõne veebiraamistikuga, mis kannab madala taseme detailide eest ise hoolt. 
+
+Proovime nüüd pistikute abil panna kokku ühe lihtsa veebiserveri:
+
+.. sourcecode:: py3
+
+    import socket
+    import time
+    
+    serveri_aadress=("localhost", 7482)
+    kuulamise_pistik = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    kuulamise_pistik.bind(serveri_aadress)
+    kuulamise_pistik.listen()
+    
+    i = 1
+    while True:
+        print("Hakkan klienti ootama")
+        suhtlemise_pistik, kliendi_aadress = kuulamise_pistik.accept()
+        print("Sain just ühenduse kliendiga nr.", i)
+    
+        # Uurime kliendi käest, mida ta tahtis ...
+        päring = b""
+        while b"\r\n\r\n" not in päring: # kuni päringu (päise) lõpp pole veel loetud
+            ports = suhtlemise_pistik.recv(1024)
+            if len(ports) > 0:
+                päring += ports
+            else:
+                break
+                
+        päringu_päis = päring.split(b"\r\n\r\n")[0].decode("ASCII")
+        print("Päringu päis oli selline: \n" + päringu_päis)
+    
+        # Lihtsuse mõttes praegu me vastuse koostamisel päringut veel ei arvesta
+        vastuse_päis = """HTTP/1.0 200 OK
+    Content-Type: text/html; charset=utf-8"""
+        
+        vastuse_keha = """
+        <html>
+            <head>
+                <title>Tere!</title>
+            </head>
+            <body>
+                <h1>Tere, klient nr. {}!</h1>
+                <p>Kell on {}</p>
+            </body>
+        </html>""".format(i, time.strftime("%H:%M:%S"))
+        
+        vastus = vastuse_päis + "\r\n\r\n" + vastuse_keha
+        suhtlemise_pistik.sendall(vastus.encode("UTF-8"))
+        print("Saatsin talle sellise teate:", vastus)
+        suhtlemise_pistik.close()
+        i += 1
+    
+Kui sa käivitad selle programmi ja avad brauseris aadressi http://localhost:7482/, siis peaksid nägema serveri poolt saadetud tervitust ja kellaaega.
+
+.. admonition:: favicon.ico
+
+    Serveri väljundit uurides märkad ilmselt, et kui sa pöördusid brauseri kaudu serveri poole ühe korra, siis server reageeris kaks korda, just nagu brauser oleks teinud kaks pöördumist. Tegelikult nii oligi -- lisaks sinu poolt soovitud pöördumisele tegi brauser omal algatusel veel ühe pöördumise, mille eesmärk oli saada teada, kas serveril on selle URL-i jaoks pakkuda ka mingi ilus ikoonike, mida aadressiribal näidata. 
+
+HTTP
+----
+Selleks, et kliendi ja serveri suhtlus toimiks, peavad nad alati arvestama mingi kindlaksmääratud suhtlusskeemi e *protokolliga*. Veebiserveri ja brauseri suhtluse määrab protokoll nimega `HTTP <https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol>`__. 
+
+HTTP on põhiolemuselt on väga lihtne protokoll:
+
+#. Klient proovib võtta serveriga ühendust. Kui server sellega nõustub, siis tekitatakse osapoolte vahele eespool kirjeldatud suhtustoru koos selle kasutamiseks vajalike suhtluspistikutega. 
+#. Klient saadab oma suhtluspistiku kaudu serverile baidijada, mida nimetatakse *päringuks* (ing k *request*).
+#. Server uurib päringu sisu ja saadab vastu omapoolse baidijada, mida nimetatakse *vastuseks* (ing k *response*).
+#. Ühendus suletakse, suhtlustoru ja pistikud visatakse minema.
+
+Nii päring kui vastus võivad koosneda kahest osast -- *päis* (ing k *head*) ja *keha* (ing k *body*). (NB! Siinkohal me ei räägi HTML-ist, ega ``<head>`` ja ``<body>`` elementidest).
+
+Kui uurisid meie näiteserveri väljundit, siis nägid muuhulgas, milline võib olla brauseri poolt koostatud **päringu päis**:
+
+.. sourcecode:: none
+
+    GET / HTTP/1.1
+    Host: localhost:7482
+    Connection: keep-alive
+    Pragma: no-cache
+    Cache-Control: no-cache
+    User-Agent: Mozilla/5.0 ... Chrome/54.0.2840.99
+    Accept: */*
+    Referer: http://localhost:7482/
+    Accept-Encoding: gzip, deflate, sdch, br
+    Accept-Language: en-US,en;q=0.8,et;q=0.6
+
+Kõige tähtsam on päise esimene rida, mis näitab ära HTTP *meetodi* (antud näites `GET <http://www.w3schools.com/tags/ref_httpmethods.asp>`_), *tee* (antud näites ``/``) ning protokolli versiooni (antud näites ``HTTP/1.1``). Teiste päise elementide (ing k *headers*) kohta saad lugeda `siit <https://en.wikipedia.org/wiki/List_of_HTTP_header_fields>`__.
+
+*GET*-päringu korral on **päringu keha** tühi, aga nt *POST*-päringu puhul sisaldab keha HTML vormi abil kogutud andmeid.
+
+Meie näites on näha ka üks võimalik **vastuse päis**:
+
+.. sourcecode:: none
+
+    HTTP/1.0 200 OK
+    Content-Type: text/html; charset=utf-8
+
+Esimese reaga andis server teada, et ta oskab päringule vastata -- sellele viitab kood 200.  Ilmselt oled kohanud ka koodi 404, mis tähendab, et päringus näidatud tee kohta ei ole serveril midagi öelda. (Ülejäänud võimalikke vastusekoode näed `siit <https://en.wikipedia.org/wiki/List_of_HTTP_status_codes>`_.)
+
+``Content-Type`` element annab infot selle kohta, kuidas tuleks tõlgendada **vastuse keha**. Antud juhul ütleb server, et vastuse keha on UTF-8 kodeeringus HTML tekst.
+
+Nii päringu kui vastuse päise lõpus on alati baidid ``b"\r\n\r\n"``, mille järgi päist lugev osapool saab aru, et päis on kohale jõudnud.
+
+Päringu tõlgendamine
+--------------------
+Meie veebiserver on hetkel kaunis igav, kuna vastus ei sõltu sellest, kuidas klient päringu tegi. Kui sa proovid järgmisi URL-e, siis näed, et kõik annavad sama tulemuse:
+
+* http://localhost:7482/
+* http://localhost:7482/uus_kirje.php?nimi=Peeter&lemmikloom=kala
+* http://localhost:7482/pildid/maasikas.jpg
+
+Kui aga uurid serveri väljundit, siis näed, et päringu päise esimene rida on igal korral erinev:
+
+* ``GET / HTTP/1.1``
+* ``GET /uus_kirje.php?nimi=Peeter&lemmikloom=kala HTTP/1.1``
+* ``GET /pildid/maasikas.jpg HTTP/1.1``
+
+Seda asjaolu ära kasutades saabki server vastata erinevatele päringutele erinevalt:
+
+.. sourcecode:: py3
+
+    ...
+    
+    päringu_read = päringu_päis.splitlines()
+    esimene_rida = päringu_read[0]
+    meetod, tee, versioon = esimene_rida.split()
+    
+    if tee.endswith(".jpg"):
+        failinimi = ... # otsi õige fail üles
+        f = open(failinimi, "b")
+            suhtluspistik.sendall(f.read())
+        f.close()
+    elif ...:
+        ...
+    else:
+        suhtluspistik.sendall(b"Ei oska reageerida sellele päringule")
+        
+    ...
+    
 Kommentaarid
 ============
 .. disqus::
