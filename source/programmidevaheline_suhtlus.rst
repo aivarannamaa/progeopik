@@ -294,6 +294,7 @@ Meie lihtsa programmi korral, kus peale sõnumi saatmist server selle kliendiga 
     
     print("Sain serverilt sellise vastuse:", vastus.decode("UTF-8"))
 
+.. _lihtne_veebiserver:
 
 Lihtne veebiserver
 ==================
@@ -359,6 +360,10 @@ Kui sa käivitad selle programmi ja avad brauseris aadressi http://localhost:748
 .. admonition:: favicon.ico
 
     Serveri väljundit uurides märkad ilmselt, et kui sa pöördusid brauseri kaudu serveri poole ühe korra, siis server reageeris kaks korda, just nagu brauser oleks teinud kaks pöördumist. Tegelikult nii oligi -- lisaks sinu poolt soovitud pöördumisele tegi brauser omal algatusel veel ühe pöördumise, mille eesmärk oli saada teada, kas serveril on selle URL-i jaoks pakkuda ka mingi ilus ikoonike, mida aadressiribal näidata. 
+
+.. admonition:: Port 80
+
+    Harilikult kuulavad veebiserverid porti 80. Sel juhul ei pea URL-is pordi numbrit üldse mainima. Selles näites kasutasime teist porti, kuna port 80 võib olla mõne programmi (nt. Skype) poolt juba võetud. 
 
 HTTP
 ----
