@@ -178,7 +178,7 @@ Vaatame kõigepealt ühte lihtsat Pythonis kirjutatud serverit:
         teade = "Tere, klient nr. {}! Kell on {}".format(i, time.strftime("%H:%M:%S"))
         suhtlemise_pistik.sendall(teade.encode("UTF-8"))
         print("Saatsin talle sellise teate:", teade)
-        #suhtlemise_pistik.close()
+        suhtlemise_pistik.close()
         i += 1
 
 Serverites kasutatakse kahte tüüpi pistikuid: *kuulamispistikud* ja *suhtlemispistikud*. Antud näites luuakse funktsiooniga :py:func:`socket<socket.socket>` kõigepealt pistik, millele seejärel antakse meetodite :py:meth:`bind<socket.socket.bind>` ja :py:meth:`listen<socket.socket.listen>` abil **kuulamispistiku roll**.
@@ -300,7 +300,8 @@ Lihtne veebiserver
 
 .. note::
 
-    Selle jaotuse eesmärk on demonstreerida pistikute kasutamist, tutvustades sealjuures HTTP põhimõtteid. "Päris" veebiprogrammide kirjutamiseks soovitame tutvuda mooduliga :py:mod:`http.server` või mõne veebiraamistikuga, mis kannab madala taseme detailide eest ise hoolt. 
+    Selle jaotuse eesmärk on demonstreerida pistikute kasutamist, tutvustades sealjuures HTTP põhimõtteid. "Päris" veebiprogrammide kirjutamiseks soovitame tutvuda mooduliga :py:mod:`http.server` või mõne veebiraamistikuga, mis kannab madala taseme detailide eest ise hoolt.
+    
 
 Proovime nüüd pistikute abil panna kokku ühe lihtsa veebiserveri:
 
@@ -440,6 +441,25 @@ Seda asjaolu ära kasutades saabki server vastata erinevatele päringutele erine
         
     ...
     
+    
+Turvalisus
+==========
+Enne kui sa oma serveri avalikukuks teed, tee endale selgeks `põhilised võimalikud turvaprobleemid <https://en.wikipedia.org/wiki/Web_application_security>`__. Suurema kindluse saamiseks aga on soovitav kasutada isetehtud veebiserveri asemel mõnda tuntud veebiserverit ja -raamistikku. 
+
+    
+.. attention:: 
+
+    **Isegi siis, kui su veebiserver on ainult sulle kättesaadav, peab olema ettevaatlik!** Pahalasel võib õnnestuda pöörduda su veebiserveri poole kaudselt. 
+    
+    Näide. Kui sa programmeerid oma serveri selliselt, et päring http://localhost:7482/kustuta?fail=/kaust/fail.txt kustutab näidatud faili, siis on võimalus, et pahalane saab su faile kustutada isegi siis, kui tal pole sinu arvutile mingit ligipääsu.
+    
+    Oletame, et su lemmikblogi kuvab külastajate poolt postitatud kommentaare selliselt, et kui postituses leidub URL lõpuga ".jpg", siis seda tõlgendatakse mingi pildi aadressina ja kuvatakse ``<img>`` elemendi abil. Kui nüüd pahalane postitab URL-i http://localhost:7482/kustuta?fail=/kaust/fail.txt&blaablaa.jpg, siis tekib postituse leheküljele element ``<img src='http://localhost:7482/kustuta?fail=/kaust/fail.txt&blaablaa.jpg/>``. Kui nüüd sina enda brauseriga külastad seda blogi ja su veebiserver samal ajal jookseb, siis su brauser pöördub sinu teadmata (aga tehniliselt võttes siiski sinu nimel) selle ohtliku aadressi poole.
+    
+    Sellist skeemi nimetatakse inglise keeles `cross-site request forgery <https://en.wikipedia.org/wiki/Cross-site_request_forgery>`__ ja seda on kasutatud näiteks `uTorrenti kasutajate ründamiseks <http://www.securityfocus.com/bid/28847/exploit/>`__. 
+
+
+
+
 Kommentaarid
 ============
 .. disqus::
