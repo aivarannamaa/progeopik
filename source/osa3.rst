@@ -11,6 +11,5 @@ III osa: Lisad
    easygui
    pygame
    matplotlib
-   statistikast
    programmidevaheline_suhtlus
    tehniline
