@@ -12,4 +12,5 @@ III osa: Lisad
    pygame
    matplotlib
    programmidevaheline_suhtlus
+   veebiprogrammid
    tehniline
