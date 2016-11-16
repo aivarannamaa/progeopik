@@ -597,7 +597,7 @@ NB! Funktsiooni ``statistics.median`` ära enda lahenduses kasuta!
 
 3. Eesti-inglise sõnaraamat
 ---------------------------
-Lae alla eesti-inglise sõnastik(:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
+Lae alla eesti-inglise sõnastik (:download:`sonastik.txt <downloads/sonastik.txt>`, kodeeringus UTF-8). Selle igal real on kõigepealt inglisekeelne sõna või väljend, seejärel tabulaatori sümbol (kirjutatakse Pythonis ``"\t"``) ning lõpuks eestikeelne vaste.
 
 Kirjuta programm, mis loeb failist eestikeelsed ja ingliskeelsed väljendid eraldi järjenditesse ning võimaldab kasutajal korduvalt küsida ingliskeelse sõna eestikeelset vastet (või vastupidi -- võid ise valida või lubada kasutajal valida).
 
