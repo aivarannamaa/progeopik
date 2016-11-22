@@ -8,6 +8,7 @@ III osa: Lisad
    pythoni_lisavoimalused
    moodulid
    tkinter
+   lisapaketid
    easygui
    pygame
    matplotlib
