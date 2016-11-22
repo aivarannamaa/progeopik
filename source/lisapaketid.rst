@@ -34,3 +34,8 @@ pip-i käivitamine Thonnys
 -------------------------
 Kui süsteemi käsurida avada Thonny kaudu (`Tools → Open system shell`), siis mitme interpretaatori ja PATH-i pärast muretsema ei pea, sest Thonny suudab (enamasti) seadistada käsurea niimoodi ette, et õige ``pip`` (st. see, mis installib paketti sellele interpretaatorile, mida Thonny parasjagu kasutab) on kättesaadav lühikese nimega.
 
+
+Kommentaarid
+============
+.. disqus::
+    :disqus_identifier: lisapaketid
