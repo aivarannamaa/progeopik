@@ -616,7 +616,9 @@ Vali välja mõned esialgsed programmiideed, mida sa sooviksid Pythonis realisee
 
 Lisalugemine
 ============
-    
+
+.. _python_op_systeemi_kasureal:
+
 Pythoni kasutamine süsteemi käsureal
 ------------------------------------
 Nagu eespool mainitud, on Pythoni programmid tavalised tekstifailid ja nende käivitamiseks läheb vaja vaid Pythoni interpretaatorit. Selle demonstreerimiseks kirjutame oma esimese "Tere maailm!" programmi nüüd Notepadis (Linuxi ja Mac-i puhul kasuta mõnd suvalist tekstiredaktorit) ning käivitame selle *operatsioonisüsteemi käsureal*.
