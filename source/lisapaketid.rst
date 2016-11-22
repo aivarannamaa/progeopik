@@ -14,13 +14,13 @@ Pythoni lisapaketinduse keskmeks on `PyPi <https://pypi.python.org/pypi>`__ -- P
 
 pip
 ===
-``pip`` (Linuxi ja Mac-i puhul ka ``pip3``) on käsurea programm, mis oskab PyPi-st pakette alla tõmmata ja sinu arvutisse installida. Kui pakett sõltub veel mõnest paketist, siis installtakse ka see jne.
+``pip`` (Linuxi ja Mac-i puhul ka ``pip3``) on käsurea programm, mis oskab PyPi-st pakette alla tõmmata ja sinu arvutisse installida. Kui pakett sõltub veel mõnest paketist, siis installitakse ka see jne.
 
 Uuemate Pythoni versioonidega (ja ka Thonnyga) on ``pip`` enamasti kaasas, seega ``pip``-i enda paigaldamise pärast ei ole sul tõenäoliselt vaja muretseda. Küll aga on vaja teada kuidas ``pip``-i käivitada.
 
 Üldine käivitusjuhis
 --------------------
-Käsu ``pip`` käivitamise juhis op-süsteemi käsureal on analoogne sellele, kuidas käivitada seal :ref:`Pythoni interpretaatorit <python_op_systeemi_kasureal>`.
+OP-süsteemi käsurea avamise juhendit vaata jaotusest :ref:`python_op_systeemi_kasureal`.
 
 Kui käsk ``pip`` on PATH-is, siis piisab uue paketi installimiseks käsust kujul ``pip install <paketi nimi>`` või ``pip3 install <paketi nimi>``  (nt. ``pip install pygame``). Vastasel juhul tuleb näidata käsu ``pip`` asukoht, nt. ``C:\Python34\Scripts\pip install pygame``.
 
@@ -28,11 +28,11 @@ Paketi eemaldamiseks on ``pip``-is alamkäsk ``unistall`` -- nt. ``pip uninstall
 
 .. admonition:: Tähelepanu mitme Pythoni installatsiooni korral!
 
-    Erinevatele Pythoni versioonidele on enamasti installitud ka erinevad ``pip``-id. Seega, kui sul on installitud mitu Pythoni versiooni (nt. versioon 2.7 ja 3.5), siis  tuleks enne ``pip``-i kasutamist veenduda, et sa kasutad õiget versiooni ja et installitav pakett jõuab õige interpretaatori juurde. Seda, millise interpretaatoriga mingi pip seotud on, saab kontrollida käsuga ``pip --version``. 
+    Erinevatele Pythoni versioonidega tulevad kaasa ka erinevad ``pip``-id. Seega, kui sul on installitud mitu Pythoni versiooni (nt. versioon 2.7 ja 3.5), siis  tuleks enne ``pip`` käsu kasutamist veenduda, et sa kasutad õiget versiooni, et installitav pakett jõuaks ikka õige interpretaatori juurde. Seda, millise interpretaatoriga käsk ``pip`` seotud on, saab kontrollida käsuga ``pip --version``. 
 
 pip-i käivitamine Thonnys
 -------------------------
-Kui süsteemi käsurida avada Thonny kaudu (`Tools → Open system shell`), siis mitme interpretaatori ja PATH-i pärast muretsema ei pea, sest Thonny suudab (enamasti) seadistada käsurea niimoodi ette, et õige ``pip`` (st. see, mis installib paketti sellele interpretaatorile, mida Thonny parasjagu kasutab) on kättesaadav lühikese nimega.
+Kui süsteemi käsurida avada Thonny kaudu (`Tools → Open system shell`), siis mitme interpretaatori ja PATH-i pärast muretsema ei pea, sest Thonny suudab käsurea seadistada nii, et lühikese nimega on kättesaadav õige ``pip``.
 
 
 Kommentaarid
