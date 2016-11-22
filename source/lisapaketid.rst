@@ -10,11 +10,11 @@ Lisaks sellele, et Pythonil on mahukas standardteek, on talle loodud ka väga pa
 
     Lihtsatel juhtudel piisaks teise programmeerija poolt loodud moodulite kasutamiseks sellest, kui kopeerida vastavad py-failid enda skriptiga samasse kausta. Kui aga need moodulid sõltuvad kolmanda programmeerija moodulitest, siis läheb asi juba veidi tülikaks. Seetõttu on iga populaarsete programmeerimiskeele jaoks loodud mingi mehhanism, mis teeb lisapakettide publitseerimise, leidmise ja paigaldamise lihtsamaks.
 
-Pythoni lisapaketinduse keskmeks on `PyPi <https://pypi.python.org/pypi>`__ -- Python Package Index. Tegemist on andmebaasiga, kuhu lisapakettide loojad saavad enda paketid koos kirjeldusega üles laadida ning kust pakettide kasutajad saavad pakette alla laadida ja enda arvutisse paigaldada. Pakettide loomise kohta leiad infot `Python Packaging Guide <https://packaging.python.org/>`__'ist, aga siin vaatame kuidas olemasolevaid pakette kasutada.
+Pythoni lisapaketinduse keskmeks on `PyPI <https://pypi.python.org/pypi>`__ -- Python Package Index. Tegemist on andmebaasiga, kuhu lisapakettide loojad saavad enda paketid koos kirjeldusega üles laadida ning kust pakettide kasutajad saavad pakette alla laadida ja enda arvutisse paigaldada. Pakettide loomise kohta leiad infot `Python Packaging Guide <https://packaging.python.org/>`__'ist, aga siin vaatame kuidas olemasolevaid pakette kasutada.
 
 pip
 ===
-``pip`` (Linuxi ja Mac-i puhul ka ``pip3``) on käsurea programm, mis oskab PyPi-st pakette alla tõmmata ja sinu arvutisse installida. Kui pakett sõltub veel mõnest paketist, siis installitakse ka see jne.
+``pip`` (Linuxi ja Mac-i puhul ka ``pip3``) on käsurea programm, mis oskab PyPI-st pakette alla tõmmata ja sinu arvutisse installida. Kui pakett sõltub veel mõnest paketist, siis installitakse ka see jne.
 
 Uuemate Pythoni versioonidega (ja ka Thonnyga) on ``pip`` enamasti kaasas, seega ``pip``-i enda paigaldamise pärast ei ole sul tõenäoliselt vaja muretseda. Küll aga on vaja teada kuidas ``pip``-i käivitada.
 
