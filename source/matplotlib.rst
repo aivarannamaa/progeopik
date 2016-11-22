@@ -5,32 +5,22 @@ Matplotlib
 .. todo::
 
     TODO: joonestusala vs teljestik
-    TODO: selle juhendi läbilugemine aitab ka dokumentatsioonis orienteeruda
     
     * grid
     
 
-Matplotlib on Pythoni pakett graafikute koostamiseks. 
+`Matplotlib <matplotlib.org>`__ on populaarne Pythoni pakett andmete visualiseerimiseks. Kuna tegemist on väga võimalusterohke tarkvaraga, siis antud peatükk piirdub teegi põhimõtete ja kõige levinumate graafikutüüpide tutvustamisega. Täpsemaid detaile ja keerulisemaid graafikutüüpe uuri paketi `ametlikust dokumentatsioonist <http://matplotlib.org/contents.html>`__.
 
-.. admonition:: NB!
+.. admonition:: Matplotlib ja NumPy
 
-    Hetkel on juhend veel lõpetamata, aga tõenäoliselt juba kasulik...
+    Kuigi enamasti tutvustatakse Matplotlib-i koos `NumPy <http://www.numpy.org/>`__-ga, siis see pole tingimata vajalik. Lihtsuse huvides ongi selles peatükis kõik andmed esitatud harilike Pythoni listidena, aga kes soovib, võib nende asemel kasutada vabalt ka NumPy massiive.
+
 
 Paketi paigaldamine
 ===================
-Thonny puhul vali *Tools* menüüst *Open system shell* ja sisesta süsteemi käsureale ``pip install matplotlib``
-
-TODO: Lisa ka Thonnyst sõltumatu juhend.
+Matplotlib-i saab paigaldada :ref:`pip-i abil <lisapaketid>`. Paketi nimeks on `matplotlib`, seega installimise käsk on ``pip install matplotlib`` (Windowsi puhul) või ``pip3 install matplotlib`` (Linuxi ja Mac-i puhul).
 
 
-
-.. todo::
-
-    listid vs NumPy
-
-.. admonition:: Millisel kujul andmed?
-
-    Näidetes on aastad ja vastavad elanike arvud antud harilike Pythoni listidena, aga nende asemel võivad vabalt olla ka NumPy massiivid.
 
 Põhimõtted
 ==========
