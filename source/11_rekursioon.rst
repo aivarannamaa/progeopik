@@ -492,6 +492,31 @@ Kirjuta rekursiivne funktsioon ``on_eellane``, mis võtab argumentideks kahe ini
 
     A on B eellane, kui ta on B ema/isa või kui ta on B ema/isa eellane.
 
+10. Rekursiivse listi läbimine
+------------------------------
+Kirjuta funktsioon ``rek_abs``, mis võtab argumentideks listi, mille elementideks võivad olla arvud ja/või listid. Igas alamlistis on jällegi arvud ja/või listid jne. Funktsioon peab tagastama uue sama kujuga andmestruktuuri, kus kõik arvud on asendatud nende absoluutväärtusega. Argumendiks antud listi ega ühtegi alamlisti muuta ei tohi.
+
+Näide:
+
+.. sourcecode:: py3
+
+    >>> rek_abs([2,-6, [8,-12,-12, [4, [-6], -3]], 7, [3.55, -3.55]])
+    [2, 6, [8, 12, 12, [4, [6], 3]], 7, [3.55, 3.55]]
+    >>> rek_abs([])
+    []
+
+.. hint::
+
+    .. sourcecode:: py3
+    
+        >>> isinstance([1,2,3], list)
+        True
+        >>> isinstance(435, list)
+        False
+    
+    
+
+
 Lisalugemine
 ============
 
