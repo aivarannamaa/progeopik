@@ -73,7 +73,7 @@ Seejärel värvime tekitatud pinna roheliseks:
 
 Eelnev funktsioon võttis sellise argumendi, mis koosneb kolmest arvust. Esimene neist punase värvi hulk, teine rohelise ning viimane sinise, kõik sakaalas 0-255. Kogu pind, millele antud funktsioon rakendatakse, värvitakse määratud värvi.
 
-Seejärel on tarvis Pygame'ile öelda, et meile pilt on valmis ning et soovime seda kasutajale näidata. Selle jaoks kasutame käsku:
+Seejärel on tarvis Pygame'ile öelda, et meile pilt on valmis ning et soovime seda kasutajale näidata. Selle jaoks kasutame käsku :func:`pygame.display.flip`:
 
 .. sourcecode:: py3
 

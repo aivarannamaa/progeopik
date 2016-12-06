@@ -265,6 +265,7 @@ epub_copyright = '2011, ATI'
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'mpl': ('http://matplotlib.org/', None),
+                       'pygame' : ('http://www.pygame.org/docs/', None)
                        }
 
 
