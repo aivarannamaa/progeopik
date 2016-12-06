@@ -1,0 +1,56 @@
+pygame
+    init
+    quit
+    (error)
+
+    Color  (piisab ka tuple'ist?)
+    Rect
+        move
+        inflate
+        union
+        contains
+        ...
+    Surface
+        blit
+        convert
+        fill
+        scroll
+        set_clip
+
+pygame.display
+    init (kui tahad optimeerida)
+    set_mode
+    flip
+    update
+    set_icon
+    set_caption
+
+pygame.draw
+pygame.gfxdraw
+    vt. pixel
+pygame.event
+    get
+pygame.image
+    load
+
+pygame.key
+    get_pressed
+
+pygame.mouse
+    get_pressed
+    get_pos
+    get_rel
+
+pygame.sprite
+    Sprite
+pygame.time
+    set_timer
+    Clock
+        tick
+        get_fps
+
+pygame.transform
+    flip
+    scale
+    rotate
+    ...
