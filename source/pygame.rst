@@ -9,34 +9,9 @@ Tema erinevus teiste teekide kõrval, mida kursuse jooksul kasutanud oleme, on s
 
 Kuigi Pygame'i põhisuunaks on arvutimängud, on temaga võimalik ka palju muud huvitavat korda saata. Näiteks võib Pygame'i kasutada ka täiesti tavaliste programmide kasutajaliideste loomisel. Samuti on võimalik temaga kaasas olevaid audio-funktsioone edukalt mujal rakendada. See peatükk keskendub aga peamiselt siiski mängude loomisele.
 
-Kuidas Pygame'i installida?
-===========================
-
-Windows
--------
-Pygame'i installeri leiad järgmiselt lehelt: http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame. Sealt vali sobilik versioon, mis ühtib su Python'i versiooniga. 64-bitise Python 3.3 jaoks oleks seega sobiv valikuks leida: pygame-1.9.2a0.win-amd64-py3.3.exe
-
-Linux
------
-Pygame'i Linuxi süsteemile installimiseks on tarvilik esmalt mõned pakid alla laadida ning seejärel Pygame'i lähtekood kompileerida. Muretsemiseks pole aga põhjust, sest arvuti teeb enamuse tööst ise, tarvis on vaid mõned käsud terminali kirjutada. 
-Terminalis on tarvis käivitada järgmised käsud:
-
-.. note::
-
-    * Järgnevad käsud on python3.3 jaoks. Kui soovid kasutada mõnd muud versiooni, muuda järgnevates käskudes iga „python3.3“ enda kasutatava pythoni versiooni vastu.
-     
-    * Esimene käsk on üks pikk rida, mis tuleks korraga sisestada:
-
-
-
-#. ``sudo apt-get install python3.3-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsmpeg-dev python-numpy subversion libportmidi-dev ffmpeg libswscale-dev libavformat-dev libavcodec-dev libjpeg62-dev libfreetype6-dev`` 
-#. ``sudo apt-get install mercurial``
-#. ``hg clone https://bitbucket.org/pygame/pygame`` 
-#. ``cd pygame`` 
-#. ``sudo python3.3 setup.py build`` 
-#. ``sudo python3.3 setup.py install``
-
-Et veenduda, kas installimine läks edukalt, käivita pythoni shell ning sisesta ``import pygame``. Kui selle peale veateadet ei tekkinud, sai Pygame õigesti installitud.
+Paketi paigaldamine
+===================
+Pygame'i saab paigaldada :ref:`pip-i abil <lisapaketid>`. Paketi nimeks on `pygame`, seega installimise käsk on ``pip install pygame`` (Windowsi puhul) või ``pip3 install pygame`` (Linuxi ja Mac-i puhul).
 
 Kuidas Pygame toimib?
 =====================
