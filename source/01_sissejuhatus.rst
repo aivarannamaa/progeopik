@@ -22,7 +22,7 @@ Esimese peatüki eesmärk on tutvustada Pythoni põhilisi töövahendeid ning an
 
 Arenduskeskkonna Thonny paigaldamine
 ====================================
-Thonny on algajatele mõeldud Pythoni programmeerimiskeskkond, mille paigaldusfailid ja -juhised leiad aadressilt http://thonny.cs.ut.ee.
+Thonny on algajatele mõeldud Pythoni programmeerimiskeskkond, mille paigaldusfailid ja -juhised leiad aadressilt http://thonny.org.
 
 
 .. image:: images/thonny.png
