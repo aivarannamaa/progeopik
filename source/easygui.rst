@@ -2,16 +2,16 @@
 EasyGui
 *******
 
-(Kirjutanud Tiina Kull)
+(Esialgse versiooni on kirjutanud Tiina Kull)
 
-Mis on GUI? Eks ikka graafiline kasutajaliides. Tegelikult on ka nt IDLE graafiline kasutajaliides, kuid esialgu võibolla harjumatu sisendi ja väljundi kasutamisega. Prooviks aga minna sammukese edasi ja hakata looma selliseid programme, milles on meie oma graafiline kasutajaliides ehk siis algatuseks hakkame kasutajaga suhtlema dialoogiakna kaudu. Selleks peab kõigepealt enda arvutisse salvestama **easygui.py** mooduli. 
+Mis on GUI? Eks ikka graafiline kasutajaliides. Tegelikult on ka nt IDLE graafiline kasutajaliides, kuid esialgu võibolla harjumatu sisendi ja väljundi kasutamisega. Prooviks aga minna sammukese edasi ja hakata looma selliseid programme, milles on meie oma graafiline kasutajaliides ehk siis algatuseks hakkame kasutajaga suhtlema dialoogiakna kaudu. 
 
-EasyGui installeerimine
-=======================
-Lae alla **easygui.py** või zip-fail, mis sisaldab **easygui.py**-d. Vali **versioon 0.96**. Seda saad teha näiteks aadressilt: http://easygui.sourceforge.net/. Mooduli peab salvestama sinna, kust Python selle ka leiaks. Kus see asub? Koolis salvesta see samasse kataloogi, kus asuvad sul ka teised Pythonis kirjutatud programmid. Hea oleks, kui see koht on eraldi kataloog sinu isiklikus kodukataloogis.
+Kõige lihtsam viis graafiliste kasutajaliideste programmeerimiseks Pythonis on lisapaketi *EasyGui* abil. 
 
-.. note:: 
-    Koduarvutis oleks sul kõige mõistlikum **easygui.py** salvestada samasse kataloogi, kus on Pythoni programm ise.
+Paketi paigaldamine
+===================
+EasyGui saab paigaldada :ref:`pip-i abil <lisapaketid>`. Paketi nimeks on `easygui`, seega installimise käsk on ``pip install easygui`` (Windowsi puhul) või ``pip3 install easygui`` (Linuxi ja Mac-i puhul).
+
 
 Esimene programm
 ================
@@ -36,7 +36,7 @@ Kui valikuid on rohkem kui kolm, tasub kasutada variantide nimekirjaga dialoogia
 .. sourcecode:: py3
 
     import easygui
-    variandid = ["polegi","luehikesed", "keskmised","pikad"]
+    variandid = ["polegi","lühikesed", "keskmised","pikad"]
     vajutati = easygui.choicebox("Kui pikad juuksed sul on?", choices = variandid)
     if vajutati == None:
         easygui.msgbox("Sa ei valinud midagi!")
