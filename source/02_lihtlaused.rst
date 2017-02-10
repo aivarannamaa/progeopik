@@ -1121,7 +1121,7 @@ Lisaks kommentaaridele võib koodi loetavuse parandamiseks kasutada ka tühje ri
 
 Suur näide Juhuslik tsitaat
 ===========================
-Aadressil http://programmeerimine.cs.ut.ee/tsitaadid/ on hulk tekstifaile, millest igaüks sisaldab ühte tsitaati mõnest tuntud Eesti filmist. Ma üritan nüüd kirjutada programmi, mis valib juhuslikult ühe neist failidest ja kuvab selle sisu ekraanile. Seejuures ei hüppa ma kohe lõpptulemuse juurde, vaid katsun esitada kogu programmeerimise protsessi koos katsetuste ja ebaõnnestumistega.
+Aadressil http://progeopik.cs.ut.ee/tsitaadid/ on hulk tekstifaile, millest igaüks sisaldab ühte tsitaati mõnest tuntud Eesti filmist. Ma üritan nüüd kirjutada programmi, mis valib juhuslikult ühe neist failidest ja kuvab selle sisu ekraanile. Seejuures ei hüppa ma kohe lõpptulemuse juurde, vaid katsun esitada kogu programmeerimise protsessi koos katsetuste ja ebaõnnestumistega.
 
 Enne päriselt ülesande kallale asumist on vaja teha üks asjakohane kõrvalepõige.
  
@@ -1146,7 +1146,7 @@ Enne keerulise ülesande lahendamist on kasulik proovida lahendada ülesande lih
 
     from urllib.request import urlopen
     
-    vastus = urlopen("http://programmeerimine.cs.ut.ee/tsitaadid/026.txt")
+    vastus = urlopen("http://progeopik.cs.ut.ee/tsitaadid/026.txt")
     
     baidid = vastus.read()
     tekst = baidid.decode()
@@ -1162,18 +1162,18 @@ Lähen edasi. Kuidas valida nende 119 faili hulgast juhuslikult üks? Käsk ``ra
 .. sourcecode:: py3
 
     >>> from random import randint
-    >>> "http://programmeerimine.cs.ut.ee/tsitaadid/" + randint(1, 119) + ".txt"
+    >>> "http://progeopik.cs.ut.ee/tsitaadid/" + randint(1, 119) + ".txt"
     Traceback (most recent call last):
       File "<pyshell#7>", line 1, in <module>
-        "http://programmeerimine.cs.ut.ee/tsitaadid/" + randint(1, 119) + ".txt"
+        "http://progeopik.cs.ut.ee/tsitaadid/" + randint(1, 119) + ".txt"
     TypeError: Can't convert 'int' object to str implicitly
    
 Nojah, unustasin, et sõnet ja arvu ei saa niisama lihtsalt ühendada, enne on vaja arv teisendada sõneks. Proovin uuesti:
 
 .. sourcecode:: py3
 
-    >>> "http://programmeerimine.cs.ut.ee/tsitaadid/" + str(randint(1, 119)) + ".txt"
-    'http://programmeerimine.cs.ut.ee/tsitaadid/15.txt'
+    >>> "http://progeopik.cs.ut.ee/tsitaadid/" + str(randint(1, 119)) + ".txt"
+    'http://progeopik.cs.ut.ee/tsitaadid/15.txt'
 
 Palju parem! (Sina said tõenäoliselt teise arvu, aga olen kindel, et see jäi siiski vahemikku 1..119.)
 
@@ -1185,7 +1185,7 @@ Nüüd võin selle järeleproovitud avaldise kirjutada skripti:
 
     from urllib.request import urlopen
     
-    vastus = urlopen("http://programmeerimine.cs.ut.ee/tsitaadid/" \
+    vastus = urlopen("http://progeopik.cs.ut.ee/tsitaadid/" \
                      + str(randint(1, 119)) + ".txt")
     
     baidid = vastus.read()
@@ -1213,7 +1213,7 @@ Veateate viimane rida ütleb sisuliselt, et Python ei saa aru käsust ``randint`
     from urllib.request import urlopen
     from random import randint
     
-    vastus = urlopen("http://programmeerimine.cs.ut.ee/tsitaadid/" \
+    vastus = urlopen("http://progeopik.cs.ut.ee/tsitaadid/" \
                      + str(randint(1, 119)) + ".txt")
     
     baidid = vastus.read()
@@ -1231,7 +1231,7 @@ Veateate viimane rida ütleb sisuliselt, et Python ei saa aru käsust ``randint`
     from urllib.request import urlopen
     from random import randint
     
-    url = "http://programmeerimine.cs.ut.ee/tsitaadid/" \ 
+    url = "http://progeopik.cs.ut.ee/tsitaadid/" \ 
         + str(randint(1, 119)) + ".txt"
         
     print(url)    
@@ -1244,7 +1244,7 @@ Veateate viimane rida ütleb sisuliselt, et Python ei saa aru käsust ``randint`
     
     vastus.close()
 
-Käivitasin ja sain jälle veateate, aga enne seda jõudis programm ekraanile kuvada genereeritud URL-i. Seekord tuli ``http://programmeerimine.cs.ut.ee/tsitaadid/9.txt``. Kopeerin ja proovin seda avada otse brauseris. Sama jama: ``The requested URL /tsitaadid/9.txt was not found on this server``. Vaatan üle tsitaatide nimekirja (http://programmeerimine.cs.ut.ee/tsitaadid/) ja saan aru, milles asi -- õige URL on ``http://programmeerimine.cs.ut.ee/tsitaadid/009.txt`` mitte ``http://programmeerimine.cs.ut.ee/tsitaadid/9.txt``, kõigi ühe- ja kahekohaliste arvude ees on veel null(id). 
+Käivitasin ja sain jälle veateate, aga enne seda jõudis programm ekraanile kuvada genereeritud URL-i. Seekord tuli ``http://progeopik.cs.ut.ee/tsitaadid/9.txt``. Kopeerin ja proovin seda avada otse brauseris. Sama jama: ``The requested URL /tsitaadid/9.txt was not found on this server``. Vaatan üle tsitaatide nimekirja (http://progeopik.cs.ut.ee/tsitaadid/) ja saan aru, milles asi -- õige URL on ``http://progeopik.cs.ut.ee/tsitaadid/009.txt`` mitte ``http://progeopik.cs.ut.ee/tsitaadid/9.txt``, kõigi ühe- ja kahekohaliste arvude ees on veel null(id). 
 
 Pole hullu, võin URL-i genereerimisel need nullid sinna lisada. Hmm, siin on ebamugav situatsioon -- mõnikord on vaja lisada 1 null, mõnikord 2 tükki ja mõnikord mitte ühtegi. Järgmises peatükis küll tutvustatakse konstruktsiooni, millega saab panna programmi vastavalt mingile tingimusele käituma üht- või teistmoodi, aga praegu tahaks ma läbi saada lihtsamalt. Õnneks tuleb mulle meelde üks sobiv sõnemeetod, mida tutvustati plokis "Tehted sõnedega" olevas tabelis.
 
@@ -1261,7 +1261,7 @@ Muudan oma skripti veelkord:
     from urllib.request import urlopen
     from random import randint
     
-    url = "http://programmeerimine.cs.ut.ee/tsitaadid/" \ 
+    url = "http://progeopik.cs.ut.ee/tsitaadid/" \ 
         + str(randint(1, 119)).rjust(3, "0") + ".txt"
         
     print(url)    
@@ -1291,7 +1291,7 @@ Muudan oma skripti veelkord:
         tsitaadi_number_tekstina = str(tsitaadi_number)
         kolmekohaline_number_tekstina = tsitaadi_number_tekstina.rjust(3, "0")
          
-        url = "http://programmeerimine.cs.ut.ee/tsitaadid/" \ 
+        url = "http://progeopik.cs.ut.ee/tsitaadid/" \ 
             + kolmekohaline_number_tekstina + ".txt"
             
         print(url)    
