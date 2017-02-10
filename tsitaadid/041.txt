@@ -1,0 +1,3 @@
+"Oled sa tont või inimene!"
+
+-- Viimne reliikvia, 1969

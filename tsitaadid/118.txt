@@ -1,0 +1,3 @@
+"Kui üks rahu saab otsa, teeme uue rahu! Lihtne!"
+
+-- Malev, 2005
