@@ -11,6 +11,7 @@ Tere tulemast!
 
 Selle õpiku põhieesmärk on õpetada programmeerimise universaalseid põhimõtteid, mis kehtivad kõigi populaarsete programmeerimiskeelte puhul. Konkreetne keel, mida selleks kasutame, on `Python`. Lisaks fundamentaalsetele teemadele tutvustatakse veidi ka Pythoni "värvilist" poolt -- nii saab näiteks aimu, kuidas kirjutatakse graafilisi programme või kuidas võiks realiseerida ühe lihtsa veebiserveri.
 
+Õpik on kirjutatud `Tartu Ülikooli <https://www.ut.ee>`__ `Arvutiteaduse instituudis <https://www.cs.ut.ee/>`__ pidades silmas eelkõige Informaatika bakalaureuse õppekava programmeerimise algkursust. Mingeid eelteadmisi programmeerimisest õpik ei eelda, seetõttu sobib see ka iseõppijatele.
 
 Õpiku ülesehitus
 ================
@@ -27,6 +28,23 @@ Soovitused õpiku kasutamiseks
 Esimene osa sisaldab omajagu materjali, mille sügavama tähenduse mõistmiseks on vaja piisavalt programmeerimise kogemust. Seetõttu on soovitav teise osa läbitöötamisel aeg-ajalt esimese osa juurde tagasi pöörduda -- ehk kõnetab mõni varem kiiruga loetud lõik nüüd sind rohkem.
 
 Samuti soovitan nii esimese kui teise osa lugemisel piiluda vahel ka kolmandasse osasse -- sealsed teemad võivad olla heaks võimaluseks loetud teooria rakendamiseks ja kinnistamiseks.  
+
+Uuendused
+=========
+Õpiku 1. ja 2. osa on üldjoontes "valmis", st. seal pole lähemal ajal muudatusi plaanis. 3. osasse ilmub aegajalt teemasid juurde.
+
+Viimased uuendused:
+
+* 2017-01-24: Peatüki "EasyGui" täiendamine (uued installeerimisjuhised)
+* 2016-11-22: Uus peatükk "Lisapakettide pagaldamine"
+* 2016-11-15: Uus peatükk "Programmidevaheline suhtlus"
+* 2016-11-08: Peatüki "Matplotlib" täielik ümberkirjutamine (varasemast palju põhjalikumaks)
+
+Viitamine
+=========
+Seda õpikut pole hetkel mingis teoste andmebaasis registreeritud.
+
+Kui soovid õpikule viidata, siis võid kasutada näiteks nimetust "TÜ Arvutiteaduse instituudi programmeerimise algkursuse õpik" koos URL-iga http://progeopik.ut.ee
 
 Tagasiside
 ==========
