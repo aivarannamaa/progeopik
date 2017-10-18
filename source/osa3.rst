@@ -9,6 +9,7 @@ III osa: Lisad
    moodulid
    tkinter
    lisapaketid
+   turtle
    easygui
    pygame
    matplotlib

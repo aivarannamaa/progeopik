@@ -702,7 +702,7 @@ Näiteks, kui kasutaja ja programmi vahel kujuneb selline dialoog:
     Sisesta Pykkari positsiooni y-koordinaat: 2
     Sisesta Pykkari suund: S
 
-Siis peaks ilmuma kõigepealt selline pilt:
+Siis peaks ilmuma kõigepealt selline pilt (siin eeldatakse, et y-koordinaat suureneb ülalt alla):
 
 .. image:: images/poranda_keskkoht_algus.png
 
@@ -743,6 +743,10 @@ ja Pykkari tegutsemise lõpuks peaks maailm olema selline (Pykkari suund ja asuk
 .. hint::
 
     :ref:`Erindite püüdmine<erindite_pyydmine>`.
+
+.. hint::
+
+    Kui jääd dünaamiliselt maailma loomisega hätta, siis kirjuta programmi sisse mingi konkreetne maailm ja proovi lahendada vähemalt värvimise osa. 
 
 .. hint::
 

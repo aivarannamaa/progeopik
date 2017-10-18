@@ -1304,8 +1304,8 @@ Nagu ikka, on mõttekas alustada millestki lihtsast. Vaata üle järgnev näitep
 
     # impordi tk vidinad ja konstandid
     from tkinter import *
-    # Pythoni moodulisüsteemi ühe nüansi tõttu tuleb ttk importida eraldi
-    from tkinter import ttk 
+    # Pythoni moodulisüsteemi ühe nüansi tõttu tuleb ttk ja messagebox importida eraldi
+    from tkinter import ttk, messagebox
 
     # loome ühe funktsiooni, mis käivitatakse nupule klõpsamisel
     # (funktsiooni sidumine nupuga tehakse allpool)

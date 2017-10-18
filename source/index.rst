@@ -35,6 +35,7 @@ Uuendused
 
 Viimased uuendused:
 
+* 2017-10-04: 4. peatüki lisalugemises sai parandatud esimest tkinteri näidet
 * 2017-01-24: Peatüki "EasyGui" täiendamine (uued installeerimisjuhised)
 * 2016-11-22: Uus peatükk "Lisapakettide pagaldamine"
 * 2016-11-15: Uus peatükk "Programmidevaheline suhtlus"

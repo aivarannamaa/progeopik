@@ -78,7 +78,7 @@ Kontrollküsimused
 ==================
 Kirjuta programm, mis küsib kasutajalt kõigepealt tema nime, siis tänava nime, siis maja ja/või korteri numbri, siis linna ja riigi nime ning lõpuks postiindeksi (kõik GUI abil). Tulemuse peab programm väljastama aadressi kujul, samuti GUI abil. Tulemus peaks olema midagi sellist:
 
-.. image:: images\easygui_aadress.png
+.. image:: images/easygui_aadress.png
 
  
 Kommentaarid
