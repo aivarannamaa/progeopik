@@ -665,7 +665,7 @@ Testimiseks võib alla laadida nt "Alice in Wonderland" teksti aadressilt http:/
 
 Kirjuta funktsioon ``korrasta_kuupäev``, mis võtab argumendiks ühe sõnena esitatud kuupäeva (nt ``'24.02.1918'``) ning tagastab kuupäeva kujul `<päev>. <kuu nimi> <aasta>` (nt. ``'24. veebruar 1918'``). 
 
-Etteantud sõnes võib olla kuupäeva osade vahel kasutatud ka sidekriipse. Sel juhul tuleb tõlgendada kuupäeva kujul *<aasta>-<kuu>-<päev>* (nn *ISO formaat*). NB! Tagastatav kuupäev peab olema ikkagi kujul `<päev>. <kuu nimi> <aasta>`.
+Etteantud sõnes võib olla kuupäeva osade vahel kasutatud ka sidekriipse. Sel juhul tuleb tõlgendada kuupäeva kujul *<aasta>-<kuu>-<päev>* (nn *ISO formaat*, aga lubame ka 1-3 kohalisi aastaarve). NB! Tagastatav kuupäev peab olema ikkagi kujul `<päev>. <kuu nimi> <aasta>`.
 
 Kui etteantud kuupäev on arusaamatul kujul või kui pole tegemist legaalse kuupäevaga, siis tagastada vastav veateade. Eeldame, et etteantud sõnes on kuu antud alati numbriga.
 
