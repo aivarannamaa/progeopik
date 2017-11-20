@@ -72,6 +72,7 @@ Operatsioonid
 * NA
     * isnull, notnull
     * fillna
+    * NB! null ja na tähendab sama asja ????
 * .drop_duplicates
 * replacing
     * by looking on values only
@@ -83,3 +84,9 @@ Operatsioonid
 * concat from several files, add column identifying file
     * add column before concat
     * use concat(..., keys=...)
+* ümberpaigutamine
+    * pivot, stack, , ...
+* risttabel
+* enne summaries ja siis group-by
+* groupby
+    * võti peab tabelis olemas olema
