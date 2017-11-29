@@ -39,7 +39,7 @@ Oletame, et meil on andmed mingi firma sissetulekute kohta erinevatel kuudel. Pr
     ax.plot(kuud, sissetulekud)  # Lisame joonestusalale joondiagrammi
     ax.set_xlabel("Kuud")        # ja x-telje pealkirja
     
-    fig.show()                   # Kuvame joonise ekraanile.
+    plt.show()                   # Kuvame joonise ekraanile.
 
 Käivita see programm ja katseta avanenud aknas olevaid nuppe. 
 
@@ -113,7 +113,7 @@ Täiendame nüüd oma graafikut neid võimalusi kasutades:
     ax.set_ylim(0, 2000)         # Määrame y-telje nähtavuspiirkonna
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])  # ja x-telje märgid
     
-    fig.show()                   # Kuvame joonise ekraanile.
+    plt.show()                   # Kuvame joonise ekraanile.
 
 .. image:: images/mpl_joon2.png 
 
@@ -151,7 +151,7 @@ Joone ja andmepunktide välimust saame määrata ``plot`` meetodi kolmanda argum
     ax.set_ylim(0, 2000)         # Määrame y-telje nähtavuspiirkonna
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])  # ja x-telje märgid
     
-    fig.show()                   # Kuvame joonise ekraanile.
+    plt.show()                   # Kuvame joonise ekraanile.
 
 
 Antud näites ``o`` tähendab seda, et iga andmepunkti kohale tuleb joonistada täpike ja ``-`` tähendab seda, et andmepunktide vahele tuleb tõmmata kriips. 
@@ -186,7 +186,7 @@ Tuli välja, et firmal on kogutud andmed ka antud kuude väljaminekute kohta. Te
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])  # ja x-telje märgid
     ax.legend()         
     
-    fig.show()                   # Kuvame joonise ekraanile.
+    plt.show()                   # Kuvame joonise ekraanile.
 
 Tulpdiagramm
 ============
@@ -207,7 +207,7 @@ Tulpdiagrammi koostamiseks on meetod :py:meth:`bar<matplotlib.axes.Axes.bar>`, m
     ax.set_xlabel("Kuud")      
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
     
-    fig.show()
+    plt.show()
     
 .. image:: images/mpl_tulp1.png
 
@@ -231,7 +231,7 @@ Nagu näha, määrab meetodi ``bar`` esimene argument, kuhu satuvad tulpade vasa
     ax.set_xlabel("Kuud")      
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
     
-    fig.show()
+    plt.show()
 
 TODO: seleta list comprehensionit
 
@@ -262,7 +262,7 @@ Kui me tahame tulpadena kõrvuti näha ümbrike ja kirjaklambrite kulusid, siis 
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
     ax.legend()
     
-    fig.show()
+    plt.show()
 
 Veel võimalusi
 --------------
@@ -300,7 +300,7 @@ Siiani tehtud joon- ja tulpdiagrammide kombineerimine ei ole tehniliselt võttes
     ax.set_xlabel("Kuud")      
     ax.legend()
     
-    fig.show()                   # Kuvame joonise ekraanile.
+    plt.show()                   # Kuvame joonise ekraanile.
 
 Kahjuks see lähenemine siiski ei tööta, sest rahasummad on palju suuremad kui kontoritarvete arvud ja seetõttu viimased ei paista üldse välja. Lahenduseks on kahe erineva y-skaala kasutamine (TODO: pikem selgitus ja lingid):
 
@@ -334,7 +334,7 @@ Kahjuks see lähenemine siiski ei tööta, sest rahasummad on palju suuremad kui
     ax.legend(loc="upper left")
     ax2.legend(loc="upper right")
     
-    fig.show()                   # Kuvame joonise ekraanile.
+    plt.show()                   # Kuvame joonise ekraanile.
 
 Nüüd häirib tulemuses veel see, et jooned jäävad osaliselt tulpade taha peitu, ning sissetulekute joon on ümbrike tulpadega sama värvi. Õnneks pakub matplotlib lahenduse ka neile muredele:
 
@@ -372,7 +372,7 @@ Nüüd häirib tulemuses veel see, et jooned jäävad osaliselt tulpade taha pei
     ax.set_zorder(ax2.get_zorder() + 1)
     ax.patch.set_visible(False)
     
-    fig.show()                   # Kuvame joonise ekraanile.
+    plt.show()                   # Kuvame joonise ekraanile.
 
 .. admonition:: Rohkem infot
 
@@ -395,7 +395,7 @@ Sektordiagrammi koostamiseks on mõeldud meetod :py:meth:`pie<matplotlib.axes.Ax
     fig = plt.figure()           
     ax = fig.add_subplot(1,1,1)  
     ax.pie(sissetulekud, labels=kuud)
-    fig.show()
+    plt.show()
 
 Histogramm
 ==========
@@ -428,7 +428,7 @@ Histogrammi joonistamiseks kasutame ``Axes`` meetodit :py:meth:`hist<matplotlib.
     fig = plt.figure()           
     ax = fig.add_subplot(1,1,1)  
     ax.hist(vaheeksamid, 20)
-    fig.show()
+    plt.show()
 
 Hajuvusdiagramm
 ===============
@@ -477,7 +477,7 @@ Läheme edasi tudengite poolt kogutud punktide analüüsimisega. Nüüd oleks he
     ax.scatter(kodutööd, vaheeksamid)
     ax.set_xlabel("Kodutööde punktid")      
     ax.set_ylabel("Vaheeksami punktid")      
-    fig.show()
+    plt.show()
     
 
 Diagramm näitab tõesti, et rohkem kodutöid teinud tudengid said ka rohkem punkte vaheeksamil, aga algandmeid uurides näeme, et on palju tudengeid, kelle kodutööde ja vaheksami punktid kattuvad täpselt mõne teise (või paljude teiste) tudengite punktidega ja seetõttu satuvad vastavad andmepunktid ka graafikul kohakuti. Äkki selle täpi kohal, mis tähistab 0p kodutööde eest ja 20p vaheeksami eest, on tegelikult 50 täppi ja meie eespool tehtud järeldus ei pea paika?
@@ -555,7 +555,7 @@ Teine võimalus on näidata punktikombinatsioonide sagedust täppide suurusega. 
     ax.scatter(kodutööd, vaheeksamid, alpha=0.3, s=täpi_läbimõõdud)
     ax.set_xlabel("Kodutööde punktid")      
     ax.set_ylabel("Vaheeksami punktid")      
-    fig.show() 
+    plt.show() 
 
 Sageduste arvutamiseks võtsime appi klassi :py:class:`Counter<collections.Counter>` Pythoni standardteegi moodulist :py:mod:`collections` (aga seda oleksime võinud teha ka primitiivsemate vahenditega).
 
@@ -607,7 +607,7 @@ Järgnev näide demonstreerib nende võimaluste kasutamist:
     
     ax.fill([0, -1, 2], [300, 255, 200], zorder=3, color="yellow")
     
-    fig.show()
+    plt.show()
 
 Graafikute kohandamine
 ======================
@@ -666,7 +666,7 @@ Matplotlibi graafikuid saab panna hiireklõpsudele ja klahvivajutustele reageeri
     # registreerime funktsiooni klõpsudele reageerima
     cid = fig.canvas.mpl_connect('pick_event', on_pick)
     
-    fig.show()                   
+    plt.show()                   
 
 
 Täpsemalt loe siit: http://matplotlib.org/users/event_handling.html
