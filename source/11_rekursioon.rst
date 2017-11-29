@@ -15,12 +15,45 @@
     * aluseks on hea funktsiooni väljakutsete mõistmine, võiks alustada selle kordamisest
     * rekursiooni näide: “I promise to repeat the sentence I just said” Papert, teaching children .. lk 8
     * rekursiooni näide: habemeajaja (lisalugemisse)
-    
+
 Paljude ülesannete jaoks on olemas väga elegantsed lahendused, kus algse ülesande lahendamiseks lahendatakse kõigepealt väiksem alamülesanne ja seejärel täiendatakse saadud vastust mingil moel. Sarnast skeemi kasutasime korduvalt tsüklite peatükis.
 
 Ilmneb, et taoliste ülesannete puhul on tsüklite asemel võimalik kasutada ka *rekursiivseid* funktsioone -- s.o funktsioone, mis iseennast välja kutsuvad. Tihti on selliselt kirjutatud lahendused selgemad ja lühemad kui tsüklitega kirjutatud lahendused.
 
 Tehniliselt võttes ei õpi sa selles peatükis Pythoni kui programmeerimiskeele kohta midagi uut, kuna Pythoni seisukohast ei erine rekursiivsed funktsioonid tavalistest funktsioonidest. Samas, rekursiivsetest algoritmidest arusaamiseks on vaja vaadata asju pisut teise nurga alt -- seetõttu on antud peatükis ülesandeid, mis aitavad rekursiivse mõtteviisiga harjuda. 
+
+Prelüüd
+=======
+Kuigi see peatükk alustab lihtsamate rekursiooniskeemidega, siis kõige eredamalt säravad rekursiivsed lahendused ülesannetes, mis tegelevad puukujuliste (st. hargnevate) andmestruktuuridega.
+
+Üks hea näide puukujulisest andmete organiseerimisest on kaustapuu. Näiteks kui sul on Windowsi arvuti, siis sinu peakettal (``C:`` kettal) on hulk faile ja kaustu. Igas kaustas võib omakorda olla hulk faile ja kaustu jne.
+
+Proovime kirjutada funktsiooni, mis kuvab ekraanile kõik etteantud kaustas sisalduvad failid ja alamkaustad. Selle juures on meile abiks funktsioon :py:func:`listdir<os.listdir>` moodulist :py:mod:`os` ning funktsioonid :py:func:`join<os.path.join>` ja :py:func:`isdir<os.path.isdir>` moodulist :py:mod:`os.path`.
+
+.. sourcecode:: py3
+
+    import os.path
+    
+    def kuva_failid(kaust):
+        # os.listdir annab etteantud kaustas olevate failide ja kaustade nimed
+        # (sõnede listina)
+        for nimi in os.listdir(kaust):
+            # os.path.join paneb kausta nime ja faili nime 
+            # kokku täisnimeks (vastavalt platvormi reeglitele kas / või \-ga)
+            täisnimi = os.path.join(kaust, nimi)
+            
+            # os.path.isdir ütleb, kas tegemist on kaustaga
+            if os.path.isdir(täisnimi):
+                print("Kaust", täisnimi)
+            else:
+                print("Fail", täisnimi)
+    
+    # Asenda Peeter enda kasutajanimega
+    kuva_failid("C:\\Users\\Peeter") # Mac'i ja Linuxi korral "~/Peeter"
+
+Kui kõik läks hästi, siis kuvas see programmijupp kõik sinu kodukaustas olevad kausta- ja failinimed.
+
+Kuidas aga teha nii, et kuvataks ka alamkaustade ja nende alamkaustade jne. sisu? Proovi programm saada tööle nii, et kuvatakse kõikide, ükskõik kui sügaval olevate kaustade ja failide nimed!
 
 
 Rekursiivsed funktsioonid

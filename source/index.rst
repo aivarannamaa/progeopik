@@ -35,6 +35,7 @@ Uuendused
 
 Viimased uuendused:
 
+* 2017-11-29: Peatüki "Rekursioon" algusse lisati jaotus "Prelüüd"
 * 2017-11-29: Peatükis "Matplotlib" soovitatakse nüüd ``fig.show()`` asemel kasutada ``plt.show()``
 * 2017-10-04: 4. peatüki lisalugemises sai parandatud esimest tkinteri näidet
 * 2017-01-24: Peatüki "EasyGui" täiendamine (uued installeerimisjuhised)
