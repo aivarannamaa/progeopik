@@ -211,58 +211,34 @@ Tulpdiagrammi koostamiseks on meetod :py:meth:`bar<matplotlib.axes.Axes.bar>`, m
     
 .. image:: images/mpl_tulp1.png
 
-Nagu näha, määrab meetodi ``bar`` esimene argument, kuhu satuvad tulpade vasakud servad. Paremad servad satuvad tulba laiuse võrra paremale. Kui tahame tulpasid paigutada nii, et tulba kuu märgi kohale satuks tulba keskkoht, siis tuleb esimest argumenti natuke nihutada:
-
-.. sourcecode:: py3
-    :emphasize-lines: 9-11
-
-    import matplotlib.pyplot as plt
-    
-    kuud             = [ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12]
-    ümbrikke_kulunud = [ 2,  6,  2,  7,  6,  2,  3,  2,  4,  4,  1, 13]
-    
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-    
-    # moodustame kuu numbrite põhjal uue listi, kus elemendid on 0.4 võrra väiksemad
-    tulpade_positsioonid = [kuu - 0.4 for kuu in kuud]  
-    ax.bar(tulpade_positsioonid, ümbrikke_kulunud, 0.8)
-    
-    ax.set_xlabel("Kuud")      
-    ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
-    
-    plt.show()
-
-TODO: seleta list comprehensionit
 
 Mitme näitaja tulpdiagramm
 --------------------------
 Kui me tahame tulpadena kõrvuti näha ümbrike ja kirjaklambrite kulusid, siis  tuleb lihtsalt meetodit ``bar`` välja kutsuda kaks korda. Seejuures aga tuleb sättida eri näitajate tulbad nii, et nad üksteist varjutama ei hakkaks. Samuti tuleb teha tulbad kitsamaks. Lisaks anname ``bar``-ile ``label`` argumendi, mille põhjal :py:meth:`legend()<matplotlib.axes.Axes.legend>` teeb joonisele legendi:
 
 .. sourcecode:: py3
-    :emphasize-lines: 5,14-15,19
+    :emphasize-lines: 5,10-12,16
 
     import matplotlib.pyplot as plt
-    
+
     kuud                    = [ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12]
     ümbrikke_kulunud        = [ 2,  6,  2,  7,  6,  2,  3,  2,  4,  4,  1, 13]
     kirjaklambreid_kulunud  = [ 5,  2,  1,  3,  3,  0,  0,  0,  1,  2,  1,  3]
-    
+
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
-    
-    # moodustame kuu numbrite põhjal uue listi, kus elemendid on 0.4 võrra väiksemad
-    ümbriku_tulpade_positsioonid = [kuu - 0.4 for kuu in kuud]
-    ax.bar(ümbriku_tulpade_positsioonid, ümbrikke_kulunud, 0.4, label="Ümbrikke")
-    
-    # kirjaklambri tulpade positsioonideks kõlbavad kuu numbrid
-    ax.bar(kuud, kirjaklambreid_kulunud, 0.4, label="Kirjaklambreid")
-    
+
+    # Selleks, et tulbad ei satuks üksteise peale, nihutame neid pisut
+    ax.bar([kuu - 0.2 for kuu in kuud], ümbrikke_kulunud, 0.4, label="Ümbrikke")
+    ax.bar([kuu + 0.2 for kuu in kuud], kirjaklambreid_kulunud, 0.4, label="Kirjaklambreid")
+
     ax.set_xlabel("Kuud")      
     ax.set_xticks([1,2,3,4,5,6,7,8,9,10,11,12])
     ax.legend()
-    
+
     plt.show()
+
+Tulpade nihutamiseks kasutatud konstruktsiooni (``[kuu - 0.2 for kuu in kuud]``) nimetatakse `listikomprehensiooniks <https://www.python-course.eu/list_comprehension.php>`_. 
 
 Veel võimalusi
 --------------
