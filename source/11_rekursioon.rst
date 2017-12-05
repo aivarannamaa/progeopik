@@ -370,37 +370,14 @@ Kuna me ei teadnud, kas mingil tasemel on meil järjendis veel järjendeid või 
 
     Kas oskaksid kirjutada funktsiooni taoliselt esitatud naturaalarvude liitmiseks?
 
-Harjutus. Kaustade läbimine
----------------------------
-
-Kirjuta programm, mis otsib etteantud nimega kaustast ja selle kõikidest alamkaustadest mp3-faile ja kuvab nende nimed ekraanile.
-
-Abiks on järgnevad Pythoni funktsioonid:
-
-* http://docs.python.org/3/library/os.path.html#os.path.isdir
-* http://docs.python.org/3/library/os.html#os.listdir
-
-Järgnev programmilõik demonstreerib nende kasutamist:
-
-.. sourcecode:: py3
-
-    import os
-    
-    # topelt langkriipsud on vajalikud, kuna langkriipsul 
-    # on Pythoni sõneliteraalides eritähendus
-    kaustanimi = "c:\\mingi_kaust\\alamkaust"
-    
-    # os.listdir tagastab järjendi faili- ja kaustanimedega
-    print(os.listdir(kaustanimi))
-    
-    # os.path.isdir ütleb, kas antud nime taga peitub kaust (mitte fail)
-    print(os.path.isdir(kaustanimi))
-    
-
-
 
 Ülesanded
 =========
+
+0. Kaustade läbimine
+--------------------
+Kirjuta lõpuni peatüki prelüüdis alustatud programm!
+
 
 1. Kaustad ja järjendid
 -----------------------
